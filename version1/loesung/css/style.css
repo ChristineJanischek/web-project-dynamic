@@ -1,0 +1,172 @@
+/* ========================================
+   Version 1 - Musterlösung CSS
+  Farbschema: Braun-Orange mit Opacity
+  ======================================== */
+
+/* === Allgemeine Grundeinstellungen === */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #6e3b09;
+  background-color: #fff8f0;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Hauptcontainer mit maximaler Breite für bessere Lesbarkeit */
+body > * {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* === Header-Bereich === */
+header {
+  background: linear-gradient(135deg, #b85c38 0%, #ff9800 100%);
+  color: white;
+  padding: 2rem 1rem;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(184, 92, 56, 0.18);
+}
+
+header h1 {
+  margin: 0 0 1rem 0;
+  font-size: 2rem;
+  text-shadow: 0 2px 4px rgba(110, 59, 9, 0.15);
+}
+
+/* === Navigation === */
+nav {
+  margin-top: 1rem;
+}
+
+nav a {
+  color: #6e3b09;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  border-radius: 6px;
+  background: rgba(184, 92, 56, 0.12);
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+nav a:hover {
+  background: rgba(255, 152, 0, 0.25);
+  color: #fff;
+  text-decoration: underline;
+  transform: translateY(-2px);
+}
+
+/* === Main-Bereich === */
+main {
+  background-color: rgba(184, 92, 56, 0.07);
+  padding: 2rem;
+  margin: 2rem auto;
+  border-radius: 12px;
+  box-shadow: 0 3px 15px rgba(184, 92, 56, 0.08);
+}
+
+/* Sections mit Abstand */
+section {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 2px solid #b85c38;
+}
+
+section:last-child {
+  border-bottom: none;
+}
+
+/* === Überschriften === */
+h2 {
+  color: #b85c38;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  border-left: 5px solid #ff9800;
+  padding-left: 1rem;
+  background: linear-gradient(90deg, rgba(255, 152, 0, 0.12) 0%, transparent 100%);
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 4px;
+}
+
+/* === Absätze === */
+p {
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  color: #6e3b09;
+  background: rgba(255, 152, 0, 0.13);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* === Listen === */
+ul {
+  padding-left: 2rem;
+  line-height: 2;
+}
+
+ul li {
+  margin-bottom: 0.5rem;
+  color: #b85c38;
+  position: relative;
+}
+
+ul li::marker {
+  color: #b85c38;
+  font-size: 1.2em;
+}
+
+/* Hover-Effekt für Listen-Elemente */
+ul li:hover {
+  color: #fff;
+  background: rgba(184, 92, 56, 0.18);
+  transform: translateX(5px);
+  transition: all 0.3s ease;
+}
+
+/* === Footer === */
+footer {
+  background: linear-gradient(135deg, #b85c38 0%, #ff9800 100%);
+  color: white;
+  text-align: center;
+  padding: 1.5rem;
+  margin-top: 2rem;
+  box-shadow: 0 -3px 10px rgba(184, 92, 56, 0.12);
+}
+
+footer p {
+  margin: 0;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* === Optionale Verbesserungen === */
+
+/* Sanfte Hover-Effekte für Links im Text */
+a {
+  color: #b85c38;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #fff;
+  background: rgba(184, 92, 56, 0.18);
+  border-radius: 4px;
+
+/* Akzent-Boxen für besondere Inhalte */
+.highlight {
+  background: linear-gradient(120deg, rgba(255, 152, 0, 0.18) 0%, rgba(184, 92, 56, 0.10) 100%);
+  border-left: 4px solid #b85c38;
+  padding: 1rem;
+  border-radius: 6px;
+  margin: 1rem 0;
+}
+
+/* Smooth Scroll für bessere Navigation */
+html {
+  scroll-behavior: smooth;
+}
+}
