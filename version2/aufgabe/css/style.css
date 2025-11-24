@@ -1,0 +1,153 @@
+/* ========================================
+   RESET & GLOBAL STYLES
+   ======================================== */
+
+* {
+    /* TODO: box-sizing auf border-box setzen */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    /* TODO: Hintergrundfarbe hinzufügen */
+}
+
+.container {
+    /* TODO: max-width und margin hinzufügen für zentrierten Container */
+    padding: 20px;
+}
+
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
+
+header {
+    background-color: #0b5cad;
+    color: white;
+    /* TODO: Position sticky für sticky header? */
+}
+
+.logo {
+    /* TODO: Logo-Styling */
+}
+
+/* Desktop Navigation */
+.nav {
+    /* TODO: Display flex für horizontale Navigation */
+}
+
+.nav a {
+    /* TODO: Link-Styling */
+    text-decoration: none;
+    color: white;
+}
+
+/* Hamburger Button (versteckt auf Desktop) */
+.nav-toggle {
+    /* TODO: display: none auf Desktop */
+    /* TODO: Sichtbar auf Mobile */
+}
+
+.nav-toggle span {
+    /* TODO: Hamburger-Icon Streifen erstellen */
+}
+
+/* ========================================
+   MEDIA QUERIES - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    /* TODO: Navigation für Mobile anpassen */
+    .nav-toggle {
+        /* TODO: Button anzeigen */
+    }
+    
+    .nav {
+        /* TODO: Fixed position, von rechts einblenden */
+        /* TODO: Flex-direction: column */
+    }
+    
+    .nav.active {
+        /* TODO: Sichtbar machen wenn .active Klasse */
+    }
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+    /* TODO: Background, padding, text-align */
+}
+
+/* ========================================
+   BOX-MODELL DEMONSTRATIONEN
+   ======================================== */
+
+.boxes {
+    /* TODO: Display flex oder grid */
+    /* TODO: Gap zwischen Boxen */
+}
+
+.box {
+    /* TODO: Basis-Styling für alle Boxen */
+    background-color: white;
+    border-radius: 8px;
+}
+
+.box-1 {
+    /* TODO: content-box Beispiel */
+    /* TODO: Padding, Border, Margin */
+}
+
+.box-2 {
+    /* TODO: border-box Beispiel */
+    /* TODO: Andere Padding/Border Werte */
+}
+
+.box-3 {
+    /* TODO: Mit Schatten und speziellen Border-Radius */
+}
+
+/* ========================================
+   RESPONSIVE GRID
+   ======================================== */
+
+.grid {
+    /* TODO: CSS Grid oder Flexbox */
+    /* TODO: Desktop: 3 Spalten */
+}
+
+.card {
+    /* TODO: Card-Styling */
+    /* TODO: Padding, Border, Background */
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .grid {
+        /* TODO: 2 Spalten */
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .grid {
+        /* TODO: 1 Spalte */
+    }
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    /* TODO: Footer-Styling */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}

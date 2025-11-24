@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Version 2 - Box-Modell & Responsive Design</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <!-- TODO: Logo und Navigation hinzufügen -->
+        <div class="container">
+            <div class="logo">MeineLogo</div>
+            
+            <!-- TODO: Hamburger Button für Mobile -->
+            <button class="nav-toggle" id="navToggle" aria-label="Navigation umschalten">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- TODO: Navigation erstellen -->
+            <nav class="nav" id="mainNav">
+                <a href="#home">Home</a>
+                <a href="#about">Über uns</a>
+                <a href="#services">Services</a>
+                <a href="#contact">Kontakt</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <!-- TODO: Hero-Section -->
+        <section class="hero">
+            <div class="container">
+                <h1>Willkommen zu Version 2</h1>
+                <p>Box-Modell und Responsive Design</p>
+            </div>
+        </section>
+        
+        <!-- TODO: Box-Modell Demonstrationen -->
+        <section class="box-demo">
+            <div class="container">
+                <h2>Box-Modell Beispiele</h2>
+                
+                <div class="boxes">
+                    <!-- TODO: Erstelle 3 Boxen mit unterschiedlichem Padding/Margin/Border -->
+                    <div class="box box-1">
+                        <h3>Box 1</h3>
+                        <p>content-box Beispiel</p>
+                    </div>
+                    
+                    <div class="box box-2">
+                        <h3>Box 2</h3>
+                        <p>border-box Beispiel</p>
+                    </div>
+                    
+                    <div class="box box-3">
+                        <h3>Box 3</h3>
+                        <p>Mit Schatten und Radius</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- TODO: Responsive Grid -->
+        <section class="grid-demo">
+            <div class="container">
+                <h2>Responsive Grid</h2>
+                
+                <div class="grid">
+                    <!-- TODO: Füge 6 Cards hinzu die responsive sind -->
+                    <div class="card">
+                        <h3>Card 1</h3>
+                        <p>Desktop: 3 Spalten</p>
+                    </div>
+                    <div class="card">
+                        <h3>Card 2</h3>
+                        <p>Tablet: 2 Spalten</p>
+                    </div>
+                    <div class="card">
+                        <h3>Card 3</h3>
+                        <p>Mobile: 1 Spalte</p>
+                    </div>
+                    <div class="card">
+                        <h3>Card 4</h3>
+                        <p>Automatisch anpassend</p>
+                    </div>
+                    <div class="card">
+                        <h3>Card 5</h3>
+                        <p>Mit Media Queries</p>
+                    </div>
+                    <div class="card">
+                        <h3>Card 6</h3>
+                        <p>Teste im Browser!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Meine Webseite - Version 2</p>
+        </div>
+    </footer>
+    
+    <!-- TODO: JavaScript für Hamburger-Menü -->
+    <script src="js/script.js"></script>
+</body>
+</html>
