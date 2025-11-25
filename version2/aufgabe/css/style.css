@@ -31,7 +31,31 @@ header {
 }
 
 .logo {
-    /* TODO: Logo-Styling */
+    /* Logo als Hintergrundbild eingebunden */
+    background-image: url("../images/logo_final.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 150px;
+    height: 60px;
+    /* Text ausblenden, da das Logo als Bild angezeigt wird */
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+/* Responsive Logo-Anpassungen */
+@media (max-width: 768px) {
+    .logo {
+        width: 120px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 100px;
+        height: 40px;
+    }
 }
 
 /* Desktop Navigation */
