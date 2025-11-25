@@ -21,6 +21,8 @@ Nach Abschluss dieser Version kannst du:
 
 ### Teil 1: Box-Modell verstehen
 
+📖 **Theorie:** [`docs/box-modell.md`](../docs/box-modell.md)
+
 1. **Erstelle drei verschiedene Boxen** mit unterschiedlichen:
    - Padding-Werten
    - Border-Stilen
@@ -31,7 +33,11 @@ Nach Abschluss dieser Version kannst du:
    - Eine Box mit `border-box`
    - Vergleiche die Unterschiede
 
+**Implementierungsbeispiele:** Siehe Abschnitt "Praktisches Beispiel" in `box-modell.md`
+
 ### Teil 2: Responsive Layout
+
+📖 **Theorie:** [`docs/responsive-design.md`](../docs/responsive-design.md) & [`docs/flexible-layouts.md`](../docs/flexible-layouts.md)
 
 1. **Desktop-Layout** (> 1024px):
    - 3-spaltiges Grid
@@ -45,12 +51,22 @@ Nach Abschluss dieser Version kannst du:
    - 1-spaltig
    - Hamburger-Menü
 
+**Implementierungsbeispiele:** 
+- Grid-Layouts: `flexible-layouts.md` → Beispiel 1-4
+- Media Queries: `responsive-design.md` → Abschnitt 2
+
 ### Teil 3: Mobile Navigation
+
+📖 **Theorie:** [`docs/responsive-design.md`](../docs/responsive-design.md) (Abschnitt 5) & [`docs/js.md`](../docs/js.md)
 
 Implementiere ein funktionierendes Hamburger-Menü mit:
 - Toggle-Button (☰)
 - Slide-in Animation
 - JavaScript für Interaktivität
+
+**Implementierungsbeispiele:**
+- Vollständiges HTML/CSS/JS: `responsive-design.md` → Abschnitt 5 "Mobile Navigation"
+- JavaScript Toggle-Funktion: `js.md` → DOM-Manipulation
 
 ## Zeitaufwand
 
@@ -59,12 +75,22 @@ Implementiere ein funktionierendes Hamburger-Menü mit:
 - **Teil 3**: 1-2 Stunden
 - **Gesamt**: Ca. 4-7 Stunden
 
-## Hilfsmittel
+## Hilfsmittel & Dokumentation
 
-- `docs/box-modell.md` - Theorie zum Box-Modell
-- `docs/responsive-design.md` - Media Queries und Breakpoints
-- `shared-examples/` - Vollständiges Beispiel
-- Browser DevTools (F12) - Box-Modell visualisieren
+### Theorie & Konzepte
+- [`docs/box-modell.md`](../docs/box-modell.md) - **Box-Modell** verstehen: Content, Padding, Border, Margin
+- [`docs/responsive-design.md`](../docs/responsive-design.md) - **Responsive Design**: Media Queries, Breakpoints, Mobile-First
+- [`docs/flexible-layouts.md`](../docs/flexible-layouts.md) - **Flexbox & Grid**: Flexible Layouts mit praktischen Beispielen
+- [`docs/css-basis.md`](../docs/css-basis.md) - CSS Grundlagen: Selektoren, Eigenschaften, Spezifität
+- [`docs/css-einbinden.md`](../docs/css-einbinden.md) - CSS einbinden: Inline, Internal, External
+
+### JavaScript & Interaktivität
+- [`docs/js.md`](../docs/js.md) - JavaScript Grundlagen für interaktive Navigation
+
+### Zusätzliche Ressourcen
+- [`shared-examples/`](../shared-examples/) - Vollständiges Beispiel zum Vergleich
+- **Browser DevTools (F12)** - Box-Modell visualisieren & Grid/Flexbox anzeigen
+- **Responsive Design Checker** - Testen auf verschiedenen Geräten
 
 ## Bewertungskriterien
 
@@ -81,6 +107,17 @@ Implementiere ein funktionierendes Hamburger-Menü mit:
 - Sticky Navigation
 - Dark Mode mit Media Query
 - CSS Grid statt Flexbox
+
+---
+
+## Weiterführende Themen
+
+Nach Abschluss dieser Version kannst du mit folgenden Themen weitermachen:
+
+- [`docs/bilder-grafiken.md`](../docs/bilder-grafiken.md) - Responsive Bilder & `object-fit`
+- [`docs/galerien.md`](../docs/galerien.md) - Bildgalerien mit Grid
+- [`docs/formulare.md`](../docs/formulare.md) - Responsive Formulare gestalten
+- [`docs/css-formatierung.md`](../docs/css-formatierung.md) - Typografie & Farben
 
 ---
 

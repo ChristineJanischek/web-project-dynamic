@@ -16,29 +16,28 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 
 | Bereich | Datei / Link | Kurzbeschreibung |
 |--------|---------------|------------------|
-| Einstieg & Überblick | `docs/intro.md` | Was ist das Web? Rollen von Client/Server |
-| HTML Grundgerüst | `docs/html-grundgeruest.md` | Aufbau von `<!DOCTYPE html>`, Grundtags, Validierung |
-| Seitenstrukturelemente | `docs/seitenstrukturelemente.md` | Semantische Tags (`header`,`nav`,`main`,`section`,...) |
-| CSS einbinden | `docs/css-einbinden.md` | Externe, interne & inline CSS, Best Practices |
-| CSS Basis | `docs/css-basis.md` | Selektoren, Eigenschaften, erste Styles |
-| CSS Formatierung | `docs/css-formatierung.md` | Text, Farben, Abstände, Schatten, Transitions |
-| Box-Modell | `docs/box-modell.md` | `margin`, `border`, `padding`, `content` |
-| Responsive Design | `docs/responsive-design.md` | Media Queries, Mobile Navigation, Breakpoints |
-| Bilder & Grafiken | `docs/bilder-grafiken.md` | Formate, Einbindung, Responsivität |
-| Galerien | `docs/galerien.md` | Einfache Bildgalerie, Grid/Flex |
-| Formulare & Auswertung | `docs/formulare.md` | Formulare erstellen & validieren |
-| JavaScript Grundlagen | `docs/js.md` | Variablen, Funktionen, DOM, Events |
-| React Einstieg | `docs/react.md` | Komponenten, Props, State |
-| Python (Flask) | `docs/python.md` | Minimales API Backend |
-| PHP Grundlagen | `docs/php.md` | Serverseitige Skripte, Ausgabe, Verarbeitung |
-| Datenbank (MySQL) | `docs/datenbank.md` | Tabellen, Abfragen, Verbindung |
-| Algorithmen & Datenstrukturen | `docs/algorithmen-datenstrukturen.md` | Listen, Arrays, Sortieren, Suchen |
-| Testen | `docs/testen.md` | Warum Tests? Einfache Beispiele (Jest/Pytest/PHPUnit) |
+| Einstieg & Überblick | [`docs/intro.md`](docs/intro.md) | Was ist das Web? Rollen von Client/Server |
+| HTML Grundgerüst | [`docs/html-grundgeruest.md`](docs/html-grundgeruest.md) | Aufbau von `<!DOCTYPE html>`, Grundtags, Validierung |
+| Seitenstrukturelemente | [`docs/seitenstrukturelemente.md`](docs/seitenstrukturelemente.md) | Semantische Tags (`header`,`nav`,`main`,`section`,...) |
+| CSS einbinden | [`docs/css-einbinden.md`](docs/css-einbinden.md) | Externe, interne & inline CSS, Best Practices |
+| CSS Basis | [`docs/css-basis.md`](docs/css-basis.md) | Selektoren, Eigenschaften, erste Styles |
+| CSS Formatierung | [`docs/css-formatierung.md`](docs/css-formatierung.md) | Text, Farben, Abstände, Schatten, Transitions |
+| Box-Modell | [`docs/box-modell.md`](docs/box-modell.md) | `margin`, `border`, `padding`, `content` |
+| Flexible Layouts | [`docs/flexible-layouts.md`](docs/flexible-layouts.md) | Flexbox & CSS Grid mit praktischen Beispielen |
+| Responsive Design | [`docs/responsive-design.md`](docs/responsive-design.md) | Media Queries, Mobile Navigation, Breakpoints |
+| Bilder & Grafiken | [`docs/bilder-grafiken.md`](docs/bilder-grafiken.md) | Formate, Einbindung, Responsivität |
+| Galerien | [`docs/galerien.md`](docs/galerien.md) | Einfache Bildgalerie, Grid/Flex |
+| Formulare & Auswertung | [`docs/formulare.md`](docs/formulare.md) | Formulare erstellen & validieren |
+| JavaScript Grundlagen | [`docs/js.md`](docs/js.md) | Variablen, Funktionen, DOM, Events |
+| React Einstieg | [`docs/react.md`](docs/react.md) | Komponenten, Props, State |
+| Python (Flask) | [`docs/python.md`](docs/python.md) | Minimales API Backend |
+| PHP Grundlagen | [`docs/php.md`](docs/php.md) | Serverseitige Skripte, Ausgabe, Verarbeitung |
+| Datenbank (MySQL) | [`docs/datenbank.md`](docs/datenbank.md) | Tabellen, Abfragen, Verbindung |
+| Algorithmen & Datenstrukturen | [`docs/algorithmen-datenstrukturen.md`](docs/algorithmen-datenstrukturen.md) | Listen, Arrays, Sortieren, Suchen |
+| Testen | [`docs/testen.md`](docs/testen.md) | Warum Tests? Einfache Beispiele (Jest/Pytest/PHPUnit) |
+> 🤖 **Automatische Aktualisierung:** Diese Tabelle wird bei neuen Dokumentationen automatisch aktualisiert. Details: [`scripts/README.md`](scripts/README.md)
 
-**Status:** ✅ Alle Frontend-Themen vollständig dokumentiert mit Beispielen  
-**Geplant:** Backend-Themen (JavaScript, React, PHP, Python, Datenbank, Tests)
 
----
 
 ## 📚 Aufgaben & Lernversionen
 
@@ -192,11 +191,11 @@ web-project-dynamic/
 3. **Mit Version 1 starten:**
    - 📖 Lies [`version1/README.md`](version1/README.md) - Die Aufgabenstellung
    - 💻 Arbeite in `version1/aufgabe/` (dein Arbeitsordner)
-   - 🎯 Nutze die `docs/` als Nachschlagewerk
+   - 🎯 Nutze die [`docs/`](docs/) als Nachschlagewerk
 
 4. **Hilfe nutzen:**
-   - 📚 **Theorie:** Alle Konzepte in `docs/` erklärt
-   - 💡 **Inspiration:** `shared-examples/index.html` im Browser öffnen
+   - 📚 **Theorie:** Alle Konzepte in [`docs/`](docs/) erklärt
+   - 💡 **Inspiration:** [`shared-examples/index.html`](shared-examples/index.html) im Browser öffnen
    - 🔍 **Debugging:** Browser DevTools (F12)
    - ✅ **Validierung:** GitHub Actions prüfen deinen Code automatisch
 
@@ -397,15 +396,15 @@ shared-examples/
 ## 🎯 Lernpfad-Empfehlung
 
 ### Phase 1: Frontend Basics (Version 1-2)
-1. ✅ **HTML-Grundgerüst** nachvollziehen → `docs/html-grundgeruest.md`
-2. ✅ **CSS Box-Modell** verstehen → `docs/box-modell.md` + Browser DevTools
-3. ✅ **Responsive Design** umsetzen → `docs/responsive-design.md`
+1. ✅ **HTML-Grundgerüst** nachvollziehen → [`docs/html-grundgeruest.md`](docs/html-grundgeruest.md)
+2. ✅ **CSS Box-Modell** verstehen → [`docs/box-modell.md`](docs/box-modell.md) + Browser DevTools
+3. ✅ **Responsive Design** umsetzen → [`docs/responsive-design.md`](docs/responsive-design.md)
 4. 💪 **Version 1 abschließen** → Eigenständige HTML+CSS Seite
 5. 💪 **Version 2 starten** → Box-Modell & Responsive Layout
 
 ### Phase 2: Interaktivität (Version 3-4)
-6. 📷 **Bilder & Galerien** → `docs/bilder-grafiken.md`, `docs/galerien.md`
-7. 📝 **Formulare** erstellen → `docs/formulare.md`
+6. 📷 **Bilder & Galerien** → [`docs/bilder-grafiken.md`](docs/bilder-grafiken.md), [`docs/galerien.md`](docs/galerien.md)
+7. 📝 **Formulare** erstellen → [`docs/formulare.md`](docs/formulare.md)
 8. ⚡ **JavaScript Basics** → DOM-Manipulation, Events
 9. 🎨 **Fortgeschrittene Layouts** → CSS Grid, Flexbox-Mastery
 
