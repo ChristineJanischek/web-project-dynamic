@@ -69,9 +69,9 @@ Jede Version baut auf der vorherigen auf und führt neue Konzepte ein. Arbeite s
 
 ---
 
-### 🎓 Version 2: Box-Modell & Responsive Layout 🚧
+### 🎓 Version 2: Box-Modell & Responsive Layout ✅
 
-**Status:** Template verfügbar - Bereit zum Starten!
+**Status:** Musterlösung verfügbar - Bereit zum Lernen! 🎉
 
 **Lernziele:**
 - CSS Box-Modell verstehen (`margin`, `border`, `padding`, `content`)
@@ -82,13 +82,15 @@ Jede Version baut auf der vorherigen auf und führt neue Konzepte ein. Arbeite s
 **Dateien:**
 - 📖 **Aufgabenstellung:** [`version2/README.md`](version2/README.md)
 - 💡 **Arbeitsordner:** `version2/aufgabe/` (Starter-Template mit TODOs)
-- 🎯 **Lernhilfen:** TODO-Kommentare in HTML, CSS und JavaScript
+- ✅ **Musterlösung:** `version2/loesung/` (zur Selbstkontrolle)
+- 🎯 **Lernhilfen:** Detaillierte Schritt-für-Schritt Anleitung
 
 **Themen:**
 - 📦 Box-Modell Experimente (`box-sizing`, `content-box`, `border-box`)
 - 📱 Media Queries für Desktop, Tablet, Mobile
 - ☰ Hamburger-Menü mit JavaScript
 - 🎨 Responsive Grid-Layouts
+- 🖼️ Logo als Background-Image
 
 **Zeitaufwand:** 4-7 Stunden  
 **Voraussetzung:** Version 1 abgeschlossen
