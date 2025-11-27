@@ -97,16 +97,33 @@ Jede Version baut auf der vorherigen auf und führt neue Konzepte ein. Arbeite s
 
 ---
 
-### 🎓 Version 3: Bilder, Galerien & Formulare 📋
+### 🎓 Version 3: Bilder, Galerien & Formulare ✅
 
-**Status:** In Planung
+**Status:** Musterlösung verfügbar - Bereit zum Lernen! 🎉
 
-**Geplante Themen:**
-- Bilder responsive einbinden
-- Bildgalerien mit Grid erstellen
-- Lightbox-Effekt implementieren
-- Formulare mit HTML5-Validierung
-- JavaScript-Formular-Validierung
+**Lernziele:**
+- Bilder responsive und optimiert einbinden
+- Moderne Bildgalerien mit CSS Grid erstellen
+- Lightbox-Effekt für Bildvergrößerung implementieren
+- Formulare mit HTML5-Validierung gestalten
+- JavaScript-Formular-Validierung und DOM-Manipulation
+
+**Dateien:**
+- 📖 **Aufgabenstellung:** [`version3/README.md`](version3/README.md)
+- 💡 **Arbeitsordner:** `version3/aufgabe/` (Starter-Template mit TODOs)
+- ✅ **Musterlösung:** `version3/loesung/` (zur Selbstkontrolle)
+- 🎯 **Lernhilfen:** Schritt-für-Schritt Anleitung mit Code-Beispielen
+
+**Themen:**
+- 📷 Bildformate & Responsive Bilder (`object-fit`, `srcset`)
+- 🖼️ CSS Grid-Galerien mit Hover-Effekten
+- 🔍 Lightbox mit JavaScript (Tastatur-Navigation, Modal)
+- 📝 Kontaktformular mit Validierung
+- ✅ HTML5 & JavaScript Form-Validation
+- 📱 Responsive Design für alle Geräte
+
+**Zeitaufwand:** 5-6 Stunden  
+**Voraussetzung:** Version 1 & 2 abgeschlossen
 
 ---
 

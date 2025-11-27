@@ -1,0 +1,453 @@
+/* ===================================
+   VERSION 3: BILDER, GALERIEN & FORMULARE
+   MUSTERLÖSUNG
+   =================================== */
+
+/* Reset & Grundstyles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* ===================================
+   HEADER & NAVIGATION
+   =================================== */
+
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    padding: 20px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+
+.hero {
+    height: 70vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+                      url('https://picsum.photos/1920/1080');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax-Effekt */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+}
+
+.hero-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* ===================================
+   GALERIE
+   =================================== */
+
+.gallery-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.gallery-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+/* Grid-Galerie */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.gallery-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Responsive Bilder */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ===================================
+   LIGHTBOX
+   =================================== */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    align-items: center;
+    justify-content: center;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90%;
+    object-fit: contain;
+    border-radius: 8px;
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Schließen-Button */
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    user-select: none;
+}
+
+.lightbox-close:hover {
+    color: #ff6b6b;
+}
+
+/* Navigation Pfeile */
+.lightbox-prev,
+.lightbox-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 60px;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+    padding: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+}
+
+/* Caption */
+.lightbox-caption {
+    position: absolute;
+    bottom: 30px;
+    color: white;
+    text-align: center;
+    width: 100%;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+}
+
+/* ===================================
+   KONTAKTFORMULAR
+   =================================== */
+
+.contact-section {
+    padding: 60px 0;
+    background-color: #f8f9fa;
+}
+
+.contact-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: #2c3e50;
+}
+
+/* Formular */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 2px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+/* Submit Button */
+.btn-submit {
+    width: 100%;
+    padding: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.3s ease;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-submit:active {
+    transform: translateY(0);
+}
+
+/* Form Messages */
+.form-message {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    display: none;
+    font-weight: 600;
+}
+
+.form-message.success {
+    display: block;
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.form-message.error {
+    display: block;
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* ===================================
+   FOOTER
+   =================================== */
+
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 0;
+}
+
+/* ===================================
+   RESPONSIVE DESIGN
+   =================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    /* Header */
+    header .container {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .nav {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+    
+    /* Hero */
+    .hero {
+        height: 50vh;
+        background-attachment: scroll; /* Parallax aus auf Mobile */
+    }
+    
+    .hero-content h2 {
+        font-size: 2rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+    
+    /* Galerie */
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+    }
+    
+    .gallery-img {
+        height: 200px;
+    }
+    
+    /* Lightbox */
+    .lightbox-prev,
+    .lightbox-next {
+        font-size: 40px;
+        padding: 10px;
+    }
+    
+    .lightbox-close {
+        right: 20px;
+        font-size: 30px;
+    }
+    
+    /* Formular */
+    .contact-form {
+        padding: 20px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px; /* Verhindert Zoom auf iOS */
+    }
+}
+
+/* Sehr kleine Geräte */
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+    
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+}
