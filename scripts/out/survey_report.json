@@ -1,0 +1,100 @@
+{
+  "firm_name": {
+    "entries": 0,
+    "stats": {
+      "mifa": {
+        "count": 0,
+        "avg": 0.0
+      },
+      "edueco": {
+        "count": 0,
+        "avg": 0.0
+      },
+      "greenmind": {
+        "count": 0,
+        "avg": 0.0
+      }
+    },
+    "ranking": [
+      {
+        "name": "mifa",
+        "count": 0,
+        "avg": 0.0
+      },
+      {
+        "name": "edueco",
+        "count": 0,
+        "avg": 0.0
+      },
+      {
+        "name": "greenmind",
+        "count": 0,
+        "avg": 0.0
+      }
+    ],
+    "winner": "mifa",
+    "own_suggestions": []
+  },
+  "apps": {
+    "entries": 0,
+    "stats": {
+      "rideshare": {
+        "count": 0,
+        "avg": 0.0
+      },
+      "mindlink": {
+        "count": 0,
+        "avg": 0.0
+      },
+      "carbon": {
+        "count": 0,
+        "avg": 0.0
+      }
+    },
+    "ranking": [
+      {
+        "cat": "rideshare",
+        "label": "Mitfahr‑App",
+        "count": 0,
+        "avg": 0.0
+      },
+      {
+        "cat": "mindlink",
+        "label": "LernApp",
+        "count": 0,
+        "avg": 0.0
+      },
+      {
+        "cat": "carbon",
+        "label": "CO2‑Tracker",
+        "count": 0,
+        "avg": 0.0
+      }
+    ],
+    "winners": {
+      "rideshare": {
+        "cat": "rideshare",
+        "label": "Mitfahr‑App",
+        "count": 0,
+        "avg": 0.0
+      },
+      "mindlink": {
+        "cat": "mindlink",
+        "label": "LernApp",
+        "count": 0,
+        "avg": 0.0
+      },
+      "carbon": {
+        "cat": "carbon",
+        "label": "CO2‑Tracker",
+        "count": 0,
+        "avg": 0.0
+      }
+    },
+    "own_suggestions": {
+      "rideshare": [],
+      "mindlink": [],
+      "carbon": []
+    }
+  }
+}
