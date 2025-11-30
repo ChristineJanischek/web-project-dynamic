@@ -29,14 +29,15 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 | Galerien | [`docs/galerien.md`](docs/galerien.md) | Einfache Bildgalerie, Grid/Flex |
 | Formulare & Auswertung | [`docs/formulare.md`](docs/formulare.md) | Formulare erstellen & validieren |
 | JavaScript Grundlagen | [`docs/js.md`](docs/js.md) | Variablen, Funktionen, DOM, Events |
+| Zielgruppenanalyse | [`docs/zielgruppenanalyse.md`](docs/zielgruppenanalyse.md) | User Personas, Customer Journey, Nutzerbedürfnisse |
+| Corporate Design | [`docs/corporate-design.md`](docs/corporate-design.md) | Logo, Farben, Typografie, Brand Guidelines |
+| Konzeption & Webdesign | [`docs/konzeption-webdesign.md`](docs/konzeption-webdesign.md) | Briefing, Sitemap, Wireframes, Mockups |
 | React Einstieg | [`docs/react.md`](docs/react.md) | Komponenten, Props, State |
 | Python (Flask) | [`docs/python.md`](docs/python.md) | Minimales API Backend |
 | PHP Grundlagen | [`docs/php.md`](docs/php.md) | Serverseitige Skripte, Ausgabe, Verarbeitung |
 | Datenbank (MySQL) | [`docs/datenbank.md`](docs/datenbank.md) | Tabellen, Abfragen, Verbindung |
 | Algorithmen & Datenstrukturen | [`docs/algorithmen-datenstrukturen.md`](docs/algorithmen-datenstrukturen.md) | Listen, Arrays, Sortieren, Suchen |
 | Testen | [`docs/testen.md`](docs/testen.md) | Warum Tests? Einfache Beispiele (Jest/Pytest/PHPUnit) |
-> 🤖 **Automatische Aktualisierung:** Diese Tabelle wird bei neuen Dokumentationen automatisch aktualisiert. Details: [`scripts/README.md`](scripts/README.md)
-
 
 
 ## 📚 Aufgaben & Lernversionen
@@ -57,6 +58,25 @@ Jede Version baut auf der vorherigen auf und führt neue Konzepte ein. Arbeite s
 - 📖 **Aufgabenstellung:** [`version1/README.md`](version1/README.md)
 - 💡 **Arbeitsordner:** `version1/aufgabe/` (hier arbeitest du!)
 - ✅ **Musterlösung:** `version1/loesung/` (zur Selbstkontrolle)
+
+### 🚀 Version 3: MiFa – Mission Future Academy Website
+
+**Status:** In Arbeit – mit partizipativer Namensfindung und App‑Portfolio
+
+**Schwerpunkte:**
+- 60% Konzeption (Zielgruppenanalyse, Corporate Design, Sitemap/Wireframes)
+- 40% Umsetzung (HTML/CSS/JS, Responsive Design, Formulare)
+- Schülerbeteiligung: Online‑Befragungen zur Namensfindung mit Python‑Auswertung
+
+**Schnelleinstieg:**
+- 📖 Aufgabenstellung & Anleitung: [`version3/README.md`](version3/README.md)
+- 🗳️ Survey (Schülerfirma‑Name): [`version3/aufgabe/surveys/name_survey/form.html`](version3/aufgabe/surveys/name_survey/form.html)
+- 🗳️ Survey (App‑Namen): [`version3/aufgabe/surveys/app_names/form.html`](version3/aufgabe/surveys/app_names/form.html)
+- 🧰 Auswertung (Python):
+   - `python3 version3/aufgabe/surveys/name_survey/process.py`
+   - `python3 version3/aufgabe/surveys/app_names/process.py`
+
+**Arbeitsordner:** `version3/aufgabe/` (Starter‑Templates vorhanden)
 
 **Themen:**
 - ✅ HTML-Grundgerüst (`<!DOCTYPE html>`, `<head>`, `<body>`)

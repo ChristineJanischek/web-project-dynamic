@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App‑Namen Befragung</title>
+  <link rel="stylesheet" href="../../css/style.css">
+</head>
+<body>
+  <main class="container">
+    <h1>App‑Namen Befragung</h1>
+    <p>Bewertet die Arbeitsnamen und macht bessere Vorschläge.</p>
+    <form id="appsForm">
+      <h2>Arbeitsnamen bewerten (1–5)</h2>
+      <div>
+        <label><strong>Mitfahrgelegenheits‑App: RideShare@School</strong></label>
+        <input type="number" name="rideshare" min="1" max="5" required>
+      </div>
+      <div>
+        <label><strong>LernApp: MindLink</strong></label>
+        <input type="number" name="mindlink" min="1" max="5" required>
+      </div>
+      <div>
+        <label><strong>CO2‑Tracker: School Carbon Tracker</strong></label>
+        <input type="number" name="carbon" min="1" max="5" required>
+      </div>
+      <h2>Eigene Vorschläge</h2>
+      <div>
+        <label for="ownRide">Mitfahr‑App Vorschlag</label>
+        <input type="text" id="ownRide" name="ownRide" placeholder="z.B. SchoolRide">
+      </div>
+      <div>
+        <label for="ownMind">LernApp Vorschlag</label>
+        <input type="text" id="ownMind" name="ownMind" placeholder="z.B. LearnLink">
+      </div>
+      <div>
+        <label for="ownCO2">CO2‑Tracker Vorschlag</label>
+        <input type="text" id="ownCO2" name="ownCO2" placeholder="z.B. CarbonClass">
+      </div>
+      <button class="btn btn-primary" type="submit">Absenden</button>
+      <p class="note">Speichere die JSON‑Datei und lege sie in `surveys/app_names/data/` ab.</p>
+    </form>
+  </main>
+  <script>
+    document.getElementById('appsForm').addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const f = e.target;
+      const data = {
+        rideshare: f.rideshare.value,
+        mindlink: f.mindlink.value,
+        carbon: f.carbon.value,
+        ownRide: f.ownRide.value||null,
+        ownMind: f.ownMind.value||null,
+        ownCO2: f.ownCO2.value||null,
+        ts: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'responses_client_appnames.json';
+      a.click();
+      URL.revokeObjectURL(a.href);
+      alert('Antwort gespeichert. Für Sammelauswertung bitte Datei in data/ ablegen oder Python‑Script nutzen.');
+    });
+  </script>
+</body>
+</html>

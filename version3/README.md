@@ -1,16 +1,23 @@
-# Version 3: Bilder, Galerien & Formulare
+# Version 3: MiFa – Mission Future Academy Website
 
 **Status:** ✅ Bereit zum Lernen!
+
+## 🎯 Projektübersicht
+
+In dieser Version entwickelst du die Website für **MiFa - Mission Future Academy**, eine Schülerfirma, die sich auf nachhaltige Software im Bereich Bildung und Ökologie spezialisiert.
+
+**Besonderheit:** Anders als in Version 1 und 2 liegt der Fokus zu **60% auf der Konzeption** und nur zu **40% auf der technischen Umsetzung**. Du lernst, wie professionelle Webprojekte entstehen – vom ersten Briefing bis zum fertigen Produkt.
 
 ## 🎯 Lernziele
 
 Nach Abschluss dieser Version kannst du:
-- ✅ Bilder responsive und optimiert einbinden
-- ✅ Moderne Bildgalerien mit CSS Grid erstellen
-- ✅ Formulare mit HTML5-Validierung gestalten
-- ✅ JavaScript-Formular-Validierung implementieren
-- ✅ Lightbox-Effekte für Bildvergrößerung nutzen
-- ✅ Verschiedene Bildformate gezielt einsetzen
+- ✅ Zielgruppenanalysen für Webprojekte durchführen
+- ✅ Corporate Design Richtlinien entwickeln und anwenden
+- ✅ Sitemaps und Wireframes erstellen
+- ✅ Responsive Websites mit modernem Design umsetzen
+- ✅ Formulare mit JavaScript-Validierung implementieren
+- ✅ Bilder responsive und performant einbinden
+- ✅ Ein professionelles Web-Projekt von A-Z durchführen
 
 ## 📋 Voraussetzungen
 
@@ -21,235 +28,618 @@ Nach Abschluss dieser Version kannst du:
 
 ---
 
-## 📚 Aufgabenübersicht
+## 📚 Wichtige Dokumentation (ZUERST lesen!)
 
-### Teil 1: Responsive Bilder (60 Min)
-📖 **Theorie:** [`docs/bilder-grafiken.md`](../docs/bilder-grafiken.md)
+### 🎨 Phase 1: Konzeption (60% der Arbeitszeit)
 
-**Lernziele:**
-- Verschiedene Bildformate kennen (JPG, PNG, SVG, WebP)
-- Bilder responsive einbinden
-- Alt-Texte richtig schreiben
-- `object-fit` und `object-position` nutzen
+Diese Phase ist entscheidend! Professionelle Webprojekte beginnen immer mit sorgfältiger Planung:
 
-**Aufgaben:**
-1. Hero-Bild mit `object-fit: cover` erstellen
-2. Logo als SVG einbinden
-3. Responsive Bilder mit `srcset` implementieren
-4. Picture-Element für Art Direction nutzen
-
----
-
-### Teil 2: Bildgalerie mit Grid (90 Min)
-📖 **Theorie:** [`docs/galerien.md`](../docs/galerien.md)
+#### 1. Zielgruppenanalyse (90 Min)
+📖 **Dokumentation:** [`docs/zielgruppenanalyse.md`](../docs/zielgruppenanalyse.md)
 
 **Lernziele:**
-- CSS Grid für automatisch responsive Galerien
-- Hover-Effekte für Interaktivität
-- Verschiedene Galerie-Layouts umsetzen
+- Zielgruppen identifizieren (Lehrkräfte, Schüler:innen, NGOs)
+- User Personas erstellen
+- Customer Journey Map entwickeln
+- Nutzerbedürfnisse analysieren
 
 **Aufgaben:**
-1. Einfache Grid-Galerie mit 6-9 Bildern
-2. Unterschiedliche Bildgrößen im Grid
-3. Hover-Effekt mit Scale & Shadow
-4. Masonry-Layout (optional)
+1. Erstelle 2-3 detaillierte Personas für MiFa
+2. Definiere Hauptzielgruppe und Nebenzielgruppen
+3. Entwickle eine Customer Journey Map
+4. Dokumentiere Erkenntnisse im `concept/` Ordner
 
----
-
-### Teil 3: Lightbox implementieren (60 Min)
-📖 **Theorie:** [`docs/galerien.md`](../docs/galerien.md) (Abschnitt "Lightbox")
+#### 2. Corporate Design (120 Min)
+📖 **Dokumentation:** [`docs/corporate-design.md`](../docs/corporate-design.md)
 
 **Lernziele:**
-- Modal/Overlay mit CSS erstellen
-- JavaScript Event-Listener für Bildklicks
-- Navigation zwischen Bildern
-- Schließen mit Escape-Taste
+- Logo-Verwendung und Schutzraum verstehen
+- Farbpsychologie für Nachhaltigkeit anwenden
+- Typografie-System entwickeln
+- CSS Custom Properties für Design-Tokens nutzen
 
 **Aufgaben:**
-1. Lightbox HTML-Struktur erstellen
-2. CSS für Overlay und Bild-Vergrößerung
-3. JavaScript für Öffnen/Schließen
-4. Pfeiltasten-Navigation implementieren
+1. Analysiere das MiFa-Logo (`images/Logo_farbig.jpg`)
+2. Definiere Farbpalette (Primär: Grün, Sekundär: Blau, Akzent: Orange)
+3. Wähle passende Google Fonts aus
+4. Erstelle CSS Custom Properties für alle Design-Tokens
 
----
+**Verfügbare Assets:**
+- `images/Logo_farbig.jpg` - Hauptlogo
+- `images/Startbild.png` - Hero-Bild (Desktop)
+- `images/Startbild_klein.png` - Hero-Bild (Mobile)
+- `images/ic_launcher.png` - Favicon
 
-### Teil 4: Kontaktformular (90 Min)
-📖 **Theorie:** [`docs/formulare.md`](../docs/formulare.md)
+#### 3. Konzeption & Webdesign (90 Min)
+📖 **Dokumentation:** [`docs/konzeption-webdesign.md`](../docs/konzeption-webdesign.md)
 
 **Lernziele:**
-- Formular-Grundstruktur verstehen
-- HTML5-Validierung nutzen
-- Formular-Styling mit CSS
-- JavaScript-Validierung implementieren
+- Briefing analysieren und verstehen
+- Sitemap-Struktur entwickeln
+- Wireframes für Desktop und Mobile erstellen
+- Mockups interpretieren
 
 **Aufgaben:**
-1. Kontaktformular erstellen (Name, Email, Nachricht)
-2. HTML5-Validierung (required, email, minlength)
-3. Custom Styling für Inputs und Buttons
-4. JavaScript-Validierung bei Submit
-5. Erfolgs-/Fehlermeldungen anzeigen
+1. Analysiere das Mockup in `concept/Mockups_MiFa.odp`
+2. Erstelle eine Sitemap für die Website-Struktur
+3. Zeichne Low-Fidelity Wireframes (Papier oder Tool)
+4. Plane Content-Bereiche für alle Seiten
+
+**Mindest-Seiten:**
+- Startseite (Hero, Über uns, Call-to-Action)
+- Projekte (Grid mit 3+ Projekten)
+- Services (Was bietet MiFa an?)
+- Kontakt (Formular, Kontaktdaten)
 
 ---
 
-## 🛠️ Schritt-für-Schritt Implementierungsanleitung
+### 💻 Phase 2: Technische Umsetzung (40% der Arbeitszeit)
 
-### Vorbereitung
+Jetzt setzt du deine Konzeption in Code um!
 
-**📖 Vor dem Start empfohlen:**
-- [`docs/bilder-grafiken.md`](../docs/bilder-grafiken.md) - Bildformate & Responsive Bilder
-- [`docs/galerien.md`](../docs/galerien.md) - Grid-Galerien & Lightbox
-- [`docs/formulare.md`](../docs/formulare.md) - Formular-Grundlagen & Validierung
+#### 1. HTML-Struktur (60 Min)
+📖 **Dokumentation:** [`docs/html-grundgeruest.md`](../docs/html-grundgeruest.md), [`docs/seitenstrukturelemente.md`](../docs/seitenstrukturelemente.md)
 
-1. **Workspace vorbereiten**
-   - Öffne den Ordner `version3/aufgabe/` in deinem Editor
-   - Stelle sicher, dass die Dateistruktur vollständig ist:
-     - `index.html`
-     - `css/style.css`
-     - `js/script.js`
-     - `images/` (füge 6-9 Beispielbilder hinzu)
+**Aufgaben:**
+1. Nutze die bereitgestellte Vorlage `aufgabe/index_neu.html` als Startpunkt
+2. Passe Texte und Inhalte an deine Konzeption an
+3. Füge weitere Sektionen hinzu falls nötig
+4. Stelle sicher, dass die HTML-Struktur semantisch korrekt ist
 
-2. **Beispielbilder hinzufügen**
-   - Lade kostenlose Bilder von [Unsplash](https://unsplash.com) oder [Pexels](https://pexels.com)
-   - Oder nutze Platzhalter: `https://picsum.photos/400/300`
-   - Benenne sie: `bild1.jpg`, `bild2.jpg`, etc.
+**Vorlagen-Features:**
+- ✅ Sticky Header mit Navigation
+- ✅ Hamburger-Menü für Mobile
+- ✅ Hero-Section mit Background-Image
+- ✅ Responsive Grid-Layouts
+- ✅ Kontaktformular mit Validierung
+- ✅ Footer mit mehreren Spalten
 
----
+#### 2. CSS-Styling & Corporate Design (90 Min)
+📖 **Dokumentation:** [`docs/css-basis.md`](../docs/css-basis.md), [`docs/corporate-design.md`](../docs/corporate-design.md)
 
-### Schritt 1: HTML-Grundstruktur (30 Min)
+**Aufgaben:**
+1. Nutze `aufgabe/css/style_neu.css` als Basis
+2. Passe CSS Custom Properties an dein Corporate Design an
+3. Ergänze weitere Komponenten nach Bedarf
+4. Achte auf mobile-first Responsive Design
 
-**Ziel:** Vollständige HTML-Struktur mit allen Sektionen
+**CSS-Features in der Vorlage:**
+- ✅ CSS Custom Properties für alle Design-Tokens
+- ✅ Mobile-first Responsive Breakpoints (480px, 768px, 1400px)
+- ✅ Flexbox und CSS Grid Layouts
+- ✅ Hover- und Transition-Effekte
+- ✅ Accessibility-Features (Focus States, Reduced Motion)
 
-#### Zu implementieren in `index.html`:
+#### 3. Responsive Bilder (45 Min)
+📖 **Dokumentation:** [`docs/bilder-grafiken.md`](../docs/bilder-grafiken.md)
 
-```html
-<!DOCTYPE html>
-<html lang="de">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Version 3: Bilder, Galerien & Formulare</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <!-- Header mit Navigation -->
-    <header>
-        <div class="container">
-            <h1>Mein Portfolio</h1>
-            <nav>
-                <ul class="nav">
-                    <li><a href="#hero">Start</a></li>
-                    <li><a href="#galerie">Galerie</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+**Aufgaben:**
+1. Logo als `background-image` im CSS einbinden
+2. Hero-Bild responsive einsetzen (Desktop: `Startbild.png`, Mobile: `Startbild_klein.png`)
+3. Projekt-Bilder optimiert einbinden
+4. Alt-Texte für Barrierefreiheit schreiben
 
-    <!-- Hero Section mit Hintergrundbild -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h2>Willkommen in meiner Bildergalerie</h2>
-            <p>Entdecke atemberaubende Fotografie</p>
-        </div>
-    </section>
+#### 4. JavaScript-Interaktivität (75 Min)
+📖 **Dokumentation:** [`docs/js.md`](../docs/js.md), [`docs/formulare.md`](../docs/formulare.md)
 
-    <!-- Hauptinhalt -->
-    <main>
-        <div class="container">
-            <!-- Galerie-Sektion -->
-            <section id="galerie" class="gallery-section">
-                <h2>Meine Galerie</h2>
-                <div class="gallery">
-                    <!-- TODO: 6-9 Bilder hier einfügen -->
-                </div>
-            </section>
+**Aufgaben:**
+1. Nutze `aufgabe/js/script_neu.js` als Vorlage
+2. Teste Mobile Navigation (Hamburger-Menü)
+3. Implementiere Formularvalidierung
+4. Füge Scroll-Animationen hinzu (optional)
 
-            <!-- Kontaktformular-Sektion -->
-            <section id="kontakt" class="contact-section">
-                <h2>Kontakt</h2>
-                <form id="contactForm" class="contact-form">
-                    <!-- TODO: Formularfelder hier einfügen -->
-                </form>
-                <div id="formMessage" class="form-message"></div>
-            </section>
-        </div>
-    </main>
+**JavaScript-Features in der Vorlage:**
+- ✅ Mobile Navigation Toggle
+- ✅ Smooth Scrolling für Anker-Links
+- ✅ Formularvalidierung (HTML5 + Custom)
+- ✅ Intersection Observer für Scroll-Animationen
+- ✅ Lazy Loading für Bilder
+- ✅ Accessibility Features (Keyboard Navigation)
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <p>&copy; 2025 Mein Portfolio</p>
-        </div>
-    </footer>
+#### 5. Formulare & Validierung (60 Min)
+📖 **Dokumentation:** [`docs/formulare.md`](../docs/formulare.md)
 
-    <!-- Lightbox (Modal) -->
-    <div id="lightbox" class="lightbox">
-        <!-- TODO: Lightbox-Struktur hier einfügen -->
-    </div>
-
-    <script src="js/script.js"></script>
-</body>
-</html>
-```
-
-**✅ Testen:**
-- HTML-Datei im Browser öffnen
-- Sollte grundlegende Struktur zeigen (noch ohne Styling)
+**Aufgaben:**
+1. Kontaktformular ist bereits implementiert in der Vorlage
+2. Passe Formularfelder an deine Anforderungen an
+3. Teste HTML5-Validierung (required, email, minlength)
+4. Teste JavaScript-Validierung bei Submit
+5. Ergänze weitere Formularfelder falls nötig (z.B. Datei-Upload für Bewerbungen)
 
 ---
 
-### Schritt 2: Hero-Bild & Responsive Bilder (45 Min)
+## 🛠️ Schritt-für-Schritt Anleitung
 
-**Ziel:** Hero-Section mit Hintergrundbild und responsive Bilder in der Galerie
+### Schritt 1: Starter-Vorlagen verstehen (30 Min)
 
-#### Zu implementieren in `index.html` (Galerie-Sektion):
+1. **Dateien umbenennen:**
+   ```bash
+   cd version3/aufgabe/
+   cp index_neu.html index.html
+   cp css/style_neu.css css/style.css
+   cp js/script_neu.js js/script.js
+   ```
 
-```html
-<section id="galerie" class="gallery-section">
-    <h2>Meine Galerie</h2>
-    <div class="gallery">
-        <img src="images/bild1.jpg" alt="Landschaft mit Bergen" class="gallery-img">
-        <img src="images/bild2.jpg" alt="Sonnenuntergang am Meer" class="gallery-img">
-        <img src="images/bild3.jpg" alt="Stadtansicht bei Nacht" class="gallery-img">
-        <img src="images/bild4.jpg" alt="Wald im Herbst" class="gallery-img">
-        <img src="images/bild5.jpg" alt="Wüstenlandschaft" class="gallery-img">
-        <img src="images/bild6.jpg" alt="Polarlichter" class="gallery-img">
-    </div>
-</section>
-```
+2. **Vorlage im Browser öffnen:**
+   - Öffne `index.html` im Browser
+   - Prüfe, dass alle Sektionen sichtbar sind
+   - Teste mobile Navigation (Browser-Fenster verkleinern)
 
-#### Zu implementieren in `css/style.css`:
+3. **Code-Struktur analysieren:**
+   - Lies HTML-Kommentare für TODO-Markierungen
+   - Finde CSS Custom Properties in `:root`
+   - Verstehe JavaScript-Module-Struktur
+
+### Schritt 2: Corporate Design anpassen (60 Min)
+
+**In `css/style.css` (Zeilen 14-50):**
+
+Passe die CSS Custom Properties an deine Konzeption an:
 
 ```css
-/* Reset & Grundstyles */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+:root {
+    /* DEINE Farbpalette aus Corporate Design */
+    --color-primary: #2D6A4F;        /* Grün für Nachhaltigkeit */
+    --color-primary-light: #52B788;
+    --color-primary-dark: #1B4332;
+    
+    --color-secondary: #0077B6;      /* Blau für Technologie */
+    --color-secondary-light: #48CAE4;
+    --color-secondary-dark: #023E8A;
+    
+    --color-accent: #F4A261;         /* Orange für Energie */
+    
+    /* DEINE Typografie */
+    --font-primary: 'Inter', sans-serif;      /* Aus Google Fonts */
+    --font-secondary: 'Merriweather', serif;  /* Aus Google Fonts */
+    
+    /* Spacing, Radius, Shadows bleiben meistens gleich */
 }
+```
 
-body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: #333;
-}
+**Google Fonts einbinden (in `index.html` `<head>`):**
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+```
 
-/* Hero Section */
-.hero {
-    height: 70vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-                      url('../images/hero.jpg');
-    background-size: cover;
+### Schritt 3: Logo & Bilder einbinden (45 Min)
+
+**Logo im CSS (`css/style.css` Zeile ~230):**
+
+```css
+.logo {
+    background-image: url('../images/Logo_farbig.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
     background-position: center;
-    background-attachment: fixed; /* Parallax-Effekt */
-    display: flex;
-    align-items: center;
+    width: 150px;
+    height: 60px;
+}
+
+@media (max-width: 768px) {
+    .logo {
+        width: 120px;
+        height: 50px;
+    }
+}
+```
+
+**Hero-Bild responsive (`css/style.css` Zeile ~300):**
+
+```css
+.hero {
+    background-image: url('../images/Startbild.png');
+    /* ... weitere Styles ... */
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-image: url('../images/Startbild_klein.png');
+    }
+}
+```
+
+**Projekt-Bilder im HTML ersetzen:**
+
+Ersetze Platzhalter-URLs durch eigene Bilder oder erstelle Screenshots deiner Projekte:
+
+```html
+<div class="project-image">
+    <img src="images/projekt-ecolearn.jpg" 
+         alt="EcoLearn App Screenshot" 
+         loading="lazy">
+</div>
+```
+
+### Schritt 4: Inhalte anpassen (90 Min)
+
+**In `index.html`:**
+
+1. **Hero-Section personalisieren:**
+   ```html
+   <h1 class="hero-title">Mission Future Academy</h1>
+   <p class="hero-subtitle">Nachhaltige Software für Bildung & Ökologie</p>
+   <p class="hero-tagline">Von Schüler:innen entwickelt. Für die Zukunft gestaltet.</p>
+   ```
+
+2. **Über-uns-Texte schreiben:**
+   - Füge dein Mission-Statement ein
+   - Beschreibe MiFas Werte
+   - Ergänze Features der Schülerfirma
+
+3. **Projekte hinzufügen:**
+   - Mindestens 3 Projekte (EcoLearn, CO2-Tracker, GreenDashboard)
+   - Für jedes Projekt: Titel, Beschreibung, verwendete Technologien
+   - Bilder oder Platzhalter
+
+4. **Services definieren:**
+   - Software-Entwicklung
+   - Workshops
+   - Beratung
+
+5. **Kontaktformular anpassen:**
+   - Bereits vollständig implementiert
+   - Optional: Betreff-Optionen erweitern
+
+### Schritt 5: Mobile Navigation testen (30 Min)
+
+**Test-Checkliste:**
+- [ ] Browser-Fenster auf < 768px verkleinern
+- [ ] Hamburger-Icon erscheint
+- [ ] Klick auf Hamburger öffnet Menü von rechts
+- [ ] Klick auf Navigation-Link schließt Menü
+- [ ] Klick außerhalb des Menüs schließt es
+- [ ] ESC-Taste schließt Menü
+
+**Falls etwas nicht funktioniert:**
+- Prüfe Browser-Konsole auf Fehler (F12)
+- Stelle sicher, dass IDs in HTML und JavaScript übereinstimmen
+- Überprüfe, dass `script.js` am Ende von `<body>` geladen wird
+
+### Schritt 6: Formularvalidierung testen (45 Min)
+
+**Test-Szenarios:**
+
+1. **Leeres Formular absenden:**
+   - Erwartung: Fehlermeldungen bei allen Pflichtfeldern
+
+2. **Ungültige E-Mail:**
+   - Eingabe: "test@test"
+   - Erwartung: "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+
+3. **Nachricht zu kurz:**
+   - Eingabe: "Hallo"
+   - Erwartung: "Bitte geben Sie eine Nachricht mit mindestens 10 Zeichen ein."
+
+4. **Datenschutz nicht akzeptiert:**
+   - Erwartung: Formular kann nicht abgesendet werden
+
+5. **Erfolgreiches Absenden:**
+   - Alle Felder korrekt ausgefüllt
+   - Erwartung: Grüne Erfolgsmeldung, Formular wird zurückgesetzt
+
+**JavaScript-Konsole beobachten:**
+```javascript
+// Im Browser-Konsole (F12):
+// Bei erfolgreichem Submit sollte erscheinen:
+// "Formulardaten: {name: '...', email: '...', ...}"
+```
+
+### Schritt 7: Scroll-Animationen aktivieren (Optional, 30 Min)
+
+Die Vorlage enthält bereits Intersection Observer für Fade-In-Animationen.
+
+**Test:**
+1. Scroll langsam durch die Seite
+2. Karten sollten beim Erscheinen einblenden und nach oben sliden
+3. Falls nicht: Prüfe Browser-Konsole
+
+**Deaktivieren bei Motion Sensitivity:**
+Die Vorlage respektiert automatisch `prefers-reduced-motion`.
+
+---
+
+## 🧪 Testing & Qualitätssicherung
+
+### Browser-Kompatibilität
+Teste in mindestens 3 Browsern:
+- [ ] Chrome/Edge
+- [ ] Firefox
+- [ ] Safari (falls verfügbar)
+
+### Responsive Testing
+Teste in DevTools (F12) bei:
+- [ ] 320px (Mobile klein)
+- [ ] 480px (Mobile groß)
+- [ ] 768px (Tablet)
+- [ ] 1024px (Laptop)
+- [ ] 1920px (Desktop)
+
+### Accessibility Testing
+- [ ] Alle Bilder haben Alt-Texte
+- [ ] Formular-Labels sind mit Inputs verknüpft
+- [ ] Navigation mit Tab-Taste funktioniert
+- [ ] Focus-States sind sichtbar
+- [ ] Kontraste sind ausreichend (nutze Browser-Tools)
+
+### Performance Testing
+- [ ] Bilder sind optimiert (< 500KB pro Bild)
+- [ ] Keine Konsolen-Errors (F12)
+- [ ] Page Load < 3 Sekunden
+
+---
+
+## 📦 Abgabe & Dokumentation
+
+### Pflicht-Dateien
+
+```
+version3/aufgabe/
+├── concept/
+│   ├── personas.md              (2-3 User Personas)
+│   ├── customer-journey.md      (Customer Journey Map)
+│   ├── sitemap.md               (Website-Struktur)
+│   ├── wireframes.pdf           (oder .png)
+│   └── corporate-design.md      (Farbschema, Typografie, Logo-Usage)
+├── index.html
+├── css/
+│   └── style.css
+├── js/
+│   └── script.js
+├── images/
+│   ├── Logo_farbig.jpg
+│   ├── Startbild.png
+│   ├── Startbild_klein.png
+│   └── (weitere Projekt-Bilder)
+└── README.md                    (Projekt-Dokumentation)
+```
+
+### README.md erstellen
+
+Erstelle eine `README.md` im `aufgabe/` Ordner mit:
+
+1. **Projekt-Titel & Beschreibung**
+2. **Konzeption:**
+   - Zusammenfassung Zielgruppenanalyse
+   - Corporate Design Entscheidungen
+   - Sitemap-Übersicht
+3. **Technische Umsetzung:**
+   - Verwendete Technologien
+   - Besondere Features
+   - Bekannte Limitationen
+4. **Setup-Anleitung:**
+   - Wie startet man das Projekt lokal?
+5. **Credits:**
+   - Bildquellen
+   - Verwendete Libraries/Fonts
+
+### Bewertungskriterien
+
+| Kategorie | Gewichtung | Kriterien |
+|-----------|------------|-----------|
+| **Konzeption** | 60% | Vollständigkeit der Personas, Qualität der Wireframes, Durchdachtheit des Corporate Designs |
+| **HTML** | 15% | Semantik, Struktur, Validität |
+| **CSS** | 15% | Corporate Design Umsetzung, Responsive Design, Code-Qualität |
+| **JavaScript** | 10% | Funktionalität, Fehlerfreiheit, Code-Stil |
+
+---
+
+## 💡 Tipps & Best Practices
+
+### Konzeption
+- **Nimm dir Zeit!** 60% der Arbeitszeit = 60% der Bewertung
+- Nutze echte Namen und Geschichten für Personas
+- Wireframes müssen nicht perfekt sein - Skizzen reichen
+- Corporate Design Guide ist deine Referenz während des Codings
+
+### Technische Umsetzung
+- **Mobile-first:** Starte mit Mobile-Styling, dann Desktop
+- **CSS Custom Properties:** Nutze sie konsequent statt hardcodierte Werte
+- **Kommentiere deinen Code:** Hilft dir und anderen
+- **Teste früh, teste oft:** Nicht alles am Ende testen
+
+### Zeitmanagement
+Plane ca. **12-15 Stunden** für Version 3:
+- **Tag 1 (4-5h):** Konzeption (Personas, Corporate Design, Wireframes)
+- **Tag 2 (3-4h):** HTML/CSS Grundstruktur, Corporate Design umsetzen
+- **Tag 3 (2-3h):** Inhalte, Bilder, Feinschliff
+- **Tag 4 (2-3h):** JavaScript, Testing, Dokumentation
+
+---
+
+## 🚀 Weiterführende Challenges (Optional)
+
+Wenn du fertig bist und mehr lernen möchtest:
+
+### Level 1: Erweiterte Features
+- [ ] Dark Mode Toggle
+- [ ] Bildergalerie mit Lightbox
+- [ ] Projekt-Detailseiten
+- [ ] Blog-Sektion mit mehreren Artikeln
+
+### Level 2: Backend Integration
+- [ ] Formular-Daten an Server senden (PHP oder Node.js)
+- [ ] E-Mail-Versand bei Kontaktanfrage
+- [ ] Admin-Bereich für Content-Management
+
+### Level 3: Progressive Web App
+- [ ] Service Worker für Offline-Funktionalität
+- [ ] Manifest.json für "Add to Homescreen"
+- [ ] Push Notifications
+
+### Level 4: Deployment
+- [ ] Website auf GitHub Pages deployen
+- [ ] Custom Domain einrichten
+- [ ] SSL-Zertifikat konfigurieren
+
+---
+
+## 📖 Weiterführende Ressourcen
+
+### Tools für Konzeption
+- **Figma** (kostenlos): Wireframes & Mockups erstellen
+- **Miro** (kostenlos): Customer Journey Maps, Brainstorming
+- **Coolors.co**: Farbpaletten generieren
+- **Google Fonts**: Schriftarten durchsuchen
+
+### Design-Inspiration
+- **Awwwards.com**: Preisgekrönte Webdesigns
+- **Dribbble.com**: UI/UX Design-Inspirationen
+- **SiteInspire**: Portfolio-Websites
+- **csswinner.com**: CSS-Galerien
+
+### Code-Optimierung
+- **PageSpeed Insights**: Performance testen
+- **WAVE**: Accessibility testen
+- **W3C Validator**: HTML/CSS validieren
+
+---
+
+## ❓ FAQ
+
+**F: Muss ich echte Projekte für MiFa erfinden?**  
+A: Nein, du kannst fiktive Projekt-Ideen verwenden. Wichtig ist, dass sie zum Thema "Nachhaltige Software für Bildung & Ökologie" passen.
+
+**F: Brauche ich professionelle Design-Tools?**  
+A: Nein! Wireframes kannst du auf Papier zeichnen und fotografieren. Für Personas reicht ein simples Markdown-Dokument.
+
+**F: Was wenn ich kein Mockup in LibreOffice öffnen kann?**  
+A: Das Mockup ist nur als Inspiration gedacht. Du kannst auch eigene Ideen entwickeln oder ähnliche Layouts im Web suchen.
+
+**F: Muss ich alle JavaScript-Features nutzen?**  
+A: Die Vorlage enthält viele Features. Konzentriere dich zuerst auf: Mobile Nav, Formularvalidierung, Smooth Scrolling. Der Rest ist optional.
+
+**F: Wie viele Seiten muss die Website haben?**  
+A: Minimum: 4 Bereiche (Home, Über uns, Projekte, Kontakt) als One-Pager. Optional: Mehrere separate HTML-Seiten.
+
+**F: Kann ich ein anderes CSS-Framework nutzen (Bootstrap, Tailwind)?**  
+A: Für diese Übung sollst du Custom CSS schreiben, um die Grundlagen zu verstehen. Frameworks sind für spätere Projekte empfohlen.
+
+---
+
+## 🎓 Lernziel-Checkliste
+
+Nach Abschluss solltest du "Ja" sagen können:
+
+### Konzeption
+- [ ] Ich kann Zielgruppen für Webprojekte analysieren
+- [ ] Ich kann User Personas erstellen
+- [ ] Ich verstehe, warum Corporate Design wichtig ist
+- [ ] Ich kann Wireframes zeichnen
+- [ ] Ich kann eine Sitemap erstellen
+
+### Design
+- [ ] Ich kann Farbpsychologie anwenden
+- [ ] Ich weiß, wie man Typografie-Hierarchien aufbaut
+- [ ] Ich kann CSS Custom Properties sinnvoll einsetzen
+- [ ] Ich verstehe Mobile-first Design
+
+### Entwicklung
+- [ ] Ich kann semantisches HTML schreiben
+- [ ] Ich kann responsive Layouts mit Grid/Flexbox erstellen
+- [ ] Ich kann Formulare mit HTML5 + JS validieren
+- [ ] Ich kann einfache JavaScript-Interaktionen programmieren
+- [ ] Ich kann Bilder responsive einbinden
+
+### Projektmanagement
+- [ ] Ich kann ein Webprojekt von A-Z durchführen
+- [ ] Ich kann meine Arbeit dokumentieren
+- [ ] Ich kann Code-Qualität sicherstellen (Testing)
+
+---
+
+**Viel Erfolg! 🌱💻🚀**
+
+Bei Fragen: Nutze die verlinkten Dokumentationen oder frage deine Lehrkraft.
+
+---
+
+## 🗳️ Partizipative Namensfindung & App‑Portfolio
+
+Ziel: Die Schülerfirma und ihre App‑Projekte werden gemeinschaftlich benannt. Ihr bewertet KI‑Vorschläge und könnt eigene Ideen einreichen. Die Auswertung läuft automatisiert (Python).
+
+### 1) Schülerfirma: Namensvorschläge bewerten und ergänzen
+
+- KI generiert drei Start‑Vorschläge (Beispiel):
+    - „Mission Future Academy“ (MiFa)
+    - „EduEco Labs“
+    - „GreenMind Tech“
+- Zusätzlich: Eigene Vorschläge eintragen.
+
+Durchführung (im Classroom):
+- Öffne den Fragebogen: `version3/aufgabe/surveys/name_survey/form.html`
+- Bewerte jeden KI‑Vorschlag (Skala 1–5) und gib optional eigene Ideen ein.
+- Sende das Formular (es erzeugt eine lokale JSON‑Datei im Repo).
+
+Automatische Auswertung (Python):
+- Skript: `version3/aufgabe/surveys/name_survey/process.py`
+- Aggregiert Stimmen, berechnet Mittelwerte, zeigt Rangliste und Gewinner an.
+
+### 2) App‑Projekte definieren und benennen
+
+Geplante erste drei Projekte (Platzhalternamen → werden ebenfalls bewertet):
+- App 1: Mitfahrgelegenheits‑App (Arbeitsname: „RideShare@School“)
+- App 2: LernApp MindLink (alias „Mini‑Lük digital“)
+- App 3: CO2‑Tracker (Arbeitsname: „School Carbon Tracker“)
+
+Bewertung & Namensfindung:
+- Fragebogen: `version3/aufgabe/surveys/app_names/form.html`
+- Bewertet die drei Arbeitsnamen und schlagt Alternativen vor.
+- Python‑Auswertung: `version3/aufgabe/surveys/app_names/process.py`
+
+### 3) Integration ins Web‑Layout
+
+- Verlinkt die App‑Projekte in `index.html` unter „Unsere Projekte“.
+- Nach der Auswertung: Ersetzt Platzhaltertitel/Beschreibungen durch Gewinnernamen.
+- Optional: Erstellt eigene Projekt‑Detailseiten.
+
+### Empfehlung: Sollen auch App‑Namen bewertet werden?
+- Ja. Dadurch steigt Identifikation und Qualität der Namen (Kriterien: Verständlichkeit, Passung, Merkbarkeit, Einzigartigkeit).
+- Bewertet zunächst die drei Arbeitsnamen, sammelt eigene Alternativen und wählt per Auswertung.
+
+---
+
+### Abgabestruktur (Ergänzung)
+
+Fügt für die Befragung folgende Struktur hinzu:
+
+```
+version3/aufgabe/
+└── surveys/
+        ├── name_survey/
+        │   ├── form.html
+        │   ├── process.py
+        │   └── data/
+        │       └── responses.json
+        └── app_names/
+                ├── form.html
+                ├── process.py
+                └── data/
+                        └── responses.json
+```
     justify-content: center;
     text-align: center;
     color: white;
