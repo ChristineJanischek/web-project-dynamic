@@ -25,7 +25,7 @@ body {
    ======================================== */
 
 header {
-    background-color: #0b5cad;
+    background-color: #2D6A4F;
     color: white;
     /* TODO: Position sticky für sticky header */
 }
@@ -127,7 +127,7 @@ header {
     /* TODO: box-sizing: content-box */
     /* TODO: width setzen (z.B. 200px) */
     /* TODO: Padding hinzufügen (z.B. 30px) */
-    /* TODO: Border (z.B. 3px solid #667eea) */
+    /* TODO: Border (z.B. 3px solid #52B788) */
     /* TODO: Margin */
     /* TODO: background-color */
 }

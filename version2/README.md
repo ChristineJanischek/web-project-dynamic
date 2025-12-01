@@ -200,7 +200,7 @@ header .container {
     box-sizing: content-box;
     width: 200px;
     padding: 30px;
-    border: 3px solid #667eea;
+    border: 3px solid #52B788;
     margin: 20px;
 }
 
@@ -209,15 +209,15 @@ header .container {
     box-sizing: border-box;
     width: 200px;
     padding: 30px;
-    border: 3px dashed #764ba2;
+    border: 3px dashed #2D6A4F;
     margin: 20px;
 }
 
 /* Box 3: Mit Effekten */
 .box-3 {
     padding: 25px;
-    border: 2px solid #0b5cad;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: 2px solid #2D6A4F;
+    box-shadow: 0 4px 6px rgba(45, 106, 79, 0.15);
     border-radius: 16px;
 }
 ```
