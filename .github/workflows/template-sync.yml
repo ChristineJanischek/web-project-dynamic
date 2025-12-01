@@ -1,0 +1,65 @@
+name: Template Sync Info
+
+# Dieser Workflow informiert über Template-Updates
+# Student-Repos können Updates manuell übernehmen
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'version*/**'
+      - 'README.md'
+      - 'CONTRIBUTING.md'
+      - '.github/workflows/**'
+
+jobs:
+  detect-changes:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      
+      - name: Detect Changed Files
+        id: changes
+        run: |
+          echo "## 📢 Template-Update verfügbar" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Folgende Dateien wurden aktualisiert:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          git diff --name-only HEAD~1 HEAD >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "### 🔄 So übernimmst du die Updates:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "1. **Template-Repo als Remote hinzufügen:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "git remote add template https://github.com/ChristineJanischek/web-project-dynamic.git" >> $GITHUB_STEP_SUMMARY
+          echo "git fetch template" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "2. **Nur Dokumentation übernehmen:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "git checkout template/main -- docs/" >> $GITHUB_STEP_SUMMARY
+          echo "git checkout template/main -- README.md" >> $GITHUB_STEP_SUMMARY
+          echo "git commit -m '📚 Update Dokumentation vom Template'" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "3. **Neue Version übernehmen (z.B. Version 4):**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "git checkout template/main -- version4/" >> $GITHUB_STEP_SUMMARY
+          echo "git commit -m '✨ Version 4 vom Template hinzugefügt'" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "4. **Workflows aktualisieren:**" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "git checkout template/main -- .github/workflows/" >> $GITHUB_STEP_SUMMARY
+          echo "git commit -m '🔧 Workflows vom Template aktualisiert'" >> $GITHUB_STEP_SUMMARY
+          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "⚠️ **Wichtig:** Überschreibe niemals deine eigenen Lösungen in \`version*/aufgabe/\`!" >> $GITHUB_STEP_SUMMARY

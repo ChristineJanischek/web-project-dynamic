@@ -482,6 +482,28 @@ Zukünftige Test-Beispiele:
 - **PHPUnit** - PHP Backend Tests
 - **Cypress** - End-to-End Browser Tests
 
+## 🔄 Template-Updates für Student-Repos
+
+Dieses Repository ist ein **GitHub Classroom Template**. Wenn du als Schüler:in damit arbeitest und später **neue Versionen** (z.B. Version 4) oder **Dokumentations-Updates** übernehmen möchtest:
+
+📖 **Vollständige Anleitung:** [`TEMPLATE_SYNC.md`](TEMPLATE_SYNC.md)
+
+**Quick-Start:**
+```bash
+# 1. Template als Remote hinzufügen (einmalig)
+git remote add template https://github.com/ChristineJanischek/web-project-dynamic.git
+git fetch template
+
+# 2. Neue Inhalte übernehmen (z.B. Version 4)
+git checkout template/main -- version4/
+git commit -m "✨ Version 4 vom Template hinzugefügt"
+git push
+```
+
+⚠️ **Wichtig:** Überschreibe niemals deine eigenen Lösungen in `version*/aufgabe/`!
+
+---
+
 ## 🤝 Mitmachen & Beiträge
 
 Verbesserungen und Erweiterungen sind willkommen!
