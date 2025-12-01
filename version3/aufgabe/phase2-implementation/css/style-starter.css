@@ -1,0 +1,40 @@
+/* Minimaler Starter: Corporate Design Variablen + Reset */
+:root {
+  /* TODO: Farben aus Corporate Design */
+  --color-primary: #2D6A4F;
+  --color-secondary: #0077B6;
+  --color-neutral-100: #F8F9FA;
+  --color-neutral-900: #1A1A1A;
+
+  /* TODO: Fonts aus Phase 1 */
+  --font-primary: 'Inter', sans-serif;
+  --font-secondary: 'Merriweather', serif;
+
+  --container-max: 1200px;
+  --spacing: 16px;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: var(--font-primary);
+  color: var(--color-neutral-900);
+  background: var(--color-neutral-100);
+}
+
+.container { max-width: var(--container-max); margin: 0 auto; padding: 0 var(--spacing); }
+
+.header { position: sticky; top: 0; background: white; }
+.logo { width: 150px; height: 60px; }
+
+.hero { min-height: 70vh; display: grid; place-items: center; text-align: center; }
+.hero-content h1 { font-family: var(--font-secondary); }
+
+.projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.team-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 24px; }
+
+@media (max-width: 768px) {
+  .logo { width: 120px; height: 50px; }
+  .hero { min-height: 60vh; }
+}

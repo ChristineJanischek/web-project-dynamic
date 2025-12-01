@@ -1,0 +1,130 @@
+/* ===================================
+   VERSION 3: BILDER, GALERIEN & FORMULARE
+   TODO: Implementiere die CSS-Styles gemäß Anleitung
+   =================================== */
+
+/* Reset & Grundstyles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* TODO: Header-Styles
+- Sticky Position
+- Gradient-Hintergrund
+- Flexbox für Layout
+*/
+header {
+    /* Dein Code hier */
+}
+
+/* TODO: Navigation-Styles
+- Horizontale Liste
+- Hover-Effekte
+*/
+.nav {
+    /* Dein Code hier */
+}
+
+/* TODO: Hero Section
+- Hintergrundbild
+- Parallax-Effekt (background-attachment: fixed)
+- Zentrierter Text
+*/
+.hero {
+    /* Dein Code hier */
+}
+
+/* TODO: Responsive Bilder
+- max-width: 100%
+- height: auto
+*/
+img {
+    /* Dein Code hier */
+}
+
+/* TODO: Galerie-Sektion
+- Grid-Layout
+- repeat(auto-fit, minmax(300px, 1fr))
+- gap für Abstände
+*/
+.gallery {
+    /* Dein Code hier */
+}
+
+/* TODO: Galerie-Bilder
+- object-fit: cover
+- Einheitliche Höhe
+- Hover-Effekt (transform, box-shadow)
+*/
+.gallery-img {
+    /* Dein Code hier */
+}
+
+/* TODO: Lightbox
+- position: fixed
+- Vollbild-Overlay
+- Versteckt bis .active Klasse
+*/
+.lightbox {
+    /* Dein Code hier */
+}
+
+/* TODO: Lightbox-Controls
+- Schließen-Button (X)
+- Navigation (Pfeile)
+- Caption
+*/
+
+/* TODO: Kontaktformular
+- Max-Width für Lesbarkeit
+- Padding und Border-Radius
+- Box-Shadow
+*/
+.contact-form {
+    /* Dein Code hier */
+}
+
+/* TODO: Form Inputs
+- Border-Styles
+- Focus-State
+- Transitions
+*/
+
+/* TODO: Submit Button
+- Gradient-Hintergrund
+- Hover-Effekt
+- Cursor: pointer
+*/
+
+/* TODO: Form Messages
+- Erfolgs-/Fehlermeldungen
+- Unterschiedliche Farben
+*/
+
+/* TODO: Footer
+- Hintergrundfarbe
+- Zentrierter Text
+*/
+footer {
+    /* Dein Code hier */
+}
+
+/* TODO: Media Queries
+- Mobile (< 768px)
+- Tablet (768px - 1024px)
+- Desktop (> 1024px)
+*/

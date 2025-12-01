@@ -1,0 +1,41 @@
+name: Quality Checks
+
+on:
+  push:
+    paths:
+      - 'version3/aufgabe/phase2-implementation/**'
+      - '.lighthouserc.json'
+      - 'package.json'
+      - 'scripts/run_accessibility.sh'
+  pull_request:
+    paths:
+      - 'version3/aufgabe/phase2-implementation/**'
+      - '.lighthouserc.json'
+      - 'package.json'
+      - 'scripts/run_accessibility.sh'
+
+jobs:
+  accessibility:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Pa11y Accessibility Audit
+        run: npx pa11y file://$GITHUB_WORKSPACE/version3/aufgabe/phase2-implementation/index-starter.html --reporter cli || true
+  lighthouse:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 18
+          cache: 'npm'
+      - name: Install dependencies
+        run: npm ci
+      - name: Lighthouse CI
+        run: npx lhci autorun

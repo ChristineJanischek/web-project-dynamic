@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Namensbefragung – Schülerfirma</title>
+  <link rel="stylesheet" href="../../css/style.css">
+  <style>
+    .survey-container{max-width:760px;margin:0 auto;padding:1.5rem;background:#fff;border-radius:12px;box-shadow:0 10px 20px rgba(0,0,0,.08)}
+    .rating{display:flex;gap:.5rem;margin:.5rem 0 1rem}
+    .rating input{display:none}
+    .rating label{padding:.4rem .6rem;border:1px solid #ccc;border-radius:8px;cursor:pointer}
+    .rating input:checked+label{background:var(--color-primary);color:#fff;border-color:var(--color-primary)}
+    .field{margin:.75rem 0}
+    .actions{display:flex;gap:.75rem;margin-top:1rem}
+    .note{font-size:.9rem;color:#555}
+  </style>
+</head>
+<body>
+  <main class="container">
+    <h1>Namensbefragung – Schülerfirma</h1>
+    <p class="note">Bewerte die KI‑Vorschläge (1=schwach … 5=sehr gut) und ergänze eigene Ideen. Die Daten werden lokal gespeichert und später mit Python ausgewertet.</p>
+    <div class="survey-container">
+      <form id="surveyForm">
+        <h2>KI‑Vorschläge</h2>
+        <div class="field">
+          <label><strong>Mission Future Academy (MiFa)</strong></label>
+          <div class="rating">
+            <input type="radio" id="mifa1" name="mifa" value="1"><label for="mifa1">1</label>
+            <input type="radio" id="mifa2" name="mifa" value="2"><label for="mifa2">2</label>
+            <input type="radio" id="mifa3" name="mifa" value="3"><label for="mifa3">3</label>
+            <input type="radio" id="mifa4" name="mifa" value="4"><label for="mifa4">4</label>
+            <input type="radio" id="mifa5" name="mifa" value="5"><label for="mifa5">5</label>
+          </div>
+        </div>
+        <div class="field">
+          <label><strong>EduEco Labs</strong></label>
+          <div class="rating">
+            <input type="radio" id="edueco1" name="edueco" value="1"><label for="edueco1">1</label>
+            <input type="radio" id="edueco2" name="edueco" value="2"><label for="edueco2">2</label>
+            <input type="radio" id="edueco3" name="edueco" value="3"><label for="edueco3">3</label>
+            <input type="radio" id="edueco4" name="edueco" value="4"><label for="edueco4">4</label>
+            <input type="radio" id="edueco5" name="edueco" value="5"><label for="edueco5">5</label>
+          </div>
+        </div>
+        <div class="field">
+          <label><strong>GreenMind Tech</strong></label>
+          <div class="rating">
+            <input type="radio" id="greenmind1" name="greenmind" value="1"><label for="greenmind1">1</label>
+            <input type="radio" id="greenmind2" name="greenmind" value="2"><label for="greenmind2">2</label>
+            <input type="radio" id="greenmind3" name="greenmind" value="3"><label for="greenmind3">3</label>
+            <input type="radio" id="greenmind4" name="greenmind" value="4"><label for="greenmind4">4</label>
+            <input type="radio" id="greenmind5" name="greenmind" value="5"><label for="greenmind5">5</label>
+          </div>
+        </div>
+        <h2>Eigene Vorschläge</h2>
+        <div class="field">
+          <label for="own1">Vorschlag A</label>
+          <input type="text" id="own1" name="own1" placeholder="z.B. FutureEdu Collective">
+        </div>
+        <div class="field">
+          <label for="own2">Vorschlag B</label>
+          <input type="text" id="own2" name="own2" placeholder="z.B. EcoLearn Studio">
+        </div>
+        <div class="field">
+          <label for="own3">Vorschlag C</label>
+          <input type="text" id="own3" name="own3" placeholder="z.B. SustainEd Works">
+        </div>
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Absenden</button>
+          <button type="button" id="exportBtn" class="btn btn-secondary">Export ansehen</button>
+        </div>
+        <p class="note">Die Antworten werden als JSON in `surveys/name_survey/data/responses.json` gespeichert.</p>
+      </form>
+    </div>
+  </main>
+  <script>
+    async function saveResponse(data){
+      // Speichere clientseitig über Download als Fallback
+      const blob = new Blob([JSON.stringify(data,null,2)],{type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'responses_client.json';
+      a.click();
+      URL.revokeObjectURL(url);
+      alert('Antwort lokal als Download gespeichert. Für Sammelauswertung bitte die Datei in data/ ablegen oder das Python-Skript verwenden.');
+    }
+    document.getElementById('surveyForm').addEventListener('submit',async(e)=>{
+      e.preventDefault();
+      const form = e.target;
+      const data = {
+        mifa: form.mifa.value||null,
+        edueco: form.edueco.value||null,
+        greenmind: form.greenmind.value||null,
+        own: [form.own1.value, form.own2.value, form.own3.value].filter(Boolean),
+        ts: new Date().toISOString()
+      };
+      await saveResponse(data);
+    });
+    document.getElementById('exportBtn').addEventListener('click',()=>{
+      window.open('../../README.md','_blank');
+    });
+  </script>
+</body>
+</html>

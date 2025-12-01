@@ -111,6 +111,9 @@ Formatiere deine Webseite in der `css/style.css`:
 - [ ] Seite sieht ansprechend aus
 - [ ] Alle semantischen Elemente verwendet
 - [ ] Code ist sauber eingerückt und lesbar
+- [ ] Änderungen mit Git committed (`git add .` & `git commit -m "feat: Version 1 abgeschlossen"`)
+
+**📖 Git-Hilfe:** Lies [`docs/git-versionsmanagement.md`](../docs/git-versionsmanagement.md) für Git-Grundlagen!
 
 ---
 

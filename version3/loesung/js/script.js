@@ -1,195 +1,263 @@
-// ===================================
-// VERSION 3: BILDER, GALERIEN & FORMULARE
-// MUSTERLÖSUNG - JAVASCRIPT
-// ===================================
+// MiFa - Mission Future Academy | Musterlösung JavaScript
+// ============================================================================
 
-/* ===================================
-   LIGHTBOX FUNKTIONALITÄT
-   =================================== */
-
-// Lightbox-Elemente selektieren
-const galleryImages = document.querySelectorAll('.gallery-img');
-const lightbox = document.getElementById('lightbox');
-const lightboxImg = document.getElementById('lightbox-img');
-const lightboxCaption = document.querySelector('.lightbox-caption');
-const closeBtn = document.querySelector('.lightbox-close');
-const prevBtn = document.querySelector('.lightbox-prev');
-const nextBtn = document.querySelector('.lightbox-next');
-
-let currentImageIndex = 0;
-
-/**
- * Öffnet die Lightbox mit dem ausgewählten Bild
- * @param {number} index - Index des Bildes im Array
- */
-function openLightbox(index) {
-    currentImageIndex = index;
-    const img = galleryImages[index];
-    lightboxImg.src = img.src;
-    lightboxCaption.textContent = img.alt;
-    lightbox.classList.add('active');
-    document.body.style.overflow = 'hidden'; // Scrollen verhindern
-}
-
-/**
- * Schließt die Lightbox
- */
-function closeLightbox() {
-    lightbox.classList.remove('active');
-    document.body.style.overflow = 'auto';
-}
-
-/**
- * Zeigt das nächste Bild in der Galerie
- */
-function nextImage() {
-    currentImageIndex = (currentImageIndex + 1) % galleryImages.length;
-    openLightbox(currentImageIndex);
-}
-
-/**
- * Zeigt das vorherige Bild in der Galerie
- */
-function prevImage() {
-    currentImageIndex = (currentImageIndex - 1 + galleryImages.length) % galleryImages.length;
-    openLightbox(currentImageIndex);
-}
-
-// Event Listener für Galerie-Bilder
-galleryImages.forEach((img, index) => {
-    img.addEventListener('click', () => openLightbox(index));
-});
-
-// Event Listener für Lightbox-Controls
-closeBtn.addEventListener('click', closeLightbox);
-prevBtn.addEventListener('click', prevImage);
-nextBtn.addEventListener('click', nextImage);
-
-// Klick außerhalb des Bildes schließt Lightbox
-lightbox.addEventListener('click', (e) => {
-    if (e.target === lightbox) {
-        closeLightbox();
-    }
-});
-
-// Tastatur-Navigation
-document.addEventListener('keydown', (e) => {
-    if (!lightbox.classList.contains('active')) return;
-    
-    if (e.key === 'Escape') closeLightbox();
-    if (e.key === 'ArrowRight') nextImage();
-    if (e.key === 'ArrowLeft') prevImage();
-});
-
-
-/* ===================================
-   FORMULAR-VALIDIERUNG
-   =================================== */
-
+// DOM Elements
+const navToggle = document.querySelector('.nav__toggle');
+const navMenu = document.querySelector('.nav__menu');
+const navLinks = document.querySelectorAll('.nav__link');
 const contactForm = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
+const header = document.getElementById('header');
 
-/**
- * Behandelt das Formular-Submit Event
- */
-contactForm.addEventListener('submit', function(e) {
-    e.preventDefault(); // Verhindert Standard-Submit (Seite neu laden)
-    
-    // Formular-Daten auslesen
-    const formData = {
-        name: document.getElementById('name').value.trim(),
-        email: document.getElementById('email').value.trim(),
-        subject: document.getElementById('subject').value.trim(),
-        message: document.getElementById('message').value.trim()
-    };
-    
-    // Validierung durchführen
-    if (!validateForm(formData)) {
-        showMessage('Bitte fülle alle Pflichtfelder korrekt aus!', 'error');
-        return;
+// ============================================================================
+// 1. Mobile Navigation Toggle
+// ============================================================================
+
+function toggleNav() {
+  const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+  
+  navToggle.setAttribute('aria-expanded', !isExpanded);
+  navMenu.classList.toggle('active');
+  
+  // Accessibility: Trap focus in menu when open
+  if (!isExpanded) {
+    navMenu.querySelector('a').focus();
+  }
+}
+
+if (navToggle) {
+  navToggle.addEventListener('click', toggleNav);
+}
+
+// Close menu when clicking on a link
+navLinks.forEach(link => {
+  link.addEventListener('click', () => {
+    if (navMenu.classList.contains('active')) {
+      toggleNav();
     }
-    
-    // Erfolgreiche Validierung
-    console.log('Formular-Daten:', formData);
-    showMessage('Danke für deine Nachricht! Ich melde mich bald bei dir.', 'success');
-    contactForm.reset();
-    
-    // In einer echten Anwendung würden hier die Daten an ein Backend gesendet:
-    // fetch('/api/contact', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(formData)
-    // })
-    // .then(response => response.json())
-    // .then(data => showMessage('Nachricht erfolgreich gesendet!', 'success'))
-    // .catch(error => showMessage('Fehler beim Senden. Bitte versuche es erneut.', 'error'));
+  });
 });
 
-/**
- * Validiert die Formular-Daten
- * @param {Object} data - Die Formular-Daten
- * @returns {boolean} - True wenn valid, sonst false
- */
-function validateForm(data) {
-    // Name mindestens 2 Zeichen
-    if (data.name.length < 2) {
-        console.error('Name zu kurz');
-        return false;
-    }
+// Close menu on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+    toggleNav();
+  }
+});
+
+// ============================================================================
+// 2. Active Navigation Link on Scroll
+// ============================================================================
+
+function updateActiveLink() {
+  const sections = document.querySelectorAll('section[id]');
+  const scrollY = window.pageYOffset;
+  
+  sections.forEach(section => {
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 100;
+    const sectionId = section.getAttribute('id');
+    const navLink = document.querySelector(`.nav__link[href="#${sectionId}"]`);
     
-    // E-Mail Format prüfen
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(data.email)) {
-        console.error('Ungültiges E-Mail Format');
-        return false;
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      navLinks.forEach(link => link.classList.remove('nav__link--active'));
+      navLink?.classList.add('nav__link--active');
     }
-    
-    // Nachricht mindestens 10 Zeichen
-    if (data.message.length < 10) {
-        console.error('Nachricht zu kurz');
-        return false;
-    }
-    
-    return true;
+  });
 }
 
-/**
- * Zeigt eine Erfolgs- oder Fehlermeldung an
- * @param {string} text - Die anzuzeigende Nachricht
- * @param {string} type - 'success' oder 'error'
- */
-function showMessage(text, type) {
-    formMessage.textContent = text;
-    formMessage.className = `form-message ${type}`;
-    
-    // Nach 5 Sekunden automatisch ausblenden
-    setTimeout(() => {
-        formMessage.className = 'form-message';
-    }, 5000);
-    
-    // Scroll zur Nachricht für bessere Sichtbarkeit
-    formMessage.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+window.addEventListener('scroll', updateActiveLink);
+
+// ============================================================================
+// 3. Header Shadow on Scroll
+// ============================================================================
+
+function updateHeader() {
+  if (window.scrollY > 50) {
+    header.classList.add('header--scrolled');
+  } else {
+    header.classList.remove('header--scrolled');
+  }
 }
 
+window.addEventListener('scroll', updateHeader);
 
-/* ===================================
-   ZUSÄTZLICHE FEATURES (OPTIONAL)
-   =================================== */
+// ============================================================================
+// 4. Form Validation & Submit
+// ============================================================================
 
-// Smooth Scroll für Navigation-Links (falls Browser es nicht unterstützt)
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
+function validateEmail(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
+
+function showError(inputId, message) {
+  const errorElement = document.getElementById(`${inputId}-error`);
+  const inputElement = document.getElementById(inputId);
+  
+  if (errorElement && inputElement) {
+    errorElement.textContent = message;
+    inputElement.setAttribute('aria-invalid', 'true');
+    inputElement.style.borderColor = 'var(--color-error)';
+  }
+}
+
+function clearError(inputId) {
+  const errorElement = document.getElementById(`${inputId}-error`);
+  const inputElement = document.getElementById(inputId);
+  
+  if (errorElement && inputElement) {
+    errorElement.textContent = '';
+    inputElement.setAttribute('aria-invalid', 'false');
+    inputElement.style.borderColor = 'var(--color-border)';
+  }
+}
+
+function validateForm(formData) {
+  let isValid = true;
+  
+  // Name validation
+  const name = formData.get('name');
+  if (!name || name.trim().length < 2) {
+    showError('name', 'Bitte gib einen gültigen Namen ein (mindestens 2 Zeichen)');
+    isValid = false;
+  } else {
+    clearError('name');
+  }
+  
+  // Email validation
+  const email = formData.get('email');
+  if (!email || !validateEmail(email)) {
+    showError('email', 'Bitte gib eine gültige E-Mail-Adresse ein');
+    isValid = false;
+  } else {
+    clearError('email');
+  }
+  
+  // Message validation
+  const message = formData.get('message');
+  if (!message || message.trim().length < 10) {
+    showError('message', 'Bitte schreibe eine Nachricht (mindestens 10 Zeichen)');
+    isValid = false;
+  } else {
+    clearError('message');
+  }
+  
+  return isValid;
+}
+
+function handleFormSubmit(e) {
+  e.preventDefault();
+  
+  const formData = new FormData(contactForm);
+  
+  if (!validateForm(formData)) {
+    return;
+  }
+  
+  // Simulate successful submission
+  const successMessage = document.getElementById('form-success');
+  successMessage.hidden = false;
+  successMessage.setAttribute('role', 'alert');
+  
+  // Reset form
+  contactForm.reset();
+  
+  // Hide success message after 5 seconds
+  setTimeout(() => {
+    successMessage.hidden = true;
+  }, 5000);
+  
+  // In production: Send data to server
+  // fetch('/api/contact', { method: 'POST', body: formData })
+  //   .then(response => response.json())
+  //   .then(data => console.log(data));
+}
+
+if (contactForm) {
+  contactForm.addEventListener('submit', handleFormSubmit);
+  
+  // Real-time validation on blur
+  const inputs = contactForm.querySelectorAll('input, textarea');
+  inputs.forEach(input => {
+    input.addEventListener('blur', () => {
+      const formData = new FormData(contactForm);
+      validateForm(formData);
     });
+  });
+}
+
+// ============================================================================
+// 5. Smooth Scroll Enhancement (fallback for older browsers)
+// ============================================================================
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    
+    if (href === '#') return;
+    
+    const target = document.querySelector(href);
+    
+    if (target) {
+      e.preventDefault();
+      
+      target.scrollIntoView({
+        behavior: 'smooth',
+        block: 'start'
+      });
+      
+      // Update URL without jumping
+      history.pushState(null, null, href);
+    }
+  });
 });
 
-// Konsolen-Ausgabe für Debugging
-console.log('✅ Version 3 JavaScript geladen');
-console.log(`📸 ${galleryImages.length} Bilder in der Galerie gefunden`);
+// ============================================================================
+// 6. Accessibility: Focus Management
+// ============================================================================
+
+// Ensure keyboard users can see focus
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Tab') {
+    document.body.classList.add('keyboard-user');
+  }
+});
+
+document.addEventListener('mousedown', () => {
+  document.body.classList.remove('keyboard-user');
+});
+
+// ============================================================================
+// 7. Initialize on DOM Ready
+// ============================================================================
+
+document.addEventListener('DOMContentLoaded', () => {
+  console.log('🌱 MiFa Website geladen - Mission Future Academy');
+  
+  // Set initial active link
+  updateActiveLink();
+  
+  // Set initial header state
+  updateHeader();
+});
+
+// ============================================================================
+// 8. Performance: Lazy Loading Images (if not using native loading="lazy")
+// ============================================================================
+
+if ('IntersectionObserver' in window) {
+  const imageObserver = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const img = entry.target;
+        img.src = img.dataset.src;
+        img.classList.remove('lazy');
+        observer.unobserve(img);
+      }
+    });
+  });
+  
+  document.querySelectorAll('img.lazy').forEach(img => {
+    imageObserver.observe(img);
+  });
+}

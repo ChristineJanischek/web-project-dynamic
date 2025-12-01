@@ -491,6 +491,9 @@ html {
 ### JavaScript & Interaktivität
 - [`docs/js.md`](../docs/js.md) - JavaScript Grundlagen für interaktive Navigation
 
+### Versionsverwaltung
+- [`docs/git-versionsmanagement.md`](../docs/git-versionsmanagement.md) - Git & GitHub Workflow
+
 ### Zusätzliche Ressourcen
 - [`shared-examples/`](../shared-examples/) - Vollständiges Beispiel zum Vergleich
 - **Browser DevTools (F12)** - Box-Modell visualisieren & Grid/Flexbox anzeigen

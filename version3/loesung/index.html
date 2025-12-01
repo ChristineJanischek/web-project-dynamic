@@ -3,118 +3,127 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Version 3: Bilder, Galerien & Formulare - Musterlösung</title>
+    <meta name="description" content="MiFa - Mission Future Academy: Nachhaltige Software von Schüler:innen für die Zukunft">
+    <title>MiFa - Mission Future Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="images/ic_launcher.png">
+    <link rel="apple-touch-icon" href="images/ic_launcher.png">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <!-- Header mit Navigation -->
-    <header>
-        <div class="container">
-            <h1>Mein Portfolio</h1>
-            <nav>
-                <ul class="nav">
-                    <li><a href="#hero">Start</a></li>
-                    <li><a href="#galerie">Galerie</a></li>
-                    <li><a href="#kontakt">Kontakt</a></li>
+    <a href="#main" class="skip-link">Zum Hauptinhalt springen</a>
+
+    <header class="header" id="header">
+        <div class="container header__container">
+            <div class="header__logo">
+                <img src="images/Logo_farbig.jpg" alt="MiFa Logo" width="120" height="60">
+            </div>
+            <nav class="nav" aria-label="Hauptnavigation">
+                <button class="nav__toggle" aria-label="Menü öffnen" aria-expanded="false">
+                    <span class="nav__toggle-icon"></span>
+                </button>
+                <ul class="nav__menu" id="nav-menu">
+                    <li><a href="#home" class="nav__link nav__link--active">Home</a></li>
+                    <li><a href="#about" class="nav__link">Über uns</a></li>
+                    <li><a href="#projects" class="nav__link">Projekte</a></li>
+                    <li><a href="#team" class="nav__link">Team</a></li>
+                    <li><a href="#contact" class="nav__link">Kontakt</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <!-- Hero Section mit Hintergrundbild -->
-    <section id="hero" class="hero">
-        <div class="hero-content">
-            <h2>Willkommen in meiner Bildergalerie</h2>
-            <p>Entdecke atemberaubende Fotografie</p>
-        </div>
-    </section>
+    <main id="main">
+        <section class="hero" id="home">
+            <div class="hero__content">
+                <h1 class="hero__title">Mission Future Academy</h1>
+                <p class="hero__tagline">Von Schüler:innen für die Zukunft</p>
+                <p class="hero__description">Wir entwickeln digitale Lösungen, die Bildung fördern und die Umwelt schützen.</p>
+                <a href="#projects" class="btn btn--primary">Projekte entdecken</a>
+            </div>
+        </section>
 
-    <!-- Hauptinhalt -->
-    <main>
-        <div class="container">
-            <!-- Galerie-Sektion -->
-            <section id="galerie" class="gallery-section">
-                <h2>Meine Galerie</h2>
-                <div class="gallery">
-                    <img src="https://picsum.photos/400/300?random=1" alt="Landschaft mit Bergen" class="gallery-img">
-                    <img src="https://picsum.photos/400/300?random=2" alt="Sonnenuntergang am Meer" class="gallery-img">
-                    <img src="https://picsum.photos/400/300?random=3" alt="Stadtansicht bei Nacht" class="gallery-img">
-                    <img src="https://picsum.photos/400/300?random=4" alt="Wald im Herbst" class="gallery-img">
-                    <img src="https://picsum.photos/400/300?random=5" alt="Wüstenlandschaft" class="gallery-img">
-                    <img src="https://picsum.photos/400/300?random=6" alt="Polarlichter" class="gallery-img">
-                    <img src="https://picsum.photos/400/300?random=7" alt="Blumenwiese" class="gallery-img">
-                    <img src="https://picsum.photos/400/300?random=8" alt="Bergwelt im Winter" class="gallery-img">
-                    <img src="https://picsum.photos/400/300?random=9" alt="Tropischer Strand" class="gallery-img">
+        <section class="mission section" id="about">
+            <div class="container">
+                <h2 class="section__title">Unsere Mission</h2>
+                <div class="mission__grid">
+                    <div class="mission__content">
+                        <p class="lead">Wir sind MiFa – eine Schülerfirma, die nachhaltige Software entwickelt.</p>
+                        <p>Als engagierte Schüler:innen verbinden wir technologisches Know-how mit ökologischem Bewusstsein.</p>
+                    </div>
                 </div>
-            </section>
+            </div>
+        </section>
 
-            <!-- Kontaktformular-Sektion -->
-            <section id="kontakt" class="contact-section">
-                <h2>Kontakt</h2>
-                <form id="contactForm" class="contact-form">
+        <section class="projects section section--grey" id="projects">
+            <div class="container">
+                <h2 class="section__title">Unsere Projekte</h2>
+                <div class="projects__grid">
+                    <article class="project-card">
+                        <h3>MiFaRide</h3>
+                        <p>Mitfahrgelegenheiten-App für Schüler:innen</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>EduTrack</h3>
+                        <p>Lernfortschritts-Tracker mit KI</p>
+                    </article>
+                    <article class="project-card">
+                        <h3>GreenChallenge</h3>
+                        <p>Spielerische Nachhaltigkeits-Challenges</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="team section" id="team">
+            <div class="container">
+                <h2 class="section__title">Unser Team</h2>
+                <div class="team__grid">
+                    <div class="team-member">
+                        <h3>Emma W.</h3>
+                        <p>CEO & Frontend</p>
+                    </div>
+                    <div class="team-member">
+                        <h3>Luca S.</h3>
+                        <p>CTO & Backend</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact section section--grey" id="contact">
+            <div class="container">
+                <h2 class="section__title">Kontakt</h2>
+                <form class="contact__form" id="contactForm" novalidate>
                     <div class="form-group">
                         <label for="name">Name *</label>
-                        <input 
-                            type="text" 
-                            id="name" 
-                            name="name" 
-                            required 
-                            minlength="2"
-                            placeholder="Dein Name">
+                        <input type="text" id="name" name="name" required>
+                        <span class="form-error" id="name-error"></span>
                     </div>
-
                     <div class="form-group">
                         <label for="email">E-Mail *</label>
-                        <input 
-                            type="email" 
-                            id="email" 
-                            name="email" 
-                            required
-                            placeholder="deine@email.de">
+                        <input type="email" id="email" name="email" required>
+                        <span class="form-error" id="email-error"></span>
                     </div>
-
-                    <div class="form-group">
-                        <label for="subject">Betreff</label>
-                        <input 
-                            type="text" 
-                            id="subject" 
-                            name="subject"
-                            placeholder="Worum geht es?">
-                    </div>
-
                     <div class="form-group">
                         <label for="message">Nachricht *</label>
-                        <textarea 
-                            id="message" 
-                            name="message" 
-                            rows="5" 
-                            required
-                            minlength="10"
-                            placeholder="Deine Nachricht..."></textarea>
+                        <textarea id="message" name="message" rows="5" required></textarea>
+                        <span class="form-error" id="message-error"></span>
                     </div>
-
-                    <button type="submit" class="btn-submit">Absenden</button>
+                    <button type="submit" class="btn btn--primary">Senden</button>
+                    <div class="form-success" id="form-success" hidden>Nachricht gesendet!</div>
                 </form>
-                <div id="formMessage" class="form-message"></div>
-            </section>
-        </div>
+            </div>
+        </section>
     </main>
 
-    <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Mein Portfolio - Erstellt mit HTML, CSS & JavaScript</p>
+            <p>&copy; 2025 MiFa - Mission Future Academy</p>
         </div>
     </footer>
-
-    <!-- Lightbox (Modal) -->
-    <div id="lightbox" class="lightbox">
-        <span class="lightbox-close">&times;</span>
-        <span class="lightbox-prev">&#10094;</span>
-        <span class="lightbox-next">&#10095;</span>
-        <img src="" alt="" id="lightbox-img" class="lightbox-content">
-        <div class="lightbox-caption"></div>
-    </div>
 
     <script src="js/script.js"></script>
 </body>

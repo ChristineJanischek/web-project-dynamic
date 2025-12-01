@@ -29,6 +29,7 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 | Galerien | [`docs/galerien.md`](docs/galerien.md) | Einfache Bildgalerie, Grid/Flex |
 | Formulare & Auswertung | [`docs/formulare.md`](docs/formulare.md) | Formulare erstellen & validieren |
 | JavaScript Grundlagen | [`docs/js.md`](docs/js.md) | Variablen, Funktionen, DOM, Events |
+| Git & Versionsmanagement | [`docs/git-versionsmanagement.md`](docs/git-versionsmanagement.md) | Commits, Branches, Pull Requests, Workflows |
 | Zielgruppenanalyse | [`docs/zielgruppenanalyse.md`](docs/zielgruppenanalyse.md) | User Personas, Customer Journey, Nutzerbedürfnisse |
 | Corporate Design | [`docs/corporate-design.md`](docs/corporate-design.md) | Logo, Farben, Typografie, Brand Guidelines |
 | Konzeption & Webdesign | [`docs/konzeption-webdesign.md`](docs/konzeption-webdesign.md) | Briefing, Sitemap, Wireframes, Mockups |
@@ -58,25 +59,6 @@ Jede Version baut auf der vorherigen auf und führt neue Konzepte ein. Arbeite s
 - 📖 **Aufgabenstellung:** [`version1/README.md`](version1/README.md)
 - 💡 **Arbeitsordner:** `version1/aufgabe/` (hier arbeitest du!)
 - ✅ **Musterlösung:** `version1/loesung/` (zur Selbstkontrolle)
-
-### 🚀 Version 3: MiFa – Mission Future Academy Website
-
-**Status:** In Arbeit – mit partizipativer Namensfindung und App‑Portfolio
-
-**Schwerpunkte:**
-- 60% Konzeption (Zielgruppenanalyse, Corporate Design, Sitemap/Wireframes)
-- 40% Umsetzung (HTML/CSS/JS, Responsive Design, Formulare)
-- Schülerbeteiligung: Online‑Befragungen zur Namensfindung mit Python‑Auswertung
-
-**Schnelleinstieg:**
-- 📖 Aufgabenstellung & Anleitung: [`version3/README.md`](version3/README.md)
-- 🗳️ Survey (Schülerfirma‑Name): [`version3/aufgabe/surveys/name_survey/form.html`](version3/aufgabe/surveys/name_survey/form.html)
-- 🗳️ Survey (App‑Namen): [`version3/aufgabe/surveys/app_names/form.html`](version3/aufgabe/surveys/app_names/form.html)
-- 🧰 Auswertung (Python):
-   - `python3 version3/aufgabe/surveys/name_survey/process.py`
-   - `python3 version3/aufgabe/surveys/app_names/process.py`
-
-**Arbeitsordner:** `version3/aufgabe/` (Starter‑Templates vorhanden)
 
 **Themen:**
 - ✅ HTML-Grundgerüst (`<!DOCTYPE html>`, `<head>`, `<body>`)
@@ -117,33 +99,59 @@ Jede Version baut auf der vorherigen auf und führt neue Konzepte ein. Arbeite s
 
 ---
 
-### 🎓 Version 3: Bilder, Galerien & Formulare ✅
+### 🎓 Version 3: MiFa – Mission Future Academy Website ⚡
 
 **Status:** Musterlösung verfügbar - Bereit zum Lernen! 🎉
 
-**Lernziele:**
-- Bilder responsive und optimiert einbinden
-- Moderne Bildgalerien mit CSS Grid erstellen
-- Lightbox-Effekt für Bildvergrößerung implementieren
-- Formulare mit HTML5-Validierung gestalten
-- JavaScript-Formular-Validierung und DOM-Manipulation
+**Schwerpunkte:**
+- 60% Konzeption (Zielgruppenanalyse, Corporate Design, Sitemap/Wireframes)
+- 40% Umsetzung (HTML/CSS/JS, Responsive Design, Formulare)
+- Schülerbeteiligung: Online‑Befragungen zur Namensfindung mit Python‑Auswertung
 
 **Dateien:**
 - 📖 **Aufgabenstellung:** [`version3/README.md`](version3/README.md)
-- 💡 **Arbeitsordner:** `version3/aufgabe/` (Starter-Template mit TODOs)
-- ✅ **Musterlösung:** `version3/loesung/` (zur Selbstkontrolle)
-- 🎯 **Lernhilfen:** Schritt-für-Schritt Anleitung mit Code-Beispielen
+- 💡 **Arbeitsordner:** `version3/aufgabe/` (Starter-Templates mit Konzept-Vorlagen)
+- ✅ **Musterlösung:** `version3/loesung/` (zur Selbstkontrolle für Lehrende)
+- 🗳️ **Survey-Formulare:** `version3/aufgabe/surveys/` (Partizipative Namensfindung)
+
+**Besondere Features:**
+- 📊 **Partizipation:** Online-Befragungen mit Python-Auswertung
+- 🎨 **Konzeptphase:** Personas, Corporate Design, Wireframes
+- 🏗️ **Implementierung:** Vollständige Website mit Design-System
+- 📱 **Responsive:** Mobile-First Design mit CSS Custom Properties
+
+**Schnelleinstieg:**
+- 🗳️ Survey (Schülerfirma‑Name): [`version3/aufgabe/surveys/name_survey/form.html`](version3/aufgabe/surveys/name_survey/form.html)
+- 🗳️ Survey (App‑Namen): [`version3/aufgabe/surveys/app_names/form.html`](version3/aufgabe/surveys/app_names/form.html)
+- 🧰 Auswertung (Python):
+   - `python3 version3/aufgabe/surveys/name_survey/process.py`
+   - `python3 version3/aufgabe/surveys/app_names/process.py`
 
 **Themen:**
-- 📷 Bildformate & Responsive Bilder (`object-fit`, `srcset`)
-- 🖼️ CSS Grid-Galerien mit Hover-Effekten
-- 🔍 Lightbox mit JavaScript (Tastatur-Navigation, Modal)
-- 📝 Kontaktformular mit Validierung
-- ✅ HTML5 & JavaScript Form-Validation
-- 📱 Responsive Design für alle Geräte
+- 🎯 Zielgruppenanalyse & User Personas
+- 🎨 Corporate Design (Logo, Farben, Typografie)
+- 📐 Wireframes & Sitemaps
+- 🌐 Vollständige Website-Implementierung
+- 📱 Responsive Design & Accessibility
+- 📝 Formulare mit Validierung
+- 💡 JavaScript-Interaktionen
 
-**Zeitaufwand:** 5-6 Stunden  
+**Zeitaufwand:** 12-15 Stunden (aufgeteilt in Phase 1 + Phase 2)  
 **Voraussetzung:** Version 1 & 2 abgeschlossen
+
+### 🔧 Projektstruktur-Empfehlung für App‑Projekte
+
+Für die drei Web‑Apps (Mitfahr‑App, MindLink, CO2‑Tracker) empfehlen wir eigene Repositories (Polyrepo) pro App:
+- Bessere Trennung von Code, Issues, Releases und CI
+- Unterschiedliche Tech‑Stacks/Deployment‑Ziele unabhängig verwalten
+- Klarere Ownership für Schüler‑Teams
+
+Alternative: Monorepo mit Sub‑Packages (z.B. via `pnpm`/Workspaces). Geeignet, wenn alle Apps denselben Tech‑Stack teilen und gemeinsame Libraries nutzen.
+
+Praxisvorschlag:
+- Dieses Classroom‑Repo bleibt als Kurs‑Template und Landing‑Page
+- Für jede App ein eigenes Repo anlegen (z.B. `mifa-rideshare`, `mifa-mindlink`, `mifa-co2-tracker`)
+- In `version3/aufgabe/index.html` werden die Live‑Deployments oder Repos verlinkt.
 
 ---
 
@@ -157,6 +165,8 @@ Jede Version baut auf der vorherigen auf und führt neue Konzepte ein. Arbeite s
 - AJAX/Fetch API
 - Lokaler Storage
 - Einfache Animationen
+
+---
 
 ## 📂 Projektstruktur
 

@@ -47,7 +47,12 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <!-- TODO: Hintergrundbild einbinden (Startbild.png oder Startbild_klein.png für Mobile) -->
+        <!-- Responsive Hero-Hintergrundbild -->
+        <picture class="hero-bg">
+            <source media="(min-width: 769px)" srcset="images/startbild.png">
+            <source media="(max-width: 768px)" srcset="images/Startbild_klein.png">
+            <img src="images/startbild.png" alt="" loading="eager">
+        </picture>
         <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1 class="hero-title">Mission Future Academy</h1>
