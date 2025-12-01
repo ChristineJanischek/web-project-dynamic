@@ -1,0 +1,6 @@
+<svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+  <rect width="200" height="200" fill="#FFB703"/>
+  <circle cx="100" cy="80" r="35" fill="#FB8500"/>
+  <path d="M 60 120 Q 100 140 140 120 Q 140 160 100 180 Q 60 160 60 120" fill="#FB8500"/>
+  <text x="100" y="195" font-family="Arial" font-size="14" fill="#fff" text-anchor="middle" font-weight="bold">Max K.</text>
+</svg>

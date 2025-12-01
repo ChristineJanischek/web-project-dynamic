@@ -390,8 +390,23 @@ function clearError(id) {
 - HTML: `<link rel="icon" href="images/ic_launcher.png">`
 
 **Team-Fotos:**
-- Platzhalter via `https://via.placeholder.com/200x200`
+- Dateien: `images/team-emma.svg`, `team-luca.svg`, `team-max.svg`, `team-sophie.svg`
+- Einsatz: Team-Section mit 4 Mitgliedern
+- Format: SVG-Platzhalter (200x200px)
 - In Production: Echte Team-Fotos verwenden
+
+**Implementierung:**
+```html
+<article class="team-member">
+    <img src="images/team-emma.svg" 
+         alt="Emma W. - CEO & Frontend Developer" 
+         class="team-member__photo" 
+         width="200" height="200">
+    <h3 class="team-member__name">Emma W.</h3>
+    <p class="team-member__role">CEO & Frontend Developer</p>
+    <p class="team-member__bio">Leidenschaftliche Entwicklerin...</p>
+</article>
+```
 
 ### Bild-Optimierung
 
@@ -414,6 +429,16 @@ img {
     .header__logo img {
         width: 150px;
     }
+}
+
+/* Team-Fotos: Runde Avatare */
+.team-member__photo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    margin: 0 auto var(--space-md);
+    object-fit: cover;
+    border: 4px solid var(--color-primary);
 }
 ```
 
