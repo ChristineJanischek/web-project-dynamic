@@ -11,7 +11,9 @@ on:
       - 'scripts/**'
       - 'shared-examples/**'
       - '.github/workflows/**'
+      - '.vscode/**'
       - 'README.md'
+      - 'QUICKSTART_LIVE_SERVER.md'
       - 'ARCHITECTURE.md'
       - 'CONTRIBUTING.md'
   workflow_dispatch:

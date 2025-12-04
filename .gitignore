@@ -10,7 +10,7 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # IDEs
-.vscode/
+# .vscode/ wird NICHT ignoriert - Config für alle Schüler!
 .idea/
 *.swp
 *.swo

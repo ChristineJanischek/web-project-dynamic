@@ -11,6 +11,108 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 - 📱 Responsive Design von Anfang an
 - 💡 Praktische Beispiele mit TODO-Kommentaren
 - 🎓 Best Practices für GitHub Classroom
+- 🚀 Live Server vorinstalliert für sofortiges Testen
+
+---
+
+## 🚀 Erste Schritte - Setup für Schüler
+
+### 1️⃣ VS Code öffnen
+
+Öffne dieses Projekt in Visual Studio Code:
+- **In GitHub Codespaces:** Bereits geöffnet! ✅
+- **Lokal:** `File` → `Open Folder` → Wähle den Projektordner
+
+### 2️⃣ Empfohlene Extensions installieren
+
+Beim ersten Öffnen erscheint unten rechts eine Benachrichtigung:
+
+```
+📦 Dieses Repository empfiehlt Extensions
+[Details anzeigen] [Alle installieren] [Ignorieren]
+```
+
+**Klicke auf "Alle installieren"** - dann werden automatisch installiert:
+
+- ✅ **Live Server** - Zum sofortigen Testen deiner Website
+- ✅ **Prettier** - Automatische Code-Formatierung
+- ✅ **HTML CSS Support** - Bessere IntelliSense
+- ✅ **Auto Rename Tag** - HTML-Tags automatisch umbenennen
+- ✅ **ESLint** - JavaScript-Fehler erkennen
+- ✅ **Python** & **Pylance** - Für spätere Backend-Entwicklung
+
+**Falls die Benachrichtigung nicht erscheint:**
+
+1. Drücke `Ctrl+Shift+P` (Windows/Linux) oder `Cmd+Shift+P` (Mac)
+2. Tippe: `Extensions: Show Recommended Extensions`
+3. Klicke auf "Install Workspace Recommended Extensions" ⬇️
+
+### 3️⃣ Live Server nutzen
+
+So testest du deine Website in Echtzeit:
+
+**Methode 1 - Rechtsklick (empfohlen):**
+1. Öffne eine HTML-Datei (z.B. `version1/aufgabe/index.html`)
+2. **Rechtsklick** in den Editor → `Open with Live Server`
+3. Deine Website öffnet sich automatisch im Browser! 🎉
+
+**Methode 2 - Status Bar:**
+1. Öffne eine HTML-Datei
+2. Klicke unten rechts auf **"Go Live"**
+3. Website wird gestartet!
+
+**Methode 3 - Keyboard Shortcut:**
+- Windows/Linux: `Alt+L Alt+O`
+- Mac: `Cmd+L Cmd+O`
+
+**🔄 Änderungen sehen:**
+- Speichere deine HTML/CSS/JS-Datei (`Ctrl+S` / `Cmd+S`)
+- Der Browser aktualisiert sich **automatisch**! ✨
+
+**❌ Server stoppen:**
+- Klicke auf **"Port: 5500"** in der Status Bar unten rechts
+- Oder drücke: `Alt+L Alt+C` (Windows/Linux) / `Cmd+L Cmd+C` (Mac)
+
+### 4️⃣ Auto-Save aktivieren (optional aber empfohlen)
+
+Damit du nicht ständig speichern musst:
+
+1. `File` → `Preferences` → `Settings` (oder `Ctrl+,`)
+2. Suche nach: `Auto Save`
+3. Wähle: `afterDelay`
+4. Deine Dateien werden jetzt automatisch gespeichert! 💾
+
+**Oder:** Bereits vorkonfiguriert in `.vscode/settings.json`! ✅
+
+---
+
+## 🆘 Troubleshooting
+
+### ❌ "Go Live" Button erscheint nicht
+
+**Lösung:**
+1. Stelle sicher, dass Live Server installiert ist
+2. Öffne eine `.html`-Datei (nicht `.md` oder andere Dateien)
+3. Reload VS Code: `Ctrl+Shift+P` → `Reload Window`
+
+### ❌ Browser öffnet sich nicht automatisch
+
+**Lösung:**
+- Öffne manuell: `http://localhost:5500`
+- Oder ändere Browser in Settings: Live Server → Custom Browser
+
+### ❌ Port 5500 bereits belegt
+
+**Lösung:**
+1. Stoppe andere Live Server Instanzen
+2. Oder ändere den Port in `.vscode/settings.json`: `"liveServer.settings.port": 5501`
+
+### ❌ Änderungen werden nicht angezeigt
+
+**Lösung:**
+1. **Hard Refresh:** `Ctrl+Shift+R` (Windows) / `Cmd+Shift+R` (Mac)
+2. Stelle sicher, dass die Datei gespeichert wurde
+3. Prüfe die Browser-Konsole auf Fehler: `F12` → Console
 
 ---
 
@@ -309,41 +411,9 @@ web-project-dynamic/
 
 **Hinweis:** Backend-Ordner (`backend-python/`, `backend-php/`, `db/`) werden in Version 4+ hinzugefügt.
 
-## 🚀 Erste Schritte
+---
 
-### Für Studierende
-
-1. **Repository klonen** (GitHub Classroom verteilt es automatisch):
-   ```bash
-   git clone <DEINE_REPO_URL>
-   cd web-project-dynamic
-   ```
-
-2. **Workflow-Guide lesen:**
-   - 📖 Lies [`CONTRIBUTING.md`](CONTRIBUTING.md) für den Git-Workflow
-   - Verstehe, wie du commitest und pushst
-
-3. **Mit Version 1 starten:**
-   - 📖 Lies [`version1/README.md`](version1/README.md) - Die Aufgabenstellung
-   - 💻 Arbeite in `version1/aufgabe/` (dein Arbeitsordner)
-   - 🎯 Nutze die [`docs/`](docs/) als Nachschlagewerk
-
-4. **Hilfe nutzen:**
-   - 📚 **Theorie:** Alle Konzepte in [`docs/`](docs/) erklärt
-   - 💡 **Inspiration:** [`shared-examples/index.html`](shared-examples/index.html) im Browser öffnen
-   - 🔍 **Debugging:** Browser DevTools (F12)
-   - ✅ **Validierung:** GitHub Actions prüfen deinen Code automatisch
-
-5. **Testen & Committen:**
-   ```bash
-   # Arbeit testen (im Browser öffnen)
-   # Änderungen speichern
-   git add version1/aufgabe/
-   git commit -m "Version 1: Fortschritt XYZ"
-   git push origin main
-   ```
-
-### Für Lehrkräfte
+## 🎓 Für Lehrkräfte: Classroom Setup
 
 - **Template-Repository:** Als Template auf GitHub markieren
 - **GitHub Classroom:** Repository als Assignment verteilen

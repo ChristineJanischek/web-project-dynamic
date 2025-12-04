@@ -1,0 +1,12 @@
+{
+  "recommendations": [
+    "ritwickdey.liveserver",
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "ecmel.vscode-html-css",
+    "formulahendry.auto-rename-tag",
+    "ms-python.python",
+    "ms-python.vscode-pylance"
+  ],
+  "unwantedRecommendations": []
+}
