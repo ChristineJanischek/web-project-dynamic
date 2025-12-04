@@ -30,9 +30,20 @@ on:
 
 env:
   # Liste der abhängigen Repositories (Format: owner/repo)
-  # Passe diese Liste an deine GitHub Classroom Repos an
+  # TRAGE HIER ALLE SCHÜLER-REPOS EIN - ein Repo pro Zeile!
+  # Beispiel GitHub Classroom:
+  #   github-classroom-org/web-project-max-mustermann
+  #   github-classroom-org/web-project-anna-schmidt
+  # Beispiel manuelle Repos:
+  #   ChristineJanischek/web-project-klasse-10a-max
+  #   ChristineJanischek/web-project-klasse-10a-anna
   DEPENDENT_REPOS: |
-    ChristineJanischek/web-project-student-example
+    # 👇 ERSETZE DIESE ZEILE MIT DEINEN REPOS:
+    # Schreibe hier alle Schüler-Repos auf (owner/repo Format)
+    # Entferne die # am Anfang!
+    # ChristineJanischek/web-project-student-1
+    # ChristineJanischek/web-project-student-2
+    # ChristineJanischek/web-project-student-3
   
 jobs:
   detect-changes:
