@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200" viewBox="0 0 200 200">
+  <!-- Hintergrund -->
+  <rect width="200" height="200" fill="#6c5ce7"/>
+  
+  <!-- Code-Symbol -->
+  <text x="100" y="120" font-family="monospace" font-size="80" fill="white" text-anchor="middle">
+    &lt;/&gt;
+  </text>
+  
+  <!-- Zusatz-Elemente -->
+  <circle cx="40" cy="40" r="8" fill="#00d2d3" opacity="0.8"/>
+  <circle cx="160" cy="40" r="8" fill="#ff6b6b" opacity="0.8"/>
+  <circle cx="40" cy="160" r="8" fill="#ff6b6b" opacity="0.8"/>
+  <circle cx="160" cy="160" r="8" fill="#00d2d3" opacity="0.8"/>
+</svg>

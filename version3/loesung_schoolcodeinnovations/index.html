@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="SchoolCodeInnovations: Programmieren lernen von Schülern für die Zukunft">
+  <title>SchoolCodeInnovations - Programmieren für die Zukunft</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" href="images/ic_launcher.png">
+</head>
+<body>
+  <!-- Header-Bereich -->
+  <header class="header">
+    <div class="container">
+      <div class="header__content">
+        <div class="logo">
+          <img src="images/logo.svg" alt="SchoolCodeInnovations Logo" class="logo__image">
+          <span class="logo__text">SchoolCodeInnovations</span>
+        </div>
+        <nav class="nav">
+          <a href="#home" class="nav__link">Home</a>
+          <a href="#kurse" class="nav__link">Kurse</a>
+          <a href="#projekte" class="nav__link">Projekte</a>
+          <a href="#kontakt" class="nav__link">Kontakt</a>
+        </nav>
+        <button class="nav__toggle" aria-label="Navigation öffnen">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero-Bereich -->
+  <section class="hero" id="home">
+    <div class="container">
+      <div class="hero__content">
+        <h1 class="hero__title">SchoolCodeInnovations</h1>
+        <p class="hero__subtitle">Programmieren für die Zukunft</p>
+        <p class="hero__description">
+          Lerne Coding von Grund auf – mit praxisnahen Projekten, 
+          erfahrenen Mentoren und einer Community, die dich unterstützt.
+        </p>
+        <a href="#kurse" class="btn btn--primary">Jetzt starten</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main-Bereich -->
+  <main class="main">
+    <!-- Über uns Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <h2 class="section__title">Über uns</h2>
+        <div class="about__content">
+          <p class="about__text">
+            SchoolCodeInnovations ist eine von Schülern geführte Initiative, 
+            die anderen Jugendlichen das Programmieren beibringt. Wir glauben, 
+            dass jeder die Fähigkeit hat, zu programmieren – man braucht nur 
+            die richtige Anleitung und Motivation.
+          </p>
+          <p class="about__text">
+            Unsere Mission ist es, jungen Menschen die Werkzeuge an die Hand zu geben, 
+            mit denen sie ihre eigenen digitalen Ideen verwirklichen können. Von der 
+            ersten Zeile Code bis zum fertigen Projekt begleiten wir dich auf deinem Weg.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Angebote Section -->
+    <section class="offers" id="kurse">
+      <div class="container">
+        <h2 class="section__title">Unsere Angebote</h2>
+        <div class="offers__grid">
+          <article class="kurs-box">
+            <div class="kurs-box__icon">🐍</div>
+            <h3 class="kurs-box__title">Python-Kurse</h3>
+            <p class="kurs-box__description">
+              Lerne Python – die perfekte Sprache für Einsteiger. Von Grundlagen 
+              bis zu fortgeschrittenen Projekten wie Datenanalyse und Automatisierung.
+            </p>
+            <ul class="kurs-box__features">
+              <li>Anfängerfreundlich</li>
+              <li>Praxisnahe Übungen</li>
+              <li>Zertifikat</li>
+            </ul>
+          </article>
+
+          <article class="kurs-box">
+            <div class="kurs-box__icon">🌐</div>
+            <h3 class="kurs-box__title">Webentwicklung</h3>
+            <p class="kurs-box__description">
+              Erstelle moderne Websites mit HTML, CSS und JavaScript. Lerne 
+              responsive Design und baue deine erste eigene Website.
+            </p>
+            <ul class="kurs-box__features">
+              <li>HTML & CSS Basics</li>
+              <li>JavaScript Interaktivität</li>
+              <li>Responsive Design</li>
+            </ul>
+          </article>
+
+          <article class="kurs-box">
+            <div class="kurs-box__icon">📱</div>
+            <h3 class="kurs-box__title">App-Programmierung</h3>
+            <p class="kurs-box__description">
+              Entwickle deine eigene mobile App. Wir zeigen dir, wie du Ideen 
+              in funktionale Apps für Android und iOS verwandelst.
+            </p>
+            <ul class="kurs-box__features">
+              <li>Flutter & React Native</li>
+              <li>UI/UX Grundlagen</li>
+              <li>App-Store Publishing</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projekte Section -->
+    <section class="projects" id="projekte">
+      <div class="container">
+        <h2 class="section__title">Schülerprojekte</h2>
+        <p class="section__description">
+          Unsere Kursteilnehmer haben bereits beeindruckende Projekte realisiert:
+        </p>
+        <div class="projects__grid">
+          <div class="project-card">
+            <img src="images/project-game.svg" alt="Python Spiel" class="project-card__image">
+            <h3 class="project-card__title">Python Quiz-Game</h3>
+            <p class="project-card__author">von Lisa, 15 Jahre</p>
+          </div>
+          <div class="project-card">
+            <img src="images/project-website.svg" alt="Portfolio Website" class="project-card__image">
+            <h3 class="project-card__title">Portfolio Website</h3>
+            <p class="project-card__author">von Max, 16 Jahre</p>
+          </div>
+          <div class="project-card">
+            <img src="images/project-app.svg" alt="Todo App" class="project-card__image">
+            <h3 class="project-card__title">Todo-App</h3>
+            <p class="project-card__author">von Sara, 14 Jahre</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kontakt Section -->
+    <section class="contact" id="kontakt">
+      <div class="container">
+        <h2 class="section__title">Kontakt</h2>
+        <div class="contact__content">
+          <form class="contact-form">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+              <label for="email">E-Mail</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+              <label for="kurs">Interessiert an</label>
+              <select id="kurs" name="kurs">
+                <option value="">Bitte wählen...</option>
+                <option value="python">Python-Kurse</option>
+                <option value="web">Webentwicklung</option>
+                <option value="app">App-Programmierung</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">Nachricht</label>
+              <textarea id="message" name="message" rows="5"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary">Absenden</button>
+          </form>
+          <div class="contact__info">
+            <h3>Weitere Informationen</h3>
+            <p>
+              <strong>E-Mail:</strong> info@schoolcodeinnovations.de<br>
+              <strong>Telefon:</strong> +49 123 456789<br>
+              <strong>Adresse:</strong> Schulstraße 123, 12345 Musterstadt
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer-Bereich -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <p class="footer__copyright">&copy; 2025 SchoolCodeInnovations</p>
+        <div class="footer__links">
+          <a href="#impressum">Impressum</a>
+          <a href="#datenschutz">Datenschutz</a>
+          <a href="#agb">AGB</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

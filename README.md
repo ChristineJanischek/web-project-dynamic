@@ -12,6 +12,20 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 - 💡 Praktische Beispiele mit TODO-Kommentaren
 - 🎓 Best Practices für GitHub Classroom
 
+---
+
+## 📝 Musterklausur
+
+**📋 [Klassenarbeit: SchoolCodeInnovations 2025](ka_grundlagen/KA_SchoolCodeInnovations_2025.md)** (ohne Lösungen)
+
+Inhaltlich gleichwertige Klassenarbeit zum Thema Webentwicklung Fundamentals basierend auf dem Konzept der Schülerfirma "SchoolCodeInnovations". Umfang: 60 Minuten, 76 Punkte + 5 Bonuspunkte.
+
+**🎯 [Musterlösung als vollständiges Website-Projekt](version3/loesung_schoolcodeinnovations/)**
+
+Vollständig funktionierendes Projekt mit HTML, CSS, JavaScript und SVG-Grafiken - zum Vergleich nach der Klassenarbeit.
+
+---
+
 ## Inhalt / Lernpfade
 
 | Bereich | Datei / Link | Kurzbeschreibung |
@@ -212,16 +226,88 @@ web-project-dynamic/
 │       └── css/style.css
 ├── version2/                      # 🎓 Version 2: Box-Modell & Responsive
 │   ├── README.md                  # Aufgabenstellung
-│   └── aufgabe/                   # Starter-Template mit TODOs
-│       ├── index.html             # HTML-Gerüst mit Kommentaren
-│       ├── css/style.css          # CSS-Template mit Lernhilfen
-│       └── js/script.js           # JavaScript-Vorlage
-├── .gitignore                     # Ignoriert IDE-Dateien, macOS, etc.
+│   ├── aufgabe/                   # Starter-Template mit TODOs
+│   │   ├── index.html             # HTML-Gerüst mit Kommentaren
+│   │   ├── css/style.css          # CSS-Template mit Lernhilfen
+│   │   └── js/script.js           # JavaScript-Vorlage
+│   └── loesung/                   # Musterlösung
+│       ├── index.html
+│       ├── css/style.css
+│       ├── js/script.js
+│       └── images/logo_final.png
+├── version3/                      # 🎓 Version 3: MiFa - Mission Future Academy
+│   ├── README.md                  # Aufgabenstellung & Überblick
+│   ├── PFADE.md                   # Pfadstruktur-Dokumentation
+│   ├── aufgabe/                   # Arbeitsbereich für Schüler
+│   │   ├── README.md              # Detaillierte Anleitung
+│   │   ├── phase1-concept/        # Phase 1: Konzeption
+│   │   │   ├── AUFGABEN.md        # Schritt-für-Schritt Phase 1
+│   │   │   ├── results/           # Ergebnisse (names.json)
+│   │   │   └── templates/         # Vorlagen (Personas, Design, Wireframes)
+│   │   ├── phase2-implementation/ # Phase 2: Implementierung
+│   │   │   ├── index-starter.html # HTML-Starter
+│   │   │   ├── css/style-starter.css
+│   │   │   └── js/script-starter.js
+│   │   ├── concept/               # Mockups & Assets
+│   │   │   └── Mockups_MiFa.odp   # LibreOffice Präsentation
+│   │   ├── images/                # Grafiken (Logo, Startbild, Icon)
+│   │   │   ├── Logo_farbig.jpg
+│   │   │   ├── startbild.png
+│   │   │   └── ic_launcher.png
+│   │   ├── surveys/               # Partizipative Namensfindung
+│   │   │   ├── name_survey/       # Schülerfirma-Name
+│   │   │   │   ├── form.html
+│   │   │   │   └── process.py
+│   │   │   └── app_names/         # App-Namen
+│   │   │       ├── form.html
+│   │   │       └── process.py
+│   │   ├── projects/              # App-Detailseiten
+│   │   │   ├── rideshare.html     # Mitfahr-App
+│   │   │   ├── mindlink.html      # MindLink
+│   │   │   └── co2.html           # CO2-Tracker
+│   │   └── reference/             # Referenz-Implementierung
+│   │       └── complete-example/
+│   └── loesung/                   # Musterlösung (Lehrende)
+│       ├── README.md              # Bewertung & Begründungen
+│       ├── loesung_phase1.md      # Phase 1 Konzept-Dokumentation
+│       ├── loesung_phase2.md      # Phase 2 Implementierungs-Dokumentation
+│       ├── index.html             # Vollständige HTML-Implementierung
+│       ├── css/style.css          # Design-System mit Custom Properties
+│       ├── js/script.js           # Navigation, Validierung, Scroll-Effekte
+│       └── images/                # Alle Grafiken
+│           ├── Logo_farbig.jpg
+│           ├── startbild.png
+│           ├── ic_launcher.png
+│           ├── team-emma.svg      # Team-Avatare
+│           ├── team-luca.svg
+│           ├── team-max.svg
+│           └── team-sophie.svg
+├── scripts/                       # Utility-Scripts
+│   ├── run_accessibility.sh       # pa11y Runner
+│   ├── validate_names.py          # JSON Validator
+│   └── update_readme_docs.py      # README Generator
+├── templates/                     # Polyrepo Templates
+│   ├── rideshare-template/        # MiFaRide Template
+│   ├── mindlink-template/         # MindLink Template
+│   └── co2-tracker-template/      # CO2-Tracker Template
+├── .github/                       # GitHub Actions
+│   └── workflows/
+│       ├── validate-html.yml      # HTML Validierung
+│       ├── quality.yml            # Lighthouse + pa11y
+│       ├── validate-names.yml     # JSON Schema Check
+│       └── template-sync.yml      # Template-Update Notification
+├── .gitignore                     # Ignoriert IDE-Dateien, node_modules, etc.
+├── .lighthouserc.json             # Lighthouse CI Konfiguration
+├── package.json                   # npm Dependencies (pa11y, Lighthouse)
+├── ARCHITECTURE.md                # Projekt-Architektur Dokumentation
 ├── CONTRIBUTING.md                # 📖 Git-Workflow für Studierende
+├── TEMPLATE_SYNC.md               # Template-Update Anleitung
+├── TEMPLATE_UPDATE_STRATEGY.md    # Update-Strategie für Lehrende
+├── GITHUB_CLASSROOM_AUTOGRADING.md # Autograding Setup-Anleitung
 └── README.md                      # Diese Datei
 ```
 
-**Hinweis:** Backend-Ordner (`frontend/`, `backend-python/`, `backend-php/`, `db/`) werden in späteren Versionen hinzugefügt.
+**Hinweis:** Backend-Ordner (`backend-python/`, `backend-php/`, `db/`) werden in Version 4+ hinzugefügt.
 
 ## 🚀 Erste Schritte
 

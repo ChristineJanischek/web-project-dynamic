@@ -1,0 +1,66 @@
+
+/* Setze für body:
+   - Schriftart: Arial, sans-serif (1 Punkt)
+   - Hintergrundfarbe: #f5f5f5 (1 Punkt)
+   - Textfarbe: #333 (1 Punkt)
+   - Außenabstand: 0 (1 Punkt)
+   - Innenabstand: 0 (1 Punkt)
+*/
+
+body {
+  font-family: Arial, sans-serif;      /* 1 Punkt */
+  background-color: #f5f5f5;           /* 1 Punkt */
+  color: #333;                         /* 1 Punkt */
+  margin: 0;                           /* 1 Punkt */
+  padding: 0;                          /* 1 Punkt */
+}
+
+/* Erstelle eine Klasse .info-box mit:
+   - Hintergrundfarbe: white (1 Punkt)
+   - Border: 2px solid #007bff (2 Punkte)
+   - Padding: 20px (1 Punkt)
+   - Margin unten: 15px (1 Punkt)
+   - Abgerundete Ecken: 8px (1 Punkt)
+*/
+
+
+.info-box {
+  background-color: white;             /* 1 Punkt */
+  border: 2px solid #007bff;           /* 2 Punkte */
+  padding: 20px;                       /* 1 Punkt */
+  margin-bottom: 15px;                 /* 1 Punkt */
+  border-radius: 8px;                  /* 1 Punkt */
+}
+
+/* Schreibe eine Media Query für mobile Geräte (max-width: 768px)
+   die den Innenabstand von .info-box auf 10px reduziert
+*/
+
+@media (max-width: 768px) {            /* 2 Punkte */
+  .info-box {
+    padding: 10px;                     /* 2 Punkte */
+  }
+}
+
+/* 
+   - Display: flex (2 Punkte)
+   - Abstand zwischen Items: space-around oder space-between (2 Punkte)
+   - Hintergrundfarbe: #007bff (1 Punkt)
+*/
+nav {
+  display: flex;                       /* 2 Punkte */
+  justify-content: space-around;       /* 2 Punkte */
+  background-color: #007bff;           /* 1 Punkt */
+}
+
+/* b) Styling für <nav> Links (5 Punkte)
+   - Textfarbe: white (1 Punkt)
+   - Keine Unterstreichung (2 Punkte)
+   - Padding: 10px 20px (2 Punkte)
+*/
+nav a {
+  color: white;                        /* 1 Punkt */
+  text-decoration: none;               /* 2 Punkte */
+  padding: 10px 20px;                  /* 2 Punkte */
+}
+
