@@ -46,8 +46,8 @@ GitHub bietet native Template-Funktionen:
 
 **Einrichtung für Lehrende:**
 
-1. Gehe zu Repository Settings
-2. Aktiviere "Template repository"
+1. Gehe zu Repository Settings → https://github.com/ChristineJanischek/web-project-dynamic/settings
+2. Aktiviere "Template repository" (Checkbox unter Repo-Name)
 3. Bei Updates: Erstelle ein **GitHub Release**
 4. Schüler sehen "Fetch upstream" Button in ihrem Repo
 

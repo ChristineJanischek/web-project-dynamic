@@ -308,6 +308,41 @@ git revert HEAD
 
 ---
 
+## 🤖 Automatisiert mit Skript (für Lehrende)
+
+Für Lehrende gibt es ein Hilfsskript, das den Update-Prozess vereinfacht:
+
+```bash
+# Mache das Script ausführbar
+chmod +x scripts/sync-template.sh
+
+# Setup: Richte Template-Fernverbindung ein
+./scripts/sync-template.sh setup
+
+# Check: Prüfe auf verfügbare Updates
+./scripts/sync-template.sh check
+
+# List: Zeige alle Änderungen
+./scripts/sync-template.sh list-changes
+
+# Dry-Run: Siehe was übernommen würde (ohne zu pushen)
+./scripts/sync-template.sh apply --dry-run
+
+# Apply: Übernehme Updates tatsächlich
+./scripts/sync-template.sh apply
+
+# Status: Zeige Sync-Status
+./scripts/sync-template.sh status
+```
+
+**Vorteil:** Das Skript kümmert sich um:
+- ✅ Automatic Conflict-Handling
+- ✅ Backup-Branch vor Update
+- ✅ Dry-Run zum Testen
+- ✅ Detaillierte Logs
+
+---
+
 ## 📊 Template-Updates überwachen
 
 ### GitHub Watch einrichten

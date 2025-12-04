@@ -1,0 +1,66 @@
+name: Template-Update Notification
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - 'docs/**'
+      - 'version*/**'
+      - 'scripts/**'
+      - 'templates/**'
+      - 'ka_grundlagen/**'
+      - 'README.md'
+
+jobs:
+  notify-template-updates:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Detect changed categories
+        id: changes
+        run: |
+          CHANGED_FILES=$(git diff --name-only HEAD~1..HEAD 2>/dev/null || echo "")
+          echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
+          
+          if echo "$CHANGED_FILES" | grep -q "^docs/"; then
+            echo "has_docs=true" >> $GITHUB_OUTPUT
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^version"; then
+            echo "has_versions=true" >> $GITHUB_OUTPUT
+          fi
+          if echo "$CHANGED_FILES" | grep -q "^ka_grundlagen/"; then
+            echo "has_exam=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Display update notification
+        run: |
+          echo "========================================"
+          echo "TEMPLATE-UPDATE VERFÜGBAR"
+          echo "========================================"
+          echo ""
+          echo "Repository: ${{ github.repository }}"
+          echo "Commit: ${{ github.sha }}"
+          echo "Branch: ${{ github.ref_name }}"
+          echo ""
+          echo "Geänderte Bereiche:"
+          if [ "${{ steps.changes.outputs.has_docs }}" = "true" ]; then
+            echo "  ✅ Dokumentation (docs/)"
+          fi
+          if [ "${{ steps.changes.outputs.has_versions }}" = "true" ]; then
+            echo "  ✅ Versionen & Aufgaben (version*/)"
+          fi
+          if [ "${{ steps.changes.outputs.has_exam }}" = "true" ]; then
+            echo "  ✅ Klassenarbeit (ka_grundlagen/)"
+          fi
+          echo ""
+          echo "Für abhängige Repos:"
+          echo "  git remote add template https://github.com/${{ github.repository }}.git"
+          echo "  git fetch template"
+          echo "  git merge template/main"
+          echo ""
+          echo "Doku: TEMPLATE_SYNC.md"
+          echo "========================================"

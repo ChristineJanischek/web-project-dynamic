@@ -1,7 +1,4 @@
-name: Template Sync Info
-
-# Dieser Workflow informiert über Template-Updates
-# Student-Repos können Updates manuell übernehmen
+name: 🔄 Template Sync to Dependent Repos
 
 on:
   push:
@@ -10,14 +7,38 @@ on:
     paths:
       - 'docs/**'
       - 'version*/**'
-      - 'README.md'
-      - 'CONTRIBUTING.md'
+      - 'templates/**'
+      - 'scripts/**'
+      - 'shared-examples/**'
       - '.github/workflows/**'
+      - 'README.md'
+      - 'ARCHITECTURE.md'
+      - 'CONTRIBUTING.md'
+  workflow_dispatch:
+    inputs:
+      force_sync:
+        description: 'Force sync to all repos (ignore skip list)'
+        required: false
+        type: boolean
+        default: false
+      target_repos:
+        description: 'Specific repos to sync (comma-separated, leave empty for all)'
+        required: false
+        type: string
 
+env:
+  # Liste der abhängigen Repositories (Format: owner/repo)
+  # Passe diese Liste an deine GitHub Classroom Repos an
+  DEPENDENT_REPOS: |
+    ChristineJanischek/web-project-student-example
+  
 jobs:
   detect-changes:
+    name: 📊 Detect Template Changes
     runs-on: ubuntu-latest
-    
+    outputs:
+      has_changes: ${{ steps.check.outputs.has_changes }}
+      changed_files: ${{ steps.check.outputs.changed_files }}
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v4
@@ -25,29 +46,199 @@ jobs:
           fetch-depth: 2
       
       - name: Detect Changed Files
-        id: changes
+        id: check
         run: |
-          echo "## 📢 Template-Update verfügbar" >> $GITHUB_STEP_SUMMARY
+          # Hole geänderte Dateien seit letztem Commit
+          CHANGED=$(git diff --name-only HEAD^ HEAD | grep -E '^(docs|version|templates|scripts|shared-examples|\.github)' || true)
+          
+          if [ -n "$CHANGED" ]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+            echo "changed_files<<EOF" >> $GITHUB_OUTPUT
+            echo "$CHANGED" >> $GITHUB_OUTPUT
+            echo "EOF" >> $GITHUB_OUTPUT
+            
+            echo "📝 Detected changes in:"
+            echo "$CHANGED"
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+            echo "ℹ️ No relevant template changes detected"
+          fi
+      
+      - name: Create Change Summary
+        run: |
+          echo "## 📢 Template Changes Detected" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "Folgende Dateien wurden aktualisiert:" >> $GITHUB_STEP_SUMMARY
+          echo "The following files have been updated:" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
-          git diff --name-only HEAD~1 HEAD >> $GITHUB_STEP_SUMMARY
+          git diff --name-only HEAD^ HEAD >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "### 🔄 So übernimmst du die Updates:" >> $GITHUB_STEP_SUMMARY
+          echo "🔄 Automatic sync will create Pull Requests in dependent repositories." >> $GITHUB_STEP_SUMMARY
+
+  sync-to-repos:
+    name: 🔄 Sync to Dependent Repos
+    runs-on: ubuntu-latest
+    needs: detect-changes
+    if: needs.detect-changes.outputs.has_changes == 'true' || github.event.inputs.force_sync == 'true'
+    
+    steps:
+      - name: 📥 Checkout Template Repository
+        uses: actions/checkout@v4
+        with:
+          path: template
+          fetch-depth: 0
+      
+      - name: 🔧 Setup Git
+        run: |
+          git config --global user.name "Template Sync Bot"
+          git config --global user.email "noreply@github.com"
+      
+      - name: 🔄 Sync to Dependent Repositories
+        env:
+          GH_TOKEN: ${{ secrets.TEMPLATE_SYNC_TOKEN }}
+        run: |
+          # Falls ein Personal Access Token benötigt wird:
+          # 1. Gehe zu GitHub Settings > Developer settings > Personal access tokens
+          # 2. Erstelle einen Token mit "repo" und "workflow" Rechten
+          # 3. Füge ihn als Secret "TEMPLATE_SYNC_TOKEN" hinzu
+          
+          if [ -z "$GH_TOKEN" ]; then
+            echo "⚠️ TEMPLATE_SYNC_TOKEN not configured"
+            echo "ℹ️ Automatic sync requires a Personal Access Token"
+            echo "📚 See: https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token"
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "## ⚠️ Configuration Required" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "To enable automatic syncing:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Create a Personal Access Token with \`repo\` and \`workflow\` permissions" >> $GITHUB_STEP_SUMMARY
+            echo "2. Add it as a repository secret named \`TEMPLATE_SYNC_TOKEN\`" >> $GITHUB_STEP_SUMMARY
+            echo "3. Update \`DEPENDENT_REPOS\` in this workflow with your classroom repositories" >> $GITHUB_STEP_SUMMARY
+            exit 0
+          fi
+          
+          echo "🔄 Starting template sync process..."
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "1. **Template-Repo als Remote hinzufügen:**" >> $GITHUB_STEP_SUMMARY
+          echo "## 🔄 Sync Results" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          # Liste der zu synchronisierenden Repositories
+          REPOS=$(echo "$DEPENDENT_REPOS" | grep -v '^#' | grep -v '^$' || true)
+          
+          if [ -z "$REPOS" ]; then
+            echo "ℹ️ No dependent repositories configured"
+            echo "Configure them in DEPENDENT_REPOS environment variable" >> $GITHUB_STEP_SUMMARY
+            exit 0
+          fi
+          
+          # Synchronisiere jedes Repository
+          while IFS= read -r repo; do
+            [ -z "$repo" ] && continue
+            
+            echo "📦 Processing: $repo"
+            
+            # Clone target repository
+            git clone "https://x-access-token:${GH_TOKEN}@github.com/${repo}.git" "target-${repo##*/}" 2>/dev/null || {
+              echo "❌ Failed to clone $repo" >> $GITHUB_STEP_SUMMARY
+              continue
+            }
+            
+            cd "target-${repo##*/}"
+            
+            # Check if sync is disabled
+            if [ -f ".template-sync-ignore" ]; then
+              echo "⏭️ Skipping $repo (sync disabled)"
+              echo "- ⏭️ \`$repo\` - Sync disabled" >> $GITHUB_STEP_SUMMARY
+              cd ..
+              continue
+            fi
+            
+            # Create sync branch
+            BRANCH_NAME="template-sync-$(date +%Y%m%d-%H%M%S)"
+            git checkout -b "$BRANCH_NAME"
+            
+            # Copy template files (exclude student work directories)
+            rsync -av --delete \
+              --exclude='.git' \
+              --exclude='version*/aufgabe/index.html' \
+              --exclude='version*/aufgabe/css/style.css' \
+              --exclude='version*/aufgabe/js/script.js' \
+              --exclude='version*/loesung' \
+              --exclude='**/projects/*' \
+              --exclude='**/surveys/*/results' \
+              ../template/docs ./
+            
+            rsync -av \
+              --exclude='.git' \
+              ../template/scripts ./
+            
+            cp ../template/README.md ./ 2>/dev/null || true
+            cp ../template/CONTRIBUTING.md ./ 2>/dev/null || true
+            cp ../template/TEMPLATE_SYNC.md ./ 2>/dev/null || true
+            
+            # Check for changes
+            if git diff --quiet && git diff --cached --quiet; then
+              echo "ℹ️ No changes for $repo"
+              echo "- ✅ \`$repo\` - Already up to date" >> $GITHUB_STEP_SUMMARY
+              cd ..
+              continue
+            fi
+            
+            # Commit and push
+            git add .
+            git commit -m "🔄 Template sync from web-project-dynamic" \
+              -m "Automatic synchronization from template repository" \
+              -m "" \
+              -m "Template commit: ${{ github.sha }}" \
+              -m "Sync date: $(date -u +'%Y-%m-%d %H:%M:%S UTC')" \
+              -m "" \
+              -m "Review changes before merging." \
+              -m "To disable auto-sync, create: .template-sync-ignore"
+            
+            git push origin "$BRANCH_NAME"
+            
+            # Create Pull Request (PR body in single line to avoid YAML issues)
+            gh pr create \
+              --title "🔄 Template Update $(date +%Y-%m-%d)" \
+              --body "Automatisches Template-Update - Änderungen wurden synchronisiert. Überprüfe die Änderungen und merge wenn alles passt." \
+              --label "template-sync" \
+              --repo "$repo" 2>&1 | tee pr_output.txt
+            
+            if [ $? -eq 0 ]; then
+              PR_URL=$(grep -oP 'https://github.com/[^\s]+' pr_output.txt | head -1)
+              echo "- ✅ \`$repo\` - [PR created]($PR_URL)" >> $GITHUB_STEP_SUMMARY
+            else
+              echo "- ⚠️ \`$repo\` - PR creation failed" >> $GITHUB_STEP_SUMMARY
+            fi
+            
+            cd ..
+          done <<< "$REPOS"
+          
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ Sync process completed" >> $GITHUB_STEP_SUMMARY
+
+  notify-manual-sync:
+    name: 📢 Info for Manual Sync
+    runs-on: ubuntu-latest
+    needs: detect-changes
+    if: needs.detect-changes.outputs.has_changes == 'true'
+    
+    steps:
+      - name: Manual Sync Instructions
+        run: |
+          echo "## 📖 Manual Sync Instructions" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Falls automatisches Sync nicht konfiguriert ist:" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "# 1. Template als Remote hinzufügen" >> $GITHUB_STEP_SUMMARY
           echo "git remote add template https://github.com/ChristineJanischek/web-project-dynamic.git" >> $GITHUB_STEP_SUMMARY
           echo "git fetch template" >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          echo "2. **Nur Dokumentation übernehmen:**" >> $GITHUB_STEP_SUMMARY
-          echo "\`\`\`bash" >> $GITHUB_STEP_SUMMARY
+          echo "# 2. Nur Dokumentation übernehmen" >> $GITHUB_STEP_SUMMARY
           echo "git checkout template/main -- docs/" >> $GITHUB_STEP_SUMMARY
           echo "git checkout template/main -- README.md" >> $GITHUB_STEP_SUMMARY
-          echo "git commit -m '📚 Update Dokumentation vom Template'" >> $GITHUB_STEP_SUMMARY
+          echo "git commit -m '📚 Update from template'" >> $GITHUB_STEP_SUMMARY
           echo "\`\`\`" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "3. **Neue Version übernehmen (z.B. Version 4):**" >> $GITHUB_STEP_SUMMARY
