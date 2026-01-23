@@ -1,0 +1,44 @@
+name: HTML Validierung
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validate-html:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v3
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      
+      - name: Install HTML Validator
+        run: npm install -g html-validate
+      
+      - name: Validate Version 1
+        run: |
+          if [ -f version1/aufgabe/index.html ]; then
+            echo "Validiere Version 1..."
+            html-validate version1/aufgabe/index.html || echo "⚠️ Fehler in Version 1 gefunden"
+          fi
+      
+      - name: Validate Version 1 Lösung
+        run: |
+          if [ -f version1/loesung/index.html ]; then
+            echo "Validiere Version 1 Lösung..."
+            html-validate version1/loesung/index.html
+          fi
+      
+      - name: Validate Shared Examples
+        run: |
+          if [ -f shared-examples/index.html ]; then
+            echo "Validiere Shared Examples..."
+            html-validate shared-examples/index.html
+          fi

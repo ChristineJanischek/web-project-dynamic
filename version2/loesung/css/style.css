@@ -1,0 +1,356 @@
+/* ========================================
+   RESET & GLOBAL STYLES
+   ======================================== */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
+
+header {
+    background-color: #2D6A4F;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    /* Logo als Hintergrundbild eingebunden */
+    background-image: url("../images/logo_final.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center left;
+    width: 150px;
+    height: 60px;
+    /* Text ausblenden, da das Logo als Bild angezeigt wird */
+    text-indent: -9999px;
+    overflow: hidden;
+    flex-shrink: 0;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.logo:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Logo-Anpassungen */
+@media (max-width: 768px) {
+    .logo {
+        width: 120px;
+        height: 48px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        width: 100px;
+        height: 40px;
+    }
+}
+
+/* Desktop Navigation */
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 15px;
+    transition: background-color 0.3s ease;
+    border-radius: 4px;
+}
+
+.nav a:hover {
+    background-color: rgba(82, 183, 136, 0.2);
+}
+
+/* Hamburger Button (versteckt auf Desktop) */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 3px 0;
+    transition: all 0.3s ease;
+    border-radius: 2px;
+}
+
+/* ========================================
+   MEDIA QUERIES - MOBILE
+   ======================================== */
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        height: 100vh;
+        width: 70%;
+        max-width: 300px;
+        background-color: #1B4332;
+        flex-direction: column;
+        gap: 0;
+        padding: 80px 20px 20px;
+        transition: right 0.3s ease;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    }
+    
+    .nav.active {
+        right: 0;
+    }
+    
+    .nav a {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(82, 183, 136, 0.2);
+        border-radius: 0;
+    }
+    
+    .nav a:hover {
+        background-color: rgba(82, 183, 136, 0.25);
+    }
+    
+    /* Hamburger Animation */
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+    background: linear-gradient(135deg, #2D6A4F 0%, #52B788 100%);
+    color: white;
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+}
+
+/* ========================================
+   BOX-MODELL DEMONSTRATIONEN
+   ======================================== */
+
+.box-demo {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.box-demo h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.boxes {
+    display: flex;
+    gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.box {
+    flex: 1;
+    min-width: 250px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.box h3 {
+    margin-bottom: 10px;
+    color: #2D6A4F;
+}
+
+.box p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Box 1: content-box mit viel Padding */
+.box-1 {
+    box-sizing: content-box;
+    width: 200px;
+    padding: 30px;
+    border: 3px solid #52B788;
+    margin: 20px;
+    background-color: rgba(82, 183, 136, 0.1);
+}
+
+/* Box 2: border-box mit gleichen Werten */
+.box-2 {
+    box-sizing: border-box;
+    width: 200px;
+    padding: 30px;
+    border: 3px dashed #2D6A4F;
+    margin: 20px;
+    background-color: rgba(45, 106, 79, 0.08);
+}
+
+/* Box 3: Mit Schatten und Radius */
+.box-3 {
+    padding: 25px;
+    border: 2px solid #2D6A4F;
+    margin: 20px;
+    box-shadow: 0 4px 6px rgba(45, 106, 79, 0.15), 0 8px 15px rgba(45, 106, 79, 0.1);
+    border-radius: 16px;
+    background: linear-gradient(135deg, #ffffff 0%, rgba(82, 183, 136, 0.1) 100%);
+    transform: translateY(0);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.box-3:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15), 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ========================================
+   RESPONSIVE GRID
+   ======================================== */
+
+.grid-demo {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.grid-demo h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2rem;
+    color: #333;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.card {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #0b5cad;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+    color: #0b5cad;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .hero p {
+        font-size: 1.2rem;
+    }
+    
+    .boxes {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .box {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    /* TODO: Footer-Styling */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}

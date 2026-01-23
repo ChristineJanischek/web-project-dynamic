@@ -1,0 +1,25 @@
+name: Validate Names Artifact
+
+on:
+  push:
+    paths:
+      - 'version3/aufgabe/phase1-concept/results/names.json'
+  pull_request:
+    paths:
+      - 'version3/aufgabe/phase1-concept/results/names.json'
+
+jobs:
+  validate-names:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Run validator
+        run: |
+          python3 scripts/validate_names.py

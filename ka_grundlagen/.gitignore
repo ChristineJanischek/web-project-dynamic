@@ -1,0 +1,10 @@
+# Klassenarbeiten und Musterlösungen nicht teilen
+# Diese Dateien sind nur für Lehrkräfte bestimmt
+
+# Alle Markdown-Dateien in diesem Verzeichnis ignorieren
+*.md
+
+# Falls PDF-Versionen erstellt werden
+*.pdf
+
+# Notiz: Um diese Dateien bewusst zu teilen, verwende: git add -f <dateiname>

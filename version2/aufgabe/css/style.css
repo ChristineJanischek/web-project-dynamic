@@ -1,0 +1,296 @@
+/* ========================================
+   RESET & GLOBAL STYLES
+   ======================================== */
+
+* {
+    /* TODO: box-sizing auf border-box setzen */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    /* TODO: Hintergrundfarbe hinzufügen */
+}
+
+.container {
+    /* TODO: max-width und margin hinzufügen für zentrierten Container */
+    padding: 20px;
+}
+
+/* ========================================
+   HEADER & NAVIGATION
+   ======================================== */
+
+header {
+    background-color: #2D6A4F;
+    color: white;
+    /* TODO: Position sticky für sticky header */
+}
+
+/* TODO: header .container mit Flexbox (space-between, align-items: center) */
+
+/* Logo-Styling */
+.logo {
+    /* TODO: Logo als Hintergrundbild einbinden */
+    /* background-image: url("../images/logo_final.png"); */
+    /* TODO: background-size, background-repeat, background-position */
+    /* TODO: width, height setzen */
+    /* TODO: Text ausblenden mit text-indent: -9999px */
+}
+
+/* Desktop Navigation */
+.nav {
+    /* TODO: Display flex für horizontale Navigation */
+    /* TODO: gap für Abstände zwischen Links */
+}
+
+.nav a {
+    /* TODO: Link-Styling (text-decoration, color, padding) */
+    /* TODO: transition für smooth hover */
+    text-decoration: none;
+    color: white;
+}
+
+.nav a:hover {
+    /* TODO: Hover-Effekt (z.B. background-color) */
+}
+
+/* Hamburger Button */
+.nav-toggle {
+    /* TODO: display: none auf Desktop */
+    /* TODO: flex-direction: column */
+    /* TODO: background, border, cursor */
+}
+
+.nav-toggle span {
+    /* TODO: Hamburger-Icon Streifen erstellen */
+    /* TODO: width, height, background-color */
+    /* TODO: margin, transition */
+}
+
+/* ========================================
+   HERO SECTION
+   ======================================== */
+
+.hero {
+    /* TODO: Background (Farbe oder Gradient) */
+    /* TODO: padding, text-align */
+}
+
+.hero h1 {
+    /* TODO: font-size, margin */
+}
+
+.hero p {
+    /* TODO: font-size */
+}
+
+/* ========================================
+   BOX-MODELL DEMONSTRATIONEN
+   ======================================== */
+
+.box-demo {
+    /* TODO: padding, background-color */
+}
+
+.box-demo h2 {
+    /* TODO: text-align, margin, font-size */
+}
+
+.boxes {
+    /* TODO: Display flex oder grid */
+    /* TODO: gap zwischen Boxen */
+    /* TODO: flex-wrap, justify-content */
+}
+
+.box {
+    /* TODO: Basis-Styling für alle Boxen */
+    /* TODO: flex, min-width */
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    /* TODO: text-align */
+}
+
+.box h3 {
+    /* TODO: margin, color */
+}
+
+.box p {
+    /* TODO: color, font-size */
+}
+
+/* Box 1: content-box Beispiel */
+.box-1 {
+    /* TODO: box-sizing: content-box */
+    /* TODO: width setzen (z.B. 200px) */
+    /* TODO: Padding hinzufügen (z.B. 30px) */
+    /* TODO: Border (z.B. 3px solid #52B788) */
+    /* TODO: Margin */
+    /* TODO: background-color */
+}
+
+/* Box 2: border-box Beispiel */
+.box-2 {
+    /* TODO: box-sizing: border-box */
+    /* TODO: Gleiche width wie Box 1 */
+    /* TODO: Padding hinzufügen */
+    /* TODO: Border (anderer Stil, z.B. dashed) */
+    /* TODO: Margin */
+    /* TODO: background-color */
+}
+
+/* Box 3: Mit Schatten und Radius */
+.box-3 {
+    /* TODO: Padding */
+    /* TODO: Border */
+    /* TODO: Margin */
+    /* TODO: box-shadow */
+    /* TODO: border-radius (größer als .box) */
+    /* TODO: background (ggf. Gradient) */
+    /* TODO: transition für Hover-Effekt */
+}
+
+.box-3:hover {
+    /* TODO: transform: translateY */
+    /* TODO: box-shadow verstärken */
+}
+
+/* ========================================
+   RESPONSIVE GRID
+   ======================================== */
+
+.grid-demo {
+    /* TODO: padding, background-color */
+}
+
+.grid-demo h2 {
+    /* TODO: text-align, margin, font-size */
+}
+
+.grid {
+    /* TODO: display: grid */
+    /* TODO: grid-template-columns: repeat(3, 1fr) für Desktop */
+    /* TODO: gap */
+}
+
+.card {
+    /* TODO: Card-Styling */
+    /* TODO: background-color, padding */
+    /* TODO: border-radius, box-shadow */
+    /* TODO: transition, border-left */
+}
+
+.card:hover {
+    /* TODO: Hover-Effekt */
+}
+
+.card h3 {
+    /* TODO: color, margin */
+}
+
+.card p {
+    /* TODO: color, line-height */
+}
+
+/* ========================================
+   MEDIA QUERIES - MOBILE
+   ======================================== */
+
+/* Tablet */
+@media (max-width: 1024px) {
+    .grid {
+        /* TODO: grid-template-columns: repeat(2, 1fr) */
+    }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    /* Navigation für Mobile */
+    .nav-toggle {
+        /* TODO: display: flex */
+    }
+    
+    .nav {
+        /* TODO: position: fixed */
+        /* TODO: right: -100% (versteckt) */
+        /* TODO: top: 0, height: 100vh */
+        /* TODO: width, max-width */
+        /* TODO: background-color */
+        /* TODO: flex-direction: column */
+        /* TODO: padding */
+        /* TODO: transition: right */
+        /* TODO: box-shadow */
+    }
+    
+    .nav.active {
+        /* TODO: right: 0 (sichtbar) */
+    }
+    
+    .nav a {
+        /* TODO: padding, border-bottom */
+        /* TODO: border-radius: 0 */
+    }
+    
+    /* Hamburger zu X Animation */
+    .nav-toggle.active span:nth-child(1) {
+        /* TODO: transform: rotate und translate */
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        /* TODO: opacity: 0 */
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        /* TODO: transform: rotate und translate */
+    }
+    
+    /* Grid auf 1 Spalte */
+    .grid {
+        /* TODO: grid-template-columns: 1fr */
+    }
+    
+    /* Hero responsive */
+    .hero h1 {
+        /* TODO: kleinere font-size */
+    }
+    
+    .hero p {
+        /* TODO: kleinere font-size */
+    }
+    
+    /* Boxen untereinander */
+    .boxes {
+        /* TODO: flex-direction: column */
+        /* TODO: align-items: center */
+    }
+    
+    .box {
+        /* TODO: width: 100% */
+        /* TODO: max-width */
+    }
+    
+    /* Logo kleiner */
+    .logo {
+        /* TODO: width, height anpassen */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        /* TODO: noch kleinere width, height */
+    }
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}

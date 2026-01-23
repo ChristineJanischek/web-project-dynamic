@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MiFa - Mission Future Academy: Nachhaltige Software für Bildung und Ökologie. Von Schüler:innen für die Zukunft.">
+    <title>MiFa - Mission Future Academy | Nachhaltige Software</title>
+    <link rel="icon" href="images/ic_launcher.png" type="image/png">
+    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- Google Fonts - TODO: Wähle passende Schriften für dein Corporate Design -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header mit Navigation -->
+    <header class="header">
+        <div class="container">
+            <!-- TODO: Logo einbinden (images/Logo_farbig.jpg) -->
+            <div class="logo">
+                <a href="#home">
+                    <!-- Entweder als <img> oder als background-image im CSS -->
+                    <span class="logo-text">MiFa</span>
+                </a>
+            </div>
+            
+            <!-- Hamburger Button für Mobile -->
+            <button class="nav-toggle" id="navToggle" aria-label="Navigation umschalten" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <!-- Hauptnavigation -->
+            <nav class="nav" id="mainNav">
+                <ul class="nav-list">
+                    <li><a href="#home" class="nav-link">Start</a></li>
+                    <li><a href="#ueber-uns" class="nav-link">Über uns</a></li>
+                    <li><a href="#projekte" class="nav-link">Projekte</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#kontakt" class="nav-link">Kontakt</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <!-- Responsive Hero-Hintergrundbild -->
+        <picture class="hero-bg">
+            <source media="(min-width: 769px)" srcset="images/startbild.png">
+            <source media="(max-width: 768px)" srcset="images/Startbild_klein.png">
+            <img src="images/startbild.png" alt="" loading="eager">
+        </picture>
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Mission Future Academy</h1>
+            <p class="hero-subtitle">Nachhaltige Software für Bildung & Ökologie</p>
+            <p class="hero-tagline">Von Schüler:innen entwickelt. Für die Zukunft gestaltet.</p>
+            <div class="hero-actions">
+                <a href="#projekte" class="btn btn-primary">Unsere Projekte</a>
+                <a href="#kontakt" class="btn btn-secondary">Kontakt aufnehmen</a>
+            </div>
+        </div>
+        
+        <!-- Scroll-Down Indikator (Optional) -->
+        <a href="#ueber-uns" class="scroll-indicator" aria-label="Nach unten scrollen">
+            <span class="scroll-arrow"></span>
+        </a>
+    </section>
+
+    <!-- Hauptinhalt -->
+    <main>
+        <!-- Über uns Section -->
+        <section id="ueber-uns" class="about-section">
+            <div class="container">
+                <h2 class="section-title">Über MiFa</h2>
+                <p class="section-subtitle">Wer wir sind und wofür wir stehen</p>
+                
+                <div class="about-content">
+                    <!-- Mission & Vision -->
+                    <div class="about-text">
+                        <h3>Unsere Mission</h3>
+                        <p>
+                            <!-- TODO: Mission-Statement einfügen (aus deiner Konzeption) -->
+                            Wir entwickeln digitale Lösungen, die Bildung fördern und 
+                            die Umwelt schützen. Als Schülerfirma verbinden wir technisches 
+                            Know-how mit ökologischem Bewusstsein.
+                        </p>
+                        
+                        <h3>Unsere Werte</h3>
+                        <ul class="values-list">
+                            <li>🌱 <strong>Nachhaltigkeit</strong> - Verantwortung für die Umwelt</li>
+                            <li>💡 <strong>Innovation</strong> - Kreative Lösungen entwickeln</li>
+                            <li>📚 <strong>Bildung</strong> - Wissen teilen und erweitern</li>
+                            <li>🤝 <strong>Zusammenarbeit</strong> - Gemeinsam mehr erreichen</li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Features Grid -->
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon">🌍</div>
+                            <h3>Nachhaltig</h3>
+                            <p>Software mit Rücksicht auf Umwelt und Ressourcen</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">🚀</div>
+                            <h3>Innovativ</h3>
+                            <p>Moderne Technologien für zukunftsfähige Lösungen</p>
+                        </div>
+                        
+                        <div class="feature-card">
+                            <div class="feature-icon">👥</div>
+                            <h3>Von Schüler:innen</h3>
+                            <p>Frische Perspektiven der nächsten Generation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projekte Section -->
+        <section id="projekte" class="projects-section">
+            <div class="container">
+                <h2 class="section-title">Unsere Projekte</h2>
+                <p class="section-subtitle">Nachhaltige Software-Lösungen in Aktion</p>
+                
+                <!-- Projekt-Grid -->
+                <div class="projects-grid">
+                    <!-- Mitfahrgelegenheits-App (Arbeitsname) -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/2D6A4F/FFFFFF?text=RideShare%40School" 
+                                 alt="Mitfahrgelegenheits-App RideShare@School" 
+                                 loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 id="app-rideshare-title">RideShare@School</h3>
+                            <p class="project-category">Mobilität</p>
+                            <p>Schulweite Mitfahrgelegenheiten organisieren – sicher, nachhaltig, effizient.</p>
+                            <ul class="project-tags">
+                                <li>WebApp</li>
+                                <li>Maps</li>
+                                <li>Community</li>
+                            </ul>
+                            <a href="projects/rideshare.html" class="btn btn-secondary" aria-label="Projektlink RideShare@School">Zum Projekt</a>
+                        </div>
+                    </article>
+                    
+                    <!-- LernApp MindLink (alias Mini-Lük digital) -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/0077B6/FFFFFF?text=MindLink" 
+                                 alt="LernApp MindLink" 
+                                 loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 id="app-mindlink-title">MindLink</h3>
+                            <p class="project-category">Bildung</p>
+                            <p>Interaktive, modulare Lernaufgaben nach dem Mini‑Lük‑Prinzip – digital.</p>
+                            <ul class="project-tags">
+                                <li>Learning</li>
+                                <li>Gamification</li>
+                                <li>Responsive</li>
+                            </ul>
+                            <a href="projects/mindlink.html" class="btn btn-secondary" aria-label="Projektlink MindLink">Zum Projekt</a>
+                        </div>
+                    </article>
+                    
+                    <!-- CO2-Tracker (Arbeitsname) -->
+                    <article class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x300/F4A261/FFFFFF?text=CO2+Tracker" 
+                                 alt="CO2-Tracker" 
+                                 loading="lazy">
+                        </div>
+                        <div class="project-content">
+                            <h3 id="app-co2-title">School Carbon Tracker</h3>
+                            <p class="project-category">Nachhaltigkeit</p>
+                            <p>CO2‑Emissionen sichtbar machen – Ziele setzen, Fortschritt tracken.</p>
+                            <ul class="project-tags">
+                                <li>Metrics</li>
+                                <li>Dashboards</li>
+                                <li>Data</li>
+                            </ul>
+                            <a href="projects/co2.html" class="btn btn-secondary" aria-label="Projektlink CO2-Tracker">Zum Projekt</a>
+                        </div>
+                    </article>
+                </div>
+                
+                <!-- Call-to-Action -->
+                <div class="cta-box">
+                    <h3>Haben Sie ein Projekt im Kopf?</h3>
+                    <p>Lassen Sie uns gemeinsam an nachhaltigen Lösungen arbeiten!</p>
+                    <a href="#kontakt" class="btn btn-primary">Projekt anfragen</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (Optional) -->
+        <section id="services" class="services-section">
+            <div class="container">
+                <h2 class="section-title">Unsere Services</h2>
+                <p class="section-subtitle">Was wir anbieten</p>
+                
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-icon">💻</div>
+                        <h3>Software-Entwicklung</h3>
+                        <p>Maßgeschneiderte Apps und Web-Lösungen für Bildung und Umwelt</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🎓</div>
+                        <h3>Workshops</h3>
+                        <p>Coding-Workshops zu nachhaltiger Software-Entwicklung</p>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">🔍</div>
+                        <h3>Beratung</h3>
+                        <p>Digitalisierungs-Beratung mit Fokus auf Nachhaltigkeit</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team Section (Optional) -->
+        <section id="team" class="team-section">
+            <div class="container">
+                <h2 class="section-title">Unser Team</h2>
+                <p class="section-subtitle">Die Menschen hinter MiFa</p>
+                
+                <!-- TODO: Team-Members hinzufügen -->
+                <div class="team-grid">
+                    <!-- Beispiel Team-Member -->
+                    <div class="team-member">
+                        <div class="member-image">
+                            <img src="https://via.placeholder.com/200/2D6A4F/FFFFFF?text=Team" 
+                                 alt="Team-Mitglied" 
+                                 loading="lazy">
+                        </div>
+                        <h3>Dein Name</h3>
+                        <p class="member-role">Gründer & Developer</p>
+                        <div class="member-social">
+                            <!-- Social Media Links -->
+                            <a href="#" aria-label="LinkedIn">💼</a>
+                            <a href="#" aria-label="GitHub">🐙</a>
+                        </div>
+                    </div>
+                    
+                    <!-- TODO: Weitere Team-Members -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Kontakt Section -->
+        <section id="kontakt" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Kontakt</h2>
+                <p class="section-subtitle">Schreiben Sie uns oder bewerben Sie sich</p>
+                
+                <div class="contact-content">
+                    <!-- Kontaktformular -->
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-group">
+                            <label for="name">Name *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                required 
+                                minlength="2"
+                                placeholder="Ihr vollständiger Name"
+                                aria-required="true">
+                            <span class="error-message" id="name-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-Mail *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                required
+                                placeholder="ihre.email@beispiel.de"
+                                aria-required="true">
+                            <span class="error-message" id="email-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Betreff</label>
+                            <select id="subject" name="subject">
+                                <option value="">Bitte wählen...</option>
+                                <option value="projekt">Projektanfrage</option>
+                                <option value="bewerbung">Bewerbung</option>
+                                <option value="workshop">Workshop-Anfrage</option>
+                                <option value="sonstiges">Sonstiges</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Nachricht *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                required 
+                                minlength="10" 
+                                rows="6"
+                                placeholder="Ihre Nachricht an uns..."
+                                aria-required="true"></textarea>
+                            <span class="error-message" id="message-error"></span>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="privacy" name="privacy" required>
+                                <span>Ich habe die <a href="#datenschutz">Datenschutzerklärung</a> gelesen und akzeptiert. *</span>
+                            </label>
+                            <span class="error-message" id="privacy-error"></span>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-block">Nachricht senden</button>
+                    </form>
+                    
+                    <!-- Erfolgsmeldung -->
+                    <div id="formMessage" class="form-message" role="alert" aria-live="polite"></div>
+                    
+                    <!-- Kontaktinformationen -->
+                    <div class="contact-info">
+                        <h3>Weitere Kontaktmöglichkeiten</h3>
+                        <ul class="contact-list">
+                            <li>
+                                <strong>E-Mail:</strong> 
+                                <a href="mailto:info@mifa-academy.de">info@mifa-academy.de</a>
+                            </li>
+                            <li>
+                                <strong>Social Media:</strong>
+                                <div class="social-links">
+                                    <a href="#" aria-label="Instagram">📷 Instagram</a>
+                                    <a href="#" aria-label="LinkedIn">💼 LinkedIn</a>
+                                    <a href="#" aria-label="GitHub">🐙 GitHub</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Footer-Spalte 1 -->
+                <div class="footer-column">
+                    <h4>MiFa</h4>
+                    <p>Mission Future Academy<br>
+                       Nachhaltige Software für Bildung & Ökologie</p>
+                </div>
+                
+                <!-- Footer-Spalte 2 -->
+                <div class="footer-column">
+                    <h4>Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="#ueber-uns">Über uns</a></li>
+                        <li><a href="#projekte">Projekte</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#kontakt">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Footer-Spalte 3 -->
+                <div class="footer-column">
+                    <h4>Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="#impressum">Impressum</a></li>
+                        <li><a href="#datenschutz">Datenschutz</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Footer-Spalte 4 -->
+                <div class="footer-column">
+                    <h4>Social Media</h4>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Instagram">📷</a>
+                        <a href="#" aria-label="LinkedIn">💼</a>
+                        <a href="#" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 MiFa - Mission Future Academy. Entwickelt mit 💚 für die Zukunft.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>

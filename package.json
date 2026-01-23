@@ -1,0 +1,15 @@
+{
+  "name": "web-project-dynamic-quality",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Tooling für Lighthouse und Accessibility Tests (Version3 Schülerfirma Projekt)",
+  "scripts": {
+    "test:accessibility": "pa11y file://$PWD/version3/aufgabe/phase2-implementation/index-starter.html --reporter markdown || true",
+    "test:lighthouse": "lhci autorun",
+    "quality": "npm run test:accessibility && npm run test:lighthouse"
+  },
+  "devDependencies": {
+    "@lhci/cli": "0.13.0",
+    "pa11y": "6.0.0"
+  }
+}

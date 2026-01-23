@@ -1,0 +1,69 @@
+/* ========================================
+   Version 1: Erste CSS-Formatierungen
+   ======================================== */
+
+/* TODO: Formatiere den body */
+body {
+    /* font-family: ... */
+    /* color: ... */
+    /* background-color: ... */
+    /* max-width: 800px; */
+    /* margin: 0 auto; */
+}
+
+/* TODO: Formatiere den Header */
+header {
+    /* background-color: ... */
+    /* padding: ... */
+}
+
+/* TODO: Formatiere die Hauptüberschrift */
+h1 {
+    /* color: ... */
+}
+
+/* TODO: Formatiere die Navigation */
+nav {
+    /* ... */
+}
+
+nav a {
+    /* text-decoration: ... */
+    /* color: ... */
+    /* padding: ... */
+}
+
+nav a:hover {
+    /* Hover-Effekt */
+}
+
+/* TODO: Formatiere den Main-Bereich */
+main {
+    /* padding: ... */
+}
+
+h2 {
+    /* color: ... */
+    /* margin: ... */
+}
+
+p {
+    /* line-height: 1.6; */
+}
+
+/* TODO: Formatiere Listen */
+ul {
+    /* list-style-type: ... */
+}
+
+li {
+    /* margin: ... */
+}
+
+/* TODO: Formatiere den Footer */
+footer {
+    /* background-color: ... */
+    /* text-align: center; */
+    /* padding: ... */
+    /* margin-top: ... */
+}

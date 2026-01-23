@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="de"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>RideShare@School</title><link rel="stylesheet" href="style.css"></head>
+<body>
+  <header><h1>RideShare@School</h1></header>
+  <main>
+    <section>
+      <h2>Fahrt anbieten</h2>
+      <form id="offerForm">
+        <input placeholder="Start" required>
+        <input placeholder="Ziel" required>
+        <input type="date" required>
+        <button type="submit">Anbieten</button>
+      </form>
+    </section>
+    <section>
+      <h2>Verfügbare Fahrten</h2>
+      <ul id="list"></ul>
+    </section>
+  </main>
+  <script>
+    const list=document.getElementById('list');
+    document.getElementById('offerForm').addEventListener('submit',(e)=>{
+      e.preventDefault();
+      const [start,ziel,datum]=[...e.target.querySelectorAll('input')].map(i=>i.value.trim());
+      if(!start||!ziel||!datum){return}
+      const li=document.createElement('li');
+      li.textContent=`${datum}: ${start} → ${ziel}`;
+      list.appendChild(li);
+      e.target.reset();
+    });
+  </script>
+</body></html>
