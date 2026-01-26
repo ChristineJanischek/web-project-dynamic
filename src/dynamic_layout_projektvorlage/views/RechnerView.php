@@ -20,7 +20,7 @@ HTML;
         $this->renderAnleitung($message);
         $this->renderForm($action);
     }
-}
+
     public function renderFormular() {
         echo '<h2>Rechner Formular</h2>';
         echo '<form method="post" action="view_rechnerinput.php">';

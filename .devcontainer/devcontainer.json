@@ -1,0 +1,150 @@
+{
+  "name": "Web Project Dynamic - Full Stack Development",
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+
+  // Configure tool-specific properties
+  "customizations": {
+    "vscode": {
+      // Automatisch installierte Extensions für alle Codespaces
+      "extensions": [
+        // === Core Web Development ===
+        "ritwickdey.liveserver",
+        "esbenp.prettier-vscode",
+        "dbaeumer.vscode-eslint",
+        "ecmel.vscode-html-css",
+        "formulahendry.auto-rename-tag",
+
+        // === Python Development ===
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-python.debugpy",
+
+        // === PHP Development ===
+        "bmewburn.vscode-intelephense-client",
+        "xdebug.php-debug",
+        "neilbrayfield.php-docblocker",
+        "MehediDracula.php-namespace-resolver",
+        "junstyle.php-cs-fixer",
+
+        // === Git & Collaboration ===
+        "eamodio.gitlens",
+        "github.vscode-pull-request-github",
+
+        // === Additional Helpful Tools ===
+        "ms-vscode.live-server",
+        "christian-kohler.path-intellisense",
+        "zignd.html-css-class-completion",
+        "bradlc.vscode-tailwindcss"
+      ],
+
+      // Vorkonfigurierte Settings
+      "settings": {
+        // Auto Save
+        "files.autoSave": "afterDelay",
+        "files.autoSaveDelay": 1000,
+
+        // Live Server
+        "liveServer.settings.donotShowInfoMsg": true,
+        "liveServer.settings.donotVerifyTags": true,
+        "liveServer.settings.CustomBrowser": "chrome",
+        "liveServer.settings.port": 5500,
+
+        // Formatierung
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "[php]": {
+          "editor.defaultFormatter": "bmewburn.vscode-intelephense-client"
+        },
+        "[python]": {
+          "editor.defaultFormatter": "ms-python.python"
+        },
+
+        // Python
+        "python.linting.enabled": true,
+        "python.linting.pylintEnabled": true,
+        "python.formatting.provider": "black",
+        "python.testing.pytestEnabled": true,
+
+        // PHP
+        "intelephense.files.maxSize": 5000000,
+        "php.validate.enable": true,
+        "php.suggest.basic": true,
+
+        // Editor
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+        "editor.wordWrap": "on",
+        "editor.minimap.enabled": true,
+        "editor.bracketPairColorization.enabled": true,
+        "editor.guides.bracketPairs": "active",
+
+        // Terminal
+        "terminal.integrated.defaultProfile.linux": "bash",
+        "terminal.integrated.fontSize": 14,
+
+        // Git
+        "git.autofetch": true,
+        "git.confirmSync": false,
+        "git.enableSmartCommit": true,
+
+        // Files
+        "files.exclude": {
+          "**/.git": true,
+          "**/.DS_Store": true,
+          "**/node_modules": true,
+          "**/__pycache__": true,
+          "**/*.pyc": true
+        }
+      }
+    }
+  },
+
+  // Features to add to the dev container
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    },
+    "ghcr.io/devcontainers/features/php:1": {
+      "version": "latest"
+    },
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.11"
+    },
+    "ghcr.io/devcontainers/features/git:1": {
+      "version": "latest"
+    }
+  },
+
+  // Port-Forwarding für Webserver
+  "forwardPorts": [
+    5500, // Live Server
+    8000, // PHP Built-in Server / Python HTTP Server
+    8001, // Zusätzlicher Port
+    3000 // Node.js / React Development
+  ],
+
+  // Port-Labels für bessere Übersicht
+  "portsAttributes": {
+    "5500": {
+      "label": "Live Server",
+      "onAutoForward": "openBrowser"
+    },
+    "8000": {
+      "label": "PHP/Python Dev Server",
+      "onAutoForward": "notify"
+    },
+    "3000": {
+      "label": "React Dev Server",
+      "onAutoForward": "openBrowser"
+    }
+  },
+
+  // Post-Create Command: Automatische Setup-Schritte
+  "postCreateCommand": "npm install && echo '✅ Development environment ready!' && echo '📦 Extensions installed' && echo '🚀 Run \"npm start\" or use Live Server'",
+
+  // Optionale Befehle
+  "postStartCommand": "git config --global core.editor 'code --wait'",
+
+  // Container-Benutzer
+  "remoteUser": "codespace"
+}
