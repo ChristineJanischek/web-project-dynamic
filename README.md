@@ -446,11 +446,12 @@ web-project-dynamic/
 ├── .gitignore                     # Ignoriert IDE-Dateien, node_modules, etc.
 ├── .lighthouserc.json             # Lighthouse CI Konfiguration
 ├── package.json                   # npm Dependencies (pa11y, Lighthouse)
-├── ARCHITECTURE.md                # Projekt-Architektur Dokumentation
+├── docs/handbook/                 # Repo-Handbook (Architektur, Template-Sync, Autograding)
+│   ├── ARCHITECTURE.md
+│   ├── TEMPLATE_SYNC.md
+│   ├── TEMPLATE_UPDATE_STRATEGY.md
+│   └── GITHUB_CLASSROOM_AUTOGRADING.md
 ├── CONTRIBUTING.md                # 📖 Git-Workflow für Studierende
-├── TEMPLATE_SYNC.md               # Template-Update Anleitung
-├── TEMPLATE_UPDATE_STRATEGY.md    # Update-Strategie für Lehrende
-├── GITHUB_CLASSROOM_AUTOGRADING.md # Autograding Setup-Anleitung
 └── README.md                      # Diese Datei
 ```
 
@@ -711,7 +712,7 @@ Zukünftige Test-Beispiele:
 
 Dieses Repository ist ein **GitHub Classroom Template**. Wenn du als Schüler:in damit arbeitest und später **neue Versionen** (z.B. Version 4) oder **Dokumentations-Updates** übernehmen möchtest:
 
-📖 **Vollständige Anleitung:** [`TEMPLATE_SYNC.md`](TEMPLATE_SYNC.md)
+📖 **Vollständige Anleitung:** [docs/handbook/TEMPLATE_SYNC.md](docs/handbook/TEMPLATE_SYNC.md)
 
 **Quick-Start:**
 

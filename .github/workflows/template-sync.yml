@@ -5,26 +5,24 @@ on:
     branches:
       - main
     paths:
-      - 'docs/**'
-      - 'version*/**'
-      - 'templates/**'
-      - 'scripts/**'
-      - 'shared-examples/**'
-      - '.github/workflows/**'
-      - '.vscode/**'
-      - 'README.md'
-      - 'QUICKSTART_LIVE_SERVER.md'
-      - 'ARCHITECTURE.md'
-      - 'CONTRIBUTING.md'
+      - "docs/**"
+      - "version*/**"
+      - "templates/**"
+      - "scripts/**"
+      - "shared-examples/**"
+      - ".github/workflows/**"
+      - ".vscode/**"
+      - "README.md"
+      - "CONTRIBUTING.md"
   workflow_dispatch:
     inputs:
       force_sync:
-        description: 'Force sync to all repos (ignore skip list)'
+        description: "Force sync to all repos (ignore skip list)"
         required: false
         type: boolean
         default: false
       target_repos:
-        description: 'Specific repos to sync (comma-separated, leave empty for all)'
+        description: "Specific repos to sync (comma-separated, leave empty for all)"
         required: false
         type: string
 
@@ -44,7 +42,7 @@ env:
     # ChristineJanischek/web-project-student-1
     # ChristineJanischek/web-project-student-2
     # ChristineJanischek/web-project-student-3
-  
+
 jobs:
   detect-changes:
     name: 📊 Detect Template Changes
@@ -57,13 +55,13 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 2
-      
+
       - name: Detect Changed Files
         id: check
         run: |
           # Hole geänderte Dateien seit letztem Commit
           CHANGED=$(git diff --name-only HEAD^ HEAD | grep -E '^(docs|version|templates|scripts|shared-examples|\.github)' || true)
-          
+
           if [ -n "$CHANGED" ]; then
             echo "has_changes=true" >> $GITHUB_OUTPUT
             echo "changed_files<<EOF" >> $GITHUB_OUTPUT
@@ -76,7 +74,7 @@ jobs:
             echo "has_changes=false" >> $GITHUB_OUTPUT
             echo "ℹ️ No relevant template changes detected"
           fi
-      
+
       - name: Create Change Summary
         run: |
           echo "## 📢 Template Changes Detected" >> $GITHUB_STEP_SUMMARY
@@ -94,19 +92,19 @@ jobs:
     runs-on: ubuntu-latest
     needs: detect-changes
     if: needs.detect-changes.outputs.has_changes == 'true' || github.event.inputs.force_sync == 'true'
-    
+
     steps:
       - name: 📥 Checkout Template Repository
         uses: actions/checkout@v4
         with:
           path: template
           fetch-depth: 0
-      
+
       - name: 🔧 Setup Git
         run: |
           git config --global user.name "Template Sync Bot"
           git config --global user.email "noreply@github.com"
-      
+
       - name: 🔄 Sync to Dependent Repositories
         env:
           GH_TOKEN: ${{ secrets.TEMPLATE_SYNC_TOKEN }}
@@ -115,7 +113,7 @@ jobs:
           # 1. Gehe zu GitHub Settings > Developer settings > Personal access tokens
           # 2. Erstelle einen Token mit "repo" und "workflow" Rechten
           # 3. Füge ihn als Secret "TEMPLATE_SYNC_TOKEN" hinzu
-          
+
           if [ -z "$GH_TOKEN" ]; then
             echo "⚠️ TEMPLATE_SYNC_TOKEN not configured"
             echo "ℹ️ Automatic sync requires a Personal Access Token"
@@ -129,21 +127,21 @@ jobs:
             echo "3. Update \`DEPENDENT_REPOS\` in this workflow with your classroom repositories" >> $GITHUB_STEP_SUMMARY
             exit 0
           fi
-          
+
           echo "🔄 Starting template sync process..."
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "## 🔄 Sync Results" >> $GITHUB_STEP_SUMMARY
           echo "" >> $GITHUB_STEP_SUMMARY
-          
+
           # Liste der zu synchronisierenden Repositories
           REPOS=$(echo "$DEPENDENT_REPOS" | grep -v '^#' | grep -v '^$' || true)
-          
+
           if [ -z "$REPOS" ]; then
             echo "ℹ️ No dependent repositories configured"
             echo "Configure them in DEPENDENT_REPOS environment variable" >> $GITHUB_STEP_SUMMARY
             exit 0
           fi
-          
+
           # Synchronisiere jedes Repository
           while IFS= read -r repo; do
             [ -z "$repo" ] && continue
@@ -187,7 +185,8 @@ jobs:
             
             cp ../template/README.md ./ 2>/dev/null || true
             cp ../template/CONTRIBUTING.md ./ 2>/dev/null || true
-            cp ../template/TEMPLATE_SYNC.md ./ 2>/dev/null || true
+            mkdir -p docs/handbook
+            cp ../template/docs/handbook/TEMPLATE_SYNC.md docs/handbook/ 2>/dev/null || true
             
             # Check for changes
             if git diff --quiet && git diff --cached --quiet; then
@@ -226,7 +225,7 @@ jobs:
             
             cd ..
           done <<< "$REPOS"
-          
+
           echo "" >> $GITHUB_STEP_SUMMARY
           echo "✅ Sync process completed" >> $GITHUB_STEP_SUMMARY
 
@@ -235,7 +234,7 @@ jobs:
     runs-on: ubuntu-latest
     needs: detect-changes
     if: needs.detect-changes.outputs.has_changes == 'true'
-    
+
     steps:
       - name: Manual Sync Instructions
         run: |

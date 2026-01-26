@@ -29,7 +29,7 @@ Datei: `.github/workflows/template-sync.yml`
 2. Navigiere zu **Settings** → **Secrets and variables** → **Actions**
 3. Klicke **New repository secret**
 4. Name: `TEMPLATE_SYNC_TOKEN`
-5. Value: *Füge deinen kopierten Token ein*
+5. Value: _Füge deinen kopierten Token ein_
 6. Klicke **Add secret**
 
 ---
@@ -63,11 +63,12 @@ env:
 ### Automatisch (Standard)
 
 Die Action läuft automatisch bei jedem Push in `main`, wenn folgende Dateien geändert wurden:
+
 - `docs/**` (Dokumentation)
 - `version*/**` (Versionen)
 - `templates/**` (Projekt-Templates)
 - `scripts/**` (Hilfsskripte)
-- `README.md`, `ARCHITECTURE.md`, etc.
+- `README.md`, `docs/handbook/ARCHITECTURE.md`, etc.
 
 ### Manuell triggern
 
@@ -91,6 +92,7 @@ Die Action läuft automatisch bei jedem Push in `main`, wenn folgende Dateien ge
 ## 🔒 Geschützte Dateien (werden NICHT überschrieben)
 
 Die Action schützt automatisch:
+
 - ✅ `version*/aufgabe/index.html` (Schülerarbeiten)
 - ✅ `version*/aufgabe/css/style.css`
 - ✅ `version*/aufgabe/js/script.js`
@@ -134,6 +136,7 @@ So testest du die Action:
 ### ❌ "Failed to clone [repo]"
 
 **Mögliche Ursachen:**
+
 - Token hat keine Berechtigung für das Ziel-Repository
 - Repository existiert nicht oder ist falsch geschrieben
 - Repository ist privat und Token hat keine `repo` Berechtigung
@@ -143,6 +146,7 @@ So testest du die Action:
 ### ❌ "PR creation failed"
 
 **Mögliche Ursachen:**
+
 - GitHub CLI (`gh`) konnte nicht authentifizieren
 - Branch existiert bereits
 - Keine Änderungen zum Committen
@@ -153,8 +157,8 @@ So testest du die Action:
 
 ## 📚 Weiterführende Dokumentation
 
-- [TEMPLATE_SYNC.md](../../TEMPLATE_SYNC.md) - Manuelle Sync-Anleitung
-- [TEMPLATE_UPDATE_STRATEGY.md](../../TEMPLATE_UPDATE_STRATEGY.md) - Update-Strategien
+- [TEMPLATE_SYNC.md](../../docs/handbook/TEMPLATE_SYNC.md) - Manuelle Sync-Anleitung
+- [TEMPLATE_UPDATE_STRATEGY.md](../../docs/handbook/TEMPLATE_UPDATE_STRATEGY.md) - Update-Strategien
 - [GitHub Actions Dokumentation](https://docs.github.com/en/actions)
 
 ---
@@ -166,12 +170,14 @@ So testest du die Action:
 Statt alle Repos auf einmal zu aktualisieren:
 
 1. Teste zuerst mit einem Test-Repository:
+
    ```yaml
    DEPENDENT_REPOS: |
      ChristineJanischek/web-project-test
    ```
 
 2. Bei Erfolg erweitere auf eine Klasse:
+
    ```yaml
    DEPENDENT_REPOS: |
      github-classroom/web-project-klasse-10a-*
@@ -189,6 +195,7 @@ Erstelle ein Issue-Template für automatische PRs, damit Schüler wissen was zu 
 Euer Lehrer hat die Dokumentation aktualisiert.
 
 **Was tun?**
+
 1. Schau dir die Änderungen im "Files changed" Tab an
 2. Wenn alles gut aussieht, klicke "Merge pull request"
 3. Bei Fragen: Schreibe einen Kommentar in diesem PR

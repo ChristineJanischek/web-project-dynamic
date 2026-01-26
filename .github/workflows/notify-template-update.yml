@@ -5,20 +5,20 @@ on:
     branches:
       - main
     paths:
-      - 'docs/**'
-      - 'version*/**'
-      - 'scripts/**'
-      - 'templates/**'
-      - 'ka_grundlagen/**'
-      - 'README.md'
-      - '.github/**'
+      - "docs/**"
+      - "version*/**"
+      - "scripts/**"
+      - "templates/**"
+      - "ka_grundlagen/**"
+      - "README.md"
+      - ".github/**"
 
 jobs:
   notify-update:
     runs-on: ubuntu-latest
     permissions:
       contents: read
-    
+
     steps:
       - name: 📥 Repository auschecken
         uses: actions/checkout@v4
@@ -33,7 +33,7 @@ jobs:
           echo "changed_files<<EOF" >> $GITHUB_OUTPUT
           echo "$CHANGED_FILES" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
-          
+
           # Kategorisiere die Änderungen
           if echo "$CHANGED_FILES" | grep -q "^docs/"; then
             echo "has_docs=true" >> $GITHUB_OUTPUT
@@ -61,32 +61,32 @@ jobs:
           cat > /tmp/update_info.txt << 'EOF'
           🎯 TEMPLATE-UPDATE VERFÜGBAR
           =============================
-          
+
           Commit: ${{ github.sha }}
           Branch: ${{ github.ref_name }}
           Autor: ${{ github.actor }}
-          
+
           📝 Commit-Nachricht:
           ${{ steps.commit.outputs.message }}
-          
+
           📂 Geänderte Kategorien:
           ${{ steps.changes.outputs.has_docs == 'true' && '✅ Dokumentation (docs/)' || '' }}
           ${{ steps.changes.outputs.has_versions == 'true' && '✅ Versionen & Aufgaben (version*/)' || '' }}
           ${{ steps.changes.outputs.has_exam == 'true' && '✅ Klassenarbeit & Lösungen (ka_grundlagen/)' || '' }}
           ${{ steps.changes.outputs.has_scripts == 'true' && '✅ Scripts & Tools (scripts/)' || '' }}
-          
+
           🔧 Nächste Schritte für abhängige Repos:
-          
+
           1. Einmalig (falls nicht gemacht):
              git remote add template https://github.com/${{ github.repository }}.git
-          
+
           2. Updates abrufen:
              git fetch template
-          
+
           3. Selektiv übernehmen:
              git merge template/main --no-edit --allow-unrelated-histories
-          
-          📖 Weitere Infos: TEMPLATE_SYNC.md
+
+          📖 Weitere Infos: docs/handbook/TEMPLATE_SYNC.md
           EOF
           cat /tmp/update_info.txt
 
@@ -99,7 +99,7 @@ jobs:
   verify-syntax:
     runs-on: ubuntu-latest
     needs: notify-update
-    
+
     steps:
       - name: 📥 Repository auschecken
         uses: actions/checkout@v4
@@ -125,11 +125,11 @@ jobs:
           cat > UPDATE_SUMMARY.txt << 'EOF'
           📦 Template-Update Summary
           ==========================
-          
+
           Generiert: $(date)
           Repo: ${{ github.repository }}
           Branch: ${{ github.ref_name }}
-          
+
           Diese Datei kann an abhängige Repos weitergegeben werden.
           EOF
           cat UPDATE_SUMMARY.txt

@@ -4,12 +4,12 @@ on:
     branches:
       - main
     paths:
-      - 'docs/**'
-      - 'version*/**'
-      - 'scripts/**'
-      - 'templates/**'
-      - 'ka_grundlagen/**'
-      - 'README.md'
+      - "docs/**"
+      - "version*/**"
+      - "scripts/**"
+      - "templates/**"
+      - "ka_grundlagen/**"
+      - "README.md"
 
 jobs:
   notify-template-updates:
@@ -25,7 +25,7 @@ jobs:
         run: |
           CHANGED_FILES=$(git diff --name-only HEAD~1..HEAD 2>/dev/null || echo "")
           echo "changed_files=$CHANGED_FILES" >> $GITHUB_OUTPUT
-          
+
           if echo "$CHANGED_FILES" | grep -q "^docs/"; then
             echo "has_docs=true" >> $GITHUB_OUTPUT
           fi
@@ -62,5 +62,5 @@ jobs:
           echo "  git fetch template"
           echo "  git merge template/main"
           echo ""
-          echo "Doku: TEMPLATE_SYNC.md"
+          echo "Doku: docs/handbook/TEMPLATE_SYNC.md"
           echo "========================================"
