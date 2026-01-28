@@ -8,11 +8,13 @@ Eine **Zielgruppenanalyse** hilft dabei, die Bedürfnisse, Wünsche und Verhalte
 
 ## Warum Zielgruppenanalyse?
 
+Siehe auch: [Einführung ins Web](../intro.md) für grundlegende Konzepte.
+
 ✅ **Nutzerzentriertes Design** - Website entspricht echten Bedürfnissen  
 ✅ **Höhere Conversion** - Passende Ansprache führt zu mehr Aktionen  
 ✅ **Bessere UX** - Nutzer finden schneller, was sie suchen  
 ✅ **Effizientes Marketing** - Gezielt die richtigen Personen ansprechen  
-✅ **Weniger Frustration** - Weniger Absprünge, mehr Zufriedenheit  
+✅ **Weniger Frustration** - Weniger Absprünge, mehr Zufriedenheit
 
 ---
 
@@ -21,6 +23,7 @@ Eine **Zielgruppenanalyse** hilft dabei, die Bedürfnisse, Wünsche und Verhalte
 ### 1. WER ist die Zielgruppe?
 
 **Demografische Merkmale:**
+
 - Alter
 - Geschlecht
 - Bildungsstand
@@ -29,6 +32,7 @@ Eine **Zielgruppenanalyse** hilft dabei, die Bedürfnisse, Wünsche und Verhalte
 - Wohnort
 
 **Beispiel: Schülerfirma MiFa**
+
 ```
 Zielgruppe 1: Lehrkräfte
 - Alter: 28-55 Jahre
@@ -55,11 +59,11 @@ Zielgruppe 3: NGOs & Organisationen
 
 **Bedürfnisse & Ziele:**
 
-| Zielgruppe | Bedürfnisse | Ziele |
-|------------|-------------|-------|
-| **Lehrkräfte** | - Lernmaterialien<br>- Projektpartner<br>- Fortbildungen | - Schüler begeistern<br>- Kooperationen<br>- Nachhaltige Bildung |
-| **Schüler:innen** | - Praxiserfahrung<br>- Mitarbeit<br>- Portfolio-Aufbau | - Lernen durch Tun<br>- Netzwerk aufbauen<br>- Berufsorientierung |
-| **NGOs** | - Software-Lösungen<br>- Günstige Partner<br>- Expertise | - Digitalisierung<br>- Reichweite erhöhen<br>- Kosten sparen |
+| Zielgruppe        | Bedürfnisse                                              | Ziele                                                             |
+| ----------------- | -------------------------------------------------------- | ----------------------------------------------------------------- |
+| **Lehrkräfte**    | - Lernmaterialien<br>- Projektpartner<br>- Fortbildungen | - Schüler begeistern<br>- Kooperationen<br>- Nachhaltige Bildung  |
+| **Schüler:innen** | - Praxiserfahrung<br>- Mitarbeit<br>- Portfolio-Aufbau   | - Lernen durch Tun<br>- Netzwerk aufbauen<br>- Berufsorientierung |
+| **NGOs**          | - Software-Lösungen<br>- Günstige Partner<br>- Expertise | - Digitalisierung<br>- Reichweite erhöhen<br>- Kosten sparen      |
 
 **User Stories ableiten:**
 
@@ -79,18 +83,21 @@ um Vertrauen in die Kompetenz zu gewinnen.
 ### 3. WO erreiche ich die Zielgruppe?
 
 **Online-Kanäle:**
+
 - Website (organische Suche)
 - Social Media (Instagram, LinkedIn, TikTok)
 - Schulnetzwerke (Edu-Plattformen)
 - Umwelt-Communities (Foren, Gruppen)
 
 **Offline-Kanäle:**
+
 - Schulveranstaltungen
 - Messen (Bildung, Nachhaltigkeit)
 - Workshops & Vorträge
 - Flyer in Schulen
 
 **Beispiel MiFa:**
+
 ```
 Lehrkräfte erreichen über:
 ✅ LinkedIn (professionell)
@@ -111,13 +118,14 @@ Schüler:innen erreichen über:
 
 **Nutzungskontext:**
 
-| Zeitpunkt | Gerät | Situation | Erwartung |
-|-----------|-------|-----------|-----------|
-| **Vormittags** | Desktop | In der Schule/Büro | Detaillierte Infos |
-| **Nachmittags** | Tablet | Zu Hause | Entspanntes Stöbern |
-| **Abends** | Smartphone | Unterwegs | Schnelle Antworten |
+| Zeitpunkt       | Gerät      | Situation          | Erwartung           |
+| --------------- | ---------- | ------------------ | ------------------- |
+| **Vormittags**  | Desktop    | In der Schule/Büro | Detaillierte Infos  |
+| **Nachmittags** | Tablet     | Zu Hause           | Entspanntes Stöbern |
+| **Abends**      | Smartphone | Unterwegs          | Schnelle Antworten  |
 
 **Konsequenzen fürs Design:**
+
 - ✅ **Responsive Design** - Funktioniert auf allen Geräten
 - ✅ **Schnelle Ladezeiten** - Auch bei schlechter Verbindung
 - ✅ **Klare Navigation** - Schnell zum Ziel
@@ -131,7 +139,7 @@ Schüler:innen erreichen über:
 
 ```
 MiFa's USP:
-"Nachhaltige Software - entwickelt von der nächsten 
+"Nachhaltige Software - entwickelt von der nächsten
 Generation für die nächste Generation"
 
 Vorteile:
@@ -301,22 +309,26 @@ Eine **Persona** ist eine fiktive, aber realistische Beschreibung einer typische
 ### Für Laura (Lehrerin)
 
 **Anforderungen:**
+
 - ✅ Klare Projektbeispiele mit Screenshots
 - ✅ Kontaktformular prominent platziert
 - ✅ Preistransparenz (z.B. "Kostenlos für Bildungseinrichtungen")
 - ✅ Professionelles, aber nicht zu technisches Design
 
 **Umsetzung:**
+
 ```html
 <!-- Projekte-Section speziell für Lehrkräfte -->
 <section class="projects-education">
   <h2>Projekte für Schulen</h2>
-  <p>Kostenlose Workshops und vergünstigte Entwicklung für Bildungseinrichtungen</p>
-  
+  <p>
+    Kostenlose Workshops und vergünstigte Entwicklung für Bildungseinrichtungen
+  </p>
+
   <div class="project-grid">
     <!-- Projekt-Karten mit Fokus auf Bildung -->
   </div>
-  
+
   <a href="#kontakt" class="cta-button">Jetzt Projekt anfragen</a>
 </section>
 ```
@@ -326,12 +338,14 @@ Eine **Persona** ist eine fiktive, aber realistische Beschreibung einer typische
 ### Für Tim (Schüler)
 
 **Anforderungen:**
+
 - ✅ Mobile-First Design
 - ✅ Coole Animationen & Interaktionen
 - ✅ Kurze, knackige Texte
 - ✅ Social-Media-Integration
 
 **Umsetzung:**
+
 ```html
 <!-- Hero mit cooler Animation -->
 <section class="hero-mobile-optimized">
@@ -341,17 +355,17 @@ Eine **Persona** ist eine fiktive, aber realistische Beschreibung einer typische
 </section>
 
 <style>
-.animated-gradient {
-  background: linear-gradient(
-    45deg,
-    var(--color-primary),
-    var(--color-accent)
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradient-shift 3s ease infinite;
-}
+  .animated-gradient {
+    background: linear-gradient(
+      45deg,
+      var(--color-primary),
+      var(--color-accent)
+    );
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradient-shift 3s ease infinite;
+  }
 </style>
 ```
 
@@ -360,25 +374,27 @@ Eine **Persona** ist eine fiktive, aber realistische Beschreibung einer typische
 ### Für Maria (NGO-Leiterin)
 
 **Anforderungen:**
+
 - ✅ Vertrauens-Elemente (Testimonials, Referenzen)
 - ✅ Case Studies mit messbaren Ergebnissen
 - ✅ Klare Preismodelle
 - ✅ Professionelle Kommunikation
 
 **Umsetzung:**
+
 ```html
 <!-- Vertrauens-Section -->
 <section class="trust-section">
   <h2>Unsere Partner vertrauen uns</h2>
-  
+
   <div class="testimonials">
     <blockquote>
-      "MiFa hat uns eine maßgeschneiderte Lösung entwickelt - 
-       professionell, günstig und nachhaltig."
+      "MiFa hat uns eine maßgeschneiderte Lösung entwickelt - professionell,
+      günstig und nachhaltig."
       <cite>- Anna Müller, Waldschutz e.V.</cite>
     </blockquote>
   </div>
-  
+
   <div class="stats">
     <div class="stat">
       <h3>15+</h3>
@@ -454,13 +470,13 @@ DOES:
 
 ### Beispiel: Journey von Laura (Lehrerin)
 
-| Phase | Touchpoint | Gedanken | Emotionen | Chancen |
-|-------|------------|----------|-----------|---------|
-| **Awareness** | LinkedIn-Post über MiFa | "Interessant, Schülerfirma für Nachhaltigkeit" | Neugierig | Klare Botschaft |
-| **Consideration** | Website besuchen | "Haben die Erfahrung? Was kostet das?" | Skeptisch | Referenzen zeigen |
-| **Decision** | Projektbeispiele ansehen | "Das passt zu unserem Lehrplan!" | Überzeugt | Case Studies |
-| **Action** | Kontaktformular ausfüllen | "Hoffentlich schnelle Antwort" | Hoffnungsvoll | Auto-Reply |
-| **Retention** | Projekt-Zusammenarbeit | "Super Zusammenarbeit!" | Begeistert | Follow-Up, Newsletter |
+| Phase             | Touchpoint                | Gedanken                                       | Emotionen     | Chancen               |
+| ----------------- | ------------------------- | ---------------------------------------------- | ------------- | --------------------- |
+| **Awareness**     | LinkedIn-Post über MiFa   | "Interessant, Schülerfirma für Nachhaltigkeit" | Neugierig     | Klare Botschaft       |
+| **Consideration** | Website besuchen          | "Haben die Erfahrung? Was kostet das?"         | Skeptisch     | Referenzen zeigen     |
+| **Decision**      | Projektbeispiele ansehen  | "Das passt zu unserem Lehrplan!"               | Überzeugt     | Case Studies          |
+| **Action**        | Kontaktformular ausfüllen | "Hoffentlich schnelle Antwort"                 | Hoffnungsvoll | Auto-Reply            |
+| **Retention**     | Projekt-Zusammenarbeit    | "Super Zusammenarbeit!"                        | Begeistert    | Follow-Up, Newsletter |
 
 ---
 
@@ -468,25 +484,28 @@ DOES:
 
 ### Tonalität anpassen
 
-| Zielgruppe | Ton | Beispiel |
-|------------|-----|----------|
-| **Lehrkräfte** | Professionell, kompetent | "Wir unterstützen Bildungseinrichtungen mit nachhaltigen digitalen Lösungen." |
-| **Schüler:innen** | Locker, motivierend | "Code mit uns die Zukunft! 🚀" |
-| **NGOs** | Seriös, vertrauensvoll | "Gemeinsam für eine nachhaltige digitale Transformation." |
+| Zielgruppe        | Ton                      | Beispiel                                                                      |
+| ----------------- | ------------------------ | ----------------------------------------------------------------------------- |
+| **Lehrkräfte**    | Professionell, kompetent | "Wir unterstützen Bildungseinrichtungen mit nachhaltigen digitalen Lösungen." |
+| **Schüler:innen** | Locker, motivierend      | "Code mit uns die Zukunft! 🚀"                                                |
+| **NGOs**          | Seriös, vertrauensvoll   | "Gemeinsam für eine nachhaltige digitale Transformation."                     |
 
 ### Bildsprache anpassen
 
 **Für Lehrkräfte:**
+
 - Professionelle Settings (Klassenzimmer, Workshops)
 - Interaktion mit Schülern
 - Seriosität
 
 **Für Schüler:innen:**
+
 - Dynamische, bunte Bilder
 - Junge Menschen beim Coden
 - Modern, cool
 
 **Für NGOs:**
+
 - Natur + Technologie
 - Teams bei der Arbeit
 - Vertrauenswürdig
@@ -498,13 +517,14 @@ DOES:
 **Zielgruppen mit besonderen Bedürfnissen:**
 
 ### Sehbehinderung
+
 - ✅ Ausreichender Kontrast (WCAG AA: 4.5:1)
 - ✅ Schriftgröße anpassbar
 - ✅ Screen-Reader-kompatibel
 
 ```html
 <!-- Alt-Texte für Screen Reader -->
-<img src="projekt1.jpg" alt="Schüler entwickeln gemeinsam eine Lern-App">
+<img src="projekt1.jpg" alt="Schüler entwickeln gemeinsam eine Lern-App" />
 
 <!-- ARIA-Labels für Navigation -->
 <nav aria-label="Hauptnavigation">
@@ -515,6 +535,7 @@ DOES:
 ```
 
 ### Motorische Einschränkungen
+
 - ✅ Große Klickflächen (min. 44x44px)
 - ✅ Tastaturnavigation
 - ✅ Keine Hover-Only-Funktionen
@@ -528,7 +549,8 @@ DOES:
 }
 
 /* Fokus-Indikator */
-a:focus, button:focus {
+a:focus,
+button:focus {
   outline: 3px solid var(--color-accent);
   outline-offset: 2px;
 }
@@ -539,30 +561,35 @@ a:focus, button:focus {
 ## Checkliste: Zielgruppenanalyse
 
 ### Recherche
+
 - [ ] Demografische Daten sammeln
 - [ ] Bedürfnisse identifizieren
 - [ ] Nutzerverhalten beobachten
 - [ ] Konkurrenz analysieren
 
 ### Personas
+
 - [ ] 2-4 Personas erstellen
 - [ ] Mit echten Daten füllen
 - [ ] Fotos zuordnen
 - [ ] Team abstimmen lassen
 
 ### Empathy Mapping
+
 - [ ] Was denkt die Zielgruppe?
 - [ ] Was fühlt sie?
 - [ ] Was sagt sie?
 - [ ] Was tut sie?
 
 ### Journey Mapping
+
 - [ ] Touchpoints identifizieren
 - [ ] Emotionen zuordnen
 - [ ] Pain Points finden
 - [ ] Verbesserungen ableiten
 
 ### Design-Ableitung
+
 - [ ] Anforderungen pro Persona
 - [ ] Prioritäten setzen
 - [ ] Features definieren

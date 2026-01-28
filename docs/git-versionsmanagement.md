@@ -2,6 +2,8 @@
 
 ## Was ist Versionsmanagement?
 
+Siehe auch: [Einführung ins Web](../intro.md) für grundlegende Konzepte.
+
 Versionsmanagement (Version Control) erlaubt es dir, Änderungen an deinem Code nachzuvollziehen, zu verschiedenen Versionen zurückzukehren und im Team zusammenzuarbeiten.
 
 **Git** ist das weltweit meistgenutzte Versionskontrollsystem.  
@@ -11,34 +13,38 @@ Versionsmanagement (Version Control) erlaubt es dir, Änderungen an deinem Code 
 
 ## Grundbegriffe
 
-| Begriff | Bedeutung |
-|---------|-----------|
-| **Repository (Repo)** | Ordner mit versionierter Projekthistorie |
-| **Commit** | Gespeicherter Snapshot deiner Änderungen |
-| **Branch** | Parallele Entwicklungslinie (z.B. `main`, `feature/login`) |
-| **Clone** | Lokale Kopie eines Remote-Repos erstellen |
-| **Pull** | Änderungen vom Remote-Repo holen |
-| **Push** | Lokale Commits zum Remote-Repo hochladen |
-| **Merge** | Zwei Branches zusammenführen |
-| **Pull Request (PR)** | Anfrage, um Änderungen in einen Branch zu mergen |
+| Begriff               | Bedeutung                                                  |
+| --------------------- | ---------------------------------------------------------- |
+| **Repository (Repo)** | Ordner mit versionierter Projekthistorie                   |
+| **Commit**            | Gespeicherter Snapshot deiner Änderungen                   |
+| **Branch**            | Parallele Entwicklungslinie (z.B. `main`, `feature/login`) |
+| **Clone**             | Lokale Kopie eines Remote-Repos erstellen                  |
+| **Pull**              | Änderungen vom Remote-Repo holen                           |
+| **Push**              | Lokale Commits zum Remote-Repo hochladen                   |
+| **Merge**             | Zwei Branches zusammenführen                               |
+| **Pull Request (PR)** | Anfrage, um Änderungen in einen Branch zu mergen           |
 
 ---
 
 ## Grundlegende Git-Befehle
 
 ### 1. Repo klonen (einmalig)
+
 ```bash
 git clone https://github.com/dein-username/dein-repo.git
 cd dein-repo
 ```
 
 ### 2. Status prüfen
+
 ```bash
 git status
 ```
+
 Zeigt geänderte, neue und gelöschte Dateien.
 
 ### 3. Änderungen hinzufügen (Staging)
+
 ```bash
 # Einzelne Datei
 git add index.html
@@ -51,11 +57,13 @@ git add -A
 ```
 
 ### 4. Commit erstellen
+
 ```bash
 git commit -m "feat: Hero-Section hinzugefügt"
 ```
 
 **Commit-Message-Konventionen:**
+
 - `feat:` – neues Feature
 - `fix:` – Bugfix
 - `docs:` – Dokumentation
@@ -65,16 +73,19 @@ git commit -m "feat: Hero-Section hinzugefügt"
 - `chore:` – Build/Config-Änderungen
 
 ### 5. Änderungen hochladen
+
 ```bash
 git push
 ```
 
 Falls dein Branch noch nicht remote existiert:
+
 ```bash
 git push -u origin dein-branch-name
 ```
 
 ### 6. Änderungen vom Server holen
+
 ```bash
 git pull
 ```
@@ -84,10 +95,12 @@ git pull
 ## Branching-Strategie für Schülerprojekte
 
 ### Main Branch
+
 - `main` – Stabiler, funktionierender Code
 - Nur durch Pull Requests aktualisiert
 
 ### Feature Branches
+
 Für jede neue Aufgabe/Feature einen eigenen Branch erstellen:
 
 ```bash
@@ -109,6 +122,7 @@ Auf GitHub: Pull Request erstellen → Review → Merge in `main`.
 ## Wichtige Workflows
 
 ### Workflow 1: Neue Aufgabe starten
+
 ```bash
 # Aktuellen Stand holen
 git checkout main
@@ -124,17 +138,20 @@ git push -u origin feature/meine-aufgabe
 ```
 
 ### Workflow 2: Zwischenergebnisse sichern
+
 ```bash
 # Häufig committen!
 git add .
 git commit -m "wip: Hero-Section Grundstruktur"
 git push
 ```
+
 **Tipp:** Auch unfertige Arbeit committen mit Präfix `wip:` (work in progress).
 
 ### Workflow 3: Fehler rückgängig machen
 
 **Noch nicht committed:**
+
 ```bash
 # Datei auf letzten Commit zurücksetzen
 git checkout -- index.html
@@ -144,6 +161,7 @@ git reset --hard
 ```
 
 **Bereits committed:**
+
 ```bash
 # Letzten Commit rückgängig (Änderungen bleiben)
 git reset --soft HEAD~1
@@ -153,6 +171,7 @@ git reset --hard HEAD~1
 ```
 
 **Änderungen von Remote überschreiben:**
+
 ```bash
 git fetch origin
 git reset --hard origin/main
@@ -221,6 +240,7 @@ git merge feature/xyz
 ## GitHub Classroom Integration
 
 ### Aufgaben-Workflow
+
 1. **Assignment akzeptieren** → Repo wird automatisch erstellt
 2. **Klonen:**
    ```bash
@@ -240,6 +260,7 @@ git merge feature/xyz
 6. **Merge** durch Lehrkraft oder Automerge
 
 ### Autograding
+
 - GitHub Classroom kann automatisch Tests ausführen
 - Prüft z.B. HTML-Validität, CSS-Lint, JS-Syntax
 - Ergebnisse sichtbar im Pull Request
@@ -249,6 +270,7 @@ git merge feature/xyz
 ## Best Practices
 
 ### ✅ Do's
+
 - **Häufig committen** (kleine, logische Schritte)
 - **Aussagekräftige Commit-Messages** schreiben
 - **Vor dem Push testen** (HTML im Browser öffnen)
@@ -257,6 +279,7 @@ git merge feature/xyz
 - **.gitignore** pflegen
 
 ### ❌ Don'ts
+
 - **Große Binärdateien** (Videos, große Bilder) committen
 - **Passwörter/API-Keys** ins Repo pushen
 - **Direkt in `main` pushen** ohne Review
@@ -296,22 +319,29 @@ Dann kannst du z.B. `git st` statt `git status` nutzen.
 ## Häufige Fehler & Lösungen
 
 ### Problem: "Permission denied (publickey)"
+
 **Lösung:** SSH-Key einrichten oder HTTPS verwenden:
+
 ```bash
 git remote set-url origin https://github.com/username/repo.git
 ```
 
 ### Problem: "Your branch is behind 'origin/main'"
+
 **Lösung:**
+
 ```bash
 git pull --rebase
 ```
 
 ### Problem: "Merge conflict"
+
 **Lösung:** Siehe Abschnitt "Merge-Konflikte lösen"
 
 ### Problem: Versehentlich große Datei committed
+
 **Lösung:**
+
 ```bash
 # Datei aus letztem Commit entfernen (noch nicht gepusht)
 git rm --cached large-file.mp4

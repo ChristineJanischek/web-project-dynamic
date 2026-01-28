@@ -8,11 +8,13 @@ Die **Konzeption** ist die Planungsphase vor der eigentlichen Umsetzung einer We
 
 ## Warum ist Konzeption wichtig?
 
+Siehe auch: [Einführung ins Web](../intro.md) für grundlegende Konzepte.
+
 ✅ **Klare Ziele** - Wissen, was erreicht werden soll  
 ✅ **Strukturierte Inhalte** - Übersichtliche Navigation  
 ✅ **Bessere UX** - Nutzer finden schnell, was sie suchen  
 ✅ **Zeit sparen** - Weniger Änderungen während der Entwicklung  
-✅ **Kosteneffizienz** - Fehler früh erkennen ist günstiger  
+✅ **Kosteneffizienz** - Fehler früh erkennen ist günstiger
 
 ---
 
@@ -33,7 +35,7 @@ Die **Konzeption** ist die Planungsphase vor der eigentlichen Umsetzung einer We
 #### Beispiel: Schülerfirma MiFa (Mission Future Academy)
 
 ```
-Zweck: 
+Zweck:
 - Vorstellung der Schülerfirma
 - Präsentation nachhaltiger Software-Lösungen
 - Kontaktaufnahme für Projekte
@@ -138,6 +140,7 @@ Frustrationen:
 #### Seitenstruktur definieren
 
 **Hauptnavigation:**
+
 ```
 - Startseite
 - Über uns
@@ -147,6 +150,7 @@ Frustrationen:
 ```
 
 **Footer-Navigation:**
+
 ```
 - Impressum
 - Datenschutz
@@ -155,29 +159,31 @@ Frustrationen:
 
 #### Content-Inventar erstellen
 
-| Seite | Inhalt | Priorität | Status |
-|-------|--------|-----------|--------|
-| **Startseite** | Hero-Bild, Mission-Statement, Highlights | Hoch | Todo |
-| **Über uns** | Vision, Werte, Geschichte | Hoch | Todo |
-| **Projekte** | Portfolio mit Screenshots, Beschreibungen | Hoch | Todo |
-| **Team** | Fotos, Rollen, Kurzbiografien | Mittel | Todo |
-| **Kontakt** | Formular, E-Mail, Social Media | Hoch | Todo |
+| Seite          | Inhalt                                    | Priorität | Status |
+| -------------- | ----------------------------------------- | --------- | ------ |
+| **Startseite** | Hero-Bild, Mission-Statement, Highlights  | Hoch      | Todo   |
+| **Über uns**   | Vision, Werte, Geschichte                 | Hoch      | Todo   |
+| **Projekte**   | Portfolio mit Screenshots, Beschreibungen | Hoch      | Todo   |
+| **Team**       | Fotos, Rollen, Kurzbiografien             | Mittel    | Todo   |
+| **Kontakt**    | Formular, E-Mail, Social Media            | Hoch      | Todo   |
 
 #### Texte schreiben: Die 3 K's
 
 **Klar - Kurz - Konkret**
 
 ❌ **Schlecht:**
+
 ```
-Unsere Schülerfirma beschäftigt sich mit der 
-Entwicklung von innovativen Softwarelösungen 
-im Bereich nachhaltiger Technologien für den 
+Unsere Schülerfirma beschäftigt sich mit der
+Entwicklung von innovativen Softwarelösungen
+im Bereich nachhaltiger Technologien für den
 Bildungssektor und ökologische Organisationen.
 ```
 
 ✅ **Besser:**
+
 ```
-Wir entwickeln nachhaltige Software für 
+Wir entwickeln nachhaltige Software für
 Bildung und Umwelt. Von Schülern. Für die Zukunft.
 ```
 
@@ -215,11 +221,13 @@ Startseite
 #### Navigation gestalten
 
 **Flache Hierarchie bevorzugen:**
+
 - ✅ Max. 3 Klick-Ebenen bis zum Ziel
 - ✅ Hauptnavigation mit 5-7 Punkten
 - ✅ Aussagekräftige Bezeichnungen
 
 **Breadcrumbs nutzen:**
+
 ```html
 <nav aria-label="Breadcrumb">
   <ol class="breadcrumb">
@@ -315,6 +323,7 @@ FOOTER
 #### High-Fidelity Mockups
 
 **Detaillierte Designs** mit:
+
 - Echten Farben aus dem Corporate Design
 - Ausgewählten Schriftarten
 - Beispielbildern
@@ -338,6 +347,7 @@ FOOTER
 ```
 
 **In Figma:**
+
 1. Frames für jede Seite erstellen
 2. Buttons anklickbar machen
 3. Transitions definieren
@@ -352,12 +362,14 @@ FOOTER
 #### Usability-Tests durchführen
 
 **5-Nutzer-Test:**
+
 - 5 Personen aus der Zielgruppe
 - Aufgaben vorgeben
 - Beobachten (nicht helfen!)
 - Probleme notieren
 
 **Beispiel-Aufgaben:**
+
 ```
 1. Finde heraus, welche Projekte die Schülerfirma bereits umgesetzt hat.
 2. Bewirb dich als Teammitglied.
@@ -393,40 +405,48 @@ FOOTER
 ### Struktur eines Konzepts
 
 **1. Executive Summary**
+
 - Kurze Zusammenfassung (1 Seite)
 - Ziele, Zielgruppe, Kernfunktionen
 
 **2. Projektziele**
+
 - Business-Ziele
 - Nutzerziele
 - Technische Ziele
 
 **3. Zielgruppenanalyse**
+
 - Personas
 - User Stories
 - Use Cases
 
 **4. Inhaltskonzept**
+
 - Sitemap
 - Content-Inventar
 - Textentwürfe
 
 **5. Funktionskonzept**
+
 - Features & Funktionen
 - User Flows
 - Interaktionen
 
 **6. Designkonzept**
+
 - Wireframes
 - Mockups
 - Style Guide
 
 **7. Technisches Konzept**
+
 - Technologie-Stack
 - Hosting
 - Performance-Anforderungen
 
 **8. Zeitplan & Budget**
+
 - Meilensteine
 - Ressourcen
 - Kosten
@@ -438,8 +458,9 @@ FOOTER
 
 ## 1. Executive Summary
 
-MiFa ist eine Schülerfirma, die nachhaltige Software 
+MiFa ist eine Schülerfirma, die nachhaltige Software
 für Bildung und Ökologie entwickelt. Die Website soll:
+
 - Die Firma vorstellen
 - Projekte präsentieren
 - Kontakte generieren
@@ -450,10 +471,12 @@ Launch: Q2 2025
 ## 2. Zielgruppe
 
 ### Persona 1: Laura (Lehrerin, 32)
+
 - Sucht nachhaltige Lernprojekte
 - Benötigt schnelle Kontaktmöglichkeit
 
 ### Persona 2: Tim (Schüler, 16)
+
 - Möchte mitarbeiten
 - Nutzt primär mobil
 
@@ -481,27 +504,32 @@ Launch: Q2 2025
 ## Checkliste: Konzeption
 
 ### Vorbereitung
+
 - [ ] Briefing durchführen
 - [ ] Ziele definieren
 - [ ] Zielgruppe analysieren
 
 ### Planung
+
 - [ ] Personas erstellen
 - [ ] User Stories formulieren
 - [ ] Sitemap skizzieren
 - [ ] Content-Inventar anlegen
 
 ### Design
+
 - [ ] Wireframes zeichnen
 - [ ] Mockups erstellen
 - [ ] Prototyp bauen
 
 ### Validierung
+
 - [ ] Usability-Tests durchführen
 - [ ] Feedback einholen
 - [ ] Konzept anpassen
 
 ### Dokumentation
+
 - [ ] Konzeptdokument schreiben
 - [ ] Stakeholder-Freigabe einholen
 
@@ -513,7 +541,7 @@ Launch: Q2 2025
 ❌ **Annahmen treffen** → Nutzer fragen, nicht vermuten  
 ❌ **Zu komplex** → Einfach starten, später erweitern  
 ❌ **Keine Tests** → Immer mit echten Nutzern testen  
-❌ **Fehlendes Feedback** → Regelmäßig Rückmeldung einholen  
+❌ **Fehlendes Feedback** → Regelmäßig Rückmeldung einholen
 
 ---
 
@@ -566,13 +594,15 @@ ENDE
 ### Beispiel
 
 **Karten:**
+
 ```
-Vision, Team, Geschichte, Portfolio, Workshops, 
-Beratung, Kontaktformular, Bewerbung, E-Mail, 
+Vision, Team, Geschichte, Portfolio, Workshops,
+Beratung, Kontaktformular, Bewerbung, E-Mail,
 Social Media
 ```
 
 **Ergebnis-Gruppierung:**
+
 ```
 Gruppe 1 "Über uns": Vision, Team, Geschichte
 Gruppe 2 "Services": Portfolio, Workshops, Beratung

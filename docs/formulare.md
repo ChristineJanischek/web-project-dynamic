@@ -4,6 +4,8 @@ Formulare sind die Hauptmethode, um Daten von Nutzern zu sammeln - sei es ein Ko
 
 ## Grundstruktur eines Formulars
 
+Siehe auch: [JavaScript Grundlagen](../js.md) für Formular-Validierung.
+
 ```html
 <form action="/submit" method="POST">
   <!-- Formularfelder hier -->
@@ -12,6 +14,7 @@ Formulare sind die Hauptmethode, um Daten von Nutzern zu sammeln - sei es ein Ko
 ```
 
 **Wichtige Attribute:**
+
 - `action` = Wohin werden die Daten gesendet? (URL oder Skript)
 - `method` = Wie werden sie gesendet?
   - `GET` = Daten in URL sichtbar (z.B. Suche)
@@ -26,7 +29,7 @@ Formulare sind die Hauptmethode, um Daten von Nutzern zu sammeln - sei es ein Ko
 ```html
 <!-- Einzeiliger Text -->
 <label for="name">Name:</label>
-<input type="text" id="name" name="name" required>
+<input type="text" id="name" name="name" required />
 
 <!-- Mehrzeiliger Text -->
 <label for="message">Nachricht:</label>
@@ -37,13 +40,13 @@ Formulare sind die Hauptmethode, um Daten von Nutzern zu sammeln - sei es ein Ko
 
 ```html
 <label for="email">E-Mail:</label>
-<input type="email" id="email" name="email" required>
+<input type="email" id="email" name="email" required />
 
 <label for="phone">Telefon:</label>
-<input type="tel" id="phone" name="phone">
+<input type="tel" id="phone" name="phone" />
 
 <label for="website">Webseite:</label>
-<input type="url" id="website" name="website">
+<input type="url" id="website" name="website" />
 ```
 
 **Browser validiert automatisch** das Format!
@@ -52,7 +55,7 @@ Formulare sind die Hauptmethode, um Daten von Nutzern zu sammeln - sei es ein Ko
 
 ```html
 <label for="password">Passwort:</label>
-<input type="password" id="password" name="password" required minlength="8">
+<input type="password" id="password" name="password" required minlength="8" />
 ```
 
 ### Zahlen & Datum
@@ -60,31 +63,31 @@ Formulare sind die Hauptmethode, um Daten von Nutzern zu sammeln - sei es ein Ko
 ```html
 <!-- Zahl -->
 <label for="age">Alter:</label>
-<input type="number" id="age" name="age" min="18" max="100">
+<input type="number" id="age" name="age" min="18" max="100" />
 
 <!-- Datum -->
 <label for="date">Datum:</label>
-<input type="date" id="date" name="date">
+<input type="date" id="date" name="date" />
 
 <!-- Uhrzeit -->
 <label for="time">Uhrzeit:</label>
-<input type="time" id="time" name="time">
+<input type="time" id="time" name="time" />
 ```
 
 ### Checkboxen
 
 ```html
 <label>
-  <input type="checkbox" name="newsletter" value="yes">
+  <input type="checkbox" name="newsletter" value="yes" />
   Ich möchte den Newsletter erhalten
 </label>
 
 <!-- Mehrere Optionen -->
 <fieldset>
   <legend>Interessen:</legend>
-  <label><input type="checkbox" name="interest" value="sport"> Sport</label>
-  <label><input type="checkbox" name="interest" value="musik"> Musik</label>
-  <label><input type="checkbox" name="interest" value="reisen"> Reisen</label>
+  <label><input type="checkbox" name="interest" value="sport" /> Sport</label>
+  <label><input type="checkbox" name="interest" value="musik" /> Musik</label>
+  <label><input type="checkbox" name="interest" value="reisen" /> Reisen</label>
 </fieldset>
 ```
 
@@ -95,9 +98,11 @@ Nur **eine** Auswahl möglich (gleiches `name` Attribut):
 ```html
 <fieldset>
   <legend>Geschlecht:</legend>
-  <label><input type="radio" name="gender" value="m" required> Männlich</label>
-  <label><input type="radio" name="gender" value="w"> Weiblich</label>
-  <label><input type="radio" name="gender" value="d"> Divers</label>
+  <label
+    ><input type="radio" name="gender" value="m" required /> Männlich</label
+  >
+  <label><input type="radio" name="gender" value="w" /> Weiblich</label>
+  <label><input type="radio" name="gender" value="d" /> Divers</label>
 </fieldset>
 ```
 
@@ -126,7 +131,7 @@ Nur **eine** Auswahl möglich (gleiches `name` Attribut):
 ```html
 <form enctype="multipart/form-data">
   <label for="file">Datei hochladen:</label>
-  <input type="file" id="file" name="file" accept="image/*">
+  <input type="file" id="file" name="file" accept="image/*" />
 </form>
 ```
 
@@ -139,35 +144,39 @@ Nur **eine** Auswahl möglich (gleiches `name` Attribut):
 ### Required (Pflichtfeld)
 
 ```html
-<input type="text" name="name" required>
+<input type="text" name="name" required />
 ```
 
 ### Pattern (Regex)
 
 ```html
 <!-- Nur Buchstaben -->
-<input type="text" pattern="[A-Za-z]+" title="Nur Buchstaben erlaubt">
+<input type="text" pattern="[A-Za-z]+" title="Nur Buchstaben erlaubt" />
 
 <!-- Deutsche Postleitzahl -->
-<input type="text" pattern="[0-9]{5}" title="5 Ziffern">
+<input type="text" pattern="[0-9]{5}" title="5 Ziffern" />
 
 <!-- Telefon -->
-<input type="tel" pattern="[0-9\-\+\s]+" title="Nur Zahlen, +, - und Leerzeichen">
+<input
+  type="tel"
+  pattern="[0-9\-\+\s]+"
+  title="Nur Zahlen, +, - und Leerzeichen"
+/>
 ```
 
 ### Min, Max, Minlength, Maxlength
 
 ```html
-<input type="number" min="1" max="100">
-<input type="text" minlength="3" maxlength="50">
+<input type="number" min="1" max="100" />
+<input type="text" minlength="3" maxlength="50" />
 <textarea maxlength="500"></textarea>
 ```
 
 ### Placeholder
 
 ```html
-<input type="text" placeholder="Max Mustermann">
-<input type="email" placeholder="max@example.com">
+<input type="text" placeholder="Max Mustermann" />
+<input type="email" placeholder="max@example.com" />
 ```
 
 ---
@@ -179,100 +188,105 @@ Nur **eine** Auswahl möglich (gleiches `name` Attribut):
 ```html
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kontaktformular</title>
-  <link rel="stylesheet" href="form.css">
-</head>
-<body>
-  <div class="container">
-    <h1>Kontaktieren Sie uns</h1>
-    
-    <form id="contactForm" action="/submit" method="POST">
-      <!-- Name -->
-      <div class="form-group">
-        <label for="name">Name *</label>
-        <input 
-          type="text" 
-          id="name" 
-          name="name" 
-          required 
-          minlength="2"
-          placeholder="Ihr vollständiger Name">
-      </div>
-      
-      <!-- Email -->
-      <div class="form-group">
-        <label for="email">E-Mail *</label>
-        <input 
-          type="email" 
-          id="email" 
-          name="email" 
-          required
-          placeholder="ihre@email.de">
-      </div>
-      
-      <!-- Telefon -->
-      <div class="form-group">
-        <label for="phone">Telefon</label>
-        <input 
-          type="tel" 
-          id="phone" 
-          name="phone"
-          placeholder="+49 123 456789">
-      </div>
-      
-      <!-- Betreff -->
-      <div class="form-group">
-        <label for="subject">Betreff *</label>
-        <select id="subject" name="subject" required>
-          <option value="">Bitte wählen...</option>
-          <option value="anfrage">Allgemeine Anfrage</option>
-          <option value="support">Support</option>
-          <option value="feedback">Feedback</option>
-          <option value="sonstiges">Sonstiges</option>
-        </select>
-      </div>
-      
-      <!-- Nachricht -->
-      <div class="form-group">
-        <label for="message">Nachricht *</label>
-        <textarea 
-          id="message" 
-          name="message" 
-          rows="6" 
-          required
-          minlength="10"
-          placeholder="Ihre Nachricht an uns..."></textarea>
-      </div>
-      
-      <!-- Newsletter -->
-      <div class="form-group checkbox">
-        <label>
-          <input type="checkbox" name="newsletter" value="yes">
-          Ich möchte den Newsletter erhalten
-        </label>
-      </div>
-      
-      <!-- Datenschutz -->
-      <div class="form-group checkbox">
-        <label>
-          <input type="checkbox" name="privacy" required>
-          Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen *
-        </label>
-      </div>
-      
-      <!-- Buttons -->
-      <div class="form-actions">
-        <button type="reset" class="btn-secondary">Zurücksetzen</button>
-        <button type="submit" class="btn-primary">Absenden</button>
-      </div>
-    </form>
-  </div>
-  
-  <script src="form.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kontaktformular</title>
+    <link rel="stylesheet" href="form.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Kontaktieren Sie uns</h1>
+
+      <form id="contactForm" action="/submit" method="POST">
+        <!-- Name -->
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            minlength="2"
+            placeholder="Ihr vollständiger Name"
+          />
+        </div>
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email">E-Mail *</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            placeholder="ihre@email.de"
+          />
+        </div>
+
+        <!-- Telefon -->
+        <div class="form-group">
+          <label for="phone">Telefon</label>
+          <input
+            type="tel"
+            id="phone"
+            name="phone"
+            placeholder="+49 123 456789"
+          />
+        </div>
+
+        <!-- Betreff -->
+        <div class="form-group">
+          <label for="subject">Betreff *</label>
+          <select id="subject" name="subject" required>
+            <option value="">Bitte wählen...</option>
+            <option value="anfrage">Allgemeine Anfrage</option>
+            <option value="support">Support</option>
+            <option value="feedback">Feedback</option>
+            <option value="sonstiges">Sonstiges</option>
+          </select>
+        </div>
+
+        <!-- Nachricht -->
+        <div class="form-group">
+          <label for="message">Nachricht *</label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            required
+            minlength="10"
+            placeholder="Ihre Nachricht an uns..."
+          ></textarea>
+        </div>
+
+        <!-- Newsletter -->
+        <div class="form-group checkbox">
+          <label>
+            <input type="checkbox" name="newsletter" value="yes" />
+            Ich möchte den Newsletter erhalten
+          </label>
+        </div>
+
+        <!-- Datenschutz -->
+        <div class="form-group checkbox">
+          <label>
+            <input type="checkbox" name="privacy" required />
+            Ich habe die <a href="/datenschutz">Datenschutzerklärung</a> gelesen
+            *
+          </label>
+        </div>
+
+        <!-- Buttons -->
+        <div class="form-actions">
+          <button type="reset" class="btn-secondary">Zurücksetzen</button>
+          <button type="submit" class="btn-primary">Absenden</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="form.js"></script>
+  </body>
 </html>
 ```
 
@@ -286,7 +300,7 @@ Nur **eine** Auswahl möglich (gleiches `name` Attribut):
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   min-height: 100vh;
   display: flex;
@@ -338,7 +352,9 @@ textarea {
   border-radius: 8px;
   font-size: 16px;
   font-family: inherit;
-  transition: border-color 0.3s, box-shadow 0.3s;
+  transition:
+    border-color 0.3s,
+    box-shadow 0.3s;
 }
 
 input:focus,
@@ -445,11 +461,11 @@ textarea:valid {
   .container {
     padding: 20px;
   }
-  
+
   .form-actions {
     flex-direction: column;
   }
-  
+
   button {
     width: 100%;
   }
@@ -459,17 +475,17 @@ textarea:valid {
 ### JavaScript Validierung (`form.js`)
 
 ```javascript
-const form = document.getElementById('contactForm');
+const form = document.getElementById("contactForm");
 
-form.addEventListener('submit', function(e) {
-  e.preventDefault();  // Verhindert normales Absenden
-  
+form.addEventListener("submit", function (e) {
+  e.preventDefault(); // Verhindert normales Absenden
+
   // Formulardaten sammeln
   const formData = new FormData(form);
   const data = Object.fromEntries(formData);
-  
-  console.log('Formulardaten:', data);
-  
+
+  console.log("Formulardaten:", data);
+
   // Validierung
   if (validateForm(data)) {
     // Daten senden (hier simuliert)
@@ -479,85 +495,86 @@ form.addEventListener('submit', function(e) {
 
 function validateForm(data) {
   let isValid = true;
-  
+
   // Name prüfen
   if (data.name.trim().length < 2) {
-    showError('name', 'Name muss mindestens 2 Zeichen haben');
+    showError("name", "Name muss mindestens 2 Zeichen haben");
     isValid = false;
   } else {
-    clearError('name');
+    clearError("name");
   }
-  
+
   // Email prüfen
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(data.email)) {
-    showError('email', 'Bitte gültige E-Mail eingeben');
+    showError("email", "Bitte gültige E-Mail eingeben");
     isValid = false;
   } else {
-    clearError('email');
+    clearError("email");
   }
-  
+
   // Nachricht prüfen
   if (data.message.trim().length < 10) {
-    showError('message', 'Nachricht muss mindestens 10 Zeichen haben');
+    showError("message", "Nachricht muss mindestens 10 Zeichen haben");
     isValid = false;
   } else {
-    clearError('message');
+    clearError("message");
   }
-  
+
   // Datenschutz prüfen
   if (!data.privacy) {
-    alert('Bitte akzeptieren Sie die Datenschutzerklärung');
+    alert("Bitte akzeptieren Sie die Datenschutzerklärung");
     isValid = false;
   }
-  
+
   return isValid;
 }
 
 function showError(fieldId, message) {
   const field = document.getElementById(fieldId);
-  const formGroup = field.closest('.form-group');
-  
+  const formGroup = field.closest(".form-group");
+
   // Entferne alte Fehlermeldung
   clearError(fieldId);
-  
+
   // Neue Fehlermeldung erstellen
-  const errorDiv = document.createElement('div');
-  errorDiv.className = 'error';
+  const errorDiv = document.createElement("div");
+  errorDiv.className = "error";
   errorDiv.textContent = message;
   formGroup.appendChild(errorDiv);
-  
-  field.style.borderColor = '#e74c3c';
+
+  field.style.borderColor = "#e74c3c";
 }
 
 function clearError(fieldId) {
   const field = document.getElementById(fieldId);
-  const formGroup = field.closest('.form-group');
-  const existingError = formGroup.querySelector('.error');
-  
+  const formGroup = field.closest(".form-group");
+  const existingError = formGroup.querySelector(".error");
+
   if (existingError) {
     existingError.remove();
   }
-  
-  field.style.borderColor = '#e0e0e0';
+
+  field.style.borderColor = "#e0e0e0";
 }
 
 function submitForm(data) {
   // Hier würdest du normalerweise AJAX/Fetch verwenden
   // um Daten an Server zu senden
-  
+
   // Simulation: Erfolgsmeldung anzeigen
-  const container = document.querySelector('.container');
-  
-  const successMsg = document.createElement('div');
-  successMsg.className = 'success';
-  successMsg.textContent = 'Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.';
-  
+  const container = document.querySelector(".container");
+
+  const successMsg = document.createElement("div");
+  successMsg.className = "success";
+  successMsg.textContent =
+    "Vielen Dank! Ihre Nachricht wurde erfolgreich gesendet.";
+
   container.insertBefore(successMsg, form);
-  
+
   // Formular zurücksetzen
   form.reset();
-  
+
   // Nach 5 Sekunden Erfolgsmeldung entfernen
   setTimeout(() => {
     successMsg.remove();
@@ -572,27 +589,27 @@ function submitForm(data) {
 Moderne Methode ohne Seitenneuladung:
 
 ```javascript
-form.addEventListener('submit', async function(e) {
+form.addEventListener("submit", async function (e) {
   e.preventDefault();
-  
+
   const formData = new FormData(form);
-  
+
   try {
-    const response = await fetch('/submit', {
-      method: 'POST',
-      body: formData
+    const response = await fetch("/submit", {
+      method: "POST",
+      body: formData,
     });
-    
+
     if (response.ok) {
       const result = await response.json();
-      alert('Erfolgreich gesendet!');
+      alert("Erfolgreich gesendet!");
       form.reset();
     } else {
-      alert('Fehler beim Senden!');
+      alert("Fehler beim Senden!");
     }
   } catch (error) {
-    console.error('Error:', error);
-    alert('Netzwerkfehler!');
+    console.error("Error:", error);
+    alert("Netzwerkfehler!");
   }
 });
 ```
@@ -608,42 +625,50 @@ form.addEventListener('submit', async function(e) {
 ✅ **Erfolgsmeldung zeigen** - Feedback geben  
 ✅ **Responsive Design** - Mobile-freundlich  
 ✅ **Datenschutz-Checkbox** - DSGVO-konform  
-✅ **Submit-Button deaktivieren** während Senden  
+✅ **Submit-Button deaktivieren** während Senden
 
 ---
 
 ## Häufige Fehler
 
 ❌ **Fehlende Labels**
+
 ```html
-<input type="text" name="name">  <!-- Schlecht! -->
+<input type="text" name="name" />
+<!-- Schlecht! -->
 ```
 
 ✅ **Richtig:**
+
 ```html
-<label for="name">Name:</label>
-<input type="text" id="name" name="name">
+<label for="name">Name:</label> <input type="text" id="name" name="name" />
 ```
 
 ❌ **Placeholder statt Label**
+
 ```html
-<input type="text" placeholder="Name">  <!-- Schlecht! -->
+<input type="text" placeholder="Name" />
+<!-- Schlecht! -->
 ```
 
 ✅ **Beides nutzen:**
+
 ```html
 <label for="name">Name:</label>
-<input type="text" id="name" placeholder="Max Mustermann">
+<input type="text" id="name" placeholder="Max Mustermann" />
 ```
 
 ❌ **Keine Validierung**
+
 ```html
-<input type="text" name="email">  <!-- Jede Eingabe erlaubt! -->
+<input type="text" name="email" />
+<!-- Jede Eingabe erlaubt! -->
 ```
 
 ✅ **Richtiger Typ:**
+
 ```html
-<input type="email" name="email" required>
+<input type="email" name="email" required />
 ```
 
 ---
@@ -658,7 +683,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = htmlspecialchars($_POST['name']);
     $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
     $message = htmlspecialchars($_POST['message']);
-    
+
     if ($name && $email && $message) {
         // Email senden oder in Datenbank speichern
         mail('kontakt@example.com', 'Kontaktformular', $message);
@@ -682,7 +707,7 @@ def submit():
     name = request.form.get('name')
     email = request.form.get('email')
     message = request.form.get('message')
-    
+
     if name and email and message:
         # Daten speichern oder Email senden
         return jsonify({'success': True})
@@ -699,19 +724,18 @@ Mehr dazu in `python.md`!
 ```html
 <!-- ARIA Labels -->
 <label for="name" id="name-label">Name *</label>
-<input 
-  type="text" 
-  id="name" 
-  name="name" 
-  required 
+<input
+  type="text"
+  id="name"
+  name="name"
+  required
   aria-labelledby="name-label"
   aria-required="true"
-  aria-invalid="false">
+  aria-invalid="false"
+/>
 
 <!-- Fehlermeldungen -->
-<div id="name-error" role="alert" class="error">
-  Bitte Namen eingeben
-</div>
+<div id="name-error" role="alert" class="error">Bitte Namen eingeben</div>
 ```
 
 ---

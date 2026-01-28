@@ -4,6 +4,8 @@ Responsive Design bedeutet, dass eine Webseite auf **allen Geräten** (Desktop, 
 
 ## Warum Responsive Design?
 
+Siehe auch: [CSS Grundlagen](../css-basis.md) für Layout-Tipps.
+
 - **60%+ der Web-Nutzer** sind mobil unterwegs
 - **Google bevorzugt** mobile-freundliche Seiten (SEO!)
 - **Eine Website** für alle Geräte (statt separate mobile Version)
@@ -16,10 +18,11 @@ Responsive Design bedeutet, dass eine Webseite auf **allen Geräten** (Desktop, 
 **WICHTIG!** Dieses Tag **muss** im `<head>` stehen:
 
 ```html
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 ```
 
 **Was macht das?**
+
 - `width=device-width` → Breite = Gerätebreite
 - `initial-scale=1.0` → Kein Zoom beim Laden
 
@@ -67,7 +70,7 @@ Media Queries ermöglichen unterschiedliche CSS-Regeln für verschiedene Bildsch
     width: 100%;
     padding: 10px;
   }
-  
+
   .nav {
     flex-direction: column;
   }
@@ -85,19 +88,24 @@ Media Queries ermöglichen unterschiedliche CSS-Regeln für verschiedene Bildsch
 
 ```css
 /* Extra Small Devices (Phones, < 576px) */
-@media (max-width: 575px) { }
+@media (max-width: 575px) {
+}
 
 /* Small Devices (Phones, 576px - 767px) */
-@media (min-width: 576px) and (max-width: 767px) { }
+@media (min-width: 576px) and (max-width: 767px) {
+}
 
 /* Medium Devices (Tablets, 768px - 991px) */
-@media (min-width: 768px) and (max-width: 991px) { }
+@media (min-width: 768px) and (max-width: 991px) {
+}
 
 /* Large Devices (Desktops, 992px - 1199px) */
-@media (min-width: 992px) and (max-width: 1199px) { }
+@media (min-width: 992px) and (max-width: 1199px) {
+}
 
 /* Extra Large Devices (Large Desktops, ≥ 1200px) */
-@media (min-width: 1200px) { }
+@media (min-width: 1200px) {
+}
 ```
 
 **Tipp:** Nutze diese Standard-Breakpoints (Bootstrap-Konvention)
@@ -110,11 +118,15 @@ Media Queries ermöglichen unterschiedliche CSS-Regeln für verschiedene Bildsch
 
 ```css
 /* Standard: Desktop */
-.box { width: 1000px; }
+.box {
+  width: 1000px;
+}
 
 /* Dann: Kleiner machen */
 @media (max-width: 768px) {
-  .box { width: 100%; }
+  .box {
+    width: 100%;
+  }
 }
 ```
 
@@ -122,19 +134,26 @@ Media Queries ermöglichen unterschiedliche CSS-Regeln für verschiedene Bildsch
 
 ```css
 /* Standard: Mobile */
-.box { width: 100%; }
+.box {
+  width: 100%;
+}
 
 /* Dann: Größer machen */
 @media (min-width: 768px) {
-  .box { width: 700px; }
+  .box {
+    width: 700px;
+  }
 }
 
 @media (min-width: 1200px) {
-  .box { width: 1000px; }
+  .box {
+    width: 1000px;
+  }
 }
 ```
 
 **Vorteile Mobile First:**
+
 - Performance: Mobile Geräte laden weniger CSS
 - Zwingt zu Priorisierung (was ist wirklich wichtig?)
 - Einfacher zu erweitern als zu reduzieren
@@ -148,16 +167,17 @@ Media Queries ermöglichen unterschiedliche CSS-Regeln für verschiedene Bildsch
 ```css
 .nav {
   display: flex;
-  flex-wrap: wrap;        /* Umbruch erlauben */
+  flex-wrap: wrap; /* Umbruch erlauben */
   gap: 20px;
 }
 
 .nav-item {
-  flex: 1 1 200px;        /* Wachsen | Schrumpfen | Basis */
+  flex: 1 1 200px; /* Wachsen | Schrumpfen | Basis */
 }
 ```
 
 **Responsive Navigation:**
+
 ```css
 /* Desktop: Horizontal */
 .nav {
@@ -184,6 +204,7 @@ Media Queries ermöglichen unterschiedliche CSS-Regeln für verschiedene Bildsch
 ```
 
 **Was macht das?**
+
 - `repeat(auto-fit, ...)` → So viele Spalten wie möglich
 - `minmax(250px, 1fr)` → Mindestens 250px, maximal gleichmäßig verteilt
 - **Automatisch responsive!** Ohne Media Queries!
@@ -197,36 +218,40 @@ Media Queries ermöglichen unterschiedliche CSS-Regeln für verschiedene Bildsch
 ```html
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Navigation</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <div class="container">
-      <div class="logo">MeineLogo</div>
-      
-      <!-- Hamburger Button (nur mobil sichtbar) -->
-      <button class="nav-toggle" id="navToggle" aria-label="Navigation umschalten">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-      
-      <!-- Navigation -->
-      <nav class="nav" id="mainNav">
-        <a href="#home">Home</a>
-        <a href="#about">Über uns</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Kontakt</a>
-      </nav>
-    </div>
-  </header>
-  
-  <script src="script.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Navigation</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="logo">MeineLogo</div>
+
+        <!-- Hamburger Button (nur mobil sichtbar) -->
+        <button
+          class="nav-toggle"
+          id="navToggle"
+          aria-label="Navigation umschalten"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+        <!-- Navigation -->
+        <nav class="nav" id="mainNav">
+          <a href="#home">Home</a>
+          <a href="#about">Über uns</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Kontakt</a>
+        </nav>
+      </div>
+    </header>
+
+    <script src="script.js"></script>
+  </body>
 </html>
 ```
 
@@ -290,41 +315,41 @@ Media Queries ermöglichen unterschiedliche CSS-Regeln für verschiedene Bildsch
   .nav-toggle {
     display: flex;
   }
-  
+
   /* Navigation verstecken & umstrukturieren */
   .nav {
     position: fixed;
     top: 70px;
-    right: -100%;           /* Ausgeblendet */
+    right: -100%; /* Ausgeblendet */
     width: 250px;
     height: calc(100vh - 70px);
     background-color: white;
     flex-direction: column;
     padding: 20px;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
     transition: right 0.3s ease;
     gap: 0;
   }
-  
+
   .nav a {
     padding: 15px 0;
     border-bottom: 1px solid #eee;
   }
-  
+
   /* Navigation sichtbar wenn .active */
   .nav.active {
     right: 0;
   }
-  
+
   /* Hamburger Animation */
   .nav-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
-  
+
   .nav-toggle.active span:nth-child(2) {
     opacity: 0;
   }
-  
+
   .nav-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
   }
@@ -335,21 +360,21 @@ Media Queries ermöglichen unterschiedliche CSS-Regeln für verschiedene Bildsch
 
 ```javascript
 // script.js
-const navToggle = document.getElementById('navToggle');
-const mainNav = document.getElementById('mainNav');
+const navToggle = document.getElementById("navToggle");
+const mainNav = document.getElementById("mainNav");
 
-navToggle.addEventListener('click', function() {
+navToggle.addEventListener("click", function () {
   // Toggle active class
-  mainNav.classList.toggle('active');
-  navToggle.classList.toggle('active');
+  mainNav.classList.toggle("active");
+  navToggle.classList.toggle("active");
 });
 
 // Menü schließen beim Klick auf Link
-const navLinks = mainNav.querySelectorAll('a');
-navLinks.forEach(link => {
-  link.addEventListener('click', () => {
-    mainNav.classList.remove('active');
-    navToggle.classList.remove('active');
+const navLinks = mainNav.querySelectorAll("a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", () => {
+    mainNav.classList.remove("active");
+    navToggle.classList.remove("active");
   });
 });
 ```
@@ -381,7 +406,7 @@ body {
 }
 
 h1 {
-  font-size: 3rem;    /* 48px */
+  font-size: 3rem; /* 48px */
 }
 
 /* Tablet */
@@ -396,9 +421,9 @@ h1 {
   body {
     font-size: 14px;
   }
-  
+
   h1 {
-    font-size: 2rem;   /* 32px */
+    font-size: 2rem; /* 32px */
   }
 }
 ```
@@ -439,7 +464,7 @@ h1 {
 /* Mobile */
 @media (max-width: 768px) {
   .nav a {
-    padding: 15px 20px;  /* Größer für Finger */
+    padding: 15px 20px; /* Größer für Finger */
   }
 }
 ```
@@ -459,13 +484,16 @@ h1 {
 
 ```css
 /* iPhone SE (375px) */
-@media (max-width: 375px) { }
+@media (max-width: 375px) {
+}
 
 /* iPad (768px) */
-@media (min-width: 768px) and (max-width: 1024px) { }
+@media (min-width: 768px) and (max-width: 1024px) {
+}
 
 /* Desktop HD (1920px) */
-@media (min-width: 1920px) { }
+@media (min-width: 1920px) {
+}
 ```
 
 ---
@@ -473,6 +501,7 @@ h1 {
 ## 10. Vollständiges Beispiel
 
 Siehe `shared-examples/index.html` für ein **vollständiges responsives Beispiel** mit:
+
 - ✅ Flexible Navigation (Desktop/Mobile)
 - ✅ Responsive Grid
 - ✅ Touch-friendly Buttons
@@ -491,41 +520,59 @@ Siehe `shared-examples/index.html` für ein **vollständiges responsives Beispie
 ✅ **Touch-Ziele**: Mind. 44×44px  
 ✅ **Hamburger-Menü** für Mobile  
 ✅ **Testen** auf echten Geräten  
-✅ **Performance**: Weniger Code für Mobile  
+✅ **Performance**: Weniger Code für Mobile
 
 ---
 
 ## Häufige Fehler
 
 ❌ **Viewport Meta-Tag vergessen**
+
 ```html
 <!-- Fehlt! Seite wird auf Handy verkleinert dargestellt -->
 ```
 
 ❌ **Feste Pixel-Breiten**
+
 ```css
-.container { width: 1200px; }  /* Zu breit für Mobile! */
+.container {
+  width: 1200px;
+} /* Zu breit für Mobile! */
 ```
 
 ✅ **Besser:**
+
 ```css
-.container { max-width: 1200px; width: 100%; }
+.container {
+  max-width: 1200px;
+  width: 100%;
+}
 ```
 
 ❌ **Zu kleine Touch-Ziele**
+
 ```css
-.button { width: 20px; height: 20px; }  /* Zu klein! */
+.button {
+  width: 20px;
+  height: 20px;
+} /* Zu klein! */
 ```
 
 ❌ **Hover-Effekte ohne Touch-Alternative**
+
 ```css
-.button:hover { background: blue; }  /* Funktioniert nicht auf Touch! */
+.button:hover {
+  background: blue;
+} /* Funktioniert nicht auf Touch! */
 ```
 
 ✅ **Auch :active für Touch:**
+
 ```css
 .button:hover,
-.button:active { background: blue; }
+.button:active {
+  background: blue;
+}
 ```
 
 ---

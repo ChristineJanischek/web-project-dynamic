@@ -4,53 +4,91 @@ Hier lernst du die wichtigsten CSS-Eigenschaften für die Formatierung deiner We
 
 ## Textformatierung
 
+Siehe auch: [CSS Grundlagen](../css-basis.md) für grundlegende Formatierung.
+
 ### Schriftart
+
 ```css
 body {
   font-family: Arial, Helvetica, sans-serif;
 }
 ```
+
 **Tipp:** Gib mehrere Schriften an als Fallback!
 
 ### Schriftgröße
+
 ```css
-h1 { font-size: 2rem; }      /* relativ zur Wurzelgröße */
-p { font-size: 16px; }        /* absolut in Pixel */
-small { font-size: 0.9em; }   /* relativ zum Eltern-Element */
+h1 {
+  font-size: 2rem;
+} /* relativ zur Wurzelgröße */
+p {
+  font-size: 16px;
+} /* absolut in Pixel */
+small {
+  font-size: 0.9em;
+} /* relativ zum Eltern-Element */
 ```
 
 ### Schriftgewicht
+
 ```css
-h1 { font-weight: bold; }     /* oder: 700 */
-p { font-weight: normal; }    /* oder: 400 */
-strong { font-weight: 600; }
+h1 {
+  font-weight: bold;
+} /* oder: 700 */
+p {
+  font-weight: normal;
+} /* oder: 400 */
+strong {
+  font-weight: 600;
+}
 ```
 
 ### Textfarbe
+
 ```css
-h1 { color: #e74c3c; }        /* Hexadezimal */
-p { color: rgb(51, 51, 51); } /* RGB */
-a { color: blue; }            /* Farbname */
+h1 {
+  color: #e74c3c;
+} /* Hexadezimal */
+p {
+  color: rgb(51, 51, 51);
+} /* RGB */
+a {
+  color: blue;
+} /* Farbname */
 ```
 
 ### Text ausrichten
+
 ```css
-h1 { text-align: center; }
-p { text-align: left; }       /* Standard */
-footer { text-align: right; }
+h1 {
+  text-align: center;
+}
+p {
+  text-align: left;
+} /* Standard */
+footer {
+  text-align: right;
+}
 ```
 
 ### Zeilenhöhe (wichtig für Lesbarkeit!)
+
 ```css
 p {
-  line-height: 1.6;  /* 1.6 = 160% der Schriftgröße */
+  line-height: 1.6; /* 1.6 = 160% der Schriftgröße */
 }
 ```
 
 ### Text-Dekoration
+
 ```css
-a { text-decoration: none; }           /* Unterstrich weg */
-a:hover { text-decoration: underline; } /* Beim Hover zeigen */
+a {
+  text-decoration: none;
+} /* Unterstrich weg */
+a:hover {
+  text-decoration: underline;
+} /* Beim Hover zeigen */
 ```
 
 ---
@@ -58,15 +96,21 @@ a:hover { text-decoration: underline; } /* Beim Hover zeigen */
 ## Farben und Hintergründe
 
 ### Hintergrundfarbe
+
 ```css
-body { background-color: #f5f5f5; }
-header { background-color: #2c3e50; }
+body {
+  background-color: #f5f5f5;
+}
+header {
+  background-color: #2c3e50;
+}
 ```
 
 ### Hintergrundbilder
+
 ```css
 body {
-  background-image: url('../images/bg.jpg');
+  background-image: url("../images/bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -77,32 +121,35 @@ body {
 ## Abstände (Box-Modell)
 
 ### Margin (Außenabstand)
+
 ```css
 section {
   margin-top: 2rem;
   margin-bottom: 2rem;
   /* Oder kurz: */
-  margin: 2rem 0;  /* oben/unten links/rechts */
+  margin: 2rem 0; /* oben/unten links/rechts */
 }
 ```
 
 ### Padding (Innenabstand)
+
 ```css
 header {
-  padding: 2rem 1rem;  /* oben/unten links/rechts */
+  padding: 2rem 1rem; /* oben/unten links/rechts */
 }
 
 div {
-  padding: 10px;  /* alle Seiten gleich */
+  padding: 10px; /* alle Seiten gleich */
 }
 ```
 
 ### Kombinationen
+
 ```css
 .box {
-  margin: 1rem;      /* Außenabstand */
-  padding: 2rem;     /* Innenabstand */
-  border: 2px solid #ccc;  /* Rahmen */
+  margin: 1rem; /* Außenabstand */
+  padding: 2rem; /* Innenabstand */
+  border: 2px solid #ccc; /* Rahmen */
 }
 ```
 
@@ -112,9 +159,9 @@ div {
 
 ```css
 .card {
-  border: 1px solid #ddd;        /* Durchgehend */
-  border-radius: 8px;            /* Abgerundete Ecken */
-  border-left: 4px solid red;    /* Nur links, dicker */
+  border: 1px solid #ddd; /* Durchgehend */
+  border-radius: 8px; /* Abgerundete Ecken */
+  border-left: 4px solid red; /* Nur links, dicker */
 }
 ```
 
@@ -123,17 +170,19 @@ div {
 ## Schatten
 
 ### Box-Shadow (Elementen-Schatten)
+
 ```css
 .card {
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   /* x-offset y-offset blur-radius color */
 }
 ```
 
 ### Text-Shadow
+
 ```css
 h1 {
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 ```
 
@@ -142,15 +191,17 @@ h1 {
 ## Layout-Eigenschaften
 
 ### Breite und Höhe
+
 ```css
 .container {
   width: 100%;
-  max-width: 900px;  /* Nicht breiter als 900px */
+  max-width: 900px; /* Nicht breiter als 900px */
   height: auto;
 }
 ```
 
 ### Zentrieren (horizontal)
+
 ```css
 .container {
   max-width: 900px;
@@ -202,7 +253,7 @@ a {
 }
 
 a:hover {
-  color: red;  /* Farbwechsel dauert 0.3 Sekunden */
+  color: red; /* Farbwechsel dauert 0.3 Sekunden */
 }
 
 button {
@@ -226,23 +277,25 @@ button:hover {
   max-width: 400px;
   margin: 2rem auto;
   padding: 1.5rem;
-  
+
   /* Farben */
   background-color: white;
   color: #333;
-  
+
   /* Rahmen & Schatten */
   border-radius: 8px;
   border-left: 4px solid #e74c3c;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
   /* Animation */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
 .card h3 {
@@ -260,60 +313,81 @@ button:hover {
 ## Häufige Fehler vermeiden
 
 ❌ **Falsch:**
+
 ```css
 /* Zu viele Pixel-Angaben */
-h1 { font-size: 32px; }
-p { font-size: 16px; }
+h1 {
+  font-size: 32px;
+}
+p {
+  font-size: 16px;
+}
 ```
 
 ✅ **Besser:**
+
 ```css
 /* Relative Einheiten */
-h1 { font-size: 2rem; }
-p { font-size: 1rem; }
+h1 {
+  font-size: 2rem;
+}
+p {
+  font-size: 1rem;
+}
 ```
 
 ❌ **Falsch:**
+
 ```css
 /* Farben ohne Kontrast */
-p { color: #ccc; background: #ddd; }
+p {
+  color: #ccc;
+  background: #ddd;
+}
 ```
 
 ✅ **Besser:**
+
 ```css
 /* Guter Kontrast */
-p { color: #333; background: #fff; }
+p {
+  color: #333;
+  background: #fff;
+}
 ```
 
 ---
 
 ## Einheiten im Überblick
 
-| Einheit | Bedeutung | Wann nutzen? |
-|---------|-----------|--------------|
-| `px` | Pixel | Feste Größen (Rahmen) |
-| `%` | Prozent | Flexible Breiten |
-| `rem` | Relativ zur Wurzel | Schriftgrößen |
-| `em` | Relativ zum Eltern | Abstände |
-| `vh/vw` | Viewport-Höhe/Breite | Vollbild-Elemente |
+| Einheit | Bedeutung            | Wann nutzen?          |
+| ------- | -------------------- | --------------------- |
+| `px`    | Pixel                | Feste Größen (Rahmen) |
+| `%`     | Prozent              | Flexible Breiten      |
+| `rem`   | Relativ zur Wurzel   | Schriftgrößen         |
+| `em`    | Relativ zum Eltern   | Abstände              |
+| `vh/vw` | Viewport-Höhe/Breite | Vollbild-Elemente     |
 
 ---
 
 ## Farbsysteme
 
 ### Hexadezimal
+
 ```css
-color: #e74c3c;  /* Rot */
-color: #3498db;  /* Blau */
+color: #e74c3c; /* Rot */
+color: #3498db; /* Blau */
 ```
 
 ### RGB
+
 ```css
-color: rgb(231, 76, 60);      /* Rot */
+color: rgb(231, 76, 60); /* Rot */
 color: rgba(52, 152, 219, 0.5); /* Blau, 50% transparent */
 ```
 
 ### Farbnamen
+
 ```css
 color: red;
 color: lightblue;

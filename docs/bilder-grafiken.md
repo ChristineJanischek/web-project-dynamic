@@ -4,15 +4,18 @@ Bilder sind ein zentraler Bestandteil moderner Webseiten. Hier lernst du, wie du
 
 ## Bildformate im Web
 
-| Format | Wofür? | Vorteile | Nachteile |
-|--------|--------|----------|-----------|
+Siehe auch: [CSS Grundlagen](../css-basis.md) für Styling-Tipps.
+
+| Format       | Wofür?                 | Vorteile                            | Nachteile                           |
+| ------------ | ---------------------- | ----------------------------------- | ----------------------------------- |
 | **JPG/JPEG** | Fotos, komplexe Bilder | Kleine Dateigröße, gute Kompression | Keine Transparenz, Qualitätsverlust |
-| **PNG** | Logos, Icons, Grafiken | Transparenz möglich, verlustfrei | Größere Dateien als JPG |
-| **GIF** | Einfache Animationen | Animationen, kleine Dateien | Nur 256 Farben, veraltet |
-| **WebP** | Alles (modern) | Klein & schnell, Transparenz | Nicht alle Browser (alte) |
-| **SVG** | Logos, Icons, Vektoren | Skalierbar, klein, editierbar | Nicht für Fotos geeignet |
+| **PNG**      | Logos, Icons, Grafiken | Transparenz möglich, verlustfrei    | Größere Dateien als JPG             |
+| **GIF**      | Einfache Animationen   | Animationen, kleine Dateien         | Nur 256 Farben, veraltet            |
+| **WebP**     | Alles (modern)         | Klein & schnell, Transparenz        | Nicht alle Browser (alte)           |
+| **SVG**      | Logos, Icons, Vektoren | Skalierbar, klein, editierbar       | Nicht für Fotos geeignet            |
 
 **Empfehlung:**
+
 - Fotos → **JPG** oder **WebP**
 - Logos/Icons → **SVG** oder **PNG**
 - Animationen → **GIF** oder **WebP** (besser)
@@ -24,10 +27,11 @@ Bilder sind ein zentraler Bestandteil moderner Webseiten. Hier lernst du, wie du
 ### Grundsyntax
 
 ```html
-<img src="pfad/zum/bild.jpg" alt="Beschreibung des Bildes">
+<img src="pfad/zum/bild.jpg" alt="Beschreibung des Bildes" />
 ```
 
 **Wichtig:**
+
 - `src` = Quelle (Source) - Pfad zur Bilddatei
 - `alt` = Alternativtext - **Pflicht für Barrierefreiheit!**
 
@@ -35,27 +39,27 @@ Bilder sind ein zentraler Bestandteil moderner Webseiten. Hier lernst du, wie du
 
 ```html
 <!-- ✅ Gut: Beschreibend -->
-<img src="hund.jpg" alt="Golden Retriever spielt im Park">
+<img src="hund.jpg" alt="Golden Retriever spielt im Park" />
 
 <!-- ❌ Schlecht: Zu generisch -->
-<img src="hund.jpg" alt="Bild">
+<img src="hund.jpg" alt="Bild" />
 
 <!-- ✅ Dekorativ: Leer lassen -->
-<img src="deko-linie.png" alt="">
+<img src="deko-linie.png" alt="" />
 ```
 
 ### Absolute vs. Relative Pfade
 
 ```html
 <!-- Relativ (empfohlen) -->
-<img src="bilder/foto.jpg" alt="Foto">
-<img src="../images/logo.png" alt="Logo">
+<img src="bilder/foto.jpg" alt="Foto" />
+<img src="../images/logo.png" alt="Logo" />
 
 <!-- Absolut -->
-<img src="/assets/bilder/header.jpg" alt="Header">
+<img src="/assets/bilder/header.jpg" alt="Header" />
 
 <!-- Extern -->
-<img src="https://example.com/bild.jpg" alt="Externes Bild">
+<img src="https://example.com/bild.jpg" alt="Externes Bild" />
 ```
 
 ---
@@ -75,6 +79,7 @@ img {
 ```
 
 **Was passiert:**
+
 - Bild wird nie breiter als sein Container
 - Höhe passt sich automatisch an (behält Seitenverhältnis)
 - `display: block` verhindert ungewollte Abstände
@@ -82,15 +87,14 @@ img {
 ### HTML: srcset für verschiedene Auflösungen
 
 ```html
-<img 
-  src="bild-klein.jpg" 
-  srcset="bild-klein.jpg 400w,
-          bild-mittel.jpg 800w,
-          bild-gross.jpg 1200w"
+<img
+  src="bild-klein.jpg"
+  srcset="bild-klein.jpg 400w, bild-mittel.jpg 800w, bild-gross.jpg 1200w"
   sizes="(max-width: 600px) 400px,
          (max-width: 1000px) 800px,
          1200px"
-  alt="Landschaft">
+  alt="Landschaft"
+/>
 ```
 
 **Browser wählt automatisch** die passende Bildgröße!
@@ -101,9 +105,9 @@ Für verschiedene Bildformate oder Bildausschnitte:
 
 ```html
 <picture>
-  <source srcset="bild.webp" type="image/webp">
-  <source srcset="bild.jpg" type="image/jpeg">
-  <img src="bild.jpg" alt="Fallback">
+  <source srcset="bild.webp" type="image/webp" />
+  <source srcset="bild.jpg" type="image/jpeg" />
+  <img src="bild.jpg" alt="Fallback" />
 </picture>
 ```
 
@@ -112,40 +116,46 @@ Für verschiedene Bildformate oder Bildausschnitte:
 ## Praktisches Beispiel
 
 ### HTML
+
 ```html
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bilder Demo</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <img src="images/logo.svg" alt="Firmenlogo" class="logo">
-  </header>
-  
-  <main>
-    <section class="hero">
-      <img src="images/hero.jpg" alt="Berglandschaft bei Sonnenuntergang" class="hero-image">
-    </section>
-    
-    <section class="gallery">
-      <h2>Galerie</h2>
-      <div class="gallery-grid">
-        <img src="images/foto1.jpg" alt="Strand">
-        <img src="images/foto2.jpg" alt="Berge">
-        <img src="images/foto3.jpg" alt="Stadt">
-        <img src="images/foto4.jpg" alt="Wald">
-      </div>
-    </section>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bilder Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <img src="images/logo.svg" alt="Firmenlogo" class="logo" />
+    </header>
+
+    <main>
+      <section class="hero">
+        <img
+          src="images/hero.jpg"
+          alt="Berglandschaft bei Sonnenuntergang"
+          class="hero-image"
+        />
+      </section>
+
+      <section class="gallery">
+        <h2>Galerie</h2>
+        <div class="gallery-grid">
+          <img src="images/foto1.jpg" alt="Strand" />
+          <img src="images/foto2.jpg" alt="Berge" />
+          <img src="images/foto3.jpg" alt="Stadt" />
+          <img src="images/foto4.jpg" alt="Wald" />
+        </div>
+      </section>
+    </main>
+  </body>
 </html>
 ```
 
 ### CSS
+
 ```css
 /* Globale Bild-Regel */
 img {
@@ -170,7 +180,7 @@ img {
 .hero-image {
   width: 100%;
   height: 500px;
-  object-fit: cover;  /* Bild füllt Container, behält Proportionen */
+  object-fit: cover; /* Bild füllt Container, behält Proportionen */
 }
 
 /* Galerie */
@@ -243,7 +253,7 @@ Alternativ zu `<img>` kannst du Bilder als CSS-Hintergrund setzen:
 
 ```css
 .hero {
-  background-image: url('images/hero.jpg');
+  background-image: url("images/hero.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -252,17 +262,19 @@ Alternativ zu `<img>` kannst du Bilder als CSS-Hintergrund setzen:
 
 /* Kurzform */
 .hero {
-  background: url('images/hero.jpg') center/cover no-repeat;
+  background: url("images/hero.jpg") center/cover no-repeat;
   height: 500px;
 }
 ```
 
 **Wann nutzen?**
+
 - Dekorative Bilder
 - Überlagerung mit Text
 - Parallax-Effekte
 
 **Wann NICHT nutzen?**
+
 - Wichtige Inhaltsbilder (SEO!)
 - Bilder, die heruntergeladen werden sollen
 
@@ -286,7 +298,7 @@ Alternativ zu `<img>` kannst du Bilder als CSS-Hintergrund setzen:
 Bilder erst laden, wenn sie sichtbar werden:
 
 ```html
-<img src="bild.jpg" alt="Beschreibung" loading="lazy">
+<img src="bild.jpg" alt="Beschreibung" loading="lazy" />
 ```
 
 **Browser lädt Bild erst**, wenn User scrollt!
@@ -305,7 +317,7 @@ Mit `<figure>` und `<figcaption>`:
 
 ```html
 <figure>
-  <img src="grafik.jpg" alt="Diagramm der Verkaufszahlen">
+  <img src="grafik.jpg" alt="Diagramm der Verkaufszahlen" />
   <figcaption>Abb. 1: Verkaufszahlen 2024</figcaption>
 </figure>
 ```
@@ -333,7 +345,7 @@ SVG ist ideal für Logos und Icons!
 ### Als `<img>` einbinden
 
 ```html
-<img src="logo.svg" alt="Logo" width="100">
+<img src="logo.svg" alt="Logo" width="100" />
 ```
 
 ### Inline SVG
@@ -362,33 +374,45 @@ svg:hover circle {
 ## Häufige Fehler
 
 ❌ **Fehlender Alt-Text**
+
 ```html
-<img src="bild.jpg">  <!-- Schlecht für SEO & Barrierefreiheit! -->
+<img src="bild.jpg" />
+<!-- Schlecht für SEO & Barrierefreiheit! -->
 ```
 
 ✅ **Richtig:**
+
 ```html
-<img src="bild.jpg" alt="Beschreibung">
+<img src="bild.jpg" alt="Beschreibung" />
 ```
 
 ❌ **Zu große Dateien**
+
 ```html
-<img src="foto-5mb.jpg">  <!-- Lädt ewig! -->
+<img src="foto-5mb.jpg" />
+<!-- Lädt ewig! -->
 ```
 
 ✅ **Komprimieren:**
+
 ```html
-<img src="foto-200kb.jpg">
+<img src="foto-200kb.jpg" />
 ```
 
 ❌ **Fester Width/Height in HTML**
+
 ```html
-<img src="bild.jpg" width="800" height="600">  <!-- Nicht responsive! -->
+<img src="bild.jpg" width="800" height="600" />
+<!-- Nicht responsive! -->
 ```
 
 ✅ **In CSS steuern:**
+
 ```css
-img { max-width: 100%; height: auto; }
+img {
+  max-width: 100%;
+  height: auto;
+}
 ```
 
 ---
@@ -398,26 +422,31 @@ img { max-width: 100%; height: auto; }
 ### Alt-Text Richtlinien
 
 ✅ **Informative Bilder:**
+
 ```html
-<img src="produkt.jpg" alt="Rotes T-Shirt mit V-Ausschnitt">
+<img src="produkt.jpg" alt="Rotes T-Shirt mit V-Ausschnitt" />
 ```
 
 ✅ **Dekorative Bilder:**
+
 ```html
-<img src="deko.png" alt="">  <!-- Leer, damit Screenreader überspringt -->
+<img src="deko.png" alt="" />
+<!-- Leer, damit Screenreader überspringt -->
 ```
 
 ✅ **Funktionale Bilder (Buttons):**
+
 ```html
 <button>
-  <img src="menu-icon.svg" alt="Menü öffnen">
+  <img src="menu-icon.svg" alt="Menü öffnen" />
 </button>
 ```
 
 ❌ **Redundant:**
+
 ```html
 <!-- Bild von... ist überflüssig! -->
-<img src="hund.jpg" alt="Bild von einem Hund">
+<img src="hund.jpg" alt="Bild von einem Hund" />
 ```
 
 ---

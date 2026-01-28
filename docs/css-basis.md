@@ -4,6 +4,8 @@ CSS (Cascading Style Sheets) beschreibt, wie HTML-Elemente auf der Webseite auss
 
 ## Was ist CSS?
 
+Siehe auch: [HTML Grundgerüst](../html-grundgeruest.md) für grundlegende Struktur.
+
 CSS trennt **Inhalt** (HTML) von **Design** (CSS). Das macht Webseiten wartbar und flexibel.
 
 ### Syntax
@@ -16,6 +18,7 @@ selektor {
 ```
 
 **Beispiel:**
+
 ```css
 h1 {
   color: blue;
@@ -63,6 +66,7 @@ Wiederverwendbar für mehrere Elemente.
 ```
 
 **Wichtig:** Ein Element kann mehrere Klassen haben:
+
 ```html
 <p class="highlight wichtig">Mehrere Klassen</p>
 ```
@@ -98,8 +102,10 @@ nav > ul {
 }
 
 /* Mehrere Selektoren */
-h1, h2, h3 {
-  font-family: 'Georgia', serif;
+h1,
+h2,
+h3 {
+  font-family: "Georgia", serif;
 }
 ```
 
@@ -111,13 +117,14 @@ h1, h2, h3 {
 
 ```css
 .element {
-  color: red;                    /* Textfarbe */
-  background-color: #f0f0f0;     /* Hintergrundfarbe */
+  color: red; /* Textfarbe */
+  background-color: #f0f0f0; /* Hintergrundfarbe */
   border-color: rgb(200, 50, 50); /* Rahmenfarbe */
 }
 ```
 
 **Farbformate:**
+
 - **Namen**: `red`, `blue`, `lightgray`
 - **HEX**: `#ff6347`, `#0b5cad`
 - **RGB**: `rgb(255, 99, 71)`
@@ -129,9 +136,9 @@ h1, h2, h3 {
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
-  font-weight: normal;  /* normal, bold, 100-900 */
+  font-weight: normal; /* normal, bold, 100-900 */
   font-style: italic;
-  text-align: center;   /* left, center, right, justify */
+  text-align: center; /* left, center, right, justify */
   text-decoration: underline;
   line-height: 1.5;
 }
@@ -141,8 +148,8 @@ body {
 
 ```css
 .box {
-  margin: 20px;        /* Außenabstand */
-  padding: 15px;       /* Innenabstand */
+  margin: 20px; /* Außenabstand */
+  padding: 15px; /* Innenabstand */
 }
 ```
 
@@ -153,38 +160,40 @@ Mehr dazu in `box-modell.md`!
 ## Praktisches Beispiel
 
 ### HTML (`index.html`)
+
 ```html
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Basis Demo</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <h1 id="haupttitel">Willkommen zu CSS!</h1>
-  </header>
-  
-  <main>
-    <p>Dies ist ein normaler Absatz.</p>
-    <p class="highlight">Dieser Absatz ist hervorgehoben.</p>
-    <p class="wichtig">Wichtiger Text!</p>
-  </main>
-  
-  <footer>
-    <p>&copy; 2025 Meine Webseite</p>
-  </footer>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Basis Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1 id="haupttitel">Willkommen zu CSS!</h1>
+    </header>
+
+    <main>
+      <p>Dies ist ein normaler Absatz.</p>
+      <p class="highlight">Dieser Absatz ist hervorgehoben.</p>
+      <p class="wichtig">Wichtiger Text!</p>
+    </main>
+
+    <footer>
+      <p>&copy; 2025 Meine Webseite</p>
+    </footer>
+  </body>
 </html>
 ```
 
 ### CSS (`style.css`)
+
 ```css
 /* Globale Styles */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
   background-color: #f5f5f5;
@@ -253,12 +262,19 @@ footer p {
 Wenn mehrere Regeln auf ein Element zutreffen, gewinnt die **spezifischste**:
 
 ```css
-p { color: blue; }              /* Spezifität: 1 */
-.highlight { color: yellow; }   /* Spezifität: 10 */
-#haupttitel { color: red; }     /* Spezifität: 100 */
+p {
+  color: blue;
+} /* Spezifität: 1 */
+.highlight {
+  color: yellow;
+} /* Spezifität: 10 */
+#haupttitel {
+  color: red;
+} /* Spezifität: 100 */
 ```
 
 **Rangfolge:**
+
 1. Inline-Styles (`style="..."`) → 1000
 2. IDs (`#id`) → 100
 3. Klassen (`.class`) → 10
@@ -286,6 +302,7 @@ nav {
 ```
 
 ❌ **Vermeide zu spezifische Selektoren**:
+
 ```css
 /* Schlecht */
 div#container main.content article.post p.text { ... }
@@ -299,12 +316,14 @@ div#container main.content article.post p.text { ... }
 ## Häufige Anfängerfehler
 
 ❌ **Vergessener Doppelpunkt**
+
 ```css
 color red;  /* Falsch! */
 color: red; /* Richtig */
 ```
 
 ❌ **Vergessenes Semikolon**
+
 ```css
 p {
   color: blue
@@ -313,6 +332,7 @@ p {
 ```
 
 ✅ **Richtig:**
+
 ```css
 p {
   color: blue;
@@ -321,9 +341,14 @@ p {
 ```
 
 ❌ **Punkt vergessen bei Klasse**
+
 ```css
-highlight { color: red; }  /* Falsch - sucht <highlight> Element */
-.highlight { color: red; } /* Richtig - sucht class="highlight" */
+highlight {
+  color: red;
+} /* Falsch - sucht <highlight> Element */
+.highlight {
+  color: red;
+} /* Richtig - sucht class="highlight" */
 ```
 
 ---

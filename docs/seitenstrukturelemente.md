@@ -1,13 +1,17 @@
 # Semantische Seitenstrukturelemente
 
 Semantische Tags geben dem Inhalt **Bedeutung** und helfen:
+
 - **Suchmaschinen** die Seite zu verstehen (SEO)
 - **Screenreadern** bei der Navigation
 - **Entwicklern** den Code schneller zu verstehen
 
 ## Warum semantisch?
 
+Siehe auch: [HTML Grundgerüst](../html-grundgeruest.md) für grundlegende Struktur.
+
 ❌ **Alte Methode** (alles `<div>`):
+
 ```html
 <div class="header">
   <div class="nav">...</div>
@@ -17,6 +21,7 @@ Semantische Tags geben dem Inhalt **Bedeutung** und helfen:
 ```
 
 ✅ **Moderne Methode** (semantisch):
+
 ```html
 <header>
   <nav>...</nav>
@@ -26,6 +31,7 @@ Semantische Tags geben dem Inhalt **Bedeutung** und helfen:
 ```
 
 **Vorteile:**
+
 - Lesbarer Code
 - Besseres SEO
 - Barrierefreiheit
@@ -34,15 +40,15 @@ Semantische Tags geben dem Inhalt **Bedeutung** und helfen:
 
 ## Die wichtigsten semantischen Tags
 
-| Tag | Bedeutung | Verwendung |
-|-----|-----------|------------|
-| `<header>` | Kopfbereich | Logo, Titel, Navigation |
-| `<nav>` | Navigationslinks | Menü, Hauptnavigation |
-| `<main>` | Hauptinhalt | Der zentrale Inhalt (nur 1x!) |
+| Tag         | Bedeutung               | Verwendung                    |
+| ----------- | ----------------------- | ----------------------------- |
+| `<header>`  | Kopfbereich             | Logo, Titel, Navigation       |
+| `<nav>`     | Navigationslinks        | Menü, Hauptnavigation         |
+| `<main>`    | Hauptinhalt             | Der zentrale Inhalt (nur 1x!) |
 | `<section>` | Thematische Gruppierung | Ein zusammenhängender Bereich |
-| `<article>` | Eigenständiger Inhalt | Blogpost, News-Artikel |
-| `<aside>` | Randinfo, Sidebar | Zusatzinfos, Werbung |
-| `<footer>` | Fußbereich | Copyright, Links, Kontakt |
+| `<article>` | Eigenständiger Inhalt   | Blogpost, News-Artikel        |
+| `<aside>`   | Randinfo, Sidebar       | Zusatzinfos, Werbung          |
+| `<footer>`  | Fußbereich              | Copyright, Links, Kontakt     |
 
 ---
 
@@ -108,7 +114,7 @@ Für zusammenhängende Inhaltsbereiche, meist mit eigener Überschrift.
     <h2>Über mich</h2>
     <p>Ich bin...</p>
   </section>
-  
+
   <section id="skills">
     <h2>Meine Fähigkeiten</h2>
     <ul>
@@ -173,70 +179,70 @@ Am Ende der Seite oder eines Artikels.
 ```html
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Semantische Struktur Beispiel</title>
-</head>
-<body>
-  <!-- Kopfbereich -->
-  <header>
-    <h1>🌐 Meine Lern-Webseite</h1>
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#about">Über mich</a>
-      <a href="#blog">Blog</a>
-      <a href="#contact">Kontakt</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Semantische Struktur Beispiel</title>
+  </head>
+  <body>
+    <!-- Kopfbereich -->
+    <header>
+      <h1>🌐 Meine Lern-Webseite</h1>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">Über mich</a>
+        <a href="#blog">Blog</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+    </header>
 
-  <!-- Hauptinhalt -->
-  <main>
-    <!-- Begrüßungsbereich -->
-    <section id="home">
-      <h2>Willkommen!</h2>
-      <p>Schön, dass du hier bist.</p>
-    </section>
+    <!-- Hauptinhalt -->
+    <main>
+      <!-- Begrüßungsbereich -->
+      <section id="home">
+        <h2>Willkommen!</h2>
+        <p>Schön, dass du hier bist.</p>
+      </section>
 
-    <!-- Über mich Bereich -->
-    <section id="about">
-      <h2>Über mich</h2>
-      <p>Ich lerne Webentwicklung...</p>
-    </section>
+      <!-- Über mich Bereich -->
+      <section id="about">
+        <h2>Über mich</h2>
+        <p>Ich lerne Webentwicklung...</p>
+      </section>
 
-    <!-- Blog-Artikel -->
-    <section id="blog">
-      <h2>Mein Blog</h2>
-      
-      <article>
-        <h3>Mein erster Blogpost</h3>
-        <p><time datetime="2025-11-21">21. November 2025</time></p>
-        <p>Heute habe ich HTML gelernt...</p>
-      </article>
-      
-      <article>
-        <h3>CSS macht Spaß!</h3>
-        <p><time datetime="2025-11-22">22. November 2025</time></p>
-        <p>Farben und Layouts sind toll...</p>
-      </article>
-    </section>
-  </main>
+      <!-- Blog-Artikel -->
+      <section id="blog">
+        <h2>Mein Blog</h2>
 
-  <!-- Sidebar (optional) -->
-  <aside>
-    <h3>📌 Hinweis</h3>
-    <p>Diese Seite ist ein Lernprojekt.</p>
-  </aside>
+        <article>
+          <h3>Mein erster Blogpost</h3>
+          <p><time datetime="2025-11-21">21. November 2025</time></p>
+          <p>Heute habe ich HTML gelernt...</p>
+        </article>
 
-  <!-- Fußbereich -->
-  <footer>
-    <p>&copy; 2025 Meine Webseite - Alle Rechte vorbehalten</p>
-    <nav>
-      <a href="#impressum">Impressum</a>
-      <a href="#datenschutz">Datenschutz</a>
-    </nav>
-  </footer>
-</body>
+        <article>
+          <h3>CSS macht Spaß!</h3>
+          <p><time datetime="2025-11-22">22. November 2025</time></p>
+          <p>Farben und Layouts sind toll...</p>
+        </article>
+      </section>
+    </main>
+
+    <!-- Sidebar (optional) -->
+    <aside>
+      <h3>📌 Hinweis</h3>
+      <p>Diese Seite ist ein Lernprojekt.</p>
+    </aside>
+
+    <!-- Fußbereich -->
+    <footer>
+      <p>&copy; 2025 Meine Webseite - Alle Rechte vorbehalten</p>
+      <nav>
+        <a href="#impressum">Impressum</a>
+        <a href="#datenschutz">Datenschutz</a>
+      </nav>
+    </footer>
+  </body>
 </html>
 ```
 
@@ -267,33 +273,40 @@ Am Ende der Seite oder eines Artikels.
 ## Wann welches Element?
 
 **Header:**
+
 - Seitenkopf mit Logo/Titel
 - Navigation
 - Meist ganz oben
 
 **Nav:**
+
 - Hauptmenü
 - Breadcrumbs
 - Interne Links-Sammlung
 
 **Main:**
+
 - Der eigentliche Seiteninhalt
 - Nur 1x pro Seite!
 
 **Section:**
+
 - Thematisch zusammenhängender Bereich
 - Hat meist eine Überschrift
 
 **Article:**
+
 - Eigenständiger, wiederverwendbarer Inhalt
 - Blogposts, News, Kommentare
 
 **Aside:**
+
 - Sidebar
 - Zusatzinfos
 - Werbung
 
 **Footer:**
+
 - Seitenfuß
 - Copyright, Links
 - Meist ganz unten
@@ -303,12 +316,15 @@ Am Ende der Seite oder eines Artikels.
 ## Häufige Fehler
 
 ❌ **Zu viele `<main>`**
+
 ```html
 <main>...</main>
-<main>...</main>  <!-- Falsch! -->
+<main>...</main>
+<!-- Falsch! -->
 ```
 
 ✅ **Nur ein `<main>`**
+
 ```html
 <main>
   <section>...</section>
@@ -317,13 +333,16 @@ Am Ende der Seite oder eines Artikels.
 ```
 
 ❌ **`<section>` ohne Überschrift**
+
 ```html
 <section>
-  <p>Nur Text...</p>  <!-- Besser: <div> -->
+  <p>Nur Text...</p>
+  <!-- Besser: <div> -->
 </section>
 ```
 
 ✅ **`<section>` mit Überschrift**
+
 ```html
 <section>
   <h2>Überschrift</h2>
@@ -336,22 +355,28 @@ Am Ende der Seite oder eines Artikels.
 ## Zusätzliche nützliche Tags
 
 ### `<figure>` und `<figcaption>`
+
 Für Bilder mit Beschriftung:
+
 ```html
 <figure>
-  <img src="bild.jpg" alt="Beschreibung">
+  <img src="bild.jpg" alt="Beschreibung" />
   <figcaption>Bildbeschreibung hier</figcaption>
 </figure>
 ```
 
 ### `<time>`
+
 Für Datumsangaben:
+
 ```html
 <time datetime="2025-11-21">21. November 2025</time>
 ```
 
 ### `<mark>`
+
 Für hervorgehobenen Text:
+
 ```html
 <p>Dies ist <mark>wichtig</mark>!</p>
 ```
@@ -361,6 +386,7 @@ Für hervorgehobenen Text:
 ## Vorher / Nachher Vergleich
 
 **Ohne Semantik:**
+
 ```html
 <div class="header">
   <div class="logo">Logo</div>
@@ -373,6 +399,7 @@ Für hervorgehobenen Text:
 ```
 
 **Mit Semantik:**
+
 ```html
 <header>
   <h1>Logo</h1>

@@ -4,6 +4,8 @@ Bildgalerien sind ein beliebtes Element auf Webseiten. Hier lernst du, wie du mi
 
 ## Einfache Grid-Galerie
 
+Siehe auch: [CSS Grundlagen](../css-basis.md) für Layout-Tipps.
+
 Die einfachste Methode ist CSS Grid - automatisch responsive ohne Media Queries!
 
 ### HTML
@@ -11,28 +13,28 @@ Die einfachste Methode ist CSS Grid - automatisch responsive ohne Media Queries!
 ```html
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bildgalerie</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <main>
-    <h1>Meine Fotogalerie</h1>
-    
-    <div class="gallery">
-      <img src="images/foto1.jpg" alt="Strand bei Sonnenuntergang">
-      <img src="images/foto2.jpg" alt="Berge mit Schnee">
-      <img src="images/foto3.jpg" alt="Stadtansicht bei Nacht">
-      <img src="images/foto4.jpg" alt="Wald im Herbst">
-      <img src="images/foto5.jpg" alt="Meer mit Wellen">
-      <img src="images/foto6.jpg" alt="Blumenwiese">
-      <img src="images/foto7.jpg" alt="Wüstenlandschaft">
-      <img src="images/foto8.jpg" alt="Polarlichter">
-    </div>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bildgalerie</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Meine Fotogalerie</h1>
+
+      <div class="gallery">
+        <img src="images/foto1.jpg" alt="Strand bei Sonnenuntergang" />
+        <img src="images/foto2.jpg" alt="Berge mit Schnee" />
+        <img src="images/foto3.jpg" alt="Stadtansicht bei Nacht" />
+        <img src="images/foto4.jpg" alt="Wald im Herbst" />
+        <img src="images/foto5.jpg" alt="Meer mit Wellen" />
+        <img src="images/foto6.jpg" alt="Blumenwiese" />
+        <img src="images/foto7.jpg" alt="Wüstenlandschaft" />
+        <img src="images/foto8.jpg" alt="Polarlichter" />
+      </div>
+    </main>
+  </body>
 </html>
 ```
 
@@ -46,7 +48,7 @@ Die einfachste Methode ist CSS Grid - automatisch responsive ohne Media Queries!
 }
 
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   background-color: #f5f5f5;
   padding: 20px;
 }
@@ -74,7 +76,9 @@ h1 {
   height: 250px;
   object-fit: cover;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   cursor: pointer;
 }
 
@@ -85,6 +89,7 @@ h1 {
 ```
 
 **Was macht `grid-template-columns: repeat(auto-fit, minmax(250px, 1fr))`?**
+
 - **repeat**: Wiederhole Spalten
 - **auto-fit**: So viele wie möglich in eine Zeile
 - **minmax(250px, 1fr)**: Mindestens 250px, maximal gleichmäßig verteilt
@@ -100,12 +105,12 @@ Für interessantere Layouts kannst du Bilder unterschiedlich groß darstellen:
 
 ```html
 <div class="gallery-masonry">
-  <img src="images/foto1.jpg" alt="Bild 1" class="tall">
-  <img src="images/foto2.jpg" alt="Bild 2">
-  <img src="images/foto3.jpg" alt="Bild 3" class="wide">
-  <img src="images/foto4.jpg" alt="Bild 4">
-  <img src="images/foto5.jpg" alt="Bild 5" class="tall">
-  <img src="images/foto6.jpg" alt="Bild 6">
+  <img src="images/foto1.jpg" alt="Bild 1" class="tall" />
+  <img src="images/foto2.jpg" alt="Bild 2" />
+  <img src="images/foto3.jpg" alt="Bild 3" class="wide" />
+  <img src="images/foto4.jpg" alt="Bild 4" />
+  <img src="images/foto5.jpg" alt="Bild 5" class="tall" />
+  <img src="images/foto6.jpg" alt="Bild 6" />
 </div>
 ```
 
@@ -128,11 +133,11 @@ Für interessantere Layouts kannst du Bilder unterschiedlich groß darstellen:
 
 /* Spezielle Größen */
 .gallery-masonry img.tall {
-  grid-row: span 2;  /* 2 Zeilen hoch */
+  grid-row: span 2; /* 2 Zeilen hoch */
 }
 
 .gallery-masonry img.wide {
-  grid-column: span 2;  /* 2 Spalten breit */
+  grid-column: span 2; /* 2 Spalten breit */
 }
 ```
 
@@ -152,7 +157,7 @@ Alternative mit Flexbox (etwas weniger flexibel als Grid):
 }
 
 .gallery-flex img {
-  flex: 1 1 calc(33.333% - 15px);  /* 3 Spalten */
+  flex: 1 1 calc(33.333% - 15px); /* 3 Spalten */
   height: 250px;
   object-fit: cover;
   border-radius: 8px;
@@ -161,13 +166,13 @@ Alternative mit Flexbox (etwas weniger flexibel als Grid):
 /* Responsive */
 @media (max-width: 900px) {
   .gallery-flex img {
-    flex: 1 1 calc(50% - 15px);  /* 2 Spalten */
+    flex: 1 1 calc(50% - 15px); /* 2 Spalten */
   }
 }
 
 @media (max-width: 600px) {
   .gallery-flex img {
-    flex: 1 1 100%;  /* 1 Spalte */
+    flex: 1 1 100%; /* 1 Spalte */
   }
 }
 ```
@@ -182,15 +187,15 @@ Klickbare Bilder, die größer angezeigt werden:
 
 ```html
 <div class="gallery">
-  <img src="images/foto1.jpg" alt="Strand" onclick="openLightbox(this)">
-  <img src="images/foto2.jpg" alt="Berge" onclick="openLightbox(this)">
-  <img src="images/foto3.jpg" alt="Stadt" onclick="openLightbox(this)">
+  <img src="images/foto1.jpg" alt="Strand" onclick="openLightbox(this)" />
+  <img src="images/foto2.jpg" alt="Berge" onclick="openLightbox(this)" />
+  <img src="images/foto3.jpg" alt="Stadt" onclick="openLightbox(this)" />
 </div>
 
 <!-- Lightbox Overlay -->
 <div id="lightbox" class="lightbox" onclick="closeLightbox()">
   <span class="close">&times;</span>
-  <img id="lightbox-img" src="" alt="">
+  <img id="lightbox-img" src="" alt="" />
 </div>
 ```
 
@@ -262,22 +267,22 @@ Klickbare Bilder, die größer angezeigt werden:
 
 ```javascript
 function openLightbox(img) {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
   lightboxImg.src = img.src;
   lightboxImg.alt = img.alt;
-  lightbox.classList.add('active');
+  lightbox.classList.add("active");
 }
 
 function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  lightbox.classList.remove('active');
+  const lightbox = document.getElementById("lightbox");
+  lightbox.classList.remove("active");
 }
 
 // ESC-Taste zum Schließen
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
     closeLightbox();
   }
 });
@@ -292,17 +297,17 @@ document.addEventListener('keydown', function(e) {
 ```html
 <div class="gallery-captions">
   <figure>
-    <img src="images/foto1.jpg" alt="Strand">
+    <img src="images/foto1.jpg" alt="Strand" />
     <figcaption>Sonnenuntergang am Strand</figcaption>
   </figure>
-  
+
   <figure>
-    <img src="images/foto2.jpg" alt="Berge">
+    <img src="images/foto2.jpg" alt="Berge" />
     <figcaption>Alpenpanorama im Winter</figcaption>
   </figure>
-  
+
   <figure>
-    <img src="images/foto3.jpg" alt="Stadt">
+    <img src="images/foto3.jpg" alt="Stadt" />
     <figcaption>Stadtlichter bei Nacht</figcaption>
   </figure>
 </div>
@@ -342,7 +347,7 @@ document.addEventListener('keydown', function(e) {
   bottom: 0;
   left: 0;
   right: 0;
-  background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
   color: white;
   padding: 20px;
   transform: translateY(100%);
@@ -368,7 +373,7 @@ document.addEventListener('keydown', function(e) {
   width: 100%;
   margin-bottom: 20px;
   border-radius: 8px;
-  break-inside: avoid;  /* Verhindert Bild-Splitting */
+  break-inside: avoid; /* Verhindert Bild-Splitting */
 }
 
 /* Responsive */
@@ -392,17 +397,19 @@ document.addEventListener('keydown', function(e) {
 Lade Bilder erst, wenn sie sichtbar werden:
 
 ```html
-<img src="placeholder.jpg" 
-     data-src="images/foto1.jpg" 
-     alt="Strand" 
-     loading="lazy"
-     class="lazy">
+<img
+  src="placeholder.jpg"
+  data-src="images/foto1.jpg"
+  alt="Strand"
+  loading="lazy"
+  class="lazy"
+/>
 ```
 
 ### Moderne Methode (HTML5)
 
 ```html
-<img src="images/foto1.jpg" alt="Strand" loading="lazy">
+<img src="images/foto1.jpg" alt="Strand" loading="lazy" />
 ```
 
 **Browser lädt Bild erst**, wenn es in den Viewport kommt!
@@ -416,36 +423,66 @@ Lade Bilder erst, wenn sie sichtbar werden:
 ```html
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Responsive Galerie</title>
-  <link rel="stylesheet" href="gallery.css">
-</head>
-<body>
-  <header>
-    <h1>Meine Fotogalerie</h1>
-    <p>Klicke auf ein Bild für Vollansicht</p>
-  </header>
-  
-  <main>
-    <div class="gallery">
-      <img src="images/1.jpg" alt="Natur" loading="lazy" onclick="openLightbox(this)">
-      <img src="images/2.jpg" alt="Stadt" loading="lazy" onclick="openLightbox(this)">
-      <img src="images/3.jpg" alt="Meer" loading="lazy" onclick="openLightbox(this)">
-      <img src="images/4.jpg" alt="Berge" loading="lazy" onclick="openLightbox(this)">
-      <img src="images/5.jpg" alt="Wald" loading="lazy" onclick="openLightbox(this)">
-      <img src="images/6.jpg" alt="Wüste" loading="lazy" onclick="openLightbox(this)">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Responsive Galerie</title>
+    <link rel="stylesheet" href="gallery.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Meine Fotogalerie</h1>
+      <p>Klicke auf ein Bild für Vollansicht</p>
+    </header>
+
+    <main>
+      <div class="gallery">
+        <img
+          src="images/1.jpg"
+          alt="Natur"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="images/2.jpg"
+          alt="Stadt"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="images/3.jpg"
+          alt="Meer"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="images/4.jpg"
+          alt="Berge"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="images/5.jpg"
+          alt="Wald"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+        <img
+          src="images/6.jpg"
+          alt="Wüste"
+          loading="lazy"
+          onclick="openLightbox(this)"
+        />
+      </div>
+    </main>
+
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
+      <span class="close">&times;</span>
+      <img id="lightbox-img" src="" alt="" />
     </div>
-  </main>
-  
-  <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-    <span class="close">&times;</span>
-    <img id="lightbox-img" src="" alt="">
-  </div>
-  
-  <script src="gallery.js"></script>
-</body>
+
+    <script src="gallery.js"></script>
+  </body>
 </html>
 ```
 
@@ -547,16 +584,16 @@ main {
   header h1 {
     font-size: 2rem;
   }
-  
+
   .gallery {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 10px;
   }
-  
+
   .gallery img {
     height: 200px;
   }
-  
+
   .close {
     top: 15px;
     right: 20px;
@@ -569,24 +606,24 @@ main {
 
 ```javascript
 function openLightbox(img) {
-  const lightbox = document.getElementById('lightbox');
-  const lightboxImg = document.getElementById('lightbox-img');
-  
+  const lightbox = document.getElementById("lightbox");
+  const lightboxImg = document.getElementById("lightbox-img");
+
   lightboxImg.src = img.src;
   lightboxImg.alt = img.alt;
-  lightbox.classList.add('active');
-  document.body.style.overflow = 'hidden';  // Scrolling verhindern
+  lightbox.classList.add("active");
+  document.body.style.overflow = "hidden"; // Scrolling verhindern
 }
 
 function closeLightbox() {
-  const lightbox = document.getElementById('lightbox');
-  lightbox.classList.remove('active');
-  document.body.style.overflow = 'auto';  // Scrolling wieder erlauben
+  const lightbox = document.getElementById("lightbox");
+  lightbox.classList.remove("active");
+  document.body.style.overflow = "auto"; // Scrolling wieder erlauben
 }
 
 // ESC-Taste zum Schließen
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
+document.addEventListener("keydown", function (e) {
+  if (e.key === "Escape") {
     closeLightbox();
   }
 });
@@ -602,7 +639,7 @@ document.addEventListener('keydown', function(e) {
 ✅ **object-fit: cover** für einheitliche Größen  
 ✅ **Responsive** mit Grid oder Flexbox  
 ✅ **Hover-Effekte** für Interaktivität  
-✅ **Bildunterschriften** wo sinnvoll  
+✅ **Bildunterschriften** wo sinnvoll
 
 ---
 
