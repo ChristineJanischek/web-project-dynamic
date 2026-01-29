@@ -1,17 +1,15 @@
 
 <?php
-require_once __DIR__ . '/../models/RechnerModel.php';
-require_once __DIR__ . '/../views/RechnerView.php';
-require_once __DIR__ . '/../controllers/RechnerController.php';
-
-$model = new RechnerModel();
-$view = new RechnerView();
-$controller = new RechnerController($model, $view);
+// Hier werden die MVC-Komponenten implementiert
+// Model: Geschäftslogik (Berechnungen, Datenverarbeitung)
+// View: Präsentation (HTML-Ausgabe)
+// Controller: Ablaufsteuerung (Anfrage verarbeiten, Model aufrufen, View rendern)
 ?>
 
-<section id="anleitung">
-	<h2>Anleitung</h2>
-	<p><?php $view->renderAnleitung($controller->getAnleitungMessage()); ?></p>
+<section id="content">
+	<h2>Willkommen!</h2>
+	<p>Diese Vorlage zeigt die MVC-Architektur in PHP.</p>
+	<!-- Inhalte werden hier eingefügt -->
 </section>
 
 
