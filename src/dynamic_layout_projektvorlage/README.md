@@ -1,32 +1,72 @@
-# Schritt-für-Schritt Anleitung zur Nutzung des BMI-Rechners
+# Projektvorlage: MVC-Architektur in PHP
 
-## 1. Projektstruktur
+Diese Vorlage zeigt die professionelle **Model-View-Controller (MVC)** Architektur für PHP-Projekte.
 
-Das Projekt ist in ein MVC-Format strukturiert:
+## 🏗️ Projektstruktur
 
-- **Model**: `RechnerModel` - verwaltet die Daten.
-- **View**: `RechnerView` - zeigt die Ausgaben an.
-- **Controller**: `RechnerController` - steuert den Ablauf der Anwendung.
+```
+dynamic_layout_projektvorlage/
+├── index.php              # Einstiegspunkt
+├── controllers/
+│   └── RechnerController.php      # Controller: Ablaufsteuerung
+├── models/
+│   └── RechnerModel.php           # Model: Geschäftslogik
+├── views/
+│   └── RechnerView.php            # View: Präsentation
+├── layouts/
+│   ├── head.php           # HTML Header & CSS
+│   ├── header.php         # Website Header
+│   ├── nav.php            # Navigation
+│   ├── main.php           # Hauptinhalt
+│   └── footer.php         # Footer
+├── css/                   # Stylesheets
+└── images/                # Bilder
+```
 
-## 2. Installation
+## 🎯 MVC erklärt
 
-- Klone das Repository oder lade die Dateien herunter.
-- Stelle sicher, dass der Webserver (z.B. Apache) korrekt konfiguriert ist.
+| Komponente     | Aufgabe             | Beispiel                                          |
+| -------------- | ------------------- | ------------------------------------------------- |
+| **Model**      | Daten & Logik       | BMI-Berechnung, Formularvalidierung               |
+| **View**       | Präsentation (HTML) | Formular anzeigen, Ergebnis darstellen            |
+| **Controller** | Ablaufsteuerung     | Anfrage verarbeiten, Model aufrufen, View rendern |
 
-**💡 Tipp:** Du kannst dieses Projekt auch ohne Apache/nginx testen! Siehe [PHP lokal testen](../../docs/php-lokal-testen.md) für eine Anleitung, wie du PHP-Dateien direkt von der Console aus mit dem PHP Built-in Webserver testen kannst.
+## 🚀 Schnelleinstieg
 
-## 3. Nutzung
+1. **Folie kopieren** aus `src/` in euer Projektverzeichnis
+2. **index.php** ausführen: `php -S localhost:8000`
+3. **Browser öffnen:** `http://localhost:8000`
 
-- Die Formular-Komponenten sollten in die entsprechende Form-Datei eingefügt werden.
-- Die `lib.php`-Datei muss im `<head>`-Bereich der HTML-Datei inkludiert werden.
-- Die Steuerung der Ereignisse erfolgt in der Controller-Datei.
+## 📝 Wie ihr die Vorlage nutzt
 
-## 4. BMI-Rechner Implementierung
+### Schritt 1: Das Formular gestalten (View)
 
-- Füge die Eingabefelder für Gewicht und Größe in die Form-Datei ein.
-- Nutze die `RechnerModel`-Klasse, um die Werte zu setzen und zu berechnen.
-- Die Ergebnisse werden über die `RechnerView`-Klasse angezeigt.
+Bearbeitet `layouts/main.php` und fügt HTML für euer Formular ein.
 
-## 5. Erweiterungen
+### Schritt 2: Die Geschäftslogik programmieren (Model)
 
-- Das Template kann leicht erweitert werden, indem neue Controller, Modelle und Views hinzugefügt werden.
+Erweitert `models/RechnerModel.php` mit euren Berechnungen.
+
+### Schritt 3: Alles verbinden (Controller)
+
+Programmiert `controllers/RechnerController.php` für die Ablaufsteuerung.
+
+## 💡 Tipps
+
+- **Separiere Daten und Präsentation:** Model speichert Daten, View gibt sie aus
+- **Controller = Vermittler:** Der Controller verbindet Model und View
+- **Kommentiere deine Klassen:** Erkläre, was jede Methode tut
+- **Teste isoliert:** Teste Model-Methoden separat mit `test_*.php`
+
+## 🔗 Weiterführende Links
+
+- [Version 4: BMI-Rechner mit MVC](../../version4/README.md) - Komplette Aufgabenstellung
+- [PHP Grundlagen](../../docs/php.md) - PHP-Dokumentation
+- [PHP lokal testen](../../docs/php-lokal-testen.md) - Anleitung zum Testen
+
+---
+
+**Diese Vorlage wird verwendet für:**
+
+- Version 4 - BMI-Rechner mit MVC
+- Weitere PHP-Projekte mit Geschäftslogik
