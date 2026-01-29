@@ -311,7 +311,67 @@ Praxisvorschlag:
 
 ---
 
-### 🎓 Version 4: JavaScript & Interaktivität ⚡
+### 🎓 Version 4: BMI-Rechner mit MVC-Architektur (PHP) 🚀
+
+**Status:** Release verfügbar - Zum Lernen bereit! 🎉
+
+**Schwerpunkte:**
+
+- **Pädagogischer Ansatz:** Schrittweise von Erkundung zu Funktionalität
+- **MVC-Architektur:** Model-View-Controller mit echten PHP-Klassen
+- **Praktische Fachkonzepte:** Datenstrukturen, Geschäftslogik, Präsentation trennen
+- **Realistische Projektstruktur:** Das nutzen echte Entwickler!
+
+**Lernziele:**
+
+- ✅ MVC-Architektur verstehen und anwenden
+- ✅ PHP-Klassen mit Methoden schreiben
+- ✅ HTML-Formulare mit PHP verarbeiten
+- ✅ Geschäftslogik vom Interface trennen
+- ✅ Controller für Ablaufsteuerung nutzen
+
+**Dateien:**
+
+- 📖 **Aufgabenstellung:** [`version4/README.md`](version4/README.md)
+- 📘 **Aufgabe 0:** [`version4/AUFGABE_0_ERKUNDUNG.md`](version4/AUFGABE_0_ERKUNDUNG.md) - Die Vorlage erkunden
+- 📝 **Aufgabe 1:** [`version4/AUFGABE_1_VIEW.md`](version4/AUFGABE_1_VIEW.md) - Formular (View) erstellen
+- 🧮 **Aufgabe 2:** [`version4/AUFGABE_2_MODEL.md`](version4/AUFGABE_2_MODEL.md) - BMI-Berechnung (Model) implementieren
+- 🎮 **Aufgabe 3:** [`version4/AUFGABE_3_CONTROLLER.md`](version4/AUFGABE_3_CONTROLLER.md) - Controller verbinden & testen
+
+**Aufgabenstruktur (Scaffolding):**
+
+1. **Aufgabe 0 (Erkundung):** Ohne Code - Verstehen wie die Vorlage funktioniert
+2. **Aufgabe 1 (View):** HTML-Formular mit Eingabefeldern
+3. **Aufgabe 2 (Model):** BMI-Berechnung & Gewichtskategorien
+4. **Aufgabe 3 (Controller):** Formulare verarbeiten & alles verbinden
+
+**Themen:**
+
+- 🔍 Erkundungsauftrag mit Verständnisfragen
+- 📋 HTML-Formulare mit `<input>` und `<form>`
+- 📐 Mathematische Formeln implementieren
+- 🏗️ Klassen und Methoden schreiben
+- 🔄 POST-Daten verarbeiten (`$_SERVER`, `$_POST`)
+- 🎨 View für Ausgabe (HTML-Rendering)
+- 📦 Model für Datenverarbeitung
+- 🕹️ Controller für Logik
+
+**Zeitaufwand:** 8-12 Stunden  
+**Voraussetzung:** Version 1-3 sollten absolviert sein; Grundlagen PHP-Wissen
+
+**🎓 Warum diese Version?**
+
+> Diese Version lehrt Schüler die professionelle **Aufteilung von Verantwortlichkeiten** (Separation of Concerns):
+>
+> - **Model** speichert Daten und berechnet Logik
+> - **View** kümmert sich nur um HTML-Ausgabe
+> - **Controller** verbindet beide und verarbeitet Anfragen
+>
+> Dies ist der Weg, wie echte Webentwickler arbeiten und vorbereitet auf React, Django, Laravel, etc.!
+
+---
+
+### 🎓 Version 5: JavaScript & Interaktivität ⚡
 
 **Status:** In Planung
 
@@ -429,6 +489,27 @@ web-project-dynamic/
 │           ├── team-luca.svg
 │           ├── team-max.svg
 │           └── team-sophie.svg
+├── version4/                      # 🎓 Version 4: BMI-Rechner mit MVC (PHP)
+│   ├── README.md                  # Aufgabenstellung & Überblick
+│   ├── AUFGABE_0_ERKUNDUNG.md     # 📘 Aufgabe 0: Vorlage erkunden (Verständnis)
+│   ├── AUFGABE_1_VIEW.md          # 📝 Aufgabe 1: HTML-Formular (View)
+│   ├── AUFGABE_2_MODEL.md         # 🧮 Aufgabe 2: BMI-Berechnung (Model)
+│   ├── AUFGABE_3_CONTROLLER.md    # 🎮 Aufgabe 3: Controller & Ablauf
+│   ├── index.php                  # Einstiegspunkt
+│   ├── controllers/
+│   │   └── RechnerController.php  # Controller für Ablaufsteuerung
+│   ├── models/
+│   │   └── RechnerModel.php       # Model für Geschäftslogik & BMI-Berechnung
+│   ├── views/
+│   │   └── RechnerView.php        # View für HTML-Rendering
+│   ├── layouts/
+│   │   ├── head.php               # HTML-Header
+│   │   ├── header.php             # Website-Header
+│   │   ├── nav.php                # Navigation
+│   │   ├── main.php               # Hauptinhalt (Formular & Ergebnis)
+│   │   └── footer.php             # Footer
+│   └── css/
+│       └── style.css              # Styling für BMI-Rechner
 ├── scripts/                       # Utility-Scripts
 │   ├── run_accessibility.sh       # pa11y Runner
 │   ├── validate_names.py          # JSON Validator
