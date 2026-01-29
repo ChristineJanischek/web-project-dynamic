@@ -1,0 +1,14 @@
+@CHARSET "UTF-8";
+html, body{
+/*Schriftfarbe*/
+	color:#000075;
+ 
+/*Hintergrundfarbe*/
+	background-color:white; 
+
+/*Schriftfamilie definieren*/
+	font-family: "Arial", "Verdana", "Gisha";
+
+/*Schriftgröße für relative Angaben innerhalb der Boxen*/
+	font-size: 100.01%;
+}

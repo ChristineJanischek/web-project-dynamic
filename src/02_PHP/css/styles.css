@@ -1,0 +1,42 @@
+@CHARSET "UTF-8";
+html, body{
+	color:#000075; /*Schriftfarbe*/
+	background-color:white; /*Hintergrundfarbe*/
+	font-family: "Arial", "Verdana", "Gisha";/*Schriftfamilie definieren*/
+	font-size: 100.01%;/*Schriftgröße für relative Angaben innerhalb der Boxen*/
+}
+
+div{
+	margin: 1%;/*Aussenabstand: relativ 1% von allen Seiten*/ 	
+}
+
+#wrapper{
+	diplay:block;/*Block Element*/
+	border:5px solid black;/*Rahmen 5 Pixel breit durchgehend schwarz*/ 
+	width: 90%;	/*Breite der Box: relativ 90%*/
+}
+
+#header{
+        border:2px solid green; /*Rahmen 2 Pixel breit durchgehend grün*/    
+}
+
+#content{
+	border:2px solid red;/*Rahmen 2 Pixel breit durchgehend grün*/
+	float: right;/*Ausrichtung des Elements rechts*/
+	width: 70%;/*Breite der Box: relativ 70%*/
+	height:auto;     /*Höhe der Box: automatische Ausrichtung*/
+}
+
+#sidebar{
+	border:2px solid yellow;/*Rahmen 2 Pixel breit durchgehend gelb*/
+	float: left;/*Ausrichtung des Elements links*/
+	width: 20%;/*Breite der Box: relativ 20%*/
+	height:auto;  /*Höhe der Box: automatische Ausrichtung*/   
+}
+
+#footer{
+	border:2px solid blue;/*Rahmen 2 Pixel breit durchgehend blau*/
+	clear:both;   /*Beendet das Umfließen von Elementen*/  
+}
+
+
