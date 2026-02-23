@@ -29,7 +29,7 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 
 1. Projekt in VS Code öffnen (Codespaces oder lokal)
 2. Bei lokaler Nutzung empfohlene Extensions installieren
-3. Erste Datei öffnen: `version1/aufgabe/index.html`
+3. Erste Datei öffnen: [version1/aufgabe/index.html](version1/aufgabe/index.html)
 4. Mit Live Server starten (`Open with Live Server`)
 5. Änderungen speichern und direkt im Browser prüfen
 
@@ -303,10 +303,10 @@ Die wichtigsten Bereiche im Überblick:
 
 - `docs/` – zentrale Dokumentation (Start: [docs/README.md](docs/README.md))
   - `statisch/`, `dynamisch/`, `konzeption/`, `programmierung/`, `handbook/`
-- `version1/` bis `version4/` – aufeinander aufbauende Lernversionen
-- `shared-examples/` – vollständiges Beispielprojekt
-- `scripts/` – Automationen (README-Update, Validierung, Backups)
-- `.github/workflows/` – CI/CD- und Qualitäts-Workflows
+- [version1](version1/) bis [version4](version4/) – aufeinander aufbauende Lernversionen
+- [shared-examples](shared-examples/) – vollständiges Beispielprojekt
+- [scripts](scripts/) – Automationen (README-Update, Validierung, Backups)
+- [.github/workflows](.github/workflows/) – CI/CD- und Qualitäts-Workflows
 
 Detaillierte Strukturregeln: [docs/STRUKTUR.md](docs/STRUKTUR.md)
 
@@ -322,7 +322,7 @@ Detaillierte Strukturregeln: [docs/STRUKTUR.md](docs/STRUKTUR.md)
 ## 🧪 Testen & Vorschau
 
 - Schnellster Weg für Lernende: [docs/handbook/QUICKSTART_LIVE_SERVER.md](docs/handbook/QUICKSTART_LIVE_SERVER.md)
-- Direktes Übungsziel: `shared-examples/index.html`
+- Direktes Übungsziel: [shared-examples/index.html](shared-examples/index.html)
 - Qualitäts-Checks (automatisch): `.github/workflows/validate-html.yml` und weitere Workflows unter `.github/workflows/`
 
 ## 🎯 Lernpfad-Empfehlung
@@ -339,15 +339,15 @@ Detaillierte Strukturregeln: [docs/STRUKTUR.md](docs/STRUKTUR.md)
 
 6. 📷 **Bilder & Galerien** → [`docs/statisch/bilder-grafiken.md`](docs/statisch/bilder-grafiken.md), [`docs/statisch/galerien.md`](docs/statisch/galerien.md)
 7. 📝 **Formulare** erstellen → [`docs/statisch/formulare.md`](docs/statisch/formulare.md)
-8. ⚡ **JavaScript Basics** → DOM-Manipulation, Events
+8. ⚡ **JavaScript Basics** → [`docs/dynamisch/js.md`](docs/dynamisch/js.md)
 9. 🎨 **Fortgeschrittene Layouts** → CSS Grid, Flexbox-Mastery
 
 ### Phase 3: Backend & Fullstack (geplant)
 
-10. 🔧 **React Komponenten** → Wiederverwendbare UI-Elemente
-11. 🐍 **Python/Flask Backend** → API erstellen
-12. 🗄️ **Datenbank** anbinden → MySQL Integration
-13. ✅ **Testing** → Jest, Pytest, PHPUnit
+10. 🔧 **React Komponenten** → [`docs/dynamisch/react.md`](docs/dynamisch/react.md)
+11. 🐍 **Python/Flask Backend** → [`docs/dynamisch/python.md`](docs/dynamisch/python.md)
+12. 🗄️ **Datenbank** anbinden → [`docs/dynamisch/datenbank.md`](docs/dynamisch/datenbank.md)
+13. ✅ **Testing** → [`docs/dynamisch/testen.md`](docs/dynamisch/testen.md)
 
 ## 🤖 Automatisierung
 
@@ -356,14 +356,9 @@ Detaillierte Strukturregeln: [docs/STRUKTUR.md](docs/STRUKTUR.md)
 - Was-ist-neu-Datum: `.github/workflows/update-whats-new-date.yml`
 - Backup-Snapshot: `.github/workflows/backup-snapshot.yml`
 
-## 🧪 Testing (Überblick - Geplant)
+## 🧪 Testing (Roadmap)
 
-Zukünftige Test-Beispiele:
-
-- **Jest** - JavaScript/React Unit Tests
-- **Pytest** - Python Flask API Tests
-- **PHPUnit** - PHP Backend Tests
-- **Cypress** - End-to-End Browser Tests
+Die Einführung in Teststrategien liegt in [`docs/dynamisch/testen.md`](docs/dynamisch/testen.md); weiterführende Stack-spezifische Beispiele werden schrittweise ergänzt.
 
 ## 🔄 Template-Updates für Student-Repos
 
@@ -392,18 +387,9 @@ git push
 
 Verbesserungen und Erweiterungen sind willkommen!
 
-**Für Lehrkräfte & Mentoren:**
-
-- Pull Requests für neue Aufgaben oder Docs
-- Bitte klare, verständliche Sprache nutzen
-- Code-Beispiele kommentieren
-- Best Practices beachten
-
-**Für Studierende:**
-
-- Issues für Fragen oder Unklarheiten
-- Verbesserungsvorschläge willkommen
-- Teile deine Lösungen (optional)
+- Für Lehrkräfte & Mentor:innen: Pull Requests für Aufgaben, Docs und Qualitätsverbesserungen
+- Für Studierende: Issues bei Fragen/Unklarheiten, gern mit reproduzierbarem Beispiel
+- PR-Standard mit Governance-Checklist: [.github/pull_request_template.md](.github/pull_request_template.md)
 
 ## 📜 Lizenz & Nutzung
 
@@ -414,18 +400,14 @@ Verbesserungen und Erweiterungen sind willkommen!
 
 ## 📞 Support
 
-- **Fragen?** → Erstelle ein Issue auf GitHub
-- **Bugs?** → Bug Report im Issues-Tab
-- **Verbesserungen?** → Pull Request erstellen
-
-PR-Standard mit Governance-Checklist: [.github/pull_request_template.md](.github/pull_request_template.md)
+- Fragen, Bugs und Verbesserungen bitte über Issues bzw. Pull Requests im Repository einreichen.
 
 ---
 
 ## 🏷️ Versions-Tags
 
 - `v1.0-release` - Version 1 komplett (HTML + CSS Basics)
-- `docs-complete` - Alle Frontend-Dokumentationen verfügbar
+- `docs-complete` - Vollständige Frontend-Dokumentationen
 - Weitere Tags folgen mit neuen Releases
 
 ---
