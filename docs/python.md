@@ -2,6 +2,11 @@
 
 Siehe auch: [PHP Grundlagen](../php.md) für weitere Informationen.
 
+Für den vollständigen Grundlagen-Lernpfad (Ausgaben, Variablen, Rechenoperationen, Funktionen/Methoden, Kontrollstrukturen, Datenstrukturen, Algorithmen, Dateien) siehe:
+
+- [Programmier-Grundlagen Übersicht](programmierung/grundlagen/README.md)
+- [Python Fundamentals (modular)](programmierung/grundlagen/python/README.md)
+
 Flask ist ein leichtes Web-Framework.
 
 Minimal:

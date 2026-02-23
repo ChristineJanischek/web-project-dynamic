@@ -157,32 +157,36 @@ Vollständig funktionierendes Projekt mit HTML, CSS, JavaScript und SVG-Grafiken
 
 ## Inhalt / Lernpfade
 
-| Bereich                       | Datei / Link                                                                 | Kurzbeschreibung                                       |
-| ----------------------------- | ---------------------------------------------------------------------------- | ------------------------------------------------------ |
-| Einstieg & Überblick          | [`docs/intro.md`](docs/intro.md)                                             | Was ist das Web? Rollen von Client/Server              |
-| HTML Grundgerüst              | [`docs/html-grundgeruest.md`](docs/html-grundgeruest.md)                     | Aufbau von `<!DOCTYPE html>`, Grundtags, Validierung   |
-| Seitenstrukturelemente        | [`docs/seitenstrukturelemente.md`](docs/seitenstrukturelemente.md)           | Semantische Tags (`header`,`nav`,`main`,`section`,...) |
-| CSS einbinden                 | [`docs/css-einbinden.md`](docs/css-einbinden.md)                             | Externe, interne & inline CSS, Best Practices          |
-| CSS Basis                     | [`docs/css-basis.md`](docs/css-basis.md)                                     | Selektoren, Eigenschaften, erste Styles                |
-| CSS Formatierung              | [`docs/css-formatierung.md`](docs/css-formatierung.md)                       | Text, Farben, Abstände, Schatten, Transitions          |
-| Box-Modell                    | [`docs/box-modell.md`](docs/box-modell.md)                                   | `margin`, `border`, `padding`, `content`               |
-| Flexible Layouts              | [`docs/flexible-layouts.md`](docs/flexible-layouts.md)                       | Flexbox & CSS Grid mit praktischen Beispielen          |
-| Responsive Design             | [`docs/responsive-design.md`](docs/responsive-design.md)                     | Media Queries, Mobile Navigation, Breakpoints          |
-| Bilder & Grafiken             | [`docs/bilder-grafiken.md`](docs/bilder-grafiken.md)                         | Formate, Einbindung, Responsivität                     |
-| Galerien                      | [`docs/galerien.md`](docs/galerien.md)                                       | Einfache Bildgalerie, Grid/Flex                        |
-| Formulare & Auswertung        | [`docs/formulare.md`](docs/formulare.md)                                     | Formulare erstellen & validieren                       |
-| JavaScript Grundlagen         | [`docs/js.md`](docs/js.md)                                                   | Variablen, Funktionen, DOM, Events                     |
-| Git & Versionsmanagement      | [`docs/git-versionsmanagement.md`](docs/git-versionsmanagement.md)           | Commits, Branches, Pull Requests, Workflows            |
-| Zielgruppenanalyse            | [`docs/zielgruppenanalyse.md`](docs/zielgruppenanalyse.md)                   | User Personas, Customer Journey, Nutzerbedürfnisse     |
-| Corporate Design              | [`docs/corporate-design.md`](docs/corporate-design.md)                       | Logo, Farben, Typografie, Brand Guidelines             |
-| Konzeption & Webdesign        | [`docs/konzeption-webdesign.md`](docs/konzeption-webdesign.md)               | Briefing, Sitemap, Wireframes, Mockups                 |
-| React Einstieg                | [`docs/react.md`](docs/react.md)                                             | Komponenten, Props, State                              |
-| Python (Flask)                | [`docs/python.md`](docs/python.md)                                           | Minimales API Backend                                  |
-| PHP Grundlagen                | [`docs/php.md`](docs/php.md)                                                 | Serverseitige Skripte, Ausgabe, Verarbeitung           |
-| **PHP lokal testen**          | [`docs/php-lokal-testen.md`](docs/php-lokal-testen.md)                       | **PHP-Dateien von der Console aus testen**             |
-| Datenbank (MySQL)             | [`docs/datenbank.md`](docs/datenbank.md)                                     | Tabellen, Abfragen, Verbindung                         |
-| Algorithmen & Datenstrukturen | [`docs/algorithmen-datenstrukturen.md`](docs/algorithmen-datenstrukturen.md) | Listen, Arrays, Sortieren, Suchen                      |
-| Testen                        | [`docs/testen.md`](docs/testen.md)                                           | Warum Tests? Einfache Beispiele (Jest/Pytest/PHPUnit)  |
+| Bereich                           | Datei / Link                                                                                                 | Kurzbeschreibung                                       |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------ |
+| Einstieg & Überblick              | [`docs/intro.md`](docs/intro.md)                                                                             | Was ist das Web? Rollen von Client/Server              |
+| HTML Grundgerüst                  | [`docs/html-grundgeruest.md`](docs/html-grundgeruest.md)                                                     | Aufbau von `<!DOCTYPE html>`, Grundtags, Validierung   |
+| Seitenstrukturelemente            | [`docs/seitenstrukturelemente.md`](docs/seitenstrukturelemente.md)                                           | Semantische Tags (`header`,`nav`,`main`,`section`,...) |
+| CSS einbinden                     | [`docs/css-einbinden.md`](docs/css-einbinden.md)                                                             | Externe, interne & inline CSS, Best Practices          |
+| CSS Basis                         | [`docs/css-basis.md`](docs/css-basis.md)                                                                     | Selektoren, Eigenschaften, erste Styles                |
+| CSS Formatierung                  | [`docs/css-formatierung.md`](docs/css-formatierung.md)                                                       | Text, Farben, Abstände, Schatten, Transitions          |
+| Box-Modell                        | [`docs/box-modell.md`](docs/box-modell.md)                                                                   | `margin`, `border`, `padding`, `content`               |
+| Flexible Layouts                  | [`docs/flexible-layouts.md`](docs/flexible-layouts.md)                                                       | Flexbox & CSS Grid mit praktischen Beispielen          |
+| Responsive Design                 | [`docs/responsive-design.md`](docs/responsive-design.md)                                                     | Media Queries, Mobile Navigation, Breakpoints          |
+| Bilder & Grafiken                 | [`docs/bilder-grafiken.md`](docs/bilder-grafiken.md)                                                         | Formate, Einbindung, Responsivität                     |
+| Galerien                          | [`docs/galerien.md`](docs/galerien.md)                                                                       | Einfache Bildgalerie, Grid/Flex                        |
+| Formulare & Auswertung            | [`docs/formulare.md`](docs/formulare.md)                                                                     | Formulare erstellen & validieren                       |
+| JavaScript Grundlagen             | [`docs/js.md`](docs/js.md)                                                                                   | Variablen, Funktionen, DOM, Events                     |
+| Git & Versionsmanagement          | [`docs/git-versionsmanagement.md`](docs/git-versionsmanagement.md)                                           | Commits, Branches, Pull Requests, Workflows            |
+| Zielgruppenanalyse                | [`docs/zielgruppenanalyse.md`](docs/zielgruppenanalyse.md)                                                   | User Personas, Customer Journey, Nutzerbedürfnisse     |
+| Corporate Design                  | [`docs/corporate-design.md`](docs/corporate-design.md)                                                       | Logo, Farben, Typografie, Brand Guidelines             |
+| Konzeption & Webdesign            | [`docs/konzeption-webdesign.md`](docs/konzeption-webdesign.md)                                               | Briefing, Sitemap, Wireframes, Mockups                 |
+| React Einstieg                    | [`docs/react.md`](docs/react.md)                                                                             | Komponenten, Props, State                              |
+| Python (Flask)                    | [`docs/python.md`](docs/python.md)                                                                           | Minimales API Backend                                  |
+| PHP Grundlagen                    | [`docs/php.md`](docs/php.md)                                                                                 | Serverseitige Skripte, Ausgabe, Verarbeitung           |
+| Programmier-Grundlagen (neu)      | [`docs/programmierung/grundlagen/README.md`](docs/programmierung/grundlagen/README.md)                       | Sprachübergreifende Architektur für Fundamentals       |
+| PHP Fundamentals (modular)        | [`docs/programmierung/grundlagen/php/README.md`](docs/programmierung/grundlagen/php/README.md)               | Ausgaben, Variablen, Kontrollstrukturen, Dateien       |
+| Python Fundamentals (modular)     | [`docs/programmierung/grundlagen/python/README.md`](docs/programmierung/grundlagen/python/README.md)         | Grundlagenpfad in Python-Struktur                      |
+| JavaScript Fundamentals (modular) | [`docs/programmierung/grundlagen/javascript/README.md`](docs/programmierung/grundlagen/javascript/README.md) | Grundlagenpfad in JavaScript-Struktur                  |
+| **PHP lokal testen**              | [`docs/php-lokal-testen.md`](docs/php-lokal-testen.md)                                                       | **PHP-Dateien von der Console aus testen**             |
+| Datenbank (MySQL)                 | [`docs/datenbank.md`](docs/datenbank.md)                                                                     | Tabellen, Abfragen, Verbindung                         |
+| Algorithmen & Datenstrukturen     | [`docs/algorithmen-datenstrukturen.md`](docs/algorithmen-datenstrukturen.md)                                 | Listen, Arrays, Sortieren, Suchen                      |
+| Testen                            | [`docs/testen.md`](docs/testen.md)                                                                           | Warum Tests? Einfache Beispiele (Jest/Pytest/PHPUnit)  |
 
 ## 📚 Aufgaben & Lernversionen
 
