@@ -145,7 +145,7 @@ Damit du nicht ständig speichern musst:
 
 ## 📝 Musterklausur
 
-**📋 [Klassenarbeit: SchoolCodeInnovations 2025](ka_grundlagen/KA_SchoolCodeInnovations_2025.md)** (ohne Lösungen)
+**📋 [Klassenarbeit (DOCX): SchoolCodeInnovations 2025](material/ka_grundlagen/KA02_BKWI1_WEB_VERSION1_LSG_2025_2026.docx)**
 
 Inhaltlich gleichwertige Klassenarbeit zum Thema Webentwicklung Fundamentals basierend auf dem Konzept der Schülerfirma "SchoolCodeInnovations". Umfang: 60 Minuten, 76 Punkte + 5 Bonuspunkte.
 
