@@ -14,6 +14,13 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 - 🎓 Best Practices für GitHub Classroom
 - 🚀 Live Server vorinstalliert für sofortiges Testen
 
+## 🆕 Was ist neu?
+
+- ✅ Neue modulare Grundlagenpfade für [PHP](docs/programmierung/grundlagen/php/README.md), [Python](docs/programmierung/grundlagen/python/README.md) und [JavaScript](docs/programmierung/grundlagen/javascript/README.md)
+- ✅ Python-Kapitel zu Algorithmen und Dateiverarbeitung ergänzt
+- ✅ Unterrichtsmaterial von `ka_grundlagen/` nach [material/ka_grundlagen](material/ka_grundlagen) migriert
+- ✅ Verweise in der zentralen Dokumentation auf die neue Struktur aktualisiert
+
 ---
 
 ## 🚀 Erste Schritte - Setup für Schüler
