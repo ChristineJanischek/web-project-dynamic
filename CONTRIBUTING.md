@@ -3,22 +3,26 @@
 ## 🎯 Wie arbeite ich mit diesem Projekt?
 
 ### Schritt 1: Repository forken/klonen
+
 ```bash
 git clone <DEINE_REPO_URL>
 cd web-project-dynamic
 ```
 
 ### Schritt 2: Mit einer Version starten
+
 ```bash
 cd version1/aufgabe
 ```
 
 ### Schritt 3: Dateien bearbeiten
+
 - Öffne `index.html` in deinem Editor
 - Bearbeite `css/style.css` für Styling
 - Teste regelmäßig im Browser (F5 zum Neuladen)
 
 ### Schritt 4: Änderungen speichern (Git)
+
 ```bash
 # Status prüfen
 git status
@@ -36,6 +40,7 @@ git push origin main
 ## 📋 Workflow-Tipps
 
 ### Branch-Strategie (Optional für Fortgeschrittene)
+
 ```bash
 # Neuen Branch für Version erstellen
 git checkout -b version1-bearbeitung
@@ -52,11 +57,19 @@ git merge version1-bearbeitung
 ```
 
 ### Best Practices
+
 - ✅ Committe oft und mit aussagekräftigen Messages
 - ✅ Teste im Browser bevor du committest
 - ✅ Nutze die `docs/` Ordner als Referenz
 - ✅ Schaue in `shared-examples/` für Inspiration
 - ✅ Erst selbst versuchen, dann `loesung/` anschauen
+
+### Automatische README-Updates
+
+- ℹ️ Der Datumsstand in „Was ist neu?“ wird automatisch gepflegt.
+- ✅ Bei Änderungen unter `docs/` oder `material/` kann GitHub Actions den Datumsstand in `README.md` selbst aktualisieren.
+- ✅ Falls du lokal prüfen möchtest: `python3 scripts/update_whats_new_date.py`
+- ⚠️ Bitte den Datumsstand nicht manuell „hart“ setzen, wenn direkt danach ohnehin ein Doku-Commit folgt.
 
 ## 🆘 Hilfe benötigt?
 
