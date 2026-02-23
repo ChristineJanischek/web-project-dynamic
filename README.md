@@ -299,378 +299,46 @@ Praxisvorschlag:
 
 ## 📂 Projektstruktur
 
-> **💡 Automatisches Setup:** Dieses Projekt nutzt DevContainers für automatische Tool-Installation in Codespaces!  
-> Details siehe [.devcontainer/CODESPACES_SETUP.md](.devcontainer/CODESPACES_SETUP.md)
+Die wichtigsten Bereiche im Überblick:
 
-```
-web-project-dynamic/
-├── .github/
-│   └── workflows/
-│       └── validate-html.yml      # 🤖 Automatische HTML-Validierung
-├── docs/                          # 📚 Umfassende Dokumentation
-│   ├── intro.md                   # ✅ Einstieg ins Web
-│   ├── html-grundgeruest.md       # ✅ HTML5 Basics
-│   ├── seitenstrukturelemente.md  # ✅ Semantisches HTML
-│   ├── css-einbinden.md           # ✅ CSS Integration
-│   ├── css-basis.md               # ✅ CSS Grundlagen
-│   ├── css-formatierung.md        # ✅ Text & Farben
-│   ├── box-modell.md              # ✅ Margin, Padding, Border
-│   ├── responsive-design.md       # ✅ Media Queries, Mobile-First
-│   ├── bilder-grafiken.md         # ✅ Bilder responsive
-│   ├── galerien.md                # ✅ Grid-Galerien, Lightbox
-│   ├── formulare.md               # ✅ Forms & Validation
-│   ├── js.md                      # 🚧 JavaScript (geplant)
-│   ├── react.md                   # 🚧 React (geplant)
-│   ├── python.md                  # 🚧 Flask Backend (geplant)
-│   ├── php.md                     # 🚧 PHP (geplant)
-│   ├── php-lokal-testen.md        # ✅ PHP von Console aus testen
-│   ├── datenbank.md               # 🚧 MySQL (geplant)
-│   └── testen.md                  # 🚧 Testing (geplant)
-├── shared-examples/               # 💡 Vollständiges Demo-Projekt
-│   ├── index.html                 # Responsive Beispiel-Seite
-│   ├── css/
-│   │   └── style.css              # Modernes CSS mit Media Queries
-│   ├── js/
-│   │   └── script.js              # Interaktive Navigation
-│   └── images/
-│       └── schildkroete_echse.jpg
-├── version1/                      # 🎓 Version 1: HTML & CSS Basics
-│   ├── README.md                  # Aufgabenstellung (v1.0-release)
-│   ├── aufgabe/                   # Arbeitsbereich für Studierende
-│   │   ├── index.html
-│   │   └── css/style.css
-│   └── loesung/                   # Musterlösung
-│       ├── index.html
-│       ├── README.md
-│       └── css/style.css
-├── version2/                      # 🎓 Version 2: Box-Modell & Responsive
-│   ├── README.md                  # Aufgabenstellung
-│   ├── aufgabe/                   # Starter-Template mit TODOs
-│   │   ├── index.html             # HTML-Gerüst mit Kommentaren
-│   │   ├── css/style.css          # CSS-Template mit Lernhilfen
-│   │   └── js/script.js           # JavaScript-Vorlage
-│   └── loesung/                   # Musterlösung
-│       ├── index.html
-│       ├── css/style.css
-│       ├── js/script.js
-│       └── images/logo_final.png
-├── version3/                      # 🎓 Version 3: MiFa - Mission Future Academy
-│   ├── README.md                  # Aufgabenstellung & Überblick
-│   ├── PFADE.md                   # Pfadstruktur-Dokumentation
-│   ├── aufgabe/                   # Arbeitsbereich für Schüler
-│   │   ├── README.md              # Detaillierte Anleitung
-│   │   ├── phase1-concept/        # Phase 1: Konzeption
-│   │   │   ├── AUFGABEN.md        # Schritt-für-Schritt Phase 1
-│   │   │   ├── results/           # Ergebnisse (names.json)
-│   │   │   └── templates/         # Vorlagen (Personas, Design, Wireframes)
-│   │   ├── phase2-implementation/ # Phase 2: Implementierung
-│   │   │   ├── index-starter.html # HTML-Starter
-│   │   │   ├── css/style-starter.css
-│   │   │   └── js/script-starter.js
-│   │   ├── concept/               # Mockups & Assets
-│   │   │   └── Mockups_MiFa.odp   # LibreOffice Präsentation
-│   │   ├── images/                # Grafiken (Logo, Startbild, Icon)
-│   │   │   ├── Logo_farbig.jpg
-│   │   │   ├── startbild.png
-│   │   │   └── ic_launcher.png
-│   │   ├── surveys/               # Partizipative Namensfindung
-│   │   │   ├── name_survey/       # Schülerfirma-Name
-│   │   │   │   ├── form.html
-│   │   │   │   └── process.py
-│   │   │   └── app_names/         # App-Namen
-│   │   │       ├── form.html
-│   │   │       └── process.py
-│   │   ├── projects/              # App-Detailseiten
-│   │   │   ├── rideshare.html     # Mitfahr-App
-│   │   │   ├── mindlink.html      # MindLink
-│   │   │   └── co2.html           # CO2-Tracker
-│   │   └── reference/             # Referenz-Implementierung
-│   │       └── complete-example/
-│   └── loesung/                   # Musterlösung (Lehrende)
-│       ├── README.md              # Bewertung & Begründungen
-│       ├── loesung_phase1.md      # Phase 1 Konzept-Dokumentation
-│       ├── loesung_phase2.md      # Phase 2 Implementierungs-Dokumentation
-│       ├── index.html             # Vollständige HTML-Implementierung
-│       ├── css/style.css          # Design-System mit Custom Properties
-│       ├── js/script.js           # Navigation, Validierung, Scroll-Effekte
-│       └── images/                # Alle Grafiken
-│           ├── Logo_farbig.jpg
-│           ├── startbild.png
-│           ├── ic_launcher.png
-│           ├── team-emma.svg      # Team-Avatare
-│           ├── team-luca.svg
-│           ├── team-max.svg
-│           └── team-sophie.svg
-├── version4/                      # 🎓 Version 4: BMI-Rechner mit MVC (PHP)
-│   ├── README.md                  # Aufgabenstellung & Überblick
-│   ├── AUFGABE_0_ERKUNDUNG.md     # 📘 Aufgabe 0: Vorlage erkunden (Verständnis)
-│   ├── AUFGABE_1_VIEW.md          # 📝 Aufgabe 1: HTML-Formular (View)
-│   ├── AUFGABE_2_MODEL.md         # 🧮 Aufgabe 2: BMI-Berechnung (Model)
-│   ├── AUFGABE_3_CONTROLLER.md    # 🎮 Aufgabe 3: Controller & Ablauf
-│   ├── index.php                  # Einstiegspunkt
-│   ├── controllers/
-│   │   └── RechnerController.php  # Controller für Ablaufsteuerung
-│   ├── models/
-│   │   └── RechnerModel.php       # Model für Geschäftslogik & BMI-Berechnung
-│   ├── views/
-│   │   └── RechnerView.php        # View für HTML-Rendering
-│   ├── layouts/
-│   │   ├── head.php               # HTML-Header
-│   │   ├── header.php             # Website-Header
-│   │   ├── nav.php                # Navigation
-│   │   ├── main.php               # Hauptinhalt (Formular & Ergebnis)
-│   │   └── footer.php             # Footer
-│   └── css/
-│       └── style.css              # Styling für BMI-Rechner
-├── scripts/                       # Utility-Scripts
-│   ├── run_accessibility.sh       # pa11y Runner
-│   ├── validate_names.py          # JSON Validator
-│   └── update_readme_docs.py      # README Generator
-├── templates/                     # Polyrepo Templates
-│   ├── rideshare-template/        # MiFaRide Template
-│   ├── mindlink-template/         # MindLink Template
-│   └── co2-tracker-template/      # CO2-Tracker Template
-├── .github/                       # GitHub Actions
-│   └── workflows/
-│       ├── validate-html.yml      # HTML Validierung
-│       ├── quality.yml            # Lighthouse + pa11y
-│       ├── validate-names.yml     # JSON Schema Check
-│       └── template-sync.yml      # Template-Update Notification
-├── .gitignore                     # Ignoriert IDE-Dateien, node_modules, etc.
-├── .lighthouserc.json             # Lighthouse CI Konfiguration
-├── package.json                   # npm Dependencies (pa11y, Lighthouse)
-├── docs/handbook/                 # Repo-Handbook (Architektur, Template-Sync, Autograding)
-│   ├── ARCHITECTURE.md
-│   ├── TEMPLATE_SYNC.md
-│   ├── TEMPLATE_UPDATE_STRATEGY.md
-│   └── GITHUB_CLASSROOM_AUTOGRADING.md
-├── CONTRIBUTING.md                # 📖 Git-Workflow für Studierende
-└── README.md                      # Diese Datei
-```
+- `docs/` – zentrale Dokumentation (Start: [docs/README.md](docs/README.md))
+  - `statisch/`, `dynamisch/`, `konzeption/`, `programmierung/`, `handbook/`
+- `version1/` bis `version4/` – aufeinander aufbauende Lernversionen
+- `shared-examples/` – vollständiges Beispielprojekt
+- `scripts/` – Automationen (README-Update, Validierung, Backups)
+- `.github/workflows/` – CI/CD- und Qualitäts-Workflows
 
-**Hinweis:** Backend-Ordner (`backend-python/`, `backend-php/`, `db/`) werden in Version 4+ hinzugefügt.
+Detaillierte Strukturregeln: [docs/STRUKTUR.md](docs/STRUKTUR.md)
 
 ---
 
-## 🎓 Für Lehrkräfte: Classroom Setup
+## 🎓 Für Lehrkräfte & Betrieb
 
-- **Template-Repository:** Als Template auf GitHub markieren
-- **GitHub Classroom:** Repository als Assignment verteilen
-- **Auto-Grading:** GitHub Actions läuft automatisch
-- **Feedback:** Über Pull Requests und Code Reviews
-- **Lösungen:** Optional `*/loesung/` in `.gitignore` für Studenten
+- Classroom-Einrichtung: [docs/handbook/GITHUB_CLASSROOM_AUTOGRADING.md](docs/handbook/GITHUB_CLASSROOM_AUTOGRADING.md)
+- Architektur & Wartung: [docs/handbook/ARCHITECTURE.md](docs/handbook/ARCHITECTURE.md)
+- Template-Synchronisierung: [docs/handbook/TEMPLATE_SYNC.md](docs/handbook/TEMPLATE_SYNC.md)
+- Backup-Best-Practice: [docs/handbook/BACKUP_STRATEGY.md](docs/handbook/BACKUP_STRATEGY.md)
 
-## 🧪 Wie teste ich meine Webseite?
+## 🧪 Testen & Vorschau
 
-### Methode 1: Direkt im Browser öffnen (Einfachste Methode)
-
-1. Öffne den Datei-Explorer deines Computers
-2. Navigiere zu: `web-project-dynamic/shared-examples/`
-3. **Rechtsklick** auf `index.html`
-4. Wähle "Öffnen mit" → Dein Browser (Chrome, Firefox, Edge, Safari)
-5. Die Seite wird sofort angezeigt!
-
-**Tipp**: Bei Änderungen am Code einfach die Browser-Seite **neu laden** (F5 oder Strg+R / Cmd+R).
-
-### Methode 2: VS Code Live Server (Empfohlen für Entwicklung)
-
-1. Installiere die Extension "Live Server" in VS Code:
-   - Klicke auf das Extensions-Symbol (links in der Seitenleiste)
-   - Suche nach "Live Server" (von Ritwick Dey)
-   - Klicke auf "Install"
-2. Öffne `shared-examples/index.html` in VS Code
-3. **Rechtsklick** im Editor → "Open with Live Server"
-4. Dein Browser öffnet sich automatisch mit der Seite
-5. **Vorteil**: Änderungen werden automatisch im Browser aktualisiert!
-
-### Methode 3: Python HTTP Server (Terminal)
-
-Falls Python installiert ist:
-
-```bash
-cd shared-examples
-python3 -m http.server 8000
-```
-
-Dann im Browser öffnen: `http://localhost:8000`
-
-### Methode 4: VS Code Simple Browser (Integriert)
-
-1. Öffne `shared-examples/index.html` in VS Code
-2. Drücke `Strg+Shift+P` (Windows/Linux) oder `Cmd+Shift+P` (Mac)
-3. Tippe: "Simple Browser: Show"
-4. Gib ein: `file:///DEIN_PFAD/web-project-dynamic/shared-examples/index.html`
-
-### 📱 Mobile-Ansicht testen (Responsive Design)
-
-**Im Browser (Chrome/Firefox/Edge)**:
-
-1. Öffne die Webseite
-2. Drücke `F12` für Developer Tools
-3. Klicke auf das **Smartphone-Symbol** (Toggle Device Toolbar)
-4. Wähle verschiedene Geräte aus dem Dropdown (iPhone, iPad, Samsung...)
-5. Teste das Hamburger-Menü (☰) und die Anpassung der Layouts
-
-**Tastenkombinationen**:
-
-- Chrome: `Strg+Shift+M` / `Cmd+Shift+M`
-- Firefox: `Strg+Shift+M` / `Cmd+Shift+M`
-
-### ✅ Was solltest du testen?
-
-- [ ] Seite lädt ohne Fehler
-- [ ] Alle Bilder werden angezeigt
-- [ ] CSS wird korrekt angewendet (Farben, Layout)
-- [ ] JavaScript funktioniert (Button-Klick zeigt Alert)
-- [ ] Navigation funktioniert (Links springen zu Sektionen)
-- [ ] **Mobile**: Hamburger-Menü öffnet/schließt Navigation
-- [ ] **Mobile**: Cards stapeln sich untereinander
-- [ ] **Tablet**: Cards zeigen sich in 2 Spalten
-- [ ] **Desktop**: Cards zeigen sich in 3 Spalten
-
-### 🐛 Fehlersuche (Debugging)
-
-Wenn etwas nicht funktioniert:
-
-1. Öffne Developer Tools (`F12`)
-2. Schaue in die **Console** (zeigt JavaScript-Fehler)
-3. Schaue in den **Network**-Tab (zeigt fehlende Dateien)
-4. Prüfe Dateinamen und Pfade (Groß-/Kleinschreibung beachten!)
-
-Häufige Fehler:
-
-- CSS wird nicht geladen → Pfad in `<link href="css/style.css">` prüfen
-- JS funktioniert nicht → Pfad in `<script src="js/script.js">` prüfen
-- Bilder fehlen → URL oder Pfad prüfen
-
-## 🔍 Testen & Ansehen der Webseite
-
-Es gibt mehrere Möglichkeiten, deine Arbeit im Browser zu testen:
-
-### **Methode 1: Live Preview in VS Code (Empfohlen für Anfänger)**
-
-1. **Live Server Extension installieren:**
-   - Klicke links auf das Extensions-Symbol (vier Quadrate) oder drücke `Strg+Shift+X`
-   - Suche nach "Live Server" (von Ritwick Dey)
-   - Klicke auf "Install"
-
-2. **HTML-Datei öffnen:**
-   - Navigiere im Explorer zu `shared-examples/index.html`
-   - Rechtsklick auf die Datei → **"Open with Live Server"**
-
-3. **Automatisches Neuladen:**
-   - Der Browser öffnet sich automatisch
-   - Änderungen in HTML/CSS/JS werden sofort sichtbar (Auto-Reload)
-   - Die Seite läuft auf `http://127.0.0.1:5500` oder ähnlich
-
-4. **Responsive testen:**
-   - Im Browser: `F12` für DevTools
-   - Klicke auf das Handy/Tablet-Symbol (Toggle Device Toolbar)
-   - Wähle verschiedene Geräte aus (iPhone, iPad, etc.)
-
-### **Methode 2: Simple Browser in VS Code**
-
-1. **HTML-Datei öffnen** (`shared-examples/index.html`)
-2. Drücke `Strg+Shift+P` (Command Palette)
-3. Tippe: **"Simple Browser: Show"**
-4. Gib die URL ein: `file:///workspaces/web-project-dynamic/shared-examples/index.html`
-
-⚠️ **Nachteil:** Kein automatisches Neuladen bei Änderungen.
-
-### **Methode 3: Direkt im Browser öffnen**
-
-1. **Datei-Explorer öffnen:**
-   - Navigiere zu deinem Projektordner
-   - Finde `shared-examples/index.html`
-
-2. **Im Browser öffnen:**
-   - Rechtsklick → "Öffnen mit" → Wähle deinen Browser (Chrome, Firefox, Edge)
-   - Oder ziehe die Datei direkt ins Browser-Fenster
-
-3. **Neuladen nach Änderungen:**
-   - Nach jeder Änderung im Code drücke `F5` oder `Strg+R` im Browser
-
-### **Methode 4: Python SimpleHTTPServer (Fortgeschritten)**
-
-Falls Python installiert ist:
-
-```bash
-cd shared-examples
-python3 -m http.server 8000
-```
-
-Dann öffne `http://localhost:8000` im Browser.
-
----
-
-## 📱 Mobile Ansicht testen
-
-1. **Browser DevTools öffnen:** `F12`
-2. **Device Toolbar aktivieren:** `Strg+Shift+M` (Chrome/Edge) oder Icon oben links
-3. **Gerät wählen:** iPhone, iPad, oder benutzerdefinierte Größe
-4. **Hamburger-Menü testen:** Bei Bildschirmbreite < 768px erscheint das ☰ Symbol
-5. **Touch-Simulation:** Klicke auf Links und Buttons, um Navigation zu testen
-
-### Was du testen solltest:
-
-- ✅ Funktioniert das Toggle-Menü auf kleinen Bildschirmen?
-- ✅ Sind alle Texte lesbar?
-- ✅ Passen Bilder sich an die Breite an?
-- ✅ Sind Buttons groß genug zum Tippen (min. 44x44px)?
-- ✅ Scrollen alle Bereiche korrekt?
-
----
-
-## 🐛 Debugging-Tipps
-
-**Problem: CSS wird nicht geladen**
-
-- Prüfe den Pfad in `index.html`: `<link rel="stylesheet" href="css/style.css">`
-- Öffne DevTools (F12) → Tab "Network" → Suche nach `style.css` (rot = Fehler)
-
-**Problem: JavaScript funktioniert nicht**
-
-- Öffne DevTools → Tab "Console" → Suche nach Fehlermeldungen (rot)
-- Prüfe den Pfad: `<script src="js/script.js"></script>`
-
-**Problem: Seite lädt nicht (Live Server)**
-
-- Stelle sicher, dass Live Server Extension aktiv ist (unten rechts in VS Code)
-- Stoppe Server (Rechtsklick auf Port) und starte neu
-
-**Problem: Mobile Ansicht zeigt Desktop-Version**
-
-- Prüfe ob `<meta name="viewport" content="width=device-width, initial-scale=1.0">` im `<head>` steht
-
----
-
-## 📂 Dateistruktur (shared-examples/)
-
-```
-shared-examples/
-├── index.html          # Haupt-HTML-Datei
-├── css/
-│   └── style.css       # Alle Styles + Media Queries
-└── js/
-    └── script.js       # Mobile Navigation + Interaktionen
-```
-
-**Wichtig:** Achte immer auf korrekte Pfade beim Einbinden von Dateien!
+- Schnellster Weg für Lernende: [docs/handbook/QUICKSTART_LIVE_SERVER.md](docs/handbook/QUICKSTART_LIVE_SERVER.md)
+- Direktes Übungsziel: `shared-examples/index.html`
+- Qualitäts-Checks (automatisch): `.github/workflows/validate-html.yml` und weitere Workflows unter `.github/workflows/`
 
 ## 🎯 Lernpfad-Empfehlung
 
 ### Phase 1: Frontend Basics (Version 1-2)
 
-1. ✅ **HTML-Grundgerüst** nachvollziehen → [`docs/html-grundgeruest.md`](docs/statisch/html-grundgeruest.md)
-2. ✅ **CSS Box-Modell** verstehen → [`docs/box-modell.md`](docs/statisch/box-modell.md) + Browser DevTools
-3. ✅ **Responsive Design** umsetzen → [`docs/responsive-design.md`](docs/statisch/responsive-design.md)
+1. ✅ **HTML-Grundgerüst** nachvollziehen → [`docs/statisch/html-grundgeruest.md`](docs/statisch/html-grundgeruest.md)
+2. ✅ **CSS Box-Modell** verstehen → [`docs/statisch/box-modell.md`](docs/statisch/box-modell.md) + Browser DevTools
+3. ✅ **Responsive Design** umsetzen → [`docs/statisch/responsive-design.md`](docs/statisch/responsive-design.md)
 4. 💪 **Version 1 abschließen** → Eigenständige HTML+CSS Seite
 5. 💪 **Version 2 starten** → Box-Modell & Responsive Layout
 
 ### Phase 2: Interaktivität (Version 3-4)
 
-6. 📷 **Bilder & Galerien** → [`docs/bilder-grafiken.md`](docs/statisch/bilder-grafiken.md), [`docs/galerien.md`](docs/statisch/galerien.md)
-7. 📝 **Formulare** erstellen → [`docs/formulare.md`](docs/statisch/formulare.md)
+6. 📷 **Bilder & Galerien** → [`docs/statisch/bilder-grafiken.md`](docs/statisch/bilder-grafiken.md), [`docs/statisch/galerien.md`](docs/statisch/galerien.md)
+7. 📝 **Formulare** erstellen → [`docs/statisch/formulare.md`](docs/statisch/formulare.md)
 8. ⚡ **JavaScript Basics** → DOM-Manipulation, Events
 9. 🎨 **Fortgeschrittene Layouts** → CSS Grid, Flexbox-Mastery
 
@@ -681,16 +349,12 @@ shared-examples/
 12. 🗄️ **Datenbank** anbinden → MySQL Integration
 13. ✅ **Testing** → Jest, Pytest, PHPUnit
 
-## 🤖 Automatische Validierung
+## 🤖 Automatisierung
 
-Dieses Projekt nutzt **GitHub Actions** für automatische Code-Qualität:
-
-- ✅ **HTML-Validierung** bei jedem Push
-- 📊 **Ergebnisse** im "Actions"-Tab auf GitHub
-- 🔴 **Fehler** werden automatisch angezeigt
-- 🟢 **Erfolg** = Code ist valide
-
-**Workflow-Datei:** `.github/workflows/validate-html.yml`
+- HTML-Validierung: `.github/workflows/validate-html.yml`
+- Doku-Tabelle: `.github/workflows/update-docs-table.yml`
+- Was-ist-neu-Datum: `.github/workflows/update-whats-new-date.yml`
+- Backup-Snapshot: `.github/workflows/backup-snapshot.yml`
 
 ## 🧪 Testing (Überblick - Geplant)
 
@@ -753,6 +417,8 @@ Verbesserungen und Erweiterungen sind willkommen!
 - **Fragen?** → Erstelle ein Issue auf GitHub
 - **Bugs?** → Bug Report im Issues-Tab
 - **Verbesserungen?** → Pull Request erstellen
+
+PR-Standard mit Governance-Checklist: [.github/pull_request_template.md](.github/pull_request_template.md)
 
 ---
 
