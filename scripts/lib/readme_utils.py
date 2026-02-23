@@ -35,6 +35,14 @@ def replace_markdown_section(content: str, section_heading: str, replacement: st
     return updated
 
 
+def get_markdown_section(content: str, section_heading: str) -> str:
+    pattern = rf"(^{re.escape(section_heading)}.*?)(\n##\s|\Z)"
+    match = re.search(pattern, content, flags=re.DOTALL | re.MULTILINE)
+    if not match:
+        raise ValueError(f"Abschnitt nicht gefunden: {section_heading}")
+    return match.group(1)
+
+
 def update_whats_new_heading(content: str, formatted_date: str) -> tuple[str, bool]:
     new_heading = f"## 🆕 Was ist neu? (Stand: {formatted_date})"
     match = _WHATS_NEW_HEADING_PATTERN.search(content)

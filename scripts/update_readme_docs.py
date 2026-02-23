@@ -5,11 +5,19 @@ Scannt docs/ Ordner und aktualisiert die Lernpfad-Tabelle
 
 Verwendung:
     python3 scripts/update_readme_docs.py
+    python3 scripts/update_readme_docs.py --check
 """
 
+import argparse
 from typing import List, Tuple
 
-from lib.readme_utils import DOCS_DIR, replace_markdown_section, read_readme, write_readme
+from lib.readme_utils import (
+    DOCS_DIR,
+    get_markdown_section,
+    replace_markdown_section,
+    read_readme,
+    write_readme,
+)
 
 # Dokumentations-Metadaten (Reihenfolge = Lernpfad)
 DOC_METADATA: List[Tuple[str, str, str]] = [
@@ -33,68 +41,136 @@ DOC_METADATA: List[Tuple[str, str, str]] = [
     ("react.md", "React Einstieg", "Komponenten, Props, State"),
     ("python.md", "Python (Flask)", "Minimales API Backend"),
     ("php.md", "PHP Grundlagen", "Serverseitige Skripte, Ausgabe, Verarbeitung"),
+    (
+        "programmierung/grundlagen/README.md",
+        "Programmier-Grundlagen (neu)",
+        "Sprachübergreifende Architektur für Fundamentals",
+    ),
+    (
+        "programmierung/grundlagen/php/README.md",
+        "PHP Fundamentals (modular)",
+        "Ausgaben, Variablen, Kontrollstrukturen, Dateien",
+    ),
+    (
+        "programmierung/grundlagen/python/README.md",
+        "Python Fundamentals (modular)",
+        "Grundlagenpfad in Python-Struktur",
+    ),
+    (
+        "programmierung/grundlagen/javascript/README.md",
+        "JavaScript Fundamentals (modular)",
+        "Grundlagenpfad in JavaScript-Struktur",
+    ),
+    ("php-lokal-testen.md", "**PHP lokal testen**", "**PHP-Dateien von der Console aus testen**"),
     ("datenbank.md", "Datenbank (MySQL)", "Tabellen, Abfragen, Verbindung"),
     ("algorithmen-datenstrukturen.md", "Algorithmen & Datenstrukturen", "Listen, Arrays, Sortieren, Suchen"),
     ("testen.md", "Testen", "Warum Tests? Einfache Beispiele (Jest/Pytest/PHPUnit)"),
 ]
 
+
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Aktualisiert die Lernpfad-Tabelle in README.md oder prüft auf Abweichungen."
+    )
+    parser.add_argument(
+        "--check",
+        action="store_true",
+        help="Nur prüfen, ob README.md Änderungen benötigen würde (Exit-Code 2 bei Abweichung).",
+    )
+    return parser.parse_args()
+
+
 def generate_table() -> str:
     """Generiert die Markdown-Tabelle für die Dokumentationen."""
-    
     table_lines = [
         "## Inhalt / Lernpfade",
         "",
         "| Bereich | Datei / Link | Kurzbeschreibung |",
         "|--------|---------------|------------------|",
     ]
-    
+
     for filename, bereich, beschreibung in DOC_METADATA:
         doc_path = DOCS_DIR / filename
-        
-        # Nur Dateien hinzufügen, die tatsächlich existieren
         if doc_path.exists():
             link = f"[`docs/{filename}`](docs/{filename})"
             table_lines.append(f"| {bereich} | {link} | {beschreibung} |")
-    
+
     return "\n".join(table_lines)
 
 
-def update_readme(new_table: str) -> None:
-    """Aktualisiert die README.md mit der neuen Tabelle."""
+def build_updated_readme(current_content: str, new_table: str) -> str:
+    return replace_markdown_section(current_content, "## Inhalt / Lernpfade", new_table)
 
-    content = read_readme()
-    new_content = replace_markdown_section(content, "## Inhalt / Lernpfade", new_table)
-    write_readme(new_content)
-    
-    print("✅ README.md erfolgreich aktualisiert!")
+
+def _is_separator_cell(cell: str) -> bool:
+    stripped = cell.strip()
+    return bool(stripped) and all(char in "-: " for char in stripped)
+
+
+def parse_table_rows(markdown_section: str) -> List[Tuple[str, str, str]]:
+    rows: List[Tuple[str, str, str]] = []
+    for line in markdown_section.splitlines():
+        stripped_line = line.strip()
+        if not stripped_line.startswith("|"):
+            continue
+
+        cells = [cell.strip() for cell in stripped_line.strip("|").split("|")]
+        if len(cells) < 3:
+            continue
+
+        first_three = cells[:3]
+        if all(_is_separator_cell(cell) for cell in first_three):
+            continue
+        if first_three[0] == "Bereich" and first_three[1] == "Datei / Link":
+            continue
+
+        rows.append((first_three[0], first_three[1], first_three[2]))
+
+    return rows
 
 
 def main() -> int:
-    """Hauptfunktion."""
-    
+    args = parse_args()
+
     print("📝 Generiere Dokumentations-Tabelle...")
-    
-    # Prüfe ob docs/ Ordner existiert
+
     if not DOCS_DIR.exists():
         print(f"❌ Fehler: docs/ Ordner nicht gefunden: {DOCS_DIR}")
         return 1
-    
-    # Anzahl vorhandener Dateien
+
     existing_docs = [f for f, _, _ in DOC_METADATA if (DOCS_DIR / f).exists()]
     print(f"📋 Gefundene Dokumentationen: {len(existing_docs)}/{len(DOC_METADATA)}")
-    
-    # Generiere Tabelle
+
     new_table = generate_table()
-    
-    # Aktualisiere README
+
     try:
-        update_readme(new_table)
-        print(f"✨ Fertig! {len(existing_docs)} Einträge in der Tabelle.")
-        return 0
-    except Exception as e:
-        print(f"❌ Fehler beim Aktualisieren: {e}")
+        current_content = read_readme()
+        current_section = get_markdown_section(current_content, "## Inhalt / Lernpfade")
+        new_content = build_updated_readme(current_content, new_table)
+    except Exception as error:
+        print(f"❌ Fehler beim Aktualisieren: {error}")
         return 1
+
+    expected_rows = parse_table_rows(new_table)
+    current_rows = parse_table_rows(current_section)
+    changed = expected_rows != current_rows
+
+    if args.check:
+        if changed:
+            print("⚠️ README.md ist nicht aktuell (Lernpfad-Tabelle weicht ab).")
+            return 2
+        print("✅ README.md ist aktuell.")
+        return 0
+
+    if not changed:
+        print("ℹ️ README.md ist bereits aktuell. Keine Änderung nötig.")
+        return 0
+
+    write_readme(new_content)
+    print("✅ README.md erfolgreich aktualisiert!")
+    print(f"✨ Fertig! {len(existing_docs)} Einträge in der Tabelle.")
+    return 0
 
 
 if __name__ == "__main__":
-    exit(main())
+    raise SystemExit(main())

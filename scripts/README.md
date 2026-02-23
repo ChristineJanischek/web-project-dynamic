@@ -23,11 +23,14 @@ Wenn neue `.md`-Dateien zu `docs/` hinzugefügt werden, muss die Tabelle unter *
 
 ```bash
 python3 scripts/update_whats_new_date.py
+python3 scripts/update_whats_new_date.py --check
 ```
 
 **Hinweis:**
 
 - Das Skript ändert ausschließlich die Datumsangabe in der "Was ist neu?"-Überschrift.
+- `--check` liefert Exit-Code `2`, wenn eine Änderung nötig wäre (CI-freundlich).
+- Der Tabellenabgleich erfolgt semantisch (Spalteninhalte), nicht über reine Markdown-Formatierung.
 
 ### Methode 1: GitHub Actions (Empfohlen)
 
@@ -50,6 +53,7 @@ python3 scripts/update_whats_new_date.py
 ```bash
 # Im Projekt-Root ausführen
 python3 scripts/update_readme_docs.py
+python3 scripts/update_readme_docs.py --check
 ```
 
 **Voraussetzungen:**
@@ -64,6 +68,12 @@ python3 scripts/update_readme_docs.py
 ✅ README.md erfolgreich aktualisiert!
 ✨ Fertig! 19 Einträge in der Tabelle.
 ```
+
+**Exit-Codes (beide Python-Skripte):**
+
+- `0`: erfolgreich (inkl. "keine Änderung nötig")
+- `1`: Fehler
+- `2`: `--check` meldet notwendige Änderungen
 
 ### Methode 3: Bash-Skript (Linux/Mac)
 
