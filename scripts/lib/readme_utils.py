@@ -26,12 +26,11 @@ def write_readme(content: str) -> None:
 def replace_markdown_section(content: str, section_heading: str, replacement: str) -> str:
     pattern = rf"(^{re.escape(section_heading)}.*?)(\n##\s|\Z)"
 
-    def _replace(match: re.Match[str]) -> str:
-        return replacement + "\n\n" + match.group(2)
-
-    updated = re.sub(pattern, _replace, content, flags=re.DOTALL | re.MULTILINE)
-    if updated == content:
+    match = re.search(pattern, content, flags=re.DOTALL | re.MULTILINE)
+    if not match:
         raise ValueError(f"Abschnitt nicht gefunden: {section_heading}")
+
+    updated = content[: match.start()] + replacement + "\n\n" + match.group(2) + content[match.end() :]
     return updated
 
 
