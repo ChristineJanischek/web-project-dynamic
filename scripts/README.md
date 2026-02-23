@@ -8,6 +8,33 @@ Wenn neue `.md`-Dateien zu `docs/` hinzugefügt werden, muss die Tabelle unter *
 
 ## 🤖 Automatische Methoden
 
+### Methode -1: Backup-Snapshot erstellen
+
+**Was passiert:**
+
+- Erstellt ein vollständiges `git bundle` (inkl. Historie)
+- Erstellt ein `tar.gz`-Archiv des aktuellen `HEAD`
+- Schreibt `manifest.txt` und `SHA256SUMS.txt` zur Integritätsprüfung
+
+**Lokal ausführen:**
+
+```bash
+chmod +x scripts/create_backup_snapshot.sh
+./scripts/create_backup_snapshot.sh
+```
+
+**Optionales Zielverzeichnis:**
+
+```bash
+./scripts/create_backup_snapshot.sh /pfad/zum/backup
+```
+
+**Automatisierung:**
+
+- Workflow: `.github/workflows/backup-snapshot.yml`
+- Trigger: wöchentlich + manuell
+- Ergebnis: Artifact `repo-backup-snapshot` (30 Tage)
+
 ### Methode 0: Datumsstand in "Was ist neu?" aktualisieren
 
 **Was passiert:**

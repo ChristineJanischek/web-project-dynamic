@@ -23,6 +23,7 @@ from lib.readme_utils import (
 DOC_METADATA: List[Tuple[str, str, str]] = [
     ("README.md", "Docs-Startseite", "Navigation über statisch, dynamisch, konzeption, programmierung und handbook"),
     ("STRUKTUR.md", "Doku-Struktur", "Ablageregeln, Link-Regeln und Wartungsroutine für langfristige Pflege"),
+    ("handbook/BACKUP_STRATEGY.md", "Backup-Strategie", "Best-Practice für lokale und automatisierte Repository-Snapshots"),
     ("statisch/intro.md", "Einstieg & Überblick", "Was ist das Web? Rollen von Client/Server"),
     (
         "statisch/html-grundgeruest.md",

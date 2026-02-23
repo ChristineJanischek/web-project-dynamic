@@ -167,6 +167,7 @@ Vollständig funktionierendes Projekt mit HTML, CSS, JavaScript und SVG-Grafiken
 |--------|---------------|------------------|
 | Docs-Startseite | [`docs/README.md`](docs/README.md) | Navigation über statisch, dynamisch, konzeption, programmierung und handbook |
 | Doku-Struktur | [`docs/STRUKTUR.md`](docs/STRUKTUR.md) | Ablageregeln, Link-Regeln und Wartungsroutine für langfristige Pflege |
+| Backup-Strategie | [`docs/handbook/BACKUP_STRATEGY.md`](docs/handbook/BACKUP_STRATEGY.md) | Best-Practice für lokale und automatisierte Repository-Snapshots |
 | Einstieg & Überblick | [`docs/statisch/intro.md`](docs/statisch/intro.md) | Was ist das Web? Rollen von Client/Server |
 | HTML Grundgerüst | [`docs/statisch/html-grundgeruest.md`](docs/statisch/html-grundgeruest.md) | Aufbau von `<!DOCTYPE html>`, Grundtags, Validierung |
 | Seitenstrukturelemente | [`docs/statisch/seitenstrukturelemente.md`](docs/statisch/seitenstrukturelemente.md) | Semantische Tags (`header`,`nav`,`main`,`section`,...) |

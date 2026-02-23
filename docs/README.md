@@ -29,6 +29,7 @@ Diese Seite bündelt alle Doku-Bereiche des Repositories und hilft beim schnelle
   - [JavaScript Fundamentals](programmierung/grundlagen/javascript/README.md)
 
 - [Handbook (Lehrende & Architektur)](handbook/ARCHITECTURE.md)
+  - [Backup-Strategie](handbook/BACKUP_STRATEGY.md)
 
 ## Empfohlener Einstieg
 

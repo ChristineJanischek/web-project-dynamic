@@ -37,3 +37,6 @@ dist/
 build/
 *.min.js
 *.min.css
+
+# Lokale Backup-Snapshots
+backups/
