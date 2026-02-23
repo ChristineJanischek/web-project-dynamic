@@ -15,6 +15,7 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 - 🚀 Live Server vorinstalliert für sofortiges Testen
 
 ## 🆕 Was ist neu? (Stand: 23.02.2026)
+
 - ✅ Neue modulare Grundlagenpfade für [PHP](docs/programmierung/grundlagen/php/README.md), [Python](docs/programmierung/grundlagen/python/README.md) und [JavaScript](docs/programmierung/grundlagen/javascript/README.md)
 - ✅ Python-Kapitel zu Algorithmen und Dateiverarbeitung ergänzt
 - ✅ Unterrichtsmaterial von `ka_grundlagen/` nach [material/ka_grundlagen](material/ka_grundlagen) migriert
@@ -22,130 +23,28 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 
 ---
 
-## 🚀 Erste Schritte - Setup für Schüler
+## 🚀 Schnellstart (empfohlen)
 
-### 1️⃣ VS Code öffnen
+### Für Schüler:innen in 5 Minuten
 
-Öffne dieses Projekt in Visual Studio Code:
+1. Projekt in VS Code öffnen (Codespaces oder lokal)
+2. Bei lokaler Nutzung empfohlene Extensions installieren
+3. Erste Datei öffnen: `version1/aufgabe/index.html`
+4. Mit Live Server starten (`Open with Live Server`)
+5. Änderungen speichern und direkt im Browser prüfen
 
-- **In GitHub Codespaces:** Bereits geöffnet! ✅ Alle Extensions werden **automatisch installiert**! 🎉
-- **Lokal:** `File` → `Open Folder` → Wähle den Projektordner
+### Detaillierte Setup-Anleitungen
 
-### 2️⃣ Extensions installieren
+- Codespaces Zero-Setup: [.devcontainer/CODESPACES_SETUP.md](.devcontainer/CODESPACES_SETUP.md)
+- DevContainer Details: [.devcontainer/README.md](.devcontainer/README.md)
+- Live Server Quickstart: [docs/handbook/QUICKSTART_LIVE_SERVER.md](docs/handbook/QUICKSTART_LIVE_SERVER.md)
+- Beitragsregeln & Workflow: [CONTRIBUTING.md](CONTRIBUTING.md)
 
-**📦 In GitHub Codespaces (empfohlen):**
+### Kurz-Troubleshooting
 
-- ✅ **Automatisch installiert!** Dank `.devcontainer/devcontainer.json` sind alle benötigten Extensions bereits da!
-- ⚡ Kein manueller Setup erforderlich
-- 📖 Details siehe [.devcontainer/README.md](.devcontainer/README.md)
-
-**💻 Lokale Installation:**
-
-Beim ersten Öffnen erscheint unten rechts eine Benachrichtigung:
-
-```
-📦 Dieses Repository empfiehlt Extensions
-[Details anzeigen] [Alle installieren] [Ignorieren]
-```
-
-**Klicke auf "Alle installieren"** - dann werden automatisch installiert:
-
-- ✅ **Live Server** - Zum sofortigen Testen deiner Website
-- ✅ **Prettier** - Automatische Code-Formatierung
-- ✅ **HTML CSS Support** - Bessere IntelliSense
-- ✅ **Auto Rename Tag** - HTML-Tags automatisch umbenennen
-- ✅ **ESLint** - JavaScript-Fehler erkennen
-- ✅ **Python** & **Pylance** - Für spätere Backend-Entwicklung
-
-**Für PHP-Entwicklung:**
-
-- ✅ **PHP Intelephense** (`bmewburn.vscode-intelephense-client`) - Code-Intelligence für PHP mit Autovervollständigung, Go-to-Definition und Fehlerprüfung
-- ✅ **PHP Debug** (`xdebug.php-debug`) - Debuggen mit Xdebug
-- ✅ **PHP DocBlocker** (`neilbrayfield.php-docblocker`) - Automatische PHPDoc-Kommentare
-- ✅ **PHP Namespace Resolver** (`MehediDracula.php-namespace-resolver`) - Import von Klassen
-- ✅ **PHP CS Fixer** (`junstyle.php-cs-fixer`) - Code-Formatierung nach Standards
-
-**Falls die Benachrichtigung nicht erscheint:**
-
-1. Drücke `Ctrl+Shift+P` (Windows/Linux) oder `Cmd+Shift+P` (Mac)
-2. Tippe: `Extensions: Show Recommended Extensions`
-3. Klicke auf "Install Workspace Recommended Extensions" ⬇️
-
-### 3️⃣ Live Server nutzen
-
-So testest du deine Website in Echtzeit:
-
-**Methode 1 - Rechtsklick (empfohlen):**
-
-1. Öffne eine HTML-Datei (z.B. `version1/aufgabe/index.html`)
-2. **Rechtsklick** in den Editor → `Open with Live Server`
-3. Deine Website öffnet sich automatisch im Browser! 🎉
-
-**Methode 2 - Status Bar:**
-
-1. Öffne eine HTML-Datei
-2. Klicke unten rechts auf **"Go Live"**
-3. Website wird gestartet!
-
-**Methode 3 - Keyboard Shortcut:**
-
-- Windows/Linux: `Alt+L Alt+O`
-- Mac: `Cmd+L Cmd+O`
-
-**🔄 Änderungen sehen:**
-
-- Speichere deine HTML/CSS/JS-Datei (`Ctrl+S` / `Cmd+S`)
-- Der Browser aktualisiert sich **automatisch**! ✨
-
-**❌ Server stoppen:**
-
-- Klicke auf **"Port: 5500"** in der Status Bar unten rechts
-- Oder drücke: `Alt+L Alt+C` (Windows/Linux) / `Cmd+L Cmd+C` (Mac)
-
-### 4️⃣ Auto-Save aktivieren (optional aber empfohlen)
-
-Damit du nicht ständig speichern musst:
-
-1. `File` → `Preferences` → `Settings` (oder `Ctrl+,`)
-2. Suche nach: `Auto Save`
-3. Wähle: `afterDelay`
-4. Deine Dateien werden jetzt automatisch gespeichert! 💾
-
-**Oder:** Bereits vorkonfiguriert in `.vscode/settings.json`! ✅
-
----
-
-## 🆘 Troubleshooting
-
-### ❌ "Go Live" Button erscheint nicht
-
-**Lösung:**
-
-1. Stelle sicher, dass Live Server installiert ist
-2. Öffne eine `.html`-Datei (nicht `.md` oder andere Dateien)
-3. Reload VS Code: `Ctrl+Shift+P` → `Reload Window`
-
-### ❌ Browser öffnet sich nicht automatisch
-
-**Lösung:**
-
-- Öffne manuell: `http://localhost:5500`
-- Oder ändere Browser in Settings: Live Server → Custom Browser
-
-### ❌ Port 5500 bereits belegt
-
-**Lösung:**
-
-1. Stoppe andere Live Server Instanzen
-2. Oder ändere den Port in `.vscode/settings.json`: `"liveServer.settings.port": 5501`
-
-### ❌ Änderungen werden nicht angezeigt
-
-**Lösung:**
-
-1. **Hard Refresh:** `Ctrl+Shift+R` (Windows) / `Cmd+Shift+R` (Mac)
-2. Stelle sicher, dass die Datei gespeichert wurde
-3. Prüfe die Browser-Konsole auf Fehler: `F12` → Console
+- Kein `Go Live` sichtbar → Extensions prüfen und VS Code-Fenster neu laden
+- Browser öffnet nicht → manuell `http://localhost:5500` aufrufen
+- Änderungen fehlen → Hard Refresh + gespeicherte Datei + Browser-Konsole prüfen
 
 ---
 
@@ -163,40 +62,39 @@ Vollständig funktionierendes Projekt mit HTML, CSS, JavaScript und SVG-Grafiken
 
 ## Inhalt / Lernpfade
 
-| Bereich | Datei / Link | Kurzbeschreibung |
-|--------|---------------|------------------|
-| Docs-Startseite | [`docs/README.md`](docs/README.md) | Navigation über statisch, dynamisch, konzeption, programmierung und handbook |
-| Doku-Struktur | [`docs/STRUKTUR.md`](docs/STRUKTUR.md) | Ablageregeln, Link-Regeln und Wartungsroutine für langfristige Pflege |
-| Backup-Strategie | [`docs/handbook/BACKUP_STRATEGY.md`](docs/handbook/BACKUP_STRATEGY.md) | Best-Practice für lokale und automatisierte Repository-Snapshots |
-| Einstieg & Überblick | [`docs/statisch/intro.md`](docs/statisch/intro.md) | Was ist das Web? Rollen von Client/Server |
-| HTML Grundgerüst | [`docs/statisch/html-grundgeruest.md`](docs/statisch/html-grundgeruest.md) | Aufbau von `<!DOCTYPE html>`, Grundtags, Validierung |
-| Seitenstrukturelemente | [`docs/statisch/seitenstrukturelemente.md`](docs/statisch/seitenstrukturelemente.md) | Semantische Tags (`header`,`nav`,`main`,`section`,...) |
-| CSS einbinden | [`docs/statisch/css-einbinden.md`](docs/statisch/css-einbinden.md) | Externe, interne & inline CSS, Best Practices |
-| CSS Basis | [`docs/statisch/css-basis.md`](docs/statisch/css-basis.md) | Selektoren, Eigenschaften, erste Styles |
-| CSS Formatierung | [`docs/statisch/css-formatierung.md`](docs/statisch/css-formatierung.md) | Text, Farben, Abstände, Schatten, Transitions |
-| Box-Modell | [`docs/statisch/box-modell.md`](docs/statisch/box-modell.md) | `margin`, `border`, `padding`, `content` |
-| Flexible Layouts | [`docs/statisch/flexible-layouts.md`](docs/statisch/flexible-layouts.md) | Flexbox & CSS Grid mit praktischen Beispielen |
-| Responsive Design | [`docs/statisch/responsive-design.md`](docs/statisch/responsive-design.md) | Media Queries, Mobile Navigation, Breakpoints |
-| Bilder & Grafiken | [`docs/statisch/bilder-grafiken.md`](docs/statisch/bilder-grafiken.md) | Formate, Einbindung, Responsivität |
-| Galerien | [`docs/statisch/galerien.md`](docs/statisch/galerien.md) | Einfache Bildgalerie, Grid/Flex |
-| Formulare & Auswertung | [`docs/statisch/formulare.md`](docs/statisch/formulare.md) | Formulare erstellen & validieren |
-| JavaScript Grundlagen | [`docs/dynamisch/js.md`](docs/dynamisch/js.md) | Variablen, Funktionen, DOM, Events |
-| Git & Versionsmanagement | [`docs/konzeption/git-versionsmanagement.md`](docs/konzeption/git-versionsmanagement.md) | Commits, Branches, Pull Requests, Workflows |
-| Zielgruppenanalyse | [`docs/konzeption/zielgruppenanalyse.md`](docs/konzeption/zielgruppenanalyse.md) | User Personas, Customer Journey, Nutzerbedürfnisse |
-| Corporate Design | [`docs/konzeption/corporate-design.md`](docs/konzeption/corporate-design.md) | Logo, Farben, Typografie, Brand Guidelines |
-| Konzeption & Webdesign | [`docs/konzeption/konzeption-webdesign.md`](docs/konzeption/konzeption-webdesign.md) | Briefing, Sitemap, Wireframes, Mockups |
-| React Einstieg | [`docs/dynamisch/react.md`](docs/dynamisch/react.md) | Komponenten, Props, State |
-| Python (Flask) | [`docs/dynamisch/python.md`](docs/dynamisch/python.md) | Minimales API Backend |
-| PHP Grundlagen | [`docs/dynamisch/php.md`](docs/dynamisch/php.md) | Serverseitige Skripte, Ausgabe, Verarbeitung |
-| Programmier-Grundlagen (neu) | [`docs/programmierung/grundlagen/README.md`](docs/programmierung/grundlagen/README.md) | Sprachübergreifende Architektur für Fundamentals |
-| PHP Fundamentals (modular) | [`docs/programmierung/grundlagen/php/README.md`](docs/programmierung/grundlagen/php/README.md) | Ausgaben, Variablen, Kontrollstrukturen, Dateien |
-| Python Fundamentals (modular) | [`docs/programmierung/grundlagen/python/README.md`](docs/programmierung/grundlagen/python/README.md) | Grundlagenpfad in Python-Struktur |
-| JavaScript Fundamentals (modular) | [`docs/programmierung/grundlagen/javascript/README.md`](docs/programmierung/grundlagen/javascript/README.md) | Grundlagenpfad in JavaScript-Struktur |
-| **PHP lokal testen** | [`docs/dynamisch/php-lokal-testen.md`](docs/dynamisch/php-lokal-testen.md) | **PHP-Dateien von der Console aus testen** |
-| Datenbank (MySQL) | [`docs/dynamisch/datenbank.md`](docs/dynamisch/datenbank.md) | Tabellen, Abfragen, Verbindung |
-| Algorithmen & Datenstrukturen | [`docs/dynamisch/algorithmen-datenstrukturen.md`](docs/dynamisch/algorithmen-datenstrukturen.md) | Listen, Arrays, Sortieren, Suchen |
-| Testen | [`docs/dynamisch/testen.md`](docs/dynamisch/testen.md) | Warum Tests? Einfache Beispiele (Jest/Pytest/PHPUnit) |
-
+| Bereich                           | Datei / Link                                                                                                 | Kurzbeschreibung                                                             |
+| --------------------------------- | ------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------- |
+| Docs-Startseite                   | [`docs/README.md`](docs/README.md)                                                                           | Navigation über statisch, dynamisch, konzeption, programmierung und handbook |
+| Doku-Struktur                     | [`docs/STRUKTUR.md`](docs/STRUKTUR.md)                                                                       | Ablageregeln, Link-Regeln und Wartungsroutine für langfristige Pflege        |
+| Backup-Strategie                  | [`docs/handbook/BACKUP_STRATEGY.md`](docs/handbook/BACKUP_STRATEGY.md)                                       | Best-Practice für lokale und automatisierte Repository-Snapshots             |
+| Einstieg & Überblick              | [`docs/statisch/intro.md`](docs/statisch/intro.md)                                                           | Was ist das Web? Rollen von Client/Server                                    |
+| HTML Grundgerüst                  | [`docs/statisch/html-grundgeruest.md`](docs/statisch/html-grundgeruest.md)                                   | Aufbau von `<!DOCTYPE html>`, Grundtags, Validierung                         |
+| Seitenstrukturelemente            | [`docs/statisch/seitenstrukturelemente.md`](docs/statisch/seitenstrukturelemente.md)                         | Semantische Tags (`header`,`nav`,`main`,`section`,...)                       |
+| CSS einbinden                     | [`docs/statisch/css-einbinden.md`](docs/statisch/css-einbinden.md)                                           | Externe, interne & inline CSS, Best Practices                                |
+| CSS Basis                         | [`docs/statisch/css-basis.md`](docs/statisch/css-basis.md)                                                   | Selektoren, Eigenschaften, erste Styles                                      |
+| CSS Formatierung                  | [`docs/statisch/css-formatierung.md`](docs/statisch/css-formatierung.md)                                     | Text, Farben, Abstände, Schatten, Transitions                                |
+| Box-Modell                        | [`docs/statisch/box-modell.md`](docs/statisch/box-modell.md)                                                 | `margin`, `border`, `padding`, `content`                                     |
+| Flexible Layouts                  | [`docs/statisch/flexible-layouts.md`](docs/statisch/flexible-layouts.md)                                     | Flexbox & CSS Grid mit praktischen Beispielen                                |
+| Responsive Design                 | [`docs/statisch/responsive-design.md`](docs/statisch/responsive-design.md)                                   | Media Queries, Mobile Navigation, Breakpoints                                |
+| Bilder & Grafiken                 | [`docs/statisch/bilder-grafiken.md`](docs/statisch/bilder-grafiken.md)                                       | Formate, Einbindung, Responsivität                                           |
+| Galerien                          | [`docs/statisch/galerien.md`](docs/statisch/galerien.md)                                                     | Einfache Bildgalerie, Grid/Flex                                              |
+| Formulare & Auswertung            | [`docs/statisch/formulare.md`](docs/statisch/formulare.md)                                                   | Formulare erstellen & validieren                                             |
+| JavaScript Grundlagen             | [`docs/dynamisch/js.md`](docs/dynamisch/js.md)                                                               | Variablen, Funktionen, DOM, Events                                           |
+| Git & Versionsmanagement          | [`docs/konzeption/git-versionsmanagement.md`](docs/konzeption/git-versionsmanagement.md)                     | Commits, Branches, Pull Requests, Workflows                                  |
+| Zielgruppenanalyse                | [`docs/konzeption/zielgruppenanalyse.md`](docs/konzeption/zielgruppenanalyse.md)                             | User Personas, Customer Journey, Nutzerbedürfnisse                           |
+| Corporate Design                  | [`docs/konzeption/corporate-design.md`](docs/konzeption/corporate-design.md)                                 | Logo, Farben, Typografie, Brand Guidelines                                   |
+| Konzeption & Webdesign            | [`docs/konzeption/konzeption-webdesign.md`](docs/konzeption/konzeption-webdesign.md)                         | Briefing, Sitemap, Wireframes, Mockups                                       |
+| React Einstieg                    | [`docs/dynamisch/react.md`](docs/dynamisch/react.md)                                                         | Komponenten, Props, State                                                    |
+| Python (Flask)                    | [`docs/dynamisch/python.md`](docs/dynamisch/python.md)                                                       | Minimales API Backend                                                        |
+| PHP Grundlagen                    | [`docs/dynamisch/php.md`](docs/dynamisch/php.md)                                                             | Serverseitige Skripte, Ausgabe, Verarbeitung                                 |
+| Programmier-Grundlagen (neu)      | [`docs/programmierung/grundlagen/README.md`](docs/programmierung/grundlagen/README.md)                       | Sprachübergreifende Architektur für Fundamentals                             |
+| PHP Fundamentals (modular)        | [`docs/programmierung/grundlagen/php/README.md`](docs/programmierung/grundlagen/php/README.md)               | Ausgaben, Variablen, Kontrollstrukturen, Dateien                             |
+| Python Fundamentals (modular)     | [`docs/programmierung/grundlagen/python/README.md`](docs/programmierung/grundlagen/python/README.md)         | Grundlagenpfad in Python-Struktur                                            |
+| JavaScript Fundamentals (modular) | [`docs/programmierung/grundlagen/javascript/README.md`](docs/programmierung/grundlagen/javascript/README.md) | Grundlagenpfad in JavaScript-Struktur                                        |
+| **PHP lokal testen**              | [`docs/dynamisch/php-lokal-testen.md`](docs/dynamisch/php-lokal-testen.md)                                   | **PHP-Dateien von der Console aus testen**                                   |
+| Datenbank (MySQL)                 | [`docs/dynamisch/datenbank.md`](docs/dynamisch/datenbank.md)                                                 | Tabellen, Abfragen, Verbindung                                               |
+| Algorithmen & Datenstrukturen     | [`docs/dynamisch/algorithmen-datenstrukturen.md`](docs/dynamisch/algorithmen-datenstrukturen.md)             | Listen, Arrays, Sortieren, Suchen                                            |
+| Testen                            | [`docs/dynamisch/testen.md`](docs/dynamisch/testen.md)                                                       | Warum Tests? Einfache Beispiele (Jest/Pytest/PHPUnit)                        |
 
 ## 📚 Aufgaben & Lernversionen
 
