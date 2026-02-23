@@ -113,7 +113,7 @@ Formatiere deine Webseite in der `css/style.css`:
 - [ ] Code ist sauber eingerückt und lesbar
 - [ ] Änderungen mit Git committed (`git add .` & `git commit -m "feat: Version 1 abgeschlossen"`)
 
-**📖 Git-Hilfe:** Lies [`docs/git-versionsmanagement.md`](../docs/git-versionsmanagement.md) für Git-Grundlagen!
+**📖 Git-Hilfe:** Lies [`docs/git-versionsmanagement.md`](../docs/konzeption/git-versionsmanagement.md) für Git-Grundlagen!
 
 ---
 

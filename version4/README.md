@@ -69,7 +69,7 @@ version4/
 1. **Startet mit [Aufgabe 0](AUFGABE_0_ERKUNDUNG.md)** - Ohne zu coden, erst verstehen!
 2. **Folgt den Aufgaben der Reihe nach** - Sie bauen aufeinander auf
 3. **Jede Aufgabe hat klare Anforderungen** - Was genau müsst ihr tun?
-4. **Testet nach jeder Aufgabe** - Funktioniert euer Code? (Siehe [PHP lokal testen](../docs/php-lokal-testen.md))
+4. **Testet nach jeder Aufgabe** - Funktioniert euer Code? (Siehe [PHP lokal testen](../docs/dynamisch/php-lokal-testen.md))
 
 ---
 
@@ -109,9 +109,9 @@ BMI = Gewicht (kg) / (Größe in Metern)²
 
 ## 🆘 Hilfreiche Ressourcen
 
-- [PHP lokal testen](../docs/php-lokal-testen.md) - So testet ihr eure Dateien
-- [PHP Basics](../docs/php.md) - PHP-Grundlagen auffrischen
-- [HTML-Formulare](../docs/formulare.md) - Wie Formulare funktionieren
+- [PHP lokal testen](../docs/dynamisch/php-lokal-testen.md) - So testet ihr eure Dateien
+- [PHP Basics](../docs/dynamisch/php.md) - PHP-Grundlagen auffrischen
+- [HTML-Formulare](../docs/statisch/formulare.md) - Wie Formulare funktionieren
 
 ---
 

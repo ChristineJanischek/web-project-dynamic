@@ -52,10 +52,10 @@ In dieser Version lernst du:
 - [ ] Browser DevTools (F12) geöffnet
 - [ ] `index.html` im Browser geöffnet
 - [ ] Theorie-Dokumente bereit:
-  - [`docs/box-modell.md`](../../docs/box-modell.md)
-  - [`docs/responsive-design.md`](../../docs/responsive-design.md)
-  - [`docs/flexible-layouts.md`](../../docs/flexible-layouts.md)
-  - [`docs/js.md`](../../docs/js.md)
+  - [`docs/box-modell.md`](../../docs/statisch/box-modell.md)
+  - [`docs/responsive-design.md`](../../docs/statisch/responsive-design.md)
+  - [`docs/flexible-layouts.md`](../../docs/statisch/flexible-layouts.md)
+  - [`docs/js.md`](../../docs/dynamisch/js.md)
 
 ## 💡 Tipps
 

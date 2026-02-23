@@ -61,8 +61,8 @@ Programmiert `controllers/RechnerController.php` für die Ablaufsteuerung.
 ## 🔗 Weiterführende Links
 
 - [Version 4: BMI-Rechner mit MVC](../../version4/README.md) - Komplette Aufgabenstellung
-- [PHP Grundlagen](../../docs/php.md) - PHP-Dokumentation
-- [PHP lokal testen](../../docs/php-lokal-testen.md) - Anleitung zum Testen
+- [PHP Grundlagen](../../docs/dynamisch/php.md) - PHP-Dokumentation
+- [PHP lokal testen](../../docs/dynamisch/php-lokal-testen.md) - Anleitung zum Testen
 
 ---
 

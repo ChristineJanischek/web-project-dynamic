@@ -2,7 +2,7 @@
 
 ## Was ist Versionsmanagement?
 
-Siehe auch: [Einführung ins Web](intro.md) für grundlegende Konzepte.
+Siehe auch: [Einführung ins Web](../statisch/intro.md) für grundlegende Konzepte.
 
 Versionsmanagement (Version Control) erlaubt es dir, Änderungen an deinem Code nachzuvollziehen, zu verschiedenen Versionen zurückzukehren und im Team zusammenzuarbeiten.
 

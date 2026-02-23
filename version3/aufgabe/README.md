@@ -45,8 +45,8 @@ Starterfiles: `phase2-implementation/index-starter.html`, `css/style-starter.css
 ### Teil 1.1: Analyse & Zielgruppen (90 Min)
 
 📖 **Theorie:**  
-- [`docs/zielgruppenanalyse.md`](../../docs/zielgruppenanalyse.md)  
-- [`docs/konzeption-webdesign.md`](../../docs/konzeption-webdesign.md)
+- [`docs/zielgruppenanalyse.md`](../../docs/konzeption/zielgruppenanalyse.md)  
+- [`docs/konzeption-webdesign.md`](../../docs/konzeption/konzeption-webdesign.md)
 
 **Lernziele:**
 - Zielgruppen der Schülerfirma identifizieren
@@ -79,7 +79,7 @@ Starterfiles: `phase2-implementation/index-starter.html`, `css/style-starter.css
 ### Teil 1.2: Corporate Design entwickeln (120 Min)
 
 📖 **Theorie:**  
-- [`docs/corporate-design.md`](../../docs/corporate-design.md)
+- [`docs/corporate-design.md`](../../docs/konzeption/corporate-design.md)
 
 **Lernziele:**
 - Corporate Design-Elemente verstehen
@@ -123,7 +123,7 @@ Starterfiles: `phase2-implementation/index-starter.html`, `css/style-starter.css
 ### Teil 1.3: Konzeption & Sitemap (90 Min)
 
 📖 **Theorie:**  
-- [`docs/konzeption-webdesign.md`](../../docs/konzeption-webdesign.md)
+- [`docs/konzeption-webdesign.md`](../../docs/konzeption/konzeption-webdesign.md)
 
 **Lernziele:**
 - Informationsarchitektur planen
@@ -165,7 +165,7 @@ Starterfiles: `phase2-implementation/index-starter.html`, `css/style-starter.css
 ### Teil 1.4: Wireframing & Mockup-Analyse (120 Min)
 
 📖 **Theorie:**  
-- [`docs/konzeption-webdesign.md`](../../docs/konzeption-webdesign.md) (Abschnitt "Wireframing")
+- [`docs/konzeption-webdesign.md`](../../docs/konzeption/konzeption-webdesign.md) (Abschnitt "Wireframing")
 
 **Lernziele:**
 - Mockups analysieren
@@ -223,7 +223,7 @@ Erstelle ein detailliertes Mockup in Figma oder Canva mit:
 ### Teil 2.1: HTML-Struktur (90 Min)
 
 📖 **Theorie:**  
-- [`docs/seitenstrukturelemente.md`](../../docs/seitenstrukturelemente.md)
+- [`docs/seitenstrukturelemente.md`](../../docs/statisch/seitenstrukturelemente.md)
 
 **Aufgaben:**
 
@@ -259,8 +259,8 @@ Erstelle ein detailliertes Mockup in Figma oder Canva mit:
 ### Teil 2.2: CSS-Styling & Corporate Design (120 Min)
 
 📖 **Theorie:**  
-- [`docs/corporate-design.md`](../../docs/corporate-design.md)  
-- [`docs/flexible-layouts.md`](../../docs/flexible-layouts.md)
+- [`docs/corporate-design.md`](../../docs/konzeption/corporate-design.md)  
+- [`docs/flexible-layouts.md`](../../docs/statisch/flexible-layouts.md)
 
 **Aufgaben:**
 
@@ -308,8 +308,8 @@ Erstelle ein detailliertes Mockup in Figma oder Canva mit:
 ### Teil 2.3: JavaScript-Interaktivität (90 Min)
 
 📖 **Theorie:**  
-- [`docs/js.md`](../../docs/js.md)  
-- [`docs/formulare.md`](../../docs/formulare.md)
+- [`docs/js.md`](../../docs/dynamisch/js.md)  
+- [`docs/formulare.md`](../../docs/statisch/formulare.md)
 
 **Aufgaben:**
 
@@ -353,7 +353,7 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 ### Teil 2.4: Bilder optimieren (60 Min)
 
 📖 **Theorie:**  
-- [`docs/bilder-grafiken.md`](../../docs/bilder-grafiken.md)
+- [`docs/bilder-grafiken.md`](../../docs/statisch/bilder-grafiken.md)
 
 **Aufgaben:**
 

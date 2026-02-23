@@ -45,7 +45,7 @@ git checkout -b version3-mifa-website
 cd version3/aufgabe/
 ```
 
-**📖 Mehr zu Git:** Lies [`docs/git-versionsmanagement.md`](../docs/git-versionsmanagement.md) für detaillierte Git-Anleitung!
+**📖 Mehr zu Git:** Lies [`docs/git-versionsmanagement.md`](../docs/konzeption/git-versionsmanagement.md) für detaillierte Git-Anleitung!
 
 ### 2. Starter-Dateien aktivieren
 
@@ -93,7 +93,7 @@ git push origin version3-mifa-website
 Diese Phase ist entscheidend! Professionelle Webprojekte beginnen immer mit sorgfältiger Planung:
 
 #### 1. Zielgruppenanalyse (90 Min)
-📖 **Dokumentation:** [`docs/zielgruppenanalyse.md`](../docs/zielgruppenanalyse.md)
+📖 **Dokumentation:** [`docs/zielgruppenanalyse.md`](../docs/konzeption/zielgruppenanalyse.md)
 
 **Lernziele:**
 - Zielgruppen identifizieren (Lehrkräfte, Schüler:innen, NGOs)
@@ -108,7 +108,7 @@ Diese Phase ist entscheidend! Professionelle Webprojekte beginnen immer mit sorg
 4. Dokumentiere Erkenntnisse im `concept/` Ordner
 
 #### 2. Corporate Design (120 Min)
-📖 **Dokumentation:** [`docs/corporate-design.md`](../docs/corporate-design.md)
+📖 **Dokumentation:** [`docs/corporate-design.md`](../docs/konzeption/corporate-design.md)
 
 **Lernziele:**
 - Logo-Verwendung und Schutzraum verstehen
@@ -129,7 +129,7 @@ Diese Phase ist entscheidend! Professionelle Webprojekte beginnen immer mit sorg
 - `images/ic_launcher.png` - Favicon
 
 #### 3. Konzeption & Webdesign (90 Min)
-📖 **Dokumentation:** [`docs/konzeption-webdesign.md`](../docs/konzeption-webdesign.md)
+📖 **Dokumentation:** [`docs/konzeption-webdesign.md`](../docs/konzeption/konzeption-webdesign.md)
 
 **Lernziele:**
 - Briefing analysieren und verstehen
@@ -172,7 +172,7 @@ git push origin version3-mifa-website
 Jetzt setzt du deine Konzeption in Code um!
 
 #### 1. HTML-Struktur (60 Min)
-📖 **Dokumentation:** [`docs/html-grundgeruest.md`](../docs/html-grundgeruest.md), [`docs/seitenstrukturelemente.md`](../docs/seitenstrukturelemente.md)
+📖 **Dokumentation:** [`docs/html-grundgeruest.md`](../docs/statisch/html-grundgeruest.md), [`docs/seitenstrukturelemente.md`](../docs/statisch/seitenstrukturelemente.md)
 
 **Aufgaben:**
 1. Nutze die bereitgestellte Vorlage `aufgabe/index_neu.html` als Startpunkt
@@ -189,7 +189,7 @@ Jetzt setzt du deine Konzeption in Code um!
 - ✅ Footer mit mehreren Spalten
 
 #### 2. CSS-Styling & Corporate Design (90 Min)
-📖 **Dokumentation:** [`docs/css-basis.md`](../docs/css-basis.md), [`docs/corporate-design.md`](../docs/corporate-design.md)
+📖 **Dokumentation:** [`docs/css-basis.md`](../docs/statisch/css-basis.md), [`docs/corporate-design.md`](../docs/konzeption/corporate-design.md)
 
 **Aufgaben:**
 1. Nutze `aufgabe/css/style_neu.css` als Basis
@@ -205,7 +205,7 @@ Jetzt setzt du deine Konzeption in Code um!
 - ✅ Accessibility-Features (Focus States, Reduced Motion)
 
 #### 3. Responsive Bilder (45 Min)
-📖 **Dokumentation:** [`docs/bilder-grafiken.md`](../docs/bilder-grafiken.md)
+📖 **Dokumentation:** [`docs/bilder-grafiken.md`](../docs/statisch/bilder-grafiken.md)
 
 **Aufgaben:**
 1. Logo als `background-image` im CSS einbinden
@@ -214,7 +214,7 @@ Jetzt setzt du deine Konzeption in Code um!
 4. Alt-Texte für Barrierefreiheit schreiben
 
 #### 4. JavaScript-Interaktivität (75 Min)
-📖 **Dokumentation:** [`docs/js.md`](../docs/js.md), [`docs/formulare.md`](../docs/formulare.md)
+📖 **Dokumentation:** [`docs/js.md`](../docs/dynamisch/js.md), [`docs/formulare.md`](../docs/statisch/formulare.md)
 
 **Aufgaben:**
 1. Nutze `aufgabe/js/script_neu.js` als Vorlage
@@ -231,7 +231,7 @@ Jetzt setzt du deine Konzeption in Code um!
 - ✅ Accessibility Features (Keyboard Navigation)
 
 #### 5. Formulare & Validierung (60 Min)
-📖 **Dokumentation:** [`docs/formulare.md`](../docs/formulare.md)
+📖 **Dokumentation:** [`docs/formulare.md`](../docs/statisch/formulare.md)
 
 **Aufgaben:**
 1. Kontaktformular ist bereits implementiert in der Vorlage
@@ -615,43 +615,43 @@ Wenn du fertig bist und mehr lernen möchtest:
 ### Genutzte Dokumentationen in diesem Projekt
 
 **Konzeption & Design:**
-- [`docs/intro.md`](../docs/intro.md) - Einführung in Webentwicklung
-- [`docs/zielgruppenanalyse.md`](../docs/zielgruppenanalyse.md) - User Personas & Customer Journey
-- [`docs/konzeption-webdesign.md`](../docs/konzeption-webdesign.md) - Briefing, Sitemap, Wireframes
-- [`docs/corporate-design.md`](../docs/corporate-design.md) - Logo, Farben, Typografie
+- [`docs/intro.md`](../docs/statisch/intro.md) - Einführung in Webentwicklung
+- [`docs/zielgruppenanalyse.md`](../docs/konzeption/zielgruppenanalyse.md) - User Personas & Customer Journey
+- [`docs/konzeption-webdesign.md`](../docs/konzeption/konzeption-webdesign.md) - Briefing, Sitemap, Wireframes
+- [`docs/corporate-design.md`](../docs/konzeption/corporate-design.md) - Logo, Farben, Typografie
 
 **HTML & Struktur:**
-- [`docs/html-grundgeruest.md`](../docs/html-grundgeruest.md) - HTML5 Grundgerüst
-- [`docs/seitenstrukturelemente.md`](../docs/seitenstrukturelemente.md) - Semantische HTML-Elemente
+- [`docs/html-grundgeruest.md`](../docs/statisch/html-grundgeruest.md) - HTML5 Grundgerüst
+- [`docs/seitenstrukturelemente.md`](../docs/statisch/seitenstrukturelemente.md) - Semantische HTML-Elemente
 
 **CSS & Styling:**
-- [`docs/css-basis.md`](../docs/css-basis.md) - CSS Grundlagen, Selektoren
-- [`docs/css-einbinden.md`](../docs/css-einbinden.md) - CSS richtig einbinden
-- [`docs/css-formatierung.md`](../docs/css-formatierung.md) - Best Practices für CSS
-- [`docs/box-modell.md`](../docs/box-modell.md) - Margin, Padding, Border
-- [`docs/flexible-layouts.md`](../docs/flexible-layouts.md) - Flexbox & CSS Grid
-- [`docs/responsive-design.md`](../docs/responsive-design.md) - Media Queries, Mobile-first
+- [`docs/css-basis.md`](../docs/statisch/css-basis.md) - CSS Grundlagen, Selektoren
+- [`docs/css-einbinden.md`](../docs/statisch/css-einbinden.md) - CSS richtig einbinden
+- [`docs/css-formatierung.md`](../docs/statisch/css-formatierung.md) - Best Practices für CSS
+- [`docs/box-modell.md`](../docs/statisch/box-modell.md) - Margin, Padding, Border
+- [`docs/flexible-layouts.md`](../docs/statisch/flexible-layouts.md) - Flexbox & CSS Grid
+- [`docs/responsive-design.md`](../docs/statisch/responsive-design.md) - Media Queries, Mobile-first
 
 **Bilder & Medien:**
-- [`docs/bilder-grafiken.md`](../docs/bilder-grafiken.md) - Bildformate, responsive Bilder
-- [`docs/galerien.md`](../docs/galerien.md) - Grid-Galerien, Lightbox
+- [`docs/bilder-grafiken.md`](../docs/statisch/bilder-grafiken.md) - Bildformate, responsive Bilder
+- [`docs/galerien.md`](../docs/statisch/galerien.md) - Grid-Galerien, Lightbox
 
 **Interaktivität:**
-- [`docs/js.md`](../docs/js.md) - JavaScript Grundlagen, DOM-Manipulation
-- [`docs/formulare.md`](../docs/formulare.md) - Formularvalidierung, Styling
+- [`docs/js.md`](../docs/dynamisch/js.md) - JavaScript Grundlagen, DOM-Manipulation
+- [`docs/formulare.md`](../docs/statisch/formulare.md) - Formularvalidierung, Styling
 
 **Versionsverwaltung:**
-- [`docs/git-versionsmanagement.md`](../docs/git-versionsmanagement.md) - Git & GitHub Workflow
+- [`docs/git-versionsmanagement.md`](../docs/konzeption/git-versionsmanagement.md) - Git & GitHub Workflow
 
 **Qualitätssicherung:**
-- [`docs/testen.md`](../docs/testen.md) - Testing-Strategien
+- [`docs/testen.md`](../docs/dynamisch/testen.md) - Testing-Strategien
 
 **Weiterführend (für spätere Versionen):**
-- [`docs/php.md`](../docs/php.md) - Backend mit PHP
-- [`docs/python.md`](../docs/python.md) - Backend mit Python/Flask
-- [`docs/datenbank.md`](../docs/datenbank.md) - MySQL-Integration
-- [`docs/react.md`](../docs/react.md) - React Framework
-- [`docs/algorithmen-datenstrukturen.md`](../docs/algorithmen-datenstrukturen.md) - CS Grundlagen
+- [`docs/php.md`](../docs/dynamisch/php.md) - Backend mit PHP
+- [`docs/python.md`](../docs/dynamisch/python.md) - Backend mit Python/Flask
+- [`docs/datenbank.md`](../docs/dynamisch/datenbank.md) - MySQL-Integration
+- [`docs/react.md`](../docs/dynamisch/react.md) - React Framework
+- [`docs/algorithmen-datenstrukturen.md`](../docs/dynamisch/algorithmen-datenstrukturen.md) - CS Grundlagen
 
 ### Tools für Konzeption
 - **Figma** (kostenlos): Wireframes & Mockups erstellen
@@ -821,7 +821,7 @@ img {
 - Bei Fehlendem Bild: Platzhalter `https://picsum.photos/1920/1080` nutzen
 - Bilder sollten nicht über Container hinausragen
 
-**📖 Hinweis:** Lies [`docs/bilder-grafiken.md`](../docs/bilder-grafiken.md) für mehr zu Bildformaten und `object-fit`
+**📖 Hinweis:** Lies [`docs/bilder-grafiken.md`](../docs/statisch/bilder-grafiken.md) für mehr zu Bildformaten und `object-fit`
 
 ---
 
@@ -884,7 +884,7 @@ img {
 - **Mobile**: 1-2 Bilder pro Zeile
 - **Hover**: Bild vergrößert sich und bekommt Schatten
 
-**📖 Hinweis:** Lies [`docs/galerien.md`](../docs/galerien.md) für verschiedene Galerie-Layouts
+**📖 Hinweis:** Lies [`docs/galerien.md`](../docs/statisch/galerien.md) für verschiedene Galerie-Layouts
 
 ---
 
@@ -1078,7 +1078,7 @@ document.addEventListener('keydown', (e) => {
   - **← →** → Navigiert zwischen Bildern
 - Klick außerhalb des Bildes → Schließt Lightbox
 
-**📖 Hinweis:** Lies [`docs/js.md`](../docs/js.md) für Event Handling und DOM-Manipulation
+**📖 Hinweis:** Lies [`docs/js.md`](../docs/dynamisch/js.md) für Event Handling und DOM-Manipulation
 
 ---
 
@@ -1258,7 +1258,7 @@ document.addEventListener('keydown', (e) => {
 - Button hat Gradient-Hintergrund
 - Hover über Button → Hebt sich leicht an
 
-**📖 Hinweis:** Lies [`docs/formulare.md`](../docs/formulare.md) für mehr zu Formular-Styling
+**📖 Hinweis:** Lies [`docs/formulare.md`](../docs/statisch/formulare.md) für mehr zu Formular-Styling
 
 ---
 
@@ -1528,16 +1528,16 @@ footer {
 ## 📚 Hilfsmittel & Dokumentation
 
 ### Theorie & Konzepte
-- [`docs/bilder-grafiken.md`](../docs/bilder-grafiken.md) - Bildformate, responsive Bilder, `object-fit`
-- [`docs/galerien.md`](../docs/galerien.md) - Grid-Galerien, Lightbox, Masonry
-- [`docs/formulare.md`](../docs/formulare.md) - Formular-Grundlagen, Validierung, Styling
+- [`docs/bilder-grafiken.md`](../docs/statisch/bilder-grafiken.md) - Bildformate, responsive Bilder, `object-fit`
+- [`docs/galerien.md`](../docs/statisch/galerien.md) - Grid-Galerien, Lightbox, Masonry
+- [`docs/formulare.md`](../docs/statisch/formulare.md) - Formular-Grundlagen, Validierung, Styling
 
 ### JavaScript & Interaktivität
-- [`docs/js.md`](../docs/js.md) - DOM-Manipulation, Events, Validierung
+- [`docs/js.md`](../docs/dynamisch/js.md) - DOM-Manipulation, Events, Validierung
 
 ### CSS & Layout
-- [`docs/flexible-layouts.md`](../docs/flexible-layouts.md) - CSS Grid für Galerien
-- [`docs/responsive-design.md`](../docs/responsive-design.md) - Media Queries
+- [`docs/flexible-layouts.md`](../docs/statisch/flexible-layouts.md) - CSS Grid für Galerien
+- [`docs/responsive-design.md`](../docs/statisch/responsive-design.md) - Media Queries
 
 ### Zusätzliche Ressourcen
 - [`shared-examples/`](../shared-examples/) - Vollständiges Beispiel
@@ -1576,7 +1576,7 @@ footer {
 
 Nach Abschluss dieser Version kannst du mit folgenden Themen weitermachen:
 
-- [`docs/js.md`](../docs/js.md) - Fortgeschrittenes JavaScript
+- [`docs/js.md`](../docs/dynamisch/js.md) - Fortgeschrittenes JavaScript
 - **Version 4**: JavaScript & Interaktivität (AJAX, Fetch API, Single Page App)
 - **Version 5**: Backend Integration (PHP oder Python Flask)
 - **Version 6**: Datenbank-Anbindung (MySQL)

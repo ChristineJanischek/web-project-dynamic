@@ -21,7 +21,7 @@ Nach Abschluss dieser Version kannst du:
 
 ### Teil 1: Box-Modell verstehen
 
-📖 **Theorie:** [`docs/box-modell.md`](../docs/box-modell.md)
+📖 **Theorie:** [`docs/box-modell.md`](../docs/statisch/box-modell.md)
 
 1. **Erstelle drei verschiedene Boxen** mit unterschiedlichen:
    - Padding-Werten
@@ -37,7 +37,7 @@ Nach Abschluss dieser Version kannst du:
 
 ### Teil 2: Responsive Layout
 
-📖 **Theorie:** [`docs/responsive-design.md`](../docs/responsive-design.md) & [`docs/flexible-layouts.md`](../docs/flexible-layouts.md)
+📖 **Theorie:** [`docs/responsive-design.md`](../docs/statisch/responsive-design.md) & [`docs/flexible-layouts.md`](../docs/statisch/flexible-layouts.md)
 
 1. **Desktop-Layout** (> 1024px):
    - 3-spaltiges Grid
@@ -57,7 +57,7 @@ Nach Abschluss dieser Version kannst du:
 
 ### Teil 3: Mobile Navigation
 
-📖 **Theorie:** [`docs/responsive-design.md`](../docs/responsive-design.md) (Abschnitt 5) & [`docs/js.md`](../docs/js.md)
+📖 **Theorie:** [`docs/responsive-design.md`](../docs/statisch/responsive-design.md) (Abschnitt 5) & [`docs/js.md`](../docs/dynamisch/js.md)
 
 Implementiere ein funktionierendes Hamburger-Menü mit:
 - Toggle-Button (☰)
@@ -84,9 +84,9 @@ Implementiere ein funktionierendes Hamburger-Menü mit:
 ### Vorbereitung
 
 **📖 Vor dem Start empfohlen:**
-- [`docs/box-modell.md`](../docs/box-modell.md) - Grundlagen des CSS Box-Modells
-- [`docs/responsive-design.md`](../docs/responsive-design.md) - Mobile-First Ansatz und Breakpoints
-- [`docs/flexible-layouts.md`](../docs/flexible-layouts.md) - Flexbox und CSS Grid Übersicht
+- [`docs/box-modell.md`](../docs/statisch/box-modell.md) - Grundlagen des CSS Box-Modells
+- [`docs/responsive-design.md`](../docs/statisch/responsive-design.md) - Mobile-First Ansatz und Breakpoints
+- [`docs/flexible-layouts.md`](../docs/statisch/flexible-layouts.md) - Flexbox und CSS Grid Übersicht
 
 1. **Workspace vorbereiten**
    - Öffne den Ordner `version2/aufgabe/` in deinem Editor
@@ -132,7 +132,7 @@ body {
 - Prüfe: `box-sizing` sollte `border-box` sein
 - Verändere Browserfenster → Container bleibt zentriert
 
-**📖 Hinweis:** Lies [`docs/box-modell.md`](../docs/box-modell.md) Abschnitt 1-2 für Grundlagen zum Box-Modell
+**📖 Hinweis:** Lies [`docs/box-modell.md`](../docs/statisch/box-modell.md) Abschnitt 1-2 für Grundlagen zum Box-Modell
 
 ---
 
@@ -178,7 +178,7 @@ header .container {
 - Header bleibt beim Scrollen oben (sticky)
 - DevTools → Wähle `.nav` → Sollte `display: flex` zeigen
 
-**📖 Hinweis:** Lies [`docs/flexible-layouts.md`](../docs/flexible-layouts.md) Abschnitt über Flexbox und [`docs/css-basis.md`](../docs/css-basis.md) für CSS-Selektoren und Pseudo-Klassen (`:hover`)
+**📖 Hinweis:** Lies [`docs/flexible-layouts.md`](../docs/statisch/flexible-layouts.md) Abschnitt über Flexbox und [`docs/css-basis.md`](../docs/statisch/css-basis.md) für CSS-Selektoren und Pseudo-Klassen (`:hover`)
 
 ---
 
@@ -230,7 +230,7 @@ header .container {
   - Box 2 (`border-box`): **200px** gesamt (Padding/Border inkludiert)
 - Hover über Box 3 → Schatten sollte sich ändern
 
-**📖 Theorie-Vertiefung:** Lies [`docs/box-modell.md`](../docs/box-modell.md) Abschnitt 3
+**📖 Theorie-Vertiefung:** Lies [`docs/box-modell.md`](../docs/statisch/box-modell.md) Abschnitt 3
 
 ---
 
@@ -277,7 +277,7 @@ header .container {
   - **Mobile (< 768px)**: 1 Spalte
 - Verändere Viewport-Breite manuell → Grid passt sich an
 
-**📖 Hinweis:** Lies [`docs/flexible-layouts.md`](../docs/flexible-layouts.md) für CSS Grid und [`docs/responsive-design.md`](../docs/responsive-design.md) Abschnitt 2 für Media Queries
+**📖 Hinweis:** Lies [`docs/flexible-layouts.md`](../docs/statisch/flexible-layouts.md) für CSS Grid und [`docs/responsive-design.md`](../docs/statisch/responsive-design.md) Abschnitt 2 für Media Queries
 
 ---
 
@@ -349,7 +349,7 @@ header .container {
   - Ändere zu: `<nav class="nav active" id="mainNav">`
   - Navigation sollte von rechts einsliden
 
-**📖 Hinweis:** Lies [`docs/responsive-design.md`](../docs/responsive-design.md) Abschnitt 5 für vollständiges Hamburger-Menü Beispiel und [`docs/css-formatierung.md`](../docs/css-formatierung.md) für Transitions und Animationen
+**📖 Hinweis:** Lies [`docs/responsive-design.md`](../docs/statisch/responsive-design.md) Abschnitt 5 für vollständiges Hamburger-Menü Beispiel und [`docs/css-formatierung.md`](../docs/statisch/css-formatierung.md) für Transitions und Animationen
 
 ---
 
@@ -389,7 +389,7 @@ navLinks.forEach(link => {
 - DevTools → Console → Sollte keine Fehler zeigen
 - Teste auf echtem Smartphone (falls möglich)
 
-**📖 Hinweis:** Lies [`docs/js.md`](../docs/js.md) → DOM-Manipulation, Event Listeners und querySelector für JavaScript-Grundlagen
+**📖 Hinweis:** Lies [`docs/js.md`](../docs/dynamisch/js.md) → DOM-Manipulation, Event Listeners und querySelector für JavaScript-Grundlagen
 
 ---
 
@@ -474,25 +474,25 @@ html {
 - Prüfe ob `top: 0` gesetzt ist
 
 **Weitere Hilfe benötigt?**
-- [`docs/testen.md`](../docs/testen.md) - Debugging-Strategien und Browser-Tools
-- [`docs/css-basis.md`](../docs/css-basis.md) - CSS-Spezifität und Fehlersuche
+- [`docs/testen.md`](../docs/dynamisch/testen.md) - Debugging-Strategien und Browser-Tools
+- [`docs/css-basis.md`](../docs/statisch/css-basis.md) - CSS-Spezifität und Fehlersuche
 
 ---
 
 ## Hilfsmittel & Dokumentation
 
 ### Theorie & Konzepte
-- [`docs/box-modell.md`](../docs/box-modell.md) - **Box-Modell** verstehen: Content, Padding, Border, Margin
-- [`docs/responsive-design.md`](../docs/responsive-design.md) - **Responsive Design**: Media Queries, Breakpoints, Mobile-First
-- [`docs/flexible-layouts.md`](../docs/flexible-layouts.md) - **Flexbox & Grid**: Flexible Layouts mit praktischen Beispielen
-- [`docs/css-basis.md`](../docs/css-basis.md) - CSS Grundlagen: Selektoren, Eigenschaften, Spezifität
-- [`docs/css-einbinden.md`](../docs/css-einbinden.md) - CSS einbinden: Inline, Internal, External
+- [`docs/box-modell.md`](../docs/statisch/box-modell.md) - **Box-Modell** verstehen: Content, Padding, Border, Margin
+- [`docs/responsive-design.md`](../docs/statisch/responsive-design.md) - **Responsive Design**: Media Queries, Breakpoints, Mobile-First
+- [`docs/flexible-layouts.md`](../docs/statisch/flexible-layouts.md) - **Flexbox & Grid**: Flexible Layouts mit praktischen Beispielen
+- [`docs/css-basis.md`](../docs/statisch/css-basis.md) - CSS Grundlagen: Selektoren, Eigenschaften, Spezifität
+- [`docs/css-einbinden.md`](../docs/statisch/css-einbinden.md) - CSS einbinden: Inline, Internal, External
 
 ### JavaScript & Interaktivität
-- [`docs/js.md`](../docs/js.md) - JavaScript Grundlagen für interaktive Navigation
+- [`docs/js.md`](../docs/dynamisch/js.md) - JavaScript Grundlagen für interaktive Navigation
 
 ### Versionsverwaltung
-- [`docs/git-versionsmanagement.md`](../docs/git-versionsmanagement.md) - Git & GitHub Workflow
+- [`docs/git-versionsmanagement.md`](../docs/konzeption/git-versionsmanagement.md) - Git & GitHub Workflow
 
 ### Zusätzliche Ressourcen
 - [`shared-examples/`](../shared-examples/) - Vollständiges Beispiel zum Vergleich
@@ -521,10 +521,10 @@ html {
 
 Nach Abschluss dieser Version kannst du mit folgenden Themen weitermachen:
 
-- [`docs/bilder-grafiken.md`](../docs/bilder-grafiken.md) - Responsive Bilder & `object-fit`
-- [`docs/galerien.md`](../docs/galerien.md) - Bildgalerien mit Grid
-- [`docs/formulare.md`](../docs/formulare.md) - Responsive Formulare gestalten
-- [`docs/css-formatierung.md`](../docs/css-formatierung.md) - Typografie & Farben
+- [`docs/bilder-grafiken.md`](../docs/statisch/bilder-grafiken.md) - Responsive Bilder & `object-fit`
+- [`docs/galerien.md`](../docs/statisch/galerien.md) - Bildgalerien mit Grid
+- [`docs/formulare.md`](../docs/statisch/formulare.md) - Responsive Formulare gestalten
+- [`docs/css-formatierung.md`](../docs/statisch/css-formatierung.md) - Typografie & Farben
 
 ---
 

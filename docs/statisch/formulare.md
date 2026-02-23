@@ -4,7 +4,7 @@ Formulare sind die Hauptmethode, um Daten von Nutzern zu sammeln - sei es ein Ko
 
 ## Grundstruktur eines Formulars
 
-Siehe auch: [JavaScript Grundlagen](js.md) für Formular-Validierung.
+Siehe auch: [JavaScript Grundlagen](../dynamisch/js.md) für Formular-Validierung.
 
 ```html
 <form action="/submit" method="POST">

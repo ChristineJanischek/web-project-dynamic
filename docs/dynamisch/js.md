@@ -4,8 +4,8 @@ JavaScript läuft im Browser und macht Seiten dynamisch.
 
 Für den vollständigen Grundlagen-Lernpfad (Ausgaben, Variablen, Rechenoperationen, Funktionen/Methoden, Kontrollstrukturen, Datenstrukturen, Algorithmen, Dateien) siehe:
 
-- [Programmier-Grundlagen Übersicht](programmierung/grundlagen/README.md)
-- [JavaScript Fundamentals (modular)](programmierung/grundlagen/javascript/README.md)
+- [Programmier-Grundlagen Übersicht](../programmierung/grundlagen/README.md)
+- [JavaScript Fundamentals (modular)](../programmierung/grundlagen/javascript/README.md)
 
 ## Variablen
 

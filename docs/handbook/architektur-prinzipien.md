@@ -1025,10 +1025,10 @@ Bevor du Code committed, frage dich:
 
 ## 📚 Weitere Ressourcen
 
-- [`docs/handbook/ARCHITECTURE.md`](handbook/ARCHITECTURE.md) – Technische Validierung für Lehrende
-- [`CONTRIBUTING.md`](../CONTRIBUTING.md) – Workflow & Git-Best-Practices
-- [`docs/git-versionsmanagement.md`](git-versionsmanagement.md) – Git-Grundlagen
-- [`docs/testen.md`](testen.md) – Code-Tests schreiben
+- [`docs/handbook/ARCHITECTURE.md`](ARCHITECTURE.md) – Technische Validierung für Lehrende
+- [`CONTRIBUTING.md`](../../CONTRIBUTING.md) – Workflow & Git-Best-Practices
+- [`docs/konzeption/git-versionsmanagement.md`](../konzeption/git-versionsmanagement.md) – Git-Grundlagen
+- [`docs/dynamisch/testen.md`](../dynamisch/testen.md) – Code-Tests schreiben
 
 ---
 

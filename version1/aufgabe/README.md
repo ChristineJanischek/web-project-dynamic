@@ -34,10 +34,10 @@ In dieser Version lernst du:
 1. **Öffne die Aufgabenstellung:** [`version1/README.md`](../README.md)
 2. **Folge den 4 Aufgaben** Schritt für Schritt
 3. **Nutze die Theorie-Dokumente:**
-   - [`docs/html-grundgeruest.md`](../../docs/html-grundgeruest.md)
-   - [`docs/seitenstrukturelemente.md`](../../docs/seitenstrukturelemente.md)
-   - [`docs/css-einbinden.md`](../../docs/css-einbinden.md)
-   - [`docs/css-basis.md`](../../docs/css-basis.md)
+   - [`docs/html-grundgeruest.md`](../../docs/statisch/html-grundgeruest.md)
+   - [`docs/seitenstrukturelemente.md`](../../docs/statisch/seitenstrukturelemente.md)
+   - [`docs/css-einbinden.md`](../../docs/statisch/css-einbinden.md)
+   - [`docs/css-basis.md`](../../docs/statisch/css-basis.md)
 4. **Teste regelmäßig** im Browser
 
 ## ✅ Checkliste vor dem Start

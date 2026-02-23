@@ -157,13 +157,13 @@ git add version3/aufgabe/phase1-concept/results/
 ❌ **Falsch:**
 
 ```markdown
-[Zielgruppenanalyse](../docs/zielgruppenanalyse.md)
+[Zielgruppenanalyse](../docs/konzeption/zielgruppenanalyse.md)
 ```
 
 ✅ **Korrekt:**
 
 ```markdown
-[Zielgruppenanalyse](../docs/zielgruppenanalyse.md)
+[Zielgruppenanalyse](../docs/konzeption/zielgruppenanalyse.md)
 ```
 
 **Warum?** Von `version3/aufgabe/` aus:
