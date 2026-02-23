@@ -4,7 +4,7 @@ Bilder sind ein zentraler Bestandteil moderner Webseiten. Hier lernst du, wie du
 
 ## Bildformate im Web
 
-Siehe auch: [CSS Grundlagen](../css-basis.md) für Styling-Tipps.
+Siehe auch: [CSS Grundlagen](css-basis.md) für Styling-Tipps.
 
 | Format       | Wofür?                 | Vorteile                            | Nachteile                           |
 | ------------ | ---------------------- | ----------------------------------- | ----------------------------------- |

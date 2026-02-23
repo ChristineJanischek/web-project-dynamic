@@ -4,7 +4,7 @@ Tests prüfen ob Code wie erwartet funktioniert.
 
 ## Arten
 
-Siehe auch: [JavaScript Grundlagen](../js.md) für Testmethoden.
+Siehe auch: [JavaScript Grundlagen](js.md) für Testmethoden.
 
 - Unit-Test: Einzelne Funktion.
 - Integrationstest: Zusammenspiel mehrerer Teile.

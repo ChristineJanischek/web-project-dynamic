@@ -4,7 +4,7 @@ Responsive Design bedeutet, dass eine Webseite auf **allen Geräten** (Desktop, 
 
 ## Warum Responsive Design?
 
-Siehe auch: [CSS Grundlagen](../css-basis.md) für Layout-Tipps.
+Siehe auch: [CSS Grundlagen](css-basis.md) für Layout-Tipps.
 
 - **60%+ der Web-Nutzer** sind mobil unterwegs
 - **Google bevorzugt** mobile-freundliche Seiten (SEO!)

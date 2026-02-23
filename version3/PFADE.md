@@ -54,6 +54,7 @@ version3/
 ### Von `version3/aufgabe/README.md` aus:
 
 **Interne Verweise (innerhalb version3/aufgabe/):**
+
 - `phase1-concept/AUFGABEN.md` ✅
 - `phase2-implementation/index-starter.html` ✅
 - `concept/Mockups_MiFa.odp` ✅
@@ -61,6 +62,7 @@ version3/
 - `images/` Ordner ✅
 
 **Dokumentations-Verweise (nach ../../docs/):**
+
 - `../../docs/zielgruppenanalyse.md` ✅
 - `../../docs/konzeption-webdesign.md` ✅
 - `../../docs/corporate-design.md` ✅
@@ -74,17 +76,21 @@ version3/
 ### Von `version3/aufgabe/phase1-concept/AUFGABEN.md` aus:
 
 **Survey-Formulare (ein Ordner höher, dann in surveys/):**
+
 - `../surveys/name_survey/form.html` ✅
 - `../surveys/app_names/form.html` ✅
 
 **Ergebnisse (im selben Ordner):**
+
 - `results/names.json` ✅
 - `results/firmenname_<datum>.json` ✅
 
 **Git-Befehle (vollständiger Pfad vom Repo-Root):**
+
 - `git add version3/aufgabe/phase1-concept/results/` ✅
 
 **Python-Skripte (Terminal-Befehle vom Repo-Root):**
+
 ```bash
 cd version3/aufgabe/surveys/name_survey
 python3 process.py
@@ -93,17 +99,20 @@ python3 process.py
 ### Von `version3/loesung/loesung_phase1.md` aus:
 
 **Referenzen zu Aufgaben-Assets:**
+
 - `../aufgabe/concept/images/Logo_farbig.jpg` ✅
 
 ### Von `version3/loesung/README.md` aus:
 
 **Interne Struktur (relativ zum loesung/ Ordner):**
+
 - `index.html` ✅
 - `css/style.css` ✅
 - `js/script.js` ✅
 - `loesung_phase1.md` ✅
 
 **Deployment-Pfad:**
+
 - `http://localhost:8000/version3/loesung/` ✅
 
 ## ⚠️ Häufige Fehler vermeiden
@@ -111,27 +120,32 @@ python3 process.py
 ### 1. Relative Pfade von phase1-concept/ aus
 
 ❌ **Falsch:**
+
 ```markdown
 Öffne `surveys/name_survey/form.html`
 ```
 
 ✅ **Korrekt:**
+
 ```markdown
 Öffne `../surveys/name_survey/form.html`
 ```
 
 **Warum?** Die Datei liegt in `version3/aufgabe/phase1-concept/AUFGABEN.md`, daher:
+
 - `../` → hoch nach `version3/aufgabe/`
 - `surveys/` → rein in `surveys/`
 
 ### 2. Git-Pfade immer vollständig
 
 ❌ **Falsch:**
+
 ```bash
 git add phase1-concept/results/
 ```
 
 ✅ **Korrekt:**
+
 ```bash
 git add version3/aufgabe/phase1-concept/results/
 ```
@@ -141,27 +155,32 @@ git add version3/aufgabe/phase1-concept/results/
 ### 3. Dokumentations-Links von version3/aufgabe/ aus
 
 ❌ **Falsch:**
+
 ```markdown
-[Zielgruppenanalyse](docs/zielgruppenanalyse.md)
+[Zielgruppenanalyse](../docs/zielgruppenanalyse.md)
 ```
 
 ✅ **Korrekt:**
+
 ```markdown
-[Zielgruppenanalyse](../../docs/zielgruppenanalyse.md)
+[Zielgruppenanalyse](../docs/zielgruppenanalyse.md)
 ```
 
 **Warum?** Von `version3/aufgabe/` aus:
+
 - `../../` → hoch nach Repository-Root
 - `docs/` → rein in `docs/`
 
 ### 4. Assets von Musterlösung referenzieren
 
 ❌ **Falsch:**
+
 ```markdown
 Logo: `images/Logo_farbig.jpg`
 ```
 
 ✅ **Korrekt:**
+
 ```markdown
 Logo: `../aufgabe/concept/images/Logo_farbig.jpg`
 ```

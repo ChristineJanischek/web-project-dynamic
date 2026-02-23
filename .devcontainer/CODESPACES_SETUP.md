@@ -212,7 +212,7 @@ Cmd/Ctrl + Shift + P → "Codespaces: Rebuild Container"
 
 ## 📚 Dokumentation
 
-- **DevContainer Konfiguration:** [.devcontainer/README.md](.devcontainer/README.md)
+- **DevContainer Konfiguration:** [README.md](README.md)
 - **VS Code DevContainers:** https://code.visualstudio.com/docs/devcontainers/containers
 - **GitHub Codespaces:** https://docs.github.com/en/codespaces
 - **Container Features:** https://containers.dev/features

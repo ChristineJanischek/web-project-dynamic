@@ -1,6 +1,6 @@
 # React Einstieg
 
-Siehe auch: [JavaScript Grundlagen](../js.md) für weitere Informationen.
+Siehe auch: [JavaScript Grundlagen](js.md) für weitere Informationen.
 
 React baut Oberflächen aus Komponenten.
 

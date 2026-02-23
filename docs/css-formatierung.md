@@ -4,7 +4,7 @@ Hier lernst du die wichtigsten CSS-Eigenschaften für die Formatierung deiner We
 
 ## Textformatierung
 
-Siehe auch: [CSS Grundlagen](../css-basis.md) für grundlegende Formatierung.
+Siehe auch: [CSS Grundlagen](css-basis.md) für grundlegende Formatierung.
 
 ### Schriftart
 

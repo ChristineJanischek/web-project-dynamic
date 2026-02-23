@@ -4,7 +4,7 @@ Bildgalerien sind ein beliebtes Element auf Webseiten. Hier lernst du, wie du mi
 
 ## Einfache Grid-Galerie
 
-Siehe auch: [CSS Grundlagen](../css-basis.md) für Layout-Tipps.
+Siehe auch: [CSS Grundlagen](css-basis.md) für Layout-Tipps.
 
 Die einfachste Methode ist CSS Grid - automatisch responsive ohne Media Queries!
 

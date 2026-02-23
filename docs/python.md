@@ -1,6 +1,6 @@
 # Python (Flask Backend)
 
-Siehe auch: [PHP Grundlagen](../php.md) für weitere Informationen.
+Siehe auch: [PHP Grundlagen](php.md) für weitere Informationen.
 
 Für den vollständigen Grundlagen-Lernpfad (Ausgaben, Variablen, Rechenoperationen, Funktionen/Methoden, Kontrollstrukturen, Datenstrukturen, Algorithmen, Dateien) siehe:
 

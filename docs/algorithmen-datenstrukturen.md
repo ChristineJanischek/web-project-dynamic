@@ -9,7 +9,7 @@
 
 ## Beispiel Sortieren (Bubble Sort JS)
 
-Siehe auch: [Datenbank](../datenbank.md) für weitere Informationen.
+Siehe auch: [Datenbank](datenbank.md) für weitere Informationen.
 
 ```js
 function bubbleSort(arr) {

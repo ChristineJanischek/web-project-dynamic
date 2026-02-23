@@ -4,7 +4,7 @@ CSS (Cascading Style Sheets) beschreibt, wie HTML-Elemente auf der Webseite auss
 
 ## Was ist CSS?
 
-Siehe auch: [HTML Grundgerüst](../html-grundgeruest.md) für grundlegende Struktur.
+Siehe auch: [HTML Grundgerüst](html-grundgeruest.md) für grundlegende Struktur.
 
 CSS trennt **Inhalt** (HTML) von **Design** (CSS). Das macht Webseiten wartbar und flexibel.
 

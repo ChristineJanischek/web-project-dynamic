@@ -18,6 +18,7 @@ Beim ersten Öffnen des Projekts erscheint diese Meldung:
 **➡️ Klicke auf "Alle installieren"**
 
 Das installiert automatisch:
+
 - ✅ Live Server (zum Testen)
 - ✅ Prettier (Code-Formatierung)
 - ✅ HTML/CSS Support
@@ -25,6 +26,7 @@ Das installiert automatisch:
 - Und weitere hilfreiche Tools
 
 **Falls die Meldung nicht erscheint:**
+
 1. Drücke `Ctrl+Shift+P` (Windows) oder `Cmd+Shift+P` (Mac)
 2. Tippe: `Show Recommended Extensions`
 3. Klicke auf "Install Workspace Recommended Extensions"
@@ -34,6 +36,7 @@ Das installiert automatisch:
 ## ✅ Schritt 2: HTML-Datei öffnen
 
 Öffne deine Arbeits-HTML-Datei, z.B.:
+
 - `version1/aufgabe/index.html` (für Version 1)
 - `version2/aufgabe/index.html` (für Version 2)
 - `version3/aufgabe/index.html` (für Version 3)
@@ -103,6 +106,7 @@ Chrome/Firefox
 3. **Schaue** in den Browser → **Automatisch aktualisiert!** 🎉
 
 **Beispiel:**
+
 ```html
 <!-- Ändere dies: -->
 <h1>Hallo Welt</h1>
@@ -136,6 +140,7 @@ Status Bar (unten rechts)
 ### ❌ "Go Live" Button erscheint nicht
 
 **Lösung:**
+
 1. Stelle sicher, dass du eine `.html`-Datei geöffnet hast
 2. Prüfe, ob Live Server installiert ist: Extensions-Tab (`Ctrl+Shift+X`)
 3. Suche nach "Live Server" von Ritwick Dey
@@ -144,6 +149,7 @@ Status Bar (unten rechts)
 ### ❌ Browser öffnet sich nicht
 
 **Lösung:**
+
 - Öffne manuell deinen Browser
 - Gehe zu: `http://localhost:5500`
 - Falls Port 5500 belegt ist, probiere: `http://localhost:5501`
@@ -151,6 +157,7 @@ Status Bar (unten rechts)
 ### ❌ Änderungen werden nicht angezeigt
 
 **Lösung:**
+
 1. **Hard Refresh** im Browser: `Ctrl+Shift+R` (Windows) / `Cmd+Shift+R` (Mac)
 2. Stelle sicher, dass die Datei gespeichert wurde (kein weißer Punkt am Tab)
 3. Prüfe die Browser-Konsole: Drücke `F12` → Suche nach Fehlern
@@ -158,9 +165,10 @@ Status Bar (unten rechts)
 ### ❌ CSS wird nicht geladen
 
 **Prüfe:**
+
 1. Ist der CSS-Link in der HTML-Datei korrekt?
    ```html
-   <link rel="stylesheet" href="css/style.css">
+   <link rel="stylesheet" href="css/style.css" />
    ```
 2. Pfad korrekt? Prüfe ob `css/style.css` wirklich existiert
 3. Browser-Konsole (F12) → Fehler bei "Failed to load resource"?
@@ -168,6 +176,7 @@ Status Bar (unten rechts)
 ### ❌ Port 5500 bereits verwendet
 
 **Lösung:**
+
 - Stoppe andere Live Server Instanzen
 - Oder ändere Port in `.vscode/settings.json`:
   ```json
@@ -237,4 +246,4 @@ Bevor du `git commit` machst:
 
 **Du bist startklar! Viel Erfolg beim Entwickeln!** 🚀
 
-Bei Fragen: Frage deinen Lehrer oder schaue in die [`docs/`](../docs/) Dokumentation.
+Bei Fragen: Frage deinen Lehrer oder schaue in die [`docs/`](../) Dokumentation.

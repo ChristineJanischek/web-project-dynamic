@@ -2,7 +2,7 @@
 
 ## Was ist das Web?
 
-Siehe auch: [HTML Grundgerüst](../html-grundgeruest.md) für grundlegende Struktur.
+Siehe auch: [HTML Grundgerüst](html-grundgeruest.md) für grundlegende Struktur.
 
 Das **World Wide Web** (WWW oder kurz Web) ist ein System von miteinander verlinkten Dokumenten und Ressourcen, die über das Internet zugänglich sind. Es wurde 1989 von Tim Berners-Lee erfunden und ermöglicht es uns heute, Webseiten zu besuchen, Videos anzuschauen, online einzukaufen und vieles mehr.
 

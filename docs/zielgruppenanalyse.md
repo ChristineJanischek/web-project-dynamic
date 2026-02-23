@@ -8,7 +8,7 @@ Eine **Zielgruppenanalyse** hilft dabei, die Bedürfnisse, Wünsche und Verhalte
 
 ## Warum Zielgruppenanalyse?
 
-Siehe auch: [Einführung ins Web](../intro.md) für grundlegende Konzepte.
+Siehe auch: [Einführung ins Web](intro.md) für grundlegende Konzepte.
 
 ✅ **Nutzerzentriertes Design** - Website entspricht echten Bedürfnissen  
 ✅ **Höhere Conversion** - Passende Ansprache führt zu mehr Aktionen  

@@ -9,7 +9,7 @@ Für den vollständigen Grundlagen-Lernpfad (Ausgaben, Variablen, Rechenoperatio
 
 ## Variablen
 
-Siehe auch: [JavaScript Grundlagen](../js.md) für weitere Informationen.
+Siehe auch: [JavaScript Grundlagen](js.md) für weitere Informationen.
 
 ```js
 let zahl = 5;

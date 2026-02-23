@@ -4,7 +4,7 @@ Speichert Daten dauerhaft in Tabellen.
 
 ## Grundbegriffe
 
-Siehe auch: [Algorithmen & Datenstrukturen](../algorithmen-datenstrukturen.md) für weitere Informationen.
+Siehe auch: [Algorithmen & Datenstrukturen](algorithmen-datenstrukturen.md) für weitere Informationen.
 
 - Tabelle: Sammlung ähnlicher Datensätze.
 - Zeile (Row): Ein Eintrag.

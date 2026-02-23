@@ -8,7 +8,7 @@ Semantische Tags geben dem Inhalt **Bedeutung** und helfen:
 
 ## Warum semantisch?
 
-Siehe auch: [HTML Grundgerüst](../html-grundgeruest.md) für grundlegende Struktur.
+Siehe auch: [HTML Grundgerüst](html-grundgeruest.md) für grundlegende Struktur.
 
 ❌ **Alte Methode** (alles `<div>`):
 

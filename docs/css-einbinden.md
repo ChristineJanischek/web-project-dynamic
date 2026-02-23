@@ -4,7 +4,7 @@ Es gibt 3 Möglichkeiten, CSS in HTML einzubinden.
 
 ## 1. Externe CSS-Datei (✅ EMPFOHLEN)
 
-Siehe auch: [CSS Grundlagen](../css-basis.md) für weitere Informationen.
+Siehe auch: [CSS Grundlagen](css-basis.md) für weitere Informationen.
 Die beste Methode für echte Projekte!
 
 **Vorteile:**

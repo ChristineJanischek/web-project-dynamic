@@ -6,7 +6,7 @@
 
 ## Was ist Corporate Design?
 
-Siehe auch: [CSS Grundlagen](../css-basis.md) für Design-Tipps.
+Siehe auch: [CSS Grundlagen](css-basis.md) für Design-Tipps.
 
 Corporate Design umfasst alle **visuellen Elemente**, die ein Unternehmen nach außen präsentieren:
 

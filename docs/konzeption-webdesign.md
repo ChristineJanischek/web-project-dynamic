@@ -8,7 +8,7 @@ Die **Konzeption** ist die Planungsphase vor der eigentlichen Umsetzung einer We
 
 ## Warum ist Konzeption wichtig?
 
-Siehe auch: [Einführung ins Web](../intro.md) für grundlegende Konzepte.
+Siehe auch: [Einführung ins Web](intro.md) für grundlegende Konzepte.
 
 ✅ **Klare Ziele** - Wissen, was erreicht werden soll  
 ✅ **Strukturierte Inhalte** - Übersichtliche Navigation  

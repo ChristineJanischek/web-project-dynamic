@@ -2,7 +2,7 @@
 
 Das **Box-Modell** ist eines der wichtigsten Konzepte in CSS.
 
-Siehe auch: [CSS einbinden](../css-einbinden.md) für Einbindemethoden. Jedes HTML-Element ist eine rechteckige Box mit vier Bereichen.
+Siehe auch: [CSS einbinden](css-einbinden.md) für Einbindemethoden. Jedes HTML-Element ist eine rechteckige Box mit vier Bereichen.
 
 ## Die vier Bereiche
 

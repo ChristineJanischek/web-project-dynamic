@@ -157,8 +157,8 @@ So testest du die Action:
 
 ## 📚 Weiterführende Dokumentation
 
-- [TEMPLATE_SYNC.md](../../docs/handbook/TEMPLATE_SYNC.md) - Manuelle Sync-Anleitung
-- [TEMPLATE_UPDATE_STRATEGY.md](../../docs/handbook/TEMPLATE_UPDATE_STRATEGY.md) - Update-Strategien
+- [TEMPLATE_SYNC.md](../docs/handbook/TEMPLATE_SYNC.md) - Manuelle Sync-Anleitung
+- [TEMPLATE_UPDATE_STRATEGY.md](../docs/handbook/TEMPLATE_UPDATE_STRATEGY.md) - Update-Strategien
 - [GitHub Actions Dokumentation](https://docs.github.com/en/actions)
 
 ---
