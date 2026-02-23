@@ -8,30 +8,56 @@ Wenn neue `.md`-Dateien zu `docs/` hinzugefügt werden, muss die Tabelle unter *
 
 ## 🤖 Automatische Methoden
 
+### Methode 0: Datumsstand in "Was ist neu?" aktualisieren
+
+**Was passiert:**
+
+- Aktualisiert in `README.md` die Überschrift `## 🆕 Was ist neu? (Stand: TT.MM.JJJJ)` auf das heutige Datum
+- Läuft automatisch über GitHub Actions bei Doku-/Material-Änderungen auf `main`
+
+**Workflow:**
+
+- `.github/workflows/update-whats-new-date.yml`
+
+**Lokal ausführen:**
+
+```bash
+python3 scripts/update_whats_new_date.py
+```
+
+**Hinweis:**
+
+- Das Skript ändert ausschließlich die Datumsangabe in der "Was ist neu?"-Überschrift.
+
 ### Methode 1: GitHub Actions (Empfohlen)
 
 **Was passiert:**
+
 - Bei jedem Push von `.md`-Dateien in `docs/` wird die README automatisch aktualisiert
 - Commit erfolgt automatisch durch GitHub Bot
 
 **Status:** ✅ Bereits konfiguriert in `.github/workflows/update-docs-table.yml`
 
 **Manueller Trigger:**
+
 1. Gehe zu GitHub → Actions → "Auto-Update Dokumentations-Tabelle"
 2. Klicke "Run workflow"
 
 ### Methode 2: Python-Skript (Lokal)
 
 **Verwendung:**
+
 ```bash
 # Im Projekt-Root ausführen
 python3 scripts/update_readme_docs.py
 ```
 
 **Voraussetzungen:**
+
 - Python 3.7+
 
 **Ausgabe:**
+
 ```
 📝 Generiere Dokumentations-Tabelle...
 📋 Gefundene Dokumentationen: 19/19
@@ -42,6 +68,7 @@ python3 scripts/update_readme_docs.py
 ### Methode 3: Bash-Skript (Linux/Mac)
 
 **Verwendung:**
+
 ```bash
 # Skript ausführbar machen
 chmod +x scripts/update-readme-docs.sh
@@ -51,12 +78,14 @@ chmod +x scripts/update-readme-docs.sh
 ```
 
 **Voraussetzungen:**
+
 - Bash 4.0+
 - Standard Linux/Mac Tools (awk, sed)
 
 ## 📝 Neue Dokumentation hinzufügen
 
 ### Schritt 1: Datei erstellen
+
 ```bash
 # Neue .md Datei in docs/ erstellen
 touch docs/neue-dokumentation.md
@@ -140,6 +169,7 @@ Die Reihenfolge in der Tabelle entspricht dem **empfohlenen Lernpfad**:
 Falls Ordnerstruktur geändert wird:
 
 **Python-Skript:**
+
 ```python
 PROJECT_ROOT = Path(__file__).parent.parent
 DOCS_DIR = PROJECT_ROOT / "docs"
@@ -147,14 +177,16 @@ README_FILE = PROJECT_ROOT / "README.md"
 ```
 
 **GitHub Action:**
+
 ```yaml
 paths:
-  - 'docs/*.md'  # Überwachter Pfad
+  - "docs/*.md" # Überwachter Pfad
 ```
 
 ### Tabellen-Format anpassen
 
 **Header ändern:**
+
 ```python
 table_lines = [
     "## Inhalt / Lernpfade",
@@ -165,6 +197,7 @@ table_lines = [
 ```
 
 **Zeilen-Format:**
+
 ```python
 table_lines.append(f"| {bereich} | {link} | {beschreibung} |")
 ```
@@ -174,6 +207,7 @@ table_lines.append(f"| {bereich} | {link} | {beschreibung} |")
 ### Fehler: "README.md nicht gefunden"
 
 **Lösung:**
+
 ```bash
 # Prüfe aktuelles Verzeichnis
 pwd
@@ -188,6 +222,7 @@ python3 scripts/update_readme_docs.py
 ### Fehler: "docs/ Ordner nicht gefunden"
 
 **Lösung:**
+
 ```bash
 # Prüfe ob docs/ existiert
 ls -la docs/
@@ -199,11 +234,13 @@ mkdir -p docs
 ### Tabelle wird nicht aktualisiert
 
 **Mögliche Ursachen:**
+
 1. Datei nicht in Metadaten aufgeführt
 2. Markdown-Header falsch (muss exakt "## Inhalt / Lernpfade" sein)
 3. Regex-Pattern greift nicht
 
 **Lösung:**
+
 ```bash
 # Backup erstellen
 cp README.md README.md.backup
@@ -215,6 +252,7 @@ python3 -v scripts/update_readme_docs.py
 ### GitHub Action schlägt fehl
 
 **Prüfen:**
+
 1. Workflow-Permissions in GitHub Settings → Actions → General
 2. Muss "Read and write permissions" haben
 3. Log in GitHub → Actions → Failed workflow ansehen

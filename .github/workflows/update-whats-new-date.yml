@@ -1,0 +1,49 @@
+name: Update README Was-ist-neu-Datum
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "docs/**"
+      - "material/**"
+      - ".github/workflows/update-whats-new-date.yml"
+      - "scripts/update_whats_new_date.py"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-whats-new-date:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Update README heading date
+        run: python3 scripts/update_whats_new_date.py
+
+      - name: Check for changes
+        id: check_changes
+        run: |
+          if git diff --quiet README.md; then
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Commit and push README update
+        if: steps.check_changes.outputs.changed == 'true'
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add README.md
+          git commit -m "docs(readme): aktualisiere Was-ist-neu-Datumsstand [skip ci]"
+          git push
