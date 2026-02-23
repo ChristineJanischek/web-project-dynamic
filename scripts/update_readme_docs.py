@@ -21,6 +21,7 @@ from lib.readme_utils import (
 
 # Dokumentations-Metadaten (Reihenfolge = Lernpfad)
 DOC_METADATA: List[Tuple[str, str, str]] = [
+    ("README.md", "Docs-Startseite", "Navigation über statisch, dynamisch, konzeption, programmierung und handbook"),
     ("statisch/intro.md", "Einstieg & Überblick", "Was ist das Web? Rollen von Client/Server"),
     (
         "statisch/html-grundgeruest.md",
