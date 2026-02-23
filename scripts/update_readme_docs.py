@@ -7,10 +7,9 @@ Verwendung:
     python3 scripts/update_readme_docs.py
 """
 
-import os
-import re
-from pathlib import Path
-from typing import Dict, List, Tuple
+from typing import List, Tuple
+
+from lib.readme_utils import DOCS_DIR, replace_markdown_section, read_readme, write_readme
 
 # Dokumentations-Metadaten (Reihenfolge = Lernpfad)
 DOC_METADATA: List[Tuple[str, str, str]] = [
@@ -39,12 +38,6 @@ DOC_METADATA: List[Tuple[str, str, str]] = [
     ("testen.md", "Testen", "Warum Tests? Einfache Beispiele (Jest/Pytest/PHPUnit)"),
 ]
 
-# Pfade
-PROJECT_ROOT = Path(__file__).parent.parent
-DOCS_DIR = PROJECT_ROOT / "docs"
-README_FILE = PROJECT_ROOT / "README.md"
-
-
 def generate_table() -> str:
     """Generiert die Markdown-Tabelle für die Dokumentationen."""
     
@@ -68,31 +61,15 @@ def generate_table() -> str:
 
 def update_readme(new_table: str) -> None:
     """Aktualisiert die README.md mit der neuen Tabelle."""
-    
-    if not README_FILE.exists():
-        raise FileNotFoundError(f"README.md nicht gefunden: {README_FILE}")
-    
-    # README.md lesen
-    content = README_FILE.read_text(encoding="utf-8")
-    
-    # Finde Start und Ende der Tabelle
-    # Pattern: Von "## Inhalt / Lernpfade" bis zum nächsten "##"
-    pattern = r"(## Inhalt / Lernpfade.*?)(\n##\s|\Z)"
-    
-    # Ersetze die Tabelle
-    def replace_table(match):
-        # Bewahre den nächsten Abschnitt
-        return new_table + "\n\n" + match.group(2)
-    
-    new_content = re.sub(pattern, replace_table, content, flags=re.DOTALL)
-    
-    # README.md schreiben
-    README_FILE.write_text(new_content, encoding="utf-8")
+
+    content = read_readme()
+    new_content = replace_markdown_section(content, "## Inhalt / Lernpfade", new_table)
+    write_readme(new_content)
     
     print("✅ README.md erfolgreich aktualisiert!")
 
 
-def main():
+def main() -> int:
     """Hauptfunktion."""
     
     print("📝 Generiere Dokumentations-Tabelle...")

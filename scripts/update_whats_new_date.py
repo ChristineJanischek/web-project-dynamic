@@ -9,37 +9,27 @@ Verwendung:
 
 from __future__ import annotations
 
-import re
+import argparse
 from datetime import date
-from pathlib import Path
-
-PROJECT_ROOT = Path(__file__).resolve().parent.parent
-README_FILE = PROJECT_ROOT / "README.md"
-
-HEADING_PATTERN = re.compile(
-    r"^##\s+🆕\s+Was ist neu\?\s*(?:\(Stand:\s*\d{2}\.\d{2}\.\d{4}\))?\s*$",
-    flags=re.MULTILINE,
-)
+from lib.readme_utils import read_readme, update_whats_new_heading, write_readme
 
 
-def update_whats_new_heading(content: str, today: str) -> tuple[str, bool]:
-    new_heading = f"## 🆕 Was ist neu? (Stand: {today})"
-
-    match = HEADING_PATTERN.search(content)
-    if not match:
-        raise ValueError("Überschrift '## 🆕 Was ist neu?' nicht gefunden.")
-
-    updated_content = content[: match.start()] + new_heading + content[match.end() :]
-    return updated_content, updated_content != content
+def parse_args() -> argparse.Namespace:
+    parser = argparse.ArgumentParser(
+        description="Aktualisiert den Datumsstand in der README-Überschrift 'Was ist neu?'."
+    )
+    parser.add_argument(
+        "--date",
+        dest="manual_date",
+        help="Optionales Datum im Format TT.MM.JJJJ (sonst heutiges Datum).",
+    )
+    return parser.parse_args()
 
 
 def main() -> int:
-    if not README_FILE.exists():
-        print(f"❌ README nicht gefunden: {README_FILE}")
-        return 1
-
-    content = README_FILE.read_text(encoding="utf-8")
-    today = date.today().strftime("%d.%m.%Y")
+    args = parse_args()
+    content = read_readme()
+    today = args.manual_date or date.today().strftime("%d.%m.%Y")
 
     try:
         updated_content, changed = update_whats_new_heading(content, today)
@@ -51,7 +41,7 @@ def main() -> int:
         print("ℹ️ Datumsstand ist bereits aktuell. Keine Änderung nötig.")
         return 0
 
-    README_FILE.write_text(updated_content, encoding="utf-8")
+    write_readme(updated_content)
     print(f"✅ README aktualisiert: Stand {today}")
     return 0
 

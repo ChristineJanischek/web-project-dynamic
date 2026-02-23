@@ -133,6 +133,13 @@ git push
 
 ## 🔧 Funktionsweise
 
+### Gemeinsame Utilities (`scripts/lib/readme_utils.py`)
+
+- Enthält zentrale Pfadkonstanten (`PROJECT_ROOT`, `README_FILE`, `DOCS_DIR`)
+- Bündelt wiederverwendbare README-Operationen (lesen, schreiben, Abschnitt ersetzen)
+- Vermeidet doppelte Regex-/Pfadlogik in mehreren Skripten
+- Erleichtert Erweiterungen für weitere README-Automationen
+
 ### Python-Skript (`update_readme_docs.py`)
 
 1. **Liest Metadaten:** Definierte Liste von Dokumentationen mit Namen, Bereich, Beschreibung
