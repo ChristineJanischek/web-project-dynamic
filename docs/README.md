@@ -27,6 +27,7 @@ Diese Seite bündelt alle Doku-Bereiche des Repositories und hilft beim schnelle
   - [PHP Fundamentals](programmierung/grundlagen/php/README.md)
   - [Python Fundamentals](programmierung/grundlagen/python/README.md)
   - [JavaScript Fundamentals](programmierung/grundlagen/javascript/README.md)
+  - [Didaktikpfad Funktional → OOP](programmierung/grundlagen/DIDAKTIK_FUNKTIONAL_ZU_OOP.md)
 
 - [Handbook (Lehrende & Architektur)](handbook/ARCHITECTURE.md)
   - [Backup-Strategie](handbook/BACKUP_STRATEGY.md)

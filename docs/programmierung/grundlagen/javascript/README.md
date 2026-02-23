@@ -19,3 +19,7 @@ Diese Reihe überträgt die gleichen Kernkonzepte aus der PHP- und Python-Reihe 
 - Erst mit einfachen Browser-Beispielen starten.
 - Ein Konzept pro Schritt üben und danach kombinieren.
 - Unterschiede zu PHP/Python bewusst benennen (z. B. Typkonvertierung).
+
+## Didaktischer Ausbau (Funktional → OOP)
+
+- Für die Jahresplanung und den Übergang zur Objektorientierung: [Didaktikpfad Funktional → OOP](../DIDAKTIK_FUNKTIONAL_ZU_OOP.md)

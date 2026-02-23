@@ -20,3 +20,7 @@ Diese Reihe ist für Lernende gedacht, die mit **ihrer ersten höheren Programmi
 - Jedes Beispiel zunächst ausführen, dann bewusst verändern.
 - Bei Fehlern mit kleinen Eingaben testen (Edge Cases).
 - Immer auf saubere Namen und klare Struktur achten.
+
+## Didaktischer Ausbau (Funktional → OOP)
+
+- Für die Jahresplanung und den Übergang zur Objektorientierung: [Didaktikpfad Funktional → OOP](../DIDAKTIK_FUNKTIONAL_ZU_OOP.md)

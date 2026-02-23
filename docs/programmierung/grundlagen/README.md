@@ -9,6 +9,12 @@ Diese Doku ist als **sprachübergreifendes Nachschlagewerk** aufgebaut. Ziel ist
 - Schrittweise Erweiterbarkeit für zukünftige Entwicklungsschritte
 - Verständliche Beispiele für Einsteigerinnen und Einsteiger
 
+## Didaktischer Pfad (empfohlen)
+
+- [Didaktikpfad: Funktional starten, OOP sicher aufbauen](DIDAKTIK_FUNKTIONAL_ZU_OOP.md)
+- Fokus: Jahr 1 funktional-pragmatisch, Brückenphase, Jahr 2 OOP
+- Mit konkreten Praxisaufgaben für PHP, Python und JavaScript
+
 ## Architektur der Dokumentation
 
 ```text
@@ -64,3 +70,7 @@ Weitere Reihen:
 
 - [Python Fundamentals](python/README.md)
 - [JavaScript Fundamentals](javascript/README.md)
+
+Vertiefung zur Unterrichtsplanung:
+
+- [Didaktikpfad Funktional → OOP](DIDAKTIK_FUNKTIONAL_ZU_OOP.md)

@@ -19,3 +19,7 @@ Diese Reihe überträgt die gleichen Kernkonzepte aus der PHP-Reihe auf Python. 
 - Immer erst mit kleinen Eingaben testen.
 - Ein Konzept pro Übungsschritt fokussieren.
 - Fehler als Lernchance nutzen (Traceback lesen lernen).
+
+## Didaktischer Ausbau (Funktional → OOP)
+
+- Für die Jahresplanung und den Übergang zur Objektorientierung: [Didaktikpfad Funktional → OOP](../DIDAKTIK_FUNKTIONAL_ZU_OOP.md)

@@ -203,8 +203,67 @@ Die Reihenfolge in der Tabelle entspricht dem **empfohlenen Lernpfad**:
 5. Frameworks (React)
 6. Backend (Python, PHP, Datenbank)
 7. Erweitert (Algorithmen, Testing)
+8. Rechtliche Aspekte (privat, kommerziell, KI-Inhalte)
 
 **Wichtig:** Bei neuen Dokumentationen die Reihenfolge in den Metadaten beachten!
+
+### ⚖️ Kapitel: Rechtliche Aspekte (privat/kommerziell + KI-Inhalte)
+
+Dieses Kapitel soll Schüler:innen befähigen, rechtliche Risiken früh zu erkennen und ihre Projekte sauber zu dokumentieren.
+
+#### Theoretische Basis (was man wissen muss)
+
+1. **Privat vs. kommerziell:**
+   - Private Nutzung im Unterricht ist oft weniger risikobehaftet, aber nicht automatisch frei von Rechten Dritter.
+   - Bei Veröffentlichung, Wettbewerb, Schulwebsite oder Kundenbezug gelten strengere Anforderungen wie bei kommerzieller Nutzung.
+2. **Urheberrecht & Lizenzen:**
+   - Texte, Bilder, Icons, Audio, Videos, Code-Snippets und Fonts sind in der Regel urheberrechtlich geschützt.
+   - Erlaubt ist nur Nutzung mit passender Lizenz (z. B. MIT, Apache-2.0, CC BY, CC BY-SA) und unter Einhaltung der Lizenzbedingungen.
+3. **Persönlichkeitsrechte & Datenschutz:**
+   - Fotos/Videos mit Personen nur mit Einwilligung.
+   - Personenbezogene Daten (Name, E-Mail, IP, Umfrageantworten) nur mit klarer Zweckbindung und möglichst sparsam erfassen.
+4. **KI-generierte Inhalte:**
+   - KI-Ergebnisse sind rechtlich nicht automatisch „frei nutzbar“.
+   - Prompts, Trainingsdatenherkunft und Tool-Nutzungsbedingungen können Auswirkungen auf die Weiterverwendung haben.
+
+#### Praktische Umsetzung im Schülerprojekt
+
+1. **Asset-Check vor Nutzung:** Quelle, Lizenz, Autor:in und Nutzungszweck für jedes externe Asset dokumentieren.
+2. **Lizenzkompatibilität prüfen:** Bei Mischung mehrerer Quellen auf kompatible Lizenzen achten.
+3. **Quellen sichtbar machen:** Abschnitt „Quellen & Lizenzen“ in der Projekt-README ergänzen.
+4. **KI-Nutzung transparent machen:** Eigene Sektion „Einsatz von KI“ mit Umfang und Zweck der KI-Unterstützung anlegen.
+5. **Eigenleistung kennzeichnen:** Klar trennen zwischen eigener Arbeit, adaptiertem Material und KI-Vorschlägen.
+
+#### Mindeststandard für die Dokumentation (empfohlen)
+
+In jeder Projekt-README sollten mindestens diese Blöcke enthalten sein:
+
+- **Nutzungsart:** privat/unterrichtlich oder öffentlich/kommerziell geplant
+- **Externe Ressourcen:** Tabelle mit Quelle, Lizenz, Link, Verwendungsort
+- **KI-Deklaration:** eingesetztes Tool, Einsatzbereich, menschliche Prüfung/Anpassung
+- **Zitation:** vollständige Quellenangaben mit Abrufdatum
+
+Beispiel für eine kurze KI-Deklaration:
+
+```md
+## Einsatz von KI
+
+- Tool: ChatGPT (GPT-5.3-Codex)
+- Einsatz: Ideenfindung, Code-Refactoring, Textkorrektur
+- Eigenleistung: Implementierung, Tests und Endentscheidung durch das Team
+- Prüfung: Alle KI-Vorschläge wurden fachlich und rechtlich geprüft
+```
+
+Beispiel für Quellen/Zitation:
+
+```md
+## Quellen & Lizenzen
+
+1. Foto "Campus" von Max Mustermann, Quelle: https://example.org/campus, Lizenz: CC BY 4.0, Abruf: 23.02.2026
+2. Icon-Set "UI Pack", Quelle: https://example.org/icons, Lizenz: MIT, Verwendet in: navbar/footer
+```
+
+Hinweis: Dieses Kapitel vermittelt praxisnahe Orientierung für den Unterricht und ersetzt keine individuelle Rechtsberatung im Einzelfall.
 
 ## ⚙️ Konfiguration
 
