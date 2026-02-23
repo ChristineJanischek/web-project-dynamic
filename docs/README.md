@@ -2,6 +2,8 @@
 
 Diese Seite bündelt alle Doku-Bereiche des Repositories und hilft beim schnellen Einstieg.
 
+- [Doku-Struktur & Pflege-Regeln](STRUKTUR.md)
+
 ## Bereiche
 
 - [Statisch (HTML/CSS Basis)](statisch/intro.md)
