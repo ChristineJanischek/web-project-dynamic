@@ -112,6 +112,15 @@ BMI = Gewicht (kg) / (Größe in Metern)²
 - [PHP lokal testen](../docs/dynamisch/php-lokal-testen.md) - So testet ihr eure Dateien
 - [PHP Basics](../docs/dynamisch/php.md) - PHP-Grundlagen auffrischen
 - [HTML-Formulare](../docs/statisch/formulare.md) - Wie Formulare funktionieren
+- [PHP Fundamentals (modular)](../docs/programmierung/grundlagen/php/README.md) - Grundlagenpfad für Deklaration, Kontrollstrukturen, Datenstrukturen
+
+## 🧩 Musterlösungen in `src/`
+
+Diese Stufen führen schrittweise in PHP und die Nutzung der Vorlage `src/dynamic_layout_projektvorlage` ein:
+
+1. [src/01_PHP](../src/01_PHP/index.php) - Einfache Ausgabe mit erstem PHP-Block
+2. [src/02_PHP](../src/02_PHP/index.php) - Seitenaufbau mit Includes (`head`, `header`, `content`, `sidebar`, `footer`)
+3. [src/03_PHP](../src/03_PHP/README.md) - Vollständige MVC-Musterlösung zum BMI-Rechner auf Basis der Projektvorlage
 
 ---
 

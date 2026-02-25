@@ -1,0 +1,99 @@
+@charset "utf-8";
+
+/* Datei: responsivegrid.css*/
+/* Styling für das Logo-Einbettung*/
+/******
+Logo formatieren
+****/
+/******
+Logo im CSS formatieren
+****/
+.box_hintergrund {
+  /*Absolute Positionierung einer Box*/
+  position: absolute;
+
+  /*Rahmen-Radius für abgerudete Ecken in Pixel*/
+  border-radius: 0px;
+
+  /*Absolute Beite einer Box*/
+  width: 100%;
+
+  /*Absolute Höhe einer Box*/
+  height: 80px;
+}
+
+#strahlen {
+  /*Abstand von oben*/
+  top: 10px;
+
+  /*Abstand von rechts*/
+  left: 85px;
+
+  /*Bild als Hintergrund einbinden*/
+  background-image: url("../images/strahlen.png");
+
+  /*Wiederholung unterdrücken*/
+  background-repeat: no-repeat;
+
+  /*Reihenfolge der Layer in Position 1*/
+  z-index: 1;
+}
+
+#sonne {
+  /*Abstand von oben*/
+  top: 50px;
+
+  /*Abstand von rechts*/
+  left: 100px;
+
+  /*Bild als Hintergrund einbinden*/
+  background-image: url("../images/sonne.png");
+
+  /*Wiederholung unterdrücken*/
+  background-repeat: no-repeat;
+
+  /*Reihenfolge der Layer in Position 2*/
+  z-index: 2;
+}
+
+#wolke {
+  /*Abstand von oben*/
+  top: 70px;
+
+  /*Abstand von rechts*/
+  left: 85px;
+
+  /*Bild als Hintergrund einbinden*/
+  background-image: url("../images/wolke.png");
+
+  /*Wiederholung unterdrücken*/
+  background-repeat: no-repeat;
+
+  /*Reihenfolge der Layer in Position 3*/
+  z-index: 3;
+}
+
+/*Mobiler Zuschnitt für kleinere Header*/
+@media (max-width: 768px) {
+  .box_hintergrund {
+    height: 60px;
+  }
+
+  #strahlen {
+    top: 6px;
+    left: 16px;
+    background-size: 72px auto;
+  }
+
+  #sonne {
+    top: 24px;
+    left: 44px;
+    background-size: 56px auto;
+  }
+
+  #wolke {
+    top: 34px;
+    left: 20px;
+    background-size: 92px auto;
+  }
+}

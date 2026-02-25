@@ -1,0 +1,197 @@
+@charset "utf-8";
+
+/* Datei: togglenav.css*/
+
+/*******
+Toggle-Menue für Mobile Web Apps (Responsive)
+*****/
+
+/*
+Für labels der Klasse "menu" gilt (u.a. verweist auf die Menü-Grafik)
+*/
+nav label {
+  /*Ausrichtung der Box rechts*/
+  float: right;
+
+  /*Mauszeiger aktiv*/
+  cursor: pointer;
+
+  /*Blockelement mit Zeilenumbruch*/
+  display: block;
+
+  /*Breite der Box*/
+  width: 40px;
+
+  /*Höhe der Box*/
+  height: 40px;
+
+  /*Bildquelle: relativer Pfad auf Hintergrundbild /-grafik*/
+  background-image: url(../images/toggle-menu.png);
+
+  /*Automatische Anpassung des Hintergrunds*/
+  background-size: 100% auto;
+}
+
+/*
+Für Boxen mit der id "menu-toggle" gilt
+*/
+#menu-toggle {
+  /* Checkbox wird ausgeblendet*/
+  display: none;
+}
+
+/*
+Für Boxen mit der id "menu" gilt
+*/
+#menu {
+  /*Menü wird standardmäßig ausgeblendet*/
+  display: none;
+}
+
+/*
+Für Boxen mit der id "menu-toggle" oder der id "menu" gilt
+*/
+#menu-toggle:checked + #menu {
+  /*Auf Klick wird das Menü angezeigt*/
+  display: block;
+}
+
+/*
+Für ungeordnete Listen (ul) in der nav-Box gilt
+*/
+nav ul {
+  /*Innenabstand links: keiner*/
+  padding-left: 0;
+}
+
+/*
+Für Listenpunkte (li) in der nav-Box gilt
+*/
+nav ul li {
+  /*Blockelement mit Zeilenumbruch*/
+  display: block;
+
+  /*Listenpunkte werden ausgeblendet*/
+  list-style-type: none;
+}
+
+/*
+Für Links/Verweise (a) in der nav-Box gilt
+*/
+nav ul li a {
+  /*Blockelement mit Zeilenumbruch*/
+  display: block;
+
+  /*Innenabstand Kurzform: alle Seiten*/
+  padding: 0.5em;
+
+  /*Schriftfarbe*/
+  color: #7d838b;
+
+  /*Keine Textauszeichnung*/
+  text-decoration: none;
+
+  /*Breite der Box*/
+  max-width: 100%;
+
+  /*Rahmen: Breite Stilart Farbe*/
+  border-bottom: 1px solid #7d838b;
+}
+
+/*
+Für Links/Verweise (a) beim Selektor :hover ("drüberfahren") 
+und :focus ("draufzeigen") in der nav-Box gilt
+*/
+nav ul li a:hover,
+nav ul li a:focus {
+  /*Schriftfarbe*/
+  color: orange;
+}
+
+/*
+Für Links/Verweise (a) beim Selektor :active ("aktiv") in der nav-Box gilt
+*/
+nav ul li a:active {
+  /*Textauszeichnung: unterstreichen*/
+  text-decoration: underline;
+}
+
+/*Verbesserte Klickziele auf Phones*/
+@media (max-width: 768px) {
+  nav ul li a {
+    padding: 0.75em 0.6em;
+    font-size: 1rem;
+  }
+
+  nav ul {
+    margin: 0;
+  }
+}
+
+/*
+Für die Anpassung des Layouts an die unterschielichen Displaygrößen (Responsive):
+Hier wird ab 50em getogglet!
+*/
+@media screen and (min-width: 50em) {
+  /*
+	Für Listenpunkte (li) in der nav-Box gilt
+	*/
+  nav ul li {
+    /*Blockelement mit Zeilenumbruch*/
+    display: inline-block;
+  }
+
+  /*
+	Für Links/Verweise (a) in der nav-Box gilt
+	*/
+  nav ul li a {
+    /*Rahmen rechts: Breite Stilart Farbe*/
+    border-right: 1px solid #bbbdba;
+
+    /*Automatische Anpassung der Breite der Box*/
+    width: auto;
+
+    /*Rahmen unten: keiner*/
+    border-bottom: none;
+  }
+
+  /*
+	Für Links/Verweise (a) als letztes Element in der nav-Box gilt
+	*/
+  nav ul li:last-child a {
+    /*Rahmen rechts: keiner*/
+    border-right: none;
+  }
+
+  /*
+	Für labels gilt
+	*/
+  label {
+    /*Box ausgeblendet*/
+    display: none;
+  }
+
+  /*
+	Für Boxen mit der id "menu-toggle" gilt
+	*/
+  #menu-toggle {
+    /*Checkbox ausgeblendet*/
+    display: none;
+  }
+
+  /*
+	Für Boxen mit der id "menu" gilt
+	*/
+  #menu {
+    /*Blockelement mit Zeilenumbruch*/
+    display: block;
+  }
+
+  /*
+	Für Boxen mit der id "menu-toggle" oder der id "menu" gilt
+	*/
+  #menu-toggle:checked + #menu {
+    /*Blockelement mit Zeilenumbruch*/
+    display: block;
+  }
+}
