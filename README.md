@@ -15,6 +15,7 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 - 🚀 Live Server vorinstalliert für sofortiges Testen
 
 ## 🆕 Was ist neu? (Stand: 23.02.2026)
+
 - ✅ Neue modulare Grundlagenpfade für [PHP](docs/programmierung/grundlagen/php/README.md), [Python](docs/programmierung/grundlagen/python/README.md) und [JavaScript](docs/programmierung/grundlagen/javascript/README.md)
 - ✅ Python-Kapitel zu Algorithmen und Dateiverarbeitung ergänzt
 - ✅ Unterrichtsmaterial von `ka_grundlagen/` nach [material/ka_grundlagen](material/ka_grundlagen) migriert
@@ -282,17 +283,28 @@ Praxisvorschlag:
 
 ---
 
-### 🎓 Version 5: JavaScript & Interaktivität ⚡
+### 🎓 Version 5: Notenrechner mit MVC-Transfer (PHP) ✅
 
-**Status:** In Planung
+**Status:** Release verfügbar - Transfertraining zu Version 4
 
-**Geplante Themen:**
+**Schwerpunkte:**
 
-- DOM-Manipulation
-- Event-Handling
-- AJAX/Fetch API
-- Lokaler Storage
-- Einfache Animationen
+- Reflexion der in Version 4 erlernten MVC-Struktur
+- Transfer auf neues Fachproblem (Notendurchschnitt)
+- Vertiefung von Verzweigungen über `pruefeNachhilfe()`
+
+**Dateien:**
+
+- 📖 **Aufgabenstellung:** [`version5/README.md`](version5/README.md)
+- 📘 **Aufgabe 0:** [`version5/AUFGABE_0_ERKUNDUNG.md`](version5/AUFGABE_0_ERKUNDUNG.md)
+- 📝 **Aufgabe 1:** [`version5/AUFGABE_1_VIEW.md`](version5/AUFGABE_1_VIEW.md)
+- 🧮 **Aufgabe 2:** [`version5/AUFGABE_2_MODEL.md`](version5/AUFGABE_2_MODEL.md)
+- 🎮 **Aufgabe 3:** [`version5/AUFGABE_3_CONTROLLER.md`](version5/AUFGABE_3_CONTROLLER.md)
+- ✅ **Musterlösung:** [`src/04_PHP/README.md`](src/04_PHP/README.md)
+
+**Grundlagenbezug:**
+
+- [`docs/programmierung/grundlagen/php/README.md`](docs/programmierung/grundlagen/php/README.md)
 
 ---
 
@@ -302,7 +314,7 @@ Die wichtigsten Bereiche im Überblick:
 
 - `docs/` – zentrale Dokumentation (Start: [docs/README.md](docs/README.md))
   - `statisch/`, `dynamisch/`, `konzeption/`, `programmierung/`, `handbook/`
-- [version1](version1/) bis [version4](version4/) – aufeinander aufbauende Lernversionen
+- [version1](version1/) bis [version5](version5/) – aufeinander aufbauende Lernversionen
 - [shared-examples](shared-examples/) – vollständiges Beispielprojekt
 - [scripts](scripts/) – Automationen (README-Update, Validierung, Backups)
 - [.github/workflows](.github/workflows/) – CI/CD- und Qualitäts-Workflows
@@ -361,7 +373,7 @@ Die Einführung in Teststrategien liegt in [`docs/dynamisch/testen.md`](docs/dyn
 
 ## 🔄 Template-Updates für Student-Repos
 
-Dieses Repository ist ein **GitHub Classroom Template**. Wenn du als Schüler:in damit arbeitest und später **neue Versionen** (z.B. Version 4) oder **Dokumentations-Updates** übernehmen möchtest:
+Dieses Repository ist ein **GitHub Classroom Template**. Wenn du als Schüler:in damit arbeitest und später **neue Versionen** (z.B. Version 5) oder **Dokumentations-Updates** übernehmen möchtest:
 
 📖 **Vollständige Anleitung:** [docs/handbook/TEMPLATE_SYNC.md](docs/handbook/TEMPLATE_SYNC.md)
 
@@ -372,9 +384,9 @@ Dieses Repository ist ein **GitHub Classroom Template**. Wenn du als Schüler:in
 git remote add template https://github.com/ChristineJanischek/web-project-dynamic.git
 git fetch template
 
-# 2. Neue Inhalte übernehmen (z.B. Version 4)
-git checkout template/main -- version4/
-git commit -m "✨ Version 4 vom Template hinzugefügt"
+# 2. Neue Inhalte übernehmen (z.B. Version 5)
+git checkout template/main -- version5/ src/04_PHP/
+git commit -m "✨ Version 5 vom Template hinzugefügt"
 git push
 ```
 

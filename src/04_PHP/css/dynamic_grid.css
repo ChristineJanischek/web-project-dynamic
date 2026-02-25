@@ -1,0 +1,297 @@
+@charset "utf-8";
+
+/* Datei: grid.css*/
+/* Styling für das Flexbox-Layout */
+/******
+Dynamic Grid Vertiefung
+****/
+
+/* Für das Layout*/
+body {
+  /*Schriftfamilie festlegen*/
+  font-family: Arial, sans-serif;
+
+  /*bestimmt den vertikalen Abstand zwischen 
+    einzelnen Textzeilen innerhalb eines Elements.*/
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  /*Schriftfarbe*/
+  color: orange;
+
+  /*Textform*/
+  text-transform: uppercase;
+
+  /*Seitlicher Abstand für große Screens*/
+  padding-left: 80px;
+
+  /*Schriftgewicht*/
+  font-weight: 100;
+}
+
+legend {
+  /*Schriftfarbe*/
+  color: orange;
+
+  /*Textform*/
+  text-transform: uppercase;
+
+  /*Schriftgewicht*/
+  font-weight: 100;
+}
+
+h1 {
+  /*Schriftfarbe*/
+  color: slategray;
+
+  /*Schriftgröße für relative Angaben innerhalb der Boxen*/
+  font-size: 200%;
+}
+
+aside {
+  /*Schriftfarbe*/
+  color: orange;
+
+  /*Textform*/
+  text-transform: uppercase;
+
+  /*Schriftgewicht*/
+  font-weight: 100;
+}
+
+form,
+input {
+  font-size: 1.1em;
+}
+
+.container {
+  margin: 0.5em 5em;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr) auto repeat(3, 1fr);
+  grid-template-rows: auto auto auto auto;
+  gap: 1rem;
+}
+
+header {
+  grid-column-start: 1;
+  grid-column-end: 8;
+  grid-row-start: 3;
+  grid-row-end: 1;
+
+  grid-area: 1 / 1 / span 1 / span 7;
+
+  /*Hintergrundfarbe*/
+  background-color: orange;
+
+  /*Innenabstand zu Inhalt
+    (relative Angabe, responsive): rem steht für "Root Element"*/
+  padding: 1rem;
+
+  /*Rahmen*/
+  border: 2px solid red;
+}
+
+img {
+  /*Relative responsive Breite einer Box*/
+  max-width: 100%;
+}
+
+/*Navigation*/
+nav {
+  grid-area: 2 / 1 / auto / span 7;
+
+  /*Hintergrundfarbe*/
+  background-color: #333;
+
+  /*Schriftfarbe*/
+  color: white;
+
+  /*Innenabstand zu Inhalt
+    (relative Angabe, responsive): rem steht für "Root Element"*/
+  padding: 1rem;
+
+  border: 2px solid green;
+}
+
+/*Links*/
+aside {
+  grid-area: 3 / 1 / span 2 / span 2;
+
+  /*Innenabstand zu Inhalt
+    (relative Angabe, responsive): rem steht für "Root Element"*/
+  padding: 1rem;
+
+  /*Hintergrundfarbe*/
+  background-color: #ddd;
+
+  border: 2px solid violet;
+}
+
+/*Rechts*/
+main {
+  grid-area: -3 / -6 / span 2 / span 5;
+
+  /*Innenabstand zu Inhalt
+    (relative Angabe, responsive): rem steht für "Root Element"*/
+  padding: 1rem;
+
+  /*Hintergrundfarbe*/
+  background-color: #f4f4f4;
+
+  /*align-self: center;*/
+
+  border: 2px solid orange;
+}
+
+section h2 {
+  /*Schriftgröße */
+  font-size: 1.2em;
+
+  /*Schriftfarbe*/
+  color: orange;
+}
+
+footer {
+  grid-area: 5 / 1 / span 1 / span 7;
+}
+
+/****** 
+Projekte
+*********/
+/*Formular, Komponenten*/
+
+form,
+input {
+  font-size: 1.1em;
+}
+
+fieldset {
+  display: block; /*Inline-Elemente werden zu Blockelemente*/
+  margin-right: 20px; /*Aussenabstand in Kurzform 20 Pixel von rechts*/
+  margin-left: 20px; /*Aussenabstand in Kurzform 20 Pixel von links*/
+  font-size: 85%; /*relative Schriftgröße*/
+  padding: 5px; /*Innenabstand: Kurzform von allen Seiten*/
+}
+
+fieldset #left {
+  clear: left;
+  float: left;
+  width: 40%;
+}
+
+fieldset #right {
+  float: right;
+  width: 40%;
+}
+
+form lable {
+  /*Art und Weise wie Element/Box gerendert wird*/
+  display: inline;
+
+  /*Schriftfarbe*/
+  color: slategray;
+
+  /*Schriftgröße relativ*/
+  font-size: 85%;
+}
+
+input,
+button,
+submit {
+  font-size: 85%; /*relative Schriftgröße*/
+  margin-left: 5px;
+}
+
+legend {
+  font-size: 90%;
+}
+
+input {
+  float: left;
+  margin-top: 0; /*Aussenabstand in Kurzform 0 Pixel von oben*/
+  background-color: rgba(220, 220, 220, 0.9); /*Hintergrundfarbe: RGB-Angabe*/
+}
+
+/* Responsive Anpassung:
+verwendet ein Media Query, um das Layout für 
+Bildschirme mit maximaler Breite (768px) anzupassen*/
+@media (max-width: 768px) {
+  /*Einspaltiges Layout und kompakte Abstände*/
+  .container {
+    margin: 0.5em 1em;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    gap: 0.75rem;
+  }
+
+  header,
+  nav,
+  aside,
+  main,
+  footer {
+    grid-column: 1 / -1;
+    grid-row: auto;
+    padding: 0.75rem;
+  }
+
+  h1,
+  h2,
+  legend {
+    padding-left: 0;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: clamp(1.4rem, 4vw, 2rem);
+  }
+
+  h2,
+  section h2,
+  legend {
+    font-size: clamp(1.1rem, 3vw, 1.4rem);
+  }
+
+  body {
+    line-height: 1.5;
+  }
+
+  aside,
+  main {
+    padding: 0.75rem;
+  }
+
+  form,
+  input {
+    font-size: 1rem;
+  }
+
+  fieldset {
+    margin: 0;
+    padding: 0.75rem;
+  }
+
+  fieldset #left,
+  fieldset #right {
+    float: none;
+    width: 100%;
+    margin: 0;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  textarea,
+  select,
+  button {
+    width: 100%;
+    box-sizing: border-box;
+    margin-left: 0;
+  }
+
+  input {
+    margin-top: 0.3rem;
+  }
+}

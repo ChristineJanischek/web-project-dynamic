@@ -1,0 +1,93 @@
+@charset "utf-8";
+
+/* Datei: grid.css*/
+/* Styling für das Flexbox-Layout */
+/******
+Flexbox formatieren
+****/
+
+/* Für den Flexbox-Container: Footer-Container */
+footer {
+  /* Flexbox-Layout aktivieren */
+  display: flex;
+
+  /* Platz zwischen den Spalten aufteilen */
+  justify-content: space-between;
+
+  /*Innenabstand von allen Seiten*/
+  padding: 20px;
+
+  /*Hintergrundfarbe*/
+  background-color: #333;
+
+  /*Schriftfarbe*/
+  color: orange;
+}
+
+footer p {
+  /*Schriftgröße*/
+  font-size: 0.8em;
+}
+
+/* Spalten im Footer */
+.footer-column {
+  /* Jede Spalte nimmt den gleichen Platz ein */
+  flex: 1;
+
+  /*Innenabstand von oben/unten und links/rechts*/
+  padding: 0 20px;
+}
+
+/* Stil für Überschriften im Footer */
+.footer-column h3 {
+  /*Außenabstand von oben*/
+  margin-top: 0;
+
+  /*Schriftgröße*/
+  font-size: 1.1em;
+
+  /*Rahmen unten: Breite Stil Farbe*/
+  border-bottom: 2px solid #777;
+
+  /*Innenabstand von allen Seiten*/
+  padding-bottom: 0.2em;
+}
+
+/* Stil für Links im Footer */
+.footer-column a {
+  /*Schriftfarbe*/
+  color: #ccc;
+
+  /*keine Textauszeichnung*/
+  text-decoration: none;
+
+  /*Block-Element*/
+  display: block;
+
+  /*Außenabstand von oben/unten und links/rechts */
+  margin: 0.2em 0;
+}
+
+/*Links/Verweise Veränderungen bei Mous-Over*/
+.footer-column a:hover {
+  /*Hintergrundfarbe*/
+  color: orange;
+}
+
+/*Mobiler Footer: Spalten untereinander*/
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .footer-column {
+    padding: 0;
+  }
+
+  footer p {
+    font-size: 0.9em;
+  }
+}
