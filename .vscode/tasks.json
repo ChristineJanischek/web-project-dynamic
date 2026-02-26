@@ -1,0 +1,17 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup: Install Live-Test Extensions",
+      "type": "shell",
+      "command": "python3 scripts/manage_vscode_extensions.py install --profile live-test",
+      "problemMatcher": []
+    },
+    {
+      "label": "Setup: Sync Workspace Extension Recommendations",
+      "type": "shell",
+      "command": "python3 scripts/manage_vscode_extensions.py sync",
+      "problemMatcher": []
+    }
+  ]
+}

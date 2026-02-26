@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "groups": {
+    "live_test_required": [
+      "ritwickdey.liveserver",
+      "ecmel.vscode-html-css",
+      "formulahendry.auto-rename-tag"
+    ],
+    "formatting_and_quality": [
+      "esbenp.prettier-vscode",
+      "dbaeumer.vscode-eslint"
+    ],
+    "php": ["bmewburn.vscode-intelephense-client", "xdebug.php-debug"],
+    "python": ["ms-python.python", "ms-python.vscode-pylance"]
+  },
+  "profiles": {
+    "live-test": ["live_test_required", "formatting_and_quality"],
+    "full": ["live_test_required", "formatting_and_quality", "php", "python"]
+  },
+  "defaultProfile": "full"
+}

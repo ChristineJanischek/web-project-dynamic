@@ -4,6 +4,10 @@
   "private": true,
   "description": "Tooling für Lighthouse und Accessibility Tests (Version3 Schülerfirma Projekt)",
   "scripts": {
+    "setup:extensions": "python3 scripts/manage_vscode_extensions.py install --profile full",
+    "setup:live-test": "python3 scripts/manage_vscode_extensions.py install --profile live-test",
+    "setup:extensions:sync": "python3 scripts/manage_vscode_extensions.py sync",
+    "setup:extensions:check": "python3 scripts/manage_vscode_extensions.py check",
     "test:accessibility": "pa11y file://$PWD/version3/aufgabe/phase2-implementation/index-starter.html --reporter markdown || true",
     "test:lighthouse": "lhci autorun",
     "quality": "npm run test:accessibility && npm run test:lighthouse"

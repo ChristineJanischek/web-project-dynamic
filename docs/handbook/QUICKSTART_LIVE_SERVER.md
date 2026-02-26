@@ -31,6 +31,11 @@ Das installiert automatisch:
 2. Tippe: `Show Recommended Extensions`
 3. Klicke auf "Install Workspace Recommended Extensions"
 
+**Oder One-Click über Task (neu):**
+
+1. `Ctrl+Shift+P` → `Tasks: Run Task`
+2. Wähle `Setup: Install Live-Test Extensions`
+
 ---
 
 ## ✅ Schritt 2: HTML-Datei öffnen

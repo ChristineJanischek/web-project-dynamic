@@ -8,6 +8,59 @@ Wenn neue `.md`-Dateien zu `docs/` hinzugefügt werden, muss die Tabelle unter *
 
 ## 🤖 Automatische Methoden
 
+### Methode -2: VS-Code-Extensions zentral verwalten (Live-Test)
+
+**Ziel:**
+
+- Eine zentrale Quelle für alle empfohlenen Extensions
+- One-Click-Installation für Live-Tests
+- CI-Check gegen Drift zwischen Manifest und `.vscode/extensions.json`
+
+**Zentrale Dateien:**
+
+- Manifest: `scripts/config/vscode_extensions.json`
+- CLI: `scripts/manage_vscode_extensions.py`
+- Workspace-Task: `.vscode/tasks.json`
+
+**Nutzung:**
+
+```bash
+# Empfehlungen aus Manifest nach .vscode/extensions.json schreiben
+python3 scripts/manage_vscode_extensions.py sync
+
+# Konsistenz prüfen (CI-freundlich, Exit-Code 2 bei Abweichung)
+python3 scripts/manage_vscode_extensions.py check
+
+# Nur Live-Test Extensions installieren
+python3 scripts/manage_vscode_extensions.py install --profile live-test
+
+# Vollständiges Set installieren
+python3 scripts/manage_vscode_extensions.py install --profile full
+```
+
+**Alternativ über npm:**
+
+```bash
+npm run setup:live-test
+npm run setup:extensions
+npm run setup:extensions:sync
+npm run setup:extensions:check
+```
+
+### Methode -1.5: Branch Protection (Admin-only Push auf main)
+
+**Ziel:**
+
+- Push auf `main` auf Admin-Account einschränken
+- Code-Owner-Review verpflichtend machen
+
+**Nutzung (einmalig als Admin):**
+
+```bash
+chmod +x scripts/configure_branch_protection.sh
+./scripts/configure_branch_protection.sh ChristineJanischek web-project-dynamic main ChristineJanischek
+```
+
 ### Methode -1: Backup-Snapshot erstellen
 
 **Was passiert:**

@@ -1,0 +1,31 @@
+name: VSCode Extensions Sync Check
+
+on:
+  push:
+    paths:
+      - ".vscode/extensions.json"
+      - "scripts/manage_vscode_extensions.py"
+      - "scripts/config/vscode_extensions.json"
+      - ".github/workflows/vscode-extensions-sync-check.yml"
+  pull_request:
+    paths:
+      - ".vscode/extensions.json"
+      - "scripts/manage_vscode_extensions.py"
+      - "scripts/config/vscode_extensions.json"
+      - ".github/workflows/vscode-extensions-sync-check.yml"
+
+jobs:
+  check-sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check extension sync
+        run: python3 scripts/manage_vscode_extensions.py check

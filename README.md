@@ -28,7 +28,7 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 ### Für Schüler:innen in 5 Minuten
 
 1. Projekt in VS Code öffnen (Codespaces oder lokal)
-2. Bei lokaler Nutzung empfohlene Extensions installieren
+2. Bei lokaler Nutzung One-Click-Task ausführen: `Tasks: Run Task` → `Setup: Install Live-Test Extensions`
 3. Erste Datei öffnen: [version1/aufgabe/index.html](version1/aufgabe/index.html)
 4. Mit Live Server starten (`Open with Live Server`)
 5. Änderungen speichern und direkt im Browser prüfen
@@ -38,6 +38,7 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 - Codespaces Zero-Setup: [.devcontainer/CODESPACES_SETUP.md](.devcontainer/CODESPACES_SETUP.md)
 - DevContainer Details: [.devcontainer/README.md](.devcontainer/README.md)
 - Live Server Quickstart: [docs/handbook/QUICKSTART_LIVE_SERVER.md](docs/handbook/QUICKSTART_LIVE_SERVER.md)
+- Workspace Live-Test Setup (neu): [docs/handbook/WORKSPACE_LIVE_TEST_SETUP.md](docs/handbook/WORKSPACE_LIVE_TEST_SETUP.md)
 - Beitragsregeln & Workflow: [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ### Kurz-Troubleshooting
@@ -312,6 +313,18 @@ Praxisvorschlag:
 
 Die wichtigsten Bereiche im Überblick:
 
+```text
+web-project-dynamic/
+├── docs/                 # zentrale Dokumentation + Handbook
+├── scripts/              # Automationen und Wartungsroutinen
+├── .github/workflows/    # CI/CD, Validierung, Qualitätschecks
+├── .vscode/              # Workspace-Settings, Tasks, Extension-Empfehlungen
+├── src/                  # Beispiele und Teilprojekte
+├── shared-examples/      # Referenzbeispiel für Lernende
+├── templates/            # Starter-Templates für App-Repositories
+└── version1/..version5/  # aufeinander aufbauende Lernversionen
+```
+
 - `docs/` – zentrale Dokumentation (Start: [docs/README.md](docs/README.md))
   - `statisch/`, `dynamisch/`, `konzeption/`, `programmierung/`, `handbook/`
 - [version1](version1/) bis [version5](version5/) – aufeinander aufbauende Lernversionen
@@ -327,6 +340,8 @@ Detaillierte Strukturregeln: [docs/STRUKTUR.md](docs/STRUKTUR.md)
 
 - Classroom-Einrichtung: [docs/handbook/GITHUB_CLASSROOM_AUTOGRADING.md](docs/handbook/GITHUB_CLASSROOM_AUTOGRADING.md)
 - Architektur & Wartung: [docs/handbook/ARCHITECTURE.md](docs/handbook/ARCHITECTURE.md)
+- Workspace Live-Test Setup: [docs/handbook/WORKSPACE_LIVE_TEST_SETUP.md](docs/handbook/WORKSPACE_LIVE_TEST_SETUP.md)
+- Governance (Admin-only Push): [docs/handbook/REPO_GOVERNANCE.md](docs/handbook/REPO_GOVERNANCE.md)
 - Template-Synchronisierung: [docs/handbook/TEMPLATE_SYNC.md](docs/handbook/TEMPLATE_SYNC.md)
 - Backup-Best-Practice: [docs/handbook/BACKUP_STRATEGY.md](docs/handbook/BACKUP_STRATEGY.md)
 
