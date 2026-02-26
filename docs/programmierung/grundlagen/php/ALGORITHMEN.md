@@ -1,5 +1,7 @@
 # Algorithmen in PHP
 
+[← Zurück zur PHP-Übersicht](README.md) · [Weiter: Persistentes Schreiben in und Lesen aus Dateien](DATEIEN_LESEN_SCHREIBEN.md)
+
 ## Lernziele
 
 - Algorithmen als Schrittfolgen verstehen

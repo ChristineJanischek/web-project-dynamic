@@ -1,6 +1,8 @@
 ````markdown
 # Algorithmen in Python
 
+[← Zurück zur Python-Übersicht](README.md) · [Weiter: Persistentes Schreiben in und Lesen aus Dateien](DATEIEN_LESEN_SCHREIBEN.md)
+
 ## Lernziele
 
 - Den Begriff Algorithmus sicher erklären

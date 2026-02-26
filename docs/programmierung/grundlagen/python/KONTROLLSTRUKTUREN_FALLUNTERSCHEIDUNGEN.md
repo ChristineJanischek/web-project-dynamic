@@ -1,5 +1,7 @@
 # Kontrollstrukturen: Fallunterscheidungen in Python
 
+[← Zurück zur Python-Übersicht](README.md) · [Weiter: Kontrollstrukturen: Wiederholungsstrukturen](KONTROLLSTRUKTUREN_WIEDERHOLUNGSSTRUKTUREN.md)
+
 ## Lernziele
 
 - `if`, `elif`, `else` sicher einsetzen

@@ -1,6 +1,8 @@
 ````markdown
 # Datenstrukturen in JavaScript
 
+[← Zurück zur JavaScript-Übersicht](README.md) · [Weiter: Algorithmen](ALGORITHMEN.md)
+
 ## Lernziele
 
 - Arrays und Objekte unterscheiden

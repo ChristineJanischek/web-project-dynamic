@@ -1,5 +1,7 @@
 # Rechenoperationen in PHP
 
+[← Zurück zur PHP-Übersicht](README.md) · [Weiter: Vergleichsoperatoren und logische Operatoren](VERGLEICHSOPERATOREN_LOGISCHE_OPERATOREN.md)
+
 ## Lernziele
 
 - Grundrechenarten in PHP anwenden

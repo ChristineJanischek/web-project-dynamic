@@ -1,5 +1,7 @@
 # Funktionen und Methoden in Python
 
+[← Zurück zur Python-Übersicht](README.md) · [Weiter: Kontrollstrukturen: Fallunterscheidungen](KONTROLLSTRUKTUREN_FALLUNTERSCHEIDUNGEN.md)
+
 ## Lernziele
 
 - Funktionen definieren und aufrufen

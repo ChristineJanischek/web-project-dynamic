@@ -21,11 +21,13 @@ Diese Doku ist als **sprachübergreifendes Nachschlagewerk** aufgebaut. Ziel ist
 docs/programmierung/grundlagen/
 ├── README.md                       # Sprachübergreifende Leitlinien
 ├── UMSETZUNGSPLAN.md               # Schritt-für-Schritt-Roadmap
+├── VERGLEICH_JS_PY_PHP_OPERATOR_DATEI_IO.md # Sprachvergleich Operatoren + Datei-I/O
 ├── php/
     ├── README.md
     ├── AUSGABEN.md
     ├── VARIABLEN.md
     ├── RECHENOPERATIONEN.md
+    ├── VERGLEICHSOPERATOREN_LOGISCHE_OPERATOREN.md
     ├── FUNKTIONEN_METHODEN.md
     ├── KONTROLLSTRUKTUREN_FALLUNTERSCHEIDUNGEN.md
     ├── KONTROLLSTRUKTUREN_WIEDERHOLUNGSSTRUKTUREN.md
@@ -74,3 +76,7 @@ Weitere Reihen:
 Vertiefung zur Unterrichtsplanung:
 
 - [Didaktikpfad Funktional → OOP](DIDAKTIK_FUNKTIONAL_ZU_OOP.md)
+
+Sprachübergreifender Schnellvergleich:
+
+- [Vergleich JavaScript, Python, PHP (Operatoren + Datei-I/O)](VERGLEICH_JS_PY_PHP_OPERATOR_DATEI_IO.md)

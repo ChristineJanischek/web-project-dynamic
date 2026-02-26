@@ -1,5 +1,7 @@
 # Einfache Ausgaben in Python
 
+[← Zurück zur Python-Übersicht](README.md) · [Weiter: Variablen](VARIABLEN.md)
+
 ## Lernziele
 
 - Text und Variablen mit `print()` ausgeben

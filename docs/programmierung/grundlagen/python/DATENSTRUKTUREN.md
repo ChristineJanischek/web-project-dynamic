@@ -1,5 +1,7 @@
 # Datenstrukturen in Python
 
+[← Zurück zur Python-Übersicht](README.md) · [Weiter: Algorithmen](ALGORITHMEN.md)
+
 ## Lernziele
 
 - Listen, Tupel, Dictionaries und Mengen unterscheiden

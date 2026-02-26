@@ -1,6 +1,8 @@
 ````markdown
 # Rechenoperationen in JavaScript
 
+[← Zurück zur JavaScript-Übersicht](README.md) · [Weiter: Vergleichsoperatoren und logische Operatoren](VERGLEICHSOPERATOREN_LOGISCHE_OPERATOREN.md)
+
 ## Lernziele
 
 - Grundrechenarten in JavaScript anwenden

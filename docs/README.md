@@ -33,6 +33,7 @@ Diese Seite bündelt alle Doku-Bereiche des Repositories und hilft beim schnelle
   - [Backup-Strategie](handbook/BACKUP_STRATEGY.md)
   - [Workspace Live-Test Setup](handbook/WORKSPACE_LIVE_TEST_SETUP.md)
   - [Repository Governance](handbook/REPO_GOVERNANCE.md)
+  - [Docs Navigation Rules](handbook/DOCS_NAVIGATION_RULES.md)
 
 ## Empfohlener Einstieg
 

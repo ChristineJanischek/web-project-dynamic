@@ -1,6 +1,8 @@
 ````markdown
 # Variablen in JavaScript
 
+[← Zurück zur JavaScript-Übersicht](README.md) · [Weiter: Rechenoperationen](RECHENOPERATIONEN.md)
+
 ## Lernziele
 
 - Variablen mit `let` und `const` korrekt verwenden

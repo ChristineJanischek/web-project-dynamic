@@ -1,0 +1,33 @@
+name: Docs Navigation Check
+
+on:
+  push:
+    paths:
+      - "docs/programmierung/grundlagen/**"
+      - "scripts/check_docs_navigation.py"
+      - "scripts/config/docs_navigation_rules.json"
+      - "docs/handbook/DOCS_NAVIGATION_RULES.md"
+      - ".github/workflows/docs-navigation-check.yml"
+  pull_request:
+    paths:
+      - "docs/programmierung/grundlagen/**"
+      - "scripts/check_docs_navigation.py"
+      - "scripts/config/docs_navigation_rules.json"
+      - "docs/handbook/DOCS_NAVIGATION_RULES.md"
+      - ".github/workflows/docs-navigation-check.yml"
+
+jobs:
+  check-docs-navigation:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Validate docs navigation
+        run: python3 scripts/check_docs_navigation.py

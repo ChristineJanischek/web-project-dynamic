@@ -1,5 +1,7 @@
 # Variablen in PHP
 
+[← Zurück zur PHP-Übersicht](README.md) · [Weiter: Rechenoperationen](RECHENOPERATIONEN.md)
+
 ## Lernziele
 
 - Variablen korrekt deklarieren und verwenden

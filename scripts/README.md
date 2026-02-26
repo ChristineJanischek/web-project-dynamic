@@ -8,6 +8,38 @@ Wenn neue `.md`-Dateien zu `docs/` hinzugefügt werden, muss die Tabelle unter *
 
 ## 🤖 Automatische Methoden
 
+### Methode -2.5: Docs-Navigation prüfen (Grundlagen)
+
+**Ziel:**
+
+- Konsistente Rück-/Weiter-Navigation in den Kapiteldateien
+- Einheitliche Kapitelreihenfolge in JS/Python/PHP
+- Vermeidung von redundanter Pflege durch zentrale Konfiguration
+
+**Zentrale Dateien:**
+
+- Konfiguration: `scripts/config/docs_navigation_rules.json`
+- Check-Skript: `scripts/check_docs_navigation.py`
+- Handbook: `docs/handbook/DOCS_NAVIGATION_RULES.md`
+
+**Nutzung:**
+
+```bash
+python3 scripts/check_docs_navigation.py
+```
+
+**Alternativ über npm:**
+
+```bash
+npm run docs:navigation:check
+```
+
+**Exit-Codes:**
+
+- `0`: erfolgreich
+- `2`: Regelverletzungen gefunden
+- `1`: Fehler (z. B. fehlende Konfiguration)
+
 ### Methode -2: VS-Code-Extensions zentral verwalten (Live-Test)
 
 **Ziel:**

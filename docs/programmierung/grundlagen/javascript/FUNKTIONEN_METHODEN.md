@@ -1,6 +1,8 @@
 ````markdown
 # Funktionen und Methoden in JavaScript
 
+[← Zurück zur JavaScript-Übersicht](README.md) · [Weiter: Kontrollstrukturen – Fallunterscheidungen](KONTROLLSTRUKTUREN_FALLUNTERSCHEIDUNGEN.md)
+
 ## Lernziele
 
 - Funktionen definieren und aufrufen

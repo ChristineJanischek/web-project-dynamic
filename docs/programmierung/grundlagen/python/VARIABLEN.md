@@ -1,5 +1,7 @@
 # Variablen in Python
 
+[← Zurück zur Python-Übersicht](README.md) · [Weiter: Rechenoperationen](RECHENOPERATIONEN.md)
+
 ## Lernziele
 
 - Variablen korrekt anlegen und nutzen

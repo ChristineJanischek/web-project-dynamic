@@ -1,6 +1,8 @@
 ````markdown
 # Algorithmen in JavaScript
 
+[← Zurück zur JavaScript-Übersicht](README.md) · [Weiter: Persistentes Schreiben in und Lesen aus Dateien](DATEIEN_LESEN_SCHREIBEN.md)
+
 ## Lernziele
 
 - Den Begriff Algorithmus verstehen

@@ -1,5 +1,7 @@
 # Einfache Ausgaben in PHP
 
+[← Zurück zur PHP-Übersicht](README.md) · [Weiter: Variablen](VARIABLEN.md)
+
 ## Lernziele
 
 - Verstehen, wie PHP Text ausgibt

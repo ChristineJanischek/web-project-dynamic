@@ -1,6 +1,8 @@
 ````markdown
 # Kontrollstrukturen – Wiederholungsstrukturen in JavaScript
 
+[← Zurück zur JavaScript-Übersicht](README.md) · [Weiter: Datenstrukturen](DATENSTRUKTUREN.md)
+
 ## Lernziele
 
 - Schleifen mit `for` und `while` einsetzen

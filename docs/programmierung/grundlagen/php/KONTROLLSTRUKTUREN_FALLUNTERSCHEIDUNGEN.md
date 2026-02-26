@@ -1,5 +1,7 @@
 # Kontrollstrukturen: Fallunterscheidungen in PHP
 
+[← Zurück zur PHP-Übersicht](README.md) · [Weiter: Kontrollstrukturen: Wiederholungsstrukturen](KONTROLLSTRUKTUREN_WIEDERHOLUNGSSTRUKTUREN.md)
+
 ## Lernziele
 
 - Entscheidungen mit `if`, `elseif`, `else` treffen

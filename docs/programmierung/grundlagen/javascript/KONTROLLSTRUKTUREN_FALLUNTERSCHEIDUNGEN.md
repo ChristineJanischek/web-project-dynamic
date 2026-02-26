@@ -1,6 +1,8 @@
 ````markdown
 # Kontrollstrukturen – Fallunterscheidungen in JavaScript
 
+[← Zurück zur JavaScript-Übersicht](README.md) · [Weiter: Kontrollstrukturen – Wiederholungsstrukturen](KONTROLLSTRUKTUREN_WIEDERHOLUNGSSTRUKTUREN.md)
+
 ## Lernziele
 
 - Bedingungen mit `if`, `else if`, `else` formulieren

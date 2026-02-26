@@ -1,5 +1,7 @@
 # Kontrollstrukturen: Wiederholungsstrukturen in PHP
 
+[← Zurück zur PHP-Übersicht](README.md) · [Weiter: Datenstrukturen](DATENSTRUKTUREN.md)
+
 ## Lernziele
 
 - Schleifen mit `for`, `while`, `foreach` einsetzen

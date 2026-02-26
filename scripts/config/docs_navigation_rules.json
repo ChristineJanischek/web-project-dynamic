@@ -1,0 +1,59 @@
+{
+  "crossLanguageFile": "docs/programmierung/grundlagen/VERGLEICH_JS_PY_PHP_OPERATOR_DATEI_IO.md",
+  "languages": [
+    {
+      "key": "javascript",
+      "display": "JavaScript",
+      "basePath": "docs/programmierung/grundlagen/javascript",
+      "overview": "README.md",
+      "chapters": [
+        "AUSGABEN.md",
+        "VARIABLEN.md",
+        "RECHENOPERATIONEN.md",
+        "VERGLEICHSOPERATOREN_LOGISCHE_OPERATOREN.md",
+        "FUNKTIONEN_METHODEN.md",
+        "KONTROLLSTRUKTUREN_FALLUNTERSCHEIDUNGEN.md",
+        "KONTROLLSTRUKTUREN_WIEDERHOLUNGSSTRUKTUREN.md",
+        "DATENSTRUKTUREN.md",
+        "ALGORITHMEN.md",
+        "DATEIEN_LESEN_SCHREIBEN.md"
+      ]
+    },
+    {
+      "key": "python",
+      "display": "Python",
+      "basePath": "docs/programmierung/grundlagen/python",
+      "overview": "README.md",
+      "chapters": [
+        "AUSGABEN.md",
+        "VARIABLEN.md",
+        "RECHENOPERATIONEN.md",
+        "VERGLEICHSOPERATOREN_LOGISCHE_OPERATOREN.md",
+        "FUNKTIONEN_METHODEN.md",
+        "KONTROLLSTRUKTUREN_FALLUNTERSCHEIDUNGEN.md",
+        "KONTROLLSTRUKTUREN_WIEDERHOLUNGSSTRUKTUREN.md",
+        "DATENSTRUKTUREN.md",
+        "ALGORITHMEN.md",
+        "DATEIEN_LESEN_SCHREIBEN.md"
+      ]
+    },
+    {
+      "key": "php",
+      "display": "PHP",
+      "basePath": "docs/programmierung/grundlagen/php",
+      "overview": "README.md",
+      "chapters": [
+        "AUSGABEN.md",
+        "VARIABLEN.md",
+        "RECHENOPERATIONEN.md",
+        "VERGLEICHSOPERATOREN_LOGISCHE_OPERATOREN.md",
+        "FUNKTIONEN_METHODEN.md",
+        "KONTROLLSTRUKTUREN_FALLUNTERSCHEIDUNGEN.md",
+        "KONTROLLSTRUKTUREN_WIEDERHOLUNGSSTRUKTUREN.md",
+        "DATENSTRUKTUREN.md",
+        "ALGORITHMEN.md",
+        "DATEIEN_LESEN_SCHREIBEN.md"
+      ]
+    }
+  ]
+}

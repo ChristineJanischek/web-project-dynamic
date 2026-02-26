@@ -1,5 +1,7 @@
 # Kontrollstrukturen: Wiederholungsstrukturen in Python
 
+[← Zurück zur Python-Übersicht](README.md) · [Weiter: Datenstrukturen](DATENSTRUKTUREN.md)
+
 ## Lernziele
 
 - Schleifen mit `for` und `while` nutzen

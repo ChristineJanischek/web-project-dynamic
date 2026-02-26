@@ -1,6 +1,8 @@
 ````markdown
 # Einfache Ausgaben in JavaScript
 
+[← Zurück zur JavaScript-Übersicht](README.md) · [Weiter: Variablen](VARIABLEN.md)
+
 ## Lernziele
 
 - Text und Variablen im Browser ausgeben

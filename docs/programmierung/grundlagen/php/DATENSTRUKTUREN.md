@@ -1,5 +1,7 @@
 # Datenstrukturen in PHP
 
+[← Zurück zur PHP-Übersicht](README.md) · [Weiter: Algorithmen](ALGORITHMEN.md)
+
 ## Lernziele
 
 - Arrays als zentrale Datenstruktur in PHP verstehen
