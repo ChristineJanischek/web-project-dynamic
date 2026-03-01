@@ -1,0 +1,141 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "description": "Zentrale Bewertungsrubriken für alle Programmiergrundlagen-Exams. Diese Struktur ist sprachunabhängig und gilt für alle Themen.",
+  "meta": {
+    "total_points": 25.0,
+    "grading_scale": "linear",
+    "formula": "prozent = (punkte / 25) * 100",
+    "rounding": "0.5 steps"
+  },
+  "rubrics": {
+    "aufgabe_a": {
+      "title": "Variablen, Ein/Ausgabe, Grundkonzepte",
+      "points": 5.0,
+      "description": "Grundlegende Syntax, Variablendeklaration und Ein-/Ausgabe",
+      "criteria": {
+        "variables": {
+          "points": 2.0,
+          "description": "Variablen korrekt deklarieren und initialisieren",
+          "notes": "Sprachspezifisch: const/let (JS), $ (PHP), direkte Zuweisung (Python)"
+        },
+        "input": {
+          "points": 1.0,
+          "description": "Eingabe einlesen oder simulieren",
+          "notes": "prompt/readline (JS), $_GET/$_POST/readline (PHP), input() (Python)"
+        },
+        "output": {
+          "points": 2.0,
+          "description": "Ausgabeformat exakt wie in Aufgabenstellung",
+          "notes": "String-Interpolation, Template Literals, f-Strings je nach Sprache"
+        }
+      }
+    },
+    "aufgabe_b": {
+      "title": "Funktionen mit Berechnungen",
+      "points": 7.5,
+      "description": "Funktionen definieren, Parameter übergeben, Rückgabewerte",
+      "criteria": {
+        "function1_signature": {
+          "points": 1.0,
+          "description": "Erste Funktion: Name und Parameter korrekt"
+        },
+        "function1_calculation": {
+          "points": 3.0,
+          "description": "Erste Funktion: Berechnung/Logik korrekt implementiert"
+        },
+        "function2_signature": {
+          "points": 0.5,
+          "description": "Zweite Funktion: Name und Parameter korrekt"
+        },
+        "function2_calculation": {
+          "points": 3.0,
+          "description": "Zweite Funktion: Berechnung/Logik korrekt implementiert"
+        }
+      }
+    },
+    "aufgabe_c": {
+      "title": "Funktionen mit Fallunterscheidungen",
+      "points": 6.0,
+      "description": "Kontrollstrukturen, if-else, Validierung, Grenzfälle",
+      "criteria": {
+        "signature": {
+          "points": 0.5,
+          "description": "Funktionssignatur korrekt"
+        },
+        "validation": {
+          "points": 2.0,
+          "description": "Eingabe-Validierung (ungültige Werte abfangen)"
+        },
+        "cases": {
+          "points": 3.0,
+          "description": "Alle Fallunterscheidungen korrekt implementiert"
+        },
+        "return_values": {
+          "points": 0.5,
+          "description": "Rückgabewerte exakt wie verlangt"
+        }
+      }
+    },
+    "aufgabe_d": {
+      "title": "Funktionen mit Schleifen und Datenstrukturen",
+      "points": 6.5,
+      "description": "Iteration, Array/List-Verarbeitung, komplexe Logik",
+      "criteria": {
+        "signature": {
+          "points": 0.5,
+          "description": "Funktionssignatur korrekt"
+        },
+        "loop": {
+          "points": 1.0,
+          "description": "Schleife korrekt implementiert (for/while/forEach)"
+        },
+        "operation1": {
+          "points": 3.0,
+          "description": "Erste Operation (z.B. Zählen, Filtern, Maximum finden)"
+        },
+        "operation2": {
+          "points": 1.5,
+          "description": "Zweite Operation (z.B. Summieren, Akkumulieren)"
+        },
+        "return_format": {
+          "points": 0.5,
+          "description": "Rückgabeformat korrekt (Objekt/Array/Dictionary)"
+        }
+      }
+    }
+  },
+  "theme_adaptations": {
+    "basics": {
+      "notes": "Standard-Rubriken wie oben definiert"
+    },
+    "datenstrukturen": {
+      "notes": "A: Array/Dict erstellen, B: Zugriff/Iteration, C: Filterung, D: Geschachtelte Strukturen"
+    },
+    "funktionen": {
+      "notes": "A: Signatur, B: Rückgabewerte, C: Rekursion/Scope, D: Callbacks/Higher-Order"
+    },
+    "kontrollstrukturen": {
+      "notes": "A: If-Else, B: Switch/Ternär, C: Nested Conditions, D: Loop-Patterns"
+    },
+    "dateien": {
+      "notes": "A: Pfade/IO, B: Read/Write, C: Error Handling, D: Format-Parsing",
+      "online_ready": "sandbox_required"
+    },
+    "datenbank": {
+      "notes": "A: SQL SELECT, B: INSERT/UPDATE, C: JOIN/WHERE, D: Transactions/Integrity",
+      "online_ready": "api_based"
+    }
+  },
+  "metadata_schema": {
+    "description": "Jedes Exam-Verzeichnis enthält metadata.json mit diesen Feldern",
+    "fields": {
+      "theme": "string (basics, datenstrukturen, funktionen, etc.)",
+      "language": "string (javascript, php, python)",
+      "variants": "integer (anzahl der Varianten, meist 4)",
+      "online_ready": "boolean oder string (true, false, 'sandbox_required', 'api_based')",
+      "time_limit_minutes": "integer (empfohlene Bearbeitungszeit)",
+      "created": "ISO 8601 date",
+      "last_updated": "ISO 8601 date"
+    }
+  }
+}

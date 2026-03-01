@@ -1,130 +1,243 @@
-# Exam system Grundlagen (Fundamentals)
+# Exam-System: Programmiergrundlagen
 
-Diese Dokumente liefern druckbare Exams zu den Grundlagen der Programmierung fuer mehrere Sprachen. Sie sind so gestaltet, dass Schuelerinnen und Schueler die Aufgaben auch handschriftlich bearbeiten koennen.
+> **Skalierbar, wartbar, erweiterbar** – Exams für JavaScript, PHP und Python
 
-## Ablageort
+Dieses System liefert druckbare und potentiell online-fähige Exams zu den Grundlagen der Programmierung. Die Aufgaben sind handschriftlich lösbar und folgen einheitlichen Bewertungsrubriken über alle Sprachen hinweg.
 
-`docs/programmierung/grundlagen/exams/` ist bewusst in den sprachuebergreifenden Grundlagen abgelegt:
+## 🎯 Überblick
 
-- Fachlicher Bezug: Grundlagen-Themen, die es in allen Sprachen gibt
-- Keine Redundanz: Eine gemeinsame Struktur, je Sprache eine Variante
-- Erweiterbar: Neue Sprachen lassen sich in derselben Struktur ergaenzen
+- **3 Sprachen:** JavaScript, PHP, Python
+- **Themen:** Basics (weitere: Datenstrukturen, Funktionen, Kontrollstrukturen, Dateien, Datenbank geplant)
+- **4 Varianten** pro Thema (für Nachschreiber)
+- **Zentrale Rubriken:** Konsistente Bewertung über alle Sprachen
+- **25 Punkte** pro Exam (A: 5.0, B: 7.5, C: 6.0, D: 6.5)
 
-## Struktur
+## 📁 Verzeichnisstruktur
 
-### Basics (Fundamentals)
+\`\`\`
+exams/
+├── README.md (diese Datei)
+├── ARCHITECTURE.md (technische Dokumentation)
+│
+├── shared/                    # Zentrale Ressourcen
+│   ├── rubrics.json          # Bewertungsrubriken (DRY-Prinzip)
+│   ├── templates/            # Vorlagen für neue Exams
+│   └── structogramme/        # Allgemeine Standards
+│
+├── javascript/               # JavaScript-spezifische Exams
+│   ├── README.md
+│   └── basics/
+│       ├── exam.md          # Hauptversion (v1)
+│       ├── exam_v2.md       # Nachschreib-Variante 2
+│       ├── exam_v3.md       # Nachschreib-Variante 3
+│       ├── exam_v4.md       # Nachschreib-Variante 4
+│       ├── solutions.md     # Lösungen v1
+│       ├── solutions_v2.md  # Lösungen v2
+│       ├── solutions_v3.md  # Lösungen v3
+│       ├── solutions_v4.md  # Lösungen v4
+│       └── structogramme/
+│
+├── php/                      # PHP-spezifische Exams
+│   ├── README.md
+│   └── basics/
+│       └── [gleiche Struktur wie JavaScript]
+│
+└── python/                   # Python-spezifische Exams
+    ├── README.md
+    └── basics/
+        └── [gleiche Struktur wie JavaScript]
+\`\`\`
 
-**Hauptversion (Variante 1):**
+## 🚀 Schnellstart
 
-- `JavaScript_Grundlagen_Basics.md`
-- `PHP_Grundlagen_Basics.md`
-- `Python_Grundlagen_Basics.md`
-- `JavaScript_Grundlagen_Basics_Loesungen.md`
-- `PHP_Grundlagen_Basics_Loesungen.md`
-- `Python_Grundlagen_Basics_Loesungen.md`
+### Exam durchführen
 
-**Nachschreibe-Varianten (fuer Schueler/innen die den Exam nachschreiben):**
+1. **Wähle Sprache und Thema:**
+   - [JavaScript Basics](javascript/basics/exam.md)
+   - [PHP Basics](php/basics/exam.md)
+   - [Python Basics](python/basics/exam.md)
 
-Jede Sprache hat 3 zusaetzliche Varianten mit vergleichbarer Schwierigkeit:
+2. **Wähle Variante** (bei Nachschreibern):
+   - \`exam.md\` = Hauptversion
+   - \`exam_v2.md\`, \`exam_v3.md\`, \`exam_v4.md\` = Nachschreib-Varianten
 
-- `JavaScript_Grundlagen_Basics_v2.md` + `..._v2_Loesungen.md`
-- `JavaScript_Grundlagen_Basics_v3.md` + `..._v3_Loesungen.md`
-- `JavaScript_Grundlagen_Basics_v4.md` + `..._v4_Loesungen.md`
-- `PHP_Grundlagen_Basics_v2.md` + `..._v2_Loesungen.md`
-- `PHP_Grundlagen_Basics_v3.md` + `..._v3_Loesungen.md`
-- `PHP_Grundlagen_Basics_v4.md` + `..._v4_Loesungen.md`
-- `Python_Grundlagen_Basics_v2.md` + `..._v2_Loesungen.md`
-- `Python_Grundlagen_Basics_v3.md` + `..._v3_Loesungen.md`
-- `Python_Grundlagen_Basics_v4.md` + `..._v4_Loesungen.md`
+3. **Ausdrucken oder digital nutzen**
 
-**Design-Prinzipien der Varianten:**
+4. **Bewertung:** Siehe entsprechende \`solutions.md\` Datei
 
-- Gleiche Aufgabenstruktur (A, B, C, D)
-- Identische Punkteverteilung (5.0, 7.5, 6.0, 6.5)
-- Vergleichbare Schwierigkeit
-- Unterschiedliche Kontexte und Zahlen
-- Variante 2: Produkt/Preis, Kreisumfang, Altersklassifizierung, ungerade/negative Zahlen
-- Variante 3: Stadt/Einwohner, Wuerfelvolumen, Temperaturklassifizierung, Maximum/Summe
-- Variante 4: Buch/Seiten, Dreiecksflaeche, Geschwindigkeitsklassifizierung, Minimum/positive Zahlen
+### Neues Thema erstellen
 
-### Weitere Schwerpunkte (pro Sprache aufzulegen)
+\`\`\`bash
+# 1. Template kopieren
+cp shared/templates/exam_template.md javascript/datenstrukturen/exam.md
 
-**Schablonen:**
+# 2. Exam anpassen (Kontext, Zahlen, Syntax)
 
-- `TEMPLATE_Grundlagen_Basics.md`
-- `TEMPLATE_Grundlagen_Funktionen.md`
-- `TEMPLATE_Grundlagen_Kontrollstrukturen.md`
-- `TEMPLATE_Grundlagen_Datenstrukturen.md`
+# 3. Varianten erstellen (v2, v3, v4)
 
-**Ablage der Struktogramme**
+# 4. Lösungen schreiben
 
-- `structogramme/`
-  - Ablage fuer spaetere Struktogramme (SVG)
-  - Namenskonvention in `structogramme/README.md`
+# 5. Validierung
+python3 scripts/validate_exams.py
+\`\`\`
 
-## Bewertungslogik (linear)
+## 📊 Bewertungssystem
 
-- Gesamtpunkte: 25
-- Lineare Bewertung: `prozent = (punkte / 25) * 100`
-- Teilpunkte sind zulaessig, Rundung in 0.5-Schritten
+Alle Exams folgen der **gleichen Rubrik** (definiert in \`shared/rubrics.json\`):
 
-## Erweiterungseinschaetzung
+| Aufgabe | Thema | Punkte |
+|---------|-------|--------|
+| **A** | Variablen + Ein/Ausgabe | 5.0 |
+| **B** | Funktionen mit Berechnungen | 7.5 |
+| **C** | Fallunterscheidungen | 6.0 |
+| **D** | Schleifen + Datenstrukturen | 6.5 |
+| **Gesamt** | | **25.0** |
 
-Der Ausbau zu einem teil-automatisierten Online-Exam ist realistisch, wenn die Inhalte streng strukturiert bleiben. Ein formatstabiler Markdown-Exam ist eine gute Grundlage fuer spaetere Extraktion in JSON/HTML. Die groessten Risiken liegen in inkonsistenter Aufgabenstruktur, fehlender Metadatenpflege und unklaren Bewertungsregeln. Mit einer stabilen Schablone, klaren Metadaten und einer minimalen Ausfuehrungsumgebung (z. B. Runner pro Sprache) ist die Erweiterung gut planbar.
+**Bewertungsschlüssel:** \`prozent = (punkte / 25) * 100\`
 
-## Fahrplan (Milestones)
+## 🔄 Nachschreib-Varianten
 
-**M1: Druckbare Exams (jetzt)**
+Jedes Thema hat **4 vergleichbare Varianten**:
 
-- Einheitliches Markdown-Layout pro Sprache
-- Klare Punktevergabe je Aufgabenblock
-- Fokus auf handschriftliche Loesbarkeit
+| Variante | Aufgabe A | Aufgabe B | Aufgabe C | Aufgabe D |
+|----------|-----------|-----------|-----------|-----------|
+| **v1** | Vorname/Alter | Rechteck, °C→°F | Punkte-Klassifizierung | Gerade/Positive |
+| **v2** | Produkt/Preis | Kreisumfang, °F→°C | Altersklassifizierung | Ungerade/Negative |
+| **v3** | Stadt/Einwohner | Würfel, km→Meilen | Temperatur | Maximum/Summe |
+| **v4** | Buch/Seiten | Dreieck, Meilen→km | Geschwindigkeit | Minimum/Positive |
 
-**M2: Metadaten-Schicht**
+**Design-Prinzipien:**
+- ✅ Gleiche Struktur (A, B, C, D)
+- ✅ Identische Punkteverteilung
+- ✅ Vergleichbare Schwierigkeit
+- ✅ Unterschiedliche Kontexte (fair für Nachschreiber)
 
-- JSON-Metadaten je Exam (Themen, Punkte, Sprache, Zeitbedarf)
-- Validationsskript fuer Struktur und Punkte
+## 🎨 Themen
 
-**M3: Generator**
+### ✅ Verfügbar (Basics)
+- **Variablen & Ein/Ausgabe**
+- **Funktionen** (einfache Berechnungen)
+- **Fallunterscheidungen** (if-else, Validierung)
+- **Schleifen & Datenstrukturen** (Arrays, Iteration)
 
-- Markdown -> HTML/PDF Export
-- Einheitlicher Header/Footer, Nummerierung, Punktetabellen
+### ⏳ Geplant
+- **Datenstrukturen** (Arrays, Listen, Dictionaries, Sets)
+- **Funktionen** (Parameter, Scope, Rekursion, Higher-Order)
+- **Kontrollstrukturen** (Loops, Switch, Ternär)
+- **Dateien** (Read/Write, Parsing, Error Handling)
+- **Datenbank** (SQL, CRUD, Joins, Transactions)
 
-**M4: Online-Exam (Klick)**
+## 🛠️ Wartung & Validierung
 
-- HTML-Form mit Aufgaben, Eingabefeldern, Beispiel-I/O
-- Statische Auslieferung ueber GitHub Pages oder Classroom-Repo
+### Validierung ausführen
 
-**M5: Teilautomatische Bewertung**
+\`\`\`bash
+# Alle Exams prüfen
+python3 scripts/validate_exams.py
 
-- Abgleich von Code-Snippets gegen Loesungsskizzen
-- Rubrik-basierte Teilpunktvergabe
-- Review-Checkliste fuer Lehrkraefte
+# Nur eine Sprache prüfen
+python3 scripts/validate_exams.py --language javascript
 
-**M6: Reporting**
+# Ausführliche Ausgabe
+python3 scripts/validate_exams.py --verbose
+\`\`\`
 
-- Sammel-Export in CSV/JSON
-- Zusammenfassung je Klasse/Schueler/in
+**Prüft:**
+- ✅ Verzeichnisstruktur vollständig
+- ✅ Alle 4 Varianten vorhanden
+- ✅ Lösungen für alle Varianten
+- ✅ Punktesumme = 25.0
+- ✅ rubrics.json valide
+- ✅ Datei-Benennungen korrekt
 
-## Wartungsroutinen
+### Neue Sprache hinzufügen
 
-### Neue Sprache hinzufuegen
+\`\`\`bash
+# 1. Verzeichnis erstellen
+mkdir -p [sprache]/basics
+mkdir -p [sprache]/basics/structogramme
 
-1. Fuer jeden Schwerpunkt eine neue Datei aus der TEMPLATE\_\* ablegen
-2. Benennung: `<SPRACHE>_Grundlagen_<SCHWERPUNKT>.md`
-3. Loesungsdatei erstellung (optional): `<SPRACHE>_Grundlagen_<SCHWERPUNKT>_Loesungen.md`
-4. Bewertungsrubrik ergaenzen (Tabelle mit Teilpunkten)
-5. Struktogramm-Platzhalter vorbereiten
-6. Nachschreibe-Varianten erstellen: `..._v2.md`, `..._v3.md`, `..._v4.md` (plus Loesungen)
+# 2. Templates anpassen
+cp shared/templates/exam_template.md [sprache]/basics/exam.md
 
-### Exam-Inhalte aendern
+# 3. Alle Varianten erstellen (v2, v3, v4)
 
-- Neue Aufgaben als Variante (z. B. `..._v2.md`) anlegen
-- Alt-Exam als Archiv mitnehmen
-- Vor Aenderungen: pruefen, ob eine bestehende Schablone reicht oder ob neue Anforderungen die Schablone selbst aendern
+# 4. README für Sprache schreiben
+cp javascript/README.md [sprache]/README.md
 
-### Allgemein
+# 5. Validierung
+python3 scripts/validate_exams.py --language [sprache]
+\`\`\`
 
-- Punkte stets in 0.5-Schritten vergeben (Rundung)
-- Bewertungsrubrik immer mit konkreten Sprach-Beispielen versehen
-- Bei Navigationsergaenzungen: `python3 scripts/update_readme_docs.py` ausfuehren
+## 📖 Dokumentation
+
+- **[ARCHITECTURE.md](ARCHITECTURE.md)** – Technische Dokumentation, Design-Prinzipien, Roadmap
+- **[shared/rubrics.json](shared/rubrics.json)** – Zentrale Bewertungsrubriken
+- **[scripts/validate_exams.py](../../../../../../scripts/validate_exams.py)** – Validierungs-Script
+
+### Sprach-spezifische READMEs
+
+- **[JavaScript](javascript/README.md)** – JavaScript-Exams Übersicht
+- **[PHP](php/README.md)** – PHP-Exams Übersicht
+- **[Python](python/README.md)** – Python-Exams Übersicht
+
+## 🌐 Online-Readiness
+
+Das System ist für **zukünftige Online-Exams** vorbereitet:
+
+| Thema | Online-Modus | Status |
+|-------|--------------|--------|
+| **Basics** | ✅ Vollständig (Code-Execution in Sandbox) | Ready |
+| **Datenstrukturen** | ✅ Vollständig | Ready |
+| **Funktionen** | ✅ Vollständig | Ready |
+| **Kontrollstrukturen** | ✅ Vollständig | Ready |
+| **Dateien** | 🔶 Mit Sandbox (File-System-Zugriff) | Vorbereitet |
+| **Datenbank** | 🔶 Mit Mock-API | Vorbereitet |
+
+## 📅 Roadmap
+
+### Phase 1: Fundament ✅ (abgeschlossen)
+- [x] Verzeichnisstruktur
+- [x] Zentrale Rubriken (rubrics.json)
+- [x] Basics für 3 Sprachen × 4 Varianten
+- [x] Validierungs-Script
+
+### Phase 2: Themen-Ausbau ⏳ (nächste Wochen)
+- [ ] Datenstrukturen-Exams
+- [ ] Funktionen-Exams
+- [ ] Kontrollstrukturen-Exams
+- [ ] Dateien-Exams
+- [ ] Datenbank-Exams
+
+### Phase 3: Export & Generation ⏳ (mittelfristig)
+- [ ] Export nach JSON (für API)
+- [ ] Export nach HTML/PDF
+- [ ] Generator-Script
+- [ ] Metadata-Automatisierung
+
+### Phase 4: Online-System 🎯 (langfristig)
+- [ ] Exam-Runner (Code-Execution)
+- [ ] Auto-Grading
+- [ ] Webinterface
+- [ ] Dashboard
+- [ ] LMS-Integration
+
+## 📝 Lizenz & Credits
+
+- **Projekt:** web-project-dynamic
+- **Owner:** ChristineJanischek
+- **Erstellt:** 2026-03-01
+- **Lizenz:** Siehe Root-Verzeichnis
+
+## 🤝 Beitragen
+
+Neue Themen, Varianten oder Sprachen sind willkommen:
+
+1. **Issue erstellen** mit Themen-Beschreibung
+2. **Template verwenden** aus \`shared/templates/\`
+3. **Validierung ausführen**
+4. **Pull Request** einreichen
+
+---
+
+**Letzte Aktualisierung:** 2026-03-01
