@@ -1,0 +1,113 @@
+# Grundlagen der Programmierung - Test Funktionen (SPRACHE)
+
+<!-- Konfigurierbare Werte (hier mit Standardwerten):
+     SPRACHE: JavaScript, PHP, Python
+     Bearbeitungszeit: 60 Minuten
+     Gesamtpunkte: 25
+     Aufgabe A: 5.0 Punkte
+     Aufgabe B: 7.5 Punkte
+     Aufgabe C: 6.0 Punkte
+     Aufgabe D: 6.5 Punkte
+-->
+
+**Name:** 
+
+_________________________________________________________________
+
+**Datum:** ________________     **Klasse:** ________________
+
+**Sprache:** SPRACHE
+
+**Bearbeitungszeit:** 60 Minuten
+
+**Hinweise**
+
+- Loese die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
+- Falls keine echte Eingabe moeglich ist, simuliere Eingaben mit Variablen.
+- Schreibe klar, kurz und ohne Redundanz. Keine externen Bibliotheken.
+
+**Punkteuebersicht (25 Punkte gesamt)**
+
+- A Basisfunktionen (Signatur, Parameter, Rueckgabe): 5.0 Punkte
+- B Lokale + globale Variablen: 7.5 Punkte
+- C Funktionen mit Defaultwerten, optionalen Parametern: 6.0 Punkte
+- D Rekursion: 6.5 Punkte
+
+**Bewertungsschluessel (linear)**
+
+Punkte werden linear in Prozent umgerechnet: $prozent = (punkte / 25) * 100$.
+Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
+
+---
+
+## Aufgabe A - Basisfunktionen (5.0 Punkte)
+
+Schreibe zwei einfache Funktionen:
+
+1. `FUNC_GREET(name)` gibt eine persoenliche Begruessung zurueck.
+2. `FUNC_ADD(a, b)` addiert zwei Zahlen.
+
+**Beispiele:**
+
+- `FUNC_GREET("Anna")` -> `"Hallo Anna!"`
+- `FUNC_ADD(3, 5)` -> `8`
+
+**Antwortbereich:**
+
+```SPRACHE
+
+```
+
+## Aufgabe B - Lokale + globale Variablen (7.5 Punkte)
+
+Schreibe ein Programm, das:
+
+1. Eine globale Variable `counter` mit Wert 0 deklariert. (2.0)
+2. Eine Funktion `increment()` schreibt, die `counter` erhoet und den neuen Wert zurueckgibt. (5.5)
+
+**Beispiele nach zwei Aufrufen:**
+
+- `increment()` -> `1`
+- `increment()` -> `2`
+
+**Antwortbereich:**
+
+```SPRACHE
+
+```
+
+## Aufgabe C - Defaultwerte + optionale Parameter (6.0 Punkte)
+
+Schreibe eine Funktion `FUNC_POWER(base, exponent=2)`, die:
+
+- `base` potenziert mit `exponent`
+- Default-Exponent ist 2 (Quadrat)
+
+**Beispiele:**
+
+- `FUNC_POWER(3)` -> `9` (Standard: Quadrat)
+- `FUNC_POWER(2, 3)` -> `8`
+
+**Antwortbereich:**
+
+```SPRACHE
+
+```
+
+## Aufgabe D - Rekursion (6.5 Punkte)
+
+Schreibe eine Funktion `FUNC_FACTORIAL(n)`, die die Fakultaet berechnet:
+
+- Basis: $n = 0$ oder $n = 1$ -> 1
+- Rekursion: $n! = n \\times (n-1)!$
+
+**Beispiele:**
+
+- `FUNC_FACTORIAL(0)` -> `1`
+- `FUNC_FACTORIAL(5)` -> `120`
+
+**Antwortbereich:**
+
+```SPRACHE
+
+```
