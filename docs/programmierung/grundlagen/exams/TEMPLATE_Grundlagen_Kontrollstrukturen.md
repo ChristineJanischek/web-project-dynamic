@@ -1,4 +1,4 @@
-# Grundlagen der Programmierung - Test Kontrollstrukturen (SPRACHE)
+# Grundlagen der Programmierung - Exam Kontrollstrukturen (SPRACHE)
 
 <!-- Konfigurierbare Werte (hier mit Standardwerten):
      SPRACHE: JavaScript, PHP, Python
@@ -10,11 +10,11 @@
      Aufgabe D: 6.5 Punkte
 -->
 
-**Name:** 
+**Name:**
 
-_________________________________________________________________
+---
 
-**Datum:** ________________     **Klasse:** ________________
+**Datum:** ******\_\_\_\_****** **Klasse:** ******\_\_\_\_******
 
 **Sprache:** SPRACHE
 

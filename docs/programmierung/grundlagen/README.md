@@ -64,7 +64,7 @@ Dadurch bleibt die Orientierung stabil, auch wenn später neue Sprachen ergänzt
 
 - Gemeinsame Aufgabenblätter, die pro Sprache Varianten verlinken
 - Sprachvergleichstabellen je Kapitel (PHP/Python/JavaScript)
-- Kurze Selbsttests mit Musterlösungen pro Fundamentals-Thema
+- Kurze Self-Exams mit Musterlösungen pro Fundamentals-Thema
 
 Weiter mit der konkreten PHP-Reihe: [PHP Fundamentals](php/README.md)
 

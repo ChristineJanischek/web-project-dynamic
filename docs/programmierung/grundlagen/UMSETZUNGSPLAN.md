@@ -16,7 +16,7 @@
 
 1. Aufgaben je Thema ergänzen (leicht, mittel, transfer)
 2. Einheitliche Code-Style-Regeln pro Sprache ergänzen
-3. Optional: kleine Selbsttests/Quizfragen je Kapitel
+3. Optional: kleine Self-Exams/Quizfragen je Kapitel
 
 ## Phase 4 – Erweiterung auf weitere Sprachen (Basis abgeschlossen)
 

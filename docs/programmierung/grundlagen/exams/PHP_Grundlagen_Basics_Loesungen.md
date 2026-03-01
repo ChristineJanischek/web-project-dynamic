@@ -1,4 +1,4 @@
-# Grundlagen der Programmierung - Basistest (PHP)
+# Grundlagen der Programmierung - Basics (PHP)
 
 **Dokumenttyp:** Aufgabenstellung + Musterloesung
 
@@ -136,4 +136,4 @@ function analyzeNumbers($numbers) {
 
 **Struktogramm (Platzhalter)**
 
-![Struktogramm Aufgabe D](structogramme/PHP_Grundlagen_Basistest_Aufgabe_D.svg)
+![Struktogramm Aufgabe D](structogramme/PHP_Grundlagen_Basics_Aufgabe_D.svg)

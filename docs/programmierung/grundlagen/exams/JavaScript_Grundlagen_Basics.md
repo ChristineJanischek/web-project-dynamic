@@ -1,8 +1,8 @@
-# Grundlagen der Programmierung - Basistest (PHP)
+# Grundlagen der Programmierung - Basics (JavaScript)
 
-**Name:** ************\_\_\_\_************ **Datum:** ******\_\_\_\_****** **Klasse:** ****\_\_\_\_****
+**Name:** ****\*\*\*\*****\_\_\_\_****\*\*\*\***** **Datum:** **\*\***\_\_\_\_**\*\*** **Klasse:** \***\*\_\_\_\_\*\***
 
-**Sprache:** PHP
+**Sprache:** JavaScript
 
 **Bearbeitungszeit:** 45-60 Minuten
 
@@ -40,14 +40,14 @@ Anforderungen:
 
 **Antwortbereich:**
 
-```php
+```javascript
 
 ```
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
 
-1. Schreibe eine Funktion `calcRectangleArea($width, $height)`, die die Flaeche berechnet. (4.0)
-2. Schreibe eine Funktion `celsiusToFahrenheit($c)`, die Celsius in Fahrenheit umrechnet. (3.5)
+1. Schreibe eine Funktion `calcRectangleArea(width, height)`, die die Flaeche berechnet. (4.0)
+2. Schreibe eine Funktion `celsiusToFahrenheit(c)`, die Celsius in Fahrenheit umrechnet. (3.5)
 
 **Beispiele:**
 
@@ -56,13 +56,13 @@ Anforderungen:
 
 **Antwortbereich:**
 
-```php
+```javascript
 
 ```
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
 
-Schreibe eine Funktion `classifyScore($score)`, die eine Note als Text liefert:
+Schreibe eine Funktion `classifyScore(score)`, die eine Note als Text liefert:
 
 - `score < 0` oder `score > 100` -> `ungueltig` (2.0)
 - `score < 50` -> `nicht bestanden`
@@ -76,25 +76,25 @@ Schreibe eine Funktion `classifyScore($score)`, die eine Note als Text liefert:
 
 **Antwortbereich:**
 
-```php
+```javascript
 
 ```
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
 
-Schreibe eine Funktion `analyzeNumbers($numbers)`, die:
+Schreibe eine Funktion `analyzeNumbers(numbers)`, die:
 
 - die Anzahl gerader Zahlen zaehlt (3.0)
 - die Summe aller positiven Zahlen berechnet (3.5)
 
-Rueckgabeformat als Array: `['evenCount' => X, 'positiveSum' => Y]`
+Rueckgabeformat als Objekt: `{ evenCount: X, positiveSum: Y }`
 
 **Beispiel:**
 
-`analyzeNumbers([2, -3, 4, 0, 5])` -> `['evenCount' => 3, 'positiveSum' => 11]`
+`analyzeNumbers([2, -3, 4, 0, 5])` -> `{ evenCount: 3, positiveSum: 11 }`
 
 **Antwortbereich:**
 
-```php
+```javascript
 
 ```

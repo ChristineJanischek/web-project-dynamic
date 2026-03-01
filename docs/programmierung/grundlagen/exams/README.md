@@ -1,10 +1,10 @@
-# Testsystem Grundlagen (Fundamentals)
+# Exam system Grundlagen (Fundamentals)
 
-Diese Dokumente liefern druckbare Tests zu den Grundlagen der Programmierung fuer mehrere Sprachen. Sie sind so gestaltet, dass Schuelerinnen und Schueler die Aufgaben auch handschriftlich bearbeiten koennen.
+Diese Dokumente liefern druckbare Exams zu den Grundlagen der Programmierung fuer mehrere Sprachen. Sie sind so gestaltet, dass Schuelerinnen und Schueler die Aufgaben auch handschriftlich bearbeiten koennen.
 
 ## Ablageort
 
-`docs/programmierung/grundlagen/tests/` ist bewusst in den sprachuebergreifenden Grundlagen abgelegt:
+`docs/programmierung/grundlagen/exams/` ist bewusst in den sprachuebergreifenden Grundlagen abgelegt:
 
 - Fachlicher Bezug: Grundlagen-Themen, die es in allen Sprachen gibt
 - Keine Redundanz: Eine gemeinsame Struktur, je Sprache eine Variante
@@ -12,20 +12,20 @@ Diese Dokumente liefern druckbare Tests zu den Grundlagen der Programmierung fue
 
 ## Struktur
 
-### Basistest (Fundamentals)
+### Basics (Fundamentals)
 
-- `JavaScript_Grundlagen_Basistest.md`
-- `PHP_Grundlagen_Basistest.md`
-- `Python_Grundlagen_Basistest.md`
-- `JavaScript_Grundlagen_Basistest_Loesungen.md`
-- `PHP_Grundlagen_Basistest_Loesungen.md`
-- `Python_Grundlagen_Basistest_Loesungen.md`
+- `JavaScript_Grundlagen_Basics.md`
+- `PHP_Grundlagen_Basics.md`
+- `Python_Grundlagen_Basics.md`
+- `JavaScript_Grundlagen_Basics_Loesungen.md`
+- `PHP_Grundlagen_Basics_Loesungen.md`
+- `Python_Grundlagen_Basics_Loesungen.md`
 
 ### Weitere Schwerpunkte (pro Sprache aufzulegen)
 
 **Schablonen:**
 
-- `TEMPLATE_Grundlagen_Basistest.md`
+- `TEMPLATE_Grundlagen_Basics.md`
 - `TEMPLATE_Grundlagen_Funktionen.md`
 - `TEMPLATE_Grundlagen_Kontrollstrukturen.md`
 - `TEMPLATE_Grundlagen_Datenstrukturen.md`
@@ -44,11 +44,11 @@ Diese Dokumente liefern druckbare Tests zu den Grundlagen der Programmierung fue
 
 ## Erweiterungseinschaetzung
 
-Der Ausbau zu einem teil-automatisierten Online-Test ist realistisch, wenn die Inhalte streng strukturiert bleiben. Ein formatstabiler Markdown-Test ist eine gute Grundlage fuer spaetere Extraktion in JSON/HTML. Die groessten Risiken liegen in inkonsistenter Aufgabenstruktur, fehlender Metadatenpflege und unklaren Bewertungsregeln. Mit einer stabilen Schablone, klaren Metadaten und einer minimalen Ausfuehrungsumgebung (z. B. Runner pro Sprache) ist die Erweiterung gut planbar.
+Der Ausbau zu einem teil-automatisierten Online-Exam ist realistisch, wenn die Inhalte streng strukturiert bleiben. Ein formatstabiler Markdown-Exam ist eine gute Grundlage fuer spaetere Extraktion in JSON/HTML. Die groessten Risiken liegen in inkonsistenter Aufgabenstruktur, fehlender Metadatenpflege und unklaren Bewertungsregeln. Mit einer stabilen Schablone, klaren Metadaten und einer minimalen Ausfuehrungsumgebung (z. B. Runner pro Sprache) ist die Erweiterung gut planbar.
 
 ## Fahrplan (Milestones)
 
-**M1: Druckbare Tests (jetzt)**
+**M1: Druckbare Exams (jetzt)**
 
 - Einheitliches Markdown-Layout pro Sprache
 - Klare Punktevergabe je Aufgabenblock
@@ -56,7 +56,7 @@ Der Ausbau zu einem teil-automatisierten Online-Test ist realistisch, wenn die I
 
 **M2: Metadaten-Schicht**
 
-- JSON-Metadaten je Test (Themen, Punkte, Sprache, Zeitbedarf)
+- JSON-Metadaten je Exam (Themen, Punkte, Sprache, Zeitbedarf)
 - Validationsskript fuer Struktur und Punkte
 
 **M3: Generator**
@@ -64,7 +64,7 @@ Der Ausbau zu einem teil-automatisierten Online-Test ist realistisch, wenn die I
 - Markdown -> HTML/PDF Export
 - Einheitlicher Header/Footer, Nummerierung, Punktetabellen
 
-**M4: Online-Test (Klick)**
+**M4: Online-Exam (Klick)**
 
 - HTML-Form mit Aufgaben, Eingabefeldern, Beispiel-I/O
 - Statische Auslieferung ueber GitHub Pages oder Classroom-Repo
@@ -90,10 +90,10 @@ Der Ausbau zu einem teil-automatisierten Online-Test ist realistisch, wenn die I
 4. Bewertungsrubrik ergaenzen (Tabelle mit Teilpunkten)
 5. Struktogramm-Platzhalter vorbereiten
 
-### Testinhalte aendern
+### Exam-Inhalte aendern
 
 - Neue Aufgaben als Variante (z. B. `..._v2.md`) anlegen
-- Alt-Test als Archiv mitnehmen
+- Alt-Exam als Archiv mitnehmen
 - Vor Aenderungen: pruefen, ob eine bestehende Schablone reicht oder ob neue Anforderungen die Schablone selbst aendern
 
 ### Allgemein

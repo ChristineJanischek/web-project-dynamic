@@ -1,8 +1,8 @@
-# Grundlagen der Programmierung - Basistest (Python)
+# Grundlagen der Programmierung - Basics (PHP)
 
-**Name:** ************\_\_\_\_************ **Datum:** ******\_\_\_\_****** **Klasse:** ****\_\_\_\_****
+**Name:** ****\*\*\*\*****\_\_\_\_****\*\*\*\***** **Datum:** **\*\***\_\_\_\_**\*\*** **Klasse:** \***\*\_\_\_\_\*\***
 
-**Sprache:** Python
+**Sprache:** PHP
 
 **Bearbeitungszeit:** 45-60 Minuten
 
@@ -40,29 +40,29 @@ Anforderungen:
 
 **Antwortbereich:**
 
-```python
+```php
 
 ```
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
 
-1. Schreibe eine Funktion `calc_rectangle_area(width, height)`, die die Flaeche berechnet. (4.0)
-2. Schreibe eine Funktion `celsius_to_fahrenheit(c)`, die Celsius in Fahrenheit umrechnet. (3.5)
+1. Schreibe eine Funktion `calcRectangleArea($width, $height)`, die die Flaeche berechnet. (4.0)
+2. Schreibe eine Funktion `celsiusToFahrenheit($c)`, die Celsius in Fahrenheit umrechnet. (3.5)
 
 **Beispiele:**
 
-- `calc_rectangle_area(4, 3)` -> `12`
-- `celsius_to_fahrenheit(0)` -> `32`
+- `calcRectangleArea(4, 3)` -> `12`
+- `celsiusToFahrenheit(0)` -> `32`
 
 **Antwortbereich:**
 
-```python
+```php
 
 ```
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
 
-Schreibe eine Funktion `classify_score(score)`, die eine Note als Text liefert:
+Schreibe eine Funktion `classifyScore($score)`, die eine Note als Text liefert:
 
 - `score < 0` oder `score > 100` -> `ungueltig` (2.0)
 - `score < 50` -> `nicht bestanden`
@@ -71,30 +71,30 @@ Schreibe eine Funktion `classify_score(score)`, die eine Note als Text liefert:
 
 **Beispiele:**
 
-- `classify_score(45)` -> `nicht bestanden`
-- `classify_score(90)` -> `sehr gut`
+- `classifyScore(45)` -> `nicht bestanden`
+- `classifyScore(90)` -> `sehr gut`
 
 **Antwortbereich:**
 
-```python
+```php
 
 ```
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
 
-Schreibe eine Funktion `analyze_numbers(numbers)`, die:
+Schreibe eine Funktion `analyzeNumbers($numbers)`, die:
 
 - die Anzahl gerader Zahlen zaehlt (3.0)
 - die Summe aller positiven Zahlen berechnet (3.5)
 
-Rueckgabeformat als Tuple: `(even_count, positive_sum)`
+Rueckgabeformat als Array: `['evenCount' => X, 'positiveSum' => Y]`
 
 **Beispiel:**
 
-`analyze_numbers([2, -3, 4, 0, 5])` -> `(3, 11)`
+`analyzeNumbers([2, -3, 4, 0, 5])` -> `['evenCount' => 3, 'positiveSum' => 11]`
 
 **Antwortbereich:**
 
-```python
+```php
 
 ```

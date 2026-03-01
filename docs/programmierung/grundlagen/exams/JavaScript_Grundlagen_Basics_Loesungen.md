@@ -1,4 +1,4 @@
-# Grundlagen der Programmierung - Basistest (JavaScript)
+# Grundlagen der Programmierung - Basics (JavaScript)
 
 **Dokumenttyp:** Aufgabenstellung + Musterloesung
 
@@ -132,4 +132,4 @@ function analyzeNumbers(numbers) {
 
 **Struktogramm (Platzhalter)**
 
-![Struktogramm Aufgabe D](structogramme/JavaScript_Grundlagen_Basistest_Aufgabe_D.svg)
+![Struktogramm Aufgabe D](structogramme/JavaScript_Grundlagen_Basics_Aufgabe_D.svg)

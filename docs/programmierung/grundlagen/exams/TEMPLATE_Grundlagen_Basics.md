@@ -1,4 +1,4 @@
-# Grundlagen der Programmierung - Basistest (SPRACHE)
+# Grundlagen der Programmierung - Basics (SPRACHE)
 
 <!-- Konfigurierbare Werte (hier mit Standardwerten):
      SPRACHE: JavaScript, PHP, Python
@@ -14,7 +14,7 @@
 
 ---
 
-**Datum:** ******\_\_\_\_****** **Klasse:** ******\_\_\_\_******
+**Datum:** **\*\***\_\_\_\_**\*\*** **Klasse:** **\*\***\_\_\_\_**\*\***
 
 **Sprache:** SPRACHE
 

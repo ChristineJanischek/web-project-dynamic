@@ -1,4 +1,4 @@
-# Grundlagen der Programmierung - Basistest (Python)
+# Grundlagen der Programmierung - Basics (Python)
 
 **Dokumenttyp:** Aufgabenstellung + Musterloesung
 
@@ -123,4 +123,4 @@ def analyze_numbers(numbers):
 
 **Struktogramm (Platzhalter)**
 
-![Struktogramm Aufgabe D](structogramme/Python_Grundlagen_Basistest_Aufgabe_D.svg)
+![Struktogramm Aufgabe D](structogramme/Python_Grundlagen_Basics_Aufgabe_D.svg)
