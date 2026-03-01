@@ -1,0 +1,149 @@
+# Grundlagen der Programmierung - Basics (JavaScript) - Variante 4
+
+**Dokumenttyp:** Aufgabenstellung + Musterloesung
+
+**Punkte gesamt:** 25
+
+**Hinweis fuer Lehrkraefte**
+
+- Teilpunkte in 0.5-Schritten vergeben.
+- Loesungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
+
+---
+
+## Aufgabe A - Variablen + Ein/Ausgabe (5.0 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe ein kleines Programm, das `buch` und `seiten` einliest (oder setzt) und eine Buchinformation ausgibt.
+
+**Musterloesung**
+
+```javascript
+const buch = "1984";
+const seiten = 328;
+
+console.log(`Das Buch "${buch}" hat ${seiten} Seiten.`);
+```
+
+**Bewertungsrubrik**
+
+| Kriterium                                | Punkte  | Hinweise                                                                         |
+| ---------------------------------------- | ------- | -------------------------------------------------------------------------------- |
+| Variablen deklarieren und initialisieren | 2.0     | `const` oder `let` verwendet, Werte korrekt gesetzt                              |
+| Eingabe einlesen oder simulieren         | 1.0     | Eingabe ueber `prompt()`, `readline`, oder direkte Wertzuweisung                 |
+| Ausgabeformat exakt                      | 2.0     | String-Format mit beiden Variablen interpoliert, Anfuehrungszeichen um Buchtitel |
+| **Summe Aufgabe A**                      | **5.0** |                                                                                  |
+
+## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
+
+**Aufgabenstellung**
+
+1. Schreibe eine Funktion `calcTriangleArea(base, height)`, die die Flaeche eines Dreiecks berechnet.
+2. Schreibe eine Funktion `milesToKm(miles)`, die Meilen in Kilometer umrechnet.
+
+**Musterloesung**
+
+```javascript
+function calcTriangleArea(base, height) {
+  return (base * height) / 2;
+}
+
+function milesToKm(miles) {
+  return miles * 1.609;
+}
+```
+
+**Bewertungsrubrik**
+
+| Kriterium             | Punkte  | Hinweise                                       |
+| --------------------- | ------- | ---------------------------------------------- |
+| Funktion 1 Signatur   | 1.0     | Name, Parameter korrekt                        |
+| Funktion 1 Berechnung | 3.0     | `base * height / 2` oder `(base * height) / 2` |
+| Funktion 2 Signatur   | 0.5     | Name, Parameter korrekt                        |
+| Funktion 2 Berechnung | 3.0     | Formel `miles * 1.609` korrekt                 |
+| **Summe Aufgabe B**   | **7.5** |                                                |
+
+## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe eine Funktion `classifySpeed(kmh)`, die eine Geschwindigkeitsklassifizierung als Text liefert.
+
+**Musterloesung**
+
+```javascript
+function classifySpeed(kmh) {
+  if (kmh < 0) {
+    return "ungueltig";
+  } else if (kmh <= 30) {
+    return "langsam";
+  } else if (kmh <= 100) {
+    return "normal";
+  } else {
+    return "schnell";
+  }
+}
+```
+
+**Bewertungsrubrik**
+
+| Kriterium               | Punkte  | Hinweise                                    |
+| ----------------------- | ------- | ------------------------------------------- |
+| Funktion Signatur       | 0.5     | Name und Parameter korrekt                  |
+| Validierung (ungueltig) | 2.0     | `kmh < 0` richtig abgefangen                |
+| Fallunterscheidungen    | 3.0     | Alle drei Faelle (langsam, normal, schnell) |
+| Rueckgabewerte korrekt  | 0.5     | Strings exakt wie verlangt                  |
+| **Summe Aufgabe C**     | **6.0** |                                             |
+
+## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe eine Funktion `analyzeNumbers(numbers)`, die das Minimum und die Anzahl positiver Zahlen berechnet.
+
+**Musterloesung**
+
+```javascript
+function analyzeNumbers(numbers) {
+  let minimum = numbers[0];
+  let positiveCount = 0;
+
+  for (let num of numbers) {
+    if (num < minimum) {
+      minimum = num;
+    }
+    if (num > 0) {
+      positiveCount++;
+    }
+  }
+
+  return { minimum: minimum, positiveCount: positiveCount };
+}
+```
+
+**Alternative Loesung (mit Math.min)**
+
+```javascript
+function analyzeNumbers(numbers) {
+  const minimum = Math.min(...numbers);
+  const positiveCount = numbers.filter((num) => num > 0).length;
+
+  return { minimum: minimum, positiveCount: positiveCount };
+}
+```
+
+**Bewertungsrubrik**
+
+| Kriterium           | Punkte  | Hinweise                                                          |
+| ------------------- | ------- | ----------------------------------------------------------------- |
+| Funktion Signatur   | 0.5     | Name und Parameter korrekt                                        |
+| Schleife            | 1.0     | `for...of`, `forEach`, oder klassische `for`-Schleife             |
+| Minimum finden      | 3.0     | Vergleich mit Initialisierung (z.B. `numbers[0]` oder `Infinity`) |
+| Positive zaehlen    | 1.5     | `if (num > 0)` mit Zähler-Inkrement                               |
+| Rueckgabeformat     | 0.5     | Objekt mit korrekten Feldnamen/Werten                             |
+| **Summe Aufgabe D** | **6.5** |                                                                   |
+
+**Struktogramm (Platzhalter)**
+
+![Struktogramm Aufgabe D](structogramme/JavaScript_Grundlagen_Basics_v4_Aufgabe_D.svg)

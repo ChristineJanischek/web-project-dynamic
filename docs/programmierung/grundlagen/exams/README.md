@@ -14,12 +14,38 @@ Diese Dokumente liefern druckbare Exams zu den Grundlagen der Programmierung fue
 
 ### Basics (Fundamentals)
 
+**Hauptversion (Variante 1):**
+
 - `JavaScript_Grundlagen_Basics.md`
 - `PHP_Grundlagen_Basics.md`
 - `Python_Grundlagen_Basics.md`
 - `JavaScript_Grundlagen_Basics_Loesungen.md`
 - `PHP_Grundlagen_Basics_Loesungen.md`
 - `Python_Grundlagen_Basics_Loesungen.md`
+
+**Nachschreibe-Varianten (fuer Schueler/innen die den Exam nachschreiben):**
+
+Jede Sprache hat 3 zusaetzliche Varianten mit vergleichbarer Schwierigkeit:
+
+- `JavaScript_Grundlagen_Basics_v2.md` + `..._v2_Loesungen.md`
+- `JavaScript_Grundlagen_Basics_v3.md` + `..._v3_Loesungen.md`
+- `JavaScript_Grundlagen_Basics_v4.md` + `..._v4_Loesungen.md`
+- `PHP_Grundlagen_Basics_v2.md` + `..._v2_Loesungen.md`
+- `PHP_Grundlagen_Basics_v3.md` + `..._v3_Loesungen.md`
+- `PHP_Grundlagen_Basics_v4.md` + `..._v4_Loesungen.md`
+- `Python_Grundlagen_Basics_v2.md` + `..._v2_Loesungen.md`
+- `Python_Grundlagen_Basics_v3.md` + `..._v3_Loesungen.md`
+- `Python_Grundlagen_Basics_v4.md` + `..._v4_Loesungen.md`
+
+**Design-Prinzipien der Varianten:**
+
+- Gleiche Aufgabenstruktur (A, B, C, D)
+- Identische Punkteverteilung (5.0, 7.5, 6.0, 6.5)
+- Vergleichbare Schwierigkeit
+- Unterschiedliche Kontexte und Zahlen
+- Variante 2: Produkt/Preis, Kreisumfang, Altersklassifizierung, ungerade/negative Zahlen
+- Variante 3: Stadt/Einwohner, Wuerfelvolumen, Temperaturklassifizierung, Maximum/Summe
+- Variante 4: Buch/Seiten, Dreiecksflaeche, Geschwindigkeitsklassifizierung, Minimum/positive Zahlen
 
 ### Weitere Schwerpunkte (pro Sprache aufzulegen)
 
@@ -89,6 +115,7 @@ Der Ausbau zu einem teil-automatisierten Online-Exam ist realistisch, wenn die I
 3. Loesungsdatei erstellung (optional): `<SPRACHE>_Grundlagen_<SCHWERPUNKT>_Loesungen.md`
 4. Bewertungsrubrik ergaenzen (Tabelle mit Teilpunkten)
 5. Struktogramm-Platzhalter vorbereiten
+6. Nachschreibe-Varianten erstellen: `..._v2.md`, `..._v3.md`, `..._v4.md` (plus Loesungen)
 
 ### Exam-Inhalte aendern
 
