@@ -1,7 +1,7 @@
 # 🎯 Marschplan: Exam-System Phase 2–4
 
 > **Ziel:** Hochwertiges, skalierbares Exam-System mit erstklassigem Design  
-> **Status:** Phase 1 ✅ abgeschlossen | Phase 2 ⏳ Start: 02.03.2026  
+> **Status:** Phase 1 ✅ abgeschlossen | Phase 2 ⏳ laufend (Start: 03.03.2026)  
 > **Qualität:** Softwaredesign-Prinzipien + Buch-blätter-stil Layout
 
 ---
@@ -475,6 +475,8 @@
 **Vor jedem Commit:**
 
 - [ ] `python3 scripts/validate_exams.py` → 0 Fehler
+- [ ] `python3 scripts/check_architecture.py` → keine kritischen Findings
+- [ ] `python3 scripts/check_docs_navigation.py` → Navigation konsistent
 - [ ] Alle Dateien gespeichert
 - [ ] Keine `TODO:` oder `FIXME:` im Code
 - [ ] Commit-Message folgt Convention:
@@ -486,6 +488,8 @@
 **Vor jedem Release:**
 
 - [ ] Alle Tests grün
+- [ ] Architektur-Report erzeugt (`reports/architecture_report.md`)
+- [ ] Wiederverwendbare Artefakte aktuell (`shared/`, `templates/`, `scripts/lib/`)
 - [ ] Dokumentation vollständig
 - [ ] CHANGELOG.md aktualisiert
 - [ ] Version-Nummer hochgezählt (Semantic Versioning)
@@ -543,11 +547,12 @@
 
 ### Änderungslog (diese Datei)
 
-| Datum      | Änderung            | Grund         |
-| ---------- | ------------------- | ------------- |
-| 01.03.2026 | Marschplan erstellt | Projekt-Setup |
-|            |                     |               |
-|            |                     |               |
+| Datum      | Änderung                                                          | Grund                            |
+| ---------- | ----------------------------------------------------------------- | -------------------------------- |
+| 01.03.2026 | Marschplan erstellt                                               | Projekt-Setup                    |
+| 03.03.2026 | Qualitätsroutinen ergänzt (Architektur/Navigation/Release-Checks) | Best-Practice, Reuse, Sicherheit |
+|            |                                                                   |                                  |
+|            |                                                                   |                                  |
 
 ### Offene Fragen
 
@@ -557,7 +562,7 @@
 
 ---
 
-## 🎯 Nächste Schritte (Morgen, 02.03.2026)
+## 🎯 Nächste Schritte (Heute, 03.03.2026)
 
 **08:00–08:30:**
 
@@ -573,9 +578,10 @@
 **09:00–Start:**
 
 - Tag 1 beginnen: JavaScript Datenstrukturen v1
+- Nachmittags Qualitätslauf: `validate_exams` + `check_architecture` + `check_docs_navigation`
 
 ---
 
 **Viel Erfolg! 🚀**
 
-**Letzte Aktualisierung:** 01.03.2026
+**Letzte Aktualisierung:** 03.03.2026

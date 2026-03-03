@@ -2,68 +2,75 @@
    Version 1: Erste CSS-Formatierungen
    ======================================== */
 
+:root {
+  --color-text: #333;
+  --color-primary: #2d6a4f;
+  --color-surface: #f4f4f4;
+  --color-white: #fff;
+}
+
 /* TODO: Formatiere den body */
 body {
-    /* font-family: ... */
-    /* color: ... */
-    /* background-color: ... */
-    /* max-width: 800px; */
-    /* margin: 0 auto; */
+  /* font-family: ... */
+  /* color: ... */
+  /* background-color: ... */
+  /* max-width: 800px; */
+  /* margin: 0 auto; */
 }
 
 /* TODO: Formatiere den Header */
 header {
-    /* background-color: ... */
-    /* padding: ... */
+  /* background-color: ... */
+  /* padding: ... */
 }
 
 /* TODO: Formatiere die Hauptüberschrift */
 h1 {
-    /* color: ... */
+  /* color: ... */
 }
 
 /* TODO: Formatiere die Navigation */
 nav {
-    /* ... */
+  /* ... */
 }
 
 nav a {
-    /* text-decoration: ... */
-    /* color: ... */
-    /* padding: ... */
+  /* text-decoration: ... */
+  /* color: ... */
+  /* padding: ... */
 }
 
 nav a:hover {
-    /* Hover-Effekt */
+  /* Hover-Effekt */
 }
 
 /* TODO: Formatiere den Main-Bereich */
 main {
-    /* padding: ... */
+  /* padding: ... */
 }
 
 h2 {
-    /* color: ... */
-    /* margin: ... */
+  /* color: ... */
+  /* margin: ... */
 }
 
 p {
-    /* line-height: 1.6; */
+  /* line-height: 1.6; */
 }
 
 /* TODO: Formatiere Listen */
 ul {
-    /* list-style-type: ... */
+  /* list-style-type: ... */
 }
 
 li {
-    /* margin: ... */
+  /* margin: ... */
 }
 
 /* TODO: Formatiere den Footer */
 footer {
-    /* background-color: ... */
-    /* text-align: center; */
-    /* padding: ... */
-    /* margin-top: ... */
+  /* background-color: ... */
+  /* text-align: center; */
+  /* padding: ... */
+  /* margin-top: ... */
 }

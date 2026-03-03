@@ -8,6 +8,35 @@ Wenn neue `.md`-Dateien zu `docs/` hinzugefügt werden, muss die Tabelle unter *
 
 ## 🤖 Automatische Methoden
 
+### Methode -2.6: Architektur-Checks zentral ausführen
+
+**Ziel:**
+
+- Architekturqualität strukturiert prüfen (Abstraktion, MVC, Sicherheit, Wartbarkeit)
+- Prüfroutine auf mehrere Bereiche anwenden (`version1`-`version5`, `templates`, `shared-examples`, `src`)
+- Ergebnisse zentral und wiederverwendbar im Report-Ordner ablegen
+
+**Nutzung:**
+
+```bash
+python3 scripts/check_architecture.py
+```
+
+**Optionen:**
+
+```bash
+# Nur bestimmte Pfade prüfen
+python3 scripts/check_architecture.py --paths version4 version5 src
+
+# Alternativen Ausgabeordner verwenden
+python3 scripts/check_architecture.py --output-dir reports/quality
+```
+
+**Output:**
+
+- `reports/architecture_report.md`
+- `reports/architecture_details.json`
+
 ### Methode -2.5: Docs-Navigation prüfen (Grundlagen)
 
 **Ziel:**
