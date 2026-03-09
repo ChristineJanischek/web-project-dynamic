@@ -8,6 +8,7 @@ Diese Seite bündelt alle Doku-Bereiche des Repositories und hilft beim schnelle
 
 - [Statisch (HTML/CSS Basis)](statisch/intro.md)
   - [HTML Grundgerüst](statisch/html-grundgeruest.md)
+  - [Sonderzeichen & Umlaute in HTML](statisch/sonderzeichen-und-umlaute-in-html.md)
   - [Seitenstrukturelemente](statisch/seitenstrukturelemente.md)
   - [CSS Basis](statisch/css-basis.md)
   - [Responsive Design](statisch/responsive-design.md)

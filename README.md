@@ -15,6 +15,7 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 - 🚀 Live Server vorinstalliert für sofortiges Testen
 
 ## 🆕 Was ist neu? (Stand: 03.03.2026)
+
 - ✅ Neue modulare Grundlagenpfade für [PHP](docs/programmierung/grundlagen/php/README.md), [Python](docs/programmierung/grundlagen/python/README.md) und [JavaScript](docs/programmierung/grundlagen/javascript/README.md)
 - ✅ Python-Kapitel zu Algorithmen und Dateiverarbeitung ergänzt
 - ✅ Unterrichtsmaterial von `ka_grundlagen/` nach [material/ka_grundlagen](material/ka_grundlagen) migriert
@@ -69,6 +70,7 @@ Vollständig funktionierendes Projekt mit HTML, CSS, JavaScript und SVG-Grafiken
 | Backup-Strategie                  | [`docs/handbook/BACKUP_STRATEGY.md`](docs/handbook/BACKUP_STRATEGY.md)                                       | Best-Practice für lokale und automatisierte Repository-Snapshots             |
 | Einstieg & Überblick              | [`docs/statisch/intro.md`](docs/statisch/intro.md)                                                           | Was ist das Web? Rollen von Client/Server                                    |
 | HTML Grundgerüst                  | [`docs/statisch/html-grundgeruest.md`](docs/statisch/html-grundgeruest.md)                                   | Aufbau von `<!DOCTYPE html>`, Grundtags, Validierung                         |
+| Sonderzeichen & Umlaute in HTML   | [`docs/statisch/sonderzeichen-und-umlaute-in-html.md`](docs/statisch/sonderzeichen-und-umlaute-in-html.md)   | UTF-8, Copy/Paste-Fallen und korrektes Escaping in der Praxis                |
 | Seitenstrukturelemente            | [`docs/statisch/seitenstrukturelemente.md`](docs/statisch/seitenstrukturelemente.md)                         | Semantische Tags (`header`,`nav`,`main`,`section`,...)                       |
 | CSS einbinden                     | [`docs/statisch/css-einbinden.md`](docs/statisch/css-einbinden.md)                                           | Externe, interne & inline CSS, Best Practices                                |
 | CSS Basis                         | [`docs/statisch/css-basis.md`](docs/statisch/css-basis.md)                                                   | Selektoren, Eigenschaften, erste Styles                                      |
