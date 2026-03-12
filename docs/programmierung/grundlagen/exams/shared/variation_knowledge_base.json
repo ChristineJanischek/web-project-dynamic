@@ -1,0 +1,515 @@
+{
+  "schema_version": 1,
+  "generated_at": "2026-03-12T11:36:49.898514+00:00",
+  "strategy": {
+    "normalization": "markdown-stripped-lowercase-alnum",
+    "hash": "sha256",
+    "scope": "task-level-and-variant-level"
+  },
+  "entries": [
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "A",
+      "fingerprint": "621216afe970b08e93e6854eaeae999cdd1f1b748e4a9579ff2121c6598e7674",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das vorname und alter einliest oder setzt und eine begruessung ausgibt beispiel ausgabe hallo lena du bist ",
+      "path": "javascript/basics/exam.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "B",
+      "fingerprint": "5558e1395cbe197053e34febd1c51d63bec2b9d8c16dfad312287bb0a2629cb4",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calcrectanglearea width height die die flaeche berechnet 4 0 2 schreibe eine funktion celsiustofah",
+      "path": "javascript/basics/exam.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "C",
+      "fingerprint": "b66abcef2ae126fe46540c777a939f513a350f84a1c816b22b20eb8a74821b20",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classifyscore score die eine note als text liefert score 0 oder score 100 ungueltig 2 0 score 50 nic",
+      "path": "javascript/basics/exam.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "D",
+      "fingerprint": "cb657c63c8fb41d1168887814edd74329761a842af2a668c00389ae2c17014c6",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl gerader zahlen zaehlt 3 0 die summe aller positiven zahle",
+      "path": "javascript/basics/exam.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "A",
+      "fingerprint": "b73f9ca87f4c1efb9d55a0d87d2b817b5e3cc71bb33c18c90e440f9b950af965",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das produkt und preis einliest oder setzt und eine produktinformation ausgibt beispiel ausgabe artikel lapt",
+      "path": "javascript/basics/exam_v2.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "B",
+      "fingerprint": "e2549775b397aa97a9019e43c7682ea3961c1dcdca00f12ebecf5edec367ae11",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calccirclecircumference radius die den kreisumfang berechnet formel 2 r 4 0 2 schreibe eine funkti",
+      "path": "javascript/basics/exam_v2.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "C",
+      "fingerprint": "3436d7417e66cb0aa8830509739f515e027f6bc2e647104ea86fd90fbfc2b6e1",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classifyage age die eine altersgruppe als text liefert age 0 oder age 150 ungueltig 2 0 age 18 minde",
+      "path": "javascript/basics/exam_v2.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "D",
+      "fingerprint": "97f717c2453c0598569b35e74cc69c7b1ae9e7cf263e8ca72aaa96fdf22fc599",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl ungerader zahlen zaehlt 3 0 die summe aller negativen zah",
+      "path": "javascript/basics/exam_v2.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "A",
+      "fingerprint": "87d04774217b2e621a833c9ec5006ff1af4276ee65475709e5a3d2acf03ba3f6",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das stadt und einwohner einliest oder setzt und eine stadtinformation ausgibt beispiel ausgabe in stuttgart",
+      "path": "javascript/basics/exam_v3.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "B",
+      "fingerprint": "929a4a6cc9567fd418687a3fef4ecccaa15d82f51a075a0e9dad78fe397758ce",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calccubevolume side die das volumen eines wuerfels berechnet formel side 4 0 2 schreibe eine funkt",
+      "path": "javascript/basics/exam_v3.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "C",
+      "fingerprint": "4ee4bd4b62b2e31b03b4c377c71cf1dc0220b937ec37b44c83414da20a22530d",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classifytemperature temp die eine temperaturbewertung als text liefert temp 273 ungueltig absoluter ",
+      "path": "javascript/basics/exam_v3.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "D",
+      "fingerprint": "85c945d6c2904c25a6ed98b84e9b373857110b8449c9b5ff4418aa01c8c603bf",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die das maximum der zahlen findet 3 0 die summe aller zahlen berechnet 3",
+      "path": "javascript/basics/exam_v3.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "A",
+      "fingerprint": "c60585d76ee25d5c05adfcf622ec17fff58a439a633c2ad934a295efb7a37c2f",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das buch und seiten einliest oder setzt und eine buchinformation ausgibt beispiel ausgabe das buch 1984 hat",
+      "path": "javascript/basics/exam_v4.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "B",
+      "fingerprint": "16c532570867449cc0975239c03db8cdc81911963f0b89538c5d5432cdfc9863",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calctrianglearea base height die die flaeche eines dreiecks berechnet formel base height 2 4 0 2 s",
+      "path": "javascript/basics/exam_v4.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "C",
+      "fingerprint": "8a615ea1ab1881d2aa980e3f9baeb93479d0867314c656c659cd56ba1391d58e",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classifyspeed kmh die eine geschwindigkeitsklassifizierung als text liefert kmh 0 ungueltig 2 0 kmh ",
+      "path": "javascript/basics/exam_v4.md"
+    },
+    {
+      "language": "javascript",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "D",
+      "fingerprint": "c5db7bcb72e98db71bb2c586355fc1d871cb9748569a3e8bc26eaf09ccf4603b",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die das minimum der zahlen findet 3 0 die anzahl positiver zahlen zaehlt",
+      "path": "javascript/basics/exam_v4.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "A",
+      "fingerprint": "621216afe970b08e93e6854eaeae999cdd1f1b748e4a9579ff2121c6598e7674",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das vorname und alter einliest oder setzt und eine begruessung ausgibt beispiel ausgabe hallo lena du bist ",
+      "path": "php/basics/exam.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "B",
+      "fingerprint": "5558e1395cbe197053e34febd1c51d63bec2b9d8c16dfad312287bb0a2629cb4",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calcrectanglearea width height die die flaeche berechnet 4 0 2 schreibe eine funktion celsiustofah",
+      "path": "php/basics/exam.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "C",
+      "fingerprint": "b66abcef2ae126fe46540c777a939f513a350f84a1c816b22b20eb8a74821b20",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classifyscore score die eine note als text liefert score 0 oder score 100 ungueltig 2 0 score 50 nic",
+      "path": "php/basics/exam.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "D",
+      "fingerprint": "3a01e1aa4f7bd70ffacdabc7b97d63e3e4c756604c027d6029c2d77c7a774613",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl gerader zahlen zaehlt 3 0 die summe aller positiven zahle",
+      "path": "php/basics/exam.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "A",
+      "fingerprint": "b73f9ca87f4c1efb9d55a0d87d2b817b5e3cc71bb33c18c90e440f9b950af965",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das produkt und preis einliest oder setzt und eine produktinformation ausgibt beispiel ausgabe artikel lapt",
+      "path": "php/basics/exam_v2.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "B",
+      "fingerprint": "e2549775b397aa97a9019e43c7682ea3961c1dcdca00f12ebecf5edec367ae11",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calccirclecircumference radius die den kreisumfang berechnet formel 2 r 4 0 2 schreibe eine funkti",
+      "path": "php/basics/exam_v2.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "C",
+      "fingerprint": "3436d7417e66cb0aa8830509739f515e027f6bc2e647104ea86fd90fbfc2b6e1",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classifyage age die eine altersgruppe als text liefert age 0 oder age 150 ungueltig 2 0 age 18 minde",
+      "path": "php/basics/exam_v2.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "D",
+      "fingerprint": "d1b2c80be1bf1110e394678f35183b5f7c65afb9a45e35ee0b9853f30dce6238",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl ungerader zahlen zaehlt 3 0 die summe aller negativen zah",
+      "path": "php/basics/exam_v2.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "A",
+      "fingerprint": "87d04774217b2e621a833c9ec5006ff1af4276ee65475709e5a3d2acf03ba3f6",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das stadt und einwohner einliest oder setzt und eine stadtinformation ausgibt beispiel ausgabe in stuttgart",
+      "path": "php/basics/exam_v3.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "B",
+      "fingerprint": "929a4a6cc9567fd418687a3fef4ecccaa15d82f51a075a0e9dad78fe397758ce",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calccubevolume side die das volumen eines wuerfels berechnet formel side 4 0 2 schreibe eine funkt",
+      "path": "php/basics/exam_v3.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "C",
+      "fingerprint": "4ee4bd4b62b2e31b03b4c377c71cf1dc0220b937ec37b44c83414da20a22530d",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classifytemperature temp die eine temperaturbewertung als text liefert temp 273 ungueltig absoluter ",
+      "path": "php/basics/exam_v3.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "D",
+      "fingerprint": "469eed4e174dd5414dd16fdd27f364019c89127654a9f4dc1e64fb28b1014aa6",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die das maximum der zahlen findet 3 0 die summe aller zahlen berechnet 3",
+      "path": "php/basics/exam_v3.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "A",
+      "fingerprint": "c60585d76ee25d5c05adfcf622ec17fff58a439a633c2ad934a295efb7a37c2f",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das buch und seiten einliest oder setzt und eine buchinformation ausgibt beispiel ausgabe das buch 1984 hat",
+      "path": "php/basics/exam_v4.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "B",
+      "fingerprint": "16c532570867449cc0975239c03db8cdc81911963f0b89538c5d5432cdfc9863",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calctrianglearea base height die die flaeche eines dreiecks berechnet formel base height 2 4 0 2 s",
+      "path": "php/basics/exam_v4.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "C",
+      "fingerprint": "8a615ea1ab1881d2aa980e3f9baeb93479d0867314c656c659cd56ba1391d58e",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classifyspeed kmh die eine geschwindigkeitsklassifizierung als text liefert kmh 0 ungueltig 2 0 kmh ",
+      "path": "php/basics/exam_v4.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "D",
+      "fingerprint": "9ccf46703172020da0fd4a3b4710a7421e99e1ecdfad55b8caa1a0d5eb6d4cfa",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die das minimum der zahlen findet 3 0 die anzahl positiver zahlen zaehlt",
+      "path": "php/basics/exam_v4.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v5.md",
+      "task": "A",
+      "fingerprint": "0079d429b7d899c722a6019bcbcb85e3d8eff6284583b9fcde5144c21171f006",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das film und dauerminuten einliest oder setzt und eine filminformation ausgibt beispiel ausgabe film incept",
+      "path": "php/basics/exam_v5.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v5.md",
+      "task": "B",
+      "fingerprint": "32a3a0c793bc36008b8621224e0b7b6db959bd6fc8ff50aef8b63f6e2807377c",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calcaveragethree a b c die den durchschnitt von drei zahlen berechnet 4 0 2 schreibe eine funktion",
+      "path": "php/basics/exam_v5.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v5.md",
+      "task": "C",
+      "fingerprint": "2fdd713860281d556123c9d86a88ec5b7bfc5459ed92ac7d5c7f9b369af779db",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classifyhumidity humidity die luftfeuchtigkeit als text klassifiziert humidity 0 oder humidity 100 u",
+      "path": "php/basics/exam_v5.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v5.md",
+      "task": "D",
+      "fingerprint": "4a52af0d50370ebbaf34ecddfa795daa0d382aa83ba1527cd16eb7b180e8ad78",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzevalues values die die anzahl von werten zaehlt die durch 3 teilbar sind 3 0 den durchsch",
+      "path": "php/basics/exam_v5.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v6.md",
+      "task": "A",
+      "fingerprint": "b6a94905749fa505893d030f3875df95383fc43e450f56996fbd560623163e96",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das eventname und teilnehmerzahl einliest oder setzt und eine eventmeldung ausgibt beispiel ausgabe event h",
+      "path": "php/basics/exam_v6.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v6.md",
+      "task": "B",
+      "fingerprint": "5826ca5d00ff559d389712773628e9527af1bdac0b9624b2b1fcd4a480c1678a",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calcremainingbudget budget spent die das restbudget berechnet 4 0 2 schreibe eine funktion meterst",
+      "path": "php/basics/exam_v6.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v6.md",
+      "task": "C",
+      "fingerprint": "68816dfa926dd799ef87415172dd0e0eab3ace5242499f3c44dab4bdc1c1d628",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classifybattery percent die den akkustand als text klassifiziert percent 0 oder percent 100 unguelti",
+      "path": "php/basics/exam_v6.md"
+    },
+    {
+      "language": "php",
+      "theme": "basics",
+      "variant": "exam_v6.md",
+      "task": "D",
+      "fingerprint": "a8c84fd0e3bb56200dd236d1fc7cf9f5cada998de63c275da4b5d49cfba04489",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzemeasurements values die die anzahl von werten im bereich 1 bis 9 inklusive zaehlt 3 0 di",
+      "path": "php/basics/exam_v6.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "A",
+      "fingerprint": "621216afe970b08e93e6854eaeae999cdd1f1b748e4a9579ff2121c6598e7674",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das vorname und alter einliest oder setzt und eine begruessung ausgibt beispiel ausgabe hallo lena du bist ",
+      "path": "python/basics/exam.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "B",
+      "fingerprint": "379d940acd1adf82ae5e486e41fbaa3e28f91fac1c6163eb0c44a0b4bf4ef635",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calc rectangle area width height die die flaeche berechnet 4 0 2 schreibe eine funktion celsius to",
+      "path": "python/basics/exam.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "C",
+      "fingerprint": "f5547126d11618ba42ff0e34dc113ffee95b6c6e17d85474adfecdfbad940ed2",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classify score score die eine note als text liefert score 0 oder score 100 ungueltig 2 0 score 50 ni",
+      "path": "python/basics/exam.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam.md",
+      "task": "D",
+      "fingerprint": "b0226224e532c22c114ba777e73d2ee7556be54cc41dac762434508297b28a5c",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die die anzahl gerader zahlen zaehlt 3 0 die summe aller positiven zahl",
+      "path": "python/basics/exam.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "A",
+      "fingerprint": "b73f9ca87f4c1efb9d55a0d87d2b817b5e3cc71bb33c18c90e440f9b950af965",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das produkt und preis einliest oder setzt und eine produktinformation ausgibt beispiel ausgabe artikel lapt",
+      "path": "python/basics/exam_v2.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "B",
+      "fingerprint": "f93af9a08dddbd872b165a17934ff98b21f3954b26b65517837773dca25fc642",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calc circle circumference radius die den kreisumfang berechnet formel 2 r 4 0 2 schreibe eine funk",
+      "path": "python/basics/exam_v2.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "C",
+      "fingerprint": "ef6dfc72b0ab83b44295522af39670a6e46330c9dc3728651c988c902f6a50ae",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classify age age die eine altersgruppe als text liefert age 0 oder age 150 ungueltig 2 0 age 18 mind",
+      "path": "python/basics/exam_v2.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v2.md",
+      "task": "D",
+      "fingerprint": "ce6ef29dd481e91239d591b193f54f955c35ee799664cb34221d83d615c1a33e",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die die anzahl ungerader zahlen zaehlt 3 0 die summe aller negativen za",
+      "path": "python/basics/exam_v2.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "A",
+      "fingerprint": "87d04774217b2e621a833c9ec5006ff1af4276ee65475709e5a3d2acf03ba3f6",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das stadt und einwohner einliest oder setzt und eine stadtinformation ausgibt beispiel ausgabe in stuttgart",
+      "path": "python/basics/exam_v3.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "B",
+      "fingerprint": "77e7682a60e24306d94f9d03e0678c0e93f494664d90e870ebda6eba751f2611",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calc cube volume side die das volumen eines wuerfels berechnet formel side 4 0 2 schreibe eine fun",
+      "path": "python/basics/exam_v3.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "C",
+      "fingerprint": "37ce89907daf8149ab7865f0b15c9229c626907dd38046f81bbb8619bfcafb80",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classify temperature temp die eine temperaturbewertung als text liefert temp 273 ungueltig absoluter",
+      "path": "python/basics/exam_v3.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v3.md",
+      "task": "D",
+      "fingerprint": "e75ee61cae350128a1c969e9cfffd098314b1fb5ebc29e9b7de8aa0193fabcc5",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die das maximum der zahlen findet 3 0 die summe aller zahlen berechnet ",
+      "path": "python/basics/exam_v3.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "A",
+      "fingerprint": "c60585d76ee25d5c05adfcf622ec17fff58a439a633c2ad934a295efb7a37c2f",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das buch und seiten einliest oder setzt und eine buchinformation ausgibt beispiel ausgabe das buch 1984 hat",
+      "path": "python/basics/exam_v4.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "B",
+      "fingerprint": "fc959fa1a057c3ba4af9c397505da9da345ffe693c595925eaf3930fcfa7fda6",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calc triangle area base height die die flaeche eines dreiecks berechnet formel base height 2 4 0 2",
+      "path": "python/basics/exam_v4.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "C",
+      "fingerprint": "fb4ab52af43441ccde0d0372c4f181b3dea3700e4665cffe5b38af2ff2d94c37",
+      "preview": "aufgabe c funktionen mit fallunterscheidungen 6 0 punkte schreibe eine funktion classify speed kmh die eine geschwindigkeitsklassifizierung als text liefert kmh 0 ungueltig 2 0 kmh",
+      "path": "python/basics/exam_v4.md"
+    },
+    {
+      "language": "python",
+      "theme": "basics",
+      "variant": "exam_v4.md",
+      "task": "D",
+      "fingerprint": "8161f150d49bcf3a1d2aeb0da09026f18adbf21b62b235d373f2db4af9b438ba",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die das minimum der zahlen findet 3 0 die anzahl positiver zahlen zaehl",
+      "path": "python/basics/exam_v4.md"
+    }
+  ]
+}

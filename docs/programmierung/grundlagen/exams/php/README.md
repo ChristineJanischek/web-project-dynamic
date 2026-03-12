@@ -8,7 +8,7 @@ Exams zu den Grundlagen der Programmierung in **PHP**.
 
 - **Pfad:** [basics/](basics/)
 - **Inhalt:** Variablen, Ein/Ausgabe, einfache Funktionen, if-else, Schleifen, Arrays
-- **Varianten:** 4 (exam.md, exam_v2.md, exam_v3.md, exam_v4.md)
+- **Varianten:** 6 (exam.md bis exam_v6.md)
 - **Punkte:** 25.0
 
 **Dateien:**
@@ -17,10 +17,14 @@ Exams zu den Grundlagen der Programmierung in **PHP**.
 - [exam_v2.md](basics/exam_v2.md) – Nachschreiber-Variante 2
 - [exam_v3.md](basics/exam_v3.md) – Nachschreiber-Variante 3
 - [exam_v4.md](basics/exam_v4.md) – Nachschreiber-Variante 4
+- [exam_v5.md](basics/exam_v5.md) – Nachschreiber-Variante 5
+- [exam_v6.md](basics/exam_v6.md) – Nachschreiber-Variante 6
 - [solutions.md](basics/solutions.md) – Lösungen v1
 - [solutions_v2.md](basics/solutions_v2.md) – Lösungen v2
 - [solutions_v3.md](basics/solutions_v3.md) – Lösungen v3
 - [solutions_v4.md](basics/solutions_v4.md) – Lösungen v4
+- [solutions_v5.md](basics/solutions_v5.md) – Lösungen v5
+- [solutions_v6.md](basics/solutions_v6.md) – Lösungen v6
 
 ## ⏳ Geplante Themen
 

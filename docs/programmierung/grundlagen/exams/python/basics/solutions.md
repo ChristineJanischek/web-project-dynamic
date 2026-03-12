@@ -26,7 +26,7 @@ alter = 16
 print(f"Hallo {vorname}, du bist {alter} Jahre alt.")
 ```
 
-**Bewertungsrubrik**
+### Punktbewertung
 
 | Kriterium                                | Punkte  | Hinweise                                            |
 | ---------------------------------------- | ------- | --------------------------------------------------- |
@@ -34,6 +34,12 @@ print(f"Hallo {vorname}, du bist {alter} Jahre alt.")
 | Eingabe einlesen oder simulieren         | 1.0     | `input()` oder direkte Wertzuweisung                |
 | Ausgabeformat exakt                      | 2.0     | F-String oder `.format()` mit beiden Variablen      |
 | **Summe Aufgabe A**                      | **5.0** |                                                     |
+
+### Haeufige Fehler
+- Variablenname in Ausgabe passt nicht zum deklarierten Namen
+- Werte werden gesetzt, aber nicht ausgegeben
+- Ausgabeformat weicht von der geforderten Struktur ab
+
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
 
@@ -53,13 +59,19 @@ def celsius_to_fahrenheit(c):
     return (c * 9) / 5 + 32
 ```
 
-**Bewertungsrubrik**
+### Punktbewertung
 
 | Kriterium                                       | Punkte  | Hinweise                                                               |
 | ----------------------------------------------- | ------- | ---------------------------------------------------------------------- |
 | `calc_rectangle_area()` korrekt implementiert   | 4.0     | `def` Syntax korrekt, Parameter entgegen, Multiplikation durchgefuehrt |
 | `celsius_to_fahrenheit()` korrekt implementiert | 3.5     | Formel $(c \times 9/5) + 32$ richtig umgesetzt, `return` korrekt       |
 | **Summe Aufgabe B**                             | **7.5** |                                                                        |
+
+### Haeufige Fehler
+- Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
+- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Parameter werden nicht verwendet oder vertauscht
+
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
 
@@ -80,7 +92,7 @@ def classify_score(score):
     return "sehr gut"
 ```
 
-**Bewertungsrubrik**
+### Punktbewertung
 
 | Kriterium                         | Punkte  | Hinweise                                                 |
 | --------------------------------- | ------- | -------------------------------------------------------- |
@@ -88,6 +100,12 @@ def classify_score(score):
 | Fallunterscheidungen vollstaendig | 2.5     | Alle vier Faelle abgedeckt, `if-elif` oder verschachtelt |
 | Rueckgabewerte korrekt            | 1.5     | Strings entsprechen genau der Vorgabe                    |
 | **Summe Aufgabe C**               | **6.0** |                                                          |
+
+### Haeufige Fehler
+- Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
+- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Faelle werden nicht abgedeckt
+
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
 
@@ -111,7 +129,7 @@ def analyze_numbers(numbers):
     return even_count, positive_sum
 ```
 
-**Bewertungsrubrik**
+### Punktbewertung
 
 | Kriterium              | Punkte  | Hinweise                                                  |
 | ---------------------- | ------- | --------------------------------------------------------- |
@@ -124,3 +142,8 @@ def analyze_numbers(numbers):
 **Struktogramm (Platzhalter)**
 
 ![Struktogramm Aufgabe D](structogramme/Python_Grundlagen_Basics_Aufgabe_D.svg)
+
+### Haeufige Fehler
+- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte

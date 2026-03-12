@@ -8,6 +8,10 @@ Zentrale Ressourcen, die **sprach-übergreifend** verwendet werden.
 shared/
 ├── README.md (diese Datei)
 ├── rubrics.json           # Zentrale Bewertungsrubriken
+├── variation_knowledge_base.json # Aufgaben-Fingerprints
+├── variation_knowledge_base_schema.json # Schema fuer Aufgaben-Fingerprints
+├── solution_rubrics_knowledge_base.json # Maschinenlesbare Bewertungslogik
+├── solution_rubrics_schema.json # Schema fuer Bewertungslogik
 ├── templates/             # Vorlagen für neue Exams
 └── structogramme/         # Allgemeine Standards
 ```
@@ -52,14 +56,15 @@ shared/
 
 Vorlagen für neue Exams:
 
-| Template                                | Beschreibung                    | Status     |
-| --------------------------------------- | ------------------------------- | ---------- |
-| **exam_template.md**                    | Basis-Template (generisch)      | ✅ Ready   |
-| **exam_datenstrukturen_template.md**    | Template für Datenstrukturen    | ⏳ Geplant |
-| **exam_funktionen_template.md**         | Template für Funktionen         | ⏳ Geplant |
-| **exam_kontrollstrukturen_template.md** | Template für Kontrollstrukturen | ⏳ Geplant |
-| **exam_dateien_template.md**            | Template für Dateien            | ⏳ Geplant |
-| **exam_datenbank_template.md**          | Template für Datenbank          | ⏳ Geplant |
+| Template                                | Beschreibung                      | Status     |
+| --------------------------------------- | --------------------------------- | ---------- |
+| **exam_template.md**                    | Basis-Template (generisch)        | ✅ Ready   |
+| **solutions_template.md**               | Musterloesung mit Bewertungslogik | ✅ Ready   |
+| **exam_datenstrukturen_template.md**    | Template für Datenstrukturen      | ⏳ Geplant |
+| **exam_funktionen_template.md**         | Template für Funktionen           | ⏳ Geplant |
+| **exam_kontrollstrukturen_template.md** | Template für Kontrollstrukturen   | ⏳ Geplant |
+| **exam_dateien_template.md**            | Template für Dateien              | ⏳ Geplant |
+| **exam_datenbank_template.md**          | Template für Datenbank            | ⏳ Geplant |
 
 ### Template verwenden
 
@@ -72,7 +77,7 @@ cp shared/templates/exam_template.md [sprache]/[thema]/exam.md
 #    - Zahlen/Werte variieren
 #    - Syntax an Sprache anpassen
 
-# 3. Varianten erstellen (v2, v3, v4)
+# 3. Varianten erstellen (v2, v3, v4, ...)
 cp [sprache]/[thema]/exam.md [sprache]/[thema]/exam_v2.md
 # ... anpassen ...
 
@@ -80,8 +85,51 @@ cp [sprache]/[thema]/exam.md [sprache]/[thema]/exam_v2.md
 cp [sprache]/[thema]/exam.md [sprache]/[thema]/solutions.md
 # ... Lösungen einfügen ...
 
-# 5. Validierung
-python3 scripts/validate_exams.py --language [sprache]
+# 5. Validierung + Wissensdatenbank
+python3 scripts/validate_exams.py --language [sprache] --write-knowledge-base
+```
+
+## 🧠 variation_knowledge_base.json
+
+Diese Datei wird automatisch erzeugt und enthaelt Fingerprints pro Aufgabe (A-D) je Variante.
+Sie dient als technische Wissensdatenbank, um identische Aufgabenstellungen zu erkennen und bei neuer Variantenerstellung aktiv zu vermeiden.
+
+**Aktualisierung:**
+
+```bash
+python3 scripts/validate_exams.py --write-knowledge-base
+```
+
+**Best Practice fuer neue Varianten:**
+
+1. Neue Variante schreiben (gleiche Struktur, neue Aufgabenstellung)
+2. Validierung inkl. Duplikatcheck ausfuehren
+3. Knowledge-Base aktualisieren und committen
+
+## 🧠 solution_rubrics_knowledge_base.json
+
+Diese Datei wird aus allen `solutions*.md` erzeugt und enthaelt pro Aufgabe:
+
+- Punktegesamtwert
+- detaillierte Bewertungskriterien (`Punktbewertung`)
+- typische Fehler (`Haeufige Fehler`)
+- stabile `criterion_id` und `criterion_family_id` fuer Auto-Grading und Analytics
+
+Sie ist die Grundlage fuer spaeteres teilautomatisches oder automatisches Grading im eLearning.
+
+## 🧠 Schema-Dateien
+
+Die folgenden Schema-Dateien definieren den technischen Vertrag der Wissensdatenbanken:
+
+- `variation_knowledge_base_schema.json`
+- `solution_rubrics_schema.json`
+
+Sie werden durch `scripts/validate_exams.py` aktiv zur Validierung verwendet.
+
+**Aktualisierung:**
+
+```bash
+python3 scripts/validate_exams.py --write-knowledge-base
 ```
 
 ## 📐 structogramme/

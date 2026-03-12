@@ -1,8 +1,20 @@
-# Automatisches Update der Dokumentations-Tabelle
+# Automatisierungs-Scripts und Qualitätssicherung
 
-Dieses Projekt enthält Automatisierungsskripte, um die Dokumentations-Tabelle in `README.md` automatisch zu aktualisieren.
+Dieses Projekt enthält verschiedene Automatisierungsskripte für Dokumentation, Examen-System und Qualitätssicherung.
+
+## 🚀 Quick Links
+
+- **[CI-Setup (Exam-System Validierung)](README_CI_SETUP.md)** – Pre-Commit Hooks + GitHub Actions
+- **[Exam-System Dokumentation](../docs/programmierung/grundlagen/exams/)** – Examen, Varianten, Validierung
 
 ## 📋 Übersicht
+
+Dieses Projekt enthält Scripts zur:
+
+- Automatischen Dokumentations-Updates
+- Exam-System-Validierung (Duplikat-Prüfung, Konsistenz)
+- Architektur-Checks
+- Navigation-Validierung
 
 Wenn neue `.md`-Dateien zu `docs/` hinzugefügt werden, muss die Tabelle unter **"## Inhalt / Lernpfade"** in der Haupt-README aktualisiert werden.
 

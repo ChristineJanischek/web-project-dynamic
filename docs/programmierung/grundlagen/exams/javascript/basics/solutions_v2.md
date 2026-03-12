@@ -26,7 +26,7 @@ const preis = 899;
 console.log(`Artikel: ${produkt}, Preis: ${preis} Euro`);
 ```
 
-**Bewertungsrubrik**
+### Punktbewertung
 
 | Kriterium                                | Punkte  | Hinweise                                                         |
 | ---------------------------------------- | ------- | ---------------------------------------------------------------- |
@@ -34,6 +34,12 @@ console.log(`Artikel: ${produkt}, Preis: ${preis} Euro`);
 | Eingabe einlesen oder simulieren         | 1.0     | Eingabe ueber `prompt()`, `readline`, oder direkte Wertzuweisung |
 | Ausgabeformat exakt                      | 2.0     | String-Format mit beiden Variablen interpoliert                  |
 | **Summe Aufgabe A**                      | **5.0** |                                                                  |
+
+### Haeufige Fehler
+- Variablenname in Ausgabe passt nicht zum deklarierten Namen
+- Werte werden gesetzt, aber nicht ausgegeben
+- Ausgabeformat weicht von der geforderten Struktur ab
+
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
 
@@ -54,7 +60,7 @@ function fahrenheitToCelsius(f) {
 }
 ```
 
-**Bewertungsrubrik**
+### Punktbewertung
 
 | Kriterium             | Punkte  | Hinweise                                                |
 | --------------------- | ------- | ------------------------------------------------------- |
@@ -63,6 +69,12 @@ function fahrenheitToCelsius(f) {
 | Funktion 2 Signatur   | 0.5     | Name, Parameter korrekt                                 |
 | Funktion 2 Berechnung | 3.0     | Formel `(f - 32) * 5 / 9` oder `(f - 32) / 1.8` korrekt |
 | **Summe Aufgabe B**   | **7.5** |                                                         |
+
+### Haeufige Fehler
+- Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
+- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Parameter werden nicht verwendet oder vertauscht
+
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
 
@@ -86,7 +98,7 @@ function classifyAge(age) {
 }
 ```
 
-**Bewertungsrubrik**
+### Punktbewertung
 
 | Kriterium               | Punkte  | Hinweise                                            |
 | ----------------------- | ------- | --------------------------------------------------- |
@@ -95,6 +107,12 @@ function classifyAge(age) {
 | Fallunterscheidungen    | 3.0     | Alle drei Faelle (minderjaehrig, erwachsen, senior) |
 | Rueckgabewerte korrekt  | 0.5     | Strings exakt wie verlangt                          |
 | **Summe Aufgabe C**     | **6.0** |                                                     |
+
+### Haeufige Fehler
+- Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
+- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Faelle werden nicht abgedeckt
+
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
 
@@ -122,7 +140,7 @@ function analyzeNumbers(numbers) {
 }
 ```
 
-**Bewertungsrubrik**
+### Punktbewertung
 
 | Kriterium           | Punkte  | Hinweise                                              |
 | ------------------- | ------- | ----------------------------------------------------- |
@@ -136,3 +154,8 @@ function analyzeNumbers(numbers) {
 **Struktogramm (Platzhalter)**
 
 ![Struktogramm Aufgabe D](structogramme/JavaScript_Grundlagen_Basics_v2_Aufgabe_D.svg)
+
+### Haeufige Fehler
+- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte

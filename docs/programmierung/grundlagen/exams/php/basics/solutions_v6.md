@@ -1,4 +1,4 @@
-# Grundlagen der Programmierung - Basics (PHP) - Variante 4
+# Grundlagen der Programmierung - Basics (PHP) - Variante 6
 
 **Dokumenttyp:** Musterloesung | **Punkte gesamt:** 25
 
@@ -8,10 +8,10 @@
 
 ```php
 <?php
-$buch = "1984";
-$seiten = 328;
+$eventName = "Hackathon";
+$teilnehmerzahl = 42;
 
-echo "Das Buch \"{$buch}\" hat {$seiten} Seiten.";
+echo "Event: {$eventName}, Teilnehmende: {$teilnehmerzahl}";
 ```
 
 ### Punktbewertung
@@ -29,12 +29,12 @@ echo "Das Buch \"{$buch}\" hat {$seiten} Seiten.";
 
 ```php
 <?php
-function calcTriangleArea($base, $height) {
-    return $base * $height / 2;
+function calcRemainingBudget($budget, $spent) {
+    return $budget - $spent;
 }
 
-function milesToKm($miles) {
-    return $miles * 1.609;
+function metersToCentimeters($meters) {
+    return $meters * 100;
 }
 ```
 
@@ -52,15 +52,15 @@ function milesToKm($miles) {
 
 ```php
 <?php
-function classifySpeed($kmh) {
-    if ($kmh < 0) {
+function classifyBattery($percent) {
+    if ($percent < 0 || $percent > 100) {
         return "ungueltig";
-    } elseif ($kmh <= 30) {
-        return "langsam";
-    } elseif ($kmh <= 100) {
-        return "normal";
+    } elseif ($percent < 20) {
+        return "niedrig";
+    } elseif ($percent < 80) {
+        return "mittel";
     } else {
-        return "schnell";
+        return "hoch";
     }
 }
 ```
@@ -80,20 +80,26 @@ function classifySpeed($kmh) {
 
 ```php
 <?php
-function analyzeNumbers($numbers) {
-    $minimum = $numbers[0];
-    $positiveCount = 0;
+function analyzeMeasurements($values) {
+    $singleDigitPositiveCount = 0;
+    $absoluteSum = 0;
 
-    foreach ($numbers as $num) {
-        if ($num < $minimum) {
-            $minimum = $num;
+    foreach ($values as $value) {
+        if ($value >= 1 && $value <= 9) {
+            $singleDigitPositiveCount++;
         }
-        if ($num > 0) {
-            $positiveCount++;
+
+        if ($value < 0) {
+            $absoluteSum += -$value;
+        } else {
+            $absoluteSum += $value;
         }
     }
 
-    return ["minimum" => $minimum, "positiveCount" => $positiveCount];
+    return [
+        "singleDigitPositiveCount" => $singleDigitPositiveCount,
+        "absoluteSum" => $absoluteSum
+    ];
 }
 ```
 

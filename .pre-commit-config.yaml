@@ -1,0 +1,15 @@
+# Pre-commit Hooks für web-project-dynamic
+# Installation: pre-commit install
+# Manuell: pre-commit run --all-files
+
+repos:
+  # Exam-System Validierung
+  - repo: local
+    hooks:
+      - id: validate-exams
+        name: Validate Exam System
+        entry: python3 scripts/validate_exams.py --write-knowledge-base
+        language: system
+        files: ^docs/programmierung/grundlagen/exams/.*\.md$
+        pass_filenames: false
+        stages: [commit]

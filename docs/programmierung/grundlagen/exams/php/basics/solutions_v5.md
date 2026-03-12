@@ -1,4 +1,4 @@
-# Grundlagen der Programmierung - Basics (PHP) - Variante 4
+# Grundlagen der Programmierung - Basics (PHP) - Variante 5
 
 **Dokumenttyp:** Musterloesung | **Punkte gesamt:** 25
 
@@ -8,10 +8,10 @@
 
 ```php
 <?php
-$buch = "1984";
-$seiten = 328;
+$film = "Inception";
+$dauerMinuten = 148;
 
-echo "Das Buch \"{$buch}\" hat {$seiten} Seiten.";
+echo "Film: {$film}, Dauer: {$dauerMinuten} Minuten";
 ```
 
 ### Punktbewertung
@@ -29,12 +29,12 @@ echo "Das Buch \"{$buch}\" hat {$seiten} Seiten.";
 
 ```php
 <?php
-function calcTriangleArea($base, $height) {
-    return $base * $height / 2;
+function calcAverageThree($a, $b, $c) {
+    return ($a + $b + $c) / 3;
 }
 
-function milesToKm($miles) {
-    return $miles * 1.609;
+function minutesToSeconds($minutes) {
+    return $minutes * 60;
 }
 ```
 
@@ -52,15 +52,15 @@ function milesToKm($miles) {
 
 ```php
 <?php
-function classifySpeed($kmh) {
-    if ($kmh < 0) {
+function classifyHumidity($humidity) {
+    if ($humidity < 0 || $humidity > 100) {
         return "ungueltig";
-    } elseif ($kmh <= 30) {
-        return "langsam";
-    } elseif ($kmh <= 100) {
+    } elseif ($humidity < 30) {
+        return "trocken";
+    } elseif ($humidity < 60) {
         return "normal";
     } else {
-        return "schnell";
+        return "feucht";
     }
 }
 ```
@@ -80,20 +80,30 @@ function classifySpeed($kmh) {
 
 ```php
 <?php
-function analyzeNumbers($numbers) {
-    $minimum = $numbers[0];
-    $positiveCount = 0;
+function analyzeValues($values) {
+    $divByThreeCount = 0;
+    $nonNegativeSum = 0;
+    $nonNegativeCount = 0;
 
-    foreach ($numbers as $num) {
-        if ($num < $minimum) {
-            $minimum = $num;
+    foreach ($values as $value) {
+        if ($value % 3 === 0) {
+            $divByThreeCount++;
         }
-        if ($num > 0) {
-            $positiveCount++;
+        if ($value >= 0) {
+            $nonNegativeSum += $value;
+            $nonNegativeCount++;
         }
     }
 
-    return ["minimum" => $minimum, "positiveCount" => $positiveCount];
+    $nonNegativeAverage = 0;
+    if ($nonNegativeCount > 0) {
+        $nonNegativeAverage = $nonNegativeSum / $nonNegativeCount;
+    }
+
+    return [
+        "divByThreeCount" => $divByThreeCount,
+        "nonNegativeAverage" => $nonNegativeAverage
+    ];
 }
 ```
 

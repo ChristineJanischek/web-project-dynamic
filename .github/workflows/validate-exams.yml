@@ -1,0 +1,53 @@
+name: Validate Exam System
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - "docs/programmierung/grundlagen/exams/**/*.md"
+      - "scripts/validate_exams.py"
+  pull_request:
+    branches: [main, develop]
+    paths:
+      - "docs/programmierung/grundlagen/exams/**/*.md"
+      - "scripts/validate_exams.py"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    name: Exam System Validation
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.9"
+
+      - name: Run Exam System Validation
+        run: |
+          python3 scripts/validate_exams.py --write-knowledge-base --verbose
+        working-directory: ${{ github.workspace }}
+
+      - name: Check for Exam System Changes
+        if: github.event_name == 'pull_request'
+        run: |
+          # Prüfe ob variation_knowledge_base.json geändert wurde
+          if git diff --name-only origin/main HEAD | grep -q "variation_knowledge_base.json"; then
+            echo "✓ Knowledge Base wurde aktualisiert"
+          else
+            echo "⚠ Knowledge Base wurde nicht aktualisiert. Bitte lokal 'python3 scripts/validate_exams.py --write-knowledge-base' ausführen."
+          fi
+
+      - name: Commit validation results (if changes)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add docs/programmierung/grundlagen/exams/shared/variation_knowledge_base.json
+          if ! git diff-index --quiet HEAD --; then
+            git commit -m "chore: update variation_knowledge_base.json [skip ci]"
+            git push
+          fi

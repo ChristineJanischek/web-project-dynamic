@@ -20,7 +20,7 @@ Rubriken, Templates und Standards sind in `shared/` zentralisiert, um Redundanz 
 
 ### 3. **Nachschreib-Varianten**
 
-Jedes Thema hat 4 vergleichbare Varianten (exam.md = v1, exam_v2.md, exam_v3.md, exam_v4.md) mit identischer Struktur aber unterschiedlichen Kontexten.
+Jedes Thema hat mindestens 4 vergleichbare Varianten (exam.md = v1, exam_v2.md, exam_v3.md, exam_v4.md, optional weitere wie exam_v5.md) mit identischer Struktur aber unterschiedlichen Kontexten.
 
 ### 4. **Online-Readiness**
 
@@ -37,6 +37,10 @@ docs/programmierung/grundlagen/exams/
 ├── shared/                      # Zentrale Ressourcen
 │   ├── README.md               # Dokumentation zu shared/
 │   ├── rubrics.json            # Zentrale Bewertungsrubriken
+│   ├── variation_knowledge_base.json # Aufgaben-Fingerprints
+│   ├── variation_knowledge_base_schema.json # Schema fuer Aufgaben-Fingerprints
+│   ├── solution_rubrics_knowledge_base.json # Bewertungslogik fuer Auto-Grading
+│   ├── solution_rubrics_schema.json # Schema fuer Bewertungslogik
 │   ├── templates/              # Vorlagen für neue Exams
 │   │   ├── exam_template.md
 │   │   ├── exam_datenstrukturen_template.md
@@ -65,8 +69,8 @@ docs/programmierung/grundlagen/exams/
 ├── php/                         # PHP-spezifische Exams
 │   ├── README.md
 │   ├── basics/
-│   │   ├── exam.md ... exam_v4.md
-│   │   ├── solutions.md ... solutions_v4.md
+│   │   ├── exam.md ... exam_vN.md
+│   │   ├── solutions.md ... solutions_vN.md
 │   │   └── structogramme/
 │   └── [weitere Themen...]
 │
@@ -81,11 +85,11 @@ docs/programmierung/grundlagen/exams/
 ### Exam-Dateien
 
 - **Hauptversion:** `exam.md` (= Variante 1)
-- **Nachschreib-Varianten:** `exam_v2.md`, `exam_v3.md`, `exam_v4.md`
+- **Nachschreib-Varianten:** `exam_v2.md` bis `exam_vN.md`
 
 ### Lösungen
 
-- **Entsprechend:** `solutions.md`, `solutions_v2.md`, `solutions_v3.md`, `solutions_v4.md`
+- **Entsprechend:** `solutions.md`, `solutions_v2.md` bis `solutions_vN.md`
 
 ### Metadata (optional, für Online-System)
 
@@ -119,7 +123,7 @@ Alle Bewertungsrubriken sind in `shared/rubrics.json` definiert. Dies ermöglich
 
 ## Nachschreib-Varianten
 
-Jedes Thema hat **4 Varianten**, um faire Nachschreiber-Prüfungen zu ermöglichen.
+Jedes Thema hat **mindestens 4 Varianten**, um faire Nachschreiber-Prüfungen zu ermöglichen.
 
 ### Design-Prinzipien für Varianten:
 
@@ -129,12 +133,14 @@ Jedes Thema hat **4 Varianten**, um faire Nachschreiber-Prüfungen zu ermöglich
 
 ### Beispiel (Basics):
 
-| Variante | Aufgabe A       | Aufgabe B          | Aufgabe C              | Aufgabe D         |
-| -------- | --------------- | ------------------ | ---------------------- | ----------------- |
-| v1       | Vorname/Alter   | Rechteck, °C→°F    | Punkte-Klassifizierung | Gerade/Positive   |
-| v2       | Produkt/Preis   | Kreisumfang, °F→°C | Altersklassifizierung  | Ungerade/Negative |
-| v3       | Stadt/Einwohner | Würfel, km→Meilen  | Temperatur             | Maximum/Summe     |
-| v4       | Buch/Seiten     | Dreieck, Meilen→km | Geschwindigkeit        | Minimum/Positive  |
+| Variante | Aufgabe A          | Aufgabe B             | Aufgabe C              | Aufgabe D                       |
+| -------- | ------------------ | --------------------- | ---------------------- | ------------------------------- |
+| v1       | Vorname/Alter      | Rechteck, °C→°F       | Punkte-Klassifizierung | Gerade/Positive                 |
+| v2       | Produkt/Preis      | Kreisumfang, °F→°C    | Altersklassifizierung  | Ungerade/Negative               |
+| v3       | Stadt/Einwohner    | Würfel, km→Meilen     | Temperatur             | Maximum/Summe                   |
+| v4       | Buch/Seiten        | Dreieck, Meilen→km    | Geschwindigkeit        | Minimum/Positive                |
+| v5 (PHP) | Film/Dauer         | Durchschnitt, min→sek | Luftfeuchte            | Teilbar-durch-3 + Mittelwert    |
+| v6 (PHP) | Event/Teilnehmende | Restbudget, m→cm      | Akkustand              | Bereichszaehlung + Absolutsumme |
 
 ## Themen-Erweiterung
 
@@ -166,7 +172,7 @@ Jedes Thema hat **4 Varianten**, um faire Nachschreiber-Prüfungen zu ermöglich
 
 3. **Exam anpassen** (Kontext, Zahlen, sprachspezifische Syntax)
 
-4. **Varianten erstellen:** exam_v2.md, exam_v3.md, exam_v4.md
+4. **Varianten erstellen:** exam_v2.md, exam_v3.md, exam_v4.md, ...
 
 5. **Lösungen schreiben:** solutions.md, solutions_v2.md, etc.
 
@@ -184,7 +190,7 @@ Jedes Thema hat **4 Varianten**, um faire Nachschreiber-Prüfungen zu ermöglich
 
 7. **Validierung ausführen:**
    ```bash
-   python3 scripts/validate_exams.py
+   python3 scripts/validate_exams.py --write-knowledge-base
    ```
 
 ## Online-Readiness
@@ -213,16 +219,32 @@ Das System enthält automatisierte Validierung:
 
 ```bash
 python3 scripts/validate_exams.py
+python3 scripts/validate_exams.py --write-knowledge-base
 ```
 
 **Prüft:**
 
 - ✅ Alle Sprachen haben die gleichen Themen
-- ✅ Jedes Thema hat 4 Varianten + 4 Lösungen
+- ✅ Jedes Thema hat mindestens 4 Varianten + passende Lösungen
 - ✅ Punktesumme = 25.0
 - ✅ Dateinamen folgen Konventionen
 - ✅ Rubriken sind in rubrics.json definiert
 - ✅ Metadata.json ist valide (falls vorhanden)
+- ✅ Keine identischen Aufgabenstellungen in Varianten
+- ✅ Jede Musterloesung enthaelt Punktbewertung und haeufige Fehler
+- ✅ Wissensdatenbanken entsprechen ihren JSON-Schemata
+- ✅ Kriterien-Summen passen zur Aufgabensumme
+
+## Auto-Grading-Bausteine
+
+Die langfristige Bewertungsarchitektur ist in [AUTOGRADING_RUBRICS.md](AUTOGRADING_RUBRICS.md) beschrieben.
+
+Kernartefakte:
+
+- `shared/solution_rubrics_knowledge_base.json`
+- `shared/solution_rubrics_schema.json`
+- `shared/variation_knowledge_base.json`
+- `shared/variation_knowledge_base_schema.json`
 
 ## Zukunfts-Roadmap
 
@@ -231,7 +253,7 @@ python3 scripts/validate_exams.py
 - [x] Architektur definieren
 - [x] Verzeichnisstruktur aufbauen
 - [x] Zentrale Rubriken (rubrics.json)
-- [x] Basics für 3 Sprachen × 4 Varianten
+- [x] Basics für 3 Sprachen × mindestens 4 Varianten
 - [x] Validierungs-Script
 
 ### Phase 2: Themen-Ausbau ⏳ (nächste Wochen)
