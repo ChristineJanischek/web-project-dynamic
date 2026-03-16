@@ -107,7 +107,7 @@ Das System soll Kurse ermöglichen für:
 
 ## Technische Machbarkeit
 
-Die Umsetzung ist realistisch, da folgende Technologien bereits existieren:ö
+Die Umsetzung ist realistisch, da folgende Technologien bereits existieren:
 
 | Bereich            | Technologie                     |
 | ------------------ | ------------------------------- |
@@ -659,8 +659,74 @@ Also:
 - Bewertungsschemata
 - häufige Fehler
 - Lehrerhinweise
+- Schülerhinweise
 
-Schülerhinweise
+---
+
+# 23 Anforderungszuordnung: core vs. courses
+
+## Leitprinzipien
+
+| Kriterium     | edu-code-lab-core                  | edu-code-lab-courses              |
+| ------------- | ---------------------------------- | --------------------------------- |
+| Art           | Systemcode, Tooling, Infrastruktur | Fachlicher Inhalt, Lernmaterial   |
+| Wer ändert    | Entwickler, DevOps                 | Lehrkräfte, Fachdidaktiker        |
+| Versionierung | Plattform-Releases (SemVer)        | Kurs-/Inhaltsversionen unabhängig |
+| CI/CD-Fokus   | Build, Test, Deploy der Plattform  | Content-Validierung, Exam-Checks  |
+| Abhängigkeit  | wird von courses konsumiert        | hängt von core ab                 |
+
+## Anforderungsmatrix
+
+| Kapitel | Anforderungsbereich                             | core  | courses | Begründung                                               |
+| ------- | ----------------------------------------------- | :---: | :-----: | -------------------------------------------------------- |
+| 2       | Pädagogische Ziele                              |   —   |    ✓    | Beschreiben Inhaltsgestaltung, keine Systemfunktion      |
+| 2       | Technische Ziele (Architektur, Toolchain)       |   ✓   |    —    | Plattformeigenschaften                                   |
+| 3       | Zielgruppe                                      | beide |  beide  | Kontextinformation für beide Repos                       |
+| 4       | Einsatzbereiche (Themenkatalog)                 |   —   |    ✓    | Kursinhalt, keine Systemfunktion                         |
+| 5       | Technologiestack (Java, Docker, Maven)          |   ✓   |    —    | Laufzeit- und Build-Infrastruktur                        |
+| 5       | Betriebsprofile (Live-Test, Self-Hosted)        |   ✓   |    —    | Deployment-Infrastruktur                                 |
+| 6       | Problemanalyse                                  | beide |  beide  | Shared-Kontext                                           |
+| 7       | Konkurrenzanalyse                               |   ✓   |    —    | Systementscheidung                                       |
+| 8       | Systemarchitektur (MVC, Docker, Container)      |   ✓   |    —    | Plattformarchitektur                                     |
+| 9       | Kurseditor-Anwendung                            |   ✓   |    —    | Systemkomponente                                         |
+| 9       | Code-Integration (Runtimes, CI-Templates)       |   ✓   |    —    | Tooling / Infrastruktur                                  |
+| 9       | Modellierung (Draw.io, UML, Struktogramme)      |   ✓   |    —    | Systemfunktion                                           |
+| 10      | Wissensdatenbank – Schema, Infrastruktur        |   ✓   |    —    | Datenbankstruktur gehört zum System                      |
+| 10      | Wissensdatenbank – Inhalte, Fingerprints (JSON) |   —   |    ✓    | Versionierter Kursinhalt                                 |
+| 11      | Aufgabenstruktur – Template-Schema              |   ✓   |    —    | Strukturvorgabe ist Systemstandard                       |
+| 11      | Aufgaben, Lösungen, Varianten (Inhalte)         |   —   |    ✓    | Fachlicher Inhalt                                        |
+| 12      | Bewertungslogik (Kalkulation, Export)           |   ✓   |    —    | Systemfunktion                                           |
+| 12      | Bewertungskriterien, Rubrics (Inhalte)          |   —   |    ✓    | Fachdidaktischer Inhalt                                  |
+| 13      | KI-Services – API-Anbindung, Infrastruktur      |   ✓   |    —    | Systemkomponente                                         |
+| 13      | KI-generierte Aufgabenvarianten (Ergebnis)      |   —   |    ✓    | Ergebnis = Kursinhalt                                    |
+| 14      | QS-Tooling: Skripte, CI-Templates               |   ✓   |    —    | Systemwerkzeuge (siehe Grenzfall unten)                  |
+| 14      | QS: Content-Prüfungen (Exam-Validierung)        |   —   |    ✓    | Laufen auf Kursinhalt; Workflows in courses              |
+| 14      | QS: JUnit 5 / Maven-Tests                       |   ✓   |    —    | Plattform-Testframework                                  |
+| 14      | Git Hooks (Templates)                           |   ✓   |    —    | Bereitgestellt von core, eingebunden in courses          |
+| 15      | Export-Engine (PDF, DOCX, HTML)                 |   ✓   |    —    | Systemfunktion                                           |
+| 16      | Template-Repository-Struktur                    |   ✓   |    —    | Systemstandard                                           |
+| 16      | GitHub Classroom Integration                    |   ✓   |    —    | Systemfunktion                                           |
+| 17      | Branch-Strategie                                | beide |  beide  | Jedes Repo definiert eigene Regeln nach demselben Muster |
+| 18      | Repository Governance                           | beide |  beide  | Gilt separat für jedes Repo                              |
+| 19      | Meilensteinplan                                 |   ✓   |    —    | Plattformentwicklung treibt den Plan                     |
+| 20      | Start-ToDo                                      | beide |  beide  | Infrastruktur- und Inhaltsaufgaben parallel              |
+| 21      | Langfristige Vision                             |   ✓   |    —    | Systemperspektive                                        |
+
+## Besonderer Grenzfall: Validierungsskripte
+
+Die aktuell in `scripts/` enthaltenen Python-Skripte (`validate_exams.py`, `check_docs_navigation.py` etc.) sind logisch **core**-Artefakte (Systemwerkzeuge), residieren jedoch vorübergehend im **courses**-Repo (`web-project-dynamic`), da die core-Plattform noch nicht existiert.
+
+**Langfristige Empfehlung (Zielzustand):**
+
+- Skripte wandern nach `edu-code-lab-core`
+- `edu-code-lab-courses` konsumiert sie via Git Submodule, npm-Paket oder Docker-Image
+- CI-Workflows in courses referenzieren die Tools aus core; kein Tooling-Code im courses-Repo
+
+**Kurzfristige Lösung (aktueller Stand):**
+
+- Skripte verbleiben im courses-Repo bis die core-Plattform realisiert ist
+- Sie sind in `scripts/` klar gebündelt und als "temporär hier, logisch core" zu verstehen
+- Beim Migration-Schritt entfällt `scripts/` aus courses ersatzlos; CI-Workflows werden auf core-Referenz umgestellt
 
 - fachliche Dokumentation
 - kursbezogene Medien
