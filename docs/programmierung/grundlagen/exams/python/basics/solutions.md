@@ -17,6 +17,14 @@
 
 Schreibe ein kleines Programm, das `vorname` und `alter` einliest (oder setzt) und eine Begruessung ausgibt.
 
+**Beispiel-Ausgabe:** `Hallo Lena, du bist 16 Jahre alt.`
+
+Anforderungen:
+
+- Variablen korrekt deklarieren und initialisieren (2.0)
+- Eingabe einlesen oder simulieren (1.0)
+- Ausgabeformat exakt wie oben (2.0)
+
 **Musterloesung**
 
 ```python
@@ -45,8 +53,13 @@ print(f"Hallo {vorname}, du bist {alter} Jahre alt.")
 
 **Aufgabenstellung**
 
-1. Schreibe eine Funktion `calc_rectangle_area(width, height)`, die die Flaeche berechnet.
-2. Schreibe eine Funktion `celsius_to_fahrenheit(c)`, die Celsius in Fahrenheit umrechnet.
+1. Schreibe eine Funktion `calc_rectangle_area(width, height)`, die die Flaeche berechnet. (4.0)
+2. Schreibe eine Funktion `celsius_to_fahrenheit(c)`, die Celsius in Fahrenheit umrechnet. (3.5)
+
+**Beispiele:**
+
+- `calc_rectangle_area(4, 3)` -> `12`
+- `celsius_to_fahrenheit(0)` -> `32`
 
 **Musterloesung**
 
@@ -77,7 +90,17 @@ def celsius_to_fahrenheit(c):
 
 **Aufgabenstellung**
 
-Schreibe eine Funktion `classify_score(score)`, die eine Note als Text liefert.
+Schreibe eine Funktion `classify_score(score)`, die eine Note als Text liefert:
+
+- `score < 0` oder `score > 100` -> `ungueltig` (2.0)
+- `score < 50` -> `nicht bestanden`
+- `score >= 50` und `< 90` -> `bestanden`
+- `score >= 90` -> `sehr gut` (4.0)
+
+**Beispiele:**
+
+- `classify_score(45)` -> `nicht bestanden`
+- `classify_score(90)` -> `sehr gut`
 
 **Musterloesung**
 
@@ -111,7 +134,16 @@ def classify_score(score):
 
 **Aufgabenstellung**
 
-Schreibe eine Funktion `analyze_numbers(numbers)`, die die Anzahl gerader Zahlen zaehlt und die Summe aller positiven Zahlen berechnet.
+Schreibe eine Funktion `analyze_numbers(numbers)`, die:
+
+- die Anzahl gerader Zahlen zaehlt (3.0)
+- die Summe aller positiven Zahlen berechnet (3.5)
+
+Rueckgabeformat als Tuple: `(even_count, positive_sum)`
+
+**Beispiel:**
+
+`analyze_numbers([2, -3, 4, 0, 5])` -> `(3, 11)`
 
 **Musterloesung**
 

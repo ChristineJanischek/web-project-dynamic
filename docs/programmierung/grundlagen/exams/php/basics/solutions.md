@@ -17,6 +17,14 @@
 
 Schreibe ein kleines Programm, das `vorname` und `alter` einliest (oder setzt) und eine Begruessung ausgibt.
 
+**Beispiel-Ausgabe:** `Hallo Lena, du bist 16 Jahre alt.`
+
+Anforderungen:
+
+- Variablen korrekt deklarieren und initialisieren (2.0)
+- Eingabe einlesen oder simulieren (1.0)
+- Ausgabeformat exakt wie oben (2.0)
+
 **Musterloesung**
 
 ```php
@@ -46,8 +54,13 @@ echo "Hallo {$vorname}, du bist {$alter} Jahre alt.";
 
 **Aufgabenstellung**
 
-1. Schreibe eine Funktion `calcRectangleArea($width, $height)`, die die Flaeche berechnet.
-2. Schreibe eine Funktion `celsiusToFahrenheit($c)`, die Celsius in Fahrenheit umrechnet.
+1. Schreibe eine Funktion `calcRectangleArea($width, $height)`, die die Flaeche berechnet. (4.0)
+2. Schreibe eine Funktion `celsiusToFahrenheit($c)`, die Celsius in Fahrenheit umrechnet. (3.5)
+
+**Beispiele:**
+
+- `calcRectangleArea(4, 3)` -> `12`
+- `celsiusToFahrenheit(0)` -> `32`
 
 **Musterloesung**
 
@@ -80,7 +93,17 @@ function celsiusToFahrenheit($c) {
 
 **Aufgabenstellung**
 
-Schreibe eine Funktion `classifyScore($score)`, die eine Note als Text liefert.
+Schreibe eine Funktion `classifyScore($score)`, die eine Note als Text liefert:
+
+- `score < 0` oder `score > 100` -> `ungueltig` (2.0)
+- `score < 50` -> `nicht bestanden`
+- `score >= 50` und `< 90` -> `bestanden`
+- `score >= 90` -> `sehr gut` (4.0)
+
+**Beispiele:**
+
+- `classifyScore(45)` -> `nicht bestanden`
+- `classifyScore(90)` -> `sehr gut`
 
 **Musterloesung**
 
@@ -119,7 +142,16 @@ function classifyScore($score) {
 
 **Aufgabenstellung**
 
-Schreibe eine Funktion `analyzeNumbers($numbers)`, die die Anzahl gerader Zahlen zaehlt und die Summe aller positiven Zahlen berechnet.
+Schreibe eine Funktion `analyzeNumbers($numbers)`, die:
+
+- die Anzahl gerader Zahlen zaehlt (3.0)
+- die Summe aller positiven Zahlen berechnet (3.5)
+
+Rueckgabeformat als Array: `['evenCount' => X, 'positiveSum' => Y]`
+
+**Beispiel:**
+
+`analyzeNumbers([2, -3, 4, 0, 5])` -> `['evenCount' => 3, 'positiveSum' => 11]`
 
 **Musterloesung**
 

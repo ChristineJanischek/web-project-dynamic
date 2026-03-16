@@ -17,6 +17,14 @@
 
 Schreibe ein kleines Programm, das `stadt` und `einwohner` einliest (oder setzt) und eine Stadtinformation ausgibt.
 
+**Beispiel-Ausgabe:** `In Stuttgart leben 635911 Menschen.`
+
+Anforderungen:
+
+- Variablen korrekt deklarieren und initialisieren (2.0)
+- Eingabe einlesen oder simulieren (1.0)
+- Ausgabeformat exakt wie oben (2.0)
+
 **Musterloesung**
 
 ```javascript
@@ -45,8 +53,13 @@ console.log(`In ${stadt} leben ${einwohner} Menschen.`);
 
 **Aufgabenstellung**
 
-1. Schreibe eine Funktion `calcCubeVolume(side)`, die das Volumen eines Wuerfels berechnet.
-2. Schreibe eine Funktion `kmToMiles(km)`, die Kilometer in Meilen umrechnet.
+1. Schreibe eine Funktion `calcCubeVolume(side)`, die das Volumen eines Wuerfels berechnet (Formel: side³). (4.0)
+2. Schreibe eine Funktion `kmToMiles(km)`, die Kilometer in Meilen umrechnet (Formel: km / 1.609). (3.5)
+
+**Beispiele:**
+
+- `calcCubeVolume(3)` -> `27`
+- `kmToMiles(16.09)` -> `10` (ca.)
 
 **Musterloesung**
 
@@ -81,7 +94,17 @@ function kmToMiles(km) {
 
 **Aufgabenstellung**
 
-Schreibe eine Funktion `classifyTemperature(temp)`, die eine Temperaturbewertung als Text liefert.
+Schreibe eine Funktion `classifyTemperature(temp)`, die eine Temperaturbewertung als Text liefert:
+
+- `temp < -273` -> `ungueltig` (absoluter Nullpunkt) (2.0)
+- `temp < 0` -> `gefroren`
+- `temp >= 0` und `< 25` -> `angenehm`
+- `temp >= 25` -> `heiss` (4.0)
+
+**Beispiele:**
+
+- `classifyTemperature(-5)` -> `gefroren`
+- `classifyTemperature(30)` -> `heiss`
 
 **Musterloesung**
 
@@ -119,7 +142,16 @@ function classifyTemperature(temp) {
 
 **Aufgabenstellung**
 
-Schreibe eine Funktion `analyzeNumbers(numbers)`, die das Maximum und die Summe aller Zahlen berechnet.
+Schreibe eine Funktion `analyzeNumbers(numbers)`, die:
+
+- das Maximum der Zahlen findet (3.0)
+- die Summe aller Zahlen berechnet (3.5)
+
+Rueckgabeformat als Objekt: `{ maximum: X, sum: Y }`
+
+**Beispiel:**
+
+`analyzeNumbers([7, -2, 9, 3, -1])` -> `{ maximum: 9, sum: 16 }`
 
 **Musterloesung**
 

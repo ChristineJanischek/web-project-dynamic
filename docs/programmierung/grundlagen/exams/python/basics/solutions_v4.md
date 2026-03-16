@@ -6,6 +6,20 @@
 
 ## Aufgabe A - Variablen + Ein/Ausgabe (5.0 Punkte)
 
+**Aufgabenstellung**
+
+Schreibe ein kleines Programm, das `buch` und `seiten` einliest (oder setzt) und eine Buchinformation ausgibt.
+
+**Beispiel-Ausgabe:** `Das Buch "1984" hat 328 Seiten.`
+
+Anforderungen:
+
+- Variablen korrekt deklarieren und initialisieren (2.0)
+- Eingabe einlesen oder simulieren (1.0)
+- Ausgabeformat exakt wie oben (2.0)
+
+**Musterloesung**
+
 ```python
 buch = "1984"
 seiten = 328
@@ -26,6 +40,18 @@ print(f'Das Buch "{buch}" hat {seiten} Seiten.')
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
 
+**Aufgabenstellung**
+
+1. Schreibe eine Funktion `calc_triangle_area(base, height)`, die die Flaeche eines Dreiecks berechnet (Formel: base \* height / 2). (4.0)
+2. Schreibe eine Funktion `miles_to_km(miles)`, die Meilen in Kilometer umrechnet (Formel: miles \* 1.609). (3.5)
+
+**Beispiele:**
+
+- `calc_triangle_area(6, 4)` -> `12`
+- `miles_to_km(10)` -> `16.09`
+
+**Musterloesung**
+
 ```python
 def calc_triangle_area(base, height):
     return base * height / 2
@@ -45,6 +71,22 @@ def miles_to_km(miles):
 
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe eine Funktion `classify_speed(kmh)`, die eine Geschwindigkeitsklassifizierung als Text liefert:
+
+- `kmh < 0` -> `ungueltig` (2.0)
+- `kmh <= 30` -> `langsam`
+- `kmh > 30` und `<= 100` -> `normal`
+- `kmh > 100` -> `schnell` (4.0)
+
+**Beispiele:**
+
+- `classify_speed(25)` -> `langsam`
+- `classify_speed(120)` -> `schnell`
+
+**Musterloesung**
 
 ```python
 def classify_speed(kmh):
@@ -70,6 +112,21 @@ def classify_speed(kmh):
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe eine Funktion `analyze_numbers(numbers)`, die:
+
+- das Minimum der Zahlen findet (3.0)
+- die Anzahl positiver Zahlen zaehlt (3.5)
+
+Rueckgabeformat als Dictionary: `{"minimum": X, "positive_count": Y}`
+
+**Beispiel:**
+
+`analyze_numbers([5, -3, 2, 0, -7])` -> `{"minimum": -7, "positive_count": 2}`
+
+**Musterloesung**
 
 ```python
 def analyze_numbers(numbers):

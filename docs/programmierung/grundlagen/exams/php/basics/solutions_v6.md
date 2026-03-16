@@ -6,6 +6,20 @@
 
 ## Aufgabe A - Variablen + Ein/Ausgabe (5.0 Punkte)
 
+**Aufgabenstellung**
+
+Schreibe ein kleines Programm, das `eventName` und `teilnehmerzahl` einliest (oder setzt) und eine Eventmeldung ausgibt.
+
+**Beispiel-Ausgabe:** `Event: Hackathon, Teilnehmende: 42`
+
+Anforderungen:
+
+- Variablen korrekt deklarieren und initialisieren (2.0)
+- Eingabe einlesen oder simulieren (1.0)
+- Ausgabeformat exakt wie oben (2.0)
+
+**Musterloesung**
+
 ```php
 <?php
 $eventName = "Hackathon";
@@ -26,6 +40,18 @@ echo "Event: {$eventName}, Teilnehmende: {$teilnehmerzahl}";
 
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
+
+**Aufgabenstellung**
+
+1. Schreibe eine Funktion `calcRemainingBudget($budget, $spent)`, die das Restbudget berechnet. (4.0)
+2. Schreibe eine Funktion `metersToCentimeters($meters)`, die Meter in Zentimeter umrechnet. (3.5)
+
+**Beispiele:**
+
+- `calcRemainingBudget(1200, 450)` -> `750`
+- `metersToCentimeters(1.75)` -> `175`
+
+**Musterloesung**
 
 ```php
 <?php
@@ -49,6 +75,22 @@ function metersToCentimeters($meters) {
 
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe eine Funktion `classifyBattery($percent)`, die den Akkustand als Text klassifiziert:
+
+- `$percent < 0` oder `$percent > 100` -> `ungueltig` (2.0)
+- `$percent < 20` -> `niedrig`
+- `$percent >= 20` und `< 80` -> `mittel`
+- `$percent >= 80` -> `hoch` (4.0)
+
+**Beispiele:**
+
+- `classifyBattery(10)` -> `niedrig`
+- `classifyBattery(85)` -> `hoch`
+
+**Musterloesung**
 
 ```php
 <?php
@@ -77,6 +119,21 @@ function classifyBattery($percent) {
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe eine Funktion `analyzeMeasurements($values)`, die:
+
+- die Anzahl von Werten im Bereich `1` bis `9` (inklusive) zaehlt (3.0)
+- die Summe der Absolutwerte aller Elemente berechnet (3.5)
+
+Rueckgabeformat als Array: `["singleDigitPositiveCount" => X, "absoluteSum" => Y]`
+
+**Beispiel:**
+
+`analyzeMeasurements([-3, 0, 4, 12, 9])` -> `["singleDigitPositiveCount" => 2, "absoluteSum" => 28]`
+
+**Musterloesung**
 
 ```php
 <?php

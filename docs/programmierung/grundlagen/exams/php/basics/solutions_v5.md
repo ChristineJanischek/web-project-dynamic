@@ -6,6 +6,20 @@
 
 ## Aufgabe A - Variablen + Ein/Ausgabe (5.0 Punkte)
 
+**Aufgabenstellung**
+
+Schreibe ein kleines Programm, das `film` und `dauerMinuten` einliest (oder setzt) und eine Filminformation ausgibt.
+
+**Beispiel-Ausgabe:** `Film: Inception, Dauer: 148 Minuten`
+
+Anforderungen:
+
+- Variablen korrekt deklarieren und initialisieren (2.0)
+- Eingabe einlesen oder simulieren (1.0)
+- Ausgabeformat exakt wie oben (2.0)
+
+**Musterloesung**
+
 ```php
 <?php
 $film = "Inception";
@@ -26,6 +40,18 @@ echo "Film: {$film}, Dauer: {$dauerMinuten} Minuten";
 
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
+
+**Aufgabenstellung**
+
+1. Schreibe eine Funktion `calcAverageThree($a, $b, $c)`, die den Durchschnitt von drei Zahlen berechnet. (4.0)
+2. Schreibe eine Funktion `minutesToSeconds($minutes)`, die Minuten in Sekunden umrechnet. (3.5)
+
+**Beispiele:**
+
+- `calcAverageThree(2, 4, 6)` -> `4`
+- `minutesToSeconds(3)` -> `180`
+
+**Musterloesung**
 
 ```php
 <?php
@@ -49,6 +75,22 @@ function minutesToSeconds($minutes) {
 
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe eine Funktion `classifyHumidity($humidity)`, die Luftfeuchtigkeit als Text klassifiziert:
+
+- `$humidity < 0` oder `$humidity > 100` -> `ungueltig` (2.0)
+- `$humidity < 30` -> `trocken`
+- `$humidity >= 30` und `< 60` -> `normal`
+- `$humidity >= 60` -> `feucht` (4.0)
+
+**Beispiele:**
+
+- `classifyHumidity(25)` -> `trocken`
+- `classifyHumidity(72)` -> `feucht`
+
+**Musterloesung**
 
 ```php
 <?php
@@ -77,6 +119,23 @@ function classifyHumidity($humidity) {
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe eine Funktion `analyzeValues($values)`, die:
+
+- die Anzahl von Werten zaehlt, die durch 3 teilbar sind (3.0)
+- den Durchschnitt aller nicht-negativen Werte berechnet (3.5)
+
+Wenn es keine nicht-negativen Werte gibt, soll der Durchschnitt `0` sein.
+
+Rueckgabeformat als Array: `["divByThreeCount" => X, "nonNegativeAverage" => Y]`
+
+**Beispiel:**
+
+`analyzeValues([3, -4, 6, 1, -2])` -> `["divByThreeCount" => 2, "nonNegativeAverage" => 3.3333...]`
+
+**Musterloesung**
 
 ```php
 <?php

@@ -6,6 +6,20 @@
 
 ## Aufgabe A - Variablen + Ein/Ausgabe (5.0 Punkte)
 
+**Aufgabenstellung**
+
+Schreibe ein kleines Programm, das `produkt` und `preis` einliest (oder setzt) und eine Produktinformation ausgibt.
+
+**Beispiel-Ausgabe:** `Artikel: Laptop, Preis: 899 Euro`
+
+Anforderungen:
+
+- Variablen korrekt deklarieren und initialisieren (2.0)
+- Eingabe einlesen oder simulieren (1.0)
+- Ausgabeformat exakt wie oben (2.0)
+
+**Musterloesung**
+
 ```python
 produkt = "Laptop"
 preis = 899
@@ -25,6 +39,18 @@ print(f"Artikel: {produkt}, Preis: {preis} Euro")
 
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
+
+**Aufgabenstellung**
+
+1. Schreibe eine Funktion `calc_circle_circumference(radius)`, die den Kreisumfang berechnet (Formel: 2 \* π \* r). (4.0)
+2. Schreibe eine Funktion `fahrenheit_to_celsius(f)`, die Fahrenheit in Celsius umrechnet (Formel: (f - 32) \* 5 / 9). (3.5)
+
+**Beispiele:**
+
+- `calc_circle_circumference(5)` -> `31.4159...` (ca. 31.42)
+- `fahrenheit_to_celsius(32)` -> `0`
+
+**Musterloesung**
 
 ```python
 import math
@@ -47,6 +73,22 @@ def fahrenheit_to_celsius(f):
 
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe eine Funktion `classify_age(age)`, die eine Altersgruppe als Text liefert:
+
+- `age < 0` oder `age > 150` -> `ungueltig` (2.0)
+- `age < 18` -> `minderjaehrig`
+- `age >= 18` und `< 65` -> `erwachsen`
+- `age >= 65` -> `senior` (4.0)
+
+**Beispiele:**
+
+- `classify_age(16)` -> `minderjaehrig`
+- `classify_age(70)` -> `senior`
+
+**Musterloesung**
 
 ```python
 def classify_age(age):
@@ -72,6 +114,21 @@ def classify_age(age):
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
+
+**Aufgabenstellung**
+
+Schreibe eine Funktion `analyze_numbers(numbers)`, die:
+
+- die Anzahl ungerader Zahlen zaehlt (3.0)
+- die Summe aller negativen Zahlen berechnet (3.5)
+
+Rueckgabeformat als Dictionary: `{"odd_count": X, "negative_sum": Y}`
+
+**Beispiel:**
+
+`analyze_numbers([3, -2, 5, 0, -4])` -> `{"odd_count": 2, "negative_sum": -6}`
+
+**Musterloesung**
 
 ```python
 def analyze_numbers(numbers):

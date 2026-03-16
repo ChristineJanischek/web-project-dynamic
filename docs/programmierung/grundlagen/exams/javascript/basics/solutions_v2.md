@@ -17,6 +17,14 @@
 
 Schreibe ein kleines Programm, das `produkt` und `preis` einliest (oder setzt) und eine Produktinformation ausgibt.
 
+**Beispiel-Ausgabe:** `Artikel: Laptop, Preis: 899 Euro`
+
+Anforderungen:
+
+- Variablen korrekt deklarieren und initialisieren (2.0)
+- Eingabe einlesen oder simulieren (1.0)
+- Ausgabeformat exakt wie oben (2.0)
+
 **Musterloesung**
 
 ```javascript
@@ -45,8 +53,13 @@ console.log(`Artikel: ${produkt}, Preis: ${preis} Euro`);
 
 **Aufgabenstellung**
 
-1. Schreibe eine Funktion `calcCircleCircumference(radius)`, die den Kreisumfang berechnet.
-2. Schreibe eine Funktion `fahrenheitToCelsius(f)`, die Fahrenheit in Celsius umrechnet.
+1. Schreibe eine Funktion `calcCircleCircumference(radius)`, die den Kreisumfang berechnet (Formel: 2 \* π \* r). (4.0)
+2. Schreibe eine Funktion `fahrenheitToCelsius(f)`, die Fahrenheit in Celsius umrechnet (Formel: (f - 32) \* 5 / 9). (3.5)
+
+**Beispiele:**
+
+- `calcCircleCircumference(5)` -> `31.4159...` (ca. 31.42)
+- `fahrenheitToCelsius(32)` -> `0`
 
 **Musterloesung**
 
@@ -80,7 +93,17 @@ function fahrenheitToCelsius(f) {
 
 **Aufgabenstellung**
 
-Schreibe eine Funktion `classifyAge(age)`, die eine Altersgruppe als Text liefert.
+Schreibe eine Funktion `classifyAge(age)`, die eine Altersgruppe als Text liefert:
+
+- `age < 0` oder `age > 150` -> `ungueltig` (2.0)
+- `age < 18` -> `minderjaehrig`
+- `age >= 18` und `< 65` -> `erwachsen`
+- `age >= 65` -> `senior` (4.0)
+
+**Beispiele:**
+
+- `classifyAge(16)` -> `minderjaehrig`
+- `classifyAge(70)` -> `senior`
 
 **Musterloesung**
 
@@ -118,7 +141,16 @@ function classifyAge(age) {
 
 **Aufgabenstellung**
 
-Schreibe eine Funktion `analyzeNumbers(numbers)`, die die Anzahl ungerader Zahlen und die Summe aller negativen Zahlen berechnet.
+Schreibe eine Funktion `analyzeNumbers(numbers)`, die:
+
+- die Anzahl ungerader Zahlen zaehlt (3.0)
+- die Summe aller negativen Zahlen berechnet (3.5)
+
+Rueckgabeformat als Objekt: `{ oddCount: X, negativeSum: Y }`
+
+**Beispiel:**
+
+`analyzeNumbers([3, -2, 5, 0, -4])` -> `{ oddCount: 2, negativeSum: -6 }`
 
 **Musterloesung**
 
