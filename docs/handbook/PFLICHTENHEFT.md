@@ -1,13 +1,15 @@
-# Pflichtenheft  
+# Pflichtenheft
+
 # Projekt: Intelligentes webbasiertes eLearning-Kurseditor-System für Informatik
 
 Geplant Repositories:
+
 1. edu-code-lab-core
 2. edu-code-lab-courses
 
 Version: 1.0  
 Status: Konzept / Architekturentwurf  
-Datum: 2026  
+Datum: 2026
 
 ---
 
@@ -48,15 +50,16 @@ Das System soll:
 
 Das System muss folgende Qualitätsmerkmale erfüllen:
 
-- Erweiterbarkeit  
-- Wartbarkeit  
-- Wiederverwendbarkeit  
-- Sicherheit  
-- hohe Usability  
-- klare Struktur  
-- vollständige Dokumentation  
-- keine Redundanzen  
+- Erweiterbarkeit
+- Wartbarkeit
+- Wiederverwendbarkeit
+- Sicherheit
+- hohe Usability
+- klare Struktur
+- vollständige Dokumentation
+- keine Redundanzen
 - Online Examen (Prüfungen)
+
 ---
 
 # 3 Zielgruppe
@@ -86,7 +89,7 @@ Das System soll Kurse ermöglichen für:
 - Mockups / UI-Design Integration
 - Künstliche Intelligenz
 - Machine Learning
-- Datenbanken, 
+- Datenbanken,
 - eERM
 - Webentwicklung
 - OOP
@@ -102,16 +105,16 @@ Das System soll Kurse ermöglichen für:
 
 Die Umsetzung ist realistisch, da folgende Technologien bereits existieren:ö
 
-| Bereich | Technologie |
-|------|------|
-| Repository | GitHub |
-| Kollaboration | GitHub Classroom |
-| Codeeditor | VS Code |
-| Dokumentation | Markdown |
-| Diagramme | Draw.io |
-| Automatisierung | GitHub Actions |
-| KI-Integration | LLM APIs |
-| Export | Pandoc |
+| Bereich         | Technologie      |
+| --------------- | ---------------- |
+| Repository      | GitHub           |
+| Kollaboration   | GitHub Classroom |
+| Codeeditor      | VS Code          |
+| Dokumentation   | Markdown         |
+| Diagramme       | Draw.io          |
+| Automatisierung | GitHub Actions   |
+| KI-Integration  | LLM APIs         |
+| Export          | Pandoc           |
 
 Diese Technologien ermöglichen eine skalierbare Architektur.
 
@@ -132,12 +135,12 @@ Probleme im Informatikunterricht heute:
 
 # 7 Konkurrenzanalyse
 
-| System | Bewertung |
-|------|------|
-| Moodle | LMS, kein Kurseditor |
+| System           | Bewertung                     |
+| ---------------- | ----------------------------- |
+| Moodle           | LMS, kein Kurseditor          |
 | GitHub Classroom | Codeplattform, keine Didaktik |
-| CodeRunner | nur Aufgabenprüfung |
-| Jupyter | gut für Data Science |
+| CodeRunner       | nur Aufgabenprüfung           |
+| Jupyter          | gut für Data Science          |
 
 Ergebnis:
 
@@ -157,7 +160,7 @@ Content Engine
 ↓  
 Wissensdatenbank  
 ↓  
-GitHub Repository  
+GitHub Repository
 
 ---
 
@@ -224,7 +227,7 @@ Aufgabe
 Codebox  
 Bewertung  
 Häufige Fehler  
-Lösung  
+Lösung
 
 Metadaten:
 
@@ -281,6 +284,19 @@ Automatische Prüfungen:
 
 Diese Prüfungen laufen über GitHub Actions.
 
+Verbindliche CI-Prüfungen umfassen zusätzlich:
+
+- Exam-Validierung (Variantenanzahl, Konsistenz Aufgabe/Lösung, Duplikatprüfung je Aufgabe, Punktelogik)
+- Navigationsprüfung der Grundlagen-Dokumentation (zentrale Regelkonfiguration)
+- Namenskonventionen und Strukturvalidierung
+- Drift-Prüfung der VS-Code-Extension-Empfehlungen gegen zentrales Manifest
+- Accessibility- und Lighthouse-Qualitätschecks für Web-Projekte
+
+Lokale Qualitätssicherung:
+
+- Pre-Commit-Hooks müssen für prüfungsrelevante Inhalte aktivierbar sein
+- Wissensdatenbank/Fingerprints für Aufgabenvarianten müssen automatisiert aktualisierbar sein
+
 ---
 
 # 15 Exportfunktionen
@@ -311,7 +327,13 @@ elearning-core
 ├── templates  
 ├── knowledge-base  
 ├── courses  
-└── tools  
+└── tools
+
+Template-Update-Strategie:
+
+- Updates aus dem Template müssen selektiv übernehmbar sein (z. B. Dokumentation, Workflows, neue Versionen)
+- Eigene Schülerarbeiten in `version*/aufgabe/` dürfen durch Template-Sync nicht automatisch überschrieben werden
+- Update-Prozess soll semi-automatisch mit Benachrichtigung und manueller Freigabe erfolgen
 
 ---
 
@@ -320,13 +342,13 @@ elearning-core
 main  
 development  
 content  
-experiment  
+experiment
 
 Zusätzlich thematische Branches:
 
 core-programming  
 core-ai  
-core-software-engineering  
+core-software-engineering
 
 ---
 
@@ -343,6 +365,13 @@ Branch Protection Regeln:
 - Pull Requests erforderlich
 - CI Checks erforderlich
 - Reviews verpflichtend
+
+Erweiterte Governance-Anforderungen:
+
+- `main` ist als geschützter Branch zu führen; direkte Push-Rechte sind auf die Projektadministration zu begrenzen
+- Code-Owner-Review muss für Merge nach `main` verpflichtend sein
+- Offene Review-Konversationen müssen vor Merge aufgelöst sein
+- Governance-Einstellungen sind regelmäßig gegen die dokumentierte Zielkonfiguration zu prüfen
 
 ---
 
@@ -382,6 +411,11 @@ Phase 4 – KI Integration (9 Monate)
 - GitHub Actions einrichten
 - Wissensschema entwickeln
 - Kurseditor Konzept erstellen
+- Exam-CI einrichten (Pre-Commit, Remote-Validierung, Knowledge-Base-Update)
+- Backup-Workflow aktivieren und regelmäßige Restore-Tests planen
+- Docs-Navigation-Regeln zentral konfigurieren und automatisiert prüfen
+- VS-Code-Extension-Manifest synchronisieren und CI-Check aktivieren
+- Template-Update-Benachrichtigung und Release-Kommunikation etablieren
 
 ---
 
@@ -402,7 +436,7 @@ Das System soll langfristig eine Plattform für moderne Informatiklehre werden.
 
 Trennung System und Inhalt
 
-Zu 1. edu-code-lab-core
+Zu 1. edu-code-lab-core.
 Hier gehört alles hinein, was das System technisch bereitstellt.
 
 Also zum Beispiel:
@@ -425,11 +459,12 @@ Also zum Beispiel:
 - Code-Analyse und Best-Practice-Checks
 - GitHub-Anbindung
 - Automatisierungen / CI / Prüfjobs
-	
-Zu 2. edu-code-lab-courses
+
+Zu 2. edu-code-lab-courses. 
 Hier gehört alles hinein, was fachlicher Inhalt ist.
 
 Also:
+
 - Kurse
 - Module
 - Lernpfade
@@ -440,8 +475,9 @@ Also:
 - Bewertungsschemata
 - häufige Fehler
 - Lehrerhinweise
-	
+
 Schülerhinweise
+
 - fachliche Dokumentation
 - kursbezogene Medien
 - kursbezogene Diagramme
@@ -449,4 +485,3 @@ Schülerhinweise
 - Markdown-Dateien mit Inhalten
 
 Kurz: alles, was didaktischer oder fachlicher Content ist, gehört in das Courses-Repo.
-
