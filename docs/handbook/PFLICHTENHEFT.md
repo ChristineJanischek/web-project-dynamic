@@ -7,9 +7,10 @@ Geplant Repositories:
 1. edu-code-lab-core
 2. edu-code-lab-courses
 
-Version: 1.0  
-Status: Konzept / Architekturentwurf  
-Datum: 2026
+Version: 1.1  
+Status: In Entwicklung – partiell implementiert  
+Datum: März 2026  
+Letzte Aktualisierung: 16. März 2026
 
 ---
 
@@ -218,7 +219,54 @@ Verbindliche Nachweise:
 - Sicherheits-Baseline (Secrets, HTTPS, minimale Rechte, Logging)
 - Restore-fähige Backup-Strategie für Inhalte und Datenbank
 
+## Aktualisierte Machbarkeitsbewertung (Stand: März 2026)
+
+Im Verlauf der Projektentwicklung wurden folgende Anforderungen neu aufgenommen oder präzisiert. Die Machbarkeit wird pro Bereich bewertet.
+
+| Anforderungsbereich                 | Status |  Aufwand  |   Risiko    | Anmerkung                                              |
+| ----------------------------------- | :----: | :-------: | :---------: | ------------------------------------------------------ |
+| Unicode/Umlaut-Check (Kap. 14)      |   ✅   |  gering   |    keins    | `check_unicode_umlauts()` in `validate_exams.py` aktiv |
+| Exam-Synchronisation exam→solutions |   ✅   |  gering   |    keins    | `sync_exam_tasks_to_solutions.py` aktiv                |
+| Anforderungszuordnung core/courses  |   ✅   |  gering   |    keins    | Kap. 23 dokumentiert, Migrationsstrategie festgelegt   |
+| KI-Integration (Kap. 13)            |   ⚠️   |   hoch    | mittel–hoch | Datenschutz, API-Abhängigkeit (siehe unten)            |
+| Bidirektionale Code-Generierung     |   ⚠️   | sehr hoch |    hoch     | Kein Standardwerkzeug verfügbar (siehe unten)          |
+| Repo-Migration nach core            |   ⚠️   |   hoch    |   mittel    | core-Repo muss zuerst aufgebaut werden                 |
+| Pre-Commit-Hook Autoaktivierung     |   ⚠️   |  gering   |   gering    | Technische Einschränkung (siehe unten)                 |
+| Maven / JUnit 5 (Kap. 14)           |   ✅   |  mittel   |   gering    | Scope: nur edu-code-lab-core (Java), nicht dieses Repo |
+
+### Risikobetrachtung: KI-Integration
+
+- **DSGVO / Datenschutz in Schulen:** Schülerdaten dürfen nicht an externe LLM-APIs übermittelt werden. Datenschutzkonforme Integration erfordert lokale Modelle (z. B. Ollama + Mistral/LLaMA) oder explizite Einwilligung plus Datenverarbeitungsvertrag.
+- **API-Abhängigkeit:** Externe LLM-APIs unterliegen Preisänderungen und Verfügbarkeitsrisiken. Eine interne Adapter-Schnittstelle ist verbindlich vorzusehen.
+- **Qualität generierter Inhalte:** KI-generierte Aufgabenvarianten müssen durch `validate_exams.py` (Duplikat-, Punkt- und Unicode-Check) validiert werden; manuelle Endabnahme bleibt erforderlich.
+
+**Empfehlung:** KI-Integration als optionale Erweiterung (Plugin-Architektur) konzipieren. Kernfunktionen dürfen nicht von KI-Verfügbarkeit abhängen.
+
+### Risikobetrachtung: Bidirektionale Code-Generierung
+
+Die Anforderung „Code Generierung Bidirektional Modellierung/UI Design“ (Kap. 4, 9) ist technologisch sehr anspruchsvoll:
+
+- Kein Standardwerkzeug (Draw.io, PlantUML) unterstützt vollständig bidirektionale Code-Generierung.
+- Umsetzung erfordert eigene Parser- und Code-Generator-Komponenten.
+
+**Empfehlung:** Anforderung für Phase 4+ zurückstellen; zunächst unidirektionale Generierung (Modell → Code) als Minimalversion implementieren.
+
+### Technische Einschränkung: Pre-Commit-Hook-Aktivierung
+
+Git Hooks werden bei `git clone` nicht automatisch aktiviert. Die Anforderung „ohne manuelle Aktivierung“ (Kap. 14) ist unter Git-Standardverhalten **nicht vollständig erfüllbar**.
+
+**Lösungsweg:**
+
+- `pre-commit install` in das Onboarding-Skript / Setup-Task integrieren (einmalig, dokumentiert)
+- GitHub Actions `validate-exams.yml` ist die verbindliche Schutzschicht; lokale Hooks sind „Best Effort“
+
+### Hinweis: Maven / JUnit-Scope
+
+Die Anforderungen zu Maven und JUnit 5 (Kap. 14) gelten **ausschließlich** für `edu-code-lab-core` (Java-Plattform). Das Repo `web-project-dynamic` enthält keinen Java-Code und ist davon nicht betroffen.
+
 ---
+
+# 6 Problemanalyse
 
 Probleme im Informatikunterricht heute:
 
