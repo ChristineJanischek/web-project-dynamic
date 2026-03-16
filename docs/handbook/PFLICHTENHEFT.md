@@ -59,6 +59,10 @@ Das System muss folgende Qualitätsmerkmale erfüllen:
 - vollständige Dokumentation
 - keine Redundanzen
 - Online Examen (Prüfungen)
+- sprachübergreifende Nutzbarkeit (mindestens HTML/CSS/JavaScript, PHP, Python, Java)
+- reproduzierbare lokale Live-Test-Umgebung
+- standardisierte Toolchain für VS Code (inklusive Extension-Management)
+- optionaler Betrieb auf eigenem Webserver ohne Vendor-Lock-in
 
 ---
 
@@ -105,40 +109,57 @@ Das System soll Kurse ermöglichen für:
 
 Die Umsetzung ist realistisch, da folgende Technologien bereits existieren:ö
 
-| Bereich              | Technologie                        |
-| -------------------- | ---------------------------------- |
-| Repository           | GitHub                             |
-| Kollaboration        | GitHub Classroom                   |
-| Codeeditor           | VS Code                            |
-| Dokumentation        | Markdown                           |
-| Diagramme            | Draw.io                            |
-| Automatisierung      | GitHub Actions                     |
-| KI-Integration       | LLM APIs                           |
-| Export               | Pandoc                             |
-| Programmiersprache   | Java 21 LTS (OpenJDK / Temurin)    |
-| Build-Tool           | Maven 4.x                          |
-| Test-Framework       | JUnit 5                            |
-| GUI-Technologie      | Java Swing                         |
-| Browser-GUI-Zugang   | noVNC (Port 6080)                  |
-| Containerisierung    | Docker & Docker Compose            |
-| Datenbank            | MySQL (containerisiert)            |
+| Bereich            | Technologie                     |
+| ------------------ | ------------------------------- |
+| Repository         | GitHub                          |
+| Kollaboration      | GitHub Classroom                |
+| Codeeditor         | VS Code                         |
+| Dokumentation      | Markdown                        |
+| Diagramme          | Draw.io                         |
+| Automatisierung    | GitHub Actions                  |
+| KI-Integration     | LLM APIs                        |
+| Export             | Pandoc                          |
+| Programmiersprache | Java 21 LTS (OpenJDK / Temurin) |
+| Build-Tool         | Maven 4.x                       |
+| Test-Framework     | JUnit 5                         |
+| GUI-Technologie    | Java Swing                      |
+| Browser-GUI-Zugang | noVNC (Port 6080)               |
+| Containerisierung  | Docker & Docker Compose         |
+| Datenbank          | MySQL (containerisiert)         |
 
 Diese Technologien ermöglichen eine skalierbare Architektur.
+
+## Ergänzende technische Machbarkeit für Mehrsprachen-Webprojekte
+
+Für den im Repository gelebten Unterrichtsbetrieb (statisch + dynamisch) sind zusätzlich folgende Technologien verbindlich zu berücksichtigen:
+
+| Bereich                     | Technologie / Standard                            |
+| --------------------------- | ------------------------------------------------- |
+| Live-Test statischer Seiten | VS Code Live Server                               |
+| PHP-Live-Test               | PHP Built-in Server (`php -S`)                    |
+| Python-Live-Test            | Flask Development Server (`flask run`)            |
+| Frontend Tooling            | Node.js + npm (Skripte, Qualitätschecks)          |
+| Extension-Management        | zentrales Manifest + Sync/Check-Skripte           |
+| Browser-Test                | moderne Chromium/Firefox-basierte Browser         |
+| Zielbetrieb Webserver       | Apache oder Nginx (bei Bedarf mit PHP-FPM / WSGI) |
+
+Damit ist sichergestellt, dass das System nicht nur für eine einzelne Sprache, sondern für höhere Programmiersprachen im Unterrichtseinsatz geeignet ist.
 
 ## Systemvoraussetzungen
 
 Für den Betrieb und die Entwicklung sind folgende Softwarekomponenten erforderlich:
 
-| Komponente         | Version          | Zweck                             |
-| ------------------ | ---------------- | --------------------------------- |
-| Java (OpenJDK)     | 21 LTS           | Laufzeitumgebung und Compiler     |
-| Maven              | 4.x              | Build, Abhängigkeits­verwaltung   |
-| Docker             | aktuell          | Container-Laufzeitumgebung        |
-| Docker Compose     | aktuell          | Multi-Container-Orchestrierung    |
-| Git                | beliebig         | Versionskontrolle                 |
-| Browser            | modern (Chrome / Firefox / Edge) | noVNC-GUI-Zugang  |
+| Komponente     | Version                          | Zweck                           |
+| -------------- | -------------------------------- | ------------------------------- |
+| Java (OpenJDK) | 21 LTS                           | Laufzeitumgebung und Compiler   |
+| Maven          | 4.x                              | Build, Abhängigkeits­verwaltung |
+| Docker         | aktuell                          | Container-Laufzeitumgebung      |
+| Docker Compose | aktuell                          | Multi-Container-Orchestrierung  |
+| Git            | beliebig                         | Versionskontrolle               |
+| Browser        | modern (Chrome / Firefox / Edge) | noVNC-GUI-Zugang                |
 
 **Installation Docker (Ubuntu/Debian):**
+
 ```bash
 sudo apt-get update
 sudo apt-get install -y docker.io docker-compose
@@ -146,16 +167,56 @@ sudo usermod -aG docker $USER
 ```
 
 **Installation Java 21 (Ubuntu/Debian):**
+
 ```bash
 sudo apt-get install -y openjdk-21-jdk-headless
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 ```
 
 Getestete Betriebssysteme:
+
 - Ubuntu 24.04 LTS
 - Ubuntu 22.04 LTS
 - Linux (allgemein) mit Java 21
 - macOS und Windows (JAVA_HOME manuell setzen)
+
+## Verbindliche Betriebsprofile (Live-Test und Deployment)
+
+Es sind zwei Betriebsprofile verbindlich zu unterstützen:
+
+### Profil A: Lokaler Live-Test im Unterricht
+
+Mindestanforderungen:
+
+- VS Code muss als primäre Entwicklungsumgebung nutzbar sein
+- notwendige Extensions werden zentral gepflegt und per Task/Skript installierbar gemacht
+- statische Inhalte sind live im Browser testbar (Live Reload)
+- dynamische Inhalte sind lokal testbar:
+  - PHP über Built-in Server
+  - Python über Flask-Dev-Server
+- Port-Konflikte müssen in der Dokumentation behandelt werden (Ersatzports)
+
+Verbindliche Nachweise:
+
+- One-Click-Task für Live-Test-Extension-Installation
+- CI-Check gegen Drift zwischen Extension-Manifest und Workspace-Empfehlungen
+- didaktische Kurzanleitung für Schüler und Setup-Anleitung für Lehrkräfte
+
+### Profil B: Betrieb auf eigenem Webserver (Self-Hosted)
+
+Mindestanforderungen:
+
+- Deployment ohne proprietäre Plattformabhängigkeit möglich
+- Zielumgebung mindestens Linux-Server mit Apache oder Nginx
+- Sprach-Laufzeiten müssen trennbar betreibbar sein (z. B. PHP-FPM, Python-App-Server)
+- Konfigurierbare Datenbankanbindung (z. B. MySQL)
+- Trennung von Entwicklungs- und Produktionsmodus dokumentiert
+
+Verbindliche Nachweise:
+
+- Deployment-Runbook mit Beispielkonfigurationen
+- Sicherheits-Baseline (Secrets, HTTPS, minimale Rechte, Logging)
+- Restore-fähige Backup-Strategie für Inhalte und Datenbank
 
 ---
 
@@ -203,11 +264,11 @@ GitHub Repository
 
 Alle Kursanwendungen und interaktiven Codeaufgaben folgen dem **Model-View-Controller (MVC)**-Muster:
 
-| Schicht        | Aufgabe                                    | Beispiel im Referenz-Projekt    |
-| -------------- | ------------------------------------------ | ------------------------------- |
-| **Model**      | Daten, Geschäftslogik, Berechnungen        | `Bmirechner.java`               |
-| **View**       | GUI, Darstellung, Benutzeroberfläche       | `MainWindow.java` (Java Swing)  |
-| **Controller** | Vermittlung zwischen Model und View        | `BmiManager.java`               |
+| Schicht        | Aufgabe                              | Beispiel im Referenz-Projekt   |
+| -------------- | ------------------------------------ | ------------------------------ |
+| **Model**      | Daten, Geschäftslogik, Berechnungen  | `Bmirechner.java`              |
+| **View**       | GUI, Darstellung, Benutzeroberfläche | `MainWindow.java` (Java Swing) |
+| **Controller** | Vermittlung zwischen Model und View  | `BmiManager.java`              |
 
 Das Single-Entry-Point-Prinzip (SEP) ist verbindlich: Jede Anwendung hat genau eine `main`-Methode als Einstiegspunkt. Alle Initialisierungen, Security-Checks und Konfigurationen laufen zentral über diesen Einstiegspunkt.
 
@@ -220,6 +281,7 @@ Anwendungen werden als Docker-Container ausgeliefert:
 - **docker-compose.yml** – Orchestrierung: Anwendung + MySQL-Datenbank
 
 Vorteile:
+
 - plattformunabhängige Ausführung
 - reproduzierbare Entwicklungsumgebungen
 - einfache Verteilung an Schüler (kein lokales Java-Setup nötig)
@@ -251,6 +313,13 @@ Unterstützte Sprachen:
 - CSS
 - JavaScript
 - PHP
+
+Verbindliche Integrationsanforderungen:
+
+- Für jede unterstützte Sprache existiert mindestens ein lauffähiger Referenzpfad im Repository
+- Für jede unterstützte Sprache ist ein lokaler Teststart dokumentiert
+- CI- und Qualitätsroutinen dürfen sprachspezifische Lernpfade nicht gegenseitig blockieren
+- Aufgaben-Templates müssen sprachneutral strukturierbar sein (gemeinsame Metadaten, sprachspezifische Laufzeit)
 
 ---
 
@@ -354,12 +423,14 @@ Verbindliche CI-Prüfungen umfassen zusätzlich:
 - Namenskonventionen und Strukturvalidierung
 - Drift-Prüfung der VS-Code-Extension-Empfehlungen gegen zentrales Manifest
 - Accessibility- und Lighthouse-Qualitätschecks für Web-Projekte
+- Smoke-Test-Checkliste für lokale Laufzeitprofile (statisch, PHP, Python)
 
 ## Unit-Tests mit JUnit 5
 
 Alle Klassen der Geschäftslogik (Model) müssen durch automatisierte Unit-Tests abgedeckt sein.
 
 Anforderungen:
+
 - Test-Framework: **JUnit 5**
 - Build-Ausführung: `mvn test`
 - Grenzwerttests für Algorithmen (z. B. BMI-Kategorien) sind verpflichtend
@@ -370,10 +441,10 @@ Anforderungen:
 
 Zur lokalen Qualitätssicherung sind folgende Git Hooks einzurichten:
 
-| Hook              | Zweck                                          |
-| ----------------- | ---------------------------------------------- |
-| `pre-push`        | Führt `mvn test` aus; blockiert bei Fehler     |
-| `post-commit`     | Auto-Push nach erfolgreichem Commit (optional) |
+| Hook          | Zweck                                          |
+| ------------- | ---------------------------------------------- |
+| `pre-push`    | Führt `mvn test` aus; blockiert bei Fehler     |
+| `post-commit` | Auto-Push nach erfolgreichem Commit (optional) |
 
 Die Hooks sind als Teil des Template-Repositories bereitzustellen und in der Onboarding-Dokumentation zu beschreiben.
 
@@ -381,6 +452,7 @@ Lokale Qualitätssicherung:
 
 - Pre-Commit-Hooks müssen für prüfungsrelevante Inhalte aktivierbar sein
 - Wissensdatenbank/Fingerprints für Aufgabenvarianten müssen automatisiert aktualisierbar sein
+- Setup-Checks für Live-Test-Umgebung müssen ohne manuelle Nacharbeit reproduzierbar sein
 
 ---
 
@@ -427,13 +499,13 @@ Kursaufgaben werden als **GitHub Template-Repositories** bereitgestellt. Jedes T
 
 Jedes Template-Repository enthält Branches, die den Lernpfad abbilden:
 
-| Branch             | Version   | Beschreibung                                 |
-| ------------------ | --------- | -------------------------------------------- |
-| `main`             | Version 0 | Schüler-Template (Einstiegspunkt)            |
-| `version-1-*`      | Version 1 | Musterlösung MVC (Model + Controller + GUI)  |
-| `version-2-*`      | Version 2 | Methoden, Kontrollstrukturen, Algorithmen    |
-| `version-3-*`      | Version 3 | Eingabevalidierung & Fehlerbehandlung        |
-| `version-4-*`      | Version 4 | Assoziationen, Personen- & Messungsmodell    |
+| Branch        | Version   | Beschreibung                                |
+| ------------- | --------- | ------------------------------------------- |
+| `main`        | Version 0 | Schüler-Template (Einstiegspunkt)           |
+| `version-1-*` | Version 1 | Musterlösung MVC (Model + Controller + GUI) |
+| `version-2-*` | Version 2 | Methoden, Kontrollstrukturen, Algorithmen   |
+| `version-3-*` | Version 3 | Eingabevalidierung & Fehlerbehandlung       |
+| `version-4-*` | Version 4 | Assoziationen, Personen- & Messungsmodell   |
 
 Schüler starten im `main`-Branch (Version 0) und arbeiten sich schrittweise hoch.
 
@@ -534,6 +606,8 @@ Phase 4 – KI Integration (9 Monate)
 - Docs-Navigation-Regeln zentral konfigurieren und automatisiert prüfen
 - VS-Code-Extension-Manifest synchronisieren und CI-Check aktivieren
 - Template-Update-Benachrichtigung und Release-Kommunikation etablieren
+- Deployment-Runbook für eigenen Webserver (Apache/Nginx) erstellen und regelmäßig testen
+- Laufzeit-Startanleitungen für PHP/Python/Frontend in einer zentralen Checkliste zusammenführen
 
 ---
 
@@ -578,7 +652,7 @@ Also zum Beispiel:
 - GitHub-Anbindung
 - Automatisierungen / CI / Prüfjobs
 
-Zu 2. edu-code-lab-courses. 
+Zu 2. edu-code-lab-courses.
 Hier gehört alles hinein, was fachlicher Inhalt ist.
 
 Also:
