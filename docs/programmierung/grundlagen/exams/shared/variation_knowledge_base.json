@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-03-12T11:36:49.898514+00:00",
+  "generated_at": "2026-03-16T16:19:16.895256+00:00",
+  "schema_ref": "shared/variation_knowledge_base_schema.json",
   "strategy": {
     "normalization": "markdown-stripped-lowercase-alnum",
     "hash": "sha256",
@@ -12,8 +13,8 @@
       "theme": "basics",
       "variant": "exam.md",
       "task": "A",
-      "fingerprint": "621216afe970b08e93e6854eaeae999cdd1f1b748e4a9579ff2121c6598e7674",
-      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das vorname und alter einliest oder setzt und eine begruessung ausgibt beispiel ausgabe hallo lena du bist ",
+      "fingerprint": "4d2706e52671e16197b950531ffe6d4d9ea689631baa475eb0c173c4d7cbbb29",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das vorname und alter einliest oder setzt und eine begr ung ausgibt beispiel ausgabe hallo lena du bist 16 ",
       "path": "javascript/basics/exam.md"
     },
     {
@@ -21,8 +22,8 @@
       "theme": "basics",
       "variant": "exam.md",
       "task": "B",
-      "fingerprint": "5558e1395cbe197053e34febd1c51d63bec2b9d8c16dfad312287bb0a2629cb4",
-      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calcrectanglearea width height die die flaeche berechnet 4 0 2 schreibe eine funktion celsiustofah",
+      "fingerprint": "f4392a055b9e12996f575e311062a367e3db93b14b45109ffc7a1f21bc752201",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calcrectanglearea width height die die fl che berechnet 4 0 2 schreibe eine funktion celsiustofahr",
       "path": "javascript/basics/exam.md"
     },
     {
@@ -39,8 +40,8 @@
       "theme": "basics",
       "variant": "exam.md",
       "task": "D",
-      "fingerprint": "cb657c63c8fb41d1168887814edd74329761a842af2a668c00389ae2c17014c6",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl gerader zahlen zaehlt 3 0 die summe aller positiven zahle",
+      "fingerprint": "3b7b3dcf999ddc307a3a1f8de0b4fd7cc231bb02406626cd4fcbe8ec3826144e",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl gerader zahlen z hlt 3 0 die summe aller positiven zahlen",
       "path": "javascript/basics/exam.md"
     },
     {
@@ -75,8 +76,8 @@
       "theme": "basics",
       "variant": "exam_v2.md",
       "task": "D",
-      "fingerprint": "97f717c2453c0598569b35e74cc69c7b1ae9e7cf263e8ca72aaa96fdf22fc599",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl ungerader zahlen zaehlt 3 0 die summe aller negativen zah",
+      "fingerprint": "1fc1dcaa4c42704c8e98d9ca1236daec4247c832b7bbc06e9c72bb3135cce559",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl ungerader zahlen z hlt 3 0 die summe aller negativen zahl",
       "path": "javascript/basics/exam_v2.md"
     },
     {
@@ -93,8 +94,8 @@
       "theme": "basics",
       "variant": "exam_v3.md",
       "task": "B",
-      "fingerprint": "929a4a6cc9567fd418687a3fef4ecccaa15d82f51a075a0e9dad78fe397758ce",
-      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calccubevolume side die das volumen eines wuerfels berechnet formel side 4 0 2 schreibe eine funkt",
+      "fingerprint": "fb799b56e35ecf5c8abe4541213a6558fe7580bca11369fdf5ee184e70d06327",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calccubevolume side die das volumen eines w rfels berechnet formel side 4 0 2 schreibe eine funkti",
       "path": "javascript/basics/exam_v3.md"
     },
     {
@@ -111,7 +112,7 @@
       "theme": "basics",
       "variant": "exam_v3.md",
       "task": "D",
-      "fingerprint": "85c945d6c2904c25a6ed98b84e9b373857110b8449c9b5ff4418aa01c8c603bf",
+      "fingerprint": "2a90b50ad1d707f72329a75f539e39fac5473618f3d7da45eabb81cc83789086",
       "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die das maximum der zahlen findet 3 0 die summe aller zahlen berechnet 3",
       "path": "javascript/basics/exam_v3.md"
     },
@@ -129,8 +130,8 @@
       "theme": "basics",
       "variant": "exam_v4.md",
       "task": "B",
-      "fingerprint": "16c532570867449cc0975239c03db8cdc81911963f0b89538c5d5432cdfc9863",
-      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calctrianglearea base height die die flaeche eines dreiecks berechnet formel base height 2 4 0 2 s",
+      "fingerprint": "41ee9971b15dac413b3c580e2b5fdaa73d77f3b445b6835c9b7c7836752bac31",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calctrianglearea base height die die fl che eines dreiecks berechnet formel base height 2 4 0 2 sc",
       "path": "javascript/basics/exam_v4.md"
     },
     {
@@ -147,8 +148,8 @@
       "theme": "basics",
       "variant": "exam_v4.md",
       "task": "D",
-      "fingerprint": "c5db7bcb72e98db71bb2c586355fc1d871cb9748569a3e8bc26eaf09ccf4603b",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die das minimum der zahlen findet 3 0 die anzahl positiver zahlen zaehlt",
+      "fingerprint": "c54102cbaa9418bc4fd4686af1c322b0f75bc8b1186c1c90399b1bd20d30ef8a",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die das minimum der zahlen findet 3 0 die anzahl positiver zahlen z hlt ",
       "path": "javascript/basics/exam_v4.md"
     },
     {
@@ -156,8 +157,8 @@
       "theme": "basics",
       "variant": "exam.md",
       "task": "A",
-      "fingerprint": "621216afe970b08e93e6854eaeae999cdd1f1b748e4a9579ff2121c6598e7674",
-      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das vorname und alter einliest oder setzt und eine begruessung ausgibt beispiel ausgabe hallo lena du bist ",
+      "fingerprint": "4d2706e52671e16197b950531ffe6d4d9ea689631baa475eb0c173c4d7cbbb29",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das vorname und alter einliest oder setzt und eine begr ung ausgibt beispiel ausgabe hallo lena du bist 16 ",
       "path": "php/basics/exam.md"
     },
     {
@@ -165,8 +166,8 @@
       "theme": "basics",
       "variant": "exam.md",
       "task": "B",
-      "fingerprint": "5558e1395cbe197053e34febd1c51d63bec2b9d8c16dfad312287bb0a2629cb4",
-      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calcrectanglearea width height die die flaeche berechnet 4 0 2 schreibe eine funktion celsiustofah",
+      "fingerprint": "f4392a055b9e12996f575e311062a367e3db93b14b45109ffc7a1f21bc752201",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calcrectanglearea width height die die fl che berechnet 4 0 2 schreibe eine funktion celsiustofahr",
       "path": "php/basics/exam.md"
     },
     {
@@ -183,8 +184,8 @@
       "theme": "basics",
       "variant": "exam.md",
       "task": "D",
-      "fingerprint": "3a01e1aa4f7bd70ffacdabc7b97d63e3e4c756604c027d6029c2d77c7a774613",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl gerader zahlen zaehlt 3 0 die summe aller positiven zahle",
+      "fingerprint": "146376ee7cc22c2cc6772e632128bb0758b4afa55d11f1ca0ee2e720d754348f",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl gerader zahlen z hlt 3 0 die summe aller positiven zahlen",
       "path": "php/basics/exam.md"
     },
     {
@@ -219,8 +220,8 @@
       "theme": "basics",
       "variant": "exam_v2.md",
       "task": "D",
-      "fingerprint": "d1b2c80be1bf1110e394678f35183b5f7c65afb9a45e35ee0b9853f30dce6238",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl ungerader zahlen zaehlt 3 0 die summe aller negativen zah",
+      "fingerprint": "e41116a68bc958a9870387f9cd211ae561da470463dba6743c3c0b1db2599bab",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die die anzahl ungerader zahlen z hlt 3 0 die summe aller negativen zahl",
       "path": "php/basics/exam_v2.md"
     },
     {
@@ -237,8 +238,8 @@
       "theme": "basics",
       "variant": "exam_v3.md",
       "task": "B",
-      "fingerprint": "929a4a6cc9567fd418687a3fef4ecccaa15d82f51a075a0e9dad78fe397758ce",
-      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calccubevolume side die das volumen eines wuerfels berechnet formel side 4 0 2 schreibe eine funkt",
+      "fingerprint": "fb799b56e35ecf5c8abe4541213a6558fe7580bca11369fdf5ee184e70d06327",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calccubevolume side die das volumen eines w rfels berechnet formel side 4 0 2 schreibe eine funkti",
       "path": "php/basics/exam_v3.md"
     },
     {
@@ -255,7 +256,7 @@
       "theme": "basics",
       "variant": "exam_v3.md",
       "task": "D",
-      "fingerprint": "469eed4e174dd5414dd16fdd27f364019c89127654a9f4dc1e64fb28b1014aa6",
+      "fingerprint": "65f3bd574bbfb62c7bb39423938de9fc8d7d274f573b9a732356174e57067940",
       "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die das maximum der zahlen findet 3 0 die summe aller zahlen berechnet 3",
       "path": "php/basics/exam_v3.md"
     },
@@ -273,8 +274,8 @@
       "theme": "basics",
       "variant": "exam_v4.md",
       "task": "B",
-      "fingerprint": "16c532570867449cc0975239c03db8cdc81911963f0b89538c5d5432cdfc9863",
-      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calctrianglearea base height die die flaeche eines dreiecks berechnet formel base height 2 4 0 2 s",
+      "fingerprint": "41ee9971b15dac413b3c580e2b5fdaa73d77f3b445b6835c9b7c7836752bac31",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calctrianglearea base height die die fl che eines dreiecks berechnet formel base height 2 4 0 2 sc",
       "path": "php/basics/exam_v4.md"
     },
     {
@@ -291,8 +292,8 @@
       "theme": "basics",
       "variant": "exam_v4.md",
       "task": "D",
-      "fingerprint": "9ccf46703172020da0fd4a3b4710a7421e99e1ecdfad55b8caa1a0d5eb6d4cfa",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die das minimum der zahlen findet 3 0 die anzahl positiver zahlen zaehlt",
+      "fingerprint": "648a7f1db0e12d8306349beaf721e57a3aff182fb79fa70fa77f97a2efee7bfa",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzenumbers numbers die das minimum der zahlen findet 3 0 die anzahl positiver zahlen z hlt ",
       "path": "php/basics/exam_v4.md"
     },
     {
@@ -327,8 +328,8 @@
       "theme": "basics",
       "variant": "exam_v5.md",
       "task": "D",
-      "fingerprint": "4a52af0d50370ebbaf34ecddfa795daa0d382aa83ba1527cd16eb7b180e8ad78",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzevalues values die die anzahl von werten zaehlt die durch 3 teilbar sind 3 0 den durchsch",
+      "fingerprint": "77f6eff7d6d84c8da6f177a9470400c9e68712c8c3d73070b945a7cd9de6d3a4",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzevalues values die die anzahl von werten z hlt die durch 3 teilbar sind 3 0 den durchschn",
       "path": "php/basics/exam_v5.md"
     },
     {
@@ -363,8 +364,8 @@
       "theme": "basics",
       "variant": "exam_v6.md",
       "task": "D",
-      "fingerprint": "a8c84fd0e3bb56200dd236d1fc7cf9f5cada998de63c275da4b5d49cfba04489",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzemeasurements values die die anzahl von werten im bereich 1 bis 9 inklusive zaehlt 3 0 di",
+      "fingerprint": "3af8515f4fe5d41168ee7af160f50da91c73d8304c1732e9e46cdd73eff3d25d",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyzemeasurements values die die anzahl von werten im bereich 1 bis 9 inklusive z hlt 3 0 die",
       "path": "php/basics/exam_v6.md"
     },
     {
@@ -372,8 +373,8 @@
       "theme": "basics",
       "variant": "exam.md",
       "task": "A",
-      "fingerprint": "621216afe970b08e93e6854eaeae999cdd1f1b748e4a9579ff2121c6598e7674",
-      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das vorname und alter einliest oder setzt und eine begruessung ausgibt beispiel ausgabe hallo lena du bist ",
+      "fingerprint": "4d2706e52671e16197b950531ffe6d4d9ea689631baa475eb0c173c4d7cbbb29",
+      "preview": "aufgabe a variablen ein ausgabe 5 0 punkte schreibe ein kleines programm das vorname und alter einliest oder setzt und eine begr ung ausgibt beispiel ausgabe hallo lena du bist 16 ",
       "path": "python/basics/exam.md"
     },
     {
@@ -381,8 +382,8 @@
       "theme": "basics",
       "variant": "exam.md",
       "task": "B",
-      "fingerprint": "379d940acd1adf82ae5e486e41fbaa3e28f91fac1c6163eb0c44a0b4bf4ef635",
-      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calc rectangle area width height die die flaeche berechnet 4 0 2 schreibe eine funktion celsius to",
+      "fingerprint": "a5eb4a7fea6be2f8c6bde08b5bb39673bb152cfcab6c349ec29fd7f3a55978f3",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calc rectangle area width height die die fl che berechnet 4 0 2 schreibe eine funktion celsius to ",
       "path": "python/basics/exam.md"
     },
     {
@@ -399,8 +400,8 @@
       "theme": "basics",
       "variant": "exam.md",
       "task": "D",
-      "fingerprint": "b0226224e532c22c114ba777e73d2ee7556be54cc41dac762434508297b28a5c",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die die anzahl gerader zahlen zaehlt 3 0 die summe aller positiven zahl",
+      "fingerprint": "2f134b1c17a999ea635218acfaf85103f5be91135f2370b5438cac131837060f",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die die anzahl gerader zahlen z hlt 3 0 die summe aller positiven zahle",
       "path": "python/basics/exam.md"
     },
     {
@@ -435,8 +436,8 @@
       "theme": "basics",
       "variant": "exam_v2.md",
       "task": "D",
-      "fingerprint": "ce6ef29dd481e91239d591b193f54f955c35ee799664cb34221d83d615c1a33e",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die die anzahl ungerader zahlen zaehlt 3 0 die summe aller negativen za",
+      "fingerprint": "e52abaee2588bdfea02573302eddb37918e801138bbef38e936a4c5d23bd6f1b",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die die anzahl ungerader zahlen z hlt 3 0 die summe aller negativen zah",
       "path": "python/basics/exam_v2.md"
     },
     {
@@ -453,8 +454,8 @@
       "theme": "basics",
       "variant": "exam_v3.md",
       "task": "B",
-      "fingerprint": "77e7682a60e24306d94f9d03e0678c0e93f494664d90e870ebda6eba751f2611",
-      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calc cube volume side die das volumen eines wuerfels berechnet formel side 4 0 2 schreibe eine fun",
+      "fingerprint": "cb06b429f26ca7563e1ff5d930eb2722db63ca1b949a41fa4b7801dafdf737bc",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calc cube volume side die das volumen eines w rfels berechnet formel side 4 0 2 schreibe eine funk",
       "path": "python/basics/exam_v3.md"
     },
     {
@@ -471,7 +472,7 @@
       "theme": "basics",
       "variant": "exam_v3.md",
       "task": "D",
-      "fingerprint": "e75ee61cae350128a1c969e9cfffd098314b1fb5ebc29e9b7de8aa0193fabcc5",
+      "fingerprint": "602314dc8c2d3f18d7022798adb28e3cba7d6aebf97ebe10bb940d079fff6c18",
       "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die das maximum der zahlen findet 3 0 die summe aller zahlen berechnet ",
       "path": "python/basics/exam_v3.md"
     },
@@ -489,8 +490,8 @@
       "theme": "basics",
       "variant": "exam_v4.md",
       "task": "B",
-      "fingerprint": "fc959fa1a057c3ba4af9c397505da9da345ffe693c595925eaf3930fcfa7fda6",
-      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calc triangle area base height die die flaeche eines dreiecks berechnet formel base height 2 4 0 2",
+      "fingerprint": "f7ba6567f6652888dc07e3e33cd11da280df9bd6178f4ae2a8b7da077fb99802",
+      "preview": "aufgabe b funktionen mit kleinen berechnungen 7 5 punkte 1 schreibe eine funktion calc triangle area base height die die fl che eines dreiecks berechnet formel base height 2 4 0 2 ",
       "path": "python/basics/exam_v4.md"
     },
     {
@@ -507,8 +508,8 @@
       "theme": "basics",
       "variant": "exam_v4.md",
       "task": "D",
-      "fingerprint": "8161f150d49bcf3a1d2aeb0da09026f18adbf21b62b235d373f2db4af9b438ba",
-      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die das minimum der zahlen findet 3 0 die anzahl positiver zahlen zaehl",
+      "fingerprint": "975af5390033b1743f3d52b9c5578615ca3ac1c33f111fef8324eb5575660371",
+      "preview": "aufgabe d funktionen mit schleifen datenstrukturen 6 5 punkte schreibe eine funktion analyze numbers numbers die das minimum der zahlen findet 3 0 die anzahl positiver zahlen z hlt",
       "path": "python/basics/exam_v4.md"
     }
   ]

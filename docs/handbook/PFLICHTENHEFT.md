@@ -430,7 +430,7 @@ Verbindliche CI-Prüfungen umfassen zusätzlich:
   - Redundanzen und Inkonsistenzen zwischen Aufgaben und Lösungen werden so dauerhaft vermieden
 - Umlaut- und Sonderzeichen-Prüfung für Aufgaben- und Lösungsdateien:
   - Alle Markdown-Dateien in `docs/programmierung/grundlagen/exams/` müssen korrekte Unicode-Zeichen verwenden (ä, ö, ü, ß statt ae, oe, ue, ss)
-  - Ein zentrales Skript (`scripts/check_unicode.py` o.ä.) prüft Dateien auf ASCII-kodierte Umlaute und meldet Verstöße
+  - Die Prüfung ist integraler Bestandteil von `scripts/validate_exams.py` (Funktion `check_unicode_umlauts`); kein separates Skript erforderlich
   - Die Prüfung läuft als Pre-Commit-Hook und als verbindlicher CI-Check
   - Verstöße blockieren den Commit bzw. schlagen den CI-Workflow fehl
 - Smoke-Test-Checkliste für lokale Laufzeitprofile (statisch, PHP, Python)

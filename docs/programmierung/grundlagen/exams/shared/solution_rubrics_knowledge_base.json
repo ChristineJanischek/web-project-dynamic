@@ -1,6 +1,7 @@
 {
   "schema_version": 1,
-  "generated_at": "2026-03-12T11:36:49.912649+00:00",
+  "generated_at": "2026-03-16T16:19:16.909596+00:00",
+  "schema_ref": "shared/solution_rubrics_schema.json",
   "strategy": {
     "source": "solutions_markdown",
     "task_keys": [
@@ -9,27 +10,42 @@
       "C",
       "D"
     ],
-    "points_unit": "points"
+    "points_unit": "points",
+    "criterion_ids": "language.theme.variant.task.index.slug"
   },
   "entries": [
     {
+      "entry_id": "javascript.basics.solutions.a",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "A",
+      "task_id": "javascript.basics.solutions.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-deklarieren-und-initialisieren",
+          "criterion_id": "javascript.basics.solutions.a.01.variablen-deklarieren-und-initialisieren",
+          "criterion_family_id": "javascript.basics.a.variablen-deklarieren-und-initialisieren",
           "points": 2.0,
           "criterion": "Variablen deklarieren und initialisieren",
           "hint": "`const` oder `let` verwendet, Werte korrekt gesetzt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-einlesen-oder-simulieren",
+          "criterion_id": "javascript.basics.solutions.a.02.eingabe-einlesen-oder-simulieren",
+          "criterion_family_id": "javascript.basics.a.eingabe-einlesen-oder-simulieren",
           "points": 1.0,
           "criterion": "Eingabe einlesen oder simulieren",
-          "hint": "Eingabe ueber `prompt()`, `readline`, oder direkte Wertzuweisung"
+          "hint": "Eingabe \u00fcber `prompt()`, `readline`, oder direkte Wertzuweisung"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-exakt",
+          "criterion_id": "javascript.basics.solutions.a.03.ausgabeformat-exakt",
+          "criterion_family_id": "javascript.basics.a.ausgabeformat-exakt",
           "points": 2.0,
           "criterion": "Ausgabeformat exakt",
           "hint": "String-Format mit beiden Variablen interpoliert"
@@ -43,113 +59,169 @@
       "path": "javascript/basics/solutions.md"
     },
     {
+      "entry_id": "javascript.basics.solutions.b",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "B",
+      "task_id": "javascript.basics.solutions.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "calcrectanglearea-korrekt-implementiert",
+          "criterion_id": "javascript.basics.solutions.b.01.calcrectanglearea-korrekt-implementiert",
+          "criterion_family_id": "javascript.basics.b.calcrectanglearea-korrekt-implementiert",
           "points": 4.0,
           "criterion": "`calcRectangleArea()` korrekt implementiert",
-          "hint": "Parameter entgegen, Multiplikation durchgefuehrt, korrekte Rueckgabe"
+          "hint": "Parameter entgegen, Multiplikation durchgef\u00fchrt, korrekte R\u00fcckgabe"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "celsiustofahrenheit-korrekt-implementiert",
+          "criterion_id": "javascript.basics.solutions.b.02.celsiustofahrenheit-korrekt-implementiert",
+          "criterion_family_id": "javascript.basics.b.celsiustofahrenheit-korrekt-implementiert",
           "points": 3.5,
           "criterion": "`celsiusToFahrenheit()` korrekt implementiert",
-          "hint": "Formel $(c \\times 9/5) + 32$ richtig umgesetzt, Rueckgabe korrekt"
+          "hint": "Formel $(c \\times 9/5) + 32$ richtig umgesetzt, R\u00fcckgabe korrekt"
         }
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "javascript/basics/solutions.md"
     },
     {
+      "entry_id": "javascript.basics.solutions.c",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "C",
+      "task_id": "javascript.basics.solutions.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "bereichs-check-0-oder-100",
+          "criterion_id": "javascript.basics.solutions.c.01.bereichs-check-0-oder-100",
+          "criterion_family_id": "javascript.basics.c.bereichs-check-0-oder-100",
           "points": 2.0,
           "criterion": "Bereichs-Check (< 0 oder > 100)",
-          "hint": "Ungueltige Werte werden korrekt erkannt"
+          "hint": "Ung\u00fcltige Werte werden korrekt erkannt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig",
+          "criterion_id": "javascript.basics.solutions.c.02.fallunterscheidungen-vollst-ndig",
+          "criterion_family_id": "javascript.basics.c.fallunterscheidungen-vollst-ndig",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig",
-          "hint": "Alle vier Faelle (ungueltig, nicht bestanden, bestanden, sehr gut) abgedeckt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig",
+          "hint": "Alle vier F\u00e4lle (ung\u00fcltig, nicht bestanden, bestanden, sehr gut) abgedeckt"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "r-ckgabewerte-korrekt",
+          "criterion_id": "javascript.basics.solutions.c.03.r-ckgabewerte-korrekt",
+          "criterion_family_id": "javascript.basics.c.r-ckgabewerte-korrekt",
           "points": 1.5,
-          "criterion": "Rueckgabewerte korrekt",
+          "criterion": "R\u00fcckgabewerte korrekt",
           "hint": "Strings entsprechen genau der Vorgabe"
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "javascript/basics/solutions.md"
     },
     {
+      "entry_id": "javascript.basics.solutions.d",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "D",
+      "task_id": "javascript.basics.solutions.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "schleife-ber-array",
+          "criterion_id": "javascript.basics.solutions.d.01.schleife-ber-array",
+          "criterion_family_id": "javascript.basics.d.schleife-ber-array",
           "points": 1.5,
-          "criterion": "Schleife ueber Array",
-          "hint": "`for`, `forEach` oder aehnlich, iteriert ueber alle Elemente"
+          "criterion": "Schleife \u00fcber Array",
+          "hint": "`for`, `forEach` oder aehnlich, iteriert \u00fcber alle Elemente"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "gerade-zahlen-z-hlen",
+          "criterion_id": "javascript.basics.solutions.d.02.gerade-zahlen-z-hlen",
+          "criterion_family_id": "javascript.basics.d.gerade-zahlen-z-hlen",
           "points": 3.0,
-          "criterion": "Gerade Zahlen zaehlen",
-          "hint": "Modulo-Operator korrekt verwendet, Counter wird erhoet"
+          "criterion": "Gerade Zahlen z\u00e4hlen",
+          "hint": "Modulo-Operator korrekt verwendet, Counter wird erh\u00f6ht"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "summe-positiver-zahlen",
+          "criterion_id": "javascript.basics.solutions.d.03.summe-positiver-zahlen",
+          "criterion_family_id": "javascript.basics.d.summe-positiver-zahlen",
           "points": 1.5,
           "criterion": "Summe positiver Zahlen",
           "hint": "Vergleich `> 0` korrekt, Summe wird aktualisiert"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat",
+          "criterion_id": "javascript.basics.solutions.d.04.r-ckgabeformat",
+          "criterion_family_id": "javascript.basics.d.r-ckgabeformat",
           "points": 0.5,
-          "criterion": "Rueckgabeformat",
+          "criterion": "R\u00fcckgabeformat",
           "hint": "Objekt oder Array mit korrekten Feldnamen/Werten"
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "javascript/basics/solutions.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v2.a",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "A",
+      "task_id": "javascript.basics.solutions_v2.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-deklarieren-und-initialisieren",
+          "criterion_id": "javascript.basics.solutions_v2.a.01.variablen-deklarieren-und-initialisieren",
+          "criterion_family_id": "javascript.basics.a.variablen-deklarieren-und-initialisieren",
           "points": 2.0,
           "criterion": "Variablen deklarieren und initialisieren",
           "hint": "`const` oder `let` verwendet, Werte korrekt gesetzt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-einlesen-oder-simulieren",
+          "criterion_id": "javascript.basics.solutions_v2.a.02.eingabe-einlesen-oder-simulieren",
+          "criterion_family_id": "javascript.basics.a.eingabe-einlesen-oder-simulieren",
           "points": 1.0,
           "criterion": "Eingabe einlesen oder simulieren",
-          "hint": "Eingabe ueber `prompt()`, `readline`, oder direkte Wertzuweisung"
+          "hint": "Eingabe \u00fcber `prompt()`, `readline`, oder direkte Wertzuweisung"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-exakt",
+          "criterion_id": "javascript.basics.solutions_v2.a.03.ausgabeformat-exakt",
+          "criterion_family_id": "javascript.basics.a.ausgabeformat-exakt",
           "points": 2.0,
           "criterion": "Ausgabeformat exakt",
           "hint": "String-Format mit beiden Variablen interpoliert"
@@ -163,28 +235,46 @@
       "path": "javascript/basics/solutions_v2.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v2.b",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "B",
+      "task_id": "javascript.basics.solutions_v2.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur",
+          "criterion_id": "javascript.basics.solutions_v2.b.01.funktion-1-signatur",
+          "criterion_family_id": "javascript.basics.b.funktion-1-signatur",
           "points": 1.0,
           "criterion": "Funktion 1 Signatur",
           "hint": "Name, Parameter korrekt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-1-berechnung",
+          "criterion_id": "javascript.basics.solutions_v2.b.02.funktion-1-berechnung",
+          "criterion_family_id": "javascript.basics.b.funktion-1-berechnung",
           "points": 3.0,
           "criterion": "Funktion 1 Berechnung",
           "hint": "`2 * Math.PI * radius` oder Konstante 3.14159"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "funktion-2-signatur",
+          "criterion_id": "javascript.basics.solutions_v2.b.03.funktion-2-signatur",
+          "criterion_family_id": "javascript.basics.b.funktion-2-signatur",
           "points": 0.5,
           "criterion": "Funktion 2 Signatur",
           "hint": "Name, Parameter korrekt"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "funktion-2-berechnung",
+          "criterion_id": "javascript.basics.solutions_v2.b.04.funktion-2-berechnung",
+          "criterion_family_id": "javascript.basics.b.funktion-2-berechnung",
           "points": 3.0,
           "criterion": "Funktion 2 Berechnung",
           "hint": "Formel `(f - 32) * 5 / 9` oder `(f - 32) / 1.8` korrekt"
@@ -192,104 +282,158 @@
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "javascript/basics/solutions_v2.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v2.c",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "C",
+      "task_id": "javascript.basics.solutions_v2.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-signatur",
+          "criterion_id": "javascript.basics.solutions_v2.c.01.funktion-signatur",
+          "criterion_family_id": "javascript.basics.c.funktion-signatur",
           "points": 0.5,
           "criterion": "Funktion Signatur",
           "hint": "Name und Parameter korrekt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "validierung-ung-ltig",
+          "criterion_id": "javascript.basics.solutions_v2.c.02.validierung-ung-ltig",
+          "criterion_family_id": "javascript.basics.c.validierung-ung-ltig",
           "points": 2.0,
-          "criterion": "Validierung (ungueltig)",
+          "criterion": "Validierung (ung\u00fcltig)",
           "hint": "`age < 0` oder `age > 150` richtig abgefangen"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "fallunterscheidungen",
+          "criterion_id": "javascript.basics.solutions_v2.c.03.fallunterscheidungen",
+          "criterion_family_id": "javascript.basics.c.fallunterscheidungen",
           "points": 3.0,
           "criterion": "Fallunterscheidungen",
-          "hint": "Alle drei Faelle (minderjaehrig, erwachsen, senior)"
+          "hint": "Alle drei F\u00e4lle (minderj\u00e4hrig, erwachsen, senior)"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabewerte-korrekt",
+          "criterion_id": "javascript.basics.solutions_v2.c.04.r-ckgabewerte-korrekt",
+          "criterion_family_id": "javascript.basics.c.r-ckgabewerte-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabewerte korrekt",
+          "criterion": "R\u00fcckgabewerte korrekt",
           "hint": "Strings exakt wie verlangt"
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "javascript/basics/solutions_v2.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v2.d",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "D",
+      "task_id": "javascript.basics.solutions_v2.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-signatur",
+          "criterion_id": "javascript.basics.solutions_v2.d.01.funktion-signatur",
+          "criterion_family_id": "javascript.basics.d.funktion-signatur",
           "points": 0.5,
           "criterion": "Funktion Signatur",
           "hint": "Name und Parameter korrekt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "schleife",
+          "criterion_id": "javascript.basics.solutions_v2.d.02.schleife",
+          "criterion_family_id": "javascript.basics.d.schleife",
           "points": 1.0,
           "criterion": "Schleife",
           "hint": "`for...of`, `forEach`, oder klassische `for`-Schleife"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ungerade-z-hlen",
+          "criterion_id": "javascript.basics.solutions_v2.d.03.ungerade-z-hlen",
+          "criterion_family_id": "javascript.basics.d.ungerade-z-hlen",
           "points": 3.0,
-          "criterion": "Ungerade zaehlen",
+          "criterion": "Ungerade z\u00e4hlen",
           "hint": "Modulo-Check `num % 2 !== 0` oder `num % 2 === 1`"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "negative-summieren",
+          "criterion_id": "javascript.basics.solutions_v2.d.04.negative-summieren",
+          "criterion_family_id": "javascript.basics.d.negative-summieren",
           "points": 1.5,
           "criterion": "Negative summieren",
           "hint": "`if (num < 0)` mit Summenbildung"
         },
         {
+          "criterion_index": 5,
+          "criterion_key": "r-ckgabeformat",
+          "criterion_id": "javascript.basics.solutions_v2.d.05.r-ckgabeformat",
+          "criterion_family_id": "javascript.basics.d.r-ckgabeformat",
           "points": 0.5,
-          "criterion": "Rueckgabeformat",
+          "criterion": "R\u00fcckgabeformat",
           "hint": "Objekt oder Array mit korrekten Feldnamen/Werten"
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "javascript/basics/solutions_v2.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v3.a",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "A",
+      "task_id": "javascript.basics.solutions_v3.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-deklarieren-und-initialisieren",
+          "criterion_id": "javascript.basics.solutions_v3.a.01.variablen-deklarieren-und-initialisieren",
+          "criterion_family_id": "javascript.basics.a.variablen-deklarieren-und-initialisieren",
           "points": 2.0,
           "criterion": "Variablen deklarieren und initialisieren",
           "hint": "`const` oder `let` verwendet, Werte korrekt gesetzt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-einlesen-oder-simulieren",
+          "criterion_id": "javascript.basics.solutions_v3.a.02.eingabe-einlesen-oder-simulieren",
+          "criterion_family_id": "javascript.basics.a.eingabe-einlesen-oder-simulieren",
           "points": 1.0,
           "criterion": "Eingabe einlesen oder simulieren",
-          "hint": "Eingabe ueber `prompt()`, `readline`, oder direkte Wertzuweisung"
+          "hint": "Eingabe \u00fcber `prompt()`, `readline`, oder direkte Wertzuweisung"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-exakt",
+          "criterion_id": "javascript.basics.solutions_v3.a.03.ausgabeformat-exakt",
+          "criterion_family_id": "javascript.basics.a.ausgabeformat-exakt",
           "points": 2.0,
           "criterion": "Ausgabeformat exakt",
           "hint": "String-Format mit beiden Variablen interpoliert"
@@ -303,28 +447,46 @@
       "path": "javascript/basics/solutions_v3.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v3.b",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "B",
+      "task_id": "javascript.basics.solutions_v3.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur",
+          "criterion_id": "javascript.basics.solutions_v3.b.01.funktion-1-signatur",
+          "criterion_family_id": "javascript.basics.b.funktion-1-signatur",
           "points": 1.0,
           "criterion": "Funktion 1 Signatur",
           "hint": "Name, Parameter korrekt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-1-berechnung",
+          "criterion_id": "javascript.basics.solutions_v3.b.02.funktion-1-berechnung",
+          "criterion_family_id": "javascript.basics.b.funktion-1-berechnung",
           "points": 3.0,
           "criterion": "Funktion 1 Berechnung",
           "hint": "`side * side * side` oder `Math.pow(side, 3)` oder `side**3`"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "funktion-2-signatur",
+          "criterion_id": "javascript.basics.solutions_v3.b.03.funktion-2-signatur",
+          "criterion_family_id": "javascript.basics.b.funktion-2-signatur",
           "points": 0.5,
           "criterion": "Funktion 2 Signatur",
           "hint": "Name, Parameter korrekt"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "funktion-2-berechnung",
+          "criterion_id": "javascript.basics.solutions_v3.b.04.funktion-2-berechnung",
+          "criterion_family_id": "javascript.basics.b.funktion-2-berechnung",
           "points": 3.0,
           "criterion": "Funktion 2 Berechnung",
           "hint": "Formel `km / 1.609` korrekt"
@@ -332,107 +494,161 @@
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "javascript/basics/solutions_v3.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v3.c",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "C",
+      "task_id": "javascript.basics.solutions_v3.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-signatur",
+          "criterion_id": "javascript.basics.solutions_v3.c.01.funktion-signatur",
+          "criterion_family_id": "javascript.basics.c.funktion-signatur",
           "points": 0.5,
           "criterion": "Funktion Signatur",
           "hint": "Name und Parameter korrekt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "validierung-ung-ltig",
+          "criterion_id": "javascript.basics.solutions_v3.c.02.validierung-ung-ltig",
+          "criterion_family_id": "javascript.basics.c.validierung-ung-ltig",
           "points": 2.0,
-          "criterion": "Validierung (ungueltig)",
+          "criterion": "Validierung (ung\u00fcltig)",
           "hint": "`temp < -273` richtig abgefangen"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "fallunterscheidungen",
+          "criterion_id": "javascript.basics.solutions_v3.c.03.fallunterscheidungen",
+          "criterion_family_id": "javascript.basics.c.fallunterscheidungen",
           "points": 3.0,
           "criterion": "Fallunterscheidungen",
-          "hint": "Alle drei Faelle (gefroren, angenehm, heiss)"
+          "hint": "Alle drei F\u00e4lle (gefroren, angenehm, heiss)"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabewerte-korrekt",
+          "criterion_id": "javascript.basics.solutions_v3.c.04.r-ckgabewerte-korrekt",
+          "criterion_family_id": "javascript.basics.c.r-ckgabewerte-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabewerte korrekt",
+          "criterion": "R\u00fcckgabewerte korrekt",
           "hint": "Strings exakt wie verlangt"
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "javascript/basics/solutions_v3.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v3.d",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "D",
+      "task_id": "javascript.basics.solutions_v3.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-signatur",
+          "criterion_id": "javascript.basics.solutions_v3.d.01.funktion-signatur",
+          "criterion_family_id": "javascript.basics.d.funktion-signatur",
           "points": 0.5,
           "criterion": "Funktion Signatur",
           "hint": "Name und Parameter korrekt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "schleife",
+          "criterion_id": "javascript.basics.solutions_v3.d.02.schleife",
+          "criterion_family_id": "javascript.basics.d.schleife",
           "points": 1.0,
           "criterion": "Schleife",
           "hint": "`for...of`, `forEach`, oder klassische `for`-Schleife"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "maximum-finden",
+          "criterion_id": "javascript.basics.solutions_v3.d.03.maximum-finden",
+          "criterion_family_id": "javascript.basics.d.maximum-finden",
           "points": 3.0,
           "criterion": "Maximum finden",
           "hint": "Vergleich mit Initialisierung (z.B. `numbers[0]` oder `-Infinity`)"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "summe-berechnen",
+          "criterion_id": "javascript.basics.solutions_v3.d.04.summe-berechnen",
+          "criterion_family_id": "javascript.basics.d.summe-berechnen",
           "points": 1.5,
           "criterion": "Summe berechnen",
           "hint": "Akkumulation mit `sum += num`"
         },
         {
+          "criterion_index": 5,
+          "criterion_key": "r-ckgabeformat",
+          "criterion_id": "javascript.basics.solutions_v3.d.05.r-ckgabeformat",
+          "criterion_family_id": "javascript.basics.d.r-ckgabeformat",
           "points": 0.5,
-          "criterion": "Rueckgabeformat",
+          "criterion": "R\u00fcckgabeformat",
           "hint": "Objekt mit korrekten Feldnamen/Werten"
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "javascript/basics/solutions_v3.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v4.a",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "A",
+      "task_id": "javascript.basics.solutions_v4.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-deklarieren-und-initialisieren",
+          "criterion_id": "javascript.basics.solutions_v4.a.01.variablen-deklarieren-und-initialisieren",
+          "criterion_family_id": "javascript.basics.a.variablen-deklarieren-und-initialisieren",
           "points": 2.0,
           "criterion": "Variablen deklarieren und initialisieren",
           "hint": "`const` oder `let` verwendet, Werte korrekt gesetzt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-einlesen-oder-simulieren",
+          "criterion_id": "javascript.basics.solutions_v4.a.02.eingabe-einlesen-oder-simulieren",
+          "criterion_family_id": "javascript.basics.a.eingabe-einlesen-oder-simulieren",
           "points": 1.0,
           "criterion": "Eingabe einlesen oder simulieren",
-          "hint": "Eingabe ueber `prompt()`, `readline`, oder direkte Wertzuweisung"
+          "hint": "Eingabe \u00fcber `prompt()`, `readline`, oder direkte Wertzuweisung"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-exakt",
+          "criterion_id": "javascript.basics.solutions_v4.a.03.ausgabeformat-exakt",
+          "criterion_family_id": "javascript.basics.a.ausgabeformat-exakt",
           "points": 2.0,
           "criterion": "Ausgabeformat exakt",
-          "hint": "String-Format mit beiden Variablen interpoliert, Anfuehrungszeichen um Buchtitel"
+          "hint": "String-Format mit beiden Variablen interpoliert, Anf\u00fchrungszeichen um Buchtitel"
         }
       ],
       "common_errors": [
@@ -443,28 +659,46 @@
       "path": "javascript/basics/solutions_v4.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v4.b",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "B",
+      "task_id": "javascript.basics.solutions_v4.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur",
+          "criterion_id": "javascript.basics.solutions_v4.b.01.funktion-1-signatur",
+          "criterion_family_id": "javascript.basics.b.funktion-1-signatur",
           "points": 1.0,
           "criterion": "Funktion 1 Signatur",
           "hint": "Name, Parameter korrekt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-1-berechnung",
+          "criterion_id": "javascript.basics.solutions_v4.b.02.funktion-1-berechnung",
+          "criterion_family_id": "javascript.basics.b.funktion-1-berechnung",
           "points": 3.0,
           "criterion": "Funktion 1 Berechnung",
           "hint": "`base * height / 2` oder `(base * height) / 2`"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "funktion-2-signatur",
+          "criterion_id": "javascript.basics.solutions_v4.b.03.funktion-2-signatur",
+          "criterion_family_id": "javascript.basics.b.funktion-2-signatur",
           "points": 0.5,
           "criterion": "Funktion 2 Signatur",
           "hint": "Name, Parameter korrekt"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "funktion-2-berechnung",
+          "criterion_id": "javascript.basics.solutions_v4.b.04.funktion-2-berechnung",
+          "criterion_family_id": "javascript.basics.b.funktion-2-berechnung",
           "points": 3.0,
           "criterion": "Funktion 2 Berechnung",
           "hint": "Formel `miles * 1.609` korrekt"
@@ -472,104 +706,158 @@
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "javascript/basics/solutions_v4.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v4.c",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "C",
+      "task_id": "javascript.basics.solutions_v4.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-signatur",
+          "criterion_id": "javascript.basics.solutions_v4.c.01.funktion-signatur",
+          "criterion_family_id": "javascript.basics.c.funktion-signatur",
           "points": 0.5,
           "criterion": "Funktion Signatur",
           "hint": "Name und Parameter korrekt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "validierung-ung-ltig",
+          "criterion_id": "javascript.basics.solutions_v4.c.02.validierung-ung-ltig",
+          "criterion_family_id": "javascript.basics.c.validierung-ung-ltig",
           "points": 2.0,
-          "criterion": "Validierung (ungueltig)",
+          "criterion": "Validierung (ung\u00fcltig)",
           "hint": "`kmh < 0` richtig abgefangen"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "fallunterscheidungen",
+          "criterion_id": "javascript.basics.solutions_v4.c.03.fallunterscheidungen",
+          "criterion_family_id": "javascript.basics.c.fallunterscheidungen",
           "points": 3.0,
           "criterion": "Fallunterscheidungen",
-          "hint": "Alle drei Faelle (langsam, normal, schnell)"
+          "hint": "Alle drei F\u00e4lle (langsam, normal, schnell)"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabewerte-korrekt",
+          "criterion_id": "javascript.basics.solutions_v4.c.04.r-ckgabewerte-korrekt",
+          "criterion_family_id": "javascript.basics.c.r-ckgabewerte-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabewerte korrekt",
+          "criterion": "R\u00fcckgabewerte korrekt",
           "hint": "Strings exakt wie verlangt"
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "javascript/basics/solutions_v4.md"
     },
     {
+      "entry_id": "javascript.basics.solutions_v4.d",
       "language": "javascript",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "D",
+      "task_id": "javascript.basics.solutions_v4.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-signatur",
+          "criterion_id": "javascript.basics.solutions_v4.d.01.funktion-signatur",
+          "criterion_family_id": "javascript.basics.d.funktion-signatur",
           "points": 0.5,
           "criterion": "Funktion Signatur",
           "hint": "Name und Parameter korrekt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "schleife",
+          "criterion_id": "javascript.basics.solutions_v4.d.02.schleife",
+          "criterion_family_id": "javascript.basics.d.schleife",
           "points": 1.0,
           "criterion": "Schleife",
           "hint": "`for...of`, `forEach`, oder klassische `for`-Schleife"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "minimum-finden",
+          "criterion_id": "javascript.basics.solutions_v4.d.03.minimum-finden",
+          "criterion_family_id": "javascript.basics.d.minimum-finden",
           "points": 3.0,
           "criterion": "Minimum finden",
           "hint": "Vergleich mit Initialisierung (z.B. `numbers[0]` oder `Infinity`)"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "positive-z-hlen",
+          "criterion_id": "javascript.basics.solutions_v4.d.04.positive-z-hlen",
+          "criterion_family_id": "javascript.basics.d.positive-z-hlen",
           "points": 1.5,
-          "criterion": "Positive zaehlen",
+          "criterion": "Positive z\u00e4hlen",
           "hint": "`if (num > 0)` mit Z\u00e4hler-Inkrement"
         },
         {
+          "criterion_index": 5,
+          "criterion_key": "r-ckgabeformat",
+          "criterion_id": "javascript.basics.solutions_v4.d.05.r-ckgabeformat",
+          "criterion_family_id": "javascript.basics.d.r-ckgabeformat",
           "points": 0.5,
-          "criterion": "Rueckgabeformat",
+          "criterion": "R\u00fcckgabeformat",
           "hint": "Objekt mit korrekten Feldnamen/Werten"
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "javascript/basics/solutions_v4.md"
     },
     {
+      "entry_id": "php.basics.solutions.a",
       "language": "php",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "A",
+      "task_id": "php.basics.solutions.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-deklarieren-und-initialisieren",
+          "criterion_id": "php.basics.solutions.a.01.variablen-deklarieren-und-initialisieren",
+          "criterion_family_id": "php.basics.a.variablen-deklarieren-und-initialisieren",
           "points": 2.0,
           "criterion": "Variablen deklarieren und initialisieren",
-          "hint": "`$` Praefix verwendet, Zuweisungsoperator korrekt"
+          "hint": "`$` Pr\u00e4fix verwendet, Zuweisungsoperator korrekt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-einlesen-oder-simulieren",
+          "criterion_id": "php.basics.solutions.a.02.eingabe-einlesen-oder-simulieren",
+          "criterion_family_id": "php.basics.a.eingabe-einlesen-oder-simulieren",
           "points": 1.0,
           "criterion": "Eingabe einlesen oder simulieren",
           "hint": "`$_GET`, `$_POST`, `readline()` oder direkte Wertzuweisung"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-exakt",
+          "criterion_id": "php.basics.solutions.a.03.ausgabeformat-exakt",
+          "criterion_family_id": "php.basics.a.ausgabeformat-exakt",
           "points": 2.0,
           "criterion": "Ausgabeformat exakt",
           "hint": "String-Interpolation mit beiden Variablen, korrekte Syntax"
@@ -583,18 +871,28 @@
       "path": "php/basics/solutions.md"
     },
     {
+      "entry_id": "php.basics.solutions.b",
       "language": "php",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "B",
+      "task_id": "php.basics.solutions.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "calcrectanglearea-korrekt-implementiert",
+          "criterion_id": "php.basics.solutions.b.01.calcrectanglearea-korrekt-implementiert",
+          "criterion_family_id": "php.basics.b.calcrectanglearea-korrekt-implementiert",
           "points": 4.0,
           "criterion": "`calcRectangleArea()` korrekt implementiert",
-          "hint": "Parameter mit `$`, Multiplikation durchgefuehrt, `return` verwendet"
+          "hint": "Parameter mit `$`, Multiplikation durchgef\u00fchrt, `return` verwendet"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "celsiustofahrenheit-korrekt-implementiert",
+          "criterion_id": "php.basics.solutions.b.02.celsiustofahrenheit-korrekt-implementiert",
+          "criterion_family_id": "php.basics.b.celsiustofahrenheit-korrekt-implementiert",
           "points": 3.5,
           "criterion": "`celsiusToFahrenheit()` korrekt implementiert",
           "hint": "Formel $(c \\times 9/5) + 32$ richtig umgesetzt, `return` korrekt"
@@ -602,94 +900,143 @@
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "php/basics/solutions.md"
     },
     {
+      "entry_id": "php.basics.solutions.c",
       "language": "php",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "C",
+      "task_id": "php.basics.solutions.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "bereichs-check-0-oder-100",
+          "criterion_id": "php.basics.solutions.c.01.bereichs-check-0-oder-100",
+          "criterion_family_id": "php.basics.c.bereichs-check-0-oder-100",
           "points": 2.0,
           "criterion": "Bereichs-Check (< 0 oder > 100)",
-          "hint": "Ungueltige Werte werden mit `"
+          "hint": "Ung\u00fcltige Werte werden mit `"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig",
+          "criterion_id": "php.basics.solutions.c.02.fallunterscheidungen-vollst-ndig",
+          "criterion_family_id": "php.basics.c.fallunterscheidungen-vollst-ndig",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig",
-          "hint": "Alle vier Faelle abgedeckt, `if-elseif` oder verschachtelt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig",
+          "hint": "Alle vier F\u00e4lle abgedeckt, `if-elseif` oder verschachtelt"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "r-ckgabewerte-korrekt",
+          "criterion_id": "php.basics.solutions.c.03.r-ckgabewerte-korrekt",
+          "criterion_family_id": "php.basics.c.r-ckgabewerte-korrekt",
           "points": 1.5,
-          "criterion": "Rueckgabewerte korrekt",
+          "criterion": "R\u00fcckgabewerte korrekt",
           "hint": "Strings entsprechen genau der Vorgabe"
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "php/basics/solutions.md"
     },
     {
+      "entry_id": "php.basics.solutions.d",
       "language": "php",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "D",
+      "task_id": "php.basics.solutions.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "schleife-ber-array",
+          "criterion_id": "php.basics.solutions.d.01.schleife-ber-array",
+          "criterion_family_id": "php.basics.d.schleife-ber-array",
           "points": 1.5,
-          "criterion": "Schleife ueber Array",
-          "hint": "`foreach` oder `for` mit Index, iteriert ueber alle Elemente"
+          "criterion": "Schleife \u00fcber Array",
+          "hint": "`foreach` oder `for` mit Index, iteriert \u00fcber alle Elemente"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "gerade-zahlen-z-hlen",
+          "criterion_id": "php.basics.solutions.d.02.gerade-zahlen-z-hlen",
+          "criterion_family_id": "php.basics.d.gerade-zahlen-z-hlen",
           "points": 3.0,
-          "criterion": "Gerade Zahlen zaehlen",
-          "hint": "Modulo `%` oder `==` 0 korrekt, Counter wird erhoet"
+          "criterion": "Gerade Zahlen z\u00e4hlen",
+          "hint": "Modulo `%` oder `==` 0 korrekt, Counter wird erh\u00f6ht"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "summe-positiver-zahlen",
+          "criterion_id": "php.basics.solutions.d.03.summe-positiver-zahlen",
+          "criterion_family_id": "php.basics.d.summe-positiver-zahlen",
           "points": 1.5,
           "criterion": "Summe positiver Zahlen",
           "hint": "Vergleich `> 0` korrekt, Summe wird nach += aktualisiert"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat",
+          "criterion_id": "php.basics.solutions.d.04.r-ckgabeformat",
+          "criterion_family_id": "php.basics.d.r-ckgabeformat",
           "points": 0.5,
-          "criterion": "Rueckgabeformat",
-          "hint": "Array mit korrekten Schluessel-Wert-Paaren"
+          "criterion": "R\u00fcckgabeformat",
+          "hint": "Array mit korrekten Schl\u00fcssel-Wert-Paaren"
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "php/basics/solutions.md"
     },
     {
+      "entry_id": "php.basics.solutions_v2.a",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "A",
+      "task_id": "php.basics.solutions_v2.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_id": "php.basics.solutions_v2.a.01.variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_family_id": "php.basics.a.variablen-korrekt-deklariert-und-initialisiert",
           "points": 2.0,
-          "criterion": "Variablen korrekt deklariert und initialisiert"
+          "criterion": "Variablen korrekt deklariert und initialisiert",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_id": "php.basics.solutions_v2.a.02.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_family_id": "php.basics.a.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
           "points": 1.0,
-          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert"
+          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-entspricht-der-vorgabe",
+          "criterion_id": "php.basics.solutions_v2.a.03.ausgabeformat-entspricht-der-vorgabe",
+          "criterion_family_id": "php.basics.a.ausgabeformat-entspricht-der-vorgabe",
           "points": 2.0,
-          "criterion": "Ausgabeformat entspricht der Vorgabe"
+          "criterion": "Ausgabeformat entspricht der Vorgabe",
+          "hint": ""
         }
       ],
       "common_errors": [
@@ -700,104 +1047,172 @@
       "path": "php/basics/solutions_v2.md"
     },
     {
+      "entry_id": "php.basics.solutions_v2.b",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "B",
+      "task_id": "php.basics.solutions_v2.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "php.basics.solutions_v2.b.01.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "php.basics.b.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
           "points": 4.0,
-          "criterion": "Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 1 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "php.basics.solutions_v2.b.02.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "php.basics.b.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
           "points": 3.5,
-          "criterion": "Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 2 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "php/basics/solutions_v2.md"
     },
     {
+      "entry_id": "php.basics.solutions_v2.c",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "C",
+      "task_id": "php.basics.solutions_v2.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_id": "php.basics.solutions_v2.c.01.ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_family_id": "php.basics.c.ung-ltige-werte-werden-korrekt-erkannt",
           "points": 2.0,
-          "criterion": "Ungueltige Werte werden korrekt erkannt"
+          "criterion": "Ung\u00fcltige Werte werden korrekt erkannt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_id": "php.basics.solutions_v2.c.02.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_family_id": "php.basics.c.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig und logisch korrekt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig und logisch korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_id": "php.basics.solutions_v2.c.03.korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_family_id": "php.basics.c.korrekte-r-ckgabewerte-gem-aufgabenstellung",
           "points": 1.5,
-          "criterion": "Korrekte Rueckgabewerte gemaess Aufgabenstellung"
+          "criterion": "Korrekte R\u00fcckgabewerte gem\u00e4\u00df Aufgabenstellung",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "php/basics/solutions_v2.md"
     },
     {
+      "entry_id": "php.basics.solutions_v2.d",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "D",
+      "task_id": "php.basics.solutions_v2.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "iteration-ber-alle-elemente-korrekt",
+          "criterion_id": "php.basics.solutions_v2.d.01.iteration-ber-alle-elemente-korrekt",
+          "criterion_family_id": "php.basics.d.iteration-ber-alle-elemente-korrekt",
           "points": 1.5,
-          "criterion": "Iteration ueber alle Elemente korrekt"
+          "criterion": "Iteration \u00fcber alle Elemente korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_id": "php.basics.solutions_v2.d.02.kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_family_id": "php.basics.d.kernlogik-der-ersten-kennzahl-korrekt",
           "points": 3.0,
-          "criterion": "Kernlogik der ersten Kennzahl korrekt"
+          "criterion": "Kernlogik der ersten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_id": "php.basics.solutions_v2.d.03.kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_family_id": "php.basics.d.kernlogik-der-zweiten-kennzahl-korrekt",
           "points": 1.5,
-          "criterion": "Kernlogik der zweiten Kennzahl korrekt"
+          "criterion": "Kernlogik der zweiten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_id": "php.basics.solutions_v2.d.04.r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_family_id": "php.basics.d.r-ckgabeformat-schl-ssel-struktur-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabeformat (Schluessel/Struktur) korrekt"
+          "criterion": "R\u00fcckgabeformat (Schl\u00fcssel/Struktur) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "php/basics/solutions_v2.md"
     },
     {
+      "entry_id": "php.basics.solutions_v3.a",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "A",
+      "task_id": "php.basics.solutions_v3.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_id": "php.basics.solutions_v3.a.01.variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_family_id": "php.basics.a.variablen-korrekt-deklariert-und-initialisiert",
           "points": 2.0,
-          "criterion": "Variablen korrekt deklariert und initialisiert"
+          "criterion": "Variablen korrekt deklariert und initialisiert",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_id": "php.basics.solutions_v3.a.02.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_family_id": "php.basics.a.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
           "points": 1.0,
-          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert"
+          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-entspricht-der-vorgabe",
+          "criterion_id": "php.basics.solutions_v3.a.03.ausgabeformat-entspricht-der-vorgabe",
+          "criterion_family_id": "php.basics.a.ausgabeformat-entspricht-der-vorgabe",
           "points": 2.0,
-          "criterion": "Ausgabeformat entspricht der Vorgabe"
+          "criterion": "Ausgabeformat entspricht der Vorgabe",
+          "hint": ""
         }
       ],
       "common_errors": [
@@ -808,104 +1223,172 @@
       "path": "php/basics/solutions_v3.md"
     },
     {
+      "entry_id": "php.basics.solutions_v3.b",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "B",
+      "task_id": "php.basics.solutions_v3.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "php.basics.solutions_v3.b.01.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "php.basics.b.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
           "points": 4.0,
-          "criterion": "Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 1 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "php.basics.solutions_v3.b.02.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "php.basics.b.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
           "points": 3.5,
-          "criterion": "Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 2 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "php/basics/solutions_v3.md"
     },
     {
+      "entry_id": "php.basics.solutions_v3.c",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "C",
+      "task_id": "php.basics.solutions_v3.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_id": "php.basics.solutions_v3.c.01.ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_family_id": "php.basics.c.ung-ltige-werte-werden-korrekt-erkannt",
           "points": 2.0,
-          "criterion": "Ungueltige Werte werden korrekt erkannt"
+          "criterion": "Ung\u00fcltige Werte werden korrekt erkannt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_id": "php.basics.solutions_v3.c.02.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_family_id": "php.basics.c.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig und logisch korrekt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig und logisch korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_id": "php.basics.solutions_v3.c.03.korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_family_id": "php.basics.c.korrekte-r-ckgabewerte-gem-aufgabenstellung",
           "points": 1.5,
-          "criterion": "Korrekte Rueckgabewerte gemaess Aufgabenstellung"
+          "criterion": "Korrekte R\u00fcckgabewerte gem\u00e4\u00df Aufgabenstellung",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "php/basics/solutions_v3.md"
     },
     {
+      "entry_id": "php.basics.solutions_v3.d",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "D",
+      "task_id": "php.basics.solutions_v3.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "iteration-ber-alle-elemente-korrekt",
+          "criterion_id": "php.basics.solutions_v3.d.01.iteration-ber-alle-elemente-korrekt",
+          "criterion_family_id": "php.basics.d.iteration-ber-alle-elemente-korrekt",
           "points": 1.5,
-          "criterion": "Iteration ueber alle Elemente korrekt"
+          "criterion": "Iteration \u00fcber alle Elemente korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_id": "php.basics.solutions_v3.d.02.kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_family_id": "php.basics.d.kernlogik-der-ersten-kennzahl-korrekt",
           "points": 3.0,
-          "criterion": "Kernlogik der ersten Kennzahl korrekt"
+          "criterion": "Kernlogik der ersten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_id": "php.basics.solutions_v3.d.03.kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_family_id": "php.basics.d.kernlogik-der-zweiten-kennzahl-korrekt",
           "points": 1.5,
-          "criterion": "Kernlogik der zweiten Kennzahl korrekt"
+          "criterion": "Kernlogik der zweiten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_id": "php.basics.solutions_v3.d.04.r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_family_id": "php.basics.d.r-ckgabeformat-schl-ssel-struktur-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabeformat (Schluessel/Struktur) korrekt"
+          "criterion": "R\u00fcckgabeformat (Schl\u00fcssel/Struktur) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "php/basics/solutions_v3.md"
     },
     {
+      "entry_id": "php.basics.solutions_v4.a",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "A",
+      "task_id": "php.basics.solutions_v4.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_id": "php.basics.solutions_v4.a.01.variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_family_id": "php.basics.a.variablen-korrekt-deklariert-und-initialisiert",
           "points": 2.0,
-          "criterion": "Variablen korrekt deklariert und initialisiert"
+          "criterion": "Variablen korrekt deklariert und initialisiert",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_id": "php.basics.solutions_v4.a.02.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_family_id": "php.basics.a.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
           "points": 1.0,
-          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert"
+          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-entspricht-der-vorgabe",
+          "criterion_id": "php.basics.solutions_v4.a.03.ausgabeformat-entspricht-der-vorgabe",
+          "criterion_family_id": "php.basics.a.ausgabeformat-entspricht-der-vorgabe",
           "points": 2.0,
-          "criterion": "Ausgabeformat entspricht der Vorgabe"
+          "criterion": "Ausgabeformat entspricht der Vorgabe",
+          "hint": ""
         }
       ],
       "common_errors": [
@@ -916,104 +1399,172 @@
       "path": "php/basics/solutions_v4.md"
     },
     {
+      "entry_id": "php.basics.solutions_v4.b",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "B",
+      "task_id": "php.basics.solutions_v4.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "php.basics.solutions_v4.b.01.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "php.basics.b.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
           "points": 4.0,
-          "criterion": "Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 1 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "php.basics.solutions_v4.b.02.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "php.basics.b.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
           "points": 3.5,
-          "criterion": "Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 2 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "php/basics/solutions_v4.md"
     },
     {
+      "entry_id": "php.basics.solutions_v4.c",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "C",
+      "task_id": "php.basics.solutions_v4.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_id": "php.basics.solutions_v4.c.01.ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_family_id": "php.basics.c.ung-ltige-werte-werden-korrekt-erkannt",
           "points": 2.0,
-          "criterion": "Ungueltige Werte werden korrekt erkannt"
+          "criterion": "Ung\u00fcltige Werte werden korrekt erkannt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_id": "php.basics.solutions_v4.c.02.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_family_id": "php.basics.c.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig und logisch korrekt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig und logisch korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_id": "php.basics.solutions_v4.c.03.korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_family_id": "php.basics.c.korrekte-r-ckgabewerte-gem-aufgabenstellung",
           "points": 1.5,
-          "criterion": "Korrekte Rueckgabewerte gemaess Aufgabenstellung"
+          "criterion": "Korrekte R\u00fcckgabewerte gem\u00e4\u00df Aufgabenstellung",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "php/basics/solutions_v4.md"
     },
     {
+      "entry_id": "php.basics.solutions_v4.d",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "D",
+      "task_id": "php.basics.solutions_v4.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "iteration-ber-alle-elemente-korrekt",
+          "criterion_id": "php.basics.solutions_v4.d.01.iteration-ber-alle-elemente-korrekt",
+          "criterion_family_id": "php.basics.d.iteration-ber-alle-elemente-korrekt",
           "points": 1.5,
-          "criterion": "Iteration ueber alle Elemente korrekt"
+          "criterion": "Iteration \u00fcber alle Elemente korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_id": "php.basics.solutions_v4.d.02.kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_family_id": "php.basics.d.kernlogik-der-ersten-kennzahl-korrekt",
           "points": 3.0,
-          "criterion": "Kernlogik der ersten Kennzahl korrekt"
+          "criterion": "Kernlogik der ersten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_id": "php.basics.solutions_v4.d.03.kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_family_id": "php.basics.d.kernlogik-der-zweiten-kennzahl-korrekt",
           "points": 1.5,
-          "criterion": "Kernlogik der zweiten Kennzahl korrekt"
+          "criterion": "Kernlogik der zweiten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_id": "php.basics.solutions_v4.d.04.r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_family_id": "php.basics.d.r-ckgabeformat-schl-ssel-struktur-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabeformat (Schluessel/Struktur) korrekt"
+          "criterion": "R\u00fcckgabeformat (Schl\u00fcssel/Struktur) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "php/basics/solutions_v4.md"
     },
     {
+      "entry_id": "php.basics.solutions_v5.a",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v5.md",
       "task": "A",
+      "task_id": "php.basics.solutions_v5.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_id": "php.basics.solutions_v5.a.01.variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_family_id": "php.basics.a.variablen-korrekt-deklariert-und-initialisiert",
           "points": 2.0,
-          "criterion": "Variablen korrekt deklariert und initialisiert"
+          "criterion": "Variablen korrekt deklariert und initialisiert",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_id": "php.basics.solutions_v5.a.02.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_family_id": "php.basics.a.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
           "points": 1.0,
-          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert"
+          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-entspricht-der-vorgabe",
+          "criterion_id": "php.basics.solutions_v5.a.03.ausgabeformat-entspricht-der-vorgabe",
+          "criterion_family_id": "php.basics.a.ausgabeformat-entspricht-der-vorgabe",
           "points": 2.0,
-          "criterion": "Ausgabeformat entspricht der Vorgabe"
+          "criterion": "Ausgabeformat entspricht der Vorgabe",
+          "hint": ""
         }
       ],
       "common_errors": [
@@ -1024,104 +1575,172 @@
       "path": "php/basics/solutions_v5.md"
     },
     {
+      "entry_id": "php.basics.solutions_v5.b",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v5.md",
       "task": "B",
+      "task_id": "php.basics.solutions_v5.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "php.basics.solutions_v5.b.01.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "php.basics.b.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
           "points": 4.0,
-          "criterion": "Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 1 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "php.basics.solutions_v5.b.02.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "php.basics.b.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
           "points": 3.5,
-          "criterion": "Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 2 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "php/basics/solutions_v5.md"
     },
     {
+      "entry_id": "php.basics.solutions_v5.c",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v5.md",
       "task": "C",
+      "task_id": "php.basics.solutions_v5.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_id": "php.basics.solutions_v5.c.01.ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_family_id": "php.basics.c.ung-ltige-werte-werden-korrekt-erkannt",
           "points": 2.0,
-          "criterion": "Ungueltige Werte werden korrekt erkannt"
+          "criterion": "Ung\u00fcltige Werte werden korrekt erkannt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_id": "php.basics.solutions_v5.c.02.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_family_id": "php.basics.c.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig und logisch korrekt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig und logisch korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_id": "php.basics.solutions_v5.c.03.korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_family_id": "php.basics.c.korrekte-r-ckgabewerte-gem-aufgabenstellung",
           "points": 1.5,
-          "criterion": "Korrekte Rueckgabewerte gemaess Aufgabenstellung"
+          "criterion": "Korrekte R\u00fcckgabewerte gem\u00e4\u00df Aufgabenstellung",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "php/basics/solutions_v5.md"
     },
     {
+      "entry_id": "php.basics.solutions_v5.d",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v5.md",
       "task": "D",
+      "task_id": "php.basics.solutions_v5.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "iteration-ber-alle-elemente-korrekt",
+          "criterion_id": "php.basics.solutions_v5.d.01.iteration-ber-alle-elemente-korrekt",
+          "criterion_family_id": "php.basics.d.iteration-ber-alle-elemente-korrekt",
           "points": 1.5,
-          "criterion": "Iteration ueber alle Elemente korrekt"
+          "criterion": "Iteration \u00fcber alle Elemente korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_id": "php.basics.solutions_v5.d.02.kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_family_id": "php.basics.d.kernlogik-der-ersten-kennzahl-korrekt",
           "points": 3.0,
-          "criterion": "Kernlogik der ersten Kennzahl korrekt"
+          "criterion": "Kernlogik der ersten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_id": "php.basics.solutions_v5.d.03.kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_family_id": "php.basics.d.kernlogik-der-zweiten-kennzahl-korrekt",
           "points": 1.5,
-          "criterion": "Kernlogik der zweiten Kennzahl korrekt"
+          "criterion": "Kernlogik der zweiten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_id": "php.basics.solutions_v5.d.04.r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_family_id": "php.basics.d.r-ckgabeformat-schl-ssel-struktur-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabeformat (Schluessel/Struktur) korrekt"
+          "criterion": "R\u00fcckgabeformat (Schl\u00fcssel/Struktur) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "php/basics/solutions_v5.md"
     },
     {
+      "entry_id": "php.basics.solutions_v6.a",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v6.md",
       "task": "A",
+      "task_id": "php.basics.solutions_v6.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_id": "php.basics.solutions_v6.a.01.variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_family_id": "php.basics.a.variablen-korrekt-deklariert-und-initialisiert",
           "points": 2.0,
-          "criterion": "Variablen korrekt deklariert und initialisiert"
+          "criterion": "Variablen korrekt deklariert und initialisiert",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_id": "php.basics.solutions_v6.a.02.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_family_id": "php.basics.a.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
           "points": 1.0,
-          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert"
+          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-entspricht-der-vorgabe",
+          "criterion_id": "php.basics.solutions_v6.a.03.ausgabeformat-entspricht-der-vorgabe",
+          "criterion_family_id": "php.basics.a.ausgabeformat-entspricht-der-vorgabe",
           "points": 2.0,
-          "criterion": "Ausgabeformat entspricht der Vorgabe"
+          "criterion": "Ausgabeformat entspricht der Vorgabe",
+          "hint": ""
         }
       ],
       "common_errors": [
@@ -1132,104 +1751,169 @@
       "path": "php/basics/solutions_v6.md"
     },
     {
+      "entry_id": "php.basics.solutions_v6.b",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v6.md",
       "task": "B",
+      "task_id": "php.basics.solutions_v6.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "php.basics.solutions_v6.b.01.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "php.basics.b.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
           "points": 4.0,
-          "criterion": "Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 1 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "php.basics.solutions_v6.b.02.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "php.basics.b.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
           "points": 3.5,
-          "criterion": "Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 2 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "php/basics/solutions_v6.md"
     },
     {
+      "entry_id": "php.basics.solutions_v6.c",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v6.md",
       "task": "C",
+      "task_id": "php.basics.solutions_v6.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_id": "php.basics.solutions_v6.c.01.ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_family_id": "php.basics.c.ung-ltige-werte-werden-korrekt-erkannt",
           "points": 2.0,
-          "criterion": "Ungueltige Werte werden korrekt erkannt"
+          "criterion": "Ung\u00fcltige Werte werden korrekt erkannt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_id": "php.basics.solutions_v6.c.02.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_family_id": "php.basics.c.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig und logisch korrekt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig und logisch korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_id": "php.basics.solutions_v6.c.03.korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_family_id": "php.basics.c.korrekte-r-ckgabewerte-gem-aufgabenstellung",
           "points": 1.5,
-          "criterion": "Korrekte Rueckgabewerte gemaess Aufgabenstellung"
+          "criterion": "Korrekte R\u00fcckgabewerte gem\u00e4\u00df Aufgabenstellung",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "php/basics/solutions_v6.md"
     },
     {
+      "entry_id": "php.basics.solutions_v6.d",
       "language": "php",
       "theme": "basics",
       "variant": "solutions_v6.md",
       "task": "D",
+      "task_id": "php.basics.solutions_v6.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "iteration-ber-alle-elemente-korrekt",
+          "criterion_id": "php.basics.solutions_v6.d.01.iteration-ber-alle-elemente-korrekt",
+          "criterion_family_id": "php.basics.d.iteration-ber-alle-elemente-korrekt",
           "points": 1.5,
-          "criterion": "Iteration ueber alle Elemente korrekt"
+          "criterion": "Iteration \u00fcber alle Elemente korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_id": "php.basics.solutions_v6.d.02.kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_family_id": "php.basics.d.kernlogik-der-ersten-kennzahl-korrekt",
           "points": 3.0,
-          "criterion": "Kernlogik der ersten Kennzahl korrekt"
+          "criterion": "Kernlogik der ersten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_id": "php.basics.solutions_v6.d.03.kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_family_id": "php.basics.d.kernlogik-der-zweiten-kennzahl-korrekt",
           "points": 1.5,
-          "criterion": "Kernlogik der zweiten Kennzahl korrekt"
+          "criterion": "Kernlogik der zweiten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_id": "php.basics.solutions_v6.d.04.r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_family_id": "php.basics.d.r-ckgabeformat-schl-ssel-struktur-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabeformat (Schluessel/Struktur) korrekt"
+          "criterion": "R\u00fcckgabeformat (Schl\u00fcssel/Struktur) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "php/basics/solutions_v6.md"
     },
     {
+      "entry_id": "python.basics.solutions.a",
       "language": "python",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "A",
+      "task_id": "python.basics.solutions.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-deklarieren-und-initialisieren",
+          "criterion_id": "python.basics.solutions.a.01.variablen-deklarieren-und-initialisieren",
+          "criterion_family_id": "python.basics.a.variablen-deklarieren-und-initialisieren",
           "points": 2.0,
           "criterion": "Variablen deklarieren und initialisieren",
           "hint": "Zuweisungsoperator verwendet, Werte korrekt gesetzt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-einlesen-oder-simulieren",
+          "criterion_id": "python.basics.solutions.a.02.eingabe-einlesen-oder-simulieren",
+          "criterion_family_id": "python.basics.a.eingabe-einlesen-oder-simulieren",
           "points": 1.0,
           "criterion": "Eingabe einlesen oder simulieren",
           "hint": "`input()` oder direkte Wertzuweisung"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-exakt",
+          "criterion_id": "python.basics.solutions.a.03.ausgabeformat-exakt",
+          "criterion_family_id": "python.basics.a.ausgabeformat-exakt",
           "points": 2.0,
           "criterion": "Ausgabeformat exakt",
           "hint": "F-String oder `.format()` mit beiden Variablen"
@@ -1243,18 +1927,28 @@
       "path": "python/basics/solutions.md"
     },
     {
+      "entry_id": "python.basics.solutions.b",
       "language": "python",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "B",
+      "task_id": "python.basics.solutions.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "calc-rectangle-area-korrekt-implementiert",
+          "criterion_id": "python.basics.solutions.b.01.calc-rectangle-area-korrekt-implementiert",
+          "criterion_family_id": "python.basics.b.calc-rectangle-area-korrekt-implementiert",
           "points": 4.0,
           "criterion": "`calc_rectangle_area()` korrekt implementiert",
-          "hint": "`def` Syntax korrekt, Parameter entgegen, Multiplikation durchgefuehrt"
+          "hint": "`def` Syntax korrekt, Parameter entgegen, Multiplikation durchgef\u00fchrt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "celsius-to-fahrenheit-korrekt-implementiert",
+          "criterion_id": "python.basics.solutions.b.02.celsius-to-fahrenheit-korrekt-implementiert",
+          "criterion_family_id": "python.basics.b.celsius-to-fahrenheit-korrekt-implementiert",
           "points": 3.5,
           "criterion": "`celsius_to_fahrenheit()` korrekt implementiert",
           "hint": "Formel $(c \\times 9/5) + 32$ richtig umgesetzt, `return` korrekt"
@@ -1262,94 +1956,143 @@
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "python/basics/solutions.md"
     },
     {
+      "entry_id": "python.basics.solutions.c",
       "language": "python",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "C",
+      "task_id": "python.basics.solutions.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "bereichs-check-0-oder-100",
+          "criterion_id": "python.basics.solutions.c.01.bereichs-check-0-oder-100",
+          "criterion_family_id": "python.basics.c.bereichs-check-0-oder-100",
           "points": 2.0,
           "criterion": "Bereichs-Check (< 0 oder > 100)",
-          "hint": "Ungueltige Werte werden mit `or` erkannt"
+          "hint": "Ung\u00fcltige Werte werden mit `or` erkannt"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig",
+          "criterion_id": "python.basics.solutions.c.02.fallunterscheidungen-vollst-ndig",
+          "criterion_family_id": "python.basics.c.fallunterscheidungen-vollst-ndig",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig",
-          "hint": "Alle vier Faelle abgedeckt, `if-elif` oder verschachtelt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig",
+          "hint": "Alle vier F\u00e4lle abgedeckt, `if-elif` oder verschachtelt"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "r-ckgabewerte-korrekt",
+          "criterion_id": "python.basics.solutions.c.03.r-ckgabewerte-korrekt",
+          "criterion_family_id": "python.basics.c.r-ckgabewerte-korrekt",
           "points": 1.5,
-          "criterion": "Rueckgabewerte korrekt",
+          "criterion": "R\u00fcckgabewerte korrekt",
           "hint": "Strings entsprechen genau der Vorgabe"
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "python/basics/solutions.md"
     },
     {
+      "entry_id": "python.basics.solutions.d",
       "language": "python",
       "theme": "basics",
       "variant": "solutions.md",
       "task": "D",
+      "task_id": "python.basics.solutions.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "schleife-ber-liste",
+          "criterion_id": "python.basics.solutions.d.01.schleife-ber-liste",
+          "criterion_family_id": "python.basics.d.schleife-ber-liste",
           "points": 1.5,
-          "criterion": "Schleife ueber Liste",
-          "hint": "`for ... in` Syntax korrekt, iteriert ueber alle Elemente"
+          "criterion": "Schleife \u00fcber Liste",
+          "hint": "`for ... in` Syntax korrekt, iteriert \u00fcber alle Elemente"
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "gerade-zahlen-z-hlen",
+          "criterion_id": "python.basics.solutions.d.02.gerade-zahlen-z-hlen",
+          "criterion_family_id": "python.basics.d.gerade-zahlen-z-hlen",
           "points": 3.0,
-          "criterion": "Gerade Zahlen zaehlen",
-          "hint": "Modulo `%` 2 == 0 korrekt, Counter wird mit `+=` erhoet"
+          "criterion": "Gerade Zahlen z\u00e4hlen",
+          "hint": "Modulo `%` 2 == 0 korrekt, Counter wird mit `+=` erh\u00f6ht"
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "summe-positiver-zahlen",
+          "criterion_id": "python.basics.solutions.d.03.summe-positiver-zahlen",
+          "criterion_family_id": "python.basics.d.summe-positiver-zahlen",
           "points": 1.5,
           "criterion": "Summe positiver Zahlen",
           "hint": "Vergleich `> 0` korrekt, Summe wird mit `+=` aktualisiert"
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat",
+          "criterion_id": "python.basics.solutions.d.04.r-ckgabeformat",
+          "criterion_family_id": "python.basics.d.r-ckgabeformat",
           "points": 0.5,
-          "criterion": "Rueckgabeformat",
+          "criterion": "R\u00fcckgabeformat",
           "hint": "Tupel mit korrekten Werten"
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "python/basics/solutions.md"
     },
     {
+      "entry_id": "python.basics.solutions_v2.a",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "A",
+      "task_id": "python.basics.solutions_v2.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_id": "python.basics.solutions_v2.a.01.variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_family_id": "python.basics.a.variablen-korrekt-deklariert-und-initialisiert",
           "points": 2.0,
-          "criterion": "Variablen korrekt deklariert und initialisiert"
+          "criterion": "Variablen korrekt deklariert und initialisiert",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_id": "python.basics.solutions_v2.a.02.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_family_id": "python.basics.a.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
           "points": 1.0,
-          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert"
+          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-entspricht-der-vorgabe",
+          "criterion_id": "python.basics.solutions_v2.a.03.ausgabeformat-entspricht-der-vorgabe",
+          "criterion_family_id": "python.basics.a.ausgabeformat-entspricht-der-vorgabe",
           "points": 2.0,
-          "criterion": "Ausgabeformat entspricht der Vorgabe"
+          "criterion": "Ausgabeformat entspricht der Vorgabe",
+          "hint": ""
         }
       ],
       "common_errors": [
@@ -1360,104 +2103,172 @@
       "path": "python/basics/solutions_v2.md"
     },
     {
+      "entry_id": "python.basics.solutions_v2.b",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "B",
+      "task_id": "python.basics.solutions_v2.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "python.basics.solutions_v2.b.01.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "python.basics.b.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
           "points": 4.0,
-          "criterion": "Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 1 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "python.basics.solutions_v2.b.02.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "python.basics.b.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
           "points": 3.5,
-          "criterion": "Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 2 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "python/basics/solutions_v2.md"
     },
     {
+      "entry_id": "python.basics.solutions_v2.c",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "C",
+      "task_id": "python.basics.solutions_v2.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_id": "python.basics.solutions_v2.c.01.ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_family_id": "python.basics.c.ung-ltige-werte-werden-korrekt-erkannt",
           "points": 2.0,
-          "criterion": "Ungueltige Werte werden korrekt erkannt"
+          "criterion": "Ung\u00fcltige Werte werden korrekt erkannt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_id": "python.basics.solutions_v2.c.02.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_family_id": "python.basics.c.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig und logisch korrekt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig und logisch korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_id": "python.basics.solutions_v2.c.03.korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_family_id": "python.basics.c.korrekte-r-ckgabewerte-gem-aufgabenstellung",
           "points": 1.5,
-          "criterion": "Korrekte Rueckgabewerte gemaess Aufgabenstellung"
+          "criterion": "Korrekte R\u00fcckgabewerte gem\u00e4\u00df Aufgabenstellung",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "python/basics/solutions_v2.md"
     },
     {
+      "entry_id": "python.basics.solutions_v2.d",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v2.md",
       "task": "D",
+      "task_id": "python.basics.solutions_v2.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "iteration-ber-alle-elemente-korrekt",
+          "criterion_id": "python.basics.solutions_v2.d.01.iteration-ber-alle-elemente-korrekt",
+          "criterion_family_id": "python.basics.d.iteration-ber-alle-elemente-korrekt",
           "points": 1.5,
-          "criterion": "Iteration ueber alle Elemente korrekt"
+          "criterion": "Iteration \u00fcber alle Elemente korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_id": "python.basics.solutions_v2.d.02.kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_family_id": "python.basics.d.kernlogik-der-ersten-kennzahl-korrekt",
           "points": 3.0,
-          "criterion": "Kernlogik der ersten Kennzahl korrekt"
+          "criterion": "Kernlogik der ersten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_id": "python.basics.solutions_v2.d.03.kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_family_id": "python.basics.d.kernlogik-der-zweiten-kennzahl-korrekt",
           "points": 1.5,
-          "criterion": "Kernlogik der zweiten Kennzahl korrekt"
+          "criterion": "Kernlogik der zweiten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_id": "python.basics.solutions_v2.d.04.r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_family_id": "python.basics.d.r-ckgabeformat-schl-ssel-struktur-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabeformat (Schluessel/Struktur) korrekt"
+          "criterion": "R\u00fcckgabeformat (Schl\u00fcssel/Struktur) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "python/basics/solutions_v2.md"
     },
     {
+      "entry_id": "python.basics.solutions_v3.a",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "A",
+      "task_id": "python.basics.solutions_v3.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_id": "python.basics.solutions_v3.a.01.variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_family_id": "python.basics.a.variablen-korrekt-deklariert-und-initialisiert",
           "points": 2.0,
-          "criterion": "Variablen korrekt deklariert und initialisiert"
+          "criterion": "Variablen korrekt deklariert und initialisiert",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_id": "python.basics.solutions_v3.a.02.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_family_id": "python.basics.a.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
           "points": 1.0,
-          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert"
+          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-entspricht-der-vorgabe",
+          "criterion_id": "python.basics.solutions_v3.a.03.ausgabeformat-entspricht-der-vorgabe",
+          "criterion_family_id": "python.basics.a.ausgabeformat-entspricht-der-vorgabe",
           "points": 2.0,
-          "criterion": "Ausgabeformat entspricht der Vorgabe"
+          "criterion": "Ausgabeformat entspricht der Vorgabe",
+          "hint": ""
         }
       ],
       "common_errors": [
@@ -1468,104 +2279,172 @@
       "path": "python/basics/solutions_v3.md"
     },
     {
+      "entry_id": "python.basics.solutions_v3.b",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "B",
+      "task_id": "python.basics.solutions_v3.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "python.basics.solutions_v3.b.01.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "python.basics.b.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
           "points": 4.0,
-          "criterion": "Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 1 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "python.basics.solutions_v3.b.02.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "python.basics.b.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
           "points": 3.5,
-          "criterion": "Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 2 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "python/basics/solutions_v3.md"
     },
     {
+      "entry_id": "python.basics.solutions_v3.c",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "C",
+      "task_id": "python.basics.solutions_v3.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_id": "python.basics.solutions_v3.c.01.ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_family_id": "python.basics.c.ung-ltige-werte-werden-korrekt-erkannt",
           "points": 2.0,
-          "criterion": "Ungueltige Werte werden korrekt erkannt"
+          "criterion": "Ung\u00fcltige Werte werden korrekt erkannt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_id": "python.basics.solutions_v3.c.02.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_family_id": "python.basics.c.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig und logisch korrekt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig und logisch korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_id": "python.basics.solutions_v3.c.03.korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_family_id": "python.basics.c.korrekte-r-ckgabewerte-gem-aufgabenstellung",
           "points": 1.5,
-          "criterion": "Korrekte Rueckgabewerte gemaess Aufgabenstellung"
+          "criterion": "Korrekte R\u00fcckgabewerte gem\u00e4\u00df Aufgabenstellung",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "python/basics/solutions_v3.md"
     },
     {
+      "entry_id": "python.basics.solutions_v3.d",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v3.md",
       "task": "D",
+      "task_id": "python.basics.solutions_v3.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "iteration-ber-alle-elemente-korrekt",
+          "criterion_id": "python.basics.solutions_v3.d.01.iteration-ber-alle-elemente-korrekt",
+          "criterion_family_id": "python.basics.d.iteration-ber-alle-elemente-korrekt",
           "points": 1.5,
-          "criterion": "Iteration ueber alle Elemente korrekt"
+          "criterion": "Iteration \u00fcber alle Elemente korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_id": "python.basics.solutions_v3.d.02.kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_family_id": "python.basics.d.kernlogik-der-ersten-kennzahl-korrekt",
           "points": 3.0,
-          "criterion": "Kernlogik der ersten Kennzahl korrekt"
+          "criterion": "Kernlogik der ersten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_id": "python.basics.solutions_v3.d.03.kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_family_id": "python.basics.d.kernlogik-der-zweiten-kennzahl-korrekt",
           "points": 1.5,
-          "criterion": "Kernlogik der zweiten Kennzahl korrekt"
+          "criterion": "Kernlogik der zweiten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_id": "python.basics.solutions_v3.d.04.r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_family_id": "python.basics.d.r-ckgabeformat-schl-ssel-struktur-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabeformat (Schluessel/Struktur) korrekt"
+          "criterion": "R\u00fcckgabeformat (Schl\u00fcssel/Struktur) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "python/basics/solutions_v3.md"
     },
     {
+      "entry_id": "python.basics.solutions_v4.a",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "A",
+      "task_id": "python.basics.solutions_v4.a",
       "points_total": 5.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_id": "python.basics.solutions_v4.a.01.variablen-korrekt-deklariert-und-initialisiert",
+          "criterion_family_id": "python.basics.a.variablen-korrekt-deklariert-und-initialisiert",
           "points": 2.0,
-          "criterion": "Variablen korrekt deklariert und initialisiert"
+          "criterion": "Variablen korrekt deklariert und initialisiert",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_id": "python.basics.solutions_v4.a.02.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
+          "criterion_family_id": "python.basics.a.eingabe-korrekt-eingelesen-oder-sauber-simuliert",
           "points": 1.0,
-          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert"
+          "criterion": "Eingabe korrekt eingelesen oder sauber simuliert",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "ausgabeformat-entspricht-der-vorgabe",
+          "criterion_id": "python.basics.solutions_v4.a.03.ausgabeformat-entspricht-der-vorgabe",
+          "criterion_family_id": "python.basics.a.ausgabeformat-entspricht-der-vorgabe",
           "points": 2.0,
-          "criterion": "Ausgabeformat entspricht der Vorgabe"
+          "criterion": "Ausgabeformat entspricht der Vorgabe",
+          "hint": ""
         }
       ],
       "common_errors": [
@@ -1576,83 +2455,134 @@
       "path": "python/basics/solutions_v4.md"
     },
     {
+      "entry_id": "python.basics.solutions_v4.b",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "B",
+      "task_id": "python.basics.solutions_v4.b",
       "points_total": 7.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "python.basics.solutions_v4.b.01.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "python.basics.b.funktion-1-signatur-berechnung-r-ckgabe-korrekt",
           "points": 4.0,
-          "criterion": "Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 1 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_id": "python.basics.solutions_v4.b.02.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
+          "criterion_family_id": "python.basics.b.funktion-2-signatur-berechnung-r-ckgabe-korrekt",
           "points": 3.5,
-          "criterion": "Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt"
+          "criterion": "Funktion 2 (Signatur, Berechnung, R\u00fcckgabe) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)",
-        "Funktion ohne `return` bzw. Rueckgabe in falschem Format",
+        "Funktion ohne `return` bzw. R\u00fcckgabe in falschem Format",
         "Parameter werden nicht verwendet oder vertauscht"
       ],
       "path": "python/basics/solutions_v4.md"
     },
     {
+      "entry_id": "python.basics.solutions_v4.c",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "C",
+      "task_id": "python.basics.solutions_v4.c",
       "points_total": 6.0,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_id": "python.basics.solutions_v4.c.01.ung-ltige-werte-werden-korrekt-erkannt",
+          "criterion_family_id": "python.basics.c.ung-ltige-werte-werden-korrekt-erkannt",
           "points": 2.0,
-          "criterion": "Ungueltige Werte werden korrekt erkannt"
+          "criterion": "Ung\u00fcltige Werte werden korrekt erkannt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_id": "python.basics.solutions_v4.c.02.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
+          "criterion_family_id": "python.basics.c.fallunterscheidungen-vollst-ndig-und-logisch-korrekt",
           "points": 2.5,
-          "criterion": "Fallunterscheidungen vollstaendig und logisch korrekt"
+          "criterion": "Fallunterscheidungen vollst\u00e4ndig und logisch korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_id": "python.basics.solutions_v4.c.03.korrekte-r-ckgabewerte-gem-aufgabenstellung",
+          "criterion_family_id": "python.basics.c.korrekte-r-ckgabewerte-gem-aufgabenstellung",
           "points": 1.5,
-          "criterion": "Korrekte Rueckgabewerte gemaess Aufgabenstellung"
+          "criterion": "Korrekte R\u00fcckgabewerte gem\u00e4\u00df Aufgabenstellung",
+          "hint": ""
         }
       ],
       "common_errors": [
         "Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)",
-        "Ungueltigkeitspruefung fehlt oder steht an falscher Stelle",
-        "Ein oder mehrere Faelle werden nicht abgedeckt"
+        "Ung\u00fcltigkeitspr\u00fcfung fehlt oder steht an falscher Stelle",
+        "Ein oder mehrere F\u00e4lle werden nicht abgedeckt"
       ],
       "path": "python/basics/solutions_v4.md"
     },
     {
+      "entry_id": "python.basics.solutions_v4.d",
       "language": "python",
       "theme": "basics",
       "variant": "solutions_v4.md",
       "task": "D",
+      "task_id": "python.basics.solutions_v4.d",
       "points_total": 6.5,
       "criteria": [
         {
+          "criterion_index": 1,
+          "criterion_key": "iteration-ber-alle-elemente-korrekt",
+          "criterion_id": "python.basics.solutions_v4.d.01.iteration-ber-alle-elemente-korrekt",
+          "criterion_family_id": "python.basics.d.iteration-ber-alle-elemente-korrekt",
           "points": 1.5,
-          "criterion": "Iteration ueber alle Elemente korrekt"
+          "criterion": "Iteration \u00fcber alle Elemente korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 2,
+          "criterion_key": "kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_id": "python.basics.solutions_v4.d.02.kernlogik-der-ersten-kennzahl-korrekt",
+          "criterion_family_id": "python.basics.d.kernlogik-der-ersten-kennzahl-korrekt",
           "points": 3.0,
-          "criterion": "Kernlogik der ersten Kennzahl korrekt"
+          "criterion": "Kernlogik der ersten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 3,
+          "criterion_key": "kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_id": "python.basics.solutions_v4.d.03.kernlogik-der-zweiten-kennzahl-korrekt",
+          "criterion_family_id": "python.basics.d.kernlogik-der-zweiten-kennzahl-korrekt",
           "points": 1.5,
-          "criterion": "Kernlogik der zweiten Kennzahl korrekt"
+          "criterion": "Kernlogik der zweiten Kennzahl korrekt",
+          "hint": ""
         },
         {
+          "criterion_index": 4,
+          "criterion_key": "r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_id": "python.basics.solutions_v4.d.04.r-ckgabeformat-schl-ssel-struktur-korrekt",
+          "criterion_family_id": "python.basics.d.r-ckgabeformat-schl-ssel-struktur-korrekt",
           "points": 0.5,
-          "criterion": "Rueckgabeformat (Schluessel/Struktur) korrekt"
+          "criterion": "R\u00fcckgabeformat (Schl\u00fcssel/Struktur) korrekt",
+          "hint": ""
         }
       ],
       "common_errors": [
-        "Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert",
-        "Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft",
-        "Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte"
+        "Z\u00e4hler/Summe wird nicht initialisiert oder falsch aktualisiert",
+        "Bedingung f\u00fcr Filterung (z. B. gerade/positiv) ist fehlerhaft",
+        "R\u00fcckgabe enth\u00e4lt falsche Schl\u00fcssel oder unvollst\u00e4ndige Werte"
       ],
       "path": "python/basics/solutions_v4.md"
     }

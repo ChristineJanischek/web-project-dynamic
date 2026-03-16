@@ -39,7 +39,7 @@ echo "Hallo {$vorname}, du bist {$alter} Jahre alt.";
 
 | Kriterium                                | Punkte  | Hinweise                                                   |
 | ---------------------------------------- | ------- | ---------------------------------------------------------- |
-| Variablen deklarieren und initialisieren | 2.0     | `$` Praefix verwendet, Zuweisungsoperator korrekt          |
+| Variablen deklarieren und initialisieren | 2.0     | `$` Präfix verwendet, Zuweisungsoperator korrekt           |
 | Eingabe einlesen oder simulieren         | 1.0     | `$_GET`, `$_POST`, `readline()` oder direkte Wertzuweisung |
 | Ausgabeformat exakt                      | 2.0     | String-Interpolation mit beiden Variablen, korrekte Syntax |
 | **Summe Aufgabe A**                      | **5.0** |                                                            |
@@ -77,11 +77,11 @@ function celsiusToFahrenheit($c) {
 
 ### Punktbewertung
 
-| Kriterium                                     | Punkte  | Hinweise                                                            |
-| --------------------------------------------- | ------- | ------------------------------------------------------------------- |
+| Kriterium                                     | Punkte  | Hinweise                                                           |
+| --------------------------------------------- | ------- | ------------------------------------------------------------------ |
 | `calcRectangleArea()` korrekt implementiert   | 4.0     | Parameter mit `$`, Multiplikation durchgeführt, `return` verwendet |
-| `celsiusToFahrenheit()` korrekt implementiert | 3.5     | Formel $(c \times 9/5) + 32$ richtig umgesetzt, `return` korrekt    |
-| **Summe Aufgabe B**                           | **7.5** |                                                                     |
+| `celsiusToFahrenheit()` korrekt implementiert | 3.5     | Formel $(c \times 9/5) + 32$ richtig umgesetzt, `return` korrekt   |
+| **Summe Aufgabe B**                           | **7.5** |                                                                    |
 
 ### Häufige Fehler
 
@@ -125,12 +125,12 @@ function classifyScore($score) {
 
 ### Punktbewertung
 
-| Kriterium                         | Punkte  | Hinweise                                                   |
-| --------------------------------- | ------- | ---------------------------------------------------------- | --- | ---------------------- |
-| Bereichs-Check (< 0 oder > 100)   | 2.0     | Ungültige Werte werden mit `                              |     | ` (OR) korrekt erkannt |
+| Kriterium                        | Punkte  | Hinweise                                                  |
+| -------------------------------- | ------- | --------------------------------------------------------- | --- | ---------------------- |
+| Bereichs-Check (< 0 oder > 100)  | 2.0     | Ungültige Werte werden mit `                              |     | ` (OR) korrekt erkannt |
 | Fallunterscheidungen vollständig | 2.5     | Alle vier Fälle abgedeckt, `if-elseif` oder verschachtelt |
-| Rückgabewerte korrekt            | 1.5     | Strings entsprechen genau der Vorgabe                      |
-| **Summe Aufgabe C**               | **6.0** |                                                            |
+| Rückgabewerte korrekt            | 1.5     | Strings entsprechen genau der Vorgabe                     |
+| **Summe Aufgabe C**              | **6.0** |                                                           |
 
 ### Häufige Fehler
 
@@ -176,13 +176,13 @@ function analyzeNumbers($numbers) {
 
 ### Punktbewertung
 
-| Kriterium              | Punkte  | Hinweise                                                     |
-| ---------------------- | ------- | ------------------------------------------------------------ |
-| Schleife über Array   | 1.5     | `foreach` oder `for` mit Index, iteriert über alle Elemente |
-| Gerade Zahlen zählen  | 3.0     | Modulo `%` oder `==` 0 korrekt, Counter wird erhöht          |
-| Summe positiver Zahlen | 1.5     | Vergleich `> 0` korrekt, Summe wird nach += aktualisiert     |
-| Rückgabeformat        | 0.5     | Array mit korrekten Schlüssel-Wert-Paaren                   |
-| **Summe Aufgabe D**    | **6.5** |                                                              |
+| Kriterium              | Punkte  | Hinweise                                                    |
+| ---------------------- | ------- | ----------------------------------------------------------- |
+| Schleife über Array    | 1.5     | `foreach` oder `for` mit Index, iteriert über alle Elemente |
+| Gerade Zahlen zählen   | 3.0     | Modulo `%` oder `==` 0 korrekt, Counter wird erhöht         |
+| Summe positiver Zahlen | 1.5     | Vergleich `> 0` korrekt, Summe wird nach += aktualisiert    |
+| Rückgabeformat         | 0.5     | Array mit korrekten Schlüssel-Wert-Paaren                   |
+| **Summe Aufgabe D**    | **6.5** |                                                             |
 
 **Struktogramm (Platzhalter)**
 

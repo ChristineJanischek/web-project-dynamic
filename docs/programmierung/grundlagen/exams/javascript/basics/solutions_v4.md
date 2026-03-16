@@ -36,18 +36,18 @@ console.log(`Das Buch "${buch}" hat ${seiten} Seiten.`);
 
 ### Punktbewertung
 
-| Kriterium                                | Punkte  | Hinweise                                                                         |
-| ---------------------------------------- | ------- | -------------------------------------------------------------------------------- |
-| Variablen deklarieren und initialisieren | 2.0     | `const` oder `let` verwendet, Werte korrekt gesetzt                              |
+| Kriterium                                | Punkte  | Hinweise                                                                        |
+| ---------------------------------------- | ------- | ------------------------------------------------------------------------------- |
+| Variablen deklarieren und initialisieren | 2.0     | `const` oder `let` verwendet, Werte korrekt gesetzt                             |
 | Eingabe einlesen oder simulieren         | 1.0     | Eingabe über `prompt()`, `readline`, oder direkte Wertzuweisung                 |
 | Ausgabeformat exakt                      | 2.0     | String-Format mit beiden Variablen interpoliert, Anführungszeichen um Buchtitel |
-| **Summe Aufgabe A**                      | **5.0** |                                                                                  |
+| **Summe Aufgabe A**                      | **5.0** |                                                                                 |
 
 ### Häufige Fehler
+
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
-
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
 
@@ -84,10 +84,10 @@ function milesToKm(miles) {
 | **Summe Aufgabe B**   | **7.5** |                                                |
 
 ### Häufige Fehler
+
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
 - Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
-
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
 
@@ -123,19 +123,19 @@ function classifySpeed(kmh) {
 
 ### Punktbewertung
 
-| Kriterium               | Punkte  | Hinweise                                    |
-| ----------------------- | ------- | ------------------------------------------- |
-| Funktion Signatur       | 0.5     | Name und Parameter korrekt                  |
-| Validierung (ungueltig) | 2.0     | `kmh < 0` richtig abgefangen                |
-| Fallunterscheidungen    | 3.0     | Alle drei Fälle (langsam, normal, schnell) |
-| Rückgabewerte korrekt  | 0.5     | Strings exakt wie verlangt                  |
-| **Summe Aufgabe C**     | **6.0** |                                             |
+| Kriterium              | Punkte  | Hinweise                                   |
+| ---------------------- | ------- | ------------------------------------------ |
+| Funktion Signatur      | 0.5     | Name und Parameter korrekt                 |
+| Validierung (ungültig) | 2.0     | `kmh < 0` richtig abgefangen               |
+| Fallunterscheidungen   | 3.0     | Alle drei Fälle (langsam, normal, schnell) |
+| Rückgabewerte korrekt  | 0.5     | Strings exakt wie verlangt                 |
+| **Summe Aufgabe C**    | **6.0** |                                            |
 
 ### Häufige Fehler
+
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
 - Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
 - Ein oder mehrere Fälle werden nicht abgedeckt
-
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
 
@@ -190,8 +190,8 @@ function analyzeNumbers(numbers) {
 | Funktion Signatur   | 0.5     | Name und Parameter korrekt                                        |
 | Schleife            | 1.0     | `for...of`, `forEach`, oder klassische `for`-Schleife             |
 | Minimum finden      | 3.0     | Vergleich mit Initialisierung (z.B. `numbers[0]` oder `Infinity`) |
-| Positive zählen    | 1.5     | `if (num > 0)` mit Zähler-Inkrement                               |
-| Rückgabeformat     | 0.5     | Objekt mit korrekten Feldnamen/Werten                             |
+| Positive zählen     | 1.5     | `if (num > 0)` mit Zähler-Inkrement                               |
+| Rückgabeformat      | 0.5     | Objekt mit korrekten Feldnamen/Werten                             |
 | **Summe Aufgabe D** | **6.5** |                                                                   |
 
 **Struktogramm (Platzhalter)**
@@ -199,6 +199,7 @@ function analyzeNumbers(numbers) {
 ![Struktogramm Aufgabe D](structogramme/JavaScript_Grundlagen_Basics_v4_Aufgabe_D.svg)
 
 ### Häufige Fehler
+
 - Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
 - Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
 - Rückgabe enthält falsche Schlüssel oder unvollständige Werte

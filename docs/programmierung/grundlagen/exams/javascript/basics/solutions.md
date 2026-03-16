@@ -36,18 +36,18 @@ console.log(`Hallo ${vorname}, du bist ${alter} Jahre alt.`);
 
 ### Punktbewertung
 
-| Kriterium                                | Punkte  | Hinweise                                                         |
-| ---------------------------------------- | ------- | ---------------------------------------------------------------- |
-| Variablen deklarieren und initialisieren | 2.0     | `const` oder `let` verwendet, Werte korrekt gesetzt              |
+| Kriterium                                | Punkte  | Hinweise                                                        |
+| ---------------------------------------- | ------- | --------------------------------------------------------------- |
+| Variablen deklarieren und initialisieren | 2.0     | `const` oder `let` verwendet, Werte korrekt gesetzt             |
 | Eingabe einlesen oder simulieren         | 1.0     | Eingabe über `prompt()`, `readline`, oder direkte Wertzuweisung |
-| Ausgabeformat exakt                      | 2.0     | String-Format mit beiden Variablen interpoliert                  |
-| **Summe Aufgabe A**                      | **5.0** |                                                                  |
+| Ausgabeformat exakt                      | 2.0     | String-Format mit beiden Variablen interpoliert                 |
+| **Summe Aufgabe A**                      | **5.0** |                                                                 |
 
 ### Häufige Fehler
+
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
-
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
 
@@ -75,17 +75,17 @@ function celsiusToFahrenheit(c) {
 
 ### Punktbewertung
 
-| Kriterium                                     | Punkte  | Hinweise                                                             |
-| --------------------------------------------- | ------- | -------------------------------------------------------------------- |
+| Kriterium                                     | Punkte  | Hinweise                                                           |
+| --------------------------------------------- | ------- | ------------------------------------------------------------------ |
 | `calcRectangleArea()` korrekt implementiert   | 4.0     | Parameter entgegen, Multiplikation durchgeführt, korrekte Rückgabe |
-| `celsiusToFahrenheit()` korrekt implementiert | 3.5     | Formel $(c \times 9/5) + 32$ richtig umgesetzt, Rückgabe korrekt    |
-| **Summe Aufgabe B**                           | **7.5** |                                                                      |
+| `celsiusToFahrenheit()` korrekt implementiert | 3.5     | Formel $(c \times 9/5) + 32$ richtig umgesetzt, Rückgabe korrekt   |
+| **Summe Aufgabe B**                           | **7.5** |                                                                    |
 
 ### Häufige Fehler
+
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
 - Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
-
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
 
@@ -122,18 +122,18 @@ function classifyScore(score) {
 
 ### Punktbewertung
 
-| Kriterium                         | Punkte  | Hinweise                                                                     |
-| --------------------------------- | ------- | ---------------------------------------------------------------------------- |
-| Bereichs-Check (< 0 oder > 100)   | 2.0     | Ungültige Werte werden korrekt erkannt                                      |
-| Fallunterscheidungen vollständig | 2.5     | Alle vier Fälle (ungueltig, nicht bestanden, bestanden, sehr gut) abgedeckt |
-| Rückgabewerte korrekt            | 1.5     | Strings entsprechen genau der Vorgabe                                        |
-| **Summe Aufgabe C**               | **6.0** |                                                                              |
+| Kriterium                        | Punkte  | Hinweise                                                                   |
+| -------------------------------- | ------- | -------------------------------------------------------------------------- |
+| Bereichs-Check (< 0 oder > 100)  | 2.0     | Ungültige Werte werden korrekt erkannt                                     |
+| Fallunterscheidungen vollständig | 2.5     | Alle vier Fälle (ungültig, nicht bestanden, bestanden, sehr gut) abgedeckt |
+| Rückgabewerte korrekt            | 1.5     | Strings entsprechen genau der Vorgabe                                      |
+| **Summe Aufgabe C**              | **6.0** |                                                                            |
 
 ### Häufige Fehler
+
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
 - Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
 - Ein oder mehrere Fälle werden nicht abgedeckt
-
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
 
@@ -172,19 +172,20 @@ function analyzeNumbers(numbers) {
 
 ### Punktbewertung
 
-| Kriterium              | Punkte  | Hinweise                                                     |
-| ---------------------- | ------- | ------------------------------------------------------------ |
-| Schleife über Array   | 1.5     | `for`, `forEach` oder aehnlich, iteriert über alle Elemente |
-| Gerade Zahlen zählen  | 3.0     | Modulo-Operator korrekt verwendet, Counter wird erhöht       |
-| Summe positiver Zahlen | 1.5     | Vergleich `> 0` korrekt, Summe wird aktualisiert             |
-| Rückgabeformat        | 0.5     | Objekt oder Array mit korrekten Feldnamen/Werten             |
-| **Summe Aufgabe D**    | **6.5** |                                                              |
+| Kriterium              | Punkte  | Hinweise                                                    |
+| ---------------------- | ------- | ----------------------------------------------------------- |
+| Schleife über Array    | 1.5     | `for`, `forEach` oder aehnlich, iteriert über alle Elemente |
+| Gerade Zahlen zählen   | 3.0     | Modulo-Operator korrekt verwendet, Counter wird erhöht      |
+| Summe positiver Zahlen | 1.5     | Vergleich `> 0` korrekt, Summe wird aktualisiert            |
+| Rückgabeformat         | 0.5     | Objekt oder Array mit korrekten Feldnamen/Werten            |
+| **Summe Aufgabe D**    | **6.5** |                                                             |
 
 **Struktogramm (Platzhalter)**
 
 ![Struktogramm Aufgabe D](structogramme/JavaScript_Grundlagen_Basics_Aufgabe_D.svg)
 
 ### Häufige Fehler
+
 - Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
 - Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
 - Rückgabe enthält falsche Schlüssel oder unvollständige Werte

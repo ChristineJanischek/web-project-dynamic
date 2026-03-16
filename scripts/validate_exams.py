@@ -9,6 +9,7 @@ Prüft die Konsistenz und Vollständigkeit des Exam-Systems:
 - Punktesummen (wenn in Dateien vorhanden)
 - Metadata-Validierung
 - Duplikatserkennung für Aufgabenstellungen
+- Unicode-/Umlaut-Korrektheit (ae/oe/ue/ss → ä/ö/ü/ß)
 - Optional: Aufbau einer Wissensdatenbank mit Aufgaben-Fingerprints
 
 Usage:
@@ -108,6 +109,48 @@ def parse_points(value: str) -> float:
     if not match:
         return 0.0
     return float(match.group(1))
+
+
+# Regex: ASCII-Umlautmuster zwischen zwei Konsonanten (sehr hohe Treffsicherheit in deutschen Texten)
+_CONSONANTS = r"bcdfghjklmnpqrstvwxyzBCDFGHJKLMNPQRSTVWXYZ"
+_UMLAUT_SUBSTITUTIONS: List[Tuple[re.Pattern, str]] = [
+    (re.compile(rf"(?<=[{_CONSONANTS}])(ae|Ae|AE)(?=[{_CONSONANTS}])"), "ae → ä"),
+    (re.compile(rf"(?<=[{_CONSONANTS}])(oe|Oe|OE)(?=[{_CONSONANTS}])"), "oe → ö"),
+    (re.compile(rf"(?<=[{_CONSONANTS}])(ue|Ue|UE)(?=[{_CONSONANTS}])"), "ue → ü"),
+    # 'ss' nur am Wortende oder vor Vokal (Gruss, Schluss → Gruß, Schluss) – als Warnung
+]
+
+
+def check_unicode_umlauts(file_path: Path) -> List[str]:
+    """Prüft ob Markdown-Datei ASCII-kodierte Umlaute enthält (ae/oe/ue statt ä/ö/ü).
+
+    Ignoriert Code-Blöcke (```...```) und Inline-Code (`...`).
+    Gibt eine Liste von Fehlermeldungen zurück.
+    """
+    errors: List[str] = []
+    try:
+        raw = file_path.read_text(encoding="utf-8")
+    except Exception as exc:  # pragma: no cover
+        return [f"Datei konnte nicht gelesen werden: {exc}"]
+
+    # Code-Blöcke und Inline-Code maskieren – Newlines BEIBEHALTEN, damit Zeilennummern stimmen
+    def _mask(m: re.Match) -> str:
+        return re.sub(r"[^\n]", " ", m.group())
+
+    cleaned = re.sub(r"```[\s\S]*?```", _mask, raw)
+    cleaned = re.sub(r"`[^`\n]+`", _mask, cleaned)
+
+    for line_no, line in enumerate(cleaned.splitlines(), 1):
+        for pattern, hint in _UMLAUT_SUBSTITUTIONS:
+            match = pattern.search(line)
+            if match:
+                preview = raw.splitlines()[line_no - 1].strip()[:100]
+                errors.append(
+                    f"Zeile {line_no}: ASCII-Umlaut ({hint}) in: {preview}"
+                )
+                break  # ein Treffer pro Zeile reicht
+    return errors
+
 
 def validate_schema_node(data: object, schema: Dict[str, object], path: str = "$") -> List[str]:
     """Validiert ein JSON-Objekt gegen ein einfaches JSON-Schema-Subset."""
@@ -210,7 +253,7 @@ def validate_exam_files(language: str, theme: str) -> Dict[str, List[str]]:
 
     if len(solution_variants) < MIN_REQUIRED_VARIANTS:
         errors.append(
-            f"Zu wenige Loesungs-Varianten: {len(solution_variants)} < {MIN_REQUIRED_VARIANTS}"
+            f"Zu wenige Lösungs-Varianten: {len(solution_variants)} < {MIN_REQUIRED_VARIANTS}"
         )
 
     exam_variant_set = set(exam_variants.keys())
@@ -478,7 +521,7 @@ def build_solution_rubrics_knowledge_base(languages: List[str]) -> Dict[str, obj
                         continue
 
                     points_block = extract_block_after_heading(section, r"^###\s+Punktbewertung\s*$|^####\s+Punktbewertung\s*$")
-                    errors_block = extract_block_after_heading(section, r"^###\s+Haeufige Fehler\s*$|^####\s+Haeufige Fehler\s*$")
+                    errors_block = extract_block_after_heading(section, r"^###\s+Häufige Fehler\s*$|^####\s+Häufige Fehler\s*$")
                     criteria = enrich_criteria_with_ids(
                         parse_point_criteria(points_block),
                         language,
@@ -557,12 +600,12 @@ def validate_solution_guidance(language: str, theme: str) -> Dict[str, List[str]
                 continue
 
             has_points = bool(re.search(r"^###\s+Punktbewertung\s*$|^####\s+Punktbewertung\s*$", section, flags=re.MULTILINE))
-            has_errors = bool(re.search(r"^###\s+Haeufige Fehler\s*$|^####\s+Haeufige Fehler\s*$", section, flags=re.MULTILINE))
+            has_errors = bool(re.search(r"^###\s+Häufige Fehler\s*$|^####\s+Häufige Fehler\s*$", section, flags=re.MULTILINE))
 
             if not has_points:
                 errors.append(f"{label}: Aufgabe {task_letter} ohne Punktbewertung")
             if not has_errors:
-                errors.append(f"{label}: Aufgabe {task_letter} ohne Haeufige Fehler")
+                errors.append(f"{label}: Aufgabe {task_letter} ohne Häufige Fehler")
 
             if has_points:
                 points_block = extract_block_after_heading(section, r"^###\s+Punktbewertung\s*$|^####\s+Punktbewertung\s*$")
@@ -577,10 +620,10 @@ def validate_solution_guidance(language: str, theme: str) -> Dict[str, List[str]
                     )
 
             if has_errors:
-                errors_block = extract_block_after_heading(section, r"^###\s+Haeufige Fehler\s*$|^####\s+Haeufige Fehler\s*$")
+                errors_block = extract_block_after_heading(section, r"^###\s+Häufige Fehler\s*$|^####\s+Häufige Fehler\s*$")
                 common_errors = parse_common_errors(errors_block)
                 if not common_errors:
-                    warnings.append(f"{label}: Aufgabe {task_letter} hat Haeufige Fehler ohne Eintraege")
+                    warnings.append(f"{label}: Aufgabe {task_letter} hat Häufige Fehler ohne Einträge")
 
     return {"errors": errors, "warnings": warnings}
 
@@ -852,7 +895,7 @@ def main():
                     print_warning(f"  {warning}")
                 all_warnings.append(f"{language}/{theme}: {warning}")
 
-            # Pruefe Loesungs-Qualitaet (Punktbewertung + Haeufige Fehler)
+            # Prüfe Lösungs-Qualität (Punktbewertung + Häufige Fehler)
             guidance_result = validate_solution_guidance(language, theme)
             for error in guidance_result["errors"]:
                 print_error(f"  {error}")
@@ -873,6 +916,15 @@ def main():
                 if args.verbose:
                     print_warning(f"  {warning}")
                 all_warnings.append(f"{language}/{theme}: {warning}")
+
+            # Pruefe Unicode-Umlaute (ae/oe/ue → ä/ö/ü)
+            theme_dir = EXAMS_DIR / language / theme
+            for md_file in sorted(theme_dir.glob("*.md")):
+                umlaut_errors = check_unicode_umlauts(md_file)
+                for error in umlaut_errors:
+                    msg = f"{md_file.relative_to(EXAMS_DIR)}: {error}"
+                    print_error(f"  {msg}")
+                    all_errors.append(msg)
 
     if args.write_knowledge_base:
         knowledge_base_path = write_variation_knowledge_base(languages)
