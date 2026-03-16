@@ -423,6 +423,11 @@ Verbindliche CI-Prüfungen umfassen zusätzlich:
 - Namenskonventionen und Strukturvalidierung
 - Drift-Prüfung der VS-Code-Extension-Empfehlungen gegen zentrales Manifest
 - Accessibility- und Lighthouse-Qualitätschecks für Web-Projekte
+- Automatisierte Synchronisation der Aufgabenstellungen in Musterlösungen:
+  - Aufgabenstellungen werden ausschließlich in den Aufgaben-Dateien (exam\*.md) gepflegt
+  - Ein zentrales Skript übernimmt die Aufgabenstellungen automatisiert in die zugehörigen Musterlösungen (solutions\*.md)
+  - Bei jeder Änderung an Aufgabenstellungen wird die Synchronisation verpflichtend ausgeführt (z.B. als Pre-Commit-Hook oder CI-Check)
+  - Redundanzen und Inkonsistenzen zwischen Aufgaben und Lösungen werden so dauerhaft vermieden
 - Smoke-Test-Checkliste für lokale Laufzeitprofile (statisch, PHP, Python)
 
 ## Unit-Tests mit JUnit 5
@@ -495,31 +500,11 @@ Kursaufgaben werden als **GitHub Template-Repositories** bereitgestellt. Jedes T
 - Docker-Setup für lokale und containerisierte Ausführung
 - vorkonfigurierte Git Hooks und CI-Workflows
 
-**Versionierte Lernbranches:**
-
-Jedes Template-Repository enthält Branches, die den Lernpfad abbilden:
-
-| Branch        | Version   | Beschreibung                                |
-| ------------- | --------- | ------------------------------------------- |
-| `main`        | Version 0 | Schüler-Template (Einstiegspunkt)           |
-| `version-1-*` | Version 1 | Musterlösung MVC (Model + Controller + GUI) |
-| `version-2-*` | Version 2 | Methoden, Kontrollstrukturen, Algorithmen   |
-| `version-3-*` | Version 3 | Eingabevalidierung & Fehlerbehandlung       |
-| `version-4-*` | Version 4 | Assoziationen, Personen- & Messungsmodell   |
-
-Schüler starten im `main`-Branch (Version 0) und arbeiten sich schrittweise hoch.
-
-Template-Update-Strategie:
-
-- Updates aus dem Template müssen selektiv übernehmbar sein (z. B. Dokumentation, Workflows, neue Versionen)
-- Eigene Schülerarbeiten in `version*/aufgabe/` dürfen durch Template-Sync nicht automatisch überschrieben werden
-- Update-Prozess soll semi-automatisch mit Benachrichtigung und manueller Freigabe erfolgen
-
 ## GitHub Classroom Integration
 
 Das System ist explizit für die Nutzung mit **GitHub Classroom** konzipiert:
 
-- Jede Aufgabe wird als Template-Repository auf GitHub bereitgestellt
+- Jede Aufgabe wird als Template-Repository (z.B. Versionierte Lernbranches) auf GitHub bereitgestellt
 - GitHub Classroom verteilt das Repository automatisch an Schüler (eigene Kopie je Schüler)
 - Autograding erfolgt über `mvn test` (JUnit 5 Tests liefern automatisierte Bewertungsgrundlage)
 - Lehrer sehen alle Abgaben zentral im GitHub Classroom Dashboard
