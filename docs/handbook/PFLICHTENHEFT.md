@@ -428,6 +428,11 @@ Verbindliche CI-Prüfungen umfassen zusätzlich:
   - Ein zentrales Skript übernimmt die Aufgabenstellungen automatisiert in die zugehörigen Musterlösungen (solutions\*.md)
   - Bei jeder Änderung an Aufgabenstellungen wird die Synchronisation verpflichtend ausgeführt (z.B. als Pre-Commit-Hook oder CI-Check)
   - Redundanzen und Inkonsistenzen zwischen Aufgaben und Lösungen werden so dauerhaft vermieden
+- Umlaut- und Sonderzeichen-Prüfung für Aufgaben- und Lösungsdateien:
+  - Alle Markdown-Dateien in `docs/programmierung/grundlagen/exams/` müssen korrekte Unicode-Zeichen verwenden (ä, ö, ü, ß statt ae, oe, ue, ss)
+  - Ein zentrales Skript (`scripts/check_unicode.py` o.ä.) prüft Dateien auf ASCII-kodierte Umlaute und meldet Verstöße
+  - Die Prüfung läuft als Pre-Commit-Hook und als verbindlicher CI-Check
+  - Verstöße blockieren den Commit bzw. schlagen den CI-Workflow fehl
 - Smoke-Test-Checkliste für lokale Laufzeitprofile (statisch, PHP, Python)
 
 ## Unit-Tests mit JUnit 5
@@ -446,16 +451,18 @@ Anforderungen:
 
 Zur lokalen Qualitätssicherung sind folgende Git Hooks einzurichten:
 
-| Hook          | Zweck                                          |
-| ------------- | ---------------------------------------------- |
-| `pre-push`    | Führt `mvn test` aus; blockiert bei Fehler     |
-| `post-commit` | Auto-Push nach erfolgreichem Commit (optional) |
+| Hook          | Zweck                                                                |
+| ------------- | -------------------------------------------------------------------- |
+| `pre-commit`  | Prüft Umlaute/Unicode in Exam-Dateien; blockiert bei ASCII-Kodierung |
+| `pre-push`    | Führt `mvn test` aus; blockiert bei Fehler                           |
+| `post-commit` | Auto-Push nach erfolgreichem Commit (optional)                       |
 
 Die Hooks sind als Teil des Template-Repositories bereitzustellen und in der Onboarding-Dokumentation zu beschreiben.
 
 Lokale Qualitätssicherung:
 
 - Pre-Commit-Hooks müssen für prüfungsrelevante Inhalte aktivierbar sein
+- Umlaut-/Unicode-Check muss als Pre-Commit-Hook ohne manuelle Aktivierung greifen
 - Wissensdatenbank/Fingerprints für Aufgabenvarianten müssen automatisiert aktualisierbar sein
 - Setup-Checks für Live-Test-Umgebung müssen ohne manuelle Nacharbeit reproduzierbar sein
 
