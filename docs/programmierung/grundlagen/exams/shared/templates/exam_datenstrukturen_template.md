@@ -22,21 +22,21 @@
 
 **Hinweise**
 
-- Loese die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
-- Falls keine echte Eingabe moeglich ist, simuliere Eingaben mit Variablen.
+- Löse die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
+- Falls keine echte Eingabe möglich ist, simuliere Eingaben mit Variablen.
 - Schreibe klar, kurz und ohne Redundanz. Keine externen Bibliotheken.
 
-**Punkteuebersicht (25 Punkte gesamt)**
+**Punkteübersicht (25 Punkte gesamt)**
 
 - A Arrays + Listen: Zugriff, Modifikation: 5.0 Punkte
 - B Datenstruktur-Operationen (Laenge, Einfuegen, Loeschen): 7.5 Punkte
 - C Objekte / Dictionaries: Zugriff und Modifikation: 6.0 Punkte
 - D Komplexe Datenstrukturen (Arrays von Objekten): 6.5 Punkte
 
-**Bewertungsschluessel (linear)**
+**Bewertungsschlüssel (linear)**
 
 Punkte werden linear in Prozent umgerechnet: $prozent = (punkte / 25) * 100$.
-Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
+Teilpunkte sind zulässig (Rundung in 0.5-Schritten).
 
 ---
 
@@ -44,8 +44,8 @@ Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
 
 Schreibe eine Funktion `PROCESS_LIST(items)`, die:
 
-1. Das erste Element ausliest und zurueckgibt. (2.0)
-2. Das letzte Element ausliest und zurueckgibt. (2.0)
+1. Das erste Element ausliest und zurückgibt. (2.0)
+2. Das letzte Element ausliest und zurückgibt. (2.0)
 3. Ein Element an Index 1 einfuegt. (1.0)
 
 **Beispiel:**
@@ -64,10 +64,10 @@ Nach Einfuegen von 99 an Index 1: [10, 99, 20, 30]
 
 ## Aufgabe B - Array-Operationen (7.5 Punkte)
 
-Schreibe Funktionen fuer folgende Operationen:
+Schreibe Funktionen für folgende Operationen:
 
-1. `GET_LENGTH(arr)` gibt die Laenge zurueck. (2.0)
-2. `APPEND(arr, value)` haengt ein Element an und gibt das Array zurueck. (2.5)
+1. `GET_LENGTH(arr)` gibt die Laenge zurück. (2.0)
+2. `APPEND(arr, value)` haengt ein Element an und gibt das Array zurück. (2.5)
 3. `REMOVE_AT(arr, index)` entfernt ein Element an `index`. (3.0)
 
 **Beispiele:**
@@ -86,7 +86,7 @@ Schreibe Funktionen fuer folgende Operationen:
 
 Schreibe eine Funktion `CREATE_PERSON(name, age, city)`, die:
 
-1. Ein Objekt/Dictionary mit den Feldern erstellt und zurueckgibt. (3.0)
+1. Ein Objekt/Dictionary mit den Feldern erstellt und zurückgibt. (3.0)
 2. Ein Feld ausliest (z. B. `person['name']`). (1.5)
 3. Ein Feld aendert (z. B. `person['age'] = 20`). (1.5)
 
@@ -109,12 +109,12 @@ Schreibe eine Funktion `CREATE_TEAM(members_list)`, die:
 
 - Ein Array von Objekten/Dictionaries erstellt
 - Jede Person hat: `name`, `role`, `salary`
-- Rueckgabe: Array mit allen Personen
+- Rückgabe: Array mit allen Personen
 
 Dann schreibe eine Funktion `GET_SALARIES(team)`, die:
 
 - Alle Gehaelter aus dem Team-Array sammelt
-- Eine Liste/Array aller Gehaelter zurueckgibt
+- Eine Liste/Array aller Gehaelter zurückgibt
 
 **Beispiel:**
 

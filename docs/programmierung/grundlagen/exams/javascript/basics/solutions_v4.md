@@ -1,13 +1,13 @@
 # Grundlagen der Programmierung - Basics (JavaScript) - Variante 4
 
-**Dokumenttyp:** Aufgabenstellung + Musterloesung
+**Dokumenttyp:** Aufgabenstellung + Musterlösung
 
 **Punkte gesamt:** 25
 
-**Hinweis fuer Lehrkraefte**
+**Hinweis für Lehrkräfte**
 
 - Teilpunkte in 0.5-Schritten vergeben.
-- Loesungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
+- Lösungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
 
 ---
 
@@ -25,7 +25,7 @@ Anforderungen:
 - Eingabe einlesen oder simulieren (1.0)
 - Ausgabeformat exakt wie oben (2.0)
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 const buch = "1984";
@@ -39,11 +39,11 @@ console.log(`Das Buch "${buch}" hat ${seiten} Seiten.`);
 | Kriterium                                | Punkte  | Hinweise                                                                         |
 | ---------------------------------------- | ------- | -------------------------------------------------------------------------------- |
 | Variablen deklarieren und initialisieren | 2.0     | `const` oder `let` verwendet, Werte korrekt gesetzt                              |
-| Eingabe einlesen oder simulieren         | 1.0     | Eingabe ueber `prompt()`, `readline`, oder direkte Wertzuweisung                 |
-| Ausgabeformat exakt                      | 2.0     | String-Format mit beiden Variablen interpoliert, Anfuehrungszeichen um Buchtitel |
+| Eingabe einlesen oder simulieren         | 1.0     | Eingabe über `prompt()`, `readline`, oder direkte Wertzuweisung                 |
+| Ausgabeformat exakt                      | 2.0     | String-Format mit beiden Variablen interpoliert, Anführungszeichen um Buchtitel |
 | **Summe Aufgabe A**                      | **5.0** |                                                                                  |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
@@ -53,7 +53,7 @@ console.log(`Das Buch "${buch}" hat ${seiten} Seiten.`);
 
 **Aufgabenstellung**
 
-1. Schreibe eine Funktion `calcTriangleArea(base, height)`, die die Flaeche eines Dreiecks berechnet (Formel: base \* height / 2). (4.0)
+1. Schreibe eine Funktion `calcTriangleArea(base, height)`, die die Fläche eines Dreiecks berechnet (Formel: base \* height / 2). (4.0)
 2. Schreibe eine Funktion `milesToKm(miles)`, die Meilen in Kilometer umrechnet (Formel: miles \* 1.609). (3.5)
 
 **Beispiele:**
@@ -61,7 +61,7 @@ console.log(`Das Buch "${buch}" hat ${seiten} Seiten.`);
 - `calcTriangleArea(6, 4)` -> `12`
 - `milesToKm(10)` -> `16.09`
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 function calcTriangleArea(base, height) {
@@ -83,9 +83,9 @@ function milesToKm(miles) {
 | Funktion 2 Berechnung | 3.0     | Formel `miles * 1.609` korrekt                 |
 | **Summe Aufgabe B**   | **7.5** |                                                |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
-- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
 
 
@@ -105,7 +105,7 @@ Schreibe eine Funktion `classifySpeed(kmh)`, die eine Geschwindigkeitsklassifizi
 - `classifySpeed(25)` -> `langsam`
 - `classifySpeed(120)` -> `schnell`
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 function classifySpeed(kmh) {
@@ -127,14 +127,14 @@ function classifySpeed(kmh) {
 | ----------------------- | ------- | ------------------------------------------- |
 | Funktion Signatur       | 0.5     | Name und Parameter korrekt                  |
 | Validierung (ungueltig) | 2.0     | `kmh < 0` richtig abgefangen                |
-| Fallunterscheidungen    | 3.0     | Alle drei Faelle (langsam, normal, schnell) |
-| Rueckgabewerte korrekt  | 0.5     | Strings exakt wie verlangt                  |
+| Fallunterscheidungen    | 3.0     | Alle drei Fälle (langsam, normal, schnell) |
+| Rückgabewerte korrekt  | 0.5     | Strings exakt wie verlangt                  |
 | **Summe Aufgabe C**     | **6.0** |                                             |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
-- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
-- Ein oder mehrere Faelle werden nicht abgedeckt
+- Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Fälle werden nicht abgedeckt
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
@@ -144,15 +144,15 @@ function classifySpeed(kmh) {
 Schreibe eine Funktion `analyzeNumbers(numbers)`, die:
 
 - das Minimum der Zahlen findet (3.0)
-- die Anzahl positiver Zahlen zaehlt (3.5)
+- die Anzahl positiver Zahlen zählt (3.5)
 
-Rueckgabeformat als Objekt: `{ minimum: X, positiveCount: Y }`
+Rückgabeformat als Objekt: `{ minimum: X, positiveCount: Y }`
 
 **Beispiel:**
 
 `analyzeNumbers([5, -3, 2, 0, -7])` -> `{ minimum: -7, positiveCount: 2 }`
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 function analyzeNumbers(numbers) {
@@ -172,7 +172,7 @@ function analyzeNumbers(numbers) {
 }
 ```
 
-**Alternative Loesung (mit Math.min)**
+**Alternative Lösung (mit Math.min)**
 
 ```javascript
 function analyzeNumbers(numbers) {
@@ -190,15 +190,15 @@ function analyzeNumbers(numbers) {
 | Funktion Signatur   | 0.5     | Name und Parameter korrekt                                        |
 | Schleife            | 1.0     | `for...of`, `forEach`, oder klassische `for`-Schleife             |
 | Minimum finden      | 3.0     | Vergleich mit Initialisierung (z.B. `numbers[0]` oder `Infinity`) |
-| Positive zaehlen    | 1.5     | `if (num > 0)` mit Zähler-Inkrement                               |
-| Rueckgabeformat     | 0.5     | Objekt mit korrekten Feldnamen/Werten                             |
+| Positive zählen    | 1.5     | `if (num > 0)` mit Zähler-Inkrement                               |
+| Rückgabeformat     | 0.5     | Objekt mit korrekten Feldnamen/Werten                             |
 | **Summe Aufgabe D** | **6.5** |                                                                   |
 
 **Struktogramm (Platzhalter)**
 
 ![Struktogramm Aufgabe D](structogramme/JavaScript_Grundlagen_Basics_v4_Aufgabe_D.svg)
 
-### Haeufige Fehler
-- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
-- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
-- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte
+### Häufige Fehler
+- Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rückgabe enthält falsche Schlüssel oder unvollständige Werte

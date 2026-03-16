@@ -8,27 +8,27 @@
 
 **Hinweise**
 
-- Loese die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
-- Falls keine echte Eingabe moeglich ist, simuliere Eingaben mit Variablen.
+- Löse die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
+- Falls keine echte Eingabe möglich ist, simuliere Eingaben mit Variablen.
 - Schreibe klar, kurz und ohne Redundanz. Keine externen Bibliotheken.
 
-**Punkteuebersicht (25 Punkte gesamt)**
+**Punkteübersicht (25 Punkte gesamt)**
 
 - A Variablen + Ein/Ausgabe: 5.0 Punkte
 - B Funktionen (kleine Berechnungen): 7.5 Punkte
 - C Funktionen + Fallunterscheidungen: 6.0 Punkte
 - D Funktionen + Schleifen + Datenstrukturen: 6.5 Punkte
 
-**Bewertungsschluessel (linear)**
+**Bewertungsschlüssel (linear)**
 
 Punkte werden linear in Prozent umgerechnet: $prozent = (punkte / 25) * 100$.
-Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
+Teilpunkte sind zulässig (Rundung in 0.5-Schritten).
 
 ---
 
 ## Aufgabe A - Variablen + Ein/Ausgabe (5.0 Punkte)
 
-Schreibe ein kleines Programm, das `vorname` und `alter` einliest (oder setzt) und eine Begruessung ausgibt.
+Schreibe ein kleines Programm, das `vorname` und `alter` einliest (oder setzt) und eine Begrüßung ausgibt.
 
 **Beispiel-Ausgabe:** `Hallo Lena, du bist 16 Jahre alt.`
 
@@ -46,7 +46,7 @@ Anforderungen:
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
 
-1. Schreibe eine Funktion `calcRectangleArea($width, $height)`, die die Flaeche berechnet. (4.0)
+1. Schreibe eine Funktion `calcRectangleArea($width, $height)`, die die Fläche berechnet. (4.0)
 2. Schreibe eine Funktion `celsiusToFahrenheit($c)`, die Celsius in Fahrenheit umrechnet. (3.5)
 
 **Beispiele:**
@@ -84,10 +84,10 @@ Schreibe eine Funktion `classifyScore($score)`, die eine Note als Text liefert:
 
 Schreibe eine Funktion `analyzeNumbers($numbers)`, die:
 
-- die Anzahl gerader Zahlen zaehlt (3.0)
+- die Anzahl gerader Zahlen zählt (3.0)
 - die Summe aller positiven Zahlen berechnet (3.5)
 
-Rueckgabeformat als Array: `['evenCount' => X, 'positiveSum' => Y]`
+Rückgabeformat als Array: `['evenCount' => X, 'positiveSum' => Y]`
 
 **Beispiel:**
 

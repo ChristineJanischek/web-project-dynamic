@@ -22,21 +22,21 @@
 
 **Hinweise**
 
-- Loese die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
-- Falls keine echte Eingabe moeglich ist, simuliere Eingaben mit Variablen.
+- Löse die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
+- Falls keine echte Eingabe möglich ist, simuliere Eingaben mit Variablen.
 - Schreibe klar, kurz und ohne Redundanz. Keine externen Bibliotheken.
 
-**Punkteuebersicht (25 Punkte gesamt)**
+**Punkteübersicht (25 Punkte gesamt)**
 
-- A Basisfunktionen (Signatur, Parameter, Rueckgabe): 5.0 Punkte
+- A Basisfunktionen (Signatur, Parameter, Rückgabe): 5.0 Punkte
 - B Lokale + globale Variablen: 7.5 Punkte
 - C Funktionen mit Defaultwerten, optionalen Parametern: 6.0 Punkte
 - D Rekursion: 6.5 Punkte
 
-**Bewertungsschluessel (linear)**
+**Bewertungsschlüssel (linear)**
 
 Punkte werden linear in Prozent umgerechnet: $prozent = (punkte / 25) * 100$.
-Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
+Teilpunkte sind zulässig (Rundung in 0.5-Schritten).
 
 ---
 
@@ -44,7 +44,7 @@ Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
 
 Schreibe zwei einfache Funktionen:
 
-1. `FUNC_GREET(name)` gibt eine persoenliche Begruessung zurueck.
+1. `FUNC_GREET(name)` gibt eine persoenliche Begrüßung zurück.
 2. `FUNC_ADD(a, b)` addiert zwei Zahlen.
 
 **Beispiele:**
@@ -63,7 +63,7 @@ Schreibe zwei einfache Funktionen:
 Schreibe ein Programm, das:
 
 1. Eine globale Variable `counter` mit Wert 0 deklariert. (2.0)
-2. Eine Funktion `increment()` schreibt, die `counter` erhoet und den neuen Wert zurueckgibt. (5.5)
+2. Eine Funktion `increment()` schreibt, die `counter` erhöht und den neuen Wert zurückgibt. (5.5)
 
 **Beispiele nach zwei Aufrufen:**
 

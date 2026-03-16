@@ -1,13 +1,13 @@
 # Grundlagen der Programmierung - Basics (PHP)
 
-**Dokumenttyp:** Aufgabenstellung + Musterloesung
+**Dokumenttyp:** Aufgabenstellung + Musterlösung
 
 **Punkte gesamt:** 25
 
-**Hinweis fuer Lehrkraefte**
+**Hinweis für Lehrkräfte**
 
 - Teilpunkte in 0.5-Schritten vergeben.
-- Loesungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
+- Lösungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
 
 ---
 
@@ -15,7 +15,7 @@
 
 **Aufgabenstellung**
 
-Schreibe ein kleines Programm, das `vorname` und `alter` einliest (oder setzt) und eine Begruessung ausgibt.
+Schreibe ein kleines Programm, das `vorname` und `alter` einliest (oder setzt) und eine Begrüßung ausgibt.
 
 **Beispiel-Ausgabe:** `Hallo Lena, du bist 16 Jahre alt.`
 
@@ -25,7 +25,7 @@ Anforderungen:
 - Eingabe einlesen oder simulieren (1.0)
 - Ausgabeformat exakt wie oben (2.0)
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -44,7 +44,7 @@ echo "Hallo {$vorname}, du bist {$alter} Jahre alt.";
 | Ausgabeformat exakt                      | 2.0     | String-Interpolation mit beiden Variablen, korrekte Syntax |
 | **Summe Aufgabe A**                      | **5.0** |                                                            |
 
-### Haeufige Fehler
+### Häufige Fehler
 
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
@@ -54,7 +54,7 @@ echo "Hallo {$vorname}, du bist {$alter} Jahre alt.";
 
 **Aufgabenstellung**
 
-1. Schreibe eine Funktion `calcRectangleArea($width, $height)`, die die Flaeche berechnet. (4.0)
+1. Schreibe eine Funktion `calcRectangleArea($width, $height)`, die die Fläche berechnet. (4.0)
 2. Schreibe eine Funktion `celsiusToFahrenheit($c)`, die Celsius in Fahrenheit umrechnet. (3.5)
 
 **Beispiele:**
@@ -62,7 +62,7 @@ echo "Hallo {$vorname}, du bist {$alter} Jahre alt.";
 - `calcRectangleArea(4, 3)` -> `12`
 - `celsiusToFahrenheit(0)` -> `32`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -79,14 +79,14 @@ function celsiusToFahrenheit($c) {
 
 | Kriterium                                     | Punkte  | Hinweise                                                            |
 | --------------------------------------------- | ------- | ------------------------------------------------------------------- |
-| `calcRectangleArea()` korrekt implementiert   | 4.0     | Parameter mit `$`, Multiplikation durchgefuehrt, `return` verwendet |
+| `calcRectangleArea()` korrekt implementiert   | 4.0     | Parameter mit `$`, Multiplikation durchgeführt, `return` verwendet |
 | `celsiusToFahrenheit()` korrekt implementiert | 3.5     | Formel $(c \times 9/5) + 32$ richtig umgesetzt, `return` korrekt    |
 | **Summe Aufgabe B**                           | **7.5** |                                                                     |
 
-### Haeufige Fehler
+### Häufige Fehler
 
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
-- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
 
 ## Aufgabe C - Funktionen mit Fallunterscheidungen (6.0 Punkte)
@@ -105,7 +105,7 @@ Schreibe eine Funktion `classifyScore($score)`, die eine Note als Text liefert:
 - `classifyScore(45)` -> `nicht bestanden`
 - `classifyScore(90)` -> `sehr gut`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -127,16 +127,16 @@ function classifyScore($score) {
 
 | Kriterium                         | Punkte  | Hinweise                                                   |
 | --------------------------------- | ------- | ---------------------------------------------------------- | --- | ---------------------- |
-| Bereichs-Check (< 0 oder > 100)   | 2.0     | Ungueltige Werte werden mit `                              |     | ` (OR) korrekt erkannt |
-| Fallunterscheidungen vollstaendig | 2.5     | Alle vier Faelle abgedeckt, `if-elseif` oder verschachtelt |
-| Rueckgabewerte korrekt            | 1.5     | Strings entsprechen genau der Vorgabe                      |
+| Bereichs-Check (< 0 oder > 100)   | 2.0     | Ungültige Werte werden mit `                              |     | ` (OR) korrekt erkannt |
+| Fallunterscheidungen vollständig | 2.5     | Alle vier Fälle abgedeckt, `if-elseif` oder verschachtelt |
+| Rückgabewerte korrekt            | 1.5     | Strings entsprechen genau der Vorgabe                      |
 | **Summe Aufgabe C**               | **6.0** |                                                            |
 
-### Haeufige Fehler
+### Häufige Fehler
 
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
-- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
-- Ein oder mehrere Faelle werden nicht abgedeckt
+- Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Fälle werden nicht abgedeckt
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
 
@@ -144,16 +144,16 @@ function classifyScore($score) {
 
 Schreibe eine Funktion `analyzeNumbers($numbers)`, die:
 
-- die Anzahl gerader Zahlen zaehlt (3.0)
+- die Anzahl gerader Zahlen zählt (3.0)
 - die Summe aller positiven Zahlen berechnet (3.5)
 
-Rueckgabeformat als Array: `['evenCount' => X, 'positiveSum' => Y]`
+Rückgabeformat als Array: `['evenCount' => X, 'positiveSum' => Y]`
 
 **Beispiel:**
 
 `analyzeNumbers([2, -3, 4, 0, 5])` -> `['evenCount' => 3, 'positiveSum' => 11]`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -178,18 +178,18 @@ function analyzeNumbers($numbers) {
 
 | Kriterium              | Punkte  | Hinweise                                                     |
 | ---------------------- | ------- | ------------------------------------------------------------ |
-| Schleife ueber Array   | 1.5     | `foreach` oder `for` mit Index, iteriert ueber alle Elemente |
-| Gerade Zahlen zaehlen  | 3.0     | Modulo `%` oder `==` 0 korrekt, Counter wird erhoet          |
+| Schleife über Array   | 1.5     | `foreach` oder `for` mit Index, iteriert über alle Elemente |
+| Gerade Zahlen zählen  | 3.0     | Modulo `%` oder `==` 0 korrekt, Counter wird erhöht          |
 | Summe positiver Zahlen | 1.5     | Vergleich `> 0` korrekt, Summe wird nach += aktualisiert     |
-| Rueckgabeformat        | 0.5     | Array mit korrekten Schluessel-Wert-Paaren                   |
+| Rückgabeformat        | 0.5     | Array mit korrekten Schlüssel-Wert-Paaren                   |
 | **Summe Aufgabe D**    | **6.5** |                                                              |
 
 **Struktogramm (Platzhalter)**
 
 ![Struktogramm Aufgabe D](structogramme/PHP_Grundlagen_Basics_Aufgabe_D.svg)
 
-### Haeufige Fehler
+### Häufige Fehler
 
-- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
-- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
-- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte
+- Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rückgabe enthält falsche Schlüssel oder unvollständige Werte

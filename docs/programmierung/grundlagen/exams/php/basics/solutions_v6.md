@@ -1,6 +1,6 @@
 # Grundlagen der Programmierung - Basics (PHP) - Variante 6
 
-**Dokumenttyp:** Musterloesung | **Punkte gesamt:** 25
+**Dokumenttyp:** Musterlösung | **Punkte gesamt:** 25
 
 ---
 
@@ -18,7 +18,7 @@ Anforderungen:
 - Eingabe einlesen oder simulieren (1.0)
 - Ausgabeformat exakt wie oben (2.0)
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -33,7 +33,7 @@ echo "Event: {$eventName}, Teilnehmende: {$teilnehmerzahl}";
 - 1.0 Punkt: Eingabe korrekt eingelesen oder sauber simuliert
 - 2.0 Punkte: Ausgabeformat entspricht der Vorgabe
 
-### Haeufige Fehler
+### Häufige Fehler
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
@@ -51,7 +51,7 @@ echo "Event: {$eventName}, Teilnehmende: {$teilnehmerzahl}";
 - `calcRemainingBudget(1200, 450)` -> `750`
 - `metersToCentimeters(1.75)` -> `175`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -65,12 +65,12 @@ function metersToCentimeters($meters) {
 ```
 
 ### Punktbewertung
-- 4.0 Punkte: Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt
-- 3.5 Punkte: Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt
+- 4.0 Punkte: Funktion 1 (Signatur, Berechnung, Rückgabe) korrekt
+- 3.5 Punkte: Funktion 2 (Signatur, Berechnung, Rückgabe) korrekt
 
-### Haeufige Fehler
+### Häufige Fehler
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
-- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
 
 
@@ -90,7 +90,7 @@ Schreibe eine Funktion `classifyBattery($percent)`, die den Akkustand als Text k
 - `classifyBattery(10)` -> `niedrig`
 - `classifyBattery(85)` -> `hoch`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -108,14 +108,14 @@ function classifyBattery($percent) {
 ```
 
 ### Punktbewertung
-- 2.0 Punkte: Ungueltige Werte werden korrekt erkannt
-- 2.5 Punkte: Fallunterscheidungen vollstaendig und logisch korrekt
-- 1.5 Punkte: Korrekte Rueckgabewerte gemaess Aufgabenstellung
+- 2.0 Punkte: Ungültige Werte werden korrekt erkannt
+- 2.5 Punkte: Fallunterscheidungen vollständig und logisch korrekt
+- 1.5 Punkte: Korrekte Rückgabewerte gemäß Aufgabenstellung
 
-### Haeufige Fehler
+### Häufige Fehler
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
-- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
-- Ein oder mehrere Faelle werden nicht abgedeckt
+- Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Fälle werden nicht abgedeckt
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
@@ -124,16 +124,16 @@ function classifyBattery($percent) {
 
 Schreibe eine Funktion `analyzeMeasurements($values)`, die:
 
-- die Anzahl von Werten im Bereich `1` bis `9` (inklusive) zaehlt (3.0)
+- die Anzahl von Werten im Bereich `1` bis `9` (inklusive) zählt (3.0)
 - die Summe der Absolutwerte aller Elemente berechnet (3.5)
 
-Rueckgabeformat als Array: `["singleDigitPositiveCount" => X, "absoluteSum" => Y]`
+Rückgabeformat als Array: `["singleDigitPositiveCount" => X, "absoluteSum" => Y]`
 
 **Beispiel:**
 
 `analyzeMeasurements([-3, 0, 4, 12, 9])` -> `["singleDigitPositiveCount" => 2, "absoluteSum" => 28]`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -161,12 +161,12 @@ function analyzeMeasurements($values) {
 ```
 
 ### Punktbewertung
-- 1.5 Punkte: Iteration ueber alle Elemente korrekt
+- 1.5 Punkte: Iteration über alle Elemente korrekt
 - 3.0 Punkte: Kernlogik der ersten Kennzahl korrekt
 - 1.5 Punkte: Kernlogik der zweiten Kennzahl korrekt
-- 0.5 Punkte: Rueckgabeformat (Schluessel/Struktur) korrekt
+- 0.5 Punkte: Rückgabeformat (Schlüssel/Struktur) korrekt
 
-### Haeufige Fehler
-- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
-- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
-- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte
+### Häufige Fehler
+- Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rückgabe enthält falsche Schlüssel oder unvollständige Werte

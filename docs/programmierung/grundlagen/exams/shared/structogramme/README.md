@@ -1,6 +1,6 @@
 # Struktogramme (Basics)
 
-Ablageort fuer Struktogramme im SVG-Format. Die Dateien werden spaeter mit der Draw.io-Extension erzeugt und hier abgelegt.
+Ablageort für Struktogramme im SVG-Format. Die Dateien werden spaeter mit der Draw.io-Extension erzeugt und hier abgelegt.
 
 ## Namenskonvention
 
@@ -14,8 +14,8 @@ Ablageort fuer Struktogramme im SVG-Format. Die Dateien werden spaeter mit der D
 
 ## Operatorenstandard
 
-Standard: Operatorenliste fuer Struktogramme des Landes BW.
+Standard: Operatorenliste für Struktogramme des Landes BW.
 
 ## Einbindung
 
-Die Loesungsdokumente referenzieren die Dateien direkt aus diesem Ordner.
+Die Lösungsdokumente referenzieren die Dateien direkt aus diesem Ordner.

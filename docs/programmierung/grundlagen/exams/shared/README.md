@@ -59,7 +59,7 @@ Vorlagen für neue Exams:
 | Template                                | Beschreibung                      | Status     |
 | --------------------------------------- | --------------------------------- | ---------- |
 | **exam_template.md**                    | Basis-Template (generisch)        | ✅ Ready   |
-| **solutions_template.md**               | Musterloesung mit Bewertungslogik | ✅ Ready   |
+| **solutions_template.md**               | Musterlösung mit Bewertungslogik | ✅ Ready   |
 | **exam_datenstrukturen_template.md**    | Template für Datenstrukturen      | ⏳ Geplant |
 | **exam_funktionen_template.md**         | Template für Funktionen           | ⏳ Geplant |
 | **exam_kontrollstrukturen_template.md** | Template für Kontrollstrukturen   | ⏳ Geplant |
@@ -91,7 +91,7 @@ python3 scripts/validate_exams.py --language [sprache] --write-knowledge-base
 
 ## 🧠 variation_knowledge_base.json
 
-Diese Datei wird automatisch erzeugt und enthaelt Fingerprints pro Aufgabe (A-D) je Variante.
+Diese Datei wird automatisch erzeugt und enthält Fingerprints pro Aufgabe (A-D) je Variante.
 Sie dient als technische Wissensdatenbank, um identische Aufgabenstellungen zu erkennen und bei neuer Variantenerstellung aktiv zu vermeiden.
 
 **Aktualisierung:**
@@ -100,7 +100,7 @@ Sie dient als technische Wissensdatenbank, um identische Aufgabenstellungen zu e
 python3 scripts/validate_exams.py --write-knowledge-base
 ```
 
-**Best Practice fuer neue Varianten:**
+**Best Practice für neue Varianten:**
 
 1. Neue Variante schreiben (gleiche Struktur, neue Aufgabenstellung)
 2. Validierung inkl. Duplikatcheck ausfuehren
@@ -108,14 +108,14 @@ python3 scripts/validate_exams.py --write-knowledge-base
 
 ## 🧠 solution_rubrics_knowledge_base.json
 
-Diese Datei wird aus allen `solutions*.md` erzeugt und enthaelt pro Aufgabe:
+Diese Datei wird aus allen `solutions*.md` erzeugt und enthält pro Aufgabe:
 
 - Punktegesamtwert
 - detaillierte Bewertungskriterien (`Punktbewertung`)
 - typische Fehler (`Haeufige Fehler`)
-- stabile `criterion_id` und `criterion_family_id` fuer Auto-Grading und Analytics
+- stabile `criterion_id` und `criterion_family_id` für Auto-Grading und Analytics
 
-Sie ist die Grundlage fuer spaeteres teilautomatisches oder automatisches Grading im eLearning.
+Sie ist die Grundlage für spaeteres teilautomatisches oder automatisches Grading im eLearning.
 
 ## 🧠 Schema-Dateien
 

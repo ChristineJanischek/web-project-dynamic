@@ -22,21 +22,21 @@
 
 **Hinweise**
 
-- Loese die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
-- Falls keine echte Eingabe moeglich ist, simuliere Eingaben mit Variablen.
+- Löse die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
+- Falls keine echte Eingabe möglich ist, simuliere Eingaben mit Variablen.
 - Schreibe klar, kurz und ohne Redundanz. Keine externen Bibliotheken.
 
-**Punkteuebersicht (25 Punkte gesamt)**
+**Punkteübersicht (25 Punkte gesamt)**
 
 - A Fallunterscheidungen mit if-else: 5.0 Punkte
 - B Mehrfach-Verzweigung mit switch/case: 7.5 Punkte
 - C Schleifen (for, while): 6.0 Punkte
 - D Verschachtelte Kontrollstrukturen: 6.5 Punkte
 
-**Bewertungsschluessel (linear)**
+**Bewertungsschlüssel (linear)**
 
 Punkte werden linear in Prozent umgerechnet: $prozent = (punkte / 25) * 100$.
-Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
+Teilpunkte sind zulässig (Rundung in 0.5-Schritten).
 
 ---
 
@@ -44,8 +44,8 @@ Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
 
 Schreibe eine Funktion `CHECK_AGE(age)`, die:
 
-- `"underage"` zurueckgibt, wenn `age < 18`
-- `"adult"` zurueckgibt, wenn `age >= 18`
+- `"underage"` zurückgibt, wenn `age < 18`
+- `"adult"` zurückgibt, wenn `age >= 18`
 
 **Beispiele:**
 
@@ -60,7 +60,7 @@ Schreibe eine Funktion `CHECK_AGE(age)`, die:
 
 ## Aufgabe B - switch/case Struktur (7.5 Punkte)
 
-Schreibe eine Funktion `GRADE_DESCRIPTION(grade)`, die fuer Noten (1-5) eine Beschreibung gibt:
+Schreibe eine Funktion `GRADE_DESCRIPTION(grade)`, die für Noten (1-5) eine Beschreibung gibt:
 
 - 1 -> `"sehr gut"`
 - 2 -> `"gut"`
@@ -85,7 +85,7 @@ Schreibe eine Funktion `GRADE_DESCRIPTION(grade)`, die fuer Noten (1-5) eine Bes
 Schreibe zwei kleine Funktionen:
 
 1. `SUM_TO_N(n)` berechnet die Summe 1+2+3+...+n. (3.0)
-2. `COUNT_EVENS(limit)` zaehlt alle geraden Zahlen von 1 bis `limit`. (3.0)
+2. `COUNT_EVENS(limit)` zählt alle geraden Zahlen von 1 bis `limit`. (3.0)
 
 **Beispiele:**
 
@@ -102,8 +102,8 @@ Schreibe zwei kleine Funktionen:
 
 Schreibe eine Funktion `MULTIPLICATION_TABLE(rows)`, die eine kleine Multiplikationstabelle ausgibt:
 
-- Schleife fuer Zeilen: 1 bis `rows`
-- Innenschleife fuer Spalten: 1 bis `rows`
+- Schleife für Zeilen: 1 bis `rows`
+- Innenschleife für Spalten: 1 bis `rows`
 - Format: `Zeile nacheinander ausgeben` oder `als Array sameln`
 
 **Beispiel** (rows=3):

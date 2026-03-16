@@ -8,21 +8,21 @@
 
 **Hinweise**
 
-- Loese die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
-- Falls keine echte Eingabe moeglich ist, simuliere Eingaben mit Variablen.
+- Löse die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
+- Falls keine echte Eingabe möglich ist, simuliere Eingaben mit Variablen.
 - Schreibe klar, kurz und ohne Redundanz. Keine externen Bibliotheken.
 
-**Punkteuebersicht (25 Punkte gesamt)**
+**Punkteübersicht (25 Punkte gesamt)**
 
 - A Variablen + Ein/Ausgabe: 5.0 Punkte
 - B Funktionen (kleine Berechnungen): 7.5 Punkte
 - C Funktionen + Fallunterscheidungen: 6.0 Punkte
 - D Funktionen + Schleifen + Datenstrukturen: 6.5 Punkte
 
-**Bewertungsschluessel (linear)**
+**Bewertungsschlüssel (linear)**
 
 Punkte werden linear in Prozent umgerechnet: $prozent = (punkte / 25) * 100$.
-Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
+Teilpunkte sind zulässig (Rundung in 0.5-Schritten).
 
 ---
 
@@ -84,10 +84,10 @@ Schreibe eine Funktion `classifyAge($age)`, die eine Altersgruppe als Text liefe
 
 Schreibe eine Funktion `analyzeNumbers($numbers)`, die:
 
-- die Anzahl ungerader Zahlen zaehlt (3.0)
+- die Anzahl ungerader Zahlen zählt (3.0)
 - die Summe aller negativen Zahlen berechnet (3.5)
 
-Rueckgabeformat als Array: `["oddCount" => X, "negativeSum" => Y]`
+Rückgabeformat als Array: `["oddCount" => X, "negativeSum" => Y]`
 
 **Beispiel:**
 

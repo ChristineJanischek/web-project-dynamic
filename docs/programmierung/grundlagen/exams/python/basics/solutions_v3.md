@@ -1,6 +1,6 @@
 # Grundlagen der Programmierung - Basics (Python) - Variante 3
 
-**Dokumenttyp:** Musterloesung | **Punkte gesamt:** 25
+**Dokumenttyp:** Musterlösung | **Punkte gesamt:** 25
 
 ---
 
@@ -18,7 +18,7 @@ Anforderungen:
 - Eingabe einlesen oder simulieren (1.0)
 - Ausgabeformat exakt wie oben (2.0)
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 stadt = "Stuttgart"
@@ -32,7 +32,7 @@ print(f"In {stadt} leben {einwohner} Menschen.")
 - 1.0 Punkt: Eingabe korrekt eingelesen oder sauber simuliert
 - 2.0 Punkte: Ausgabeformat entspricht der Vorgabe
 
-### Haeufige Fehler
+### Häufige Fehler
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
@@ -42,7 +42,7 @@ print(f"In {stadt} leben {einwohner} Menschen.")
 
 **Aufgabenstellung**
 
-1. Schreibe eine Funktion `calc_cube_volume(side)`, die das Volumen eines Wuerfels berechnet (Formel: side³). (4.0)
+1. Schreibe eine Funktion `calc_cube_volume(side)`, die das Volumen eines Würfels berechnet (Formel: side³). (4.0)
 2. Schreibe eine Funktion `km_to_miles(km)`, die Kilometer in Meilen umrechnet (Formel: km / 1.609). (3.5)
 
 **Beispiele:**
@@ -50,7 +50,7 @@ print(f"In {stadt} leben {einwohner} Menschen.")
 - `calc_cube_volume(3)` -> `27`
 - `km_to_miles(16.09)` -> `10` (ca.)
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 def calc_cube_volume(side):
@@ -62,12 +62,12 @@ def km_to_miles(km):
 ```
 
 ### Punktbewertung
-- 4.0 Punkte: Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt
-- 3.5 Punkte: Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt
+- 4.0 Punkte: Funktion 1 (Signatur, Berechnung, Rückgabe) korrekt
+- 3.5 Punkte: Funktion 2 (Signatur, Berechnung, Rückgabe) korrekt
 
-### Haeufige Fehler
+### Häufige Fehler
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
-- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
 
 
@@ -87,7 +87,7 @@ Schreibe eine Funktion `classify_temperature(temp)`, die eine Temperaturbewertun
 - `classify_temperature(-5)` -> `gefroren`
 - `classify_temperature(30)` -> `heiss`
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 def classify_temperature(temp):
@@ -102,14 +102,14 @@ def classify_temperature(temp):
 ```
 
 ### Punktbewertung
-- 2.0 Punkte: Ungueltige Werte werden korrekt erkannt
-- 2.5 Punkte: Fallunterscheidungen vollstaendig und logisch korrekt
-- 1.5 Punkte: Korrekte Rueckgabewerte gemaess Aufgabenstellung
+- 2.0 Punkte: Ungültige Werte werden korrekt erkannt
+- 2.5 Punkte: Fallunterscheidungen vollständig und logisch korrekt
+- 1.5 Punkte: Korrekte Rückgabewerte gemäß Aufgabenstellung
 
-### Haeufige Fehler
+### Häufige Fehler
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
-- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
-- Ein oder mehrere Faelle werden nicht abgedeckt
+- Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Fälle werden nicht abgedeckt
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
@@ -121,13 +121,13 @@ Schreibe eine Funktion `analyze_numbers(numbers)`, die:
 - das Maximum der Zahlen findet (3.0)
 - die Summe aller Zahlen berechnet (3.5)
 
-Rueckgabeformat als Dictionary: `{"maximum": X, "sum": Y}`
+Rückgabeformat als Dictionary: `{"maximum": X, "sum": Y}`
 
 **Beispiel:**
 
 `analyze_numbers([7, -2, 9, 3, -1])` -> `{"maximum": 9, "sum": 16}`
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 def analyze_numbers(numbers):
@@ -142,7 +142,7 @@ def analyze_numbers(numbers):
     return {"maximum": maximum, "sum": total_sum}
 ```
 
-**Alternative Loesung (mit Builtin-Funktionen)**
+**Alternative Lösung (mit Builtin-Funktionen)**
 
 ```python
 def analyze_numbers(numbers):
@@ -150,12 +150,12 @@ def analyze_numbers(numbers):
 ```
 
 ### Punktbewertung
-- 1.5 Punkte: Iteration ueber alle Elemente korrekt
+- 1.5 Punkte: Iteration über alle Elemente korrekt
 - 3.0 Punkte: Kernlogik der ersten Kennzahl korrekt
 - 1.5 Punkte: Kernlogik der zweiten Kennzahl korrekt
-- 0.5 Punkte: Rueckgabeformat (Schluessel/Struktur) korrekt
+- 0.5 Punkte: Rückgabeformat (Schlüssel/Struktur) korrekt
 
-### Haeufige Fehler
-- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
-- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
-- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte
+### Häufige Fehler
+- Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rückgabe enthält falsche Schlüssel oder unvollständige Werte

@@ -8,21 +8,21 @@
 
 **Hinweise**
 
-- Loese die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
-- Falls keine echte Eingabe moeglich ist, simuliere Eingaben mit Variablen.
+- Löse die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
+- Falls keine echte Eingabe möglich ist, simuliere Eingaben mit Variablen.
 - Schreibe klar, kurz und ohne Redundanz. Keine externen Bibliotheken.
 
-**Punkteuebersicht (25 Punkte gesamt)**
+**Punkteübersicht (25 Punkte gesamt)**
 
 - A Variablen + Ein/Ausgabe: 5.0 Punkte
 - B Funktionen (kleine Berechnungen): 7.5 Punkte
 - C Funktionen + Fallunterscheidungen: 6.0 Punkte
 - D Funktionen + Schleifen + Datenstrukturen: 6.5 Punkte
 
-**Bewertungsschluessel (linear)**
+**Bewertungsschlüssel (linear)**
 
 Punkte werden linear in Prozent umgerechnet: $prozent = (punkte / 25) * 100$.
-Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
+Teilpunkte sind zulässig (Rundung in 0.5-Schritten).
 
 ---
 
@@ -84,10 +84,10 @@ Schreibe eine Funktion `classifyBattery($percent)`, die den Akkustand als Text k
 
 Schreibe eine Funktion `analyzeMeasurements($values)`, die:
 
-- die Anzahl von Werten im Bereich `1` bis `9` (inklusive) zaehlt (3.0)
+- die Anzahl von Werten im Bereich `1` bis `9` (inklusive) zählt (3.0)
 - die Summe der Absolutwerte aller Elemente berechnet (3.5)
 
-Rueckgabeformat als Array: `["singleDigitPositiveCount" => X, "absoluteSum" => Y]`
+Rückgabeformat als Array: `["singleDigitPositiveCount" => X, "absoluteSum" => Y]`
 
 **Beispiel:**
 

@@ -231,7 +231,7 @@ python3 scripts/validate_exams.py --write-knowledge-base
 - ✅ Rubriken sind in rubrics.json definiert
 - ✅ Metadata.json ist valide (falls vorhanden)
 - ✅ Keine identischen Aufgabenstellungen in Varianten
-- ✅ Jede Musterloesung enthaelt Punktbewertung und haeufige Fehler
+- ✅ Jede Musterlösung enthält Punktbewertung und haeufige Fehler
 - ✅ Wissensdatenbanken entsprechen ihren JSON-Schemata
 - ✅ Kriterien-Summen passen zur Aufgabensumme
 

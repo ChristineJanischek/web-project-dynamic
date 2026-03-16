@@ -8,21 +8,21 @@
 
 **Hinweise**
 
-- Loese die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
-- Falls keine echte Eingabe moeglich ist, simuliere Eingaben mit Variablen.
+- Löse die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
+- Falls keine echte Eingabe möglich ist, simuliere Eingaben mit Variablen.
 - Schreibe klar, kurz und ohne Redundanz. Keine externen Bibliotheken.
 
-**Punkteuebersicht (25 Punkte gesamt)**
+**Punkteübersicht (25 Punkte gesamt)**
 
 - A Variablen + Ein/Ausgabe: 5.0 Punkte
 - B Funktionen (kleine Berechnungen): 7.5 Punkte
 - C Funktionen + Fallunterscheidungen: 6.0 Punkte
 - D Funktionen + Schleifen + Datenstrukturen: 6.5 Punkte
 
-**Bewertungsschluessel (linear)**
+**Bewertungsschlüssel (linear)**
 
 Punkte werden linear in Prozent umgerechnet: $prozent = (punkte / 25) * 100$.
-Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
+Teilpunkte sind zulässig (Rundung in 0.5-Schritten).
 
 ---
 
@@ -46,7 +46,7 @@ Anforderungen:
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
 
-1. Schreibe eine Funktion `calcCubeVolume($side)`, die das Volumen eines Wuerfels berechnet (Formel: $side³). (4.0)
+1. Schreibe eine Funktion `calcCubeVolume($side)`, die das Volumen eines Würfels berechnet (Formel: $side³). (4.0)
 2. Schreibe eine Funktion `kmToMiles($km)`, die Kilometer in Meilen umrechnet (Formel: $km / 1.609). (3.5)
 
 **Beispiele:**
@@ -87,7 +87,7 @@ Schreibe eine Funktion `analyzeNumbers($numbers)`, die:
 - das Maximum der Zahlen findet (3.0)
 - die Summe aller Zahlen berechnet (3.5)
 
-Rueckgabeformat als Array: `["maximum" => X, "sum" => Y]`
+Rückgabeformat als Array: `["maximum" => X, "sum" => Y]`
 
 **Beispiel:**
 

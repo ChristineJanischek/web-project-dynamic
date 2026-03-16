@@ -8,21 +8,21 @@
 
 **Hinweise**
 
-- Loese die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
-- Falls keine echte Eingabe moeglich ist, simuliere Eingaben mit Variablen.
+- Löse die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
+- Falls keine echte Eingabe möglich ist, simuliere Eingaben mit Variablen.
 - Schreibe klar, kurz und ohne Redundanz. Keine externen Bibliotheken.
 
-**Punkteuebersicht (25 Punkte gesamt)**
+**Punkteübersicht (25 Punkte gesamt)**
 
 - A Variablen + Ein/Ausgabe: 5.0 Punkte
 - B Funktionen (kleine Berechnungen): 7.5 Punkte
 - C Funktionen + Fallunterscheidungen: 6.0 Punkte
 - D Funktionen + Schleifen + Datenstrukturen: 6.5 Punkte
 
-**Bewertungsschluessel (linear)**
+**Bewertungsschlüssel (linear)**
 
 Punkte werden linear in Prozent umgerechnet: $prozent = (punkte / 25) * 100$.
-Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
+Teilpunkte sind zulässig (Rundung in 0.5-Schritten).
 
 ---
 
@@ -46,7 +46,7 @@ Anforderungen:
 
 ## Aufgabe B - Funktionen mit kleinen Berechnungen (7.5 Punkte)
 
-1. Schreibe eine Funktion `calcTriangleArea($base, $height)`, die die Flaeche eines Dreiecks berechnet (Formel: $base \* $height / 2). (4.0)
+1. Schreibe eine Funktion `calcTriangleArea($base, $height)`, die die Fläche eines Dreiecks berechnet (Formel: $base \* $height / 2). (4.0)
 2. Schreibe eine Funktion `milesToKm($miles)`, die Meilen in Kilometer umrechnet (Formel: $miles \* 1.609). (3.5)
 
 **Beispiele:**
@@ -85,9 +85,9 @@ Schreibe eine Funktion `classifySpeed($kmh)`, die eine Geschwindigkeitsklassifiz
 Schreibe eine Funktion `analyzeNumbers($numbers)`, die:
 
 - das Minimum der Zahlen findet (3.0)
-- die Anzahl positiver Zahlen zaehlt (3.5)
+- die Anzahl positiver Zahlen zählt (3.5)
 
-Rueckgabeformat als Array: `["minimum" => X, "positiveCount" => Y]`
+Rückgabeformat als Array: `["minimum" => X, "positiveCount" => Y]`
 
 **Beispiel:**
 

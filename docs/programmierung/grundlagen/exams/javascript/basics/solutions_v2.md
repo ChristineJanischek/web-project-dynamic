@@ -1,13 +1,13 @@
 # Grundlagen der Programmierung - Basics (JavaScript) - Variante 2
 
-**Dokumenttyp:** Aufgabenstellung + Musterloesung
+**Dokumenttyp:** Aufgabenstellung + Musterlösung
 
 **Punkte gesamt:** 25
 
-**Hinweis fuer Lehrkraefte**
+**Hinweis für Lehrkräfte**
 
 - Teilpunkte in 0.5-Schritten vergeben.
-- Loesungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
+- Lösungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
 
 ---
 
@@ -25,7 +25,7 @@ Anforderungen:
 - Eingabe einlesen oder simulieren (1.0)
 - Ausgabeformat exakt wie oben (2.0)
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 const produkt = "Laptop";
@@ -39,11 +39,11 @@ console.log(`Artikel: ${produkt}, Preis: ${preis} Euro`);
 | Kriterium                                | Punkte  | Hinweise                                                         |
 | ---------------------------------------- | ------- | ---------------------------------------------------------------- |
 | Variablen deklarieren und initialisieren | 2.0     | `const` oder `let` verwendet, Werte korrekt gesetzt              |
-| Eingabe einlesen oder simulieren         | 1.0     | Eingabe ueber `prompt()`, `readline`, oder direkte Wertzuweisung |
+| Eingabe einlesen oder simulieren         | 1.0     | Eingabe über `prompt()`, `readline`, oder direkte Wertzuweisung |
 | Ausgabeformat exakt                      | 2.0     | String-Format mit beiden Variablen interpoliert                  |
 | **Summe Aufgabe A**                      | **5.0** |                                                                  |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
@@ -61,7 +61,7 @@ console.log(`Artikel: ${produkt}, Preis: ${preis} Euro`);
 - `calcCircleCircumference(5)` -> `31.4159...` (ca. 31.42)
 - `fahrenheitToCelsius(32)` -> `0`
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 function calcCircleCircumference(radius) {
@@ -83,9 +83,9 @@ function fahrenheitToCelsius(f) {
 | Funktion 2 Berechnung | 3.0     | Formel `(f - 32) * 5 / 9` oder `(f - 32) / 1.8` korrekt |
 | **Summe Aufgabe B**   | **7.5** |                                                         |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
-- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
 
 
@@ -105,7 +105,7 @@ Schreibe eine Funktion `classifyAge(age)`, die eine Altersgruppe als Text liefer
 - `classifyAge(16)` -> `minderjaehrig`
 - `classifyAge(70)` -> `senior`
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 function classifyAge(age) {
@@ -127,14 +127,14 @@ function classifyAge(age) {
 | ----------------------- | ------- | --------------------------------------------------- |
 | Funktion Signatur       | 0.5     | Name und Parameter korrekt                          |
 | Validierung (ungueltig) | 2.0     | `age < 0` oder `age > 150` richtig abgefangen       |
-| Fallunterscheidungen    | 3.0     | Alle drei Faelle (minderjaehrig, erwachsen, senior) |
-| Rueckgabewerte korrekt  | 0.5     | Strings exakt wie verlangt                          |
+| Fallunterscheidungen    | 3.0     | Alle drei Fälle (minderjaehrig, erwachsen, senior) |
+| Rückgabewerte korrekt  | 0.5     | Strings exakt wie verlangt                          |
 | **Summe Aufgabe C**     | **6.0** |                                                     |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
-- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
-- Ein oder mehrere Faelle werden nicht abgedeckt
+- Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Fälle werden nicht abgedeckt
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
@@ -143,16 +143,16 @@ function classifyAge(age) {
 
 Schreibe eine Funktion `analyzeNumbers(numbers)`, die:
 
-- die Anzahl ungerader Zahlen zaehlt (3.0)
+- die Anzahl ungerader Zahlen zählt (3.0)
 - die Summe aller negativen Zahlen berechnet (3.5)
 
-Rueckgabeformat als Objekt: `{ oddCount: X, negativeSum: Y }`
+Rückgabeformat als Objekt: `{ oddCount: X, negativeSum: Y }`
 
 **Beispiel:**
 
 `analyzeNumbers([3, -2, 5, 0, -4])` -> `{ oddCount: 2, negativeSum: -6 }`
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 function analyzeNumbers(numbers) {
@@ -178,16 +178,16 @@ function analyzeNumbers(numbers) {
 | ------------------- | ------- | ----------------------------------------------------- |
 | Funktion Signatur   | 0.5     | Name und Parameter korrekt                            |
 | Schleife            | 1.0     | `for...of`, `forEach`, oder klassische `for`-Schleife |
-| Ungerade zaehlen    | 3.0     | Modulo-Check `num % 2 !== 0` oder `num % 2 === 1`     |
+| Ungerade zählen    | 3.0     | Modulo-Check `num % 2 !== 0` oder `num % 2 === 1`     |
 | Negative summieren  | 1.5     | `if (num < 0)` mit Summenbildung                      |
-| Rueckgabeformat     | 0.5     | Objekt oder Array mit korrekten Feldnamen/Werten      |
+| Rückgabeformat     | 0.5     | Objekt oder Array mit korrekten Feldnamen/Werten      |
 | **Summe Aufgabe D** | **6.5** |                                                       |
 
 **Struktogramm (Platzhalter)**
 
 ![Struktogramm Aufgabe D](structogramme/JavaScript_Grundlagen_Basics_v2_Aufgabe_D.svg)
 
-### Haeufige Fehler
-- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
-- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
-- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte
+### Häufige Fehler
+- Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rückgabe enthält falsche Schlüssel oder unvollständige Werte

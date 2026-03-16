@@ -1,13 +1,13 @@
 # Grundlagen der Programmierung - Basics (JavaScript) - Variante 3
 
-**Dokumenttyp:** Aufgabenstellung + Musterloesung
+**Dokumenttyp:** Aufgabenstellung + Musterlösung
 
 **Punkte gesamt:** 25
 
-**Hinweis fuer Lehrkraefte**
+**Hinweis für Lehrkräfte**
 
 - Teilpunkte in 0.5-Schritten vergeben.
-- Loesungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
+- Lösungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
 
 ---
 
@@ -25,7 +25,7 @@ Anforderungen:
 - Eingabe einlesen oder simulieren (1.0)
 - Ausgabeformat exakt wie oben (2.0)
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 const stadt = "Stuttgart";
@@ -39,11 +39,11 @@ console.log(`In ${stadt} leben ${einwohner} Menschen.`);
 | Kriterium                                | Punkte  | Hinweise                                                         |
 | ---------------------------------------- | ------- | ---------------------------------------------------------------- |
 | Variablen deklarieren und initialisieren | 2.0     | `const` oder `let` verwendet, Werte korrekt gesetzt              |
-| Eingabe einlesen oder simulieren         | 1.0     | Eingabe ueber `prompt()`, `readline`, oder direkte Wertzuweisung |
+| Eingabe einlesen oder simulieren         | 1.0     | Eingabe über `prompt()`, `readline`, oder direkte Wertzuweisung |
 | Ausgabeformat exakt                      | 2.0     | String-Format mit beiden Variablen interpoliert                  |
 | **Summe Aufgabe A**                      | **5.0** |                                                                  |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
@@ -53,7 +53,7 @@ console.log(`In ${stadt} leben ${einwohner} Menschen.`);
 
 **Aufgabenstellung**
 
-1. Schreibe eine Funktion `calcCubeVolume(side)`, die das Volumen eines Wuerfels berechnet (Formel: side³). (4.0)
+1. Schreibe eine Funktion `calcCubeVolume(side)`, die das Volumen eines Würfels berechnet (Formel: side³). (4.0)
 2. Schreibe eine Funktion `kmToMiles(km)`, die Kilometer in Meilen umrechnet (Formel: km / 1.609). (3.5)
 
 **Beispiele:**
@@ -61,7 +61,7 @@ console.log(`In ${stadt} leben ${einwohner} Menschen.`);
 - `calcCubeVolume(3)` -> `27`
 - `kmToMiles(16.09)` -> `10` (ca.)
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 function calcCubeVolume(side) {
@@ -84,9 +84,9 @@ function kmToMiles(km) {
 | Funktion 2 Berechnung | 3.0     | Formel `km / 1.609` korrekt                                  |
 | **Summe Aufgabe B**   | **7.5** |                                                              |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
-- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
 
 
@@ -106,7 +106,7 @@ Schreibe eine Funktion `classifyTemperature(temp)`, die eine Temperaturbewertung
 - `classifyTemperature(-5)` -> `gefroren`
 - `classifyTemperature(30)` -> `heiss`
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 function classifyTemperature(temp) {
@@ -128,14 +128,14 @@ function classifyTemperature(temp) {
 | ----------------------- | ------- | -------------------------------------------- |
 | Funktion Signatur       | 0.5     | Name und Parameter korrekt                   |
 | Validierung (ungueltig) | 2.0     | `temp < -273` richtig abgefangen             |
-| Fallunterscheidungen    | 3.0     | Alle drei Faelle (gefroren, angenehm, heiss) |
-| Rueckgabewerte korrekt  | 0.5     | Strings exakt wie verlangt                   |
+| Fallunterscheidungen    | 3.0     | Alle drei Fälle (gefroren, angenehm, heiss) |
+| Rückgabewerte korrekt  | 0.5     | Strings exakt wie verlangt                   |
 | **Summe Aufgabe C**     | **6.0** |                                              |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
-- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
-- Ein oder mehrere Faelle werden nicht abgedeckt
+- Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Fälle werden nicht abgedeckt
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
@@ -147,13 +147,13 @@ Schreibe eine Funktion `analyzeNumbers(numbers)`, die:
 - das Maximum der Zahlen findet (3.0)
 - die Summe aller Zahlen berechnet (3.5)
 
-Rueckgabeformat als Objekt: `{ maximum: X, sum: Y }`
+Rückgabeformat als Objekt: `{ maximum: X, sum: Y }`
 
 **Beispiel:**
 
 `analyzeNumbers([7, -2, 9, 3, -1])` -> `{ maximum: 9, sum: 16 }`
 
-**Musterloesung**
+**Musterlösung**
 
 ```javascript
 function analyzeNumbers(numbers) {
@@ -171,7 +171,7 @@ function analyzeNumbers(numbers) {
 }
 ```
 
-**Alternative Loesung (mit Math.max)**
+**Alternative Lösung (mit Math.max)**
 
 ```javascript
 function analyzeNumbers(numbers) {
@@ -190,14 +190,14 @@ function analyzeNumbers(numbers) {
 | Schleife            | 1.0     | `for...of`, `forEach`, oder klassische `for`-Schleife              |
 | Maximum finden      | 3.0     | Vergleich mit Initialisierung (z.B. `numbers[0]` oder `-Infinity`) |
 | Summe berechnen     | 1.5     | Akkumulation mit `sum += num`                                      |
-| Rueckgabeformat     | 0.5     | Objekt mit korrekten Feldnamen/Werten                              |
+| Rückgabeformat     | 0.5     | Objekt mit korrekten Feldnamen/Werten                              |
 | **Summe Aufgabe D** | **6.5** |                                                                    |
 
 **Struktogramm (Platzhalter)**
 
 ![Struktogramm Aufgabe D](structogramme/JavaScript_Grundlagen_Basics_v3_Aufgabe_D.svg)
 
-### Haeufige Fehler
-- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
-- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
-- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte
+### Häufige Fehler
+- Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rückgabe enthält falsche Schlüssel oder unvollständige Werte

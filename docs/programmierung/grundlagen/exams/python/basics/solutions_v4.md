@@ -1,6 +1,6 @@
 # Grundlagen der Programmierung - Basics (Python) - Variante 4
 
-**Dokumenttyp:** Musterloesung | **Punkte gesamt:** 25
+**Dokumenttyp:** Musterlösung | **Punkte gesamt:** 25
 
 ---
 
@@ -18,7 +18,7 @@ Anforderungen:
 - Eingabe einlesen oder simulieren (1.0)
 - Ausgabeformat exakt wie oben (2.0)
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 buch = "1984"
@@ -32,7 +32,7 @@ print(f'Das Buch "{buch}" hat {seiten} Seiten.')
 - 1.0 Punkt: Eingabe korrekt eingelesen oder sauber simuliert
 - 2.0 Punkte: Ausgabeformat entspricht der Vorgabe
 
-### Haeufige Fehler
+### Häufige Fehler
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
@@ -42,7 +42,7 @@ print(f'Das Buch "{buch}" hat {seiten} Seiten.')
 
 **Aufgabenstellung**
 
-1. Schreibe eine Funktion `calc_triangle_area(base, height)`, die die Flaeche eines Dreiecks berechnet (Formel: base \* height / 2). (4.0)
+1. Schreibe eine Funktion `calc_triangle_area(base, height)`, die die Fläche eines Dreiecks berechnet (Formel: base \* height / 2). (4.0)
 2. Schreibe eine Funktion `miles_to_km(miles)`, die Meilen in Kilometer umrechnet (Formel: miles \* 1.609). (3.5)
 
 **Beispiele:**
@@ -50,7 +50,7 @@ print(f'Das Buch "{buch}" hat {seiten} Seiten.')
 - `calc_triangle_area(6, 4)` -> `12`
 - `miles_to_km(10)` -> `16.09`
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 def calc_triangle_area(base, height):
@@ -61,12 +61,12 @@ def miles_to_km(miles):
 ```
 
 ### Punktbewertung
-- 4.0 Punkte: Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt
-- 3.5 Punkte: Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt
+- 4.0 Punkte: Funktion 1 (Signatur, Berechnung, Rückgabe) korrekt
+- 3.5 Punkte: Funktion 2 (Signatur, Berechnung, Rückgabe) korrekt
 
-### Haeufige Fehler
+### Häufige Fehler
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
-- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
 
 
@@ -86,7 +86,7 @@ Schreibe eine Funktion `classify_speed(kmh)`, die eine Geschwindigkeitsklassifiz
 - `classify_speed(25)` -> `langsam`
 - `classify_speed(120)` -> `schnell`
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 def classify_speed(kmh):
@@ -101,14 +101,14 @@ def classify_speed(kmh):
 ```
 
 ### Punktbewertung
-- 2.0 Punkte: Ungueltige Werte werden korrekt erkannt
-- 2.5 Punkte: Fallunterscheidungen vollstaendig und logisch korrekt
-- 1.5 Punkte: Korrekte Rueckgabewerte gemaess Aufgabenstellung
+- 2.0 Punkte: Ungültige Werte werden korrekt erkannt
+- 2.5 Punkte: Fallunterscheidungen vollständig und logisch korrekt
+- 1.5 Punkte: Korrekte Rückgabewerte gemäß Aufgabenstellung
 
-### Haeufige Fehler
+### Häufige Fehler
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
-- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
-- Ein oder mehrere Faelle werden nicht abgedeckt
+- Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Fälle werden nicht abgedeckt
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
@@ -118,15 +118,15 @@ def classify_speed(kmh):
 Schreibe eine Funktion `analyze_numbers(numbers)`, die:
 
 - das Minimum der Zahlen findet (3.0)
-- die Anzahl positiver Zahlen zaehlt (3.5)
+- die Anzahl positiver Zahlen zählt (3.5)
 
-Rueckgabeformat als Dictionary: `{"minimum": X, "positive_count": Y}`
+Rückgabeformat als Dictionary: `{"minimum": X, "positive_count": Y}`
 
 **Beispiel:**
 
 `analyze_numbers([5, -3, 2, 0, -7])` -> `{"minimum": -7, "positive_count": 2}`
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 def analyze_numbers(numbers):
@@ -142,7 +142,7 @@ def analyze_numbers(numbers):
     return {"minimum": minimum, "positive_count": positive_count}
 ```
 
-**Alternative Loesung (mit Builtin-Funktionen)**
+**Alternative Lösung (mit Builtin-Funktionen)**
 
 ```python
 def analyze_numbers(numbers):
@@ -152,12 +152,12 @@ def analyze_numbers(numbers):
 ```
 
 ### Punktbewertung
-- 1.5 Punkte: Iteration ueber alle Elemente korrekt
+- 1.5 Punkte: Iteration über alle Elemente korrekt
 - 3.0 Punkte: Kernlogik der ersten Kennzahl korrekt
 - 1.5 Punkte: Kernlogik der zweiten Kennzahl korrekt
-- 0.5 Punkte: Rueckgabeformat (Schluessel/Struktur) korrekt
+- 0.5 Punkte: Rückgabeformat (Schlüssel/Struktur) korrekt
 
-### Haeufige Fehler
-- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
-- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
-- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte
+### Häufige Fehler
+- Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rückgabe enthält falsche Schlüssel oder unvollständige Werte

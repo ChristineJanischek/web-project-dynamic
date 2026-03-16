@@ -1,6 +1,6 @@
 # Grundlagen der Programmierung - Basics (PHP) - Variante 5
 
-**Dokumenttyp:** Musterloesung | **Punkte gesamt:** 25
+**Dokumenttyp:** Musterlösung | **Punkte gesamt:** 25
 
 ---
 
@@ -18,7 +18,7 @@ Anforderungen:
 - Eingabe einlesen oder simulieren (1.0)
 - Ausgabeformat exakt wie oben (2.0)
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -33,7 +33,7 @@ echo "Film: {$film}, Dauer: {$dauerMinuten} Minuten";
 - 1.0 Punkt: Eingabe korrekt eingelesen oder sauber simuliert
 - 2.0 Punkte: Ausgabeformat entspricht der Vorgabe
 
-### Haeufige Fehler
+### Häufige Fehler
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
@@ -51,7 +51,7 @@ echo "Film: {$film}, Dauer: {$dauerMinuten} Minuten";
 - `calcAverageThree(2, 4, 6)` -> `4`
 - `minutesToSeconds(3)` -> `180`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -65,12 +65,12 @@ function minutesToSeconds($minutes) {
 ```
 
 ### Punktbewertung
-- 4.0 Punkte: Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt
-- 3.5 Punkte: Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt
+- 4.0 Punkte: Funktion 1 (Signatur, Berechnung, Rückgabe) korrekt
+- 3.5 Punkte: Funktion 2 (Signatur, Berechnung, Rückgabe) korrekt
 
-### Haeufige Fehler
+### Häufige Fehler
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
-- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
 
 
@@ -90,7 +90,7 @@ Schreibe eine Funktion `classifyHumidity($humidity)`, die Luftfeuchtigkeit als T
 - `classifyHumidity(25)` -> `trocken`
 - `classifyHumidity(72)` -> `feucht`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -108,14 +108,14 @@ function classifyHumidity($humidity) {
 ```
 
 ### Punktbewertung
-- 2.0 Punkte: Ungueltige Werte werden korrekt erkannt
-- 2.5 Punkte: Fallunterscheidungen vollstaendig und logisch korrekt
-- 1.5 Punkte: Korrekte Rueckgabewerte gemaess Aufgabenstellung
+- 2.0 Punkte: Ungültige Werte werden korrekt erkannt
+- 2.5 Punkte: Fallunterscheidungen vollständig und logisch korrekt
+- 1.5 Punkte: Korrekte Rückgabewerte gemäß Aufgabenstellung
 
-### Haeufige Fehler
+### Häufige Fehler
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
-- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
-- Ein oder mehrere Faelle werden nicht abgedeckt
+- Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Fälle werden nicht abgedeckt
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
@@ -124,18 +124,18 @@ function classifyHumidity($humidity) {
 
 Schreibe eine Funktion `analyzeValues($values)`, die:
 
-- die Anzahl von Werten zaehlt, die durch 3 teilbar sind (3.0)
+- die Anzahl von Werten zählt, die durch 3 teilbar sind (3.0)
 - den Durchschnitt aller nicht-negativen Werte berechnet (3.5)
 
 Wenn es keine nicht-negativen Werte gibt, soll der Durchschnitt `0` sein.
 
-Rueckgabeformat als Array: `["divByThreeCount" => X, "nonNegativeAverage" => Y]`
+Rückgabeformat als Array: `["divByThreeCount" => X, "nonNegativeAverage" => Y]`
 
 **Beispiel:**
 
 `analyzeValues([3, -4, 6, 1, -2])` -> `["divByThreeCount" => 2, "nonNegativeAverage" => 3.3333...]`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -167,12 +167,12 @@ function analyzeValues($values) {
 ```
 
 ### Punktbewertung
-- 1.5 Punkte: Iteration ueber alle Elemente korrekt
+- 1.5 Punkte: Iteration über alle Elemente korrekt
 - 3.0 Punkte: Kernlogik der ersten Kennzahl korrekt
 - 1.5 Punkte: Kernlogik der zweiten Kennzahl korrekt
-- 0.5 Punkte: Rueckgabeformat (Schluessel/Struktur) korrekt
+- 0.5 Punkte: Rückgabeformat (Schlüssel/Struktur) korrekt
 
-### Haeufige Fehler
-- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
-- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
-- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte
+### Häufige Fehler
+- Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rückgabe enthält falsche Schlüssel oder unvollständige Werte

@@ -1,13 +1,13 @@
 # Grundlagen der Programmierung - Basics (Python)
 
-**Dokumenttyp:** Aufgabenstellung + Musterloesung
+**Dokumenttyp:** Aufgabenstellung + Musterlösung
 
 **Punkte gesamt:** 25
 
-**Hinweis fuer Lehrkraefte**
+**Hinweis für Lehrkräfte**
 
 - Teilpunkte in 0.5-Schritten vergeben.
-- Loesungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
+- Lösungen sind knapp gehalten und entsprechen dem erwarteten Niveau.
 
 ---
 
@@ -15,7 +15,7 @@
 
 **Aufgabenstellung**
 
-Schreibe ein kleines Programm, das `vorname` und `alter` einliest (oder setzt) und eine Begruessung ausgibt.
+Schreibe ein kleines Programm, das `vorname` und `alter` einliest (oder setzt) und eine Begrüßung ausgibt.
 
 **Beispiel-Ausgabe:** `Hallo Lena, du bist 16 Jahre alt.`
 
@@ -25,7 +25,7 @@ Anforderungen:
 - Eingabe einlesen oder simulieren (1.0)
 - Ausgabeformat exakt wie oben (2.0)
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 vorname = "Lena"
@@ -43,7 +43,7 @@ print(f"Hallo {vorname}, du bist {alter} Jahre alt.")
 | Ausgabeformat exakt                      | 2.0     | F-String oder `.format()` mit beiden Variablen      |
 | **Summe Aufgabe A**                      | **5.0** |                                                     |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
@@ -53,7 +53,7 @@ print(f"Hallo {vorname}, du bist {alter} Jahre alt.")
 
 **Aufgabenstellung**
 
-1. Schreibe eine Funktion `calc_rectangle_area(width, height)`, die die Flaeche berechnet. (4.0)
+1. Schreibe eine Funktion `calc_rectangle_area(width, height)`, die die Fläche berechnet. (4.0)
 2. Schreibe eine Funktion `celsius_to_fahrenheit(c)`, die Celsius in Fahrenheit umrechnet. (3.5)
 
 **Beispiele:**
@@ -61,7 +61,7 @@ print(f"Hallo {vorname}, du bist {alter} Jahre alt.")
 - `calc_rectangle_area(4, 3)` -> `12`
 - `celsius_to_fahrenheit(0)` -> `32`
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 def calc_rectangle_area(width, height):
@@ -76,13 +76,13 @@ def celsius_to_fahrenheit(c):
 
 | Kriterium                                       | Punkte  | Hinweise                                                               |
 | ----------------------------------------------- | ------- | ---------------------------------------------------------------------- |
-| `calc_rectangle_area()` korrekt implementiert   | 4.0     | `def` Syntax korrekt, Parameter entgegen, Multiplikation durchgefuehrt |
+| `calc_rectangle_area()` korrekt implementiert   | 4.0     | `def` Syntax korrekt, Parameter entgegen, Multiplikation durchgeführt |
 | `celsius_to_fahrenheit()` korrekt implementiert | 3.5     | Formel $(c \times 9/5) + 32$ richtig umgesetzt, `return` korrekt       |
 | **Summe Aufgabe B**                             | **7.5** |                                                                        |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
-- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
 
 
@@ -102,7 +102,7 @@ Schreibe eine Funktion `classify_score(score)`, die eine Note als Text liefert:
 - `classify_score(45)` -> `nicht bestanden`
 - `classify_score(90)` -> `sehr gut`
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 def classify_score(score):
@@ -119,15 +119,15 @@ def classify_score(score):
 
 | Kriterium                         | Punkte  | Hinweise                                                 |
 | --------------------------------- | ------- | -------------------------------------------------------- |
-| Bereichs-Check (< 0 oder > 100)   | 2.0     | Ungueltige Werte werden mit `or` erkannt                 |
-| Fallunterscheidungen vollstaendig | 2.5     | Alle vier Faelle abgedeckt, `if-elif` oder verschachtelt |
-| Rueckgabewerte korrekt            | 1.5     | Strings entsprechen genau der Vorgabe                    |
+| Bereichs-Check (< 0 oder > 100)   | 2.0     | Ungültige Werte werden mit `or` erkannt                 |
+| Fallunterscheidungen vollständig | 2.5     | Alle vier Fälle abgedeckt, `if-elif` oder verschachtelt |
+| Rückgabewerte korrekt            | 1.5     | Strings entsprechen genau der Vorgabe                    |
 | **Summe Aufgabe C**               | **6.0** |                                                          |
 
-### Haeufige Fehler
+### Häufige Fehler
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
-- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
-- Ein oder mehrere Faelle werden nicht abgedeckt
+- Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Fälle werden nicht abgedeckt
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
@@ -136,16 +136,16 @@ def classify_score(score):
 
 Schreibe eine Funktion `analyze_numbers(numbers)`, die:
 
-- die Anzahl gerader Zahlen zaehlt (3.0)
+- die Anzahl gerader Zahlen zählt (3.0)
 - die Summe aller positiven Zahlen berechnet (3.5)
 
-Rueckgabeformat als Tuple: `(even_count, positive_sum)`
+Rückgabeformat als Tuple: `(even_count, positive_sum)`
 
 **Beispiel:**
 
 `analyze_numbers([2, -3, 4, 0, 5])` -> `(3, 11)`
 
-**Musterloesung**
+**Musterlösung**
 
 ```python
 def analyze_numbers(numbers):
@@ -165,17 +165,17 @@ def analyze_numbers(numbers):
 
 | Kriterium              | Punkte  | Hinweise                                                  |
 | ---------------------- | ------- | --------------------------------------------------------- |
-| Schleife ueber Liste   | 1.5     | `for ... in` Syntax korrekt, iteriert ueber alle Elemente |
-| Gerade Zahlen zaehlen  | 3.0     | Modulo `%` 2 == 0 korrekt, Counter wird mit `+=` erhoet   |
+| Schleife über Liste   | 1.5     | `for ... in` Syntax korrekt, iteriert über alle Elemente |
+| Gerade Zahlen zählen  | 3.0     | Modulo `%` 2 == 0 korrekt, Counter wird mit `+=` erhöht   |
 | Summe positiver Zahlen | 1.5     | Vergleich `> 0` korrekt, Summe wird mit `+=` aktualisiert |
-| Rueckgabeformat        | 0.5     | Tupel mit korrekten Werten                                |
+| Rückgabeformat        | 0.5     | Tupel mit korrekten Werten                                |
 | **Summe Aufgabe D**    | **6.5** |                                                           |
 
 **Struktogramm (Platzhalter)**
 
 ![Struktogramm Aufgabe D](structogramme/Python_Grundlagen_Basics_Aufgabe_D.svg)
 
-### Haeufige Fehler
-- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
-- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
-- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte
+### Häufige Fehler
+- Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rückgabe enthält falsche Schlüssel oder unvollständige Werte

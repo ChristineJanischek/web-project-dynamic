@@ -1,6 +1,6 @@
 # Grundlagen der Programmierung - Basics (PHP) - Variante 5
 
-**Name:** \***\*\*\*\*\*\*\***\_\_\_\_\***\*\*\*\*\*\*\*** **Datum:** **\*\***\_\_\_\_**\*\*** **Klasse:** \*\*\*\*\*\_\_\_\_\*\*\*
+**Name:** \***\*\*\*\*\*\*\***\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\***\*\*\*\*\*\*\*** **Datum:** **\*\***\_\_\_\_\_\_\_\_\_\_\_\_\_**\*\*** **Klasse:** \*\*\*\*\*\_\_\_\_\_\_\_\_\*\*\*
 
 **Sprache:** PHP
 
@@ -8,21 +8,21 @@
 
 **Hinweise**
 
-- Loese die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
-- Falls keine echte Eingabe moeglich ist, simuliere Eingaben mit Variablen.
+- Löse die Aufgaben so, dass der Code auch handschriftlich nachvollziehbar ist.
+- Falls keine echte Eingabe möglich ist, simuliere Eingaben mit Variablen.
 - Schreibe klar, kurz und ohne Redundanz. Keine externen Bibliotheken.
 
-**Punkteuebersicht (25 Punkte gesamt)**
+**Punkteübersicht (25 Punkte gesamt)**
 
 - A Variablen + Ein/Ausgabe: 5.0 Punkte
 - B Funktionen (kleine Berechnungen): 7.5 Punkte
 - C Funktionen + Fallunterscheidungen: 6.0 Punkte
 - D Funktionen + Schleifen + Datenstrukturen: 6.5 Punkte
 
-**Bewertungsschluessel (linear)**
+**Bewertungsschlüssel (linear)**
 
 Punkte werden linear in Prozent umgerechnet: $prozent = (punkte / 25) * 100$.
-Teilpunkte sind zulaessig (Rundung in 0.5-Schritten).
+Teilpunkte sind zulässig (Rundung in 0.5-Schritten).
 
 ---
 
@@ -84,12 +84,12 @@ Schreibe eine Funktion `classifyHumidity($humidity)`, die Luftfeuchtigkeit als T
 
 Schreibe eine Funktion `analyzeValues($values)`, die:
 
-- die Anzahl von Werten zaehlt, die durch 3 teilbar sind (3.0)
+- die Anzahl von Werten zählt, die durch 3 teilbar sind (3.0)
 - den Durchschnitt aller nicht-negativen Werte berechnet (3.5)
 
 Wenn es keine nicht-negativen Werte gibt, soll der Durchschnitt `0` sein.
 
-Rueckgabeformat als Array: `["divByThreeCount" => X, "nonNegativeAverage" => Y]`
+Rückgabeformat als Array: `["divByThreeCount" => X, "nonNegativeAverage" => Y]`
 
 **Beispiel:**
 

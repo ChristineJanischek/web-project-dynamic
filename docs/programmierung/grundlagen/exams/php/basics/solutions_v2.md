@@ -1,6 +1,6 @@
 # Grundlagen der Programmierung - Basics (PHP) - Variante 2
 
-**Dokumenttyp:** Musterloesung | **Punkte gesamt:** 25
+**Dokumenttyp:** Musterlösung | **Punkte gesamt:** 25
 
 ---
 
@@ -18,7 +18,7 @@ Anforderungen:
 - Eingabe einlesen oder simulieren (1.0)
 - Ausgabeformat exakt wie oben (2.0)
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -33,7 +33,7 @@ echo "Artikel: {$produkt}, Preis: {$preis} Euro";
 - 1.0 Punkt: Eingabe korrekt eingelesen oder sauber simuliert
 - 2.0 Punkte: Ausgabeformat entspricht der Vorgabe
 
-### Haeufige Fehler
+### Häufige Fehler
 - Variablenname in Ausgabe passt nicht zum deklarierten Namen
 - Werte werden gesetzt, aber nicht ausgegeben
 - Ausgabeformat weicht von der geforderten Struktur ab
@@ -51,7 +51,7 @@ echo "Artikel: {$produkt}, Preis: {$preis} Euro";
 - `calcCircleCircumference(5)` -> `31.4159...` (ca. 31.42)
 - `fahrenheitToCelsius(32)` -> `0`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -65,12 +65,12 @@ function fahrenheitToCelsius($f) {
 ```
 
 ### Punktbewertung
-- 4.0 Punkte: Funktion 1 (Signatur, Berechnung, Rueckgabe) korrekt
-- 3.5 Punkte: Funktion 2 (Signatur, Berechnung, Rueckgabe) korrekt
+- 4.0 Punkte: Funktion 1 (Signatur, Berechnung, Rückgabe) korrekt
+- 3.5 Punkte: Funktion 2 (Signatur, Berechnung, Rückgabe) korrekt
 
-### Haeufige Fehler
+### Häufige Fehler
 - Formel falsch umgesetzt (Operatorreihenfolge oder Konstante fehlt)
-- Funktion ohne `return` bzw. Rueckgabe in falschem Format
+- Funktion ohne `return` bzw. Rückgabe in falschem Format
 - Parameter werden nicht verwendet oder vertauscht
 
 
@@ -90,7 +90,7 @@ Schreibe eine Funktion `classifyAge($age)`, die eine Altersgruppe als Text liefe
 - `classifyAge(16)` -> `minderjaehrig`
 - `classifyAge(70)` -> `senior`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -108,14 +108,14 @@ function classifyAge($age) {
 ```
 
 ### Punktbewertung
-- 2.0 Punkte: Ungueltige Werte werden korrekt erkannt
-- 2.5 Punkte: Fallunterscheidungen vollstaendig und logisch korrekt
-- 1.5 Punkte: Korrekte Rueckgabewerte gemaess Aufgabenstellung
+- 2.0 Punkte: Ungültige Werte werden korrekt erkannt
+- 2.5 Punkte: Fallunterscheidungen vollständig und logisch korrekt
+- 1.5 Punkte: Korrekte Rückgabewerte gemäß Aufgabenstellung
 
-### Haeufige Fehler
+### Häufige Fehler
 - Grenzwerte falsch gesetzt (z. B. `<` statt `<=`)
-- Ungueltigkeitspruefung fehlt oder steht an falscher Stelle
-- Ein oder mehrere Faelle werden nicht abgedeckt
+- Ungültigkeitsprüfung fehlt oder steht an falscher Stelle
+- Ein oder mehrere Fälle werden nicht abgedeckt
 
 
 ## Aufgabe D - Funktionen mit Schleifen + Datenstrukturen (6.5 Punkte)
@@ -124,16 +124,16 @@ function classifyAge($age) {
 
 Schreibe eine Funktion `analyzeNumbers($numbers)`, die:
 
-- die Anzahl ungerader Zahlen zaehlt (3.0)
+- die Anzahl ungerader Zahlen zählt (3.0)
 - die Summe aller negativen Zahlen berechnet (3.5)
 
-Rueckgabeformat als Array: `["oddCount" => X, "negativeSum" => Y]`
+Rückgabeformat als Array: `["oddCount" => X, "negativeSum" => Y]`
 
 **Beispiel:**
 
 `analyzeNumbers([3, -2, 5, 0, -4])` -> `["oddCount" => 2, "negativeSum" => -6]`
 
-**Musterloesung**
+**Musterlösung**
 
 ```php
 <?php
@@ -155,12 +155,12 @@ function analyzeNumbers($numbers) {
 ```
 
 ### Punktbewertung
-- 1.5 Punkte: Iteration ueber alle Elemente korrekt
+- 1.5 Punkte: Iteration über alle Elemente korrekt
 - 3.0 Punkte: Kernlogik der ersten Kennzahl korrekt
 - 1.5 Punkte: Kernlogik der zweiten Kennzahl korrekt
-- 0.5 Punkte: Rueckgabeformat (Schluessel/Struktur) korrekt
+- 0.5 Punkte: Rückgabeformat (Schlüssel/Struktur) korrekt
 
-### Haeufige Fehler
-- Zaehler/Summe wird nicht initialisiert oder falsch aktualisiert
-- Bedingung fuer Filterung (z. B. gerade/positiv) ist fehlerhaft
-- Rueckgabe enthaelt falsche Schluessel oder unvollstaendige Werte
+### Häufige Fehler
+- Zähler/Summe wird nicht initialisiert oder falsch aktualisiert
+- Bedingung für Filterung (z. B. gerade/positiv) ist fehlerhaft
+- Rückgabe enthält falsche Schlüssel oder unvollständige Werte
