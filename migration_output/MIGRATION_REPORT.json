@@ -1,0 +1,27 @@
+{
+  "date": "2026-03-22T21:47:51.952141",
+  "source": "docs/handbook",
+  "target_output": "migration_output",
+  "core_files": [
+    "ARCHITECTURE.md",
+    "BACKUP_STRATEGY.md",
+    "REPO_GOVERNANCE.md",
+    "ROADMAP_CORE.md",
+    "SETUP_REPOSITORIES.md",
+    "DOCS_NAVIGATION_RULES.md",
+    "TEMPLATE_SYNC.md",
+    "TEMPLATE_UPDATE_STRATEGY.md",
+    "WORKSPACE_LIVE_TEST_SETUP.md",
+    "QUICKSTART_LIVE_SERVER.md",
+    "architektur-prinzipien.md"
+  ],
+  "courses_files": [
+    "COURSES_THEMENPLAN.md",
+    "ROADMAP_COURSES.md",
+    "GITHUB_CLASSROOM_AUTOGRADING.md"
+  ],
+  "instructions": {
+    "core": "Kopiere den Inhalt von migration_output/core_handbook/ nach edu-code-lab-core/docs/handbook/",
+    "courses": "Kopiere den Inhalt von migration_output/courses_handbook/ nach edu-code-lab-courses/docs/handbook/"
+  }
+}
