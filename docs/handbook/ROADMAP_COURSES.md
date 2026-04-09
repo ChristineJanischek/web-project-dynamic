@@ -37,10 +37,11 @@ Ziele:
 
 Lieferobjekte:
 
-- Grundlagen Programmierung
+- Grundlagen Programmierung (funktional)
 - Webentwicklung
 - Datenbanken
-- Software Engineering
+- Vertiefung OOP (Software Engineering)
+- Künstliche Intelligenz mit Maschine Learning
 
 ## Phase 2 - Vertiefung und Differenzierung (8 bis 12 Wochen)
 
