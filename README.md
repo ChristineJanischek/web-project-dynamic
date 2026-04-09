@@ -9,12 +9,18 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 - 📚 Umfassende Dokumentation zu allen Web-Technologien
 - 🔄 Versioniertes Lernsystem (v1.0, v2.0, ...)
 - 🤖 Automatische HTML-Validierung via GitHub Actions
+- 🔒 Owner-only Bewertungsassistenz mit separatem Secure-Workspace als Architekturgrundlage
 - 📱 Responsive Design von Anfang an
 - 💡 Praktische Beispiele mit TODO-Kommentaren
 - 🎓 Best Practices für GitHub Classroom
 - 🚀 Live Server vorinstalliert für sofortiges Testen
 
+<<<<<<< HEAD
 ## 🆕 Was ist neu? (Stand: 09.04.2026)
+=======
+## 🆕 Was ist neu? (Stand: 22.03.2026)
+
+>>>>>>> 7626f3d (feat(assessment): add secure owner-only assessment foundation)
 - ✅ Neue modulare Grundlagenpfade für [PHP](docs/programmierung/grundlagen/php/README.md), [Python](docs/programmierung/grundlagen/python/README.md) und [JavaScript](docs/programmierung/grundlagen/javascript/README.md)
 - ✅ Python-Kapitel zu Algorithmen und Dateiverarbeitung ergänzt
 - ✅ Unterrichtsmaterial von `ka_grundlagen/` nach [material/ka_grundlagen](material/ka_grundlagen) migriert
@@ -39,6 +45,7 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 - Live Server Quickstart: [docs/handbook/QUICKSTART_LIVE_SERVER.md](docs/handbook/QUICKSTART_LIVE_SERVER.md)
 - Workspace Live-Test Setup (neu): [docs/handbook/WORKSPACE_LIVE_TEST_SETUP.md](docs/handbook/WORKSPACE_LIVE_TEST_SETUP.md)
 - Beitragsregeln & Workflow: [CONTRIBUTING.md](CONTRIBUTING.md)
+- Bewertungsassistenz-Architektur: [docs/handbook/ASSESSMENT_ASSISTANT_ARCHITECTURE.md](docs/handbook/ASSESSMENT_ASSISTANT_ARCHITECTURE.md)
 
 ### Kurz-Troubleshooting
 

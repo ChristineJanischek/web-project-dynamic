@@ -4,6 +4,7 @@
   "private": true,
   "description": "Tooling für Lighthouse und Accessibility Tests (Version3 Schülerfirma Projekt)",
   "scripts": {
+    "assessment:bootstrap": "python3 scripts/bootstrap_assessment_workspace.py",
     "setup:extensions": "python3 scripts/manage_vscode_extensions.py install --profile full",
     "setup:live-test": "python3 scripts/manage_vscode_extensions.py install --profile live-test",
     "setup:extensions:sync": "python3 scripts/manage_vscode_extensions.py sync",

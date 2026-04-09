@@ -1,0 +1,31 @@
+{
+  "profile_name": "default",
+  "owner_visibility": "owner-only",
+  "workspace_root": "~/Downloads/edu-assessment-owner",
+  "allowed_archive_suffixes": [".zip"],
+  "allowed_rubric_suffixes": [".docx", ".md"],
+  "directory_map": {
+    "archiv": "archiv",
+    "ausgang": "ausgang",
+    "batch_bewertungen": "batch_bewertungen",
+    "boegen": "boegen",
+    "eingang": "eingang",
+    "entpackt": "entpackt",
+    "logs": "logs"
+  },
+  "security": {
+    "workspace_root_must_be_outside_repo": true,
+    "directory_mode": "700",
+    "config_file_mode": "600",
+    "generated_reports_are_sensitive": true
+  },
+  "grading": {
+    "scale": "linear",
+    "grade_range": [1.0, 6.0],
+    "decimal_places": 2
+  },
+  "reporting": {
+    "canonical_source": "markdown",
+    "html_export": "copy-safe-for-word"
+  }
+}
