@@ -1,0 +1,417 @@
+{
+  "profile_id": "01web26",
+  "profile_name": "Web-Projekt Oberstufe 2026",
+  "project_type": "web-php-static",
+  "created": "2026-04-10",
+  "version": "1.0",
+  "grade_scale": {
+    "best": 1.0,
+    "worst": 6.0
+  },
+  "point_levels": {
+    "sehr_gut": 4,
+    "gut": 3,
+    "befriedigend": 2,
+    "ausreichend": 1,
+    "nicht_erfuellt": 0
+  },
+  "max_points": 40,
+  "criteria": [
+    {
+      "id": "A1",
+      "title": "Formales – Abgabe",
+      "description": "Pünktliche und vollständige Abgabe als einzelnes ZIP-Archiv. Sehr gut: pünktlich und vollständig. Gut: kleine Mängel. Ausreichend: verspätet. Nicht erfüllt: gar nicht abgegeben.",
+      "max_points": 4,
+      "kind": "manual",
+      "config": {},
+      "evidence_hint": "Abgabedatum und ZIP-Vollständigkeit manuell prüfen."
+    },
+    {
+      "id": "B1",
+      "title": "Projektstruktur und Quellcode-Qualität",
+      "description": "Sinnvolle Ordnerstruktur, aussagekräftige Dateinamen, Einrückung und Übersichtlichkeit, relative Pfade, Trennung von CSS und PHP, keine unnötigen Wiederholungen.",
+      "max_points": 4,
+      "kind": "all_of",
+      "config": {
+        "rules": [
+          {
+            "kind": "file_exists",
+            "config": {
+              "glob": "index.php"
+            },
+            "label": "Einstiegspunkt index.php vorhanden"
+          },
+          {
+            "kind": "any_of",
+            "config": {
+              "label": "CSS von PHP getrennt (eigene CSS-Datei)",
+              "rules": [
+                {
+                  "kind": "min_files_glob",
+                  "config": {
+                    "glob": "css/*.css",
+                    "min": 1
+                  }
+                },
+                {
+                  "kind": "min_files_glob",
+                  "config": {
+                    "glob": "styles/*.css",
+                    "min": 1
+                  }
+                },
+                {
+                  "kind": "min_files_glob",
+                  "config": {
+                    "glob": "*.css",
+                    "min": 1
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "kind": "any_of",
+            "config": {
+              "label": "Trennende Ordnerstruktur für PHP-Inhalte",
+              "rules": [
+                {
+                  "kind": "file_exists",
+                  "config": {
+                    "glob": "layouts/*.php"
+                  }
+                },
+                {
+                  "kind": "file_exists",
+                  "config": {
+                    "glob": "includes/*.php"
+                  }
+                },
+                {
+                  "kind": "file_exists",
+                  "config": {
+                    "glob": "pages/*.php"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "evidence_hint": "Einrückung, relative PHP-Pfade (require __DIR__) und Effizienz manuell prüfen."
+    },
+    {
+      "id": "C1",
+      "title": "Dynamisches Layout und Inhalt",
+      "description": "PHP-Includes für dynamisches Layout, Box-Layout per CSS (Flexbox/Grid), HTML5-Elemente, Viewport-Meta-Tag, Barrierefrei-Grundlagen.",
+      "max_points": 4,
+      "kind": "all_of",
+      "config": {
+        "rules": [
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.php",
+              "regex": "\\b(?:include|require)(?:_once)?\\b"
+            },
+            "label": "PHP-Includes für dynamisches Layout"
+          },
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.php",
+              "regex": "name=[\"']viewport[\"']"
+            },
+            "label": "Viewport-Meta-Tag für mobile Darstellung"
+          },
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.css",
+              "regex": "display\\s*:\\s*(?:flex|grid)"
+            },
+            "label": "Modernes CSS-Layout (Flexbox oder Grid)"
+          }
+        ]
+      },
+      "evidence_hint": "Box-Modell-Umsetzung und Browserkompatibilität manuell prüfen."
+    },
+    {
+      "id": "D1",
+      "title": "Bilder und Galerie",
+      "description": "Mindestens 3 Bilder vorhanden, alt-Attribute gesetzt, Galerie-Implementierung (CSS-Slider oder JS-Galerie), Bildoptimierung (<200 KB), externe Quellen mit target=_blank.",
+      "max_points": 4,
+      "kind": "all_of",
+      "config": {
+        "rules": [
+          {
+            "kind": "min_files_glob",
+            "config": {
+              "glob": "images/*",
+              "min": 3
+            },
+            "label": "Mindestens 3 Bilder im images-Verzeichnis"
+          },
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.php",
+              "regex": "<img[^>]+alt="
+            },
+            "label": "Bilder mit alt-Attribut"
+          },
+          {
+            "kind": "any_of",
+            "config": {
+              "label": "Galerie-Implementierung vorhanden",
+              "rules": [
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.php",
+                    "regex": "(?i)galerie|gallery|slider|carousel"
+                  }
+                },
+                {
+                  "kind": "file_exists",
+                  "config": {
+                    "glob": "pages/galerie.php"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "evidence_hint": "Bildoptimierung (<200 KB je Bild), Thumbnails und JS-Galerie (falls vorhanden) manuell prüfen."
+    },
+    {
+      "id": "E1",
+      "title": "Verweise – interne und externe Links",
+      "description": "Sinnvolle interne Navigation zwischen Seiten, externe Links mit target=_blank.",
+      "max_points": 4,
+      "kind": "all_of",
+      "config": {
+        "rules": [
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.php",
+              "regex": "<a\\s[^>]*href="
+            },
+            "label": "Links (<a href=…>) vorhanden"
+          },
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.php",
+              "regex": "target=[\"']_blank[\"']"
+            },
+            "label": "Externe Links mit target=_blank"
+          }
+        ]
+      },
+      "evidence_hint": "Qualität und Sinnhaftigkeit der Navigation manuell prüfen."
+    },
+    {
+      "id": "F1",
+      "title": "PHP-Eigenanteil und Formulare",
+      "description": "Eigenständige PHP-Logik über die Mindestanforderung hinaus, Formulare mit POST/GET-Verarbeitung, Ideenreichtum und Umfang.",
+      "max_points": 4,
+      "kind": "all_of",
+      "config": {
+        "rules": [
+          {
+            "kind": "min_files_glob",
+            "config": {
+              "glob": "**/*.php",
+              "min": 5
+            },
+            "label": "Mindestens 5 PHP-Dateien (Umfang)"
+          },
+          {
+            "kind": "any_of",
+            "config": {
+              "label": "Formularverarbeitung (POST/GET oder <form>)",
+              "rules": [
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.php",
+                    "regex": "\\$_POST|\\$_GET|\\$_REQUEST"
+                  }
+                },
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.php",
+                    "regex": "<form\\b"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "evidence_hint": "Ideenreichtum, Eigenleistung und PHP-Qualität jenseits der Mindestanforderung manuell bewerten."
+    },
+    {
+      "id": "G1",
+      "title": "Versionsverwaltung",
+      "description": "Nutzung von Git oder GitHub, nachvollziehbare Commit-Historie.",
+      "max_points": 4,
+      "kind": "manual",
+      "config": {},
+      "evidence_hint": "GitHub-Repository-Link oder Commit-Verlauf über den Abgabekanal prüfen. Nicht als Teil des ZIP-Projekts sichtbar."
+    },
+    {
+      "id": "H1",
+      "title": "Dokumentation aller Inhalte und Quellcodes",
+      "description": "Kommentare in CSS, PHP und ggf. JS; Nachvollziehbarkeit für Dritte.",
+      "max_points": 4,
+      "kind": "any_of",
+      "config": {
+        "rules": [
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.css",
+              "regex": "\\/\\*"
+            },
+            "label": "CSS-Kommentare vorhanden"
+          },
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.php",
+              "regex": "\\/\\/|\\/\\*"
+            },
+            "label": "PHP-Kommentare vorhanden"
+          }
+        ]
+      },
+      "evidence_hint": "Qualität und Vollständigkeit der Kommentierung manuell prüfen."
+    },
+    {
+      "id": "I1",
+      "title": "Farbgestaltung und Design",
+      "description": "Optisch gelungene Farbgebung, abgerundete Boxen (border-radius), Schatteneffekte (box-shadow), Farbverläufe (gradient), Hover-/Mouseovereffekte, Animationen.",
+      "max_points": 4,
+      "kind": "all_of",
+      "config": {
+        "rules": [
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.css",
+              "regex": "border-radius"
+            },
+            "label": "Abgerundete Boxen (border-radius)"
+          },
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.css",
+              "regex": ":hover"
+            },
+            "label": "Hover-Effekte vorhanden"
+          },
+          {
+            "kind": "any_of",
+            "config": {
+              "label": "Weitere Designeffekte (Schatten, Verlauf oder Animation)",
+              "rules": [
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.css",
+                    "regex": "box-shadow"
+                  }
+                },
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.css",
+                    "regex": "gradient"
+                  }
+                },
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.css",
+                    "regex": "transition|animation|@keyframes"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "evidence_hint": "Gesamteindruck, gestalterische Konsistenz und Browserkompatibilität der Effekte manuell prüfen."
+    },
+    {
+      "id": "J1",
+      "title": "Sonstige Features – Impressum, Datenschutz und KI-Inhalte",
+      "description": "Impressum, Haftungsausschluss, Datenschutzerklärung, korrekte Zitation von KI-generierten Inhalten.",
+      "max_points": 4,
+      "kind": "all_of",
+      "config": {
+        "rules": [
+          {
+            "kind": "any_of",
+            "config": {
+              "label": "Impressum vorhanden",
+              "rules": [
+                {
+                  "kind": "file_exists",
+                  "config": {
+                    "glob": "pages/impressum.php"
+                  }
+                },
+                {
+                  "kind": "file_exists",
+                  "config": {
+                    "glob": "impressum.php"
+                  }
+                },
+                {
+                  "kind": "file_exists",
+                  "config": {
+                    "glob": "impressum.html"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "kind": "any_of",
+            "config": {
+              "label": "Datenschutz oder Haftungsausschluss vorhanden",
+              "rules": [
+                {
+                  "kind": "file_exists",
+                  "config": {
+                    "glob": "pages/datenschutz.php"
+                  }
+                },
+                {
+                  "kind": "file_exists",
+                  "config": {
+                    "glob": "datenschutz.php"
+                  }
+                },
+                {
+                  "kind": "file_exists",
+                  "config": {
+                    "glob": "pages/haftung.php"
+                  }
+                }
+              ]
+            }
+          }
+        ]
+      },
+      "evidence_hint": "Vollständigkeit von Impressum, Datenschutz und KI-Zitationen inhaltlich manuell prüfen."
+    }
+  ]
+}

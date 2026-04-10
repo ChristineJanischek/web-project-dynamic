@@ -7,6 +7,29 @@ Dieses Projekt enthält verschiedene Automatisierungsskripte für Dokumentation,
 - **[CI-Setup (Exam-System Validierung)](README_CI_SETUP.md)** – Pre-Commit Hooks + GitHub Actions
 - **[Exam-System Dokumentation](../docs/programmierung/grundlagen/exams/)** – Examen, Varianten, Validierung
 
+## Bewertungsmodul Start mit Uploads
+
+Wenn in `material/uploads` ein Projekt-Archiv (`.zip`) und ein Bewertungsbogen (`.docx` oder `.md`) liegen, kann die Ingestion direkt gestartet werden:
+
+```bash
+python3 scripts/process_assessment_uploads.py
+```
+
+Alternativ ueber npm:
+
+```bash
+npm run assessment:ingest
+```
+
+Der Lauf erstellt im owner-only Workspace unter `~/Downloads/edu-assessment-owner`:
+
+- Ablage der Uploads in `eingang/` und `boegen/`
+- Entpackte Projektquellen in `entpackt/`
+- Rubrik-Rohtext als Markdown in `ausgang/`
+- Startbericht fuer die weitere Bewertungsimplementierung in `ausgang/`
+- Strukturierte Erstbewertung als JSON-Draft in `ausgang/`
+- Lesbare Erstbewertung als Markdown-Draft in `ausgang/`
+
 ## 📋 Übersicht
 
 Dieses Projekt enthält Scripts zur:
