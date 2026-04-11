@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from dataclasses import replace
+from datetime import datetime
 from html import escape
 from pathlib import Path
 import json
@@ -190,115 +191,142 @@ def write_report_markdown(target_path: Path, report: EvaluationReport) -> Path:
 
 def write_report_html(target_path: Path, report: EvaluationReport) -> Path:
     status_counts = _count_statuses(report)
-    rows: list[str] = []
+    now_text = datetime.now().strftime("%Y-%m-%d %H:%M")
 
-    for criterion in report.criteria:
-        status_label = _status_label(criterion.status)
-        status_style = _status_style(criterion.status)
-        evidence = _format_html_list(criterion.evidence) or "-"
-        appreciation = escape(_pedagogical_appreciation(criterion))
-        next_step = escape(_pedagogical_next_step(criterion))
-        teacher_check = escape(_teacher_check_hint(criterion))
-        note = escape(criterion.note) if criterion.note else "-"
-
-        rows.append(
-            "".join(
-                [
-                    "<tr>",
-                    _cell(escape(criterion.criterion_id), width="7%", bold=True),
-                    _cell(escape(criterion.title), width="17%", bold=True),
-                    _cell(escape(status_label), width="10%", extra_style=status_style, bold=True),
-                    _cell(f"{criterion.awarded_points:.2f} / {criterion.max_points:.2f}", width="10%"),
-                    _cell(evidence, width="16%"),
-                    _cell(appreciation, width="14%"),
-                    _cell(next_step, width="14%"),
-                    _cell(teacher_check, width="12%"),
-                    "</tr>",
-                    "<tr>",
-                    _cell("Lehrkraft-Notiz", width="14%", header_like=True),
-                    _cell(note, colspan=7),
-                    "</tr>",
-                ]
-            )
+    # Raster-Zeilen (kompakte Uebersichtstabelle)
+    raster_rows: list[str] = []
+    for c in report.criteria:
+        evidence_text = (
+            " | ".join(c.evidence[:2])
+            if c.evidence
+            else (c.note.split("|")[0].strip() if c.note else "-")
+        )
+        raster_rows.append(
+            "<tr>"
+            f"<td>{escape(c.criterion_id)}</td>"
+            f"<td>{escape(c.title)}</td>"
+            f'<td style="text-align:right;">{c.awarded_points:.2f} / {c.max_points:.2f}</td>'
+            f'<td><span class="{_status_css_class(c.status)}">{escape(_status_label(c.status))}</span></td>'
+            f"<td>{escape(evidence_text)}</td>"
+            "</tr>"
         )
 
-    html = """<!DOCTYPE html>
-<html lang="de">
-<head>
-  <meta charset="utf-8">
-  <title>Bewertungsbericht - {project_name}</title>
-</head>
-<body style="margin:24px; font-family:Calibri, Arial, sans-serif; font-size:11pt; color:#222222; background:#ffffff;">
-  <h1 style="font-size:18pt; margin:0 0 12px 0;">Bewertungsbericht</h1>
-  <table style="border-collapse:collapse; width:100%; margin-bottom:18px;" border="1" cellpadding="6" cellspacing="0">
-    <tr>
-      <td style="width:25%; background:#f2f2f2;"><strong>Projekt</strong></td>
-      <td style="width:25%;">{project_name}</td>
-      <td style="width:25%; background:#f2f2f2;"><strong>Rubrik</strong></td>
-      <td style="width:25%;">{rubric_id}</td>
-    </tr>
-    <tr>
-      <td style="background:#f2f2f2;"><strong>Punkte</strong></td>
-      <td>{awarded_points:.2f} / {max_points:.2f}</td>
-      <td style="background:#f2f2f2;"><strong>Note</strong></td>
-      <td>{grade:.2f}</td>
-    </tr>
-  </table>
+    # Einzelkriterien mit paedagogischem Feedback
+    detail_parts: list[str] = []
+    for c in report.criteria:
+        appreciation = _pedagogical_appreciation(c)
+        next_step = _pedagogical_next_step(c)
+        teacher_hint = _teacher_check_hint(c)
+        evidence_items = (
+            "".join(f"<li>{escape(e)}</li>" for e in c.evidence[:5])
+            or "<li>&#8211;</li>"
+        )
+        note_text = escape(c.note) if c.note else "&#8211;"
+        detail_parts.append(
+            f"<h3>{escape(c.criterion_id)} &#8211; {escape(c.title)}</h3>\n"
+            "<ul>\n"
+            f"  <li>Punkte: {c.awarded_points:.2f} / {c.max_points:.2f}</li>\n"
+            f'  <li>Status: <span class="{_status_css_class(c.status)}">{escape(_status_label(c.status))}</span></li>\n'
+            f"  <li>Evidenz: <ul>{evidence_items}</ul></li>\n"
+            f"  <li>Anmerkung: {note_text}</li>\n"
+            f"  <li>Wuerdigung: {escape(appreciation)}</li>\n"
+            f"  <li>Naechster Schritt: {escape(next_step)}</li>\n"
+            f"  <li>Lehrkraft-Hinweis: {escape(teacher_hint)}</li>\n"
+            "</ul>\n"
+        )
 
-  <h2 style="font-size:13pt; margin:18px 0 8px 0;">Gesamtbild</h2>
-  <p style="margin:0 0 10px 0; line-height:1.45;">{summary}</p>
-  <table style="border-collapse:collapse; width:100%; margin-bottom:18px;" border="1" cellpadding="6" cellspacing="0">
-    <tr style="background:#f2f2f2;">
-      <th align="left">Erfuellt</th>
-      <th align="left">Teilweise</th>
-      <th align="left">Nicht erfuellt</th>
-      <th align="left">Manuell pruefen</th>
-      <th align="left">Do Next</th>
-    </tr>
-    <tr>
-      <td>{count_erfuellt}</td>
-      <td>{count_teilweise}</td>
-      <td>{count_nicht}</td>
-      <td>{count_manuell}</td>
-      <td>{overall_next_step}</td>
-    </tr>
-  </table>
+    rec_block = _render_recommendation_html(report.recommendation_plan)
 
-  <h2 style="font-size:13pt; margin:18px 0 8px 0;">Kriterien und Feedback</h2>
-  <p style="margin:0 0 10px 0; line-height:1.45;">Diese Tabelle ist bewusst einfach aufgebaut, damit sie beim Kopieren nach Word als Tabelle erhalten bleibt und dort direkt weiterbearbeitet werden kann.</p>
-  <table style="border-collapse:collapse; width:100%;" border="1" cellpadding="6" cellspacing="0">
-    <tr style="background:#f2f2f2;">
-      <th align="left" style="width:7%;">ID</th>
-      <th align="left" style="width:17%;">Kriterium</th>
-      <th align="left" style="width:10%;">Status</th>
-      <th align="left" style="width:10%;">Punkte</th>
-      <th align="left" style="width:16%;">Beobachtung / Evidenz</th>
-      <th align="left" style="width:14%;">Wuerdigung</th>
-      <th align="left" style="width:14%;">Naechster Schritt</th>
-      <th align="left" style="width:12%;">Manuelle Pruefung</th>
-    </tr>
-    {rows}
-  </table>
-  {recommendation_block}
-</body>
-</html>
-""".format(
-        project_name=escape(report.student_project_name),
-        rubric_id=escape(report.rubric_id),
-        awarded_points=report.awarded_points,
-        max_points=report.max_points,
-        grade=report.grade,
-        summary=escape(report.summary),
-        count_erfuellt=status_counts[CriterionStatus.ERFUELLT],
-        count_teilweise=status_counts[CriterionStatus.TEILWEISE],
-        count_nicht=status_counts[CriterionStatus.NICHT_ERFUELLT],
-        count_manuell=status_counts[CriterionStatus.MANUELL_PRUEFEN],
-        overall_next_step=escape(_overall_next_step(report)),
-        rows="\n    ".join(rows),
-        recommendation_block=_render_recommendation_html(report.recommendation_plan),
+    css = (
+        "  <style>\n"
+        "    body {\n"
+        "      margin: 1.5cm;\n"
+        "      font-family: Calibri, 'Segoe UI', Arial, sans-serif;\n"
+        "      font-size: 11pt;\n"
+        "      color: #111;\n"
+        "      line-height: 1.35;\n"
+        "      background: #fff;\n"
+        "      max-width: 180mm;\n"
+        "    }\n"
+        "    h1 { font-size: 19pt; margin-bottom: 0.5em; }\n"
+        "    h2 { font-size: 14pt; margin-top: 1.2em; margin-bottom: 0.4em;"
+        " border-bottom: 1px solid #b9c3d1; padding-bottom: 4px; }\n"
+        "    h3 { font-size: 12pt; margin-top: 1em; margin-bottom: 0.3em; }\n"
+        "    table { border-collapse: collapse; width: 100%; margin: 0.6em 0 1em 0;"
+        " font-size: 10.5pt; table-layout: fixed; }\n"
+        "    th, td { border: 1px solid #9ca9ba; padding: 6px 8px; vertical-align: top;"
+        " overflow-wrap: anywhere; word-break: break-word; hyphens: auto; }\n"
+        "    th { background: #e8eef7; text-align: left; }\n"
+        "    th:nth-child(1), td:nth-child(1) { width: 6%; }\n"
+        "    th:nth-child(2), td:nth-child(2) { width: 34%; }\n"
+        "    th:nth-child(3), td:nth-child(3) { width: 14%; text-align: right; }\n"
+        "    th:nth-child(4), td:nth-child(4) { width: 14%; }\n"
+        "    th:nth-child(5), td:nth-child(5) { width: 32%; }\n"
+        "    ul { margin-top: 0.3em; }\n"
+        "    hr { border: 0; border-top: 1px solid #c8d0dd; margin: 1.1em 0; }\n"
+        "    .erfuellt { color: #2d6a4f; font-weight: 700; }\n"
+        "    .teilweise { color: #9a6700; font-weight: 700; }\n"
+        "    .nicht-erfuellt { color: #9f1d1d; font-weight: 700; }\n"
+        "    .manuell { color: #345a8a; font-weight: 700; }\n"
+        "    .hinweis { background: #f4f8ff; border-left: 4px solid #345a8a;"
+        " padding: 6px 10px; margin: 0.4em 0 0.8em 0; display: block; }\n"
+        "    @media print {\n"
+        "      body { margin: 1.2cm; max-width: none; }\n"
+        "      h1, h2, h3 { page-break-after: avoid; }\n"
+        "      table { page-break-inside: auto; }\n"
+        "      tr { page-break-inside: avoid; page-break-after: auto; }\n"
+        "    }\n"
+        "  </style>\n"
     )
 
-    target_path.write_text(html + "\n", encoding="utf-8")
+    html = (
+        "<!DOCTYPE html>\n"
+        '<html lang="de">\n'
+        "<head>\n"
+        '  <meta charset="utf-8">\n'
+        '  <meta name="viewport" content="width=device-width, initial-scale=1">\n'
+        f'  <title>Bewertungsbericht &#8211; {escape(report.student_project_name)}</title>\n'
+        + css
+        + "</head>\n"
+        "<body>\n"
+        "<h1>Bewertungsbericht</h1>\n"
+        "<ul>\n"
+        f"  <li>Datum: {escape(now_text)}</li>\n"
+        f"  <li>Projekt: {escape(report.student_project_name)}</li>\n"
+        f"  <li>Rubrik: {escape(report.rubric_id)}</li>\n"
+        f"  <li>Projekttyp: {escape(report.project_type)}</li>\n"
+        "</ul>\n"
+        "<h2>Gesamtergebnis</h2>\n"
+        "<ul>\n"
+        f"  <li>Punkte: {report.awarded_points:.2f} / {report.max_points:.2f}</li>\n"
+        f"  <li>Note (linear): {report.grade:.2f}</li>\n"
+        f"  <li>Erfuellt: {status_counts[CriterionStatus.ERFUELLT]}"
+        f" | Teilweise: {status_counts[CriterionStatus.TEILWEISE]}"
+        f" | Nicht erfuellt: {status_counts[CriterionStatus.NICHT_ERFUELLT]}"
+        f" | Manuell pruefen: {status_counts[CriterionStatus.MANUELL_PRUEFEN]}</li>\n"
+        "</ul>\n"
+        f"<p>{escape(report.summary)}</p>\n"
+        "<h2>Bewertungsraster</h2>\n"
+        "<table>\n"
+        "  <thead><tr>\n"
+        "    <th>ID</th>\n"
+        "    <th>Kriterium</th>\n"
+        '    <th style="text-align:right;">Punkte</th>\n'
+        "    <th>Status</th>\n"
+        "    <th>Wichtigste Evidenz / Anmerkung</th>\n"
+        "  </tr></thead>\n"
+        "  <tbody>\n"
+        + "".join(f"    {row}\n" for row in raster_rows)
+        + "  </tbody>\n"
+        "</table>\n"
+        "<h2>Einzelkriterien und didaktisches Feedback</h2>\n"
+        + "".join(detail_parts)
+        + rec_block
+        + "</body>\n"
+        "</html>\n"
+    )
+
+    target_path.write_text(html, encoding="utf-8")
     return target_path
 
 
@@ -315,25 +343,23 @@ def _render_recommendation_html(plan: RecommendationPlan | None) -> str:
 
     ext_blocks = ""
     for i, ext in enumerate(plan.extensions, start=1):
-        ext_blocks += f"""
-  <h3 style="font-size:12pt; margin:14px 0 4px 0; color:#1a3a5c;">Erweiterung {i}: {escape(ext.title)}</h3>
-  <p style="margin:0 0 6px 0; line-height:1.45;">{escape(ext.rationale)}</p>
-  <p style="margin:0 0 10px 0; background:#f7f9fc; border-left:4px solid #345a8a; padding:6px 10px; line-height:1.4;">
-    <strong>Aufwand und Schritte:</strong> {escape(ext.effort_hint)}
-  </p>"""
+        ext_blocks += (
+            f"<h3>Erweiterung {i}: {escape(ext.title)}</h3>\n"
+            "<ul>\n"
+            f"  <li>Begruendung: {escape(ext.rationale)}</li>\n"
+            f'  <li><span class="hinweis">Aufwand und Schritte: {escape(ext.effort_hint)}</span></li>\n'
+            "</ul>\n"
+        )
 
-    todos_html = "".join(f"<li style='margin-bottom:4px;'>{escape(t)}</li>" for t in plan.todos_until_june)
+    todos_html = "".join(f"  <li>{escape(t)}</li>\n" for t in plan.todos_until_june)
 
-    return f"""
-  <h2 style="font-size:13pt; margin:24px 0 8px 0; color:#1a3a5c; border-top:2px solid #345a8a; padding-top:12px;">
-    Marschplan: Vertiefung bis Anfang Juni
-  </h2>
-  <p style="margin:0 0 12px 0; line-height:1.45; font-style:italic;">{escape(plan.focus)}</p>
-  {ext_blocks}
-  <h3 style="font-size:12pt; margin:14px 0 6px 0; color:#1a3a5c;">ToDo-Liste bis zur Verteidigung</h3>
-  <ul style="margin:0 0 12px 0; padding-left:22px; line-height:1.5;">
-    {todos_html}
-  </ul>"""
+    return (
+        "<h2>Marschplan: Vertiefung bis Anfang Juni</h2>\n"
+        f'<p class="hinweis">{escape(plan.focus)}</p>\n'
+        + ext_blocks
+        + "<h3>ToDo-Liste bis zur Verteidigung</h3>\n"
+        + f"<ul>\n{todos_html}</ul>\n"
+    )
 
 
 def _status_label(status: CriterionStatus) -> str:
@@ -345,43 +371,13 @@ def _status_label(status: CriterionStatus) -> str:
     }[status]
 
 
-def _status_style(status: CriterionStatus) -> str:
+def _status_css_class(status: CriterionStatus) -> str:
     return {
-        CriterionStatus.ERFUELLT: "color:#2d6a4f;",
-        CriterionStatus.TEILWEISE: "color:#9a6700;",
-        CriterionStatus.NICHT_ERFUELLT: "color:#9f1d1d;",
-        CriterionStatus.MANUELL_PRUEFEN: "color:#345a8a;",
+        CriterionStatus.ERFUELLT: "erfuellt",
+        CriterionStatus.TEILWEISE: "teilweise",
+        CriterionStatus.NICHT_ERFUELLT: "nicht-erfuellt",
+        CriterionStatus.MANUELL_PRUEFEN: "manuell",
     }[status]
-
-
-def _cell(
-    content: str,
-    width: str | None = None,
-    colspan: int | None = None,
-    bold: bool = False,
-    header_like: bool = False,
-    extra_style: str = "",
-) -> str:
-    styles = ["vertical-align:top;", "line-height:1.35;"]
-    if width:
-        styles.append(f"width:{width};")
-    if bold:
-        styles.append("font-weight:700;")
-    if header_like:
-        styles.append("background:#f7f7f7; font-weight:700;")
-    if extra_style:
-        styles.append(extra_style)
-
-    colspan_attr = f' colspan="{colspan}"' if colspan else ""
-    return f'<td{colspan_attr} style="{" ".join(styles)}">{content}</td>'
-
-
-def _format_html_list(items: list[str]) -> str:
-    if not items:
-        return ""
-    return "<ul style=\"margin:0; padding-left:18px;\">" + "".join(
-        f"<li>{escape(item)}</li>" for item in items[:5]
-    ) + "</ul>"
 
 
 def _pedagogical_appreciation(criterion: EvaluationCriterion) -> str:
