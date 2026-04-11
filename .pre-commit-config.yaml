@@ -6,6 +6,13 @@ repos:
   # Exam-System Validierung
   - repo: local
     hooks:
+      - id: check-sensitive-assessment-data
+        name: Block Sensitive Assessment Data
+        entry: python3 scripts/check_sensitive_assessment_data.py
+        language: system
+        pass_filenames: false
+        stages: [commit]
+
       - id: validate-exams
         name: Validate Exam System
         entry: python3 scripts/validate_exams.py --write-knowledge-base

@@ -55,3 +55,19 @@ material/uploads/
 
 # Generierte Bewertungs-ZIP-Exporte (nur lokal herunterladen, nicht committen)
 exports/
+
+# Harte Schutzregeln: sensible Korrekturhilfe-/Bewertungsartefakte nie versionieren
+**/*_korrekturhilfe_draft.json
+**/*_korrekturhilfe_draft.md
+**/*_korrekturhilfe_draft.html
+**/*_korrekturhilfe_start.md
+**/korrekturhilfeuebersicht.md
+**/korrekturhilfeuebersicht.html
+**/*_bewertung_draft.json
+**/*_bewertung_draft.md
+**/*_bewertung_draft.html
+**/*_bewertung_start.md
+**/bewertungsuebersicht.md
+**/bewertungsuebersicht.html
+**/rangliste.md
+**/rangliste.html
