@@ -29,8 +29,8 @@ class EvaluationSnapshot:
 def generate_batch_reports(reports_dir: Path) -> dict[str, Path]:
     snapshots = collect_evaluation_snapshots(reports_dir)
 
-    overview_md = reports_dir / "bewertungsuebersicht.md"
-    overview_html = reports_dir / "bewertungsuebersicht.html"
+    overview_md = reports_dir / "korrekturhilfeuebersicht.md"
+    overview_html = reports_dir / "korrekturhilfeuebersicht.html"
     ranking_md = reports_dir / "rangliste.md"
     ranking_html = reports_dir / "rangliste.html"
 
@@ -62,7 +62,11 @@ def export_html_reports_to_downloads(reports_dir: Path, download_dir: Path) -> l
 
 def collect_evaluation_snapshots(reports_dir: Path) -> list[EvaluationSnapshot]:
     snapshots: list[EvaluationSnapshot] = []
-    for json_file in sorted(reports_dir.glob("*_bewertung_draft.json")):
+    json_files = sorted(reports_dir.glob("*_korrekturhilfe_draft.json"))
+    if not json_files:
+        json_files = sorted(reports_dir.glob("*_bewertung_draft.json"))
+
+    for json_file in json_files:
         payload = json.loads(json_file.read_text(encoding="utf-8"))
 
         snapshots.append(
@@ -83,7 +87,7 @@ def collect_evaluation_snapshots(reports_dir: Path) -> list[EvaluationSnapshot]:
 
 def write_overview_markdown(target_path: Path, snapshots: list[EvaluationSnapshot]) -> Path:
     lines = [
-        "# Bewertungsuebersicht",
+        "# Korrekturhilfeuebersicht",
         "",
         f"Stand: {datetime.now().strftime('%Y-%m-%d %H:%M')}",
         "",
@@ -91,7 +95,7 @@ def write_overview_markdown(target_path: Path, snapshots: list[EvaluationSnapsho
 
     if not snapshots:
         lines.extend([
-            "Keine Bewertungsdaten gefunden.",
+            "Keine Korrekturhilfe-Daten gefunden.",
             "",
         ])
         target_path.write_text("\n".join(lines), encoding="utf-8")
@@ -153,17 +157,17 @@ def write_overview_html(target_path: Path, snapshots: list[EvaluationSnapshot]) 
             ]
         )
     else:
-        summary_row = "<p style=\"margin:0 0 12px 0;\">Keine Bewertungsdaten gefunden.</p>"
+        summary_row = "<p style=\"margin:0 0 12px 0;\">Keine Korrekturhilfe-Daten gefunden.</p>"
         rows = "<tr><td colspan=\"6\">Keine Eintraege vorhanden.</td></tr>"
 
     html = f"""<!DOCTYPE html>
 <html lang="de">
 <head>
   <meta charset="utf-8">
-  <title>Bewertungsuebersicht</title>
+    <title>Korrekturhilfeuebersicht</title>
 </head>
 <body style="margin:24px; font-family:Calibri, Arial, sans-serif; font-size:11pt; color:#222;">
-  <h1 style="margin:0 0 8px 0;">Bewertungsuebersicht</h1>
+    <h1 style="margin:0 0 8px 0;">Korrekturhilfeuebersicht</h1>
   <p style="margin:0 0 12px 0;">Stand: {escape(now_text)}</p>
   {summary_row}
   <table style="border-collapse:collapse; width:100%;" border="1" cellpadding="6" cellspacing="0">
@@ -195,7 +199,7 @@ def write_ranking_markdown(target_path: Path, snapshots: list[EvaluationSnapshot
 
     if not snapshots:
         lines.extend([
-            "Keine Bewertungsdaten gefunden.",
+            "Keine Korrekturhilfe-Daten gefunden.",
             "",
         ])
         target_path.write_text("\n".join(lines), encoding="utf-8")

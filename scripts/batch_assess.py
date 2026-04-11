@@ -121,7 +121,7 @@ def main() -> int:
 
             detected_type = detect_project_type(extracted_project_path)
 
-            kickoff_path = config.reports_dir / f"{project_name}_bewertung_start.md"
+            kickoff_path = config.reports_dir / f"{project_name}_korrekturhilfe_start.md"
             write_kickoff_report(
                 target_path=kickoff_path,
                 project_name=project_name,
@@ -137,15 +137,15 @@ def main() -> int:
             )
 
             write_report_json(
-                config.reports_dir / f"{project_name}_bewertung_draft.json",
+                config.reports_dir / f"{project_name}_korrekturhilfe_draft.json",
                 evaluation_report,
             )
             write_report_markdown(
-                config.reports_dir / f"{project_name}_bewertung_draft.md",
+                config.reports_dir / f"{project_name}_korrekturhilfe_draft.md",
                 evaluation_report,
             )
             write_report_html(
-                config.reports_dir / f"{project_name}_bewertung_draft.html",
+                config.reports_dir / f"{project_name}_korrekturhilfe_draft.html",
                 evaluation_report,
             )
 

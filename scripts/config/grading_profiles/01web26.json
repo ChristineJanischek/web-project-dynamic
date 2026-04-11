@@ -3,7 +3,7 @@
   "profile_name": "Web-Projekt Oberstufe 2026",
   "project_type": "web-php-static",
   "created": "2026-04-10",
-  "version": "1.1",
+  "version": "1.2",
   "grade_scale": {
     "best": 1.0,
     "worst": 6.0
@@ -19,12 +19,12 @@
   "criteria": [
     {
       "id": "A1",
-      "title": "Formales – Abgabe",
-      "description": "Pünktliche und vollständige Abgabe als einzelnes ZIP-Archiv. Sehr gut: pünktlich und vollständig. Gut: kleine Mängel. Ausreichend: verspätet. Nicht erfüllt: gar nicht abgegeben.",
+      "title": "Formales – Syntax, MVC, kein Rechner/Automat, Abgabe",
+      "description": "Prüfpunkte: (1) Syntaxfehlerfreiheit im PHP-Code, (2) Anwendung des MVC-Konzepts, (3) kein dynamischer Teil vom Typ Rechner/Automat, (4) Abgabezeitpunkt. Kostia und Nikita: 20 Minuten verspätet, mild bewerten.",
       "max_points": 4,
       "kind": "manual",
       "config": {},
-      "evidence_hint": "Abgabedatum und ZIP-Vollständigkeit manuell prüfen."
+      "evidence_hint": "Vier Teilprüfungen werden automatisch dokumentiert; Sonderregel zur milden Verspätung ist hinterlegt."
     },
     {
       "id": "B1",

@@ -137,7 +137,7 @@ def main() -> int:
         write_rubric_markdown(rubric_markdown_path, archived_rubric, rubric_lines)
 
     project_name = args.project_name.strip() or archived_zip.stem
-    kickoff_report_path = config.reports_dir / f"{project_name}_bewertung_start.md"
+    kickoff_report_path = config.reports_dir / f"{project_name}_korrekturhilfe_start.md"
     write_kickoff_report(
         target_path=kickoff_report_path,
         project_name=project_name,
@@ -173,9 +173,9 @@ def main() -> int:
             criteria=structured_criteria,
         )
 
-    evaluation_json_path = config.reports_dir / f"{project_name}_bewertung_draft.json"
-    evaluation_md_path = config.reports_dir / f"{project_name}_bewertung_draft.md"
-    evaluation_html_path = config.reports_dir / f"{project_name}_bewertung_draft.html"
+    evaluation_json_path = config.reports_dir / f"{project_name}_korrekturhilfe_draft.json"
+    evaluation_md_path = config.reports_dir / f"{project_name}_korrekturhilfe_draft.md"
+    evaluation_html_path = config.reports_dir / f"{project_name}_korrekturhilfe_draft.html"
     write_report_json(evaluation_json_path, evaluation_report)
     write_report_markdown(evaluation_md_path, evaluation_report)
     write_report_html(evaluation_html_path, evaluation_report)

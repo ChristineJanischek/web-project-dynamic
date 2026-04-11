@@ -6,6 +6,8 @@ from html import escape
 from pathlib import Path
 import json
 import re
+import shutil
+import subprocess
 
 from .models import CriterionStatus, EvaluationCriterion, EvaluationReport, RecommendationItem, RecommendationPlan
 from .profile_loader import GradingProfile
@@ -119,7 +121,7 @@ def evaluate_project(
         grade=grade,
         criteria=evaluated,
         summary=(
-            "Automatische Erstbewertung auf Basis der Dateistruktur. "
+            "Automatische Erst-Korrekturhilfe auf Basis der Dateistruktur. "
             "Alle Kriterien mit Status manuell_pruefen oder unscharfer Evidenz nachpruefen."
         ),
     )
@@ -143,7 +145,7 @@ def write_report_json(target_path: Path, report: EvaluationReport) -> Path:
 
 def write_report_markdown(target_path: Path, report: EvaluationReport) -> Path:
     lines = [
-        "# Bewertungsbericht (Draft)",
+        "# Korrekturhilfe (Draft)",
         "",
         f"Projekt: {report.student_project_name}",
         f"Rubrik: {report.rubric_id}",
@@ -285,11 +287,11 @@ def write_report_html(target_path: Path, report: EvaluationReport) -> Path:
         "<head>\n"
         '  <meta charset="utf-8">\n'
         '  <meta name="viewport" content="width=device-width, initial-scale=1">\n'
-        f'  <title>Bewertungsbericht &#8211; {escape(report.student_project_name)}</title>\n'
+        f'  <title>Korrekturhilfe &#8211; {escape(report.student_project_name)}</title>\n'
         + css
         + "</head>\n"
         "<body>\n"
-        "<h1>Bewertungsbericht</h1>\n"
+        "<h1>Korrekturhilfe</h1>\n"
         "<ul>\n"
         f"  <li>Datum: {escape(now_text)}</li>\n"
         f"  <li>Projekt: {escape(report.student_project_name)}</li>\n"
@@ -306,7 +308,7 @@ def write_report_html(target_path: Path, report: EvaluationReport) -> Path:
         f" | Manuell pruefen: {status_counts[CriterionStatus.MANUELL_PRUEFEN]}</li>\n"
         "</ul>\n"
         f"<p>{escape(report.summary)}</p>\n"
-        "<h2>Bewertungsraster</h2>\n"
+        "<h2>Korrekturhilfe-Raster</h2>\n"
         "<table>\n"
         "  <thead><tr>\n"
         "    <th>ID</th>\n"
@@ -530,6 +532,10 @@ def evaluate_project_with_profile(
     evaluated: list[EvaluationCriterion] = []
 
     for crit in profile.criteria:
+        if crit.criterion_id == "A1":
+            evaluated.append(_evaluate_formales_criterion(project_name, project_root, crit))
+            continue
+
         rule_result = evaluate_rule(
             kind=crit.kind,
             config=crit.config,
@@ -559,7 +565,7 @@ def evaluate_project_with_profile(
     manual_count = sum(1 for c in evaluated if c.status == CriterionStatus.MANUELL_PRUEFEN)
 
     summary = (
-        f"Profil-basierte Erstbewertung '{profile.profile_name}'. "
+        f"Profil-basierte Erst-Korrekturhilfe '{profile.profile_name}'. "
         f"{manual_count} von {len(evaluated)} Kriterien erfordern manuelle Prüfung. "
         "Vorläufige Punkte bei ERFUELLT auf der 4/3/2/1-Skala anpassen."
     )
@@ -715,3 +721,120 @@ def _resolve_status_and_points(
     if teilweise and int(teilweise.group(1)) > 0:
         return CriterionStatus.TEILWEISE, 0.0
     return CriterionStatus.NICHT_ERFUELLT, 0.0
+
+
+def _evaluate_formales_criterion(project_name: str, project_root: Path, crit) -> EvaluationCriterion:
+    php_files = sorted(project_root.rglob("*.php"))
+    syntax_points, syntax_evidence, syntax_note = _check_php_syntax(project_root, php_files)
+    mvc_ok, mvc_evidence = _check_mvc_structure(project_root)
+    nodyn_ok, nodyn_evidence = _check_no_dynamic_rechner_automat(project_root)
+    timing_points, timing_note = _submission_timing_points(project_name)
+
+    score = 0.0
+    evidence: list[str] = []
+    note_parts: list[str] = []
+
+    score += syntax_points
+    evidence.extend(syntax_evidence)
+    note_parts.append(syntax_note)
+
+    if mvc_ok:
+        score += 1.0
+    evidence.extend(mvc_evidence)
+    note_parts.append("MVC-Konzept angewendet." if mvc_ok else "MVC-Konzept nicht eindeutig umgesetzt (Ordner controllers/models/views fehlen).")
+
+    if nodyn_ok:
+        score += 1.0
+    evidence.extend(nodyn_evidence)
+    note_parts.append(
+        "Kein dynamischer Teil (Rechner/Automat) gefunden."
+        if nodyn_ok
+        else "Dynamischer Teil (Rechner/Automat) erkannt."
+    )
+
+    score += timing_points
+    note_parts.append(timing_note)
+
+    awarded = min(crit.max_points, round(score, 2))
+    if awarded >= 3.5:
+        status = CriterionStatus.ERFUELLT
+    elif awarded >= 1.0:
+        status = CriterionStatus.TEILWEISE
+    else:
+        status = CriterionStatus.NICHT_ERFUELLT
+
+    if crit.evidence_hint:
+        note_parts.append(crit.evidence_hint)
+
+    return EvaluationCriterion(
+        criterion_id=crit.criterion_id,
+        title=crit.title,
+        max_points=crit.max_points,
+        awarded_points=awarded,
+        status=status,
+        evidence=evidence[:10],
+        note=" | ".join(note_parts),
+    )
+
+
+def _check_php_syntax(project_root: Path, php_files: list[Path]) -> tuple[float, list[str], str]:
+    if not php_files:
+        return 0.0, ["Keine PHP-Dateien gefunden"], "Syntaxcheck nicht bestanden: keine PHP-Dateien gefunden."
+
+    php_cmd = shutil.which("php")
+    if php_cmd is None:
+        return 1.0, ["PHP-CLI nicht verfuegbar"], "Syntaxcheck nicht ausfuehrbar (php nicht installiert), neutral bewertet."
+
+    failed: list[str] = []
+    checked = 0
+    for path in php_files:
+        checked += 1
+        result = subprocess.run(
+            [php_cmd, "-l", str(path)],
+            capture_output=True,
+            text=True,
+            check=False,
+        )
+        if result.returncode != 0:
+            failed.append(str(path.relative_to(project_root)))
+
+    if failed:
+        return 0.0, [f"Syntaxfehler in {name}" for name in failed[:3]], f"Syntaxfehler in {len(failed)} Datei(en)."
+    return 1.0, [f"Syntax ok ({checked} PHP-Dateien geprueft)"], "Syntaxfehlerfreiheit gegeben."
+
+
+def _check_mvc_structure(project_root: Path) -> tuple[bool, list[str]]:
+    mvc_dirs = [
+        project_root / "controllers",
+        project_root / "models",
+        project_root / "views",
+    ]
+    missing = [d.name for d in mvc_dirs if not d.exists()]
+    if missing:
+        return False, [f"Fehlende MVC-Ordner: {', '.join(missing)}"]
+    return True, ["MVC-Ordner vorhanden: controllers, models, views"]
+
+
+def _check_no_dynamic_rechner_automat(project_root: Path) -> tuple[bool, list[str]]:
+    suspect = re.compile(r"(?i)\b(?:rechner|calculator|automat|vending)\b")
+    hits: list[str] = []
+    for file_path in list(project_root.rglob("*.php")) + list(project_root.rglob("*.js")):
+        try:
+            text = file_path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        if suspect.search(text):
+            hits.append(str(file_path.relative_to(project_root)))
+            if len(hits) >= 5:
+                break
+
+    if hits:
+        return False, [f"Dynamik-Hinweis in {name}" for name in hits[:3]]
+    return True, ["Kein Rechner/Automat-Code erkannt"]
+
+
+def _submission_timing_points(project_name: str) -> tuple[float, str]:
+    lowered = project_name.lower()
+    if "kostia" in lowered or "nikita" in lowered:
+        return 0.5, "Abgabe 20 Minuten verspaetet (milde bewertet)."
+    return 1.0, "Abgabe puenktlich."

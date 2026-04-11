@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Bündelt alle Bewertungsartefakte in ein ZIP-Archiv im Workspace.
+"""Bündelt alle Korrekturhilfe-Artefakte in ein ZIP-Archiv im Workspace.
 
 Das ZIP wird unter exports/ abgelegt – dort kann es im VS Code Explorer
 per Rechtsklick -> 'Download...' direkt auf den lokalen Rechner geladen werden.
@@ -33,15 +33,15 @@ Fertig! Naechste Schritte um das ZIP auf deinen lokalen Rechner zu laden:
   4. 'Download...'  waehlen
 
 Das ZIP enthaelt:
-  - Einzelberichte (je Schueler)
-  - Bewertungsuebersicht
+    - Einzelberichte (je Schueler)
+    - Korrekturhilfeuebersicht
   - Rangliste
 """
 
 
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(
-        description="Exportiert Bewertungsdateien als ZIP in den Workspace-Ordner exports/"
+        description="Exportiert Korrekturhilfe-Dateien als ZIP in den Workspace-Ordner exports/"
     )
     parser.add_argument(
         "--assessment-dir",
@@ -70,7 +70,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def collect_files(reports_dir: Path, formats: list[str]) -> list[Path]:
-    """Sammelt alle relevanten Bewertungsdateien sortiert nach Name."""
+    """Sammelt alle relevanten Korrekturhilfe-Dateien sortiert nach Name."""
     found: list[Path] = []
     suffixes = {f".{fmt}" for fmt in formats}
 
@@ -90,14 +90,14 @@ def collect_files(reports_dir: Path, formats: list[str]) -> list[Path]:
 def build_zip(files: list[Path], zip_path: Path) -> None:
     with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
         for f in files:
-            zf.write(f, arcname=f"bewertungen/{f.name}")
+            zf.write(f, arcname=f"korrekturhilfen/{f.name}")
 
 
 def print_listing(files: list[Path]) -> None:
     if not files:
-        print("Keine Bewertungsdateien gefunden.")
+        print("Keine Korrekturhilfe-Dateien gefunden.")
         return
-    print(f"Verfuegbare Bewertungsdateien ({len(files)}):")
+    print(f"Verfuegbare Korrekturhilfe-Dateien ({len(files)}):")
     for f in files:
         size_kb = f.stat().st_size / 1024
         print(f"  {f.name:60s} {size_kb:>7.1f} KB")
@@ -110,7 +110,7 @@ def main() -> int:
     if not reports_dir.exists():
         print(
             f"Fehler: Assessment-Ausgangsordner nicht gefunden: {reports_dir}\n"
-            "Stelle sicher dass mindestens ein Bewertungslauf abgeschlossen wurde:\n"
+            "Stelle sicher dass mindestens ein Korrekturlauf abgeschlossen wurde:\n"
             "  python3 scripts/process_assessment_uploads.py",
             file=sys.stderr,
         )
@@ -124,7 +124,7 @@ def main() -> int:
 
     if not files:
         print(
-            f"Keine Bewertungsdateien mit den Formaten {args.formats} gefunden.",
+            f"Keine Korrekturhilfe-Dateien mit den Formaten {args.formats} gefunden.",
             file=sys.stderr,
         )
         return 1
@@ -132,7 +132,7 @@ def main() -> int:
     EXPORTS_DIR.mkdir(parents=True, exist_ok=True)
 
     timestamp = datetime.now().strftime("%Y%m%d-%H%M%S")
-    archive_name = args.output_name.strip() or f"bewertungen_export_{timestamp}"
+    archive_name = args.output_name.strip() or f"korrekturhilfen_export_{timestamp}"
     zip_path = EXPORTS_DIR / f"{archive_name}.zip"
 
     build_zip(files, zip_path)
