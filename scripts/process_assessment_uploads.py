@@ -6,6 +6,10 @@ from __future__ import annotations
 import argparse
 from pathlib import Path
 
+from assessment_assistant.aggregation import (
+    export_html_reports_to_downloads,
+    generate_batch_reports,
+)
 from assessment_assistant.bootstrap import bootstrap_workspace
 from assessment_assistant.config import AssessmentWorkspaceConfig, default_workspace_root
 from assessment_assistant.evaluation import (
@@ -62,6 +66,17 @@ def parse_args() -> argparse.Namespace:
         "--profile-id",
         default="",
         help="ID eines Bewertungsprofils aus scripts/config/grading_profiles/",
+    )
+    parser.add_argument(
+        "--download-html-dir",
+        type=Path,
+        default=Path.home() / "Downloads",
+        help="Zielverzeichnis fuer den Export aller HTML-Bewertungsdateien",
+    )
+    parser.add_argument(
+        "--skip-html-export",
+        action="store_true",
+        help="Kein HTML-Export ins Download-Verzeichnis ausfuehren",
     )
     return parser.parse_args()
 
@@ -164,6 +179,14 @@ def main() -> int:
     write_report_json(evaluation_json_path, evaluation_report)
     write_report_markdown(evaluation_md_path, evaluation_report)
     write_report_html(evaluation_html_path, evaluation_report)
+    batch_reports = generate_batch_reports(config.reports_dir)
+
+    exported_html: list[Path] = []
+    if not args.skip_html_export:
+        exported_html = export_html_reports_to_downloads(
+            reports_dir=config.reports_dir,
+            download_dir=args.download_html_dir,
+        )
 
     print("Assessment-Ingestion abgeschlossen:")
     print(f"- zip_incoming: {archived_zip}")
@@ -174,6 +197,15 @@ def main() -> int:
     print(f"- evaluation_json: {evaluation_json_path}")
     print(f"- evaluation_markdown: {evaluation_md_path}")
     print(f"- evaluation_html: {evaluation_html_path}")
+    print(f"- overview_markdown: {batch_reports['overview_markdown']}")
+    print(f"- overview_html: {batch_reports['overview_html']}")
+    print(f"- ranking_markdown: {batch_reports['ranking_markdown']}")
+    print(f"- ranking_html: {batch_reports['ranking_html']}")
+    if args.skip_html_export:
+        print("- html_export: uebersprungen (--skip-html-export)")
+    else:
+        print(f"- html_export_dir: {args.download_html_dir / 'edu-assessment-html'}")
+        print(f"- html_export_count: {len(exported_html)}")
 
     return 0
 

@@ -1,6 +1,7 @@
 """Owner-zentrierte Bewertungsassistenz fuer Projektkorrekturen."""
 
 from .bootstrap import bootstrap_workspace
+from .aggregation import generate_batch_reports, export_html_reports_to_downloads
 from .config import AssessmentWorkspaceConfig, default_workspace_root
 from .ingestion import (
     UploadSelection,
@@ -31,6 +32,8 @@ __all__ = [
     "RecommendationPlan",
     "UploadSelection",
     "bootstrap_workspace",
+    "generate_batch_reports",
+    "export_html_reports_to_downloads",
     "copy_upload_file",
     "detect_criterion_candidates",
     "default_workspace_root",

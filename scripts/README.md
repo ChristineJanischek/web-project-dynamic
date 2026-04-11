@@ -32,12 +32,22 @@ Der Lauf erstellt im owner-only Workspace unter `~/Downloads/edu-assessment-owne
 - Strukturierte Erstbewertung als JSON-Draft in `ausgang/`
 - Lesbare Erstbewertung als Markdown-Draft in `ausgang/`
 - HTML-Draft fuer Copy-Paste nach Word in `ausgang/`
+- Bewertungsuebersicht als `bewertungsuebersicht.md` und `bewertungsuebersicht.html`
+- Rangliste als `rangliste.md` und `rangliste.html`
 
 Hinweis:
 
 - Die Markdown-Datei bleibt die kanonische Bewertungsquelle.
 - Die HTML-Datei ist ein generiertes Ausgabeformat fuer die Weiterverarbeitung in Word.
 - Ohne separate Rubrikdatei wird der Rubrik-Rohtext nicht erzeugt; der Startbericht verweist dann auf die verwendete Profilbewertung.
+- Alle HTML-Dateien aus `ausgang/` werden standardmaessig nach `~/Downloads/edu-assessment-html` kopiert.
+
+Optional:
+
+```bash
+python3 scripts/process_assessment_uploads.py --skip-html-export
+python3 scripts/process_assessment_uploads.py --download-html-dir ~/Downloads
+```
 
 ## 📋 Übersicht
 
