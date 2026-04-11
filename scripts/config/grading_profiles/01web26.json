@@ -145,12 +145,32 @@
       "config": {
         "rules": [
           {
-            "kind": "min_files_glob",
+            "kind": "any_of",
             "config": {
-              "glob": "images/*",
-              "min": 3
-            },
-            "label": "Mindestens 3 Bilder im images-Verzeichnis"
+              "label": "Mindestens 3 Bilder vorhanden (images/, img/, bilder/ oder assets/)",
+              "rules": [
+                {
+                  "kind": "min_files_glob",
+                  "config": { "glob": "images/*", "min": 3 }
+                },
+                {
+                  "kind": "min_files_glob",
+                  "config": { "glob": "img/*", "min": 3 }
+                },
+                {
+                  "kind": "min_files_glob",
+                  "config": { "glob": "bilder/*", "min": 3 }
+                },
+                {
+                  "kind": "min_files_glob",
+                  "config": { "glob": "assets/images/*", "min": 3 }
+                },
+                {
+                  "kind": "min_files_glob",
+                  "config": { "glob": "assets/img/*", "min": 3 }
+                }
+              ]
+            }
           },
           {
             "kind": "contains_regex",
@@ -364,21 +384,27 @@
               "rules": [
                 {
                   "kind": "file_exists",
-                  "config": {
-                    "glob": "pages/impressum.php"
-                  }
+                  "config": { "glob": "pages/impressum.php" }
                 },
                 {
                   "kind": "file_exists",
-                  "config": {
-                    "glob": "impressum.php"
-                  }
+                  "config": { "glob": "impressum.php" }
                 },
                 {
                   "kind": "file_exists",
+                  "config": { "glob": "impressum.html" }
+                },
+                {
+                  "kind": "file_exists",
+                  "config": { "glob": "layouts/impressum.php" }
+                },
+                {
+                  "kind": "contains_regex",
                   "config": {
-                    "glob": "impressum.html"
-                  }
+                    "glob": "**/*.php",
+                    "regex": "(?i)<h[1-6][^>]*>\\s*impressum"
+                  },
+                  "label": "Impressum-Überschrift in PHP-Datei"
                 }
               ]
             }
@@ -390,21 +416,31 @@
               "rules": [
                 {
                   "kind": "file_exists",
-                  "config": {
-                    "glob": "pages/datenschutz.php"
-                  }
+                  "config": { "glob": "pages/datenschutz.php" }
                 },
                 {
                   "kind": "file_exists",
-                  "config": {
-                    "glob": "datenschutz.php"
-                  }
+                  "config": { "glob": "datenschutz.php" }
                 },
                 {
                   "kind": "file_exists",
+                  "config": { "glob": "pages/haftung.php" }
+                },
+                {
+                  "kind": "file_exists",
+                  "config": { "glob": "layouts/datenschutz.php" }
+                },
+                {
+                  "kind": "file_exists",
+                  "config": { "glob": "layouts/haftung.php" }
+                },
+                {
+                  "kind": "contains_regex",
                   "config": {
-                    "glob": "pages/haftung.php"
-                  }
+                    "glob": "**/*.php",
+                    "regex": "(?i)datenschutz|haftungsausschluss|haftung"
+                  },
+                  "label": "Datenschutz/Haftung als Inhalt in PHP-Datei"
                 }
               ]
             }

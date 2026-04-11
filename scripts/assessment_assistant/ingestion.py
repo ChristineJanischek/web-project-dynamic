@@ -17,12 +17,13 @@ MAX_RUBRIC_LINES = 500
 @dataclass(slots=True)
 class UploadSelection:
     archive_path: Path
-    rubric_path: Path
+    rubric_path: Path | None
 
 
 def select_latest_uploads(
     uploads_dir: Path,
     config: AssessmentWorkspaceConfig,
+    allow_missing_rubric: bool = False,
 ) -> UploadSelection:
     if not uploads_dir.exists():
         raise FileNotFoundError(f"Uploads-Verzeichnis nicht gefunden: {uploads_dir}")
@@ -35,7 +36,7 @@ def select_latest_uploads(
         raise FileNotFoundError(
             f"Keine Projektarchive im Upload-Ordner gefunden (erlaubt: {allowed})."
         )
-    if not rubric_files:
+    if not rubric_files and not allow_missing_rubric:
         allowed = ", ".join(config.allowed_rubric_suffixes)
         raise FileNotFoundError(
             f"Kein Bewertungsbogen im Upload-Ordner gefunden (erlaubt: {allowed})."
@@ -43,7 +44,7 @@ def select_latest_uploads(
 
     return UploadSelection(
         archive_path=archive_files[0],
-        rubric_path=rubric_files[0],
+        rubric_path=rubric_files[0] if rubric_files else None,
     )
 
 
@@ -117,7 +118,7 @@ def write_kickoff_report(
     target_path: Path,
     project_name: str,
     extracted_project_path: Path,
-    rubric_source_path: Path,
+    rubric_source_path: Path | None,
     criterion_candidates: list[str],
 ) -> Path:
     ensure_directory(target_path.parent)
@@ -134,11 +135,19 @@ def write_kickoff_report(
         "",
         f"Projekt: {project_name}",
         f"Extrahierter Quellpfad: {extracted_project_path}",
-        f"Rubrikquelle: {rubric_source_path}",
+        (
+            f"Rubrikquelle: {rubric_source_path}"
+            if rubric_source_path is not None
+            else "Rubrikquelle: Keine separate Rubrikdatei vorhanden; Profilbewertung wird verwendet."
+        ),
         "",
         "## Naechster Bearbeitungsschritt",
         "",
-        "- Rubrik-Rohtext in konkrete Kriterien ueberfuehren.",
+        (
+            "- Rubrik-Rohtext in konkrete Kriterien ueberfuehren."
+            if rubric_source_path is not None
+            else "- Profilkriterien gegen Aufgabenstellung und Abgabekontext abgleichen."
+        ),
         "- Kriterien mit max_points und Status initialisieren.",
         "- Evidenz direkt aus dem Projektpfad belegen.",
         "",

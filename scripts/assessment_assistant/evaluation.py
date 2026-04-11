@@ -1,13 +1,12 @@
 from __future__ import annotations
 
 from dataclasses import replace
+from html import escape
 from pathlib import Path
 import json
 import re
 
 from .models import CriterionStatus, EvaluationCriterion, EvaluationReport
-from .profile_loader import GradingProfile
-from .rule_engine import evaluate_rule
 from .profile_loader import GradingProfile
 from .rule_engine import evaluate_rule
 
@@ -169,6 +168,254 @@ def write_report_markdown(target_path: Path, report: EvaluationReport) -> Path:
     lines.extend(["", "## Zusammenfassung", "", report.summary])
     target_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return target_path
+
+
+def write_report_html(target_path: Path, report: EvaluationReport) -> Path:
+    status_counts = _count_statuses(report)
+    rows: list[str] = []
+
+    for criterion in report.criteria:
+        status_label = _status_label(criterion.status)
+        status_style = _status_style(criterion.status)
+        evidence = _format_html_list(criterion.evidence) or "-"
+        appreciation = escape(_pedagogical_appreciation(criterion))
+        next_step = escape(_pedagogical_next_step(criterion))
+        teacher_check = escape(_teacher_check_hint(criterion))
+        note = escape(criterion.note) if criterion.note else "-"
+
+        rows.append(
+            "".join(
+                [
+                    "<tr>",
+                    _cell(escape(criterion.criterion_id), width="7%", bold=True),
+                    _cell(escape(criterion.title), width="17%", bold=True),
+                    _cell(escape(status_label), width="10%", extra_style=status_style, bold=True),
+                    _cell(f"{criterion.awarded_points:.2f} / {criterion.max_points:.2f}", width="10%"),
+                    _cell(evidence, width="16%"),
+                    _cell(appreciation, width="14%"),
+                    _cell(next_step, width="14%"),
+                    _cell(teacher_check, width="12%"),
+                    "</tr>",
+                    "<tr>",
+                    _cell("Lehrkraft-Notiz", width="14%", header_like=True),
+                    _cell(note, colspan=7),
+                    "</tr>",
+                ]
+            )
+        )
+
+    html = """<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <title>Bewertungsbericht - {project_name}</title>
+</head>
+<body style="margin:24px; font-family:Calibri, Arial, sans-serif; font-size:11pt; color:#222222; background:#ffffff;">
+  <h1 style="font-size:18pt; margin:0 0 12px 0;">Bewertungsbericht</h1>
+  <table style="border-collapse:collapse; width:100%; margin-bottom:18px;" border="1" cellpadding="6" cellspacing="0">
+    <tr>
+      <td style="width:25%; background:#f2f2f2;"><strong>Projekt</strong></td>
+      <td style="width:25%;">{project_name}</td>
+      <td style="width:25%; background:#f2f2f2;"><strong>Rubrik</strong></td>
+      <td style="width:25%;">{rubric_id}</td>
+    </tr>
+    <tr>
+      <td style="background:#f2f2f2;"><strong>Punkte</strong></td>
+      <td>{awarded_points:.2f} / {max_points:.2f}</td>
+      <td style="background:#f2f2f2;"><strong>Note</strong></td>
+      <td>{grade:.2f}</td>
+    </tr>
+  </table>
+
+  <h2 style="font-size:13pt; margin:18px 0 8px 0;">Gesamtbild</h2>
+  <p style="margin:0 0 10px 0; line-height:1.45;">{summary}</p>
+  <table style="border-collapse:collapse; width:100%; margin-bottom:18px;" border="1" cellpadding="6" cellspacing="0">
+    <tr style="background:#f2f2f2;">
+      <th align="left">Erfuellt</th>
+      <th align="left">Teilweise</th>
+      <th align="left">Nicht erfuellt</th>
+      <th align="left">Manuell pruefen</th>
+      <th align="left">Do Next</th>
+    </tr>
+    <tr>
+      <td>{count_erfuellt}</td>
+      <td>{count_teilweise}</td>
+      <td>{count_nicht}</td>
+      <td>{count_manuell}</td>
+      <td>{overall_next_step}</td>
+    </tr>
+  </table>
+
+  <h2 style="font-size:13pt; margin:18px 0 8px 0;">Kriterien und Feedback</h2>
+  <p style="margin:0 0 10px 0; line-height:1.45;">Diese Tabelle ist bewusst einfach aufgebaut, damit sie beim Kopieren nach Word als Tabelle erhalten bleibt und dort direkt weiterbearbeitet werden kann.</p>
+  <table style="border-collapse:collapse; width:100%;" border="1" cellpadding="6" cellspacing="0">
+    <tr style="background:#f2f2f2;">
+      <th align="left" style="width:7%;">ID</th>
+      <th align="left" style="width:17%;">Kriterium</th>
+      <th align="left" style="width:10%;">Status</th>
+      <th align="left" style="width:10%;">Punkte</th>
+      <th align="left" style="width:16%;">Beobachtung / Evidenz</th>
+      <th align="left" style="width:14%;">Wuerdigung</th>
+      <th align="left" style="width:14%;">Naechster Schritt</th>
+      <th align="left" style="width:12%;">Manuelle Pruefung</th>
+    </tr>
+    {rows}
+  </table>
+</body>
+</html>
+""".format(
+        project_name=escape(report.student_project_name),
+        rubric_id=escape(report.rubric_id),
+        awarded_points=report.awarded_points,
+        max_points=report.max_points,
+        grade=report.grade,
+        summary=escape(report.summary),
+        count_erfuellt=status_counts[CriterionStatus.ERFUELLT],
+        count_teilweise=status_counts[CriterionStatus.TEILWEISE],
+        count_nicht=status_counts[CriterionStatus.NICHT_ERFUELLT],
+        count_manuell=status_counts[CriterionStatus.MANUELL_PRUEFEN],
+        overall_next_step=escape(_overall_next_step(report)),
+        rows="\n    ".join(rows),
+    )
+
+    target_path.write_text(html + "\n", encoding="utf-8")
+    return target_path
+
+
+def _count_statuses(report: EvaluationReport) -> dict[CriterionStatus, int]:
+    counts = {status: 0 for status in CriterionStatus}
+    for criterion in report.criteria:
+        counts[criterion.status] += 1
+    return counts
+
+
+def _status_label(status: CriterionStatus) -> str:
+    return {
+        CriterionStatus.ERFUELLT: "Erfuellt",
+        CriterionStatus.TEILWEISE: "Teilweise",
+        CriterionStatus.NICHT_ERFUELLT: "Nicht erfuellt",
+        CriterionStatus.MANUELL_PRUEFEN: "Manuell pruefen",
+    }[status]
+
+
+def _status_style(status: CriterionStatus) -> str:
+    return {
+        CriterionStatus.ERFUELLT: "color:#2d6a4f;",
+        CriterionStatus.TEILWEISE: "color:#9a6700;",
+        CriterionStatus.NICHT_ERFUELLT: "color:#9f1d1d;",
+        CriterionStatus.MANUELL_PRUEFEN: "color:#345a8a;",
+    }[status]
+
+
+def _cell(
+    content: str,
+    width: str | None = None,
+    colspan: int | None = None,
+    bold: bool = False,
+    header_like: bool = False,
+    extra_style: str = "",
+) -> str:
+    styles = ["vertical-align:top;", "line-height:1.35;"]
+    if width:
+        styles.append(f"width:{width};")
+    if bold:
+        styles.append("font-weight:700;")
+    if header_like:
+        styles.append("background:#f7f7f7; font-weight:700;")
+    if extra_style:
+        styles.append(extra_style)
+
+    colspan_attr = f' colspan="{colspan}"' if colspan else ""
+    return f'<td{colspan_attr} style="{" ".join(styles)}">{content}</td>'
+
+
+def _format_html_list(items: list[str]) -> str:
+    if not items:
+        return ""
+    return "<ul style=\"margin:0; padding-left:18px;\">" + "".join(
+        f"<li>{escape(item)}</li>" for item in items[:5]
+    ) + "</ul>"
+
+
+def _pedagogical_appreciation(criterion: EvaluationCriterion) -> str:
+    topic = _criterion_topic(criterion.title)
+    if criterion.status == CriterionStatus.ERFUELLT:
+        return f"Die Grundanforderung im Bereich {topic} ist sichtbar umgesetzt. Darauf kann weiter aufgebaut werden."
+    if criterion.status == CriterionStatus.TEILWEISE:
+        return f"Im Bereich {topic} ist ein tragfaehiger Ansatz erkennbar, die Umsetzung ist aber noch nicht vollstaendig abgesichert."
+    if criterion.status == CriterionStatus.NICHT_ERFUELLT:
+        return f"Im Bereich {topic} fehlt derzeit ein belastbarer Nachweis im Projektstand."
+    return f"Im Bereich {topic} ist eine faire Bewertung nur mit fachlicher Sichtung durch die Lehrkraft moeglich."
+
+
+def _pedagogical_next_step(criterion: EvaluationCriterion) -> str:
+    lowered = criterion.title.lower()
+    if "struktur" in lowered or "quellcode" in lowered:
+        return "Ordner, Dateinamen und Include-Pfade vereinheitlichen; danach die Lesbarkeit gezielt nacharbeiten."
+    if "layout" in lowered or "inhalt" in lowered:
+        return "Seitenaufbau im Browser pruefen und fehlende responsive oder semantische Elemente nachziehen."
+    if "bilder" in lowered or "galerie" in lowered:
+        return "Bildverzeichnis, Alt-Texte und Galerie-Navigation vervollstaendigen; Dateigroessen mitpruefen."
+    if "verweise" in lowered or "links" in lowered:
+        return "Navigation systematisch testen und externe Links mit sauberem Zielverhalten absichern."
+    if "php" in lowered or "formulare" in lowered:
+        return "Formularfluss mit Testdaten durchspielen und serverseitige Verarbeitung nachvollziehbar dokumentieren."
+    if "version" in lowered or "git" in lowered:
+        return "Repository-Link, Commit-Historie und sinnvolle Arbeitsschritte fuer die Bewertung sichtbar machen."
+    if "dokumentation" in lowered:
+        return "Quellcode an Schluesselstellen kommentieren und kurz begruenden, warum die Loesung so aufgebaut ist."
+    if "design" in lowered or "farb" in lowered:
+        return "Gestaltung auf Konsistenz, Lesbarkeit und mobile Darstellung hin ueberarbeiten."
+    if "impressum" in lowered or "datenschutz" in lowered or "ki" in lowered:
+        return "Pflichtseiten und Quellenangaben inhaltlich vervollstaendigen und gut sichtbar verlinken."
+    if criterion.status == CriterionStatus.ERFUELLT:
+        return "Das Kriterium ist tragfaehig angelegt; jetzt auf Qualitaet, Sauberkeit und Vollstaendigkeit optimieren."
+    return "Dieses Kriterium gezielt mit der Aufgabenstellung abgleichen und danach den Nachweis im Projekt ergaenzen."
+
+
+def _teacher_check_hint(criterion: EvaluationCriterion) -> str:
+    if criterion.status == CriterionStatus.MANUELL_PRUEFEN:
+        return "Hier braucht es eine fachliche Sichtung durch die Lehrkraft; insbesondere Abgabekontext oder Git-Historie pruefen."
+    if criterion.status == CriterionStatus.TEILWEISE:
+        return "Zwischenstand vorhanden; bitte Umfang, Qualitaet und Eigenleistung differenziert einstufen."
+    if criterion.status == CriterionStatus.NICHT_ERFUELLT:
+        return "Pruefen, ob der Nachweis nur anders benannt oder tiefer in Unterordnern abgelegt wurde."
+    return "Automatischen Treffer kurz gegen Browserbild oder Quelltext querpruefen."
+
+
+def _overall_next_step(report: EvaluationReport) -> str:
+    manual = sum(1 for item in report.criteria if item.status == CriterionStatus.MANUELL_PRUEFEN)
+    partial = sum(1 for item in report.criteria if item.status == CriterionStatus.TEILWEISE)
+    failed = sum(1 for item in report.criteria if item.status == CriterionStatus.NICHT_ERFUELLT)
+
+    if manual >= 2:
+        return "Zuerst alle manuell zu pruefenden Kriterien mit Aufgabenblatt, Git-Verlauf und Browseransicht abgleichen."
+    if partial or failed:
+        return "Zuerst die teilweise oder nicht erfuellten Kriterien nacharbeiten, danach die Punktevergabe fein justieren."
+    return "Automatische Treffer sind stark; jetzt nur noch fachliche Feinkontrolle und endgueltige Punktabstufung vornehmen."
+
+
+def _criterion_topic(title: str) -> str:
+    lowered = title.lower()
+    if "struktur" in lowered or "quellcode" in lowered:
+        return "Projektstruktur und Codequalitaet"
+    if "layout" in lowered or "inhalt" in lowered:
+        return "Layout und Inhaltsaufbau"
+    if "bilder" in lowered or "galerie" in lowered:
+        return "Bilder und Medienarbeit"
+    if "verweise" in lowered or "links" in lowered:
+        return "Navigation und Verlinkung"
+    if "php" in lowered or "formulare" in lowered:
+        return "PHP-Logik und Formulare"
+    if "version" in lowered or "git" in lowered:
+        return "Versionsverwaltung"
+    if "dokumentation" in lowered:
+        return "Dokumentation"
+    if "design" in lowered or "farb" in lowered:
+        return "Gestaltung"
+    if "impressum" in lowered or "datenschutz" in lowered or "ki" in lowered:
+        return "Pflichtangaben und Quellenarbeit"
+    return "fachliche Umsetzung"
 
 
 def _clean_title(line: str) -> str:

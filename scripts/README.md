@@ -21,6 +21,8 @@ Alternativ ueber npm:
 npm run assessment:ingest
 ```
 
+Wenn ein standardisiertes Bewertungsprofil genutzt wird, kann der Lauf auch nur mit einem Projekt-Archiv gestartet werden. Dann werden die Kriterien direkt aus dem Profil geladen.
+
 Der Lauf erstellt im owner-only Workspace unter `~/Downloads/edu-assessment-owner`:
 
 - Ablage der Uploads in `eingang/` und `boegen/`
@@ -29,6 +31,13 @@ Der Lauf erstellt im owner-only Workspace unter `~/Downloads/edu-assessment-owne
 - Startbericht fuer die weitere Bewertungsimplementierung in `ausgang/`
 - Strukturierte Erstbewertung als JSON-Draft in `ausgang/`
 - Lesbare Erstbewertung als Markdown-Draft in `ausgang/`
+- HTML-Draft fuer Copy-Paste nach Word in `ausgang/`
+
+Hinweis:
+
+- Die Markdown-Datei bleibt die kanonische Bewertungsquelle.
+- Die HTML-Datei ist ein generiertes Ausgabeformat fuer die Weiterverarbeitung in Word.
+- Ohne separate Rubrikdatei wird der Rubrik-Rohtext nicht erzeugt; der Startbericht verweist dann auf die verwendete Profilbewertung.
 
 ## 📋 Übersicht
 

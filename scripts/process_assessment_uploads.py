@@ -12,6 +12,7 @@ from assessment_assistant.evaluation import (
     evaluate_project,
     evaluate_project_with_profile,
     parse_rubric_to_criteria,
+    write_report_html,
     write_report_json,
     write_report_markdown,
 )
@@ -74,24 +75,51 @@ def main() -> int:
 
     bootstrap_workspace(config)
 
+    profile_id = args.profile_id.strip() or "01web26"
+    profiles_dir = Path(__file__).resolve().parent / "config" / "grading_profiles"
+    profile_path = find_profile(profiles_dir, profile_id)
+
     uploads_dir = args.uploads_dir.resolve()
-    selected = select_latest_uploads(uploads_dir, config)
+    if profile_path is None:
+        print(
+            f"[Hinweis] Kein Profil mit ID '{profile_id}' gefunden. "
+            "Es wird auf Rubrik-Parsing zurueckgefallen; dafuer ist eine Rubrikdatei im Upload-Ordner noetig."
+        )
+
+    try:
+        selected = select_latest_uploads(
+            uploads_dir,
+            config,
+            allow_missing_rubric=profile_path is not None,
+        )
+    except FileNotFoundError as exc:
+        if profile_path is None:
+            raise FileNotFoundError(
+                f"{exc} Profil '{profile_id}' wurde nicht gefunden; ohne Profil ist eine Rubrikdatei erforderlich."
+            ) from exc
+        raise
 
     incoming_dir = config.workspace_root / config.directory_map["eingang"]
     rubric_dir = config.workspace_root / config.directory_map["boegen"]
     extracted_dir = config.workspace_root / config.directory_map["entpackt"]
 
     archived_zip = copy_upload_file(selected.archive_path, incoming_dir)
-    archived_rubric = copy_upload_file(selected.rubric_path, rubric_dir)
+    archived_rubric = (
+        copy_upload_file(selected.rubric_path, rubric_dir)
+        if selected.rubric_path is not None
+        else None
+    )
 
     extraction_target = extracted_dir / archived_zip.stem
     extracted_project_path = extract_project_archive(archived_zip, extraction_target)
 
-    rubric_lines = load_rubric_lines(archived_rubric)
-    criterion_candidates = detect_criterion_candidates(rubric_lines)
+    rubric_lines = load_rubric_lines(archived_rubric) if archived_rubric is not None else []
+    criterion_candidates = detect_criterion_candidates(rubric_lines) if rubric_lines else []
 
-    rubric_markdown_path = config.reports_dir / f"{archived_rubric.stem}_rohtext.md"
-    write_rubric_markdown(rubric_markdown_path, archived_rubric, rubric_lines)
+    rubric_markdown_path = None
+    if archived_rubric is not None:
+        rubric_markdown_path = config.reports_dir / f"{archived_rubric.stem}_rohtext.md"
+        write_rubric_markdown(rubric_markdown_path, archived_rubric, rubric_lines)
 
     project_name = args.project_name.strip() or archived_zip.stem
     kickoff_report_path = config.reports_dir / f"{project_name}_bewertung_start.md"
@@ -108,22 +136,18 @@ def main() -> int:
     print(f"- erkannter_projekttyp: {detected_type}")
 
     # --- Profilbasierte Bewertung (bevorzugt) ---
-    profiles_dir = (
-        Path(__file__).resolve().parent / "config" / "grading_profiles"
-    )
-    profile_id = args.profile_id.strip() or "01web26"
-    profile_path = find_profile(profiles_dir, profile_id)
-
     if profile_path is not None:
         profile = load_profile(profile_path)
         print(f"- profil_geladen: {profile_path.name} ({profile.profile_name})")
+        if archived_rubric is None:
+            print("- rubrik: keine separate Rubrikdatei gefunden, Profilbewertung wird direkt verwendet")
         evaluation_report = evaluate_project_with_profile(
             project_name=project_name,
             project_root=extracted_project_path,
             profile=profile,
         )
     else:
-        print(f"  [Hinweis] Kein Profil mit ID '{profile_id}' gefunden – Fallback auf Heuristik.")
+        print(f"[Hinweis] Kein Profil mit ID '{profile_id}' gefunden - Fallback auf Heuristik.")
         structured_criteria = parse_rubric_to_criteria(rubric_lines)
         if not structured_criteria:
             structured_criteria = parse_rubric_to_criteria(criterion_candidates)
@@ -136,17 +160,20 @@ def main() -> int:
 
     evaluation_json_path = config.reports_dir / f"{project_name}_bewertung_draft.json"
     evaluation_md_path = config.reports_dir / f"{project_name}_bewertung_draft.md"
+    evaluation_html_path = config.reports_dir / f"{project_name}_bewertung_draft.html"
     write_report_json(evaluation_json_path, evaluation_report)
     write_report_markdown(evaluation_md_path, evaluation_report)
+    write_report_html(evaluation_html_path, evaluation_report)
 
     print("Assessment-Ingestion abgeschlossen:")
     print(f"- zip_incoming: {archived_zip}")
-    print(f"- rubric_incoming: {archived_rubric}")
+    print(f"- rubric_incoming: {archived_rubric if archived_rubric is not None else 'keine separate Rubrikdatei'}")
     print(f"- extracted_project: {extracted_project_path}")
-    print(f"- rubric_markdown: {rubric_markdown_path}")
+    print(f"- rubric_markdown: {rubric_markdown_path if rubric_markdown_path is not None else 'nicht erzeugt'}")
     print(f"- kickoff_report: {kickoff_report_path}")
     print(f"- evaluation_json: {evaluation_json_path}")
     print(f"- evaluation_markdown: {evaluation_md_path}")
+    print(f"- evaluation_html: {evaluation_html_path}")
 
     return 0
 
