@@ -6,6 +6,7 @@
   "scripts": {
     "assessment:bootstrap": "python3 scripts/bootstrap_assessment_workspace.py",
     "assessment:ingest": "python3 scripts/process_assessment_uploads.py",
+    "assessment:batch": "python3 scripts/batch_assess.py",
     "assessment:export": "python3 scripts/export_assessments.py",
     "assessment:export:list": "python3 scripts/export_assessments.py --list",
     "setup:extensions": "python3 scripts/manage_vscode_extensions.py install --profile full",

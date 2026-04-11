@@ -3,7 +3,7 @@
   "profile_name": "Web-Projekt Oberstufe 2026",
   "project_type": "web-php-static",
   "created": "2026-04-10",
-  "version": "1.0",
+  "version": "1.1",
   "grade_scale": {
     "best": 1.0,
     "worst": 6.0
@@ -15,7 +15,7 @@
     "ausreichend": 1,
     "nicht_erfuellt": 0
   },
-  "max_points": 40,
+  "max_points": 36,
   "criteria": [
     {
       "id": "A1",
@@ -274,15 +274,6 @@
         ]
       },
       "evidence_hint": "Ideenreichtum, Eigenleistung und PHP-Qualität jenseits der Mindestanforderung manuell bewerten."
-    },
-    {
-      "id": "G1",
-      "title": "Versionsverwaltung",
-      "description": "Nutzung von Git oder GitHub, nachvollziehbare Commit-Historie.",
-      "max_points": 4,
-      "kind": "manual",
-      "config": {},
-      "evidence_hint": "GitHub-Repository-Link oder Commit-Verlauf über den Abgabekanal prüfen. Nicht als Teil des ZIP-Projekts sichtbar."
     },
     {
       "id": "H1",

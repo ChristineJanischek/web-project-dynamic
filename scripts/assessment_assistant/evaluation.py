@@ -6,7 +6,7 @@ from pathlib import Path
 import json
 import re
 
-from .models import CriterionStatus, EvaluationCriterion, EvaluationReport
+from .models import CriterionStatus, EvaluationCriterion, EvaluationReport, RecommendationItem, RecommendationPlan
 from .profile_loader import GradingProfile
 from .rule_engine import evaluate_rule
 
@@ -166,6 +166,24 @@ def write_report_markdown(target_path: Path, report: EvaluationReport) -> Path:
             lines.append(f"  Hinweis: {criterion.note}")
 
     lines.extend(["", "## Zusammenfassung", "", report.summary])
+
+    if report.recommendation_plan is not None:
+        plan = report.recommendation_plan
+        lines.extend([
+            "", "## Marschplan: Vertiefung bis Anfang Juni", "",
+            plan.focus, "",
+        ])
+        for i, ext in enumerate(plan.extensions, start=1):
+            lines.extend([
+                f"### Erweiterung {i}: {ext.title}", "",
+                ext.rationale, "",
+                f"**Aufwand und Schritte:** {ext.effort_hint}", "",
+            ])
+        lines.extend(["### ToDo-Liste", ""])
+        for todo in plan.todos_until_june:
+            lines.append(f"- {todo}")
+        lines.append("")
+
     target_path.write_text("\n".join(lines) + "\n", encoding="utf-8")
     return target_path
 
@@ -261,6 +279,7 @@ def write_report_html(target_path: Path, report: EvaluationReport) -> Path:
     </tr>
     {rows}
   </table>
+  {recommendation_block}
 </body>
 </html>
 """.format(
@@ -276,6 +295,7 @@ def write_report_html(target_path: Path, report: EvaluationReport) -> Path:
         count_manuell=status_counts[CriterionStatus.MANUELL_PRUEFEN],
         overall_next_step=escape(_overall_next_step(report)),
         rows="\n    ".join(rows),
+        recommendation_block=_render_recommendation_html(report.recommendation_plan),
     )
 
     target_path.write_text(html + "\n", encoding="utf-8")
@@ -287,6 +307,33 @@ def _count_statuses(report: EvaluationReport) -> dict[CriterionStatus, int]:
     for criterion in report.criteria:
         counts[criterion.status] += 1
     return counts
+
+
+def _render_recommendation_html(plan: RecommendationPlan | None) -> str:
+    if plan is None:
+        return ""
+
+    ext_blocks = ""
+    for i, ext in enumerate(plan.extensions, start=1):
+        ext_blocks += f"""
+  <h3 style="font-size:12pt; margin:14px 0 4px 0; color:#1a3a5c;">Erweiterung {i}: {escape(ext.title)}</h3>
+  <p style="margin:0 0 6px 0; line-height:1.45;">{escape(ext.rationale)}</p>
+  <p style="margin:0 0 10px 0; background:#f7f9fc; border-left:4px solid #345a8a; padding:6px 10px; line-height:1.4;">
+    <strong>Aufwand und Schritte:</strong> {escape(ext.effort_hint)}
+  </p>"""
+
+    todos_html = "".join(f"<li style='margin-bottom:4px;'>{escape(t)}</li>" for t in plan.todos_until_june)
+
+    return f"""
+  <h2 style="font-size:13pt; margin:24px 0 8px 0; color:#1a3a5c; border-top:2px solid #345a8a; padding-top:12px;">
+    Marschplan: Vertiefung bis Anfang Juni
+  </h2>
+  <p style="margin:0 0 12px 0; line-height:1.45; font-style:italic;">{escape(plan.focus)}</p>
+  {ext_blocks}
+  <h3 style="font-size:12pt; margin:14px 0 6px 0; color:#1a3a5c;">ToDo-Liste bis zur Verteidigung</h3>
+  <ul style="margin:0 0 12px 0; padding-left:22px; line-height:1.5;">
+    {todos_html}
+  </ul>"""
 
 
 def _status_label(status: CriterionStatus) -> str:
@@ -531,6 +578,130 @@ def evaluate_project_with_profile(
         grade=grade,
         criteria=evaluated,
         summary=summary,
+        recommendation_plan=_generate_recommendation_plan(evaluated),
+    )
+
+
+def _generate_recommendation_plan(
+    criteria: list[EvaluationCriterion],
+) -> RecommendationPlan:
+    """Erzeugt einen individualisierten Marschplan mit 2 Vertiefungsthemen fuer die Projektverteidigung."""
+    title_status: dict[str, CriterionStatus] = {c.title.lower(): c.status for c in criteria}
+
+    def _status(*keywords: str) -> CriterionStatus | None:
+        for t, s in title_status.items():
+            if any(k in t for k in keywords):
+                return s
+        return None
+
+    erfuellt_count = sum(1 for c in criteria if c.status == CriterionStatus.ERFUELLT)
+    total = len(criteria)
+    strong_profile = total > 0 and erfuellt_count / total >= 0.7
+
+    form_status = _status("formul", "php-eigen")
+    design_status = _status("farb", "design")
+
+    # Erweiterung 1: Versionsverwaltung – fuer alle sinnvoll und direkt in Verteidigung zeigbar
+    ext_version = RecommendationItem(
+        title="Versionsverwaltung mit Git und GitHub",
+        rationale=(
+            "Git gehoert heute zum Handwerkszeug jeder Webentwicklerin. "
+            "Ein sauberes GitHub-Repository mit nachvollziehbaren Commits zeigt in der Verteidigung, "
+            "dass du professionell und strukturiert arbeitest. "
+            "Das Thema ist gut in Eigenregie erlernbar und der Aufwand ist klar begrenzt."
+        ),
+        effort_hint=(
+            "Zeitaufwand: ca. 3 Abende. "
+            "Schritte: (1) GitHub-Account und oeffentliches Repository anlegen, "
+            "(2) Projekt mit 'git init' initialisieren und in regelmaessigen Commits den Fortschritt dokumentieren, "
+            "(3) einen Feature-Branch ('erweiterung-formular' o.ae.) erstellen, bearbeiten und mergen, "
+            "(4) README.md mit Projektbeschreibung, Screenshot und Laufzeitanleitung ergaenzen. "
+            "Dokumentation: Je Commit erklaeren, was geaendert wurde und warum."
+        ),
+    )
+
+    # Erweiterung 2: individuell je Projektstatus gewaehlt
+    if form_status not in (CriterionStatus.ERFUELLT,):
+        ext_second = RecommendationItem(
+            title="Serverseitige Formularauswertung und Validierung",
+            rationale=(
+                "Formulare sind das wichtigste Interaktionsmittel zwischen Benutzer und Webanwendung. "
+                "Eine vollstaendige serverseitige Auswertung (Validierung, Rueckmeldung, Fehlerbehandlung) "
+                "zeigt, dass du PHP nicht nur zur Darstellung, sondern zur echten Logikverarbeitung einsetzt. "
+                "Dieses Thema ist direkt am Projekt demonstrierbar und beeindruckt in der Verteidigung."
+            ),
+            effort_hint=(
+                "Zeitaufwand: ca. 4 Abende. "
+                "Schritte: (1) Bestehendes Kontakt- oder Suchformular auswaehlen, "
+                "(2) serverseitige Pflichtfeld-Validierung mit aussagekraeftigen Fehlermeldungen ergaenzen, "
+                "(3) XSS-Schutz durch htmlspecialchars() konsequent einsetzen, "
+                "(4) Erweiterung: Formularinhalt per PHP-Mail-Funktion oder als Log-Datei speichern. "
+                "Dokumentation: Jeden Validierungsschritt im Code kommentieren."
+            ),
+        )
+    elif strong_profile:
+        ext_second = RecommendationItem(
+            title="KI-API-Integration: Grundlagen Machine Learning in der Praxis",
+            rationale=(
+                "Da dein Projekt bereits fundiert umgesetzt ist, bietet sich ein Blick in aktuelle KI-Werkzeuge an. "
+                "Das Einbinden einer einfachen KI-API (z.B. OpenAI-Text-API, HuggingFace oder eine Bildklassifikation) "
+                "zeigt technologische Offenheit und ist ein starkes Argument in der Verteidigung. "
+                "Du musst kein ML-Modell trainieren – das Verstehen und Einbinden einer API reicht vollstaendig."
+            ),
+            effort_hint=(
+                "Zeitaufwand: ca. 4-5 Abende. "
+                "Schritte: (1) Kostenlosen API-Key bei OpenAI oder HuggingFace anlegen, "
+                "(2) einfachen PHP-curl-Aufruf zur API bauen (z.B. Textzusammenfassung oder Bildanalyse), "
+                "(3) Ergebnis sauber im Browser anzeigen und Fehlerbehandlung einbauen, "
+                "(4) API-Key in einer .env-Datei oder Config-Datei sicher auslagern (nicht im HTML). "
+                "Dokumentation: Welche API, welche Eingabe, welche Ausgabe, Screenshot des Ergebnisses."
+            ),
+        )
+    else:
+        ext_second = RecommendationItem(
+            title="Algorithmen und Datenstrukturen in PHP: Suchen und Sortieren",
+            rationale=(
+                "Algorithmen und Datenstrukturen sind das theoretische Fundament jeder Programmierung. "
+                "Wenn du in deinem Projekt eine eigene Sortier- oder Suchfunktion in PHP implementierst, "
+                "beweist du, dass du Logik nicht nur reproduzierst, sondern selbst entwickelst. "
+                "Das ist in der Verteidigung ein wertvolles Demonstrationsobjekt."
+            ),
+            effort_hint=(
+                "Zeitaufwand: ca. 3-4 Abende. "
+                "Schritte: (1) Einen realen Anwendungsfall im eigenen Projekt identifizieren "
+                "(z.B. Produktliste sortieren, Suchfunktion fuer Eintraege), "
+                "(2) Lineare Suche und Bubble-Sort in PHP von Hand implementieren (kein usort()), "
+                "(3) Beide Algorithmen mit einem realen Datensatz aus dem Projekt testen, "
+                "(4) Laufzeitvergleich: einmal sort() und einmal eigener Algorithmus, Ergebnis dokumentieren. "
+                "Dokumentation: Flussdiagramm des Algorithmus als Kommentar oder README-Abschnitt."
+            ),
+        )
+
+    weak_topics = [
+        c.title for c in criteria
+        if c.status in (CriterionStatus.NICHT_ERFUELLT, CriterionStatus.TEILWEISE)
+    ]
+    first_weak = weak_topics[0] if weak_topics else None
+
+    todos = [
+        "Woche 1-2: Git-Repository anlegen, Projekt einpflegen, ersten Feature-Branch erstellen.",
+        f"Woche 2-3: Erweiterungsthema '{ext_second.title}' recherchieren und Umsetzungsplan notieren.",
+        f"Woche 3-5: Erweiterung '{ext_second.title}' implementieren und Schritt fuer Schritt dokumentieren.",
+        "Woche 5-6: Beide Erweiterungen im Browser demonstrieren und fuer die Verteidigung aufbereiten.",
+        "Woche 6: Kurzes Verteidigungsskript erstellen: Was hast du getan, was hast du gelernt, was wuerdest du anders machen?",
+    ]
+    if first_weak:
+        todos.insert(1, f"Parallel: Kriterium '{first_weak}' gezielt nacharbeiten – das staerkt die Gesamtbewertung.")
+
+    focus = (
+        "Zeige in der Verteidigung Anfang Juni, dass du dein Projekt nicht nur abgegeben, sondern weiterentwickelt hast. "
+        "Zwei klar abgegrenzte Erweiterungen, gut dokumentiert und im Browser demonstrierbar, sind das Ziel."
+    )
+
+    return RecommendationPlan(
+        focus=focus,
+        extensions=[ext_version, ext_second],
+        todos_until_june=todos,
     )
 
 
