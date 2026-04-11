@@ -52,3 +52,6 @@ downloads/
 .owner-assessment/
 assessment-owner/
 material/uploads/
+
+# Generierte Bewertungs-ZIP-Exporte (nur lokal herunterladen, nicht committen)
+exports/
