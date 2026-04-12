@@ -41,6 +41,7 @@ Ein modernes Ausbildungs-Template für **GitHub Classroom**: Vom ersten HTML-Gru
 - Workspace Live-Test Setup (neu): [docs/handbook/WORKSPACE_LIVE_TEST_SETUP.md](docs/handbook/WORKSPACE_LIVE_TEST_SETUP.md)
 - Beitragsregeln & Workflow: [CONTRIBUTING.md](CONTRIBUTING.md)
 - Bewertungsassistenz-Architektur: [docs/handbook/ASSESSMENT_ASSISTANT_ARCHITECTURE.md](docs/handbook/ASSESSMENT_ASSISTANT_ARCHITECTURE.md)
+- Security-und-Safety-Konzept (Owner-only Korrekturhilfe): [docs/SECURITY_SAFETY_KORREKTURHILFE_KONZEPT.md](docs/SECURITY_SAFETY_KORREKTURHILFE_KONZEPT.md)
 
 ### Kurz-Troubleshooting
 

@@ -15,6 +15,17 @@ Wenn in `material/uploads` ein Projekt-Archiv (`.zip`) und ein Bewertungsbogen (
 python3 scripts/process_assessment_uploads.py
 ```
 
+Der Bewertungslauf fuehrt standardmaessig vorab ein Live-Test-Setup aus:
+
+- Sync der Workspace-Empfehlungen aus dem zentralen Manifest
+- Installation der benoetigten VS-Code-Extensions aus dem Profil `live-test`
+
+Nur falls noetig kann das Setup explizit uebersprungen werden:
+
+```bash
+python3 scripts/process_assessment_uploads.py --skip-live-test-setup
+```
+
 Alternativ ueber npm:
 
 ```bash
@@ -47,6 +58,24 @@ Optional:
 ```bash
 python3 scripts/process_assessment_uploads.py --skip-html-export
 python3 scripts/process_assessment_uploads.py --download-html-dir ~/Downloads
+```
+
+Batch-Lauf fuer alle Projekte im Upload-Ordner (inklusive Live-Test-Setup vorab):
+
+```bash
+python3 scripts/batch_assess.py --uploads-dir material/uploads --profile-id webprojekte
+```
+
+Optional ohne Live-Test-Setup:
+
+```bash
+python3 scripts/batch_assess.py --uploads-dir material/uploads --profile-id webprojekte --skip-live-test-setup
+```
+
+Guard-Check fuer CI und lokale Vorabpruefung:
+
+```bash
+python3 scripts/check_live_test_preflight_guard.py
 ```
 
 ## 📋 Übersicht

@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import re
+import shutil
+import subprocess
 from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Any
@@ -40,6 +42,9 @@ def evaluate_rule(
 
     if kind == "all_of":
         return _rule_all_of(config, project_root)
+
+    if kind == "syntax_check_glob":
+        return _rule_syntax_check_glob(config, project_root, label)
 
     return RuleResult(passed=False, note=f"Unbekannter Regeltyp: '{kind}'.")
 
@@ -111,6 +116,33 @@ def _rule_contains_regex(config: dict, root: Path, label: str) -> RuleResult:
     return RuleResult(
         passed=False,
         note=f"Regex '{pattern}' in keiner Datei für Muster '{glob_pattern}' gefunden.",
+    )
+
+
+def _rule_syntax_check_glob(config: dict, root: Path, label: str) -> RuleResult:
+    glob_pattern = str(config.get("glob", "")).strip()
+    language = str(config.get("language", "")).strip().lower()
+    minimum = int(config.get("min", 1))
+    if not glob_pattern:
+        return RuleResult(passed=False, note="Kein Glob-Muster fuer Syntaxcheck konfiguriert.")
+
+    files = _find_files(root, glob_pattern)
+    if len(files) < minimum:
+        return RuleResult(
+            passed=False,
+            note=(
+                f"Nur {len(files)} Datei(en) fuer Syntaxcheck '{glob_pattern}' gefunden, "
+                f"Minimum ist {minimum}."
+            ),
+        )
+
+    if language in {"js", "javascript"}:
+        return _check_javascript_syntax(files, root, label)
+    if language == "css":
+        return _check_css_syntax(files, root, label)
+    return RuleResult(
+        passed=False,
+        note=f"Unbekannte Sprache fuer syntax_check_glob: '{language}'.",
     )
 
 
@@ -187,3 +219,177 @@ def _find_files(root: Path, glob_pattern: str) -> list[Path]:
     if glob_pattern.startswith("**/"):
         return [p for p in root.rglob(glob_pattern[3:]) if p.is_file()]
     return [p for p in root.glob(glob_pattern) if p.is_file()]
+
+
+def _check_javascript_syntax(files: list[Path], root: Path, label: str) -> RuleResult:
+    node_cmd = shutil.which("node")
+    failed: list[str] = []
+    checked = 0
+
+    if node_cmd is not None:
+        for file_path in files:
+            checked += 1
+            result = subprocess.run(
+                [node_cmd, "--check", str(file_path)],
+                capture_output=True,
+                text=True,
+                check=False,
+            )
+            if result.returncode != 0:
+                failed.append(str(file_path.relative_to(root)))
+        if failed:
+            return RuleResult(
+                passed=False,
+                evidence=[f"Syntaxfehler in {name}" for name in failed[:5]],
+                note=f"JavaScript-Syntaxfehler in {len(failed)} Datei(en).",
+            )
+        return RuleResult(
+            passed=True,
+            evidence=[str(p.relative_to(root)) for p in files[:5]],
+            note=label or f"JS-Syntax ok ({checked} Datei(en) geprueft).",
+        )
+
+    # Fallback ohne Node: Basispruefung auf ausgeglichene Klammern und nicht geschlossene Strings/Kommentare.
+    for file_path in files:
+        checked += 1
+        try:
+            text = file_path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            failed.append(str(file_path.relative_to(root)))
+            continue
+        ok, _ = _check_code_balance(text)
+        if not ok:
+            failed.append(str(file_path.relative_to(root)))
+
+    if failed:
+        return RuleResult(
+            passed=False,
+            evidence=[f"Syntaxverdacht in {name}" for name in failed[:5]],
+            note=(
+                "Node-CLI nicht verfuegbar; Basis-Syntaxpruefung fehlgeschlagen "
+                f"in {len(failed)} Datei(en)."
+            ),
+        )
+    return RuleResult(
+        passed=True,
+        evidence=[str(p.relative_to(root)) for p in files[:5]],
+        note=(
+            label
+            or f"Node-CLI nicht verfuegbar; Basis-Syntaxpruefung ok ({checked} Datei(en))."
+        ),
+    )
+
+
+def _check_css_syntax(files: list[Path], root: Path, label: str) -> RuleResult:
+    failed: list[str] = []
+    checked = 0
+
+    for file_path in files:
+        checked += 1
+        try:
+            text = file_path.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            failed.append(str(file_path.relative_to(root)))
+            continue
+
+        ok, _ = _check_code_balance(text)
+        if not ok:
+            failed.append(str(file_path.relative_to(root)))
+
+    if failed:
+        return RuleResult(
+            passed=False,
+            evidence=[f"Syntaxverdacht in {name}" for name in failed[:5]],
+            note=f"CSS-Syntaxverdacht in {len(failed)} Datei(en).",
+        )
+    return RuleResult(
+        passed=True,
+        evidence=[str(p.relative_to(root)) for p in files[:5]],
+        note=label or f"CSS-Basissyntax ok ({checked} Datei(en) geprueft).",
+    )
+
+
+def _check_code_balance(text: str) -> tuple[bool, str]:
+    pairs = {")": "(", "]": "[", "}": "{"}
+    opening = set(pairs.values())
+    stack: list[str] = []
+
+    in_single = False
+    in_double = False
+    in_line_comment = False
+    in_block_comment = False
+    escaped = False
+
+    i = 0
+    while i < len(text):
+        ch = text[i]
+        nxt = text[i + 1] if i + 1 < len(text) else ""
+
+        if in_line_comment:
+            if ch == "\n":
+                in_line_comment = False
+            i += 1
+            continue
+
+        if in_block_comment:
+            if ch == "*" and nxt == "/":
+                in_block_comment = False
+                i += 2
+                continue
+            i += 1
+            continue
+
+        if in_single:
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == "'":
+                in_single = False
+            i += 1
+            continue
+
+        if in_double:
+            if escaped:
+                escaped = False
+            elif ch == "\\":
+                escaped = True
+            elif ch == '"':
+                in_double = False
+            i += 1
+            continue
+
+        if ch == "/" and nxt == "/":
+            in_line_comment = True
+            i += 2
+            continue
+        if ch == "/" and nxt == "*":
+            in_block_comment = True
+            i += 2
+            continue
+
+        if ch == "'":
+            in_single = True
+            i += 1
+            continue
+        if ch == '"':
+            in_double = True
+            i += 1
+            continue
+
+        if ch in opening:
+            stack.append(ch)
+        elif ch in pairs:
+            if not stack or stack[-1] != pairs[ch]:
+                return False, "Klammern nicht ausgeglichen"
+            stack.pop()
+
+        i += 1
+
+    if in_single or in_double:
+        return False, "String nicht geschlossen"
+    if in_block_comment:
+        return False, "Blockkommentar nicht geschlossen"
+    if stack:
+        return False, "Klammern nicht ausgeglichen"
+    return True, "ok"

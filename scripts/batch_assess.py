@@ -2,13 +2,13 @@
 """Verarbeitet alle Projektarchive in material/uploads/ als Batch-Bewertungslauf.
 
 Fuer jede ZIP-Datei wird ein vollstaendiger Bewertungszyklus durchgefuehrt:
-- Profil-basierte Bewertung (01web26 oder --profile-id)
+- Profil-basierte Bewertung (webprojekte oder --profile-id)
 - Einzelberichte JSON, Markdown, HTML je Schueler
 - Danach: aktualisierte Uebersicht + Rangliste
 
 Nutzung:
     python3 scripts/batch_assess.py
-    python3 scripts/batch_assess.py --profile-id 01web26
+    python3 scripts/batch_assess.py --profile-id webprojekte
     python3 scripts/batch_assess.py --uploads-dir material/uploads
     npm run assessment:batch
 """
@@ -33,6 +33,7 @@ from assessment_assistant.ingestion import (
     extract_project_archive,
     write_kickoff_report,
 )
+from assessment_assistant.live_test_setup import ensure_live_test_extensions
 from assessment_assistant.profile_loader import find_profile, load_profile
 from assessment_assistant.project_detector import detect_project_type
 
@@ -57,12 +58,17 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--profile-id",
-        default="01web26",
+        default="webprojekte",
     )
     parser.add_argument(
         "--download-html-dir",
         type=Path,
         default=Path.home() / "Downloads",
+    )
+    parser.add_argument(
+        "--skip-live-test-setup",
+        action="store_true",
+        help="Ueberspringt die automatische Installation der Live-Test-Extensions vor dem Batch-Lauf.",
     )
     parser.add_argument(
         "--skip-html-export",
@@ -73,6 +79,10 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+
+    if not args.skip_live_test_setup:
+        profile_name, ext_count = ensure_live_test_extensions("live-test")
+        print(f"Live-Test-Setup: Profil '{profile_name}' aktiv, {ext_count} Extensions sichergestellt")
 
     config = AssessmentWorkspaceConfig(
         workspace_root=args.workspace_root,

@@ -1,0 +1,33 @@
+name: Assessment Live-Test Preflight Guard
+
+"on":
+  push:
+    paths:
+      - "scripts/process_assessment_uploads.py"
+      - "scripts/batch_assess.py"
+      - "scripts/assessment_assistant/live_test_setup.py"
+      - "scripts/check_live_test_preflight_guard.py"
+      - ".github/workflows/assessment-live-test-preflight-guard.yml"
+  pull_request:
+    paths:
+      - "scripts/process_assessment_uploads.py"
+      - "scripts/batch_assess.py"
+      - "scripts/assessment_assistant/live_test_setup.py"
+      - "scripts/check_live_test_preflight_guard.py"
+      - ".github/workflows/assessment-live-test-preflight-guard.yml"
+
+jobs:
+  preflight-guard:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Verify assessment preflight guard
+        run: python3 scripts/check_live_test_preflight_guard.py

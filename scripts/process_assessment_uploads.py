@@ -29,6 +29,7 @@ from assessment_assistant.ingestion import (
     write_kickoff_report,
     write_rubric_markdown,
 )
+from assessment_assistant.live_test_setup import ensure_live_test_extensions
 from assessment_assistant.profile_loader import find_profile, load_profile
 from assessment_assistant.project_detector import detect_project_type
 
@@ -74,6 +75,11 @@ def parse_args() -> argparse.Namespace:
         help="Zielverzeichnis fuer den Export aller HTML-Bewertungsdateien",
     )
     parser.add_argument(
+        "--skip-live-test-setup",
+        action="store_true",
+        help="Ueberspringt die automatische Installation der Live-Test-Extensions vor dem Bewertungslauf.",
+    )
+    parser.add_argument(
         "--skip-html-export",
         action="store_true",
         help="Kein HTML-Export ins Download-Verzeichnis ausfuehren",
@@ -83,6 +89,11 @@ def parse_args() -> argparse.Namespace:
 
 def main() -> int:
     args = parse_args()
+
+    if not args.skip_live_test_setup:
+        profile_name, ext_count = ensure_live_test_extensions("live-test")
+        print(f"- live_test_setup: Profil '{profile_name}' aktiv, {ext_count} Extensions sichergestellt")
+
     config = AssessmentWorkspaceConfig(
         workspace_root=args.workspace_root,
         profile_name=args.profile_name,
@@ -90,7 +101,7 @@ def main() -> int:
 
     bootstrap_workspace(config)
 
-    profile_id = args.profile_id.strip() or "01web26"
+    profile_id = args.profile_id.strip() or "webprojekte"
     profiles_dir = Path(__file__).resolve().parent / "config" / "grading_profiles"
     profile_path = find_profile(profiles_dir, profile_id)
 

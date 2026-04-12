@@ -1,9 +1,9 @@
 {
-  "profile_id": "01web26",
+  "profile_id": "webprojekte",
   "profile_name": "Web-Projekt Oberstufe 2026",
   "project_type": "web-php-static",
   "created": "2026-04-10",
-  "version": "1.2",
+  "version": "1.3",
   "grade_scale": {
     "best": 1.0,
     "worst": 6.0
@@ -139,7 +139,7 @@
     {
       "id": "D1",
       "title": "Bilder und Galerie",
-      "description": "Mindestens 3 Bilder vorhanden, alt-Attribute gesetzt, Galerie-Implementierung (CSS-Slider oder JS-Galerie), Bildoptimierung (<200 KB), externe Quellen mit target=_blank.",
+      "description": "Mindestens 3 Bilder vorhanden, img-Tag mit alt-Attribut, Galerie/Preview/View per JavaScript oder CSS mit Syntaxcheck, Bildoptimierung (<200 KB), externe Quellen mit target=_blank.",
       "max_points": 4,
       "kind": "all_of",
       "config": {
@@ -173,29 +173,99 @@
             }
           },
           {
-            "kind": "contains_regex",
-            "config": {
-              "glob": "**/*.php",
-              "regex": "<img[^>]+alt="
-            },
-            "label": "Bilder mit alt-Attribut"
-          },
-          {
             "kind": "any_of",
             "config": {
-              "label": "Galerie-Implementierung vorhanden",
+              "label": "img-Tag mit alt-Attribut vorhanden",
               "rules": [
                 {
                   "kind": "contains_regex",
                   "config": {
                     "glob": "**/*.php",
-                    "regex": "(?i)galerie|gallery|slider|carousel"
+                    "regex": "<img[^>]+alt="
                   }
                 },
                 {
-                  "kind": "file_exists",
+                  "kind": "contains_regex",
                   "config": {
-                    "glob": "pages/galerie.php"
+                    "glob": "**/*.html",
+                    "regex": "<img[^>]+alt="
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "kind": "any_of",
+            "config": {
+              "label": "Preview/View fuer Bilder ueber JavaScript oder CSS inkl. Syntaxcheck",
+              "rules": [
+                {
+                  "kind": "all_of",
+                  "config": {
+                    "rules": [
+                      {
+                        "kind": "any_of",
+                        "config": {
+                          "label": "Preview/View-Logik im JavaScript-Kontext vorhanden",
+                          "rules": [
+                            {
+                              "kind": "contains_regex",
+                              "config": {
+                                "glob": "**/*.js",
+                                "regex": "(?i)preview|lightbox|modal|viewer|gallery|carousel|showImage|openImage"
+                              }
+                            },
+                            {
+                              "kind": "contains_regex",
+                              "config": {
+                                "glob": "**/*.php",
+                                "regex": "(?i)<script[^>]*>|preview|lightbox|modal|viewer|gallery|carousel"
+                              }
+                            },
+                            {
+                              "kind": "contains_regex",
+                              "config": {
+                                "glob": "**/*.html",
+                                "regex": "(?i)<script[^>]*>|preview|lightbox|modal|viewer|gallery|carousel"
+                              }
+                            }
+                          ]
+                        }
+                      },
+                      {
+                        "kind": "syntax_check_glob",
+                        "config": {
+                          "glob": "**/*.js",
+                          "language": "javascript",
+                          "min": 1
+                        },
+                        "label": "JavaScript-Syntax geprueft"
+                      }
+                    ]
+                  }
+                },
+                {
+                  "kind": "all_of",
+                  "config": {
+                    "rules": [
+                      {
+                        "kind": "contains_regex",
+                        "config": {
+                          "glob": "**/*.css",
+                          "regex": "(?i)(?:\\.preview|\\.lightbox|\\.modal|\\.viewer|\\.gallery|:target)"
+                        },
+                        "label": "Preview/View-Klassen oder :target in CSS vorhanden"
+                      },
+                      {
+                        "kind": "syntax_check_glob",
+                        "config": {
+                          "glob": "**/*.css",
+                          "language": "css",
+                          "min": 1
+                        },
+                        "label": "CSS-Syntax geprueft"
+                      }
+                    ]
                   }
                 }
               ]
@@ -203,7 +273,7 @@
           }
         ]
       },
-      "evidence_hint": "Bildoptimierung (<200 KB je Bild), Thumbnails und JS-Galerie (falls vorhanden) manuell prüfen."
+      "evidence_hint": "Bildoptimierung (<200 KB je Bild), Bedienbarkeit von Preview/View im Browser und Verlinkung externer Quellen manuell pruefen."
     },
     {
       "id": "E1",
@@ -306,11 +376,49 @@
     {
       "id": "I1",
       "title": "Farbgestaltung und Design",
-      "description": "Optisch gelungene Farbgebung, abgerundete Boxen (border-radius), Schatteneffekte (box-shadow), Farbverläufe (gradient), Hover-/Mouseovereffekte, Animationen.",
+      "description": "Optisch gelungene Farbgebung, abgerundete Boxen (border-radius), Schatteneffekte (box-shadow), Farbverläufe (gradient), Hover-/Mouseovereffekte, Animationen sowie flexibles Layout (Grid/Flex) und responsive @media-Regeln.",
       "max_points": 4,
       "kind": "all_of",
       "config": {
         "rules": [
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.css",
+              "regex": "display\\s*:\\s*(?:flex|inline-flex|grid|inline-grid)"
+            },
+            "label": "Flexibles Layout via Grid/Flex definiert"
+          },
+          {
+            "kind": "any_of",
+            "config": {
+              "label": "Grid/Flex-Eigenschaften werden verwendet",
+              "rules": [
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.css",
+                    "regex": "grid-template|grid-area|grid-column|grid-row|gap"
+                  }
+                },
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.css",
+                    "regex": "flex-direction|flex-wrap|justify-content|align-items|align-content"
+                  }
+                }
+              ]
+            }
+          },
+          {
+            "kind": "contains_regex",
+            "config": {
+              "glob": "**/*.css",
+              "regex": "@media\\s*\\("
+            },
+            "label": "Responsive Regeln mit @media vorhanden"
+          },
           {
             "kind": "contains_regex",
             "config": {
@@ -358,12 +466,12 @@
           }
         ]
       },
-      "evidence_hint": "Gesamteindruck, gestalterische Konsistenz und Browserkompatibilität der Effekte manuell prüfen."
+      "evidence_hint": "Gesamteindruck, gestalterische Konsistenz und tatsaechliche responsive Wirkung im Browser manuell pruefen."
     },
     {
       "id": "J1",
       "title": "Sonstige Features – Impressum, Datenschutz und KI-Inhalte",
-      "description": "Impressum, Haftungsausschluss, Datenschutzerklärung, korrekte Zitation von KI-generierten Inhalten.",
+      "description": "Impressum, Haftungsausschluss, Datenschutzerklaerung, korrekte Zitation von KI-generierten Inhalten sowie Quell-/Lizenzangaben fuer Bildmaterial.",
       "max_points": 4,
       "kind": "all_of",
       "config": {
@@ -435,10 +543,46 @@
                 }
               ]
             }
+          },
+          {
+            "kind": "any_of",
+            "config": {
+              "label": "Quell-/Lizenzangaben fuer Bildmaterial vorhanden",
+              "rules": [
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.php",
+                    "regex": "(?i)bildnachweis|bildquelle|quelle(?:n)?|lizenz|urheber|copyright|unsplash|pixabay|pexels|creative\\s*commons|cc-by"
+                  }
+                },
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.html",
+                    "regex": "(?i)bildnachweis|bildquelle|quelle(?:n)?|lizenz|urheber|copyright|unsplash|pixabay|pexels|creative\\s*commons|cc-by"
+                  }
+                },
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.md",
+                    "regex": "(?i)bildnachweis|bildquelle|quelle(?:n)?|lizenz|urheber|copyright|unsplash|pixabay|pexels|creative\\s*commons|cc-by"
+                  }
+                },
+                {
+                  "kind": "contains_regex",
+                  "config": {
+                    "glob": "**/*.txt",
+                    "regex": "(?i)bildnachweis|bildquelle|quelle(?:n)?|lizenz|urheber|copyright|unsplash|pixabay|pexels|creative\\s*commons|cc-by"
+                  }
+                }
+              ]
+            }
           }
         ]
       },
-      "evidence_hint": "Vollständigkeit von Impressum, Datenschutz und KI-Zitationen inhaltlich manuell prüfen."
+      "evidence_hint": "Vollstaendigkeit von Impressum/Datenschutz, KI-Zitationen und Bildquellen/Lizenzen inhaltlich manuell pruefen."
     }
   ]
 }
